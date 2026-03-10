@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { cubicBezier, motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -22,7 +22,11 @@ export function CaseStudyPage() {
   };
   const item = {
     hidden: { opacity: 0, y: 18 },
-    show: { opacity: 1, y: 0, transition: { duration: 1.6, ease: [0.16, 1, 0.3, 1] } }
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1.6, ease: cubicBezier(0.16, 1, 0.3, 1) }
+    }
   };
 
   useEffect(() => {
@@ -83,8 +87,8 @@ export function CaseStudyPage() {
               путешественники, которым нужна дешёвая и надёжная связь за границей.
             </p>
           </div>
-          <div className="bg-[#222] py-6">
-            <div className="mx-auto h-[320px] w-full max-w-[417px] sm:h-[400px]">
+            <div className="bg-[#222] py-6">
+            <div className="mx-auto flex h-[320px] w-full max-w-[417px] items-center justify-center sm:h-[400px]">
               <img alt="" src={assets.hero} className="h-full w-full object-contain" />
             </div>
           </div>
@@ -114,7 +118,7 @@ export function CaseStudyPage() {
                 {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
               </li>
             </ul>
-            <div className="h-[64px] w-[323px]">
+            <div className="mx-auto h-[64px] w-[323px]">
               <img alt="" src={assets.chartSmall} className="h-full w-full object-contain" />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[1.4]">
@@ -123,7 +127,7 @@ export function CaseStudyPage() {
                 {` — люди скачивали приложение, пробовали разобраться, но из 2.1К новых пользователей возвращалась лишь половина. По данным аналитики Retention падает до 15% к четвёртой неделе.`}
               </li>
             </ul>
-            <div className="w-full max-w-[527px]">
+            <div className="mx-auto w-full max-w-[527px]">
               <img alt="" src={assets.chartBig} className="h-full w-full object-contain" />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[1.4]">
