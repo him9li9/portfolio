@@ -14,7 +14,8 @@ const assets = {
   discoveryFeedback1: "/figma/case-discovery-feedback-1.png",
   discoveryFeedback2: "/figma/case-discovery-feedback-2.png",
   competitorWhatsapp: "/figma/case-competitor-whatsapp.png",
-  competitorOpenphone: "/figma/case-competitor-openphone.png"
+  competitorOpenphone: "/figma/case-competitor-openphone.png",
+  userflow: "/figma/case-userflow.png"
 };
 
 export function CaseStudyPage() {
@@ -324,6 +325,43 @@ export function CaseStudyPage() {
               </div>
             </div>
           </div>
+        </motion.section>
+
+        <motion.section variants={item} className="flex flex-col gap-6">
+          <h2 className="text-[32px] font-semibold leading-[40px]">Проектирование</h2>
+          <p className="text-[18px] leading-[1.4]">
+            Цель этапа — определить, как система будет вести себя в диалоге с пользователем, чтобы
+            он не терялся в случае если что-то пойдёт не так. Основные решения касались логики
+            сценариев, проработки состояний и корнер-кейсов.
+          </p>
+          <div className="h-px w-full bg-[#282828]" />
+          <p className="text-[18px] leading-[1.4]">
+            Когда я проектировала новый путь, главным было убрать неопределённость. Пользователь не
+            должен гадать: «А номер уже мой? А сколько это стоит? А что делать, если что-то пошло не
+            так?». Вот что получилось:
+          </p>
+
+          <div className="bg-[#222] py-6">
+            <div className="mx-auto w-full max-w-[750px]">
+              <img alt="" src={assets.userflow} className="h-full w-full object-contain" />
+            </div>
+            <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#9e9e9e]">
+              UserFlow сценария звонка (чтобы увеличить нажмите на картинку)
+            </p>
+          </div>
+
+          <ul className="list-disc space-y-2 pl-6 text-[18px] leading-[1.4]">
+            <li>от первого запуска приложения до звонка — 4–5 шагов (вместо 8-10).</li>
+            <li>
+              стали показывать стоимость звонка ещё до вызова, а после ключевых шагов success screen
+              (на схеме — ✅), чтобы убрать тревогу и неопределенность.
+            </li>
+            <li>ошибки не оставляют в тупике, а предлагают решение и возвращают на сценарий.</li>
+            <li>
+              поддержка всегда доступна, но не как основной, а как дополнительный шаг в решении
+              проблемы.
+            </li>
+          </ul>
         </motion.section>
       </motion.div>
     </main>
