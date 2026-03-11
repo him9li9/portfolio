@@ -342,7 +342,7 @@ export function CaseStudyPage() {
           </p>
 
           <div className="bg-[#222] py-6">
-            <div className="mx-auto w-full max-w-[750px]">
+            <div className="mx-auto w-full max-w-[750px] px-4 sm:px-6">
               <img alt="" src={assets.userflow} className="h-full w-full object-contain" />
             </div>
             <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#9e9e9e]">
