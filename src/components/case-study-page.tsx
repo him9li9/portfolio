@@ -395,11 +395,12 @@ export function CaseStudyPage() {
           onClick={() => setIsUserflowOpen(false)}
           role="presentation"
         >
-          <div className="relative max-h-[80vh] max-w-[80vw]">
+          <div className="relative max-h-[80vh] max-w-[80vw] p-2 sm:p-4">
+            <div className="absolute inset-0 rounded-[24px] bg-white/5 backdrop-blur-[6px]" />
             <img
               alt=""
               src={assets.userflow}
-              className="h-full w-full cursor-zoom-out object-contain"
+              className="relative h-full w-full cursor-zoom-out object-contain"
               onClick={(event) => event.stopPropagation()}
             />
           </div>
