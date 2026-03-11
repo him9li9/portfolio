@@ -15,11 +15,12 @@ const assets = {
   discoveryFeedback2: "/figma/case-discovery-feedback-2.png",
   competitorWhatsapp: "/figma/case-competitor-whatsapp.png",
   competitorOpenphone: "/figma/case-competitor-openphone.png",
-  userflow: "/figma/case-userflow.png"
+  userflow: "/figma/case-userflow-3x.png"
 };
 
 export function CaseStudyPage() {
   const [hideTopbar, setHideTopbar] = useState(false);
+  const [isUserflowOpen, setIsUserflowOpen] = useState(false);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -343,7 +344,12 @@ export function CaseStudyPage() {
 
           <div className="bg-[#222] py-6">
             <div className="mx-auto w-full max-w-[750px] px-4 sm:px-6">
-              <img alt="" src={assets.userflow} className="h-full w-full object-contain" />
+              <img
+                alt=""
+                src={assets.userflow}
+                className="h-full w-full cursor-zoom-in object-contain"
+                onClick={() => setIsUserflowOpen(true)}
+              />
             </div>
             <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#9e9e9e]">
               UserFlow сценария звонка (чтобы увеличить нажмите на картинку)
@@ -364,6 +370,23 @@ export function CaseStudyPage() {
           </ul>
         </motion.section>
       </motion.div>
+
+      {isUserflowOpen ? (
+        <div
+          className="fixed inset-0 z-20 flex items-center justify-center bg-black/65 px-6"
+          onClick={() => setIsUserflowOpen(false)}
+          role="presentation"
+        >
+          <div className="relative max-h-[80vh] max-w-[80vw]">
+            <img
+              alt=""
+              src={assets.userflow}
+              className="h-full w-full cursor-zoom-out object-contain"
+              onClick={(event) => event.stopPropagation()}
+            />
+          </div>
+        </div>
+      ) : null}
     </main>
   );
 }
