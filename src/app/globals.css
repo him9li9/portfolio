@@ -28,3 +28,9 @@ a {
 .font-oldenburg {
   font-family: var(--font-oldenburg), serif;
 }
+
+.lightbox-backdrop {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}

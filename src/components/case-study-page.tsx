@@ -408,7 +408,7 @@ export function CaseStudyPage() {
           onClick={() => setIsUserflowOpen(false)}
           role="presentation"
         >
-          <div className="absolute inset-0 bg-black/20 backdrop-blur-[4px]" />
+          <div className="lightbox-backdrop absolute inset-0" />
           <div className="relative h-[80vh] w-[80vw] p-4">
             <img
               alt=""
