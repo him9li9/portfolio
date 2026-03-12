@@ -114,8 +114,8 @@ export function CaseStudyPage() {
             </p>
           </div>
             <div className="bg-[#222] py-6">
-            <div className="mx-auto flex h-[320px] w-full max-w-[417px] items-center justify-center sm:h-[400px]">
-              <img alt="" src={assets.hero} className="h-full w-full object-contain" />
+            <div className="mx-auto w-full max-w-[417px]">
+              <img alt="" src={assets.hero} className="h-auto w-full object-contain" />
             </div>
           </div>
         </motion.section>
@@ -144,8 +144,8 @@ export function CaseStudyPage() {
                 {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
               </li>
             </ul>
-            <div className="mx-auto h-[64px] w-[323px]">
-              <img alt="" src={assets.chartSmall} className="h-full w-full object-contain" />
+            <div className="mx-auto w-full max-w-[323px]">
+              <img alt="" src={assets.chartSmall} className="h-auto w-full object-contain" />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[1.4]">
               <li>
@@ -154,7 +154,7 @@ export function CaseStudyPage() {
               </li>
             </ul>
             <div className="mx-auto w-full max-w-[527px]">
-              <img alt="" src={assets.chartBig} className="h-full w-full object-contain" />
+              <img alt="" src={assets.chartBig} className="h-auto w-full object-contain" />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[1.4]">
               <li>
@@ -228,8 +228,8 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="w-full">
-            <img alt="" src={assets.discoveryActivation} className="h-full w-full object-contain" />
+          <div className="mx-auto w-full max-w-[760px]">
+            <img alt="" src={assets.discoveryActivation} className="h-auto w-full object-contain" />
           </div>
 
           <div className="flex flex-col gap-2 text-[18px] leading-[1.4]">
@@ -245,8 +245,8 @@ export function CaseStudyPage() {
           </div>
 
           <div className="bg-[#222] py-6">
-            <div className="mx-auto h-[320px] w-full max-w-[427px] sm:h-[400px]">
-              <img alt="" src={assets.discoveryCost} className="h-full w-full object-contain" />
+            <div className="mx-auto w-full max-w-[427px]">
+              <img alt="" src={assets.discoveryCost} className="h-auto w-full object-contain" />
             </div>
           </div>
 
@@ -264,8 +264,8 @@ export function CaseStudyPage() {
 
           <div className="bg-[#222] py-6">
             <div className="mx-auto flex w-full max-w-[427px] flex-col gap-4">
-              <img alt="" src={assets.discoveryFeedback1} className="h-full w-full object-contain" />
-              <img alt="" src={assets.discoveryFeedback2} className="h-full w-full object-contain" />
+              <img alt="" src={assets.discoveryFeedback1} className="h-auto w-full object-contain" />
+              <img alt="" src={assets.discoveryFeedback2} className="h-auto w-full object-contain" />
             </div>
           </div>
 
@@ -285,8 +285,8 @@ export function CaseStudyPage() {
           </div>
 
           <div className="bg-[#222] py-6">
-            <div className="mx-auto h-[300px] w-full max-w-[600px]">
-              <img alt="" src={assets.competitorWhatsapp} className="h-full w-full object-contain" />
+            <div className="mx-auto w-full max-w-[600px]">
+              <img alt="" src={assets.competitorWhatsapp} className="h-auto w-full object-contain" />
             </div>
             <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#afafaf]">
               WhatsApp (регистрация – выбор контакта – звонок)
@@ -300,8 +300,8 @@ export function CaseStudyPage() {
           </p>
 
           <div className="bg-[#222] py-6">
-            <div className="mx-auto h-[280px] w-full max-w-[704px]">
-              <img alt="" src={assets.competitorOpenphone} className="h-full w-full object-contain" />
+            <div className="mx-auto w-full max-w-[704px]">
+              <img alt="" src={assets.competitorOpenphone} className="h-auto w-full object-contain" />
             </div>
             <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#afafaf]">
               Open Phone (выбор номера – регистрация – покупка – звонок)
@@ -365,7 +365,7 @@ export function CaseStudyPage() {
               <img
                 alt=""
                 src={assets.userflow}
-                className="h-full w-full cursor-zoom-in object-contain"
+                className="h-auto w-full cursor-zoom-in object-contain"
                 onClick={() => setIsUserflowOpen(true)}
               />
             </div>
@@ -391,16 +391,15 @@ export function CaseStudyPage() {
 
       {isUserflowOpen ? (
         <div
-          className="fixed inset-0 z-20 flex items-center justify-center bg-black/65 px-6"
+          className="fixed inset-0 z-20 flex items-center justify-center bg-black/65 px-6 backdrop-blur-[10px]"
           onClick={() => setIsUserflowOpen(false)}
           role="presentation"
         >
-          <div className="relative max-h-[80vh] max-w-[80vw] p-2 sm:p-4">
-            <div className="absolute inset-0 rounded-[24px] bg-white/5 backdrop-blur-[6px]" />
+          <div className="relative h-[80vh] w-[80vw] p-4">
             <img
               alt=""
               src={assets.userflow}
-              className="relative h-full w-full cursor-zoom-out object-contain"
+              className="h-full w-full cursor-zoom-out object-contain"
               onClick={(event) => event.stopPropagation()}
             />
           </div>
