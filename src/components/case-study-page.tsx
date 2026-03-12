@@ -9,7 +9,7 @@ const assets = {
   hero: "/figma/phones.png",
   chartSmall: "/figma/case-chart-small.png",
   chartBig: "/figma/case-chart-big.png",
-  discoveryActivation: "/figma/case-discovery-activation.png",
+  discoveryActivation: "/figma/case-discovery-activation-3x.png",
   discoveryCost: "/figma/case-discovery-cost.png",
   discoveryFeedback1: "/figma/case-discovery-feedback-1.png",
   discoveryFeedback2: "/figma/case-discovery-feedback-2.png",
