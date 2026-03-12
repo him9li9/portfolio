@@ -9,18 +9,19 @@ const assets = {
   hero: "/figma/phones.png",
   chartSmall: "/figma/case-chart-small.png",
   chartBig: "/figma/case-chart-big.png",
-  discoveryActivation: "/figma/case-discovery-activation-3x.png",
+  discoveryActivation: "/figma/case-discovery-activation.png",
   discoveryCost: "/figma/case-discovery-cost.png",
   discoveryFeedback1: "/figma/case-discovery-feedback-1.png",
   discoveryFeedback2: "/figma/case-discovery-feedback-2.png",
   competitorWhatsapp: "/figma/case-competitor-whatsapp.png",
   competitorOpenphone: "/figma/case-competitor-openphone.png",
-  userflow: "/figma/case-userflow-3x.png"
+  userflow: "/figma/case-userflow.png"
 };
 
 export function CaseStudyPage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [isUserflowOpen, setIsUserflowOpen] = useState(false);
+  const [canHover, setCanHover] = useState(false);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -48,6 +49,14 @@ export function CaseStudyPage() {
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const mql = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => setCanHover(mql.matches);
+    update();
+    mql.addEventListener("change", update);
+    return () => mql.removeEventListener("change", update);
   }, []);
 
   useEffect(() => {
@@ -83,18 +92,22 @@ export function CaseStudyPage() {
             <img alt="" src={assets.heart} className="h-6 w-6" />
           </Link>
           <div className="flex items-center gap-2">
-            <a
+            <motion.a
+              whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[16px] leading-[1.4] sm:text-[18px]"
               href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
             >
               CV
-            </a>
-            <a
+            </motion.a>
+            <motion.a
+              whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[16px] leading-[1.4] sm:text-[18px]"
               href="https://t.me/him9li9"
             >
               Telegram
-            </a>
+            </motion.a>
           </div>
         </div>
       </motion.header>
@@ -176,18 +189,18 @@ export function CaseStudyPage() {
             </p>
             <p className="text-[18px] leading-[1.4]">
               <span className="font-semibold">Метрики успеха</span>
-              {` — рост количества звонков из приложения, снижение повторных обращений в поддержку`}
+              {` — рост количества звонков из приложения, снижение повторных обращений в поддержку.`}
             </p>
           </div>
 
           <div className="flex flex-col gap-4">
             <h3 className="text-[24px] font-semibold leading-[32px]">Что я сделала</h3>
             <ol className="list-decimal space-y-2 pl-6 text-[18px] leading-[1.4]">
-              <li>Проанализировала MVP и обратную связь от пользователей</li>
-              <li>Определила проблемы и сформулировала гипотезы (вместе с командой)</li>
-              <li>Спроектировала и упростила ключевые сценарии</li>
-              <li>Проверила решения на быстрых прототипах с пользователями</li>
-              <li>Подготовила дизайн и компоненты для передачи в разработку + материалы для релиза</li>
+              <li>Проанализировала MVP и обратную связь от пользователей.</li>
+              <li>Определила проблемы и сформулировала гипотезы (вместе с командой).</li>
+              <li>Спроектировала и упростила ключевые сценарии.</li>
+              <li>Проверила решения на быстрых прототипах с пользователями.</li>
+              <li>Подготовила дизайн и компоненты для передачи в разработку + материалы для релиза.</li>
             </ol>
           </div>
         </motion.section>
@@ -370,7 +383,7 @@ export function CaseStudyPage() {
               />
             </div>
             <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#9e9e9e]">
-              UserFlow сценария звонка (чтобы увеличить нажмите на картинку)
+              UserFlow сценария звонка (чтобы увеличить нажмите на картинку).
             </p>
           </div>
 
@@ -391,7 +404,7 @@ export function CaseStudyPage() {
 
       {isUserflowOpen ? (
         <div
-          className="fixed inset-0 z-20 flex items-center justify-center bg-black/65 px-6 backdrop-blur-[10px]"
+          className="fixed inset-0 z-20 flex items-center justify-center bg-transparent px-6 backdrop-blur-[4px]"
           onClick={() => setIsUserflowOpen(false)}
           role="presentation"
         >
@@ -400,7 +413,7 @@ export function CaseStudyPage() {
               alt=""
               src={assets.userflow}
               className="h-full w-full cursor-zoom-out object-contain"
-              onClick={(event) => event.stopPropagation()}
+              onClick={() => setIsUserflowOpen(false)}
             />
           </div>
         </div>
