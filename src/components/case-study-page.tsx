@@ -404,10 +404,11 @@ export function CaseStudyPage() {
 
       {isUserflowOpen ? (
         <div
-          className="fixed inset-0 z-20 flex items-center justify-center bg-transparent px-6 backdrop-blur-[4px]"
+          className="fixed inset-0 z-20 flex items-center justify-center px-6"
           onClick={() => setIsUserflowOpen(false)}
           role="presentation"
         >
+          <div className="absolute inset-0 bg-black/20 backdrop-blur-[4px]" />
           <div className="relative h-[80vh] w-[80vw] p-4">
             <img
               alt=""
