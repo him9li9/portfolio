@@ -409,7 +409,7 @@ export function CaseStudyPage() {
           role="presentation"
         >
           <div className="lightbox-backdrop absolute inset-0" />
-          <div className="relative h-[80vh] w-[80vw] p-4">
+          <div className="relative h-[80vh] w-[80vw] rounded-[28px] bg-[#222] p-10 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:p-10">
             <img
               alt=""
               src={assets.userflow}
