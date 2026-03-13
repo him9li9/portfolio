@@ -29,6 +29,7 @@ export function CaseStudyPage() {
   const [isMobileViewport, setIsMobileViewport] = useState(false);
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
+  const bodyScrollYRef = useRef(0);
   const userflowBase = { width: 750, height: 309 };
   const container = {
     hidden: { opacity: 0 },
@@ -78,10 +79,21 @@ export function CaseStudyPage() {
     };
     document.addEventListener("keydown", onKeyDown);
     const previousOverflow = document.body.style.overflow;
+    const previousPosition = document.body.style.position;
+    const previousTop = document.body.style.top;
+    const previousWidth = document.body.style.width;
+    bodyScrollYRef.current = window.scrollY;
     document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${bodyScrollYRef.current}px`;
+    document.body.style.width = "100%";
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = previousOverflow;
+      document.body.style.position = previousPosition;
+      document.body.style.top = previousTop;
+      document.body.style.width = previousWidth;
+      window.scrollTo({ top: bodyScrollYRef.current, left: 0, behavior: "instant" });
     };
   }, [isUserflowOpen]);
 
@@ -99,7 +111,7 @@ export function CaseStudyPage() {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
       setIsMobileViewport(isMobile);
-      const initialScale = isMobile ? 1.1 : 1.5;
+      const initialScale = isMobile ? 1.2 : 1.5;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
