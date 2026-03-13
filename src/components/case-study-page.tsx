@@ -126,6 +126,7 @@ export function CaseStudyPage() {
     if (!userflowViewportRef.current) {
       return;
     }
+    event.preventDefault();
     userflowDragRef.current.isDown = true;
     userflowDragRef.current.moved = false;
     userflowDragRef.current.startX = event.clientX;
@@ -693,7 +694,8 @@ export function CaseStudyPage() {
                     width={userflowBase.width}
                     height={userflowBase.height}
                     sizes="80vw"
-                    className="h-full w-full object-contain"
+                    className="h-full w-full select-none object-contain pointer-events-none"
+                    draggable={false}
                     priority
                     unoptimized
                   />
