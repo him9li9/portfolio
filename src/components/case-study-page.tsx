@@ -96,6 +96,17 @@ export function CaseStudyPage() {
     if (isUserflowOpen) {
       setLightboxScale(1.3);
       setUserflowOffset({ x: 0, y: 0 });
+      requestAnimationFrame(() => {
+        if (!userflowViewportRef.current) {
+          return;
+        }
+        const rect = userflowViewportRef.current.getBoundingClientRect();
+        const scaledWidth = userflowBase.width * 1.3;
+        const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
+        const isMobile = window.matchMedia("(max-width: 640px)").matches;
+        const initialX = isMobile ? -maxX : 0;
+        setUserflowOffset(clampUserflowOffset(initialX, 0, 1.3));
+      });
     }
   }, [isUserflowOpen]);
 
@@ -155,6 +166,9 @@ export function CaseStudyPage() {
   };
 
   const handleUserflowMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.button !== 0) {
+      return;
+    }
     event.preventDefault();
     startUserflowDrag(event.clientX, event.clientY);
   };
@@ -690,8 +704,13 @@ export function CaseStudyPage() {
             <button
               type="button"
               aria-label="Close"
-              className="absolute right-4 top-4 flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0] sm:right-6 sm:top-6"
-              onClick={() => setIsUserflowOpen(false)}
+              className="absolute right-3 top-3 z-10 flex h-12 w-12 items-center justify-center rounded-[10px] bg-[#2b2b2b] text-[#a0a0a0] cursor-pointer sm:right-6 sm:top-6 sm:h-6 sm:w-6 sm:rounded-[6px]"
+              onMouseDown={(event) => event.stopPropagation()}
+              onTouchStart={(event) => event.stopPropagation()}
+              onClick={(event) => {
+                event.stopPropagation();
+                setIsUserflowOpen(false);
+              }}
             >
               <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
                 <path
