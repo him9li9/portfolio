@@ -107,7 +107,7 @@ export function CaseStudyPage() {
   useEffect(() => {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
-      const initialScale = isMobile ? 1.2 : 1.6;
+      const initialScale = isMobile ? 1.2 : 1.5;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
