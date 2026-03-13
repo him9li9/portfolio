@@ -30,6 +30,7 @@ export function CaseStudyPage() {
   const [activeSection, setActiveSection] = useState("overview");
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
+  const bodyScrollYRef = useRef(0);
   const userflowDragRef = useRef({
     isDown: false,
     moved: false,
@@ -87,10 +88,21 @@ export function CaseStudyPage() {
     };
     document.addEventListener("keydown", onKeyDown);
     const previousOverflow = document.body.style.overflow;
+    const previousPosition = document.body.style.position;
+    const previousTop = document.body.style.top;
+    const previousWidth = document.body.style.width;
+    bodyScrollYRef.current = window.scrollY;
     document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${bodyScrollYRef.current}px`;
+    document.body.style.width = "100%";
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = previousOverflow;
+      document.body.style.position = previousPosition;
+      document.body.style.top = previousTop;
+      document.body.style.width = previousWidth;
+      window.scrollTo({ top: bodyScrollYRef.current, left: 0, behavior: "instant" });
     };
   }, [isUserflowOpen]);
 
@@ -117,7 +129,7 @@ export function CaseStudyPage() {
         const rect = userflowViewportRef.current.getBoundingClientRect();
         const scaledWidth = userflowBase.width * initialScale;
         const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-        const initialX = isMobile ? maxX : 0;
+        const initialX = isMobile ? -maxX : 0;
         setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
       });
     }
@@ -165,15 +177,18 @@ export function CaseStudyPage() {
       });
     };
     update();
-    const timeoutId = window.setTimeout(update, 200);
+    const timeouts = [0, 100, 300, 600].map((delay) => window.setTimeout(update, delay));
     window.addEventListener("load", update);
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
+    const resizeObserver = new ResizeObserver(() => update());
+    resizeObserver.observe(document.body);
     return () => {
-      window.clearTimeout(timeoutId);
+      timeouts.forEach((id) => window.clearTimeout(id));
       window.removeEventListener("load", update);
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
+      resizeObserver.disconnect();
     };
   }, []);
 
