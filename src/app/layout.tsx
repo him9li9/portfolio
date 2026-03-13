@@ -18,7 +18,11 @@ const oldenburg = Oldenburg({
 
 export const metadata: Metadata = {
   title: "Nastya Ermoshina Portfolio",
-  description: "Product designer and data-driven strategist portfolio"
+  description: "Product designer and data-driven strategist portfolio",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/apple-touch-icon.png"
+  }
 };
 
 export default function RootLayout({

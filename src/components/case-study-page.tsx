@@ -1,6 +1,7 @@
 "use client";
 
 import { cubicBezier, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -23,6 +24,7 @@ export function CaseStudyPage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [isUserflowOpen, setIsUserflowOpen] = useState(false);
   const [canHover, setCanHover] = useState(false);
+  const [lightboxScale, setLightboxScale] = useState(1);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -78,6 +80,12 @@ export function CaseStudyPage() {
     };
   }, [isUserflowOpen]);
 
+  useEffect(() => {
+    if (isUserflowOpen) {
+      setLightboxScale(1);
+    }
+  }, [isUserflowOpen]);
+
   return (
     <main className="bg-[#171717] text-white">
       <motion.header
@@ -129,7 +137,15 @@ export function CaseStudyPage() {
           </div>
             <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
             <div className="mx-auto w-full max-w-[417px] px-4 sm:px-0">
-              <img alt="" src={assets.hero} className="h-auto w-full object-contain" loading="lazy" decoding="async" />
+              <Image
+                alt=""
+                src={assets.hero}
+                width={417}
+                height={400}
+                sizes="(max-width: 640px) 100vw, 417px"
+                className="h-auto w-full object-contain"
+                priority
+              />
             </div>
           </div>
         </motion.section>
@@ -159,7 +175,15 @@ export function CaseStudyPage() {
               </li>
             </ul>
             <div className="mx-auto w-full max-w-[323px]">
-              <img alt="" src={assets.chartSmall} className="h-auto w-full object-contain" loading="lazy" decoding="async" />
+              <Image
+                alt=""
+                src={assets.chartSmall}
+                width={323}
+                height={64}
+                sizes="(max-width: 640px) 100vw, 323px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+              />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[1.4]">
               <li>
@@ -168,7 +192,15 @@ export function CaseStudyPage() {
               </li>
             </ul>
             <div className="mx-auto w-full max-w-[527px]">
-              <img alt="" src={assets.chartBig} className="h-auto w-full object-contain" loading="lazy" decoding="async" />
+              <Image
+                alt=""
+                src={assets.chartBig}
+                width={527}
+                height={300}
+                sizes="(max-width: 640px) 100vw, 527px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+              />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[1.4]">
               <li>
@@ -243,7 +275,15 @@ export function CaseStudyPage() {
           </div>
 
           <div className="mx-auto w-full max-w-[760px]">
-            <img alt="" src={assets.discoveryActivation} className="h-auto w-full object-contain" loading="lazy" decoding="async" />
+            <Image
+              alt=""
+              src={assets.discoveryActivation}
+              width={800}
+              height={757}
+              sizes="(max-width: 640px) 100vw, 760px"
+              className="h-auto w-full object-contain"
+              loading="lazy"
+            />
           </div>
 
           <div className="flex flex-col gap-2 text-[18px] leading-[1.4]">
@@ -260,7 +300,15 @@ export function CaseStudyPage() {
 
           <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
             <div className="mx-auto w-full max-w-[427px] px-4 sm:px-0">
-              <img alt="" src={assets.discoveryCost} className="h-auto w-full object-contain" loading="lazy" decoding="async" />
+              <Image
+                alt=""
+                src={assets.discoveryCost}
+                width={427}
+                height={400}
+                sizes="(max-width: 640px) 100vw, 427px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+              />
             </div>
           </div>
 
@@ -278,8 +326,24 @@ export function CaseStudyPage() {
 
           <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
             <div className="mx-auto flex w-full max-w-[427px] flex-col gap-4 px-4 sm:px-0">
-              <img alt="" src={assets.discoveryFeedback1} className="h-auto w-full object-contain" loading="lazy" decoding="async" />
-              <img alt="" src={assets.discoveryFeedback2} className="h-auto w-full object-contain" loading="lazy" decoding="async" />
+              <Image
+                alt=""
+                src={assets.discoveryFeedback1}
+                width={427}
+                height={136}
+                sizes="(max-width: 640px) 100vw, 427px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+              />
+              <Image
+                alt=""
+                src={assets.discoveryFeedback2}
+                width={427}
+                height={103}
+                sizes="(max-width: 640px) 100vw, 427px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+              />
             </div>
           </div>
 
@@ -300,9 +364,17 @@ export function CaseStudyPage() {
 
           <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
             <div className="mx-auto w-full max-w-[600px] px-4 sm:px-0">
-              <img alt="" src={assets.competitorWhatsapp} className="h-auto w-full object-contain" loading="lazy" decoding="async" />
+              <Image
+                alt=""
+                src={assets.competitorWhatsapp}
+                width={600}
+                height={300}
+                sizes="(max-width: 640px) 100vw, 600px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+              />
             </div>
-            <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#afafaf]">
+            <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
               WhatsApp (регистрация – выбор контакта – звонок)
             </p>
           </div>
@@ -315,9 +387,17 @@ export function CaseStudyPage() {
 
           <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
             <div className="mx-auto w-full max-w-[704px] px-4 sm:px-0">
-              <img alt="" src={assets.competitorOpenphone} className="h-auto w-full object-contain" loading="lazy" decoding="async" />
+              <Image
+                alt=""
+                src={assets.competitorOpenphone}
+                width={704}
+                height={280}
+                sizes="(max-width: 640px) 100vw, 704px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+              />
             </div>
-            <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#afafaf]">
+            <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
               Open Phone (выбор номера – регистрация – покупка – звонок)
             </p>
           </div>
@@ -376,14 +456,24 @@ export function CaseStudyPage() {
 
           <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
             <div className="mx-auto w-full max-w-[750px] px-4 sm:px-6">
-              <img
-                alt=""
-                src={assets.userflow}
-                className="h-auto w-full cursor-zoom-in object-contain"
+              <button
+                type="button"
+                aria-label="Open userflow"
                 onClick={() => setIsUserflowOpen(true)}
-              />
+                className="w-full cursor-zoom-in"
+              >
+                <Image
+                  alt=""
+                  src={assets.userflow}
+                  width={750}
+                  height={309}
+                  sizes="(max-width: 640px) 100vw, 750px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                />
+              </button>
             </div>
-            <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#9e9e9e]">
+            <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#9e9e9e] sm:px-0">
               UserFlow сценария звонка (чтобы увеличить нажмите на картинку).
             </p>
           </div>
@@ -428,7 +518,15 @@ export function CaseStudyPage() {
 
           <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
             <div className="mx-auto w-full max-w-[467px] px-4 sm:px-0">
-              <img alt="" src={assets.solutionSuccess} className="h-auto w-full object-contain" loading="lazy" decoding="async" />
+              <Image
+                alt=""
+                src={assets.solutionSuccess}
+                width={467}
+                height={414}
+                sizes="(max-width: 640px) 100vw, 467px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+              />
             </div>
           </div>
 
@@ -482,13 +580,45 @@ export function CaseStudyPage() {
                 />
               </svg>
             </button>
-            <img
-              alt=""
-              src={assets.userflow}
-              className="h-full w-full cursor-zoom-out object-contain sm:cursor-zoom-out"
-              onClick={() => setIsUserflowOpen(false)}
-              style={{ touchAction: "pinch-zoom" }}
-            />
+            <div
+              className="origin-center transition-transform duration-150"
+              style={{ transform: `scale(${lightboxScale})`, touchAction: "pinch-zoom" }}
+            >
+              <Image
+                alt=""
+                src={assets.userflow}
+                width={750}
+                height={309}
+                sizes="80vw"
+                className="h-full w-full cursor-pointer object-contain sm:cursor-zoom-in"
+                onClick={() => setIsUserflowOpen(false)}
+                priority
+              />
+            </div>
+            <div className="absolute bottom-4 right-4 flex flex-col gap-2 sm:hidden">
+              <button
+                type="button"
+                aria-label="Zoom in"
+                className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
+                }}
+              >
+                +
+              </button>
+              <button
+                type="button"
+                aria-label="Zoom out"
+                className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]"
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
+                }}
+              >
+                –
+              </button>
+            </div>
           </div>
         </div>
       ) : null}
