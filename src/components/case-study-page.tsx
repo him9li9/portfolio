@@ -142,23 +142,39 @@ export function CaseStudyPage() {
   }, [isUserflowOpen, lightboxScale]);
 
   useEffect(() => {
-    const sections = Array.from(document.querySelectorAll("[data-section]"));
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-section]"));
     if (sections.length === 0) {
       return;
     }
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target instanceof HTMLElement) {
-          setActiveSection(visible.target.dataset.section || "overview");
-        }
-      },
-      { rootMargin: "-30% 0px -55% 0px", threshold: [0.1, 0.25, 0.5] }
-    );
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    let ticking = false;
+    const update = () => {
+      if (ticking) {
+        return;
+      }
+      ticking = true;
+      requestAnimationFrame(() => {
+        const scrollPos = window.scrollY + 140;
+        let current = sections[0]?.dataset.section || "overview";
+        sections.forEach((section) => {
+          if (section.offsetTop <= scrollPos) {
+            current = section.dataset.section || current;
+          }
+        });
+        setActiveSection(current);
+        ticking = false;
+      });
+    };
+    update();
+    const timeoutId = window.setTimeout(update, 200);
+    window.addEventListener("load", update);
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.clearTimeout(timeoutId);
+      window.removeEventListener("load", update);
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, []);
 
   const clampUserflowOffset = (x: number, y: number, scale: number) => {
