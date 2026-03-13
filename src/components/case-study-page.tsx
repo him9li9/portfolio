@@ -104,18 +104,19 @@ export function CaseStudyPage() {
 
   useEffect(() => {
     if (isUserflowOpen) {
-      setLightboxScale(1.3);
+      const isMobile = window.matchMedia("(max-width: 640px)").matches;
+      const initialScale = isMobile ? 1.3 : 1.7;
+      setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
         if (!userflowViewportRef.current) {
           return;
         }
         const rect = userflowViewportRef.current.getBoundingClientRect();
-        const scaledWidth = userflowBase.width * 1.3;
+        const scaledWidth = userflowBase.width * initialScale;
         const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-        const isMobile = window.matchMedia("(max-width: 640px)").matches;
-        const initialX = isMobile ? maxX : 0;
-        setUserflowOffset(clampUserflowOffset(initialX, 0, 1.3));
+        const initialX = isMobile ? -maxX : 0;
+        setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
       });
     }
   }, [isUserflowOpen]);
@@ -712,26 +713,60 @@ export function CaseStudyPage() {
         >
           <div className="lightbox-backdrop absolute inset-0" />
           <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[28px] bg-[#222] p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
-            <button
-              type="button"
-              aria-label="Close"
-              className="absolute right-3 top-3 z-10 flex h-12 w-12 items-center justify-center rounded-[10px] bg-[#2b2b2b] text-[#a0a0a0] cursor-pointer sm:right-6 sm:top-6 sm:h-6 sm:w-6 sm:rounded-[6px] sm:cursor-default"
-              onMouseDown={(event) => event.stopPropagation()}
-              onTouchStart={(event) => event.stopPropagation()}
-              onClick={(event) => {
-                event.stopPropagation();
-                setIsUserflowOpen(false);
-              }}
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                <path
-                  d="M4 4l8 8M12 4l-8 8"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </button>
+            <div className="absolute right-3 top-3 z-10 flex gap-2 sm:right-6 sm:top-6">
+              <button
+                type="button"
+                aria-label="Zoom out"
+                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
+                onMouseDown={(event) => event.stopPropagation()}
+                onTouchStart={(event) => event.stopPropagation()}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
+                }}
+              >
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
+                  –
+                </span>
+              </button>
+              <button
+                type="button"
+                aria-label="Zoom in"
+                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
+                onMouseDown={(event) => event.stopPropagation()}
+                onTouchStart={(event) => event.stopPropagation()}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
+                }}
+              >
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
+                  +
+                </span>
+              </button>
+              <button
+                type="button"
+                aria-label="Close"
+                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6 sm:cursor-default"
+                onMouseDown={(event) => event.stopPropagation()}
+                onTouchStart={(event) => event.stopPropagation()}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setIsUserflowOpen(false);
+                }}
+              >
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
+                  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                    <path
+                      d="M4 4l8 8M12 4l-8 8"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
             <div
               ref={userflowViewportRef}
               className={`relative h-full w-full overflow-hidden ${
@@ -769,30 +804,6 @@ export function CaseStudyPage() {
                   />
                 </div>
               </div>
-            </div>
-            <div className="absolute bottom-4 right-4 flex flex-col gap-2">
-              <button
-                type="button"
-                aria-label="Zoom in"
-                className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]"
-                onClick={(event) => {
-                  event.stopPropagation();
-                  setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
-                }}
-              >
-                +
-              </button>
-              <button
-                type="button"
-                aria-label="Zoom out"
-                className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]"
-                onClick={(event) => {
-                  event.stopPropagation();
-                  setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
-                }}
-              >
-                –
-              </button>
             </div>
           </div>
         </div>
