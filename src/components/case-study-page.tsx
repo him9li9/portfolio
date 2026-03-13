@@ -93,6 +93,16 @@ export function CaseStudyPage() {
   }, [isUserflowOpen]);
 
   useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, []);
+
+  useEffect(() => {
     if (isUserflowOpen) {
       setLightboxScale(1.3);
       setUserflowOffset({ x: 0, y: 0 });
@@ -104,7 +114,7 @@ export function CaseStudyPage() {
         const scaledWidth = userflowBase.width * 1.3;
         const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
         const isMobile = window.matchMedia("(max-width: 640px)").matches;
-        const initialX = isMobile ? -maxX : 0;
+        const initialX = isMobile ? maxX : 0;
         setUserflowOffset(clampUserflowOffset(initialX, 0, 1.3));
       });
     }
@@ -115,10 +125,11 @@ export function CaseStudyPage() {
       return { x: 0, y: 0 };
     }
     const rect = userflowViewportRef.current.getBoundingClientRect();
+    const edgePadding = rect.width < 640 ? 16 : 32;
     const scaledWidth = userflowBase.width * scale;
     const scaledHeight = userflowBase.height * scale;
-    const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-    const maxY = Math.max(0, (scaledHeight - rect.height) / 2);
+    const maxX = Math.max(0, (scaledWidth - (rect.width - edgePadding * 2)) / 2);
+    const maxY = Math.max(0, (scaledHeight - (rect.height - edgePadding * 2)) / 2);
     return {
       x: Math.max(-maxX, Math.min(maxX, x)),
       y: Math.max(-maxY, Math.min(maxY, y)),
@@ -704,7 +715,7 @@ export function CaseStudyPage() {
             <button
               type="button"
               aria-label="Close"
-              className="absolute right-3 top-3 z-10 flex h-12 w-12 items-center justify-center rounded-[10px] bg-[#2b2b2b] text-[#a0a0a0] cursor-pointer sm:right-6 sm:top-6 sm:h-6 sm:w-6 sm:rounded-[6px]"
+              className="absolute right-3 top-3 z-10 flex h-12 w-12 items-center justify-center rounded-[10px] bg-[#2b2b2b] text-[#a0a0a0] cursor-pointer sm:right-6 sm:top-6 sm:h-6 sm:w-6 sm:rounded-[6px] sm:cursor-default"
               onMouseDown={(event) => event.stopPropagation()}
               onTouchStart={(event) => event.stopPropagation()}
               onClick={(event) => {
