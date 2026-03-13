@@ -3,7 +3,6 @@
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import type { PointerEvent as ReactPointerEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 
 const assets = {
@@ -25,7 +24,7 @@ export function CaseStudyPage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [isUserflowOpen, setIsUserflowOpen] = useState(false);
   const [canHover, setCanHover] = useState(false);
-  const [lightboxScale, setLightboxScale] = useState(1);
+  const [lightboxScale, setLightboxScale] = useState(1.3);
   const [isDraggingUserflow, setIsDraggingUserflow] = useState(false);
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
@@ -95,7 +94,7 @@ export function CaseStudyPage() {
 
   useEffect(() => {
     if (isUserflowOpen) {
-      setLightboxScale(1);
+      setLightboxScale(1.3);
       setUserflowOffset({ x: 0, y: 0 });
     }
   }, [isUserflowOpen]);
@@ -122,27 +121,25 @@ export function CaseStudyPage() {
     setUserflowOffset((prev) => clampUserflowOffset(prev.x, prev.y, lightboxScale));
   }, [isUserflowOpen, lightboxScale]);
 
-  const handleUserflowPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+  const startUserflowDrag = (clientX: number, clientY: number) => {
     if (!userflowViewportRef.current) {
       return;
     }
-    event.preventDefault();
     userflowDragRef.current.isDown = true;
     userflowDragRef.current.moved = false;
-    userflowDragRef.current.startX = event.clientX;
-    userflowDragRef.current.startY = event.clientY;
+    userflowDragRef.current.startX = clientX;
+    userflowDragRef.current.startY = clientY;
     userflowDragRef.current.startOffsetX = userflowOffset.x;
     userflowDragRef.current.startOffsetY = userflowOffset.y;
     setIsDraggingUserflow(false);
-    userflowViewportRef.current.setPointerCapture(event.pointerId);
   };
 
-  const handleUserflowPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+  const moveUserflowDrag = (clientX: number, clientY: number) => {
     if (!userflowViewportRef.current || !userflowDragRef.current.isDown) {
       return;
     }
-    const dx = event.clientX - userflowDragRef.current.startX;
-    const dy = event.clientY - userflowDragRef.current.startY;
+    const dx = clientX - userflowDragRef.current.startX;
+    const dy = clientY - userflowDragRef.current.startY;
     if (!userflowDragRef.current.moved && (Math.abs(dx) > 3 || Math.abs(dy) > 3)) {
       userflowDragRef.current.moved = true;
       setIsDraggingUserflow(true);
@@ -152,13 +149,52 @@ export function CaseStudyPage() {
     setUserflowOffset(clampUserflowOffset(nextX, nextY, lightboxScale));
   };
 
-  const handleUserflowPointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!userflowViewportRef.current) {
+  const endUserflowDrag = () => {
+    userflowDragRef.current.isDown = false;
+    setIsDraggingUserflow(false);
+  };
+
+  const handleUserflowMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    startUserflowDrag(event.clientX, event.clientY);
+  };
+
+  const handleUserflowMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!userflowDragRef.current.isDown) {
       return;
     }
-    userflowDragRef.current.isDown = false;
-    userflowViewportRef.current.releasePointerCapture(event.pointerId);
-    setIsDraggingUserflow(false);
+    event.preventDefault();
+    moveUserflowDrag(event.clientX, event.clientY);
+  };
+
+  const handleUserflowMouseUp = () => {
+    endUserflowDrag();
+  };
+
+  const handleUserflowMouseLeave = () => {
+    endUserflowDrag();
+  };
+
+  const handleUserflowTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (event.touches.length === 0) {
+      return;
+    }
+    event.preventDefault();
+    const touch = event.touches[0];
+    startUserflowDrag(touch.clientX, touch.clientY);
+  };
+
+  const handleUserflowTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (event.touches.length === 0) {
+      return;
+    }
+    event.preventDefault();
+    const touch = event.touches[0];
+    moveUserflowDrag(touch.clientX, touch.clientY);
+  };
+
+  const handleUserflowTouchEnd = () => {
+    endUserflowDrag();
   };
 
   return (
@@ -650,7 +686,7 @@ export function CaseStudyPage() {
           role="presentation"
         >
           <div className="lightbox-backdrop absolute inset-0" />
-          <div className="relative h-[80vh] w-[92vw] overflow-hidden rounded-[28px] bg-[#222] p-4 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[80vw] sm:p-10">
+          <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[28px] bg-[#222] p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
             <button
               type="button"
               aria-label="Close"
@@ -672,11 +708,13 @@ export function CaseStudyPage() {
                 isDraggingUserflow ? "cursor-grabbing" : "cursor-grab"
               }`}
               style={{ touchAction: "none" }}
-              onPointerDown={handleUserflowPointerDown}
-              onPointerMove={handleUserflowPointerMove}
-              onPointerUp={handleUserflowPointerUp}
-              onPointerCancel={handleUserflowPointerUp}
-              onPointerLeave={handleUserflowPointerUp}
+              onMouseDown={handleUserflowMouseDown}
+              onMouseMove={handleUserflowMouseMove}
+              onMouseUp={handleUserflowMouseUp}
+              onMouseLeave={handleUserflowMouseLeave}
+              onTouchStart={handleUserflowTouchStart}
+              onTouchMove={handleUserflowTouchMove}
+              onTouchEnd={handleUserflowTouchEnd}
               onClick={(event) => event.stopPropagation()}
             >
               <div className="absolute left-1/2 top-1/2">
