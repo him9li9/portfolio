@@ -27,15 +27,17 @@ export function CaseStudyPage() {
   const [canHover, setCanHover] = useState(false);
   const [lightboxScale, setLightboxScale] = useState(1);
   const [isDraggingUserflow, setIsDraggingUserflow] = useState(false);
-  const userflowScrollRef = useRef<HTMLDivElement | null>(null);
+  const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
+  const userflowViewportRef = useRef<HTMLDivElement | null>(null);
   const userflowDragRef = useRef({
     isDown: false,
     moved: false,
     startX: 0,
     startY: 0,
-    scrollLeft: 0,
-    scrollTop: 0,
+    startOffsetX: 0,
+    startOffsetY: 0,
   });
+  const userflowBase = { width: 750, height: 309 };
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -94,45 +96,67 @@ export function CaseStudyPage() {
   useEffect(() => {
     if (isUserflowOpen) {
       setLightboxScale(1);
+      setUserflowOffset({ x: 0, y: 0 });
     }
   }, [isUserflowOpen]);
 
-  const handleUserflowPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!userflowScrollRef.current) {
+  const clampUserflowOffset = (x: number, y: number, scale: number) => {
+    if (!userflowViewportRef.current) {
+      return { x: 0, y: 0 };
+    }
+    const rect = userflowViewportRef.current.getBoundingClientRect();
+    const scaledWidth = userflowBase.width * scale;
+    const scaledHeight = userflowBase.height * scale;
+    const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
+    const maxY = Math.max(0, (scaledHeight - rect.height) / 2);
+    return {
+      x: Math.max(-maxX, Math.min(maxX, x)),
+      y: Math.max(-maxY, Math.min(maxY, y)),
+    };
+  };
+
+  useEffect(() => {
+    if (!isUserflowOpen) {
       return;
     }
-    const containerEl = userflowScrollRef.current;
+    setUserflowOffset((prev) => clampUserflowOffset(prev.x, prev.y, lightboxScale));
+  }, [isUserflowOpen, lightboxScale]);
+
+  const handleUserflowPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!userflowViewportRef.current) {
+      return;
+    }
     userflowDragRef.current.isDown = true;
     userflowDragRef.current.moved = false;
     userflowDragRef.current.startX = event.clientX;
     userflowDragRef.current.startY = event.clientY;
-    userflowDragRef.current.scrollLeft = containerEl.scrollLeft;
-    userflowDragRef.current.scrollTop = containerEl.scrollTop;
+    userflowDragRef.current.startOffsetX = userflowOffset.x;
+    userflowDragRef.current.startOffsetY = userflowOffset.y;
     setIsDraggingUserflow(false);
-    containerEl.setPointerCapture(event.pointerId);
+    userflowViewportRef.current.setPointerCapture(event.pointerId);
   };
 
   const handleUserflowPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!userflowScrollRef.current || !userflowDragRef.current.isDown) {
+    if (!userflowViewportRef.current || !userflowDragRef.current.isDown) {
       return;
     }
-    const containerEl = userflowScrollRef.current;
     const dx = event.clientX - userflowDragRef.current.startX;
     const dy = event.clientY - userflowDragRef.current.startY;
     if (!userflowDragRef.current.moved && (Math.abs(dx) > 3 || Math.abs(dy) > 3)) {
       userflowDragRef.current.moved = true;
       setIsDraggingUserflow(true);
     }
-    containerEl.scrollLeft = userflowDragRef.current.scrollLeft - dx;
-    containerEl.scrollTop = userflowDragRef.current.scrollTop - dy;
+    const nextX = userflowDragRef.current.startOffsetX + dx;
+    const nextY = userflowDragRef.current.startOffsetY + dy;
+    setUserflowOffset(clampUserflowOffset(nextX, nextY, lightboxScale));
   };
 
   const handleUserflowPointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!userflowScrollRef.current) {
+    if (!userflowViewportRef.current) {
       return;
     }
     userflowDragRef.current.isDown = false;
-    userflowScrollRef.current.releasePointerCapture(event.pointerId);
+    userflowViewportRef.current.releasePointerCapture(event.pointerId);
     setIsDraggingUserflow(false);
   };
 
@@ -642,8 +666,8 @@ export function CaseStudyPage() {
               </svg>
             </button>
             <div
-              ref={userflowScrollRef}
-              className={`h-full w-full overflow-auto ${
+              ref={userflowViewportRef}
+              className={`relative h-full w-full overflow-hidden ${
                 isDraggingUserflow ? "cursor-grabbing" : "cursor-grab"
               }`}
               style={{ touchAction: "none" }}
@@ -654,18 +678,26 @@ export function CaseStudyPage() {
               onPointerLeave={handleUserflowPointerUp}
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="flex min-h-full min-w-full items-center justify-center">
-                <Image
-                  alt=""
-                  src={assets.userflow}
-                  width={750}
-                  height={309}
-                  sizes="80vw"
-                  className="max-w-none object-contain"
-                  style={{ width: `${Math.round(750 * lightboxScale)}px`, height: "auto" }}
-                  priority
-                  unoptimized
-                />
+              <div className="absolute left-1/2 top-1/2">
+                <div
+                  style={{
+                    width: `${userflowBase.width}px`,
+                    height: `${userflowBase.height}px`,
+                    transform: `translate(-50%, -50%) translate(${userflowOffset.x}px, ${userflowOffset.y}px) scale(${lightboxScale})`,
+                    transformOrigin: "center",
+                  }}
+                >
+                  <Image
+                    alt=""
+                    src={assets.userflow}
+                    width={userflowBase.width}
+                    height={userflowBase.height}
+                    sizes="80vw"
+                    className="h-full w-full object-contain"
+                    priority
+                    unoptimized
+                  />
+                </div>
               </div>
             </div>
             <div className="absolute bottom-4 right-4 flex flex-col gap-2">
