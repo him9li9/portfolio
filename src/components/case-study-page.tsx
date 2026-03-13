@@ -28,6 +28,7 @@ export function CaseStudyPage() {
   const [isDraggingUserflow, setIsDraggingUserflow] = useState(false);
   const [canDragUserflow, setCanDragUserflow] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
+  const [isMobileLightbox, setIsMobileLightbox] = useState(false);
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
   const bodyScrollYRef = useRef(0);
@@ -119,6 +120,7 @@ export function CaseStudyPage() {
   useEffect(() => {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
+      setIsMobileLightbox(isMobile);
       const initialScale = isMobile ? 1.2 : 1.5;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
@@ -168,7 +170,8 @@ export function CaseStudyPage() {
           ticking = false;
           return;
         }
-        const scrollPos = window.scrollY + 140;
+        const scrollPos =
+          (document.documentElement.scrollTop || document.body.scrollTop || window.scrollY) + 140;
         let current = sections[0]?.dataset.sectionAnchor || "overview";
         sections.forEach((section) => {
           const top = section.getBoundingClientRect().top + window.scrollY;
@@ -350,7 +353,7 @@ export function CaseStudyPage() {
         animate="show"
         className="flex w-full flex-col gap-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:gap-[93px] sm:px-6 sm:pt-[66px] sm:pb-[140px]"
       >
-        <div id="overview" data-section-anchor="overview" className="scroll-mt-[90px]" />
+        <div id="overview" data-section-anchor="overview" className="h-px w-px scroll-mt-[90px]" />
         <motion.section variants={item} className="flex flex-col gap-6 sm:gap-6">
           <div className="flex flex-col gap-3 text-white">
             <h1 className="text-[40px] font-semibold leading-[48px]">MCN Softphone</h1>
@@ -374,7 +377,7 @@ export function CaseStudyPage() {
           </div>
         </motion.section>
 
-        <div id="about" data-section-anchor="about" className="scroll-mt-[90px]" />
+        <div id="about" data-section-anchor="about" className="h-px w-px scroll-mt-[90px]" />
         <motion.section variants={item} className="flex flex-col gap-8">
           <div className="flex flex-col gap-6">
             <h2 className="text-[32px] font-semibold leading-[40px]">О проекте</h2>
@@ -463,7 +466,7 @@ export function CaseStudyPage() {
           </div>
         </motion.section>
 
-        <div id="discovery" data-section-anchor="discovery" className="scroll-mt-[90px]" />
+        <div id="discovery" data-section-anchor="discovery" className="h-px w-px scroll-mt-[90px]" />
         <motion.section variants={item} className="flex flex-col gap-8">
           <h2 className="text-[32px] font-semibold leading-[40px]">Дискавери</h2>
 
@@ -666,7 +669,7 @@ export function CaseStudyPage() {
           </div>
         </motion.section>
 
-        <div id="design" data-section-anchor="design" className="scroll-mt-[90px]" />
+        <div id="design" data-section-anchor="design" className="h-px w-px scroll-mt-[90px]" />
         <motion.section variants={item} className="flex flex-col gap-6">
           <h2 className="text-[32px] font-semibold leading-[40px]">Проектирование</h2>
           <p className="text-[18px] leading-[1.4]">
@@ -719,7 +722,7 @@ export function CaseStudyPage() {
           </ul>
         </motion.section>
 
-        <div id="solution" data-section-anchor="solution" className="scroll-mt-[90px]" />
+        <div id="solution" data-section-anchor="solution" className="h-px w-px scroll-mt-[90px]" />
         <motion.section variants={item} className="flex flex-col gap-8">
           <div className="flex flex-col gap-6">
             <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
@@ -865,7 +868,7 @@ export function CaseStudyPage() {
                     width: `${userflowBase.width}px`,
                     height: `${userflowBase.height}px`,
                     transform: `translate(-50%, -50%) translate(${userflowOffset.x}px, ${userflowOffset.y}px) scale(${lightboxScale})`,
-                    transformOrigin: "center",
+                    transformOrigin: isMobileLightbox ? "left center" : "center",
                   }}
                 >
                   <Image
@@ -876,7 +879,8 @@ export function CaseStudyPage() {
                     sizes="(max-width: 640px) 90vw, 80vw"
                     className="h-full w-full select-none object-contain pointer-events-none"
                     draggable={false}
-                    loading="lazy"
+                    quality={100}
+                    priority
                   />
                 </div>
               </div>
