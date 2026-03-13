@@ -119,11 +119,15 @@ export function CaseStudyPage() {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
       setIsMobileViewport(isMobile);
-      const initialScale = isMobile ? 1.3 : 1.5;
+      const initialScale = isMobile ? 1.3 : 1.6;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
         if (!userflowViewportRef.current) {
+          return;
+        }
+        if (isMobile) {
+          userflowViewportRef.current.scrollTo({ left: 0, top: 0 });
           return;
         }
         const rect = userflowViewportRef.current.getBoundingClientRect();
@@ -155,10 +159,11 @@ export function CaseStudyPage() {
       }
       ticking = true;
       requestAnimationFrame(() => {
-        const scrollPos = window.scrollY + 140;
+        const triggerLine = window.innerHeight * 0.35;
         let current = sections[0]?.dataset.section || "overview";
         sections.forEach((section) => {
-          if (section.offsetTop <= scrollPos) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= triggerLine) {
             current = section.dataset.section || current;
           }
         });
@@ -167,7 +172,7 @@ export function CaseStudyPage() {
       });
     };
     update();
-    const timeoutId = window.setTimeout(update, 300);
+    const timeoutId = window.setTimeout(update, 200);
     window.addEventListener("load", update);
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
@@ -233,49 +238,6 @@ export function CaseStudyPage() {
   const endUserflowDrag = () => {
     userflowDragRef.current.isDown = false;
     setIsDraggingUserflow(false);
-  };
-
-  const handleUserflowPointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
-    event.preventDefault();
-    event.stopPropagation();
-    startUserflowDrag(event.clientX, event.clientY);
-    event.currentTarget.setPointerCapture(event.pointerId);
-  };
-
-  const handleUserflowPointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (!userflowDragRef.current.isDown) {
-      return;
-    }
-    event.preventDefault();
-    moveUserflowDrag(event.clientX, event.clientY);
-  };
-
-  const handleUserflowPointerUp = (event: React.PointerEvent<HTMLDivElement>) => {
-    endUserflowDrag();
-    event.currentTarget.releasePointerCapture(event.pointerId);
-  };
-
-  const handleUserflowTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (event.touches.length === 0) {
-      return;
-    }
-    event.preventDefault();
-    event.stopPropagation();
-    const touch = event.touches[0];
-    startUserflowDrag(touch.clientX, touch.clientY);
-  };
-
-  const handleUserflowTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (!userflowDragRef.current.isDown || event.touches.length === 0) {
-      return;
-    }
-    event.preventDefault();
-    const touch = event.touches[0];
-    moveUserflowDrag(touch.clientX, touch.clientY);
-  };
-
-  const handleUserflowTouchEnd = () => {
-    endUserflowDrag();
   };
 
 
@@ -835,42 +797,94 @@ export function CaseStudyPage() {
                 </span>
               </button>
             </div>
-            <div
-              ref={userflowViewportRef}
-              className="relative h-full w-full overflow-hidden cursor-grab active:cursor-grabbing"
-              style={{ touchAction: "none" }}
-              onPointerDown={handleUserflowPointerDown}
-              onPointerMove={handleUserflowPointerMove}
-              onPointerUp={handleUserflowPointerUp}
-              onPointerCancel={handleUserflowPointerUp}
-              onPointerLeave={handleUserflowPointerUp}
-              onTouchStart={handleUserflowTouchStart}
-              onTouchMove={handleUserflowTouchMove}
-              onTouchEnd={handleUserflowTouchEnd}
-              onClick={(event) => event.stopPropagation()}
-            >
-              <div className="absolute left-1/2 top-1/2">
-                <div
-                  style={{
-                    width: `${userflowBase.width}px`,
-                    height: `${userflowBase.height}px`,
-                    transform: `translate(-50%, -50%) translate(${userflowOffset.x}px, ${userflowOffset.y}px) scale(${lightboxScale})`,
-                    transformOrigin: "center",
-                  }}
-                >
+            {isMobileViewport ? (
+              <div
+                ref={userflowViewportRef}
+                className="relative h-full w-full overflow-hidden cursor-grab active:cursor-grabbing"
+                style={{ touchAction: "none" }}
+                onPointerDown={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  startUserflowDrag(event.clientX, event.clientY);
+                }}
+                onPointerMove={(event) => {
+                  if (!userflowDragRef.current.isDown) {
+                    return;
+                  }
+                  event.preventDefault();
+                  moveUserflowDrag(event.clientX, event.clientY);
+                }}
+                onPointerUp={() => endUserflowDrag()}
+                onPointerCancel={() => endUserflowDrag()}
+                onPointerLeave={() => endUserflowDrag()}
+              >
+                <div className="absolute left-1/2 top-1/2">
+                  <div
+                    style={{
+                      width: `${userflowBase.width}px`,
+                      height: `${userflowBase.height}px`,
+                      transform: `translate(-50%, -50%) translate(${userflowOffset.x}px, ${userflowOffset.y}px) scale(${lightboxScale})`,
+                      transformOrigin: "center",
+                    }}
+                  >
                   <Image
                     alt=""
                     src={assets.userflow}
                     width={userflowBase.width}
                     height={userflowBase.height}
-                    sizes={isMobileViewport ? "(max-width: 640px) 90vw, 80vw" : "80vw"}
+                    sizes="(max-width: 640px) 90vw, 80vw"
                     className="h-full w-full select-none object-contain pointer-events-none"
                     draggable={false}
                     priority
                   />
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              <div
+                ref={userflowViewportRef}
+                className="relative h-full w-full overflow-hidden cursor-grab active:cursor-grabbing"
+                style={{ touchAction: "none" }}
+                onPointerDown={(event) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  startUserflowDrag(event.clientX, event.clientY);
+                }}
+                onPointerMove={(event) => {
+                  if (!userflowDragRef.current.isDown) {
+                    return;
+                  }
+                  event.preventDefault();
+                  moveUserflowDrag(event.clientX, event.clientY);
+                }}
+                onPointerUp={() => endUserflowDrag()}
+                onPointerCancel={() => endUserflowDrag()}
+                onPointerLeave={() => endUserflowDrag()}
+                onClick={(event) => event.stopPropagation()}
+              >
+                <div className="absolute left-1/2 top-1/2">
+                  <div
+                    style={{
+                      width: `${userflowBase.width}px`,
+                      height: `${userflowBase.height}px`,
+                      transform: `translate(-50%, -50%) translate(${userflowOffset.x}px, ${userflowOffset.y}px) scale(${lightboxScale})`,
+                      transformOrigin: "center",
+                    }}
+                  >
+                    <Image
+                      alt=""
+                      src={assets.userflow}
+                      width={userflowBase.width}
+                      height={userflowBase.height}
+                      sizes="80vw"
+                      className="h-full w-full select-none object-contain pointer-events-none"
+                      draggable={false}
+                      priority
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
             <div className="absolute bottom-3 right-3 z-10 flex gap-2 sm:bottom-6 sm:right-6">
               <button
                 type="button"
