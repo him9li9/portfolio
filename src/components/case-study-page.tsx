@@ -15,7 +15,8 @@ const assets = {
   discoveryFeedback2: "/figma/case-discovery-feedback-2.png",
   competitorWhatsapp: "/figma/case-competitor-whatsapp.png",
   competitorOpenphone: "/figma/case-competitor-openphone.png",
-  userflow: "/figma/case-userflow.png"
+  userflow: "/figma/case-userflow.png",
+  solutionSuccess: "/figma/case-solution-success.png"
 };
 
 export function CaseStudyPage() {
@@ -399,6 +400,62 @@ export function CaseStudyPage() {
               проблемы.
             </li>
           </ul>
+        </motion.section>
+
+        <motion.section variants={item} className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6">
+            <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
+            <p className="text-[18px] leading-[1.4]">
+              Первый раунд тестирования показал: даже там, где логика казалась очевидной, пользователи
+              ошибались. Я собрала обратную связь, переработала несколько сценариев и проверила их
+              снова. Хочу остановиться на некоторых итерациях, которые сделали путь прозрачнее:
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-4 text-[18px] leading-[1.4]">
+            <p className="font-semibold">1. Экран успеха после регистрации</p>
+            <p>
+              В первой итерации это был отдельный экран с галочкой и кнопкой «Продолжить», на тестах
+              увидели, что люди зависали на 2-3 минуты — галочка привлекала внимание, а кнопка
+              терялась.
+            </p>
+            <p>
+              → Объединила экран успеха с выбором номера, чтобы после регистрации через Госуслуги
+              пользователь сразу видел свой номер и мог его подтвердить или заменить — без лишних
+              шагов и пауз.
+            </p>
+          </div>
+
+          <div className="bg-[#222] py-6">
+            <div className="mx-auto w-full max-w-[467px]">
+              <img alt="" src={assets.solutionSuccess} className="h-auto w-full object-contain" />
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 text-[18px] leading-[1.4]">
+            <p className="font-semibold">2. Ошибка при звонке</p>
+            <p>
+              Сначала я сделала экран ошибки, где просто показывали причину: «Недостаточно средств»,
+              «Нет сети», но пользователи всё равно не понимали, что делать дальше и писали в поддержку.
+            </p>
+            <p>
+              → Добавила контекстные кнопки действия — «Пополнить баланс», «Проверить соединение», и
+              дополнительную — «Написать в поддержку», чтобы пользователь мог что-то уточнить или
+              задать другой вопрос о проблеме.
+            </p>
+          </div>
+
+          <div className="flex flex-col gap-4 text-[18px] leading-[1.4]">
+            <p className="font-semibold">3. Узнать стоимость звонка</p>
+            <p>
+              В первой версии цену можно было увидеть, только начав набирать номер. Некоторым
+              пользователям было неудобно вводить номер каждый раз, чтобы оценить стоимость.
+            </p>
+            <p>
+              → Добавила кнопку «Выбрать из контактов» прямо на экран набора. При выборе контакта цена
+              сразу отображается — как и при ручном вводе.
+            </p>
+          </div>
         </motion.section>
       </motion.div>
 
