@@ -111,7 +111,7 @@ export function CaseStudyPage() {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
       setIsMobileViewport(isMobile);
-      const initialScale = isMobile ? 1.2 : 1.7;
+      const initialScale = isMobile ? 1.2 : 1.5;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
@@ -800,38 +800,6 @@ export function CaseStudyPage() {
                 </div>
               </div>
             )}
-            <div className="absolute bottom-3 right-3 z-10 flex gap-2 sm:bottom-6 sm:right-6">
-              <button
-                type="button"
-                aria-label="Zoom out"
-                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
-                onMouseDown={(event) => event.stopPropagation()}
-                onTouchStart={(event) => event.stopPropagation()}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
-                }}
-              >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
-                  –
-                </span>
-              </button>
-              <button
-                type="button"
-                aria-label="Zoom in"
-                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
-                onMouseDown={(event) => event.stopPropagation()}
-                onTouchStart={(event) => event.stopPropagation()}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
-                }}
-              >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
-                  +
-                </span>
-              </button>
-            </div>
           </div>
         </div>
       ) : null}
