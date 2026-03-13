@@ -26,6 +26,8 @@ export function CaseStudyPage() {
   const [canHover, setCanHover] = useState(false);
   const [lightboxScale, setLightboxScale] = useState(1.3);
   const [isDraggingUserflow, setIsDraggingUserflow] = useState(false);
+  const [canDragUserflow, setCanDragUserflow] = useState(false);
+  const [activeSection, setActiveSection] = useState("overview");
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
   const userflowDragRef = useRef({
@@ -105,7 +107,7 @@ export function CaseStudyPage() {
   useEffect(() => {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
-      const initialScale = isMobile ? 1.3 : 1.7;
+      const initialScale = isMobile ? 1.2 : 1.6;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
@@ -120,6 +122,44 @@ export function CaseStudyPage() {
       });
     }
   }, [isUserflowOpen]);
+
+  useEffect(() => {
+    if (!isUserflowOpen) {
+      return;
+    }
+    const updateCanDrag = () => {
+      if (!userflowViewportRef.current) {
+        return;
+      }
+      const rect = userflowViewportRef.current.getBoundingClientRect();
+      const scaledWidth = userflowBase.width * lightboxScale;
+      const scaledHeight = userflowBase.height * lightboxScale;
+      setCanDragUserflow(scaledWidth > rect.width || scaledHeight > rect.height);
+    };
+    updateCanDrag();
+    window.addEventListener("resize", updateCanDrag);
+    return () => window.removeEventListener("resize", updateCanDrag);
+  }, [isUserflowOpen, lightboxScale]);
+
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll("[data-section]"));
+    if (sections.length === 0) {
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target instanceof HTMLElement) {
+          setActiveSection(visible.target.dataset.section || "overview");
+        }
+      },
+      { rootMargin: "-30% 0px -55% 0px", threshold: [0.1, 0.25, 0.5] }
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   const clampUserflowOffset = (x: number, y: number, scale: number) => {
     if (!userflowViewportRef.current) {
@@ -145,6 +185,9 @@ export function CaseStudyPage() {
   }, [isUserflowOpen, lightboxScale]);
 
   const startUserflowDrag = (clientX: number, clientY: number) => {
+    if (!canDragUserflow) {
+      return;
+    }
     if (!userflowViewportRef.current) {
       return;
     }
@@ -264,7 +307,12 @@ export function CaseStudyPage() {
         animate="show"
         className="flex w-full flex-col gap-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:gap-[93px] sm:px-6 sm:pt-[66px] sm:pb-[140px]"
       >
-        <motion.section variants={item} className="flex flex-col gap-6 sm:gap-6">
+        <motion.section
+          id="overview"
+          data-section="overview"
+          variants={item}
+          className="flex flex-col gap-6 sm:gap-6 scroll-mt-[90px]"
+        >
           <div className="flex flex-col gap-3 text-white">
             <h1 className="text-[40px] font-semibold leading-[48px]">MCN Softphone</h1>
             <p className="text-[18px] leading-[1.4]">
@@ -288,7 +336,12 @@ export function CaseStudyPage() {
           </div>
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col gap-8">
+        <motion.section
+          id="about"
+          data-section="about"
+          variants={item}
+          className="flex flex-col gap-8 scroll-mt-[90px]"
+        >
           <div className="flex flex-col gap-6">
             <h2 className="text-[32px] font-semibold leading-[40px]">О проекте</h2>
             <p className="text-[18px] leading-[1.4]">
@@ -378,7 +431,12 @@ export function CaseStudyPage() {
           </div>
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col gap-8">
+        <motion.section
+          id="discovery"
+          data-section="discovery"
+          variants={item}
+          className="flex flex-col gap-8 scroll-mt-[90px]"
+        >
           <h2 className="text-[32px] font-semibold leading-[40px]">Дискавери</h2>
 
           <div className="text-[18px] leading-[1.4]">
@@ -586,7 +644,12 @@ export function CaseStudyPage() {
           </div>
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col gap-6">
+        <motion.section
+          id="design"
+          data-section="design"
+          variants={item}
+          className="flex flex-col gap-6 scroll-mt-[90px]"
+        >
           <h2 className="text-[32px] font-semibold leading-[40px]">Проектирование</h2>
           <p className="text-[18px] leading-[1.4]">
             Цель этапа — определить, как система будет вести себя в диалоге с пользователем, чтобы
@@ -639,7 +702,12 @@ export function CaseStudyPage() {
           </ul>
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col gap-8">
+        <motion.section
+          id="solution"
+          data-section="solution"
+          variants={item}
+          className="flex flex-col gap-8 scroll-mt-[90px]"
+        >
           <div className="flex flex-col gap-6">
             <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
             <p className="text-[18px] leading-[1.4]">
@@ -705,6 +773,32 @@ export function CaseStudyPage() {
         </motion.section>
       </motion.div>
 
+      <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-3 lg:flex">
+        {[
+          { id: "overview", label: "Введение" },
+          { id: "about", label: "О проекте" },
+          { id: "discovery", label: "Дискавери" },
+          { id: "design", label: "Проектирование" },
+          { id: "solution", label: "Решение" },
+        ].map((item) => (
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            className="group pointer-events-auto flex items-center justify-end gap-3 text-right"
+            onClick={() => setActiveSection(item.id)}
+          >
+            <span className="pointer-events-none max-w-[160px] rounded-full bg-[#2a2a2a] px-3 py-1 text-[12px] leading-[1.4] text-[#cfcfcf] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              {item.label}
+            </span>
+            <span
+              className={`h-[6px] w-[22px] rounded-full transition-colors duration-200 ${
+                activeSection === item.id ? "bg-[#6f9dff]" : "bg-[#3a3a3a]"
+              }`}
+            />
+          </a>
+        ))}
+      </nav>
+
       {isUserflowOpen ? (
         <div
           className="fixed inset-0 z-20 flex items-center justify-center px-6"
@@ -714,36 +808,6 @@ export function CaseStudyPage() {
           <div className="lightbox-backdrop absolute inset-0" />
           <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[28px] bg-[#222] p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
             <div className="absolute right-3 top-3 z-10 flex gap-2 sm:right-6 sm:top-6">
-              <button
-                type="button"
-                aria-label="Zoom out"
-                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
-                onMouseDown={(event) => event.stopPropagation()}
-                onTouchStart={(event) => event.stopPropagation()}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
-                }}
-              >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
-                  –
-                </span>
-              </button>
-              <button
-                type="button"
-                aria-label="Zoom in"
-                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
-                onMouseDown={(event) => event.stopPropagation()}
-                onTouchStart={(event) => event.stopPropagation()}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
-                }}
-              >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
-                  +
-                </span>
-              </button>
               <button
                 type="button"
                 aria-label="Close"
@@ -770,7 +834,7 @@ export function CaseStudyPage() {
             <div
               ref={userflowViewportRef}
               className={`relative h-full w-full overflow-hidden ${
-                isDraggingUserflow ? "cursor-grabbing" : "cursor-grab"
+                canDragUserflow ? (isDraggingUserflow ? "cursor-grabbing" : "cursor-grab") : "cursor-default"
               }`}
               style={{ touchAction: "none" }}
               onMouseDown={handleUserflowMouseDown}
@@ -804,6 +868,38 @@ export function CaseStudyPage() {
                   />
                 </div>
               </div>
+            </div>
+            <div className="absolute bottom-3 right-3 z-10 flex gap-2 sm:bottom-6 sm:right-6">
+              <button
+                type="button"
+                aria-label="Zoom out"
+                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
+                onMouseDown={(event) => event.stopPropagation()}
+                onTouchStart={(event) => event.stopPropagation()}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
+                }}
+              >
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
+                  –
+                </span>
+              </button>
+              <button
+                type="button"
+                aria-label="Zoom in"
+                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
+                onMouseDown={(event) => event.stopPropagation()}
+                onTouchStart={(event) => event.stopPropagation()}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
+                }}
+              >
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
+                  +
+                </span>
+              </button>
             </div>
           </div>
         </div>
