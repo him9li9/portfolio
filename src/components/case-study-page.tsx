@@ -3,8 +3,7 @@
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { UserflowLightbox } from "./userflow-lightbox";
+import { useEffect, useRef, useState } from "react";
 
 const assets = {
   heart: "/figma/heart.svg",
@@ -25,7 +24,22 @@ export function CaseStudyPage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [isUserflowOpen, setIsUserflowOpen] = useState(false);
   const [canHover, setCanHover] = useState(false);
+  const [lightboxScale, setLightboxScale] = useState(1.3);
+  const [isDraggingUserflow, setIsDraggingUserflow] = useState(false);
+  const [canDragUserflow, setCanDragUserflow] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
+  const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
+  const userflowViewportRef = useRef<HTMLDivElement | null>(null);
+  const bodyScrollYRef = useRef(0);
+  const userflowDragRef = useRef({
+    isDown: false,
+    moved: false,
+    startX: 0,
+    startY: 0,
+    startOffsetX: 0,
+    startOffsetY: 0,
+  });
+  const userflowBase = { width: 750, height: 309 };
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -64,6 +78,35 @@ export function CaseStudyPage() {
   }, []);
 
   useEffect(() => {
+    if (!isUserflowOpen) {
+      return;
+    }
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsUserflowOpen(false);
+      }
+    };
+    document.addEventListener("keydown", onKeyDown);
+    const previousOverflow = document.body.style.overflow;
+    const previousPosition = document.body.style.position;
+    const previousTop = document.body.style.top;
+    const previousWidth = document.body.style.width;
+    bodyScrollYRef.current = window.scrollY;
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${bodyScrollYRef.current}px`;
+    document.body.style.width = "100%";
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+      document.body.style.position = previousPosition;
+      document.body.style.top = previousTop;
+      document.body.style.width = previousWidth;
+      window.scrollTo({ top: bodyScrollYRef.current, left: 0, behavior: "instant" });
+    };
+  }, [isUserflowOpen]);
+
+  useEffect(() => {
     if (typeof window === "undefined") {
       return;
     }
@@ -72,6 +115,43 @@ export function CaseStudyPage() {
     }
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
+
+  useEffect(() => {
+    if (isUserflowOpen) {
+      const isMobile = window.matchMedia("(max-width: 640px)").matches;
+      const initialScale = isMobile ? 1.2 : 1.5;
+      setLightboxScale(initialScale);
+      setUserflowOffset({ x: 0, y: 0 });
+      requestAnimationFrame(() => {
+        if (!userflowViewportRef.current) {
+          return;
+        }
+        const rect = userflowViewportRef.current.getBoundingClientRect();
+        const scaledWidth = userflowBase.width * initialScale;
+        const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
+        const initialX = isMobile ? maxX : 0;
+        setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
+      });
+    }
+  }, [isUserflowOpen]);
+
+  useEffect(() => {
+    if (!isUserflowOpen) {
+      return;
+    }
+    const updateCanDrag = () => {
+      if (!userflowViewportRef.current) {
+        return;
+      }
+      const rect = userflowViewportRef.current.getBoundingClientRect();
+      const scaledWidth = userflowBase.width * lightboxScale;
+      const scaledHeight = userflowBase.height * lightboxScale;
+      setCanDragUserflow(scaledWidth > rect.width || scaledHeight > rect.height);
+    };
+    updateCanDrag();
+    window.addEventListener("resize", updateCanDrag);
+    return () => window.removeEventListener("resize", updateCanDrag);
+  }, [isUserflowOpen, lightboxScale]);
 
   useEffect(() => {
     let ticking = false;
@@ -115,6 +195,111 @@ export function CaseStudyPage() {
       resizeObserver.disconnect();
     };
   }, []);
+
+  const clampUserflowOffset = (x: number, y: number, scale: number) => {
+    if (!userflowViewportRef.current) {
+      return { x: 0, y: 0 };
+    }
+    const rect = userflowViewportRef.current.getBoundingClientRect();
+    const edgePadding = rect.width < 640 ? 16 : 32;
+    const scaledWidth = userflowBase.width * scale;
+    const scaledHeight = userflowBase.height * scale;
+    const maxX = Math.max(0, (scaledWidth - (rect.width - edgePadding * 2)) / 2);
+    const maxY = Math.max(0, (scaledHeight - (rect.height - edgePadding * 2)) / 2);
+    return {
+      x: Math.max(-maxX, Math.min(maxX, x)),
+      y: Math.max(-maxY, Math.min(maxY, y)),
+    };
+  };
+
+  useEffect(() => {
+    if (!isUserflowOpen) {
+      return;
+    }
+    setUserflowOffset((prev) => clampUserflowOffset(prev.x, prev.y, lightboxScale));
+  }, [isUserflowOpen, lightboxScale]);
+
+  const startUserflowDrag = (clientX: number, clientY: number) => {
+    if (!canDragUserflow) {
+      return;
+    }
+    if (!userflowViewportRef.current) {
+      return;
+    }
+    userflowDragRef.current.isDown = true;
+    userflowDragRef.current.moved = false;
+    userflowDragRef.current.startX = clientX;
+    userflowDragRef.current.startY = clientY;
+    userflowDragRef.current.startOffsetX = userflowOffset.x;
+    userflowDragRef.current.startOffsetY = userflowOffset.y;
+    setIsDraggingUserflow(false);
+  };
+
+  const moveUserflowDrag = (clientX: number, clientY: number) => {
+    if (!userflowViewportRef.current || !userflowDragRef.current.isDown) {
+      return;
+    }
+    const dx = clientX - userflowDragRef.current.startX;
+    const dy = clientY - userflowDragRef.current.startY;
+    if (!userflowDragRef.current.moved && (Math.abs(dx) > 3 || Math.abs(dy) > 3)) {
+      userflowDragRef.current.moved = true;
+      setIsDraggingUserflow(true);
+    }
+    const nextX = userflowDragRef.current.startOffsetX + dx;
+    const nextY = userflowDragRef.current.startOffsetY + dy;
+    setUserflowOffset(clampUserflowOffset(nextX, nextY, lightboxScale));
+  };
+
+  const endUserflowDrag = () => {
+    userflowDragRef.current.isDown = false;
+    setIsDraggingUserflow(false);
+  };
+
+  const handleUserflowMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (event.button !== 0) {
+      return;
+    }
+    event.preventDefault();
+    startUserflowDrag(event.clientX, event.clientY);
+  };
+
+  const handleUserflowMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (!userflowDragRef.current.isDown) {
+      return;
+    }
+    event.preventDefault();
+    moveUserflowDrag(event.clientX, event.clientY);
+  };
+
+  const handleUserflowMouseUp = () => {
+    endUserflowDrag();
+  };
+
+  const handleUserflowMouseLeave = () => {
+    endUserflowDrag();
+  };
+
+  const handleUserflowTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (event.touches.length === 0) {
+      return;
+    }
+    event.preventDefault();
+    const touch = event.touches[0];
+    startUserflowDrag(touch.clientX, touch.clientY);
+  };
+
+  const handleUserflowTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (event.touches.length === 0) {
+      return;
+    }
+    event.preventDefault();
+    const touch = event.touches[0];
+    moveUserflowDrag(touch.clientX, touch.clientY);
+  };
+
+  const handleUserflowTouchEnd = () => {
+    endUserflowDrag();
+  };
 
   return (
     <main className="bg-[#171717] text-white">
@@ -649,11 +834,112 @@ export function CaseStudyPage() {
         ))}
       </nav>
 
-      <UserflowLightbox
-        isOpen={isUserflowOpen}
-        onClose={() => setIsUserflowOpen(false)}
-        src={assets.userflow}
-      />
+      {isUserflowOpen ? (
+        <div
+          className="fixed inset-0 z-20 flex items-center justify-center px-6"
+          onClick={() => setIsUserflowOpen(false)}
+          role="presentation"
+          onTouchMove={(event) => event.preventDefault()}
+        >
+          <div className="lightbox-backdrop absolute inset-0" />
+          <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[28px] bg-[#222] p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
+            <div className="absolute right-3 top-3 z-10 flex gap-2 sm:right-6 sm:top-6">
+              <button
+                type="button"
+                aria-label="Close"
+                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6 sm:cursor-default"
+                onMouseDown={(event) => event.stopPropagation()}
+                onTouchStart={(event) => event.stopPropagation()}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setIsUserflowOpen(false);
+                }}
+              >
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
+                  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+                    <path
+                      d="M4 4l8 8M12 4l-8 8"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <div
+              ref={userflowViewportRef}
+              className={`relative h-full w-full overflow-hidden ${
+                canDragUserflow ? (isDraggingUserflow ? "cursor-grabbing" : "cursor-grab") : "cursor-default"
+              }`}
+              style={{ touchAction: "none" }}
+              onMouseDown={handleUserflowMouseDown}
+              onMouseMove={handleUserflowMouseMove}
+              onMouseUp={handleUserflowMouseUp}
+              onMouseLeave={handleUserflowMouseLeave}
+              onTouchStart={handleUserflowTouchStart}
+              onTouchMove={handleUserflowTouchMove}
+              onTouchEnd={handleUserflowTouchEnd}
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="absolute left-1/2 top-1/2">
+                <div
+                  style={{
+                    width: `${userflowBase.width}px`,
+                    height: `${userflowBase.height}px`,
+                    transform: `translate(-50%, -50%) translate(${userflowOffset.x}px, ${userflowOffset.y}px) scale(${lightboxScale})`,
+                    transformOrigin: "center",
+                  }}
+                >
+                  <Image
+                    alt=""
+                    src={assets.userflow}
+                    width={userflowBase.width}
+                    height={userflowBase.height}
+                    sizes="80vw"
+                    className="h-full w-full select-none object-contain pointer-events-none"
+                    draggable={false}
+                    priority
+                    unoptimized
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="absolute bottom-3 right-3 z-10 flex gap-2 sm:bottom-6 sm:right-6">
+              <button
+                type="button"
+                aria-label="Zoom out"
+                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
+                onMouseDown={(event) => event.stopPropagation()}
+                onTouchStart={(event) => event.stopPropagation()}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
+                }}
+              >
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
+                  –
+                </span>
+              </button>
+              <button
+                type="button"
+                aria-label="Zoom in"
+                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
+                onMouseDown={(event) => event.stopPropagation()}
+                onTouchStart={(event) => event.stopPropagation()}
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
+                }}
+              >
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
+                  +
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </main>
   );
 }
