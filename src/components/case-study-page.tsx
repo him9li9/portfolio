@@ -3,7 +3,8 @@
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import type { PointerEvent as ReactPointerEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const assets = {
   heart: "/figma/heart.svg",
@@ -25,6 +26,16 @@ export function CaseStudyPage() {
   const [isUserflowOpen, setIsUserflowOpen] = useState(false);
   const [canHover, setCanHover] = useState(false);
   const [lightboxScale, setLightboxScale] = useState(1);
+  const [isDraggingUserflow, setIsDraggingUserflow] = useState(false);
+  const userflowScrollRef = useRef<HTMLDivElement | null>(null);
+  const userflowDragRef = useRef({
+    isDown: false,
+    moved: false,
+    startX: 0,
+    startY: 0,
+    scrollLeft: 0,
+    scrollTop: 0,
+  });
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -85,6 +96,45 @@ export function CaseStudyPage() {
       setLightboxScale(1);
     }
   }, [isUserflowOpen]);
+
+  const handleUserflowPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!userflowScrollRef.current) {
+      return;
+    }
+    const containerEl = userflowScrollRef.current;
+    userflowDragRef.current.isDown = true;
+    userflowDragRef.current.moved = false;
+    userflowDragRef.current.startX = event.clientX;
+    userflowDragRef.current.startY = event.clientY;
+    userflowDragRef.current.scrollLeft = containerEl.scrollLeft;
+    userflowDragRef.current.scrollTop = containerEl.scrollTop;
+    setIsDraggingUserflow(false);
+    containerEl.setPointerCapture(event.pointerId);
+  };
+
+  const handleUserflowPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!userflowScrollRef.current || !userflowDragRef.current.isDown) {
+      return;
+    }
+    const containerEl = userflowScrollRef.current;
+    const dx = event.clientX - userflowDragRef.current.startX;
+    const dy = event.clientY - userflowDragRef.current.startY;
+    if (!userflowDragRef.current.moved && (Math.abs(dx) > 3 || Math.abs(dy) > 3)) {
+      userflowDragRef.current.moved = true;
+      setIsDraggingUserflow(true);
+    }
+    containerEl.scrollLeft = userflowDragRef.current.scrollLeft - dx;
+    containerEl.scrollTop = userflowDragRef.current.scrollTop - dy;
+  };
+
+  const handleUserflowPointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!userflowScrollRef.current) {
+      return;
+    }
+    userflowDragRef.current.isDown = false;
+    userflowScrollRef.current.releasePointerCapture(event.pointerId);
+    setIsDraggingUserflow(false);
+  };
 
   return (
     <main className="bg-[#171717] text-white">
@@ -591,17 +641,28 @@ export function CaseStudyPage() {
                 />
               </svg>
             </button>
-            <div className="h-full w-full overflow-auto">
-              <div className="flex min-h-full w-full items-center justify-center">
+            <div
+              ref={userflowScrollRef}
+              className={`h-full w-full overflow-auto ${
+                isDraggingUserflow ? "cursor-grabbing" : "cursor-grab"
+              }`}
+              style={{ touchAction: "none" }}
+              onPointerDown={handleUserflowPointerDown}
+              onPointerMove={handleUserflowPointerMove}
+              onPointerUp={handleUserflowPointerUp}
+              onPointerCancel={handleUserflowPointerUp}
+              onPointerLeave={handleUserflowPointerUp}
+              onClick={(event) => event.stopPropagation()}
+            >
+              <div className="flex min-h-full min-w-full items-center justify-center">
                 <Image
                   alt=""
                   src={assets.userflow}
                   width={750}
                   height={309}
                   sizes="80vw"
-                  className="max-w-none cursor-grab object-contain active:cursor-grabbing"
-                  onClick={() => setIsUserflowOpen(false)}
-                  style={{ width: `${Math.round(lightboxScale * 100)}%`, height: "auto", touchAction: "pinch-zoom" }}
+                  className="max-w-none object-contain"
+                  style={{ width: `${Math.round(750 * lightboxScale)}px`, height: "auto" }}
                   priority
                   unoptimized
                 />
