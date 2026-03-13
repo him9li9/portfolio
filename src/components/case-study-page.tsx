@@ -145,6 +145,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 417px"
                 className="h-auto w-full object-contain"
                 priority
+                unoptimized
               />
             </div>
           </div>
@@ -183,6 +184,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 323px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[1.4]">
@@ -200,6 +202,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 527px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[1.4]">
@@ -283,6 +286,7 @@ export function CaseStudyPage() {
               sizes="(max-width: 640px) 100vw, 760px"
               className="h-auto w-full object-contain"
               loading="lazy"
+              unoptimized
             />
           </div>
 
@@ -308,6 +312,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 427px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
           </div>
@@ -334,6 +339,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 427px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
               <Image
                 alt=""
@@ -343,6 +349,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 427px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
           </div>
@@ -372,6 +379,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 600px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
             <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
@@ -395,6 +403,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 704px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
             <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
@@ -470,6 +479,7 @@ export function CaseStudyPage() {
                   sizes="(max-width: 640px) 100vw, 750px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
+                  unoptimized
                 />
               </button>
             </div>
@@ -526,6 +536,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 467px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
           </div>
@@ -564,7 +575,7 @@ export function CaseStudyPage() {
           role="presentation"
         >
           <div className="lightbox-backdrop absolute inset-0" />
-          <div className="relative h-[80vh] w-[92vw] overflow-auto rounded-[28px] bg-[#222] p-4 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[80vw] sm:p-10">
+          <div className="relative h-[80vh] w-[92vw] overflow-hidden rounded-[28px] bg-[#222] p-4 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[80vw] sm:p-10">
             <button
               type="button"
               aria-label="Close"
@@ -580,22 +591,23 @@ export function CaseStudyPage() {
                 />
               </svg>
             </button>
-            <div
-              className="origin-center transition-transform duration-150"
-              style={{ transform: `scale(${lightboxScale})`, touchAction: "pinch-zoom" }}
-            >
-              <Image
-                alt=""
-                src={assets.userflow}
-                width={750}
-                height={309}
-                sizes="80vw"
-                className="h-full w-full cursor-pointer object-contain sm:cursor-zoom-in"
-                onClick={() => setIsUserflowOpen(false)}
-                priority
-              />
+            <div className="h-full w-full overflow-auto">
+              <div className="flex min-h-full w-full items-center justify-center">
+                <Image
+                  alt=""
+                  src={assets.userflow}
+                  width={750}
+                  height={309}
+                  sizes="80vw"
+                  className="max-w-none cursor-grab object-contain active:cursor-grabbing"
+                  onClick={() => setIsUserflowOpen(false)}
+                  style={{ width: `${Math.round(lightboxScale * 100)}%`, height: "auto", touchAction: "pinch-zoom" }}
+                  priority
+                  unoptimized
+                />
+              </div>
             </div>
-            <div className="absolute bottom-4 right-4 flex flex-col gap-2 sm:hidden">
+            <div className="absolute bottom-4 right-4 flex flex-col gap-2">
               <button
                 type="button"
                 aria-label="Zoom in"
