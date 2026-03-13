@@ -117,7 +117,7 @@ export function CaseStudyPage() {
         const rect = userflowViewportRef.current.getBoundingClientRect();
         const scaledWidth = userflowBase.width * initialScale;
         const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-        const initialX = isMobile ? -maxX : 0;
+        const initialX = isMobile ? maxX : 0;
         setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
       });
     }
@@ -803,12 +803,12 @@ export function CaseStudyPage() {
             className="group pointer-events-auto flex items-center justify-end gap-3 text-right"
             onClick={() => setActiveSection(item.id)}
           >
-            <span className="pointer-events-none max-w-[160px] rounded-full bg-[#2a2a2a] px-3 py-1 text-[12px] leading-[1.4] text-[#cfcfcf] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <span className="pointer-events-none max-w-[160px] rounded-full bg-[#2a2a2a] px-3 py-1 text-[14px] leading-[1.4] text-[#cfcfcf] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
               {item.label}
             </span>
             <span
               className={`h-[6px] w-[22px] rounded-full transition-colors duration-200 ${
-                activeSection === item.id ? "bg-[#6f9dff]" : "bg-[#3a3a3a]"
+                activeSection === item.id ? "bg-white" : "bg-[#3a3a3a]"
               }`}
             />
           </a>
