@@ -30,14 +30,6 @@ export function CaseStudyPage() {
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
   const bodyScrollYRef = useRef(0);
-  const userflowDragRef = useRef({
-    isDown: false,
-    moved: false,
-    startX: 0,
-    startY: 0,
-    startOffsetX: 0,
-    startOffsetY: 0,
-  });
   const userflowBase = { width: 750, height: 309 };
   const container = {
     hidden: { opacity: 0 },
@@ -119,7 +111,7 @@ export function CaseStudyPage() {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
       setIsMobileViewport(isMobile);
-      const initialScale = isMobile ? 1.3 : 1.6;
+      const initialScale = isMobile ? 1.2 : 1.7;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
@@ -172,13 +164,9 @@ export function CaseStudyPage() {
       });
     };
     update();
-    const timeoutId = window.setTimeout(update, 200);
-    window.addEventListener("load", update);
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     return () => {
-      window.clearTimeout(timeoutId);
-      window.removeEventListener("load", update);
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
@@ -206,39 +194,6 @@ export function CaseStudyPage() {
     }
     setUserflowOffset((prev) => clampUserflowOffset(prev.x, prev.y, lightboxScale));
   }, [isUserflowOpen, lightboxScale]);
-
-  const startUserflowDrag = (clientX: number, clientY: number) => {
-    if (!userflowViewportRef.current) {
-      return;
-    }
-    userflowDragRef.current.isDown = true;
-    userflowDragRef.current.moved = false;
-    userflowDragRef.current.startX = clientX;
-    userflowDragRef.current.startY = clientY;
-    userflowDragRef.current.startOffsetX = userflowOffset.x;
-    userflowDragRef.current.startOffsetY = userflowOffset.y;
-    setIsDraggingUserflow(false);
-  };
-
-  const moveUserflowDrag = (clientX: number, clientY: number) => {
-    if (!userflowViewportRef.current || !userflowDragRef.current.isDown) {
-      return;
-    }
-    const dx = clientX - userflowDragRef.current.startX;
-    const dy = clientY - userflowDragRef.current.startY;
-    if (!userflowDragRef.current.moved && (Math.abs(dx) > 3 || Math.abs(dy) > 3)) {
-      userflowDragRef.current.moved = true;
-      setIsDraggingUserflow(true);
-    }
-    const nextX = userflowDragRef.current.startOffsetX + dx;
-    const nextY = userflowDragRef.current.startOffsetY + dy;
-    setUserflowOffset(clampUserflowOffset(nextX, nextY, lightboxScale));
-  };
-
-  const endUserflowDrag = () => {
-    userflowDragRef.current.isDown = false;
-    setIsDraggingUserflow(false);
-  };
 
 
   return (
@@ -766,12 +721,10 @@ export function CaseStudyPage() {
       {isUserflowOpen ? (
         <div
           className="fixed inset-0 z-20 flex items-center justify-center px-6"
+          onClick={() => setIsUserflowOpen(false)}
           role="presentation"
         >
-          <div
-            className="lightbox-backdrop absolute inset-0"
-            onClick={() => setIsUserflowOpen(false)}
-          />
+          <div className="lightbox-backdrop absolute inset-0" />
           <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[28px] bg-[#222] p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
             <div className="absolute right-3 top-3 z-10 flex gap-2 sm:right-6 sm:top-6">
               <button
@@ -800,66 +753,28 @@ export function CaseStudyPage() {
             {isMobileViewport ? (
               <div
                 ref={userflowViewportRef}
-                className="relative h-full w-full overflow-hidden cursor-grab active:cursor-grabbing"
-                style={{ touchAction: "none" }}
-                onPointerDown={(event) => {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  startUserflowDrag(event.clientX, event.clientY);
-                }}
-                onPointerMove={(event) => {
-                  if (!userflowDragRef.current.isDown) {
-                    return;
-                  }
-                  event.preventDefault();
-                  moveUserflowDrag(event.clientX, event.clientY);
-                }}
-                onPointerUp={() => endUserflowDrag()}
-                onPointerCancel={() => endUserflowDrag()}
-                onPointerLeave={() => endUserflowDrag()}
+                className="relative h-full w-full overflow-auto"
+                style={{ WebkitOverflowScrolling: "touch", touchAction: "pan-x pan-y" }}
+                onClick={(event) => event.stopPropagation()}
               >
-                <div className="absolute left-1/2 top-1/2">
-                  <div
-                    style={{
-                      width: `${userflowBase.width}px`,
-                      height: `${userflowBase.height}px`,
-                      transform: `translate(-50%, -50%) translate(${userflowOffset.x}px, ${userflowOffset.y}px) scale(${lightboxScale})`,
-                      transformOrigin: "center",
-                    }}
-                  >
+                <div className="flex min-h-full min-w-full items-start justify-start px-4 py-6">
                   <Image
                     alt=""
                     src={assets.userflow}
                     width={userflowBase.width}
                     height={userflowBase.height}
                     sizes="(max-width: 640px) 90vw, 80vw"
-                    className="h-full w-full select-none object-contain pointer-events-none"
+                    className="h-auto object-contain"
+                    style={{ width: `${Math.round(userflowBase.width * lightboxScale)}px` }}
                     draggable={false}
                     priority
                   />
-                  </div>
                 </div>
               </div>
             ) : (
               <div
                 ref={userflowViewportRef}
-                className="relative h-full w-full overflow-hidden cursor-grab active:cursor-grabbing"
-                style={{ touchAction: "none" }}
-                onPointerDown={(event) => {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  startUserflowDrag(event.clientX, event.clientY);
-                }}
-                onPointerMove={(event) => {
-                  if (!userflowDragRef.current.isDown) {
-                    return;
-                  }
-                  event.preventDefault();
-                  moveUserflowDrag(event.clientX, event.clientY);
-                }}
-                onPointerUp={() => endUserflowDrag()}
-                onPointerCancel={() => endUserflowDrag()}
-                onPointerLeave={() => endUserflowDrag()}
+                className="relative h-full w-full overflow-hidden cursor-default"
                 onClick={(event) => event.stopPropagation()}
               >
                 <div className="absolute left-1/2 top-1/2">
