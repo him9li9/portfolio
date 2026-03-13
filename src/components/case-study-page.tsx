@@ -129,7 +129,7 @@ export function CaseStudyPage() {
         const rect = userflowViewportRef.current.getBoundingClientRect();
         const scaledWidth = userflowBase.width * initialScale;
         const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-        const initialX = isMobile ? maxX : 0;
+        const initialX = isMobile ? -maxX : 0;
         setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
       });
     }
@@ -179,17 +179,23 @@ export function CaseStudyPage() {
       });
     };
     update();
-    const timeouts = [0, 100, 300, 600].map((delay) => window.setTimeout(update, delay));
+    const timeouts = [0, 100, 300, 600, 1000].map((delay) => window.setTimeout(update, delay));
+    const raf1 = requestAnimationFrame(update);
+    const raf2 = requestAnimationFrame(update);
     const fontsReady = document.fonts?.ready;
     fontsReady?.then(() => update());
     window.addEventListener("load", update);
+    window.addEventListener("pageshow", update);
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
     const resizeObserver = new ResizeObserver(() => update());
     resizeObserver.observe(document.body);
     return () => {
       timeouts.forEach((id) => window.clearTimeout(id));
+      cancelAnimationFrame(raf1);
+      cancelAnimationFrame(raf2);
       window.removeEventListener("load", update);
+      window.removeEventListener("pageshow", update);
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
       resizeObserver.disconnect();
