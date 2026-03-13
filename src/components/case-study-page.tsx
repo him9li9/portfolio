@@ -28,6 +28,7 @@ export function CaseStudyPage() {
   const [isDraggingUserflow, setIsDraggingUserflow] = useState(false);
   const [canDragUserflow, setCanDragUserflow] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
   const userflowDragRef = useRef({
@@ -107,6 +108,7 @@ export function CaseStudyPage() {
   useEffect(() => {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
+      setIsMobileViewport(isMobile);
       const initialScale = isMobile ? 1.2 : 1.6;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
@@ -124,6 +126,14 @@ export function CaseStudyPage() {
   }, [isUserflowOpen]);
 
   useEffect(() => {
+    const mql = window.matchMedia("(max-width: 640px)");
+    const update = () => setIsMobileViewport(mql.matches);
+    update();
+    mql.addEventListener("change", update);
+    return () => mql.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
     if (!isUserflowOpen) {
       return;
     }
@@ -134,7 +144,9 @@ export function CaseStudyPage() {
       const rect = userflowViewportRef.current.getBoundingClientRect();
       const scaledWidth = userflowBase.width * lightboxScale;
       const scaledHeight = userflowBase.height * lightboxScale;
-      setCanDragUserflow(scaledWidth > rect.width || scaledHeight > rect.height);
+      setCanDragUserflow(
+        isMobileViewport && (scaledWidth > rect.width || scaledHeight > rect.height)
+      );
     };
     updateCanDrag();
     window.addEventListener("resize", updateCanDrag);
@@ -155,7 +167,7 @@ export function CaseStudyPage() {
           setActiveSection(visible.target.dataset.section || "overview");
         }
       },
-      { rootMargin: "-30% 0px -55% 0px", threshold: [0.1, 0.25, 0.5] }
+      { rootMargin: "-20% 0px -55% 0px", threshold: [0.15, 0.35, 0.6] }
     );
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
@@ -787,12 +799,12 @@ export function CaseStudyPage() {
             className="group pointer-events-auto flex items-center justify-end gap-3 text-right"
             onClick={() => setActiveSection(item.id)}
           >
-            <span className="pointer-events-none max-w-[160px] rounded-full bg-[#2a2a2a] px-3 py-1 text-[12px] leading-[1.4] text-[#cfcfcf] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <span className="pointer-events-none max-w-[160px] rounded-full bg-[#2a2a2a] px-3 py-1 text-[14px] leading-[1.4] text-[#cfcfcf] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
               {item.label}
             </span>
             <span
               className={`h-[6px] w-[22px] rounded-full transition-colors duration-200 ${
-                activeSection === item.id ? "bg-[#6f9dff]" : "bg-[#3a3a3a]"
+                activeSection === item.id ? "bg-white" : "bg-[#3a3a3a]"
               }`}
             />
           </a>
@@ -837,13 +849,13 @@ export function CaseStudyPage() {
                 canDragUserflow ? (isDraggingUserflow ? "cursor-grabbing" : "cursor-grab") : "cursor-default"
               }`}
               style={{ touchAction: "none" }}
-              onMouseDown={handleUserflowMouseDown}
-              onMouseMove={handleUserflowMouseMove}
-              onMouseUp={handleUserflowMouseUp}
-              onMouseLeave={handleUserflowMouseLeave}
-              onTouchStart={handleUserflowTouchStart}
-              onTouchMove={handleUserflowTouchMove}
-              onTouchEnd={handleUserflowTouchEnd}
+              onMouseDown={undefined}
+              onMouseMove={undefined}
+              onMouseUp={undefined}
+              onMouseLeave={undefined}
+              onTouchStart={isMobileViewport ? handleUserflowTouchStart : undefined}
+              onTouchMove={isMobileViewport ? handleUserflowTouchMove : undefined}
+              onTouchEnd={isMobileViewport ? handleUserflowTouchEnd : undefined}
               onClick={(event) => event.stopPropagation()}
             >
               <div className="absolute left-1/2 top-1/2">
@@ -869,7 +881,8 @@ export function CaseStudyPage() {
                 </div>
               </div>
             </div>
-            <div className="absolute bottom-3 right-3 z-10 flex gap-2 sm:bottom-6 sm:right-6">
+            {isMobileViewport ? (
+              <div className="absolute bottom-3 right-3 z-10 flex gap-2 sm:bottom-6 sm:right-6">
               <button
                 type="button"
                 aria-label="Zoom out"
@@ -900,7 +913,8 @@ export function CaseStudyPage() {
                   +
                 </span>
               </button>
-            </div>
+              </div>
+            ) : null}
           </div>
         </div>
       ) : null}
