@@ -129,7 +129,7 @@ export function CaseStudyPage() {
         const rect = userflowViewportRef.current.getBoundingClientRect();
         const scaledWidth = userflowBase.width * initialScale;
         const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-        const initialX = isMobile ? -maxX : 0;
+        const initialX = isMobile ? maxX : 0;
         setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
       });
     }
@@ -154,10 +154,6 @@ export function CaseStudyPage() {
   }, [isUserflowOpen, lightboxScale]);
 
   useEffect(() => {
-    const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-section]"));
-    if (sections.length === 0) {
-      return;
-    }
     let ticking = false;
     const update = () => {
       if (ticking) {
@@ -165,10 +161,16 @@ export function CaseStudyPage() {
       }
       ticking = true;
       requestAnimationFrame(() => {
+        const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-section]"));
+        if (sections.length === 0) {
+          ticking = false;
+          return;
+        }
         const scrollPos = window.scrollY + 140;
         let current = sections[0]?.dataset.section || "overview";
         sections.forEach((section) => {
-          if (section.offsetTop <= scrollPos) {
+          const top = section.getBoundingClientRect().top + window.scrollY;
+          if (top <= scrollPos) {
             current = section.dataset.section || current;
           }
         });
@@ -178,6 +180,8 @@ export function CaseStudyPage() {
     };
     update();
     const timeouts = [0, 100, 300, 600].map((delay) => window.setTimeout(update, delay));
+    const fontsReady = document.fonts?.ready;
+    fontsReady?.then(() => update());
     window.addEventListener("load", update);
     window.addEventListener("scroll", update, { passive: true });
     window.addEventListener("resize", update);
@@ -835,6 +839,7 @@ export function CaseStudyPage() {
           className="fixed inset-0 z-20 flex items-center justify-center px-6"
           onClick={() => setIsUserflowOpen(false)}
           role="presentation"
+          onTouchMove={(event) => event.preventDefault()}
         >
           <div className="lightbox-backdrop absolute inset-0" />
           <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[28px] bg-[#222] p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
