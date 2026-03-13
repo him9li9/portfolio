@@ -161,17 +161,19 @@ export function CaseStudyPage() {
       }
       ticking = true;
       requestAnimationFrame(() => {
-        const sections = Array.from(document.querySelectorAll<HTMLElement>("[data-section]"));
+        const sections = Array.from(
+          document.querySelectorAll<HTMLElement>("[data-section-anchor]")
+        );
         if (sections.length === 0) {
           ticking = false;
           return;
         }
         const scrollPos = window.scrollY + 140;
-        let current = sections[0]?.dataset.section || "overview";
+        let current = sections[0]?.dataset.sectionAnchor || "overview";
         sections.forEach((section) => {
           const top = section.getBoundingClientRect().top + window.scrollY;
           if (top <= scrollPos) {
-            current = section.dataset.section || current;
+            current = section.dataset.sectionAnchor || current;
           }
         });
         setActiveSection(current);
@@ -348,12 +350,8 @@ export function CaseStudyPage() {
         animate="show"
         className="flex w-full flex-col gap-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:gap-[93px] sm:px-6 sm:pt-[66px] sm:pb-[140px]"
       >
-        <motion.section
-          id="overview"
-          data-section="overview"
-          variants={item}
-          className="flex flex-col gap-6 sm:gap-6 scroll-mt-[90px]"
-        >
+        <div id="overview" data-section-anchor="overview" className="scroll-mt-[90px]" />
+        <motion.section variants={item} className="flex flex-col gap-6 sm:gap-6">
           <div className="flex flex-col gap-3 text-white">
             <h1 className="text-[40px] font-semibold leading-[48px]">MCN Softphone</h1>
             <p className="text-[18px] leading-[1.4]">
@@ -371,18 +369,13 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 417px"
                 className="h-auto w-full object-contain"
                 priority
-                unoptimized
               />
             </div>
           </div>
         </motion.section>
 
-        <motion.section
-          id="about"
-          data-section="about"
-          variants={item}
-          className="flex flex-col gap-8 scroll-mt-[90px]"
-        >
+        <div id="about" data-section-anchor="about" className="scroll-mt-[90px]" />
+        <motion.section variants={item} className="flex flex-col gap-8">
           <div className="flex flex-col gap-6">
             <h2 className="text-[32px] font-semibold leading-[40px]">О проекте</h2>
             <p className="text-[18px] leading-[1.4]">
@@ -415,7 +408,6 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 323px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
               />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[1.4]">
@@ -433,7 +425,6 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 527px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
               />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[1.4]">
@@ -472,12 +463,8 @@ export function CaseStudyPage() {
           </div>
         </motion.section>
 
-        <motion.section
-          id="discovery"
-          data-section="discovery"
-          variants={item}
-          className="flex flex-col gap-8 scroll-mt-[90px]"
-        >
+        <div id="discovery" data-section-anchor="discovery" className="scroll-mt-[90px]" />
+        <motion.section variants={item} className="flex flex-col gap-8">
           <h2 className="text-[32px] font-semibold leading-[40px]">Дискавери</h2>
 
           <div className="text-[18px] leading-[1.4]">
@@ -522,7 +509,6 @@ export function CaseStudyPage() {
               sizes="(max-width: 640px) 100vw, 760px"
               className="h-auto w-full object-contain"
               loading="lazy"
-              unoptimized
             />
           </div>
 
@@ -548,7 +534,6 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 427px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
               />
             </div>
           </div>
@@ -575,7 +560,6 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 427px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
               />
               <Image
                 alt=""
@@ -585,7 +569,6 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 427px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
               />
             </div>
           </div>
@@ -615,7 +598,6 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 600px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
               />
             </div>
             <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
@@ -639,7 +621,6 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 704px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
               />
             </div>
             <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
@@ -685,12 +666,8 @@ export function CaseStudyPage() {
           </div>
         </motion.section>
 
-        <motion.section
-          id="design"
-          data-section="design"
-          variants={item}
-          className="flex flex-col gap-6 scroll-mt-[90px]"
-        >
+        <div id="design" data-section-anchor="design" className="scroll-mt-[90px]" />
+        <motion.section variants={item} className="flex flex-col gap-6">
           <h2 className="text-[32px] font-semibold leading-[40px]">Проектирование</h2>
           <p className="text-[18px] leading-[1.4]">
             Цель этапа — определить, как система будет вести себя в диалоге с пользователем, чтобы
@@ -720,7 +697,6 @@ export function CaseStudyPage() {
                   sizes="(max-width: 640px) 100vw, 750px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
-                  unoptimized
                 />
               </button>
             </div>
@@ -743,12 +719,8 @@ export function CaseStudyPage() {
           </ul>
         </motion.section>
 
-        <motion.section
-          id="solution"
-          data-section="solution"
-          variants={item}
-          className="flex flex-col gap-8 scroll-mt-[90px]"
-        >
+        <div id="solution" data-section-anchor="solution" className="scroll-mt-[90px]" />
+        <motion.section variants={item} className="flex flex-col gap-8">
           <div className="flex flex-col gap-6">
             <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
             <p className="text-[18px] leading-[1.4]">
@@ -782,7 +754,6 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 467px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
               />
             </div>
           </div>
@@ -902,11 +873,10 @@ export function CaseStudyPage() {
                     src={assets.userflow}
                     width={userflowBase.width}
                     height={userflowBase.height}
-                    sizes="80vw"
+                    sizes="(max-width: 640px) 90vw, 80vw"
                     className="h-full w-full select-none object-contain pointer-events-none"
                     draggable={false}
-                    priority
-                    unoptimized
+                    loading="lazy"
                   />
                 </div>
               </div>
