@@ -40,7 +40,9 @@ export function CaseStudyPage() {
     startOffsetX: 0,
     startOffsetY: 0,
   });
-  const userflowBase = { width: 750, height: 309 };
+  const lastUserflowDragRef = useRef(0);
+  const userflowBase = { width: 2250, height: 927 };
+  const userflowDisplay = { width: 750, height: 309 };
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -89,17 +91,23 @@ export function CaseStudyPage() {
     };
     document.addEventListener("keydown", onKeyDown);
     const previousOverflow = document.body.style.overflow;
+    const previousHtmlOverflow = document.documentElement.style.overflow;
     const previousPosition = document.body.style.position;
     const previousTop = document.body.style.top;
     const previousWidth = document.body.style.width;
+    const previousOverscroll = document.body.style.overscrollBehavior;
     bodyScrollYRef.current = window.scrollY;
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overscrollBehavior = "none";
     document.body.style.position = "fixed";
     document.body.style.top = `-${bodyScrollYRef.current}px`;
     document.body.style.width = "100%";
     return () => {
       document.removeEventListener("keydown", onKeyDown);
       document.body.style.overflow = previousOverflow;
+      document.documentElement.style.overflow = previousHtmlOverflow;
+      document.body.style.overscrollBehavior = previousOverscroll;
       document.body.style.position = previousPosition;
       document.body.style.top = previousTop;
       document.body.style.width = previousWidth;
@@ -121,7 +129,7 @@ export function CaseStudyPage() {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
       setIsMobileLightbox(isMobile);
-      const initialScale = isMobile ? 1.4 : 1.5;
+      const initialScale = isMobile ? 0.6 : 0.5;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
@@ -131,7 +139,7 @@ export function CaseStudyPage() {
         const rect = userflowViewportRef.current.getBoundingClientRect();
         const scaledWidth = userflowBase.width * initialScale;
         const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-        const initialX = isMobile ? -maxX : 0;
+        const initialX = isMobile ? maxX : 0;
         setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
       });
     }
@@ -153,56 +161,60 @@ export function CaseStudyPage() {
     updateCanDrag();
     window.addEventListener("resize", updateCanDrag);
     return () => window.removeEventListener("resize", updateCanDrag);
-  }, [isUserflowOpen, lightboxScale]);
+  }, [isUserflowOpen, lightboxScale, isMobileLightbox]);
 
   useEffect(() => {
-    let ticking = false;
-    const update = () => {
-      if (ticking) {
-        return;
-      }
-      ticking = true;
-      requestAnimationFrame(() => {
-        const sections = Array.from(
-          document.querySelectorAll<HTMLElement>("[data-section-anchor]")
-        );
-        if (sections.length === 0) {
-          ticking = false;
-          return;
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-section-anchor]")
+    );
+    if (sections.length === 0) {
+      return;
+    }
+    const updateFromScroll = () => {
+      const scrollPos =
+        (document.documentElement.scrollTop || document.body.scrollTop || window.scrollY) + 140;
+      let current = sections[0]?.dataset.sectionAnchor || "overview";
+      sections.forEach((section) => {
+        if (section.offsetTop <= scrollPos) {
+          current = section.dataset.sectionAnchor || current;
         }
-        const scrollPos =
-          (document.documentElement.scrollTop || document.body.scrollTop || window.scrollY) + 140;
-        let current = sections[0]?.dataset.sectionAnchor || "overview";
-        sections.forEach((section) => {
-          if (section.offsetTop <= scrollPos) {
-            current = section.dataset.sectionAnchor || current;
-          }
-        });
-        setActiveSection(current);
-        ticking = false;
       });
+      setActiveSection(current);
     };
-    update();
-    const timeouts = [0, 100, 300, 600, 1000].map((delay) => window.setTimeout(update, delay));
-    const raf1 = requestAnimationFrame(update);
-    const raf2 = requestAnimationFrame(update);
+    updateFromScroll();
+    const timeouts = [0, 120, 300, 600, 1000].map((delay) =>
+      window.setTimeout(updateFromScroll, delay)
+    );
+    const raf = requestAnimationFrame(updateFromScroll);
     const fontsReady = document.fonts?.ready;
-    fontsReady?.then(() => update());
-    window.addEventListener("load", update);
-    window.addEventListener("pageshow", update);
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-    const resizeObserver = new ResizeObserver(() => update());
-    resizeObserver.observe(document.body);
+    fontsReady?.then(() => updateFromScroll());
+    window.addEventListener("pageshow", updateFromScroll);
+    window.addEventListener("resize", updateFromScroll);
+    window.addEventListener("scroll", updateFromScroll, { passive: true });
+    let observer: IntersectionObserver | null = null;
+    if ("IntersectionObserver" in window) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const next = (entry.target as HTMLElement).dataset.sectionAnchor;
+              if (next) {
+                setActiveSection(next);
+              }
+            }
+          });
+        },
+        { root: null, rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+      );
+      sections.forEach((section) => observer?.observe(section));
+    }
     return () => {
       timeouts.forEach((id) => window.clearTimeout(id));
-      cancelAnimationFrame(raf1);
-      cancelAnimationFrame(raf2);
-      window.removeEventListener("load", update);
-      window.removeEventListener("pageshow", update);
-      window.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
-      resizeObserver.disconnect();
+      cancelAnimationFrame(raf);
+      window.removeEventListener("pageshow", updateFromScroll);
+      window.removeEventListener("resize", updateFromScroll);
+      window.removeEventListener("scroll", updateFromScroll);
+      observer?.disconnect();
     };
   }, []);
 
@@ -253,6 +265,7 @@ export function CaseStudyPage() {
     if (!userflowDragRef.current.moved && (Math.abs(dx) > 3 || Math.abs(dy) > 3)) {
       userflowDragRef.current.moved = true;
       setIsDraggingUserflow(true);
+      lastUserflowDragRef.current = Date.now();
     }
     const nextX = userflowDragRef.current.startOffsetX + dx;
     const nextY = userflowDragRef.current.startOffsetY + dy;
@@ -264,15 +277,16 @@ export function CaseStudyPage() {
     setIsDraggingUserflow(false);
   };
 
-  const handleUserflowMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleUserflowPointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
     if (event.button !== 0) {
       return;
     }
     event.preventDefault();
+    event.currentTarget.setPointerCapture(event.pointerId);
     startUserflowDrag(event.clientX, event.clientY);
   };
 
-  const handleUserflowMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
+  const handleUserflowPointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
     if (!userflowDragRef.current.isDown) {
       return;
     }
@@ -280,33 +294,10 @@ export function CaseStudyPage() {
     moveUserflowDrag(event.clientX, event.clientY);
   };
 
-  const handleUserflowMouseUp = () => {
-    endUserflowDrag();
-  };
-
-  const handleUserflowMouseLeave = () => {
-    endUserflowDrag();
-  };
-
-  const handleUserflowTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (event.touches.length === 0) {
-      return;
+  const handleUserflowPointerUp = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId);
     }
-    event.preventDefault();
-    const touch = event.touches[0];
-    startUserflowDrag(touch.clientX, touch.clientY);
-  };
-
-  const handleUserflowTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (event.touches.length === 0) {
-      return;
-    }
-    event.preventDefault();
-    const touch = event.touches[0];
-    moveUserflowDrag(touch.clientX, touch.clientY);
-  };
-
-  const handleUserflowTouchEnd = () => {
     endUserflowDrag();
   };
 
@@ -693,8 +684,8 @@ export function CaseStudyPage() {
                 <Image
                   alt=""
                   src={assets.userflow}
-                  width={750}
-                  height={309}
+                  width={userflowDisplay.width}
+                  height={userflowDisplay.height}
                   sizes="(max-width: 640px) 100vw, 750px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
@@ -815,7 +806,12 @@ export function CaseStudyPage() {
       {isUserflowOpen ? (
         <div
           className="fixed inset-0 z-20 flex items-center justify-center px-6"
-          onClick={() => setIsUserflowOpen(false)}
+          onClick={() => {
+            if (Date.now() - lastUserflowDragRef.current < 200) {
+              return;
+            }
+            setIsUserflowOpen(false);
+          }}
           role="presentation"
           onTouchMove={(event) => event.preventDefault()}
         >
@@ -826,8 +822,7 @@ export function CaseStudyPage() {
                 type="button"
                 aria-label="Close"
                 className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6 sm:cursor-default"
-                onMouseDown={(event) => event.stopPropagation()}
-                onTouchStart={(event) => event.stopPropagation()}
+                onPointerDown={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
                   setIsUserflowOpen(false);
@@ -851,13 +846,10 @@ export function CaseStudyPage() {
                 canDragUserflow ? (isDraggingUserflow ? "cursor-grabbing" : "cursor-grab") : "cursor-default"
               }`}
               style={{ touchAction: "none" }}
-              onMouseDown={handleUserflowMouseDown}
-              onMouseMove={handleUserflowMouseMove}
-              onMouseUp={handleUserflowMouseUp}
-              onMouseLeave={handleUserflowMouseLeave}
-              onTouchStart={handleUserflowTouchStart}
-              onTouchMove={handleUserflowTouchMove}
-              onTouchEnd={handleUserflowTouchEnd}
+              onPointerDown={handleUserflowPointerDown}
+              onPointerMove={handleUserflowPointerMove}
+              onPointerUp={handleUserflowPointerUp}
+              onPointerCancel={handleUserflowPointerUp}
               onClick={(event) => event.stopPropagation()}
             >
               <div className="absolute left-1/2 top-1/2">
@@ -874,8 +866,8 @@ export function CaseStudyPage() {
                     src={assets.userflow}
                     width={userflowBase.width}
                     height={userflowBase.height}
-                    sizes="(max-width: 640px) 100vw, 80vw"
-                    className="h-full w-full select-none object-contain pointer-events-none"
+                    sizes="(max-width: 640px) 1400px, 1600px"
+                    className="pointer-events-none h-full w-full select-none object-contain"
                     draggable={false}
                     quality={100}
                     priority
@@ -888,8 +880,7 @@ export function CaseStudyPage() {
                 type="button"
                 aria-label="Zoom out"
                 className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
-                onMouseDown={(event) => event.stopPropagation()}
-                onTouchStart={(event) => event.stopPropagation()}
+                onPointerDown={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
                   setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
@@ -903,8 +894,7 @@ export function CaseStudyPage() {
                 type="button"
                 aria-label="Zoom in"
                 className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
-                onMouseDown={(event) => event.stopPropagation()}
-                onTouchStart={(event) => event.stopPropagation()}
+                onPointerDown={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
                   setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
