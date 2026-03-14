@@ -121,7 +121,7 @@ export function CaseStudyPage() {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
       setIsMobileLightbox(isMobile);
-      const initialScale = isMobile ? 1.2 : 1.5;
+      const initialScale = isMobile ? 1.4 : 1.5;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
@@ -148,7 +148,7 @@ export function CaseStudyPage() {
       const rect = userflowViewportRef.current.getBoundingClientRect();
       const scaledWidth = userflowBase.width * lightboxScale;
       const scaledHeight = userflowBase.height * lightboxScale;
-      setCanDragUserflow(scaledWidth > rect.width || scaledHeight > rect.height);
+      setCanDragUserflow(isMobileLightbox || scaledWidth > rect.width || scaledHeight > rect.height);
     };
     updateCanDrag();
     window.addEventListener("resize", updateCanDrag);
@@ -174,8 +174,7 @@ export function CaseStudyPage() {
           (document.documentElement.scrollTop || document.body.scrollTop || window.scrollY) + 140;
         let current = sections[0]?.dataset.sectionAnchor || "overview";
         sections.forEach((section) => {
-          const top = section.getBoundingClientRect().top + window.scrollY;
-          if (top <= scrollPos) {
+          if (section.offsetTop <= scrollPos) {
             current = section.dataset.sectionAnchor || current;
           }
         });
@@ -212,11 +211,10 @@ export function CaseStudyPage() {
       return { x: 0, y: 0 };
     }
     const rect = userflowViewportRef.current.getBoundingClientRect();
-    const edgePadding = rect.width < 640 ? 16 : 32;
     const scaledWidth = userflowBase.width * scale;
     const scaledHeight = userflowBase.height * scale;
-    const maxX = Math.max(0, (scaledWidth - (rect.width - edgePadding * 2)) / 2);
-    const maxY = Math.max(0, (scaledHeight - (rect.height - edgePadding * 2)) / 2);
+    const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
+    const maxY = Math.max(0, (scaledHeight - rect.height) / 2);
     return {
       x: Math.max(-maxX, Math.min(maxX, x)),
       y: Math.max(-maxY, Math.min(maxY, y)),
@@ -318,7 +316,7 @@ export function CaseStudyPage() {
         initial={{ opacity: 0, y: -12 }}
         animate={hideTopbar ? { opacity: 0, y: -12 } : { opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 220, damping: 22, mass: 0.7 }}
-        className="sticky top-0 z-10 h-[74px] w-full backdrop-blur-[4px]"
+        className="sticky top-0 z-10 h-[74px] w-full bg-[rgba(23,23,23,0.6)] backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
         <div className="flex h-full w-full items-center justify-between px-4 py-[13px] sm:px-8">
           <Link href="/" className="font-oldenburg flex items-center gap-1 text-[18px] leading-[1.4]">
@@ -876,7 +874,7 @@ export function CaseStudyPage() {
                     src={assets.userflow}
                     width={userflowBase.width}
                     height={userflowBase.height}
-                    sizes="(max-width: 640px) 90vw, 80vw"
+                    sizes="(max-width: 640px) 100vw, 80vw"
                     className="h-full w-full select-none object-contain pointer-events-none"
                     draggable={false}
                     quality={100}
