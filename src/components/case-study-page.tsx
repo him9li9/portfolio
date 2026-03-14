@@ -134,17 +134,24 @@ export function CaseStudyPage() {
       setLightboxScale(fallbackScale);
       setMinLightboxScale(fallbackScale);
       setUserflowOffset({ x: 0, y: 0 });
-      requestAnimationFrame(() => {
+      let attempts = 0;
+      const initScale = () => {
         if (!userflowViewportRef.current) {
           return;
         }
         const rect = userflowViewportRef.current.getBoundingClientRect();
+        if (rect.width < 10 && attempts < 5) {
+          attempts += 1;
+          window.setTimeout(initScale, 50);
+          return;
+        }
         const fitWidth = Math.max(0.1, (rect.width - 32) / userflowBase.width);
         const initialScale = isMobile ? Math.min(1, fitWidth) : 0.5;
         setMinLightboxScale(initialScale);
         setLightboxScale(initialScale);
         setUserflowOffset(clampUserflowOffset(0, 0, initialScale));
-      });
+      };
+      window.setTimeout(initScale, 0);
     }
   }, [isUserflowOpen]);
 
