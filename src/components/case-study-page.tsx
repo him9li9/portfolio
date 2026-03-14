@@ -862,18 +862,27 @@ export function CaseStudyPage() {
                     transformOrigin: isMobileLightbox ? "left center" : "center",
                   }}
                 >
-                  <Image
-                    alt=""
-                    src={assets.userflow}
-                    width={userflowBase.width}
-                    height={userflowBase.height}
-                    sizes="100vw"
-                    className="pointer-events-none h-full w-full select-none object-contain"
-                    draggable={false}
-                    quality={100}
-                    priority
-                    unoptimized
-                  />
+                  {isMobileLightbox ? (
+                    <img
+                      alt=""
+                      src={assets.userflow}
+                      className="pointer-events-none h-full w-full select-none object-contain"
+                      draggable={false}
+                    />
+                  ) : (
+                    <Image
+                      alt=""
+                      src={assets.userflow}
+                      width={userflowBase.width}
+                      height={userflowBase.height}
+                      sizes="100vw"
+                      className="pointer-events-none h-full w-full select-none object-contain"
+                      draggable={false}
+                      quality={100}
+                      priority
+                      unoptimized
+                    />
+                  )}
                 </div>
               </div>
             </div>
