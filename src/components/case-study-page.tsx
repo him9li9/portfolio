@@ -129,7 +129,7 @@ export function CaseStudyPage() {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
       setIsMobileLightbox(isMobile);
-      const initialScale = isMobile ? 0.6 : 0.5;
+      const initialScale = isMobile ? 1.2 : 0.5;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
@@ -139,7 +139,7 @@ export function CaseStudyPage() {
         const rect = userflowViewportRef.current.getBoundingClientRect();
         const scaledWidth = userflowBase.width * initialScale;
         const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-        const initialX = isMobile ? maxX : 0;
+        const initialX = isMobile ? -maxX : 0;
         setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
       });
     }
@@ -298,6 +298,28 @@ export function CaseStudyPage() {
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
+    endUserflowDrag();
+  };
+
+  const handleUserflowTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (event.touches.length === 0) {
+      return;
+    }
+    event.preventDefault();
+    const touch = event.touches[0];
+    startUserflowDrag(touch.clientX, touch.clientY);
+  };
+
+  const handleUserflowTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (event.touches.length === 0) {
+      return;
+    }
+    event.preventDefault();
+    const touch = event.touches[0];
+    moveUserflowDrag(touch.clientX, touch.clientY);
+  };
+
+  const handleUserflowTouchEnd = () => {
     endUserflowDrag();
   };
 
@@ -850,6 +872,9 @@ export function CaseStudyPage() {
               onPointerMove={handleUserflowPointerMove}
               onPointerUp={handleUserflowPointerUp}
               onPointerCancel={handleUserflowPointerUp}
+              onTouchStart={handleUserflowTouchStart}
+              onTouchMove={handleUserflowTouchMove}
+              onTouchEnd={handleUserflowTouchEnd}
               onClick={(event) => event.stopPropagation()}
             >
               <div className="absolute left-1/2 top-1/2">
@@ -883,7 +908,7 @@ export function CaseStudyPage() {
                 onPointerDown={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
-                  setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
+                  setLightboxScale((value) => Math.max(0.6, Math.round((value - 0.2) * 10) / 10));
                 }}
               >
                 <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
@@ -897,7 +922,7 @@ export function CaseStudyPage() {
                 onPointerDown={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
-                  setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
+                  setLightboxScale((value) => Math.min(3, Math.round((value + 0.2) * 10) / 10));
                 }}
               >
                 <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
