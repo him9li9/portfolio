@@ -25,6 +25,7 @@ export function CaseStudyPage() {
   const [isUserflowOpen, setIsUserflowOpen] = useState(false);
   const [canHover, setCanHover] = useState(false);
   const [lightboxScale, setLightboxScale] = useState(1.3);
+  const [minLightboxScale, setMinLightboxScale] = useState(0.5);
   const [isDraggingUserflow, setIsDraggingUserflow] = useState(false);
   const [canDragUserflow, setCanDragUserflow] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
@@ -129,18 +130,20 @@ export function CaseStudyPage() {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
       setIsMobileLightbox(isMobile);
-      const initialScale = isMobile ? 1.2 : 0.5;
-      setLightboxScale(initialScale);
+      const fallbackScale = isMobile ? 0.5 : 0.5;
+      setLightboxScale(fallbackScale);
+      setMinLightboxScale(fallbackScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
         if (!userflowViewportRef.current) {
           return;
         }
         const rect = userflowViewportRef.current.getBoundingClientRect();
-        const scaledWidth = userflowBase.width * initialScale;
-        const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-        const initialX = isMobile ? -maxX : 0;
-        setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
+        const fitWidth = Math.max(0.1, (rect.width - 32) / userflowBase.width);
+        const initialScale = isMobile ? Math.min(1, fitWidth) : 0.5;
+        setMinLightboxScale(initialScale);
+        setLightboxScale(initialScale);
+        setUserflowOffset(clampUserflowOffset(0, 0, initialScale));
       });
     }
   }, [isUserflowOpen]);
@@ -908,7 +911,9 @@ export function CaseStudyPage() {
                 onPointerDown={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
-                  setLightboxScale((value) => Math.max(0.6, Math.round((value - 0.2) * 10) / 10));
+                  setLightboxScale((value) =>
+                    Math.max(minLightboxScale, Math.round((value - 0.2) * 10) / 10)
+                  );
                 }}
               >
                 <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
