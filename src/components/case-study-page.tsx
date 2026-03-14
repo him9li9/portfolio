@@ -140,13 +140,17 @@ export function CaseStudyPage() {
           return;
         }
         const rect = userflowViewportRef.current.getBoundingClientRect();
-        if (rect.width < 10 && attempts < 5) {
+        if (rect.width < 10 && attempts < 8) {
           attempts += 1;
-          window.setTimeout(initScale, 50);
+          window.setTimeout(initScale, 60);
           return;
         }
-        const fitWidth = Math.max(0.1, (rect.width - 32) / userflowBase.width);
-        const initialScale = isMobile ? Math.min(1, fitWidth) : 0.5;
+        const viewportWidth = rect.width > 10 ? rect.width : window.innerWidth;
+        const viewportHeight = rect.height > 10 ? rect.height : window.innerHeight * 0.88;
+        const fitWidth = Math.max(0.15, (viewportWidth - 32) / userflowBase.width);
+        const fitHeight = Math.max(0.15, (viewportHeight - 32) / userflowBase.height);
+        const fitScale = Math.min(fitWidth, fitHeight, 1);
+        const initialScale = isMobile ? fitScale : 0.5;
         setMinLightboxScale(initialScale);
         setLightboxScale(initialScale);
         setUserflowOffset(clampUserflowOffset(0, 0, initialScale));
