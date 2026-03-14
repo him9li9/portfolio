@@ -867,11 +867,12 @@ export function CaseStudyPage() {
                     src={assets.userflow}
                     width={userflowBase.width}
                     height={userflowBase.height}
-                    sizes="(max-width: 640px) 1400px, 1600px"
+                    sizes="100vw"
                     className="pointer-events-none h-full w-full select-none object-contain"
                     draggable={false}
                     quality={100}
                     priority
+                    unoptimized
                   />
                 </div>
               </div>
