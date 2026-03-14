@@ -25,7 +25,6 @@ export function CaseStudyPage() {
   const [isUserflowOpen, setIsUserflowOpen] = useState(false);
   const [canHover, setCanHover] = useState(false);
   const [lightboxScale, setLightboxScale] = useState(1.3);
-  const [minLightboxScale, setMinLightboxScale] = useState(0.5);
   const [isDraggingUserflow, setIsDraggingUserflow] = useState(false);
   const [canDragUserflow, setCanDragUserflow] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
@@ -130,32 +129,19 @@ export function CaseStudyPage() {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
       setIsMobileLightbox(isMobile);
-      const fallbackScale = isMobile ? 0.5 : 0.5;
-      setLightboxScale(fallbackScale);
-      setMinLightboxScale(fallbackScale);
+      const initialScale = isMobile ? 0.6 : 0.5;
+      setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
-      let attempts = 0;
-      const initScale = () => {
+      requestAnimationFrame(() => {
         if (!userflowViewportRef.current) {
           return;
         }
         const rect = userflowViewportRef.current.getBoundingClientRect();
-        if (rect.width < 10 && attempts < 8) {
-          attempts += 1;
-          window.setTimeout(initScale, 60);
-          return;
-        }
-        const viewportWidth = rect.width > 10 ? rect.width : window.innerWidth;
-        const viewportHeight = rect.height > 10 ? rect.height : window.innerHeight * 0.88;
-        const fitWidth = Math.max(0.15, (viewportWidth - 32) / userflowBase.width);
-        const fitHeight = Math.max(0.15, (viewportHeight - 32) / userflowBase.height);
-        const fitScale = Math.min(fitWidth, fitHeight, 1);
-        const initialScale = isMobile ? fitScale : 0.5;
-        setMinLightboxScale(initialScale);
-        setLightboxScale(initialScale);
-        setUserflowOffset(clampUserflowOffset(0, 0, initialScale));
-      };
-      window.setTimeout(initScale, 0);
+        const scaledWidth = userflowBase.width * initialScale;
+        const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
+        const initialX = isMobile ? -maxX : 0;
+        setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
+      });
     }
   }, [isUserflowOpen]);
 
@@ -315,27 +301,6 @@ export function CaseStudyPage() {
     endUserflowDrag();
   };
 
-  const handleUserflowTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (event.touches.length === 0) {
-      return;
-    }
-    event.preventDefault();
-    const touch = event.touches[0];
-    startUserflowDrag(touch.clientX, touch.clientY);
-  };
-
-  const handleUserflowTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
-    if (event.touches.length === 0) {
-      return;
-    }
-    event.preventDefault();
-    const touch = event.touches[0];
-    moveUserflowDrag(touch.clientX, touch.clientY);
-  };
-
-  const handleUserflowTouchEnd = () => {
-    endUserflowDrag();
-  };
 
   return (
     <main className="bg-[#171717] text-white">
@@ -886,9 +851,6 @@ export function CaseStudyPage() {
               onPointerMove={handleUserflowPointerMove}
               onPointerUp={handleUserflowPointerUp}
               onPointerCancel={handleUserflowPointerUp}
-              onTouchStart={handleUserflowTouchStart}
-              onTouchMove={handleUserflowTouchMove}
-              onTouchEnd={handleUserflowTouchEnd}
               onClick={(event) => event.stopPropagation()}
             >
               <div className="absolute left-1/2 top-1/2">
@@ -922,9 +884,7 @@ export function CaseStudyPage() {
                 onPointerDown={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
-                  setLightboxScale((value) =>
-                    Math.max(minLightboxScale, Math.round((value - 0.2) * 10) / 10)
-                  );
+                  setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
                 }}
               >
                 <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
@@ -938,7 +898,7 @@ export function CaseStudyPage() {
                 onPointerDown={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
-                  setLightboxScale((value) => Math.min(3, Math.round((value + 0.2) * 10) / 10));
+                  setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
                 }}
               >
                 <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
