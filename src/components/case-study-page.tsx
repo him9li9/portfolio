@@ -362,7 +362,7 @@ export function CaseStudyPage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:gap-[100px] sm:px-0 sm:pt-[66px] sm:pb-[140px]"
+        className="flex w-full flex-col gap-[100px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-[66px] sm:pb-[140px]"
       >
         <div id="overview" data-section-anchor="overview" className="h-px w-px scroll-mt-[90px]" />
         <motion.section variants={item} className="flex flex-col gap-6 sm:gap-6">
@@ -383,6 +383,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 417px"
                 className="h-auto w-full object-contain"
                 priority
+                unoptimized
               />
             </div>
           </div>
@@ -422,6 +423,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 323px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[1.4]">
@@ -439,6 +441,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 527px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[1.4]">
@@ -523,6 +526,7 @@ export function CaseStudyPage() {
               sizes="(max-width: 640px) 100vw, 760px"
               className="h-auto w-full object-contain"
               loading="lazy"
+              unoptimized
             />
           </div>
 
@@ -548,6 +552,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 427px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
           </div>
@@ -574,6 +579,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 427px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
               <Image
                 alt=""
@@ -583,6 +589,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 427px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
           </div>
@@ -612,6 +619,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 600px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
             <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
@@ -635,6 +643,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 100vw, 704px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
             <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
@@ -711,6 +720,7 @@ export function CaseStudyPage() {
                   sizes="(max-width: 640px) 100vw, 750px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
+                  unoptimized
                 />
               </button>
             </div>
@@ -755,19 +765,17 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="py-6">
-            <div className="mx-auto w-full max-w-[800px]">
-              <Image
-                alt=""
-                src={assets.solutionSuccess}
-                width={2400}
-                height={1344}
-                sizes="(max-width: 640px) 100vw, 800px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-                unoptimized
-              />
-            </div>
+          <div className="mx-auto w-full max-w-[800px]">
+            <Image
+              alt=""
+              src={assets.solutionSuccess}
+              width={2400}
+              height={1344}
+              sizes="(max-width: 640px) 100vw, 800px"
+              className="h-auto w-full object-contain"
+              loading="lazy"
+              unoptimized
+            />
           </div>
 
           <div className="flex flex-col gap-4 text-[18px] leading-[1.4]">
@@ -782,19 +790,17 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="py-6">
-            <div className="mx-auto w-full max-w-[800px]">
-              <Image
-                alt=""
-                src={assets.solutionCost}
-                width={2400}
-                height={1201}
-                sizes="(max-width: 640px) 100vw, 800px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-                unoptimized
-              />
-            </div>
+          <div className="mx-auto w-full max-w-[800px]">
+            <Image
+              alt=""
+              src={assets.solutionCost}
+              width={2400}
+              height={1201}
+              sizes="(max-width: 640px) 100vw, 800px"
+              className="h-auto w-full object-contain"
+              loading="lazy"
+              unoptimized
+            />
           </div>
 
           <div className="flex flex-col gap-4 text-[18px] leading-[1.4]">
@@ -811,19 +817,17 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="py-6">
-            <div className="mx-auto w-full max-w-[800px]">
-              <Image
-                alt=""
-                src={assets.solutionError}
-                width={2400}
-                height={1287}
-                sizes="(max-width: 640px) 100vw, 800px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-                unoptimized
-              />
-            </div>
+          <div className="mx-auto w-full max-w-[800px]">
+            <Image
+              alt=""
+              src={assets.solutionError}
+              width={2400}
+              height={1287}
+              sizes="(max-width: 640px) 100vw, 800px"
+              className="h-auto w-full object-contain"
+              loading="lazy"
+              unoptimized
+            />
           </div>
 
           <p className="text-[18px] leading-[1.4]">
