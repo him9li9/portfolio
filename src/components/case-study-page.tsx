@@ -362,7 +362,7 @@ export function CaseStudyPage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:gap-[93px] sm:px-0 sm:pt-[66px] sm:pb-[140px]"
+        className="flex w-full flex-col gap-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:gap-[100px] sm:px-0 sm:pt-[66px] sm:pb-[140px]"
       >
         <div id="overview" data-section-anchor="overview" className="h-px w-px scroll-mt-[90px]" />
         <motion.section variants={item} className="flex flex-col gap-6 sm:gap-6">
@@ -755,16 +755,17 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
-            <div className="mx-auto w-full max-w-[467px] px-4 sm:px-0">
+          <div className="py-6">
+            <div className="mx-auto w-full max-w-[800px]">
               <Image
                 alt=""
                 src={assets.solutionSuccess}
-                width={467}
-                height={414}
-                sizes="(max-width: 640px) 100vw, 467px"
+                width={2400}
+                height={1344}
+                sizes="(max-width: 640px) 100vw, 800px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
           </div>
@@ -781,16 +782,17 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
-            <div className="mx-auto w-full max-w-[800px] px-4 sm:px-0">
+          <div className="py-6">
+            <div className="mx-auto w-full max-w-[800px]">
               <Image
                 alt=""
                 src={assets.solutionCost}
-                width={800}
-                height={400}
+                width={2400}
+                height={1201}
                 sizes="(max-width: 640px) 100vw, 800px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
           </div>
@@ -809,16 +811,17 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
-            <div className="mx-auto w-full max-w-[800px] px-4 sm:px-0">
+          <div className="py-6">
+            <div className="mx-auto w-full max-w-[800px]">
               <Image
                 alt=""
                 src={assets.solutionError}
-                width={800}
-                height={400}
+                width={2400}
+                height={1287}
                 sizes="(max-width: 640px) 100vw, 800px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+                unoptimized
               />
             </div>
           </div>
