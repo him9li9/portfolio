@@ -362,7 +362,7 @@ export function CaseStudyPage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-[100px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-[66px] sm:pb-[140px]"
+        className="flex w-full flex-col gap-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:gap-[100px] sm:px-0 sm:pt-[66px] sm:pb-[140px]"
       >
         <div id="overview" data-section-anchor="overview" className="h-px w-px scroll-mt-[90px]" />
         <motion.section variants={item} className="flex flex-col gap-6 sm:gap-6">
