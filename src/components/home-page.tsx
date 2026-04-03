@@ -90,11 +90,11 @@ export function HomePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:gap-[100px] sm:px-6 sm:pt-[66px] sm:pb-[140px]"
+        className="flex w-full flex-col gap-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:gap-[100px] sm:px-0 sm:pt-[66px] sm:pb-[140px]"
       >
         <motion.section variants={item} className="flex flex-col gap-6">
           <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-            <div className="h-[90px] w-[108px] overflow-hidden rounded-[100px]">
+            <div className="h-[100px] w-[120px] overflow-hidden rounded-[100px]">
               <img alt="" src={assets.avatar} className="h-full w-full object-cover" />
             </div>
             <h1 className="text-[40px] font-semibold leading-[48px] sm:text-[40px] sm:leading-[48px]">
@@ -117,26 +117,25 @@ export function HomePage() {
             <motion.section
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="relative z-50 flex w-full flex-col items-start gap-[33px] overflow-hidden rounded-[2px] px-4 py-[23px] sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-7 sm:py-8"
+              className="relative z-50 flex w-full flex-col items-start gap-[33px] overflow-hidden rounded-[2px] px-4 py-[23px] shadow-[0_-16px_70px_10px_rgba(255,255,255,0.05)] sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-8 sm:py-[23px]"
               style={{
                 backgroundImage:
                   "radial-gradient(120% 120% at 55% 70%, rgba(40,40,40,1) 0%, rgba(19,19,19,1) 100%), radial-gradient(120% 120% at 70% 72%, rgba(40,40,40,1) 0%, rgba(19,19,19,1) 100%)"
               }}
             >
               <div className="flex w-full flex-col gap-[90px] sm:max-w-[338px]">
-                <div className="w-[261px]">
+                <div className="w-[252px]">
                   <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
                 </div>
                 <p className="text-[18px] leading-[1.4] text-white sm:text-[18px] sm:leading-[1.4]">
                   Как я сократила время активации и увеличила количество звонков из приложения на 23%
                 </p>
               </div>
-              <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-[332px] sm:w-[364px] sm:aspect-auto">
+              <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-[330px] sm:w-[334px] sm:aspect-auto">
                 <img alt="" src={assets.phones} className="h-full w-full object-contain" />
               </div>
             </motion.section>
           </Link>
-          <div className="pointer-events-none absolute -bottom-6 left-1/2 z-30 h-14 w-[92%] -translate-x-1/2 rounded-[999px] bg-black/55 blur-2xl sm:h-12 sm:w-[82%]" />
         </motion.div>
       </motion.div>
     </main>
