@@ -28,7 +28,6 @@ export function CaseStudyPage() {
   const [isDraggingUserflow, setIsDraggingUserflow] = useState(false);
   const [canDragUserflow, setCanDragUserflow] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
-  const [isMobileLightbox, setIsMobileLightbox] = useState(false);
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
   const bodyScrollYRef = useRef(0);
@@ -40,8 +39,7 @@ export function CaseStudyPage() {
     startOffsetX: 0,
     startOffsetY: 0,
   });
-  const lastUserflowDragRef = useRef(0);
-  const userflowBase = { width: 2250, height: 927 };
+  const userflowBase = { width: 750, height: 309 };
   const userflowDisplay = { width: 750, height: 309 };
   const container = {
     hidden: { opacity: 0 },
@@ -128,8 +126,7 @@ export function CaseStudyPage() {
   useEffect(() => {
     if (isUserflowOpen) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
-      setIsMobileLightbox(isMobile);
-      const initialScale = isMobile ? 0.6 : 0.5;
+      const initialScale = isMobile ? 1.6 : 1.5;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
@@ -156,12 +153,12 @@ export function CaseStudyPage() {
       const rect = userflowViewportRef.current.getBoundingClientRect();
       const scaledWidth = userflowBase.width * lightboxScale;
       const scaledHeight = userflowBase.height * lightboxScale;
-      setCanDragUserflow(isMobileLightbox || scaledWidth > rect.width || scaledHeight > rect.height);
+      setCanDragUserflow(scaledWidth > rect.width || scaledHeight > rect.height);
     };
     updateCanDrag();
     window.addEventListener("resize", updateCanDrag);
     return () => window.removeEventListener("resize", updateCanDrag);
-  }, [isUserflowOpen, lightboxScale, isMobileLightbox]);
+  }, [isUserflowOpen, lightboxScale]);
 
   useEffect(() => {
     const sections = Array.from(
@@ -223,10 +220,11 @@ export function CaseStudyPage() {
       return { x: 0, y: 0 };
     }
     const rect = userflowViewportRef.current.getBoundingClientRect();
+    const edgePadding = rect.width < 640 ? 16 : 32;
     const scaledWidth = userflowBase.width * scale;
     const scaledHeight = userflowBase.height * scale;
-    const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-    const maxY = Math.max(0, (scaledHeight - rect.height) / 2);
+    const maxX = Math.max(0, (scaledWidth - (rect.width - edgePadding * 2)) / 2);
+    const maxY = Math.max(0, (scaledHeight - (rect.height - edgePadding * 2)) / 2);
     return {
       x: Math.max(-maxX, Math.min(maxX, x)),
       y: Math.max(-maxY, Math.min(maxY, y)),
@@ -265,7 +263,6 @@ export function CaseStudyPage() {
     if (!userflowDragRef.current.moved && (Math.abs(dx) > 3 || Math.abs(dy) > 3)) {
       userflowDragRef.current.moved = true;
       setIsDraggingUserflow(true);
-      lastUserflowDragRef.current = Date.now();
     }
     const nextX = userflowDragRef.current.startOffsetX + dx;
     const nextY = userflowDragRef.current.startOffsetY + dy;
@@ -277,16 +274,15 @@ export function CaseStudyPage() {
     setIsDraggingUserflow(false);
   };
 
-  const handleUserflowPointerDown = (event: React.PointerEvent<HTMLDivElement>) => {
+  const handleUserflowMouseDown = (event: React.MouseEvent<HTMLDivElement>) => {
     if (event.button !== 0) {
       return;
     }
     event.preventDefault();
-    event.currentTarget.setPointerCapture(event.pointerId);
     startUserflowDrag(event.clientX, event.clientY);
   };
 
-  const handleUserflowPointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
+  const handleUserflowMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (!userflowDragRef.current.isDown) {
       return;
     }
@@ -294,10 +290,33 @@ export function CaseStudyPage() {
     moveUserflowDrag(event.clientX, event.clientY);
   };
 
-  const handleUserflowPointerUp = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-      event.currentTarget.releasePointerCapture(event.pointerId);
+  const handleUserflowMouseUp = () => {
+    endUserflowDrag();
+  };
+
+  const handleUserflowMouseLeave = () => {
+    endUserflowDrag();
+  };
+
+  const handleUserflowTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (event.touches.length === 0) {
+      return;
     }
+    event.preventDefault();
+    const touch = event.touches[0];
+    startUserflowDrag(touch.clientX, touch.clientY);
+  };
+
+  const handleUserflowTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (event.touches.length === 0) {
+      return;
+    }
+    event.preventDefault();
+    const touch = event.touches[0];
+    moveUserflowDrag(touch.clientX, touch.clientY);
+  };
+
+  const handleUserflowTouchEnd = () => {
     endUserflowDrag();
   };
 
@@ -718,22 +737,19 @@ export function CaseStudyPage() {
             <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
             <p className="text-[18px] leading-[1.4]">
               Первый раунд тестирования показал: даже там, где логика казалась очевидной, пользователи
-              ошибались. Я собрала обратную связь, переработала несколько сценариев и проверила их
-              снова. Хочу остановиться на некоторых итерациях, которые сделали путь прозрачнее:
+              ошибались. Я собрала обратную связь, переработала несколько сценариев и проверила их:
             </p>
           </div>
 
           <div className="flex flex-col gap-4 text-[18px] leading-[1.4]">
             <p className="font-semibold">1. Экран успеха после регистрации</p>
             <p>
-              В первой итерации это был отдельный экран с галочкой и кнопкой «Продолжить», на тестах
-              увидели, что люди зависали на 2-3 минуты — галочка привлекала внимание, а кнопка
-              терялась.
+              Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
+              что люди зависали на 2-3 минуты — галочка привлекала внимание, а кнопка терялась.
             </p>
             <p>
-              → Объединила экран успеха с выбором номера, чтобы после регистрации через Госуслуги
-              пользователь сразу видел свой номер и мог его подтвердить или заменить — без лишних
-              шагов и пауз.
+              → Объединила экран успеха с оформлением заказа, чтобы после регистрации через Госуслуги
+              пользователь сразу видел свой номер и условия тарифа — без лишних шагов и пауз.
             </p>
           </div>
 
@@ -752,29 +768,85 @@ export function CaseStudyPage() {
           </div>
 
           <div className="flex flex-col gap-4 text-[18px] leading-[1.4]">
-            <p className="font-semibold">2. Ошибка при звонке</p>
+            <p className="font-semibold">2. Узнать стоимость звонка</p>
             <p>
-              Сначала я сделала экран ошибки, где просто показывали причину: «Недостаточно средств»,
-              «Нет сети», но пользователи всё равно не понимали, что делать дальше и писали в поддержку.
+              В первой версии цену можно было увидеть, только начав набирать номер. Некоторым пользователям
+              было неудобно вводить знакомый номер каждый раз, чтобы оценить стоимость.
             </p>
             <p>
-              → Добавила контекстные кнопки действия — «Пополнить баланс», «Проверить соединение», и
-              дополнительную — «Написать в поддержку», чтобы пользователь мог что-то уточнить или
-              задать другой вопрос о проблеме.
+              → Добавила кнопку «Выбрать контакт» прямо на экран набора. При выборе контакта цена
+              сразу отображается — как и при ручном вводе.
             </p>
           </div>
 
           <div className="flex flex-col gap-4 text-[18px] leading-[1.4]">
-            <p className="font-semibold">3. Узнать стоимость звонка</p>
+            <p className="font-semibold">3. Ошибка при звонке</p>
             <p>
-              В первой версии цену можно было увидеть, только начав набирать номер. Некоторым
-              пользователям было неудобно вводить номер каждый раз, чтобы оценить стоимость.
+              Ранее был экран ошибки, где просто выводилась причина: «Регистрация не пройдена»,
+              «Недостаточно средств» и другие, но пользователи всё равно не понимали, что делать
+              дальше и писали в поддержку.
             </p>
             <p>
-              → Добавила кнопку «Выбрать из контактов» прямо на экран набора. При выборе контакта цена
-              сразу отображается — как и при ручном вводе.
+              → Добавила контекстные кнопки действия — «Вернуться в Госуслуги», «Пополнить баланс»
+              и дополнительно — «Написать в поддержку», чтобы пользователь мог что-то уточнить или
+              задать вопрос о проблеме.
             </p>
           </div>
+
+          <p className="text-[18px] leading-[1.4]">
+            Каждая итерация убирала конкретную точку трения, и хотя визуально интерфейс почти не
+            менялся, пользовательский путь стал прозрачнее.
+          </p>
+        </motion.section>
+
+        <div id="results" data-section-anchor="results" className="h-px w-px scroll-mt-[90px]" />
+        <motion.section variants={item} className="flex flex-col gap-6">
+          <h2 className="text-[32px] font-semibold leading-[40px]">Результаты</h2>
+
+          <p className="text-[18px] leading-[1.4]">
+            Теперь пользователь видит, когда номер активен, сколько стоит звонок и что делать, если
+            что-то пошло не так. Коммуникация перестала быть просто функциональной и начала напрямую
+            влиять на поведение — сокращать путь и снижать количество ошибок.
+          </p>
+
+          <p className="text-[18px] leading-[1.4]">
+            Изменения в интерфейсе закономерно отразились на поведении пользователей и ключевых метриках продукта:
+          </p>
+
+          <ul className="list-disc space-y-2 pl-6 text-[18px] leading-[1.4]">
+            <li>
+              <span className="text-[#89ff45]">Путь до звонка сократился</span>
+              {" "}с 8 шагов и переходами в веб до 3 шагов в приложении.
+            </li>
+            <li>
+              <span className="text-[#89ff45]">Конверсия в первый звонок выросла</span>
+              {" "}на 23%, а общее количество звонков при том же трафике увеличилось (13k → 17k).
+            </li>
+            <li>
+              <span className="text-[#89ff45]">Удержание пользователей увеличилось</span>
+              {" "}для 2-й недели — на 11%, а 4-й — на 6%.
+            </li>
+            <li>
+              <span className="text-[#89ff45]">Обращения в поддержку сократились</span>
+              {" "}почти в 2 раза (40% → 18%).
+            </li>
+          </ul>
+
+          <p className="text-[18px] leading-[1.4]">
+            Этот проект стал для меня важной точкой роста. Вот что я вынесла:
+          </p>
+
+          <div className="space-y-1 text-[18px] leading-[1.4]">
+            <p>1. Прозрачность интерфейса — основа доверия и коммуникации с пользователем.</p>
+            <p>2. Большие результаты часто приходят через маленькие изменения.</p>
+            <p>3. Метрики — лучший инструмент для аргументации решений перед бизнесом.</p>
+          </div>
+
+          <p className="text-[18px] leading-[1.4]">
+            Дальнейшее развитие софтфона продолжилось через обратную связь от пользователей:
+            добавление избранных контактов, повтор звонка из истории и push-уведомления о низком
+            балансе. Всё это ушло в бэклог и дальше — в ближайшие обновления.
+          </p>
         </motion.section>
       </motion.div>
 
@@ -785,6 +857,7 @@ export function CaseStudyPage() {
           { id: "discovery", label: "Дискавери" },
           { id: "design", label: "Проектирование" },
           { id: "solution", label: "Решение" },
+          { id: "results", label: "Результаты" },
         ].map((item) => (
           <a
             key={item.id}
@@ -807,12 +880,7 @@ export function CaseStudyPage() {
       {isUserflowOpen ? (
         <div
           className="fixed inset-0 z-20 flex items-center justify-center px-6"
-          onClick={() => {
-            if (Date.now() - lastUserflowDragRef.current < 200) {
-              return;
-            }
-            setIsUserflowOpen(false);
-          }}
+          onClick={() => setIsUserflowOpen(false)}
           role="presentation"
           onTouchMove={(event) => event.preventDefault()}
         >
@@ -823,7 +891,8 @@ export function CaseStudyPage() {
                 type="button"
                 aria-label="Close"
                 className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6 sm:cursor-default"
-                onPointerDown={(event) => event.stopPropagation()}
+                onMouseDown={(event) => event.stopPropagation()}
+                onTouchStart={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
                   setIsUserflowOpen(false);
@@ -847,10 +916,13 @@ export function CaseStudyPage() {
                 canDragUserflow ? (isDraggingUserflow ? "cursor-grabbing" : "cursor-grab") : "cursor-default"
               }`}
               style={{ touchAction: "none" }}
-              onPointerDown={handleUserflowPointerDown}
-              onPointerMove={handleUserflowPointerMove}
-              onPointerUp={handleUserflowPointerUp}
-              onPointerCancel={handleUserflowPointerUp}
+              onMouseDown={handleUserflowMouseDown}
+              onMouseMove={handleUserflowMouseMove}
+              onMouseUp={handleUserflowMouseUp}
+              onMouseLeave={handleUserflowMouseLeave}
+              onTouchStart={handleUserflowTouchStart}
+              onTouchMove={handleUserflowTouchMove}
+              onTouchEnd={handleUserflowTouchEnd}
               onClick={(event) => event.stopPropagation()}
             >
               <div className="absolute left-1/2 top-1/2">
@@ -859,30 +931,20 @@ export function CaseStudyPage() {
                     width: `${userflowBase.width}px`,
                     height: `${userflowBase.height}px`,
                     transform: `translate(-50%, -50%) translate(${userflowOffset.x}px, ${userflowOffset.y}px) scale(${lightboxScale})`,
-                    transformOrigin: isMobileLightbox ? "left center" : "center",
+                    transformOrigin: "center",
                   }}
                 >
-                  {isMobileLightbox ? (
-                    <img
-                      alt=""
-                      src={assets.userflow}
-                      className="pointer-events-none h-full w-full select-none object-contain"
-                      draggable={false}
-                    />
-                  ) : (
-                    <Image
-                      alt=""
-                      src={assets.userflow}
-                      width={userflowBase.width}
-                      height={userflowBase.height}
-                      sizes="100vw"
-                      className="pointer-events-none h-full w-full select-none object-contain"
-                      draggable={false}
-                      quality={100}
-                      priority
-                      unoptimized
-                    />
-                  )}
+                  <Image
+                    alt=""
+                    src={assets.userflow}
+                    width={userflowBase.width}
+                    height={userflowBase.height}
+                    sizes="80vw"
+                    className="pointer-events-none h-full w-full select-none object-contain"
+                    draggable={false}
+                    priority
+                    unoptimized
+                  />
                 </div>
               </div>
             </div>
@@ -891,7 +953,8 @@ export function CaseStudyPage() {
                 type="button"
                 aria-label="Zoom out"
                 className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
-                onPointerDown={(event) => event.stopPropagation()}
+                onMouseDown={(event) => event.stopPropagation()}
+                onTouchStart={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
                   setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
@@ -905,7 +968,8 @@ export function CaseStudyPage() {
                 type="button"
                 aria-label="Zoom in"
                 className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
-                onPointerDown={(event) => event.stopPropagation()}
+                onMouseDown={(event) => event.stopPropagation()}
+                onTouchStart={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
                   setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));

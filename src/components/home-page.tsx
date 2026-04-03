@@ -57,7 +57,7 @@ export function HomePage() {
         initial={{ opacity: 0, y: -12 }}
         animate={hideTopbar ? { opacity: 0, y: -12 } : { opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 220, damping: 22, mass: 0.7 }}
-        className="sticky top-0 z-10 h-[74px] w-full backdrop-blur-[4px]"
+        className="sticky top-0 z-10 h-[74px] w-full bg-[rgba(23,23,23,0.6)] backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
         <div className="flex h-full w-full items-center justify-between px-4 py-[13px] sm:px-8">
           <div className="font-oldenburg flex items-center gap-1 text-[18px] leading-[1.4]">
@@ -117,13 +117,13 @@ export function HomePage() {
             <motion.section
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="relative z-50 flex w-full flex-col items-start gap-[33px] overflow-hidden rounded-[2px] px-4 py-[23px] sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-8 sm:py-6"
+              className="relative z-50 flex w-full flex-col items-start gap-[33px] overflow-hidden rounded-[2px] px-4 py-[23px] sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-7 sm:py-8"
               style={{
                 backgroundImage:
                   "radial-gradient(120% 120% at 55% 70%, rgba(40,40,40,1) 0%, rgba(19,19,19,1) 100%), radial-gradient(120% 120% at 70% 72%, rgba(40,40,40,1) 0%, rgba(19,19,19,1) 100%)"
               }}
             >
-              <div className="flex w-full flex-col gap-[108px] sm:max-w-[338px]">
+              <div className="flex w-full flex-col gap-[90px] sm:max-w-[338px]">
                 <div className="w-[261px]">
                   <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
                 </div>
@@ -131,11 +131,12 @@ export function HomePage() {
                   Как я сократила время активации и увеличила количество звонков из приложения на 23%
                 </p>
               </div>
-              <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-[330px] sm:w-[345px] sm:aspect-auto">
-                <img alt="" src={assets.phones} className="h-full w-full object-cover sm:object-contain" />
+              <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-[332px] sm:w-[364px] sm:aspect-auto">
+                <img alt="" src={assets.phones} className="h-full w-full object-contain" />
               </div>
             </motion.section>
           </Link>
+          <div className="pointer-events-none absolute -bottom-6 left-1/2 z-30 h-14 w-[92%] -translate-x-1/2 rounded-[999px] bg-black/55 blur-2xl sm:h-12 sm:w-[82%]" />
         </motion.div>
       </motion.div>
     </main>
