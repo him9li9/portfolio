@@ -713,7 +713,6 @@ export function CaseStudyPage() {
             он не терялся в случае если что-то пойдёт не так. Основные решения касались логики
             сценариев, проработки состояний и корнер-кейсов.
           </p>
-          <div className="h-px w-full bg-[#282828]" />
           <p className="text-[18px] leading-[1.4]">
             Когда я проектировала новый путь, главным было убрать неопределённость. Пользователь не
             должен гадать: «А номер уже мой? А сколько это стоит? А что делать, если что-то пошло не
@@ -860,7 +859,7 @@ export function CaseStudyPage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-[90px] flex flex-col gap-6"
+          className="scroll-mt-[90px] flex flex-col gap-8"
         >
           <h2 className="text-[32px] font-semibold leading-[40px]">Результаты</h2>
 
@@ -870,8 +869,10 @@ export function CaseStudyPage() {
             влиять на поведение — сокращать путь и снижать количество ошибок.
           </p>
 
+          <div className="h-px w-full bg-[#282828]" />
+
           <p className="text-[18px] leading-[1.4]">
-            Изменения в интерфейсе закономерно отразились на поведении пользователей и ключевых метриках продукта:
+            Изменения в интерфейсе закономерно отразились на ключевых метриках продукта:
           </p>
 
           <ul className="list-disc space-y-2 pl-6 text-[18px] leading-[1.4]">
