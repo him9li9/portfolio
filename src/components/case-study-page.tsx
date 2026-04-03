@@ -364,8 +364,12 @@ export function CaseStudyPage() {
         animate="show"
         className="flex w-full flex-col gap-y-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-[66px] sm:pb-[140px] md:gap-y-[100px]"
       >
-        <div id="overview" data-section-anchor="overview" className="h-px w-px scroll-mt-[90px]" />
-        <motion.section variants={item} className="flex flex-col gap-6 sm:gap-6">
+        <motion.section
+          id="overview"
+          data-section-anchor="overview"
+          variants={item}
+          className="scroll-mt-[90px] flex flex-col gap-6 sm:gap-6"
+        >
           <div className="flex flex-col gap-3 text-white">
             <h1 className="text-[40px] font-semibold leading-[48px]">MCN Softphone</h1>
             <p className="text-[18px] leading-[1.4]">
@@ -389,8 +393,12 @@ export function CaseStudyPage() {
           </div>
         </motion.section>
 
-        <div id="about" data-section-anchor="about" className="h-px w-px scroll-mt-[90px]" />
-        <motion.section variants={item} className="flex flex-col gap-8">
+        <motion.section
+          id="about"
+          data-section-anchor="about"
+          variants={item}
+          className="scroll-mt-[90px] flex flex-col gap-8"
+        >
           <div className="flex flex-col gap-6">
             <h2 className="text-[32px] font-semibold leading-[40px]">О проекте</h2>
             <p className="text-[18px] leading-[1.4]">
@@ -480,8 +488,12 @@ export function CaseStudyPage() {
           </div>
         </motion.section>
 
-        <div id="discovery" data-section-anchor="discovery" className="h-px w-px scroll-mt-[90px]" />
-        <motion.section variants={item} className="flex flex-col gap-8">
+        <motion.section
+          id="discovery"
+          data-section-anchor="discovery"
+          variants={item}
+          className="scroll-mt-[90px] flex flex-col gap-8"
+        >
           <h2 className="text-[32px] font-semibold leading-[40px]">Дискавери</h2>
 
           <div className="text-[18px] leading-[1.4]">
@@ -689,8 +701,12 @@ export function CaseStudyPage() {
           </div>
         </motion.section>
 
-        <div id="design" data-section-anchor="design" className="h-px w-px scroll-mt-[90px]" />
-        <motion.section variants={item} className="flex flex-col gap-6">
+        <motion.section
+          id="design"
+          data-section-anchor="design"
+          variants={item}
+          className="scroll-mt-[90px] flex flex-col gap-6"
+        >
           <h2 className="text-[32px] font-semibold leading-[40px]">Проектирование</h2>
           <p className="text-[18px] leading-[1.4]">
             Цель этапа — определить, как система будет вести себя в диалоге с пользователем, чтобы
@@ -743,8 +759,12 @@ export function CaseStudyPage() {
           </ul>
         </motion.section>
 
-        <div id="solution" data-section-anchor="solution" className="h-px w-px scroll-mt-[90px]" />
-        <motion.section variants={item} className="flex flex-col gap-8">
+        <motion.section
+          id="solution"
+          data-section-anchor="solution"
+          variants={item}
+          className="scroll-mt-[90px] flex flex-col gap-8"
+        >
           <div className="flex flex-col gap-6">
             <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
             <p className="text-[18px] leading-[1.4]">
@@ -836,8 +856,12 @@ export function CaseStudyPage() {
           </p>
         </motion.section>
 
-        <div id="results" data-section-anchor="results" className="h-px w-px scroll-mt-[90px]" />
-        <motion.section variants={item} className="flex flex-col gap-6">
+        <motion.section
+          id="results"
+          data-section-anchor="results"
+          variants={item}
+          className="scroll-mt-[90px] flex flex-col gap-6"
+        >
           <h2 className="text-[32px] font-semibold leading-[40px]">Результаты</h2>
 
           <p className="text-[18px] leading-[1.4]">
