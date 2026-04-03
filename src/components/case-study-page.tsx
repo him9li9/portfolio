@@ -646,13 +646,13 @@ export function CaseStudyPage() {
           </p>
 
           <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
-            <div className="mx-auto w-full max-w-[704px] px-4 sm:px-0">
+            <div className="mx-auto w-full max-w-[754px] px-4 sm:px-0">
               <Image
                 alt=""
                 src={assets.competitorOpenphone}
-                width={704}
-                height={280}
-                sizes="(max-width: 640px) 100vw, 704px"
+                width={754}
+                height={300}
+                sizes="(max-width: 640px) 100vw, 754px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
                 unoptimized
