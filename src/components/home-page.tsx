@@ -69,7 +69,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[16px] leading-[1.4] sm:text-[18px]"
+              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[1.4]"
               href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
             >
               CV
@@ -77,7 +77,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[16px] leading-[1.4] sm:text-[18px]"
+              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[1.4]"
               href="https://t.me/him9li9"
             >
               Telegram
@@ -117,13 +117,13 @@ export function HomePage() {
             <motion.section
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="relative z-50 flex w-full flex-col items-start gap-[33px] overflow-hidden rounded-[2px] px-4 py-[23px] shadow-[0_-16px_70px_10px_rgba(255,255,255,0.05)] sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-8 sm:py-[23px]"
+              className="relative z-50 flex w-full flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] shadow-[0_-16px_70px_10px_rgba(255,255,255,0.05)] sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
               style={{
                 backgroundImage:
                   "radial-gradient(120% 120% at 55% 70%, rgba(40,40,40,1) 0%, rgba(19,19,19,1) 100%), radial-gradient(120% 120% at 70% 72%, rgba(40,40,40,1) 0%, rgba(19,19,19,1) 100%)"
               }}
             >
-              <div className="flex w-full flex-col gap-[90px] sm:max-w-[338px]">
+              <div className="flex w-full flex-col gap-[108px] sm:max-w-[338px]">
                 <div className="w-[252px]">
                   <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
                 </div>
