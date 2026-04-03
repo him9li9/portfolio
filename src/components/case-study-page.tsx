@@ -17,7 +17,9 @@ const assets = {
   competitorWhatsapp: "/figma/case-competitor-whatsapp.png",
   competitorOpenphone: "/figma/case-competitor-openphone.png",
   userflow: "/figma/case-userflow.png",
-  solutionSuccess: "/figma/case-solution-success.png"
+  solutionSuccess: "/figma/case-solution-success.png",
+  solutionCost: "/figma/case-solution-cost.png",
+  solutionError: "/figma/case-solution-error.png"
 };
 
 export function CaseStudyPage() {
@@ -779,6 +781,20 @@ export function CaseStudyPage() {
             </p>
           </div>
 
+          <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
+            <div className="mx-auto w-full max-w-[800px] px-4 sm:px-0">
+              <Image
+                alt=""
+                src={assets.solutionCost}
+                width={800}
+                height={400}
+                sizes="(max-width: 640px) 100vw, 800px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
           <div className="flex flex-col gap-4 text-[18px] leading-[1.4]">
             <p className="font-semibold">3. Ошибка при звонке</p>
             <p>
@@ -791,6 +807,20 @@ export function CaseStudyPage() {
               и дополнительно — «Написать в поддержку», чтобы пользователь мог что-то уточнить или
               задать вопрос о проблеме.
             </p>
+          </div>
+
+          <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
+            <div className="mx-auto w-full max-w-[800px] px-4 sm:px-0">
+              <Image
+                alt=""
+                src={assets.solutionError}
+                width={800}
+                height={400}
+                sizes="(max-width: 640px) 100vw, 800px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+              />
+            </div>
           </div>
 
           <p className="text-[18px] leading-[1.4]">
