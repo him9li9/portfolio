@@ -322,6 +322,20 @@ export function CaseStudyPage() {
     endUserflowDrag();
   };
 
+  const handleSectionNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
+    event.preventDefault();
+    setActiveSection(id);
+    const target = document.getElementById(id);
+    if (!target) {
+      return;
+    }
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", `#${id}`);
+  };
+
 
   return (
     <main className="bg-[#171717] text-white">
@@ -904,7 +918,7 @@ export function CaseStudyPage() {
             <div className="space-y-0">
               <p>1. Прозрачность интерфейса — основа доверия и коммуникации с пользователем</p>
               <p>2. Большие результаты часто приходят через маленькие изменения</p>
-              <p>3. Метрики — лучший инструмент для аргументации своих решений перед бизнесом</p>
+              <p>3. Тесты — лучший инструмент для аргументации своих решений перед бизнесом</p>
             </div>
           </div>
         </motion.section>
@@ -923,7 +937,7 @@ export function CaseStudyPage() {
             key={item.id}
             href={`#${item.id}`}
             className="group pointer-events-auto flex items-center justify-end gap-3 text-right"
-            onClick={() => setActiveSection(item.id)}
+            onClick={(event) => handleSectionNavClick(event, item.id)}
           >
             <span className="pointer-events-none max-w-[160px] rounded-full bg-[#2a2a2a] px-3 py-1 text-[14px] leading-[1.4] text-[#cfcfcf] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
               {item.label}
