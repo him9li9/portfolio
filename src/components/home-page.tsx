@@ -112,7 +112,7 @@ export function HomePage() {
         </motion.section>
 
         <motion.div variants={item} className="relative z-50 group/card">
-          <h2 className="mb-6 text-[32px] font-semibold leading-[40px]">Мои проекты</h2>
+          <h2 className="mb-4 text-[20px] font-semibold leading-[160%] tracking-[0.32px]">Мои проекты</h2>
           <div className="pointer-events-none fixed inset-0 z-40 hidden bg-black opacity-0 transition-opacity duration-200 ease-out sm:block sm:group-hover/card:opacity-[0.65]" />
           <Link href="/app" className="block">
             <motion.section
@@ -121,7 +121,7 @@ export function HomePage() {
               className="relative z-50 flex w-full flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
               style={{
                 backgroundImage:
-                  "radial-gradient(120% 130% at 20% 30%, rgba(58,58,58,0.45) 0%, rgba(24,24,24,1) 62%, rgba(23,23,23,1) 100%), radial-gradient(90% 110% at 82% 78%, rgba(52,52,52,0.5) 0%, rgba(23,23,23,0.98) 70%, rgba(23,23,23,1) 100%)"
+                  "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
               }}
             >
               <div className="flex w-full flex-col gap-[108px] sm:max-w-[338px]">
