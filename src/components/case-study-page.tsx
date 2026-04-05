@@ -724,7 +724,7 @@ export function CaseStudyPage() {
           className="scroll-mt-[90px] flex flex-col gap-3"
         >
           <h2 className="text-[32px] font-semibold leading-[40px]">Проектирование</h2>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3">
             <div className="flex flex-col gap-3">
               <p className="text-[18px] leading-[160%] tracking-[0.32px]">
                 Цель этапа — определить, как система будет вести себя в диалоге с пользователем, чтобы
@@ -784,9 +784,9 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-[90px] flex flex-col gap-6"
         >
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col">
             <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
-            <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+            <p className="mt-3 text-[18px] leading-[160%] tracking-[0.32px]">
               Первый раунд тестирования показал: даже там, где логика казалась очевидной, пользователи
               ошибались. Я собрала обратную связь, переработала несколько сценариев и проверила их:
             </p>
@@ -850,8 +850,8 @@ export function CaseStudyPage() {
               дальше и писали в поддержку.
             </p>
             <p>
-              <span className="text-[#89FF45]">→</span> Добавила контекстные кнопки действия — «Вернуться в Госуслуги», «Пополнить баланс»
-              и дополнительно — «Написать в поддержку», чтобы пользователь мог что-то уточнить или
+              <span className="text-[#89FF45]">→</span> Добавила контекстные кнопки для возвращения на сценарий — «Вернуться в Госуслуги»,
+              «Пополнить баланс» и «Написать в поддержку», чтобы пользователь мог что-то уточнить или
               задать вопрос о проблеме.
             </p>
           </div>
