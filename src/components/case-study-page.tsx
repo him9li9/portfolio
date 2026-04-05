@@ -792,7 +792,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+          <div className="-mt-3 flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
             <p className="font-semibold">1. Экран успеха после регистрации</p>
             <p>
               Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
