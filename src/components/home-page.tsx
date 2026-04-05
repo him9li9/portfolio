@@ -113,10 +113,11 @@ export function HomePage() {
 
         <motion.div variants={item} className="relative z-50 group/card">
           <h2 className="mb-4 text-[20px] font-semibold leading-[160%] tracking-[0.32px]">Мои проекты</h2>
+          <div className="pointer-events-none fixed inset-0 z-40 hidden bg-black opacity-0 transition-opacity duration-200 ease-out will-change-opacity sm:block sm:group-hover/card:opacity-[0.65]" />
           <Link href="/app" className="block">
             <motion.section
-              whileHover={canHover ? { scale: 1.008 } : undefined}
-              transition={{ duration: 0.18, ease: "easeOut" }}
+              whileHover={canHover ? { scale: 1.02 } : undefined}
+              transition={{ duration: 0.2, ease: "easeOut" }}
               className="relative z-50 flex w-full transform-gpu flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] will-change-transform sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
               style={{
                 backgroundImage:
