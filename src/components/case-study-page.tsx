@@ -17,9 +17,9 @@ const assets = {
   competitorWhatsapp: "/figma/case-competitor-whatsapp.png",
   competitorOpenphone: "/figma/case-competitor-openphone.png",
   userflow: "/figma/case-userflow.png",
-  solutionSuccess: "/figma/case-solution-success.png",
-  solutionCost: "/figma/case-solution-cost.png",
-  solutionError: "/figma/case-solution-error.png"
+  solutionSuccess: "/figma/case-solution-success.png?v=20260405",
+  solutionCost: "/figma/case-solution-cost.png?v=20260405",
+  solutionError: "/figma/case-solution-error.png?v=20260405"
 };
 
 export function CaseStudyPage() {
@@ -784,24 +784,26 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-[90px] flex flex-col gap-6"
         >
-          <div className="flex flex-col">
-            <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
-            <p className="mt-3 text-[18px] leading-[160%] tracking-[0.32px]">
-              Первый раунд тестирования показал: даже там, где логика казалась очевидной, пользователи
-              ошибались. Я собрала обратную связь, переработала несколько сценариев и проверила их:
-            </p>
-          </div>
+          <div className="flex flex-col gap-3">
+            <div className="flex flex-col">
+              <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
+              <p className="mt-3 text-[18px] leading-[160%] tracking-[0.32px]">
+                Первый раунд тестирования показал: даже там, где логика казалась очевидной, пользователи
+                ошибались. Я собрала обратную связь, переработала несколько сценариев и проверила их:
+              </p>
+            </div>
 
-          <div className="-mt-3 flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
-            <p className="font-semibold">1. Экран успеха после регистрации</p>
-            <p>
-              Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
-              что люди зависали на 2-3 минуты — галочка привлекала внимание, а кнопка терялась.
-            </p>
-            <p>
-              <span className="text-[#89FF45]">→</span> Объединила экран успеха с оформлением заказа, чтобы после регистрации через Госуслуги
-              пользователь сразу видел свой номер и условия тарифа — без лишних шагов и пауз.
-            </p>
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+              <p className="font-semibold">1. Экран успеха после регистрации</p>
+              <p>
+                Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
+                что люди зависали на 2-3 минуты — галочка привлекала внимание, а кнопка терялась.
+              </p>
+              <p>
+                <span className="text-[#89FF45]">→</span> Объединила экран успеха с оформлением заказа, чтобы после регистрации через Госуслуги
+                пользователь сразу видел свой номер и условия тарифа — без лишних шагов и пауз.
+              </p>
+            </div>
           </div>
 
           <div className="mx-auto w-full max-w-[800px]">
@@ -868,6 +870,9 @@ export function CaseStudyPage() {
                 unoptimized
             />
           </div>
+          <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
+            Сценарий ошибки: пользователь получает подсказку и сразу возвращается в целевой поток.
+          </p>
 
           <p className="text-[18px] leading-[160%] tracking-[0.32px]">
             Каждая итерация убирала конкретную точку трения, и хотя визуально интерфейс почти не
