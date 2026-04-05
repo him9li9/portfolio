@@ -506,210 +506,212 @@ export function CaseStudyPage() {
           id="discovery"
           data-section-anchor="discovery"
           variants={item}
-          className="scroll-mt-[90px] flex flex-col gap-8"
+          className="scroll-mt-[90px] flex flex-col gap-3"
         >
           <h2 className="text-[32px] font-semibold leading-[40px]">Дискавери</h2>
 
-          <div className="text-[18px] leading-[160%] tracking-[0.32px]">
-            <p>В рамках discovery я опиралась на:</p>
-            <ul className="list-disc space-y-2 pl-6">
-              <li>Анализ текущих пользовательских сценариев и логики экранов.</li>
-              <li>Обращения пользователей в поддержку (частые вопросы и типовые ошибки).</li>
-              <li>Обзор аналогичных softphone- и коммуникационных решений.</li>
-              <li>Обсуждения с командой поддержки и разработки.</li>
-            </ul>
-          </div>
+          <div className="flex flex-col gap-8">
+            <div className="text-[18px] leading-[160%] tracking-[0.32px]">
+              <p>В рамках discovery я опиралась на:</p>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>Анализ текущих пользовательских сценариев и логики экранов.</li>
+                <li>Обращения пользователей в поддержку (частые вопросы и типовые ошибки).</li>
+                <li>Обзор аналогичных softphone- и коммуникационных решений.</li>
+                <li>Обсуждения с командой поддержки и разработки.</li>
+              </ul>
+            </div>
 
-          <div className="h-px w-full bg-[#282828]" />
+            <div className="h-px w-full bg-[#282828]" />
 
-          <div className="flex flex-col gap-3">
-            <h3 className="text-[24px] font-semibold leading-[32px]">Анализ текущей версии</h3>
+            <div className="flex flex-col gap-3">
+              <h3 className="text-[24px] font-semibold leading-[32px]">Анализ текущей версии</h3>
+              <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+                Цель этапа — понять, где именно пользователи теряются, совершают ошибки или тратят
+                лишнее время, и какие из этих проблем особенно критичны для MVP перед релизом. Поэтому
+                я начала с анализа текущего пользовательского пути и точек неопределённости:
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+              <p className="font-semibold">1. Сценарий активации разорван между вебом и приложением</p>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>Регистрация вынесена в веб-кабинет и требует ручной верификации менеджером.</li>
+                <li>После отправки заявки нет объяснения со статусом и следующими действиями.</li>
+              </ul>
+              <p>
+                Пользователи откладывают покупку номера и первый звонок →{" "}
+                <span className="text-[#ff6060]">отток на этапе регистрации</span>.
+              </p>
+            </div>
+
+            <div className="mx-auto w-full max-w-[760px]">
+              <Image
+                alt=""
+                src={assets.discoveryActivation}
+                width={800}
+                height={757}
+                sizes="(max-width: 640px) 100vw, 760px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+                unoptimized
+              />
+            </div>
+
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+              <p className="font-semibold">2. Стоимость и списания не прозрачны в момент звонка</p>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>Информацию о стоимости звонков в роуминге нужно было искать на сайте.</li>
+                <li>После завершения звонка списания выглядят неожиданными.</li>
+              </ul>
+              <p>
+                Пользователи не понимают, сколько и за что они платят →{" "}
+                <span className="text-[#ff6060]">рост обращений в поддержку</span>.
+              </p>
+            </div>
+
+            <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
+              <div className="mx-auto w-full max-w-[427px] px-4 sm:px-0">
+                <Image
+                  alt=""
+                  src={assets.discoveryCost}
+                  width={427}
+                  height={400}
+                  sizes="(max-width: 640px) 100vw, 427px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  unoptimized
+                />
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+              <p className="font-semibold">3. Некачественная обратная связь</p>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>В приложении нет понятной точки входа в поддержку.</li>
+                <li>Пользователи ищут ответы в разных каналах и повторяют вопросы.</li>
+              </ul>
+              <p>
+                Пользователи не знают, где искать помощь →{" "}
+                <span className="text-[#ff6060]">повторные обращения в разных каналах</span>.
+              </p>
+            </div>
+
+            <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
+              <div className="mx-auto flex w-full max-w-[427px] flex-col gap-4 px-4 sm:px-0">
+                <Image
+                  alt=""
+                  src={assets.discoveryFeedback1}
+                  width={427}
+                  height={136}
+                  sizes="(max-width: 640px) 100vw, 427px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  unoptimized
+                />
+                <Image
+                  alt=""
+                  src={assets.discoveryFeedback2}
+                  width={427}
+                  height={103}
+                  sizes="(max-width: 640px) 100vw, 427px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  unoptimized
+                />
+              </div>
+            </div>
+
             <p className="text-[18px] leading-[160%] tracking-[0.32px]">
-              Цель этапа — понять, где именно пользователи теряются, совершают ошибки или тратят
-              лишнее время, и какие из этих проблем особенно критичны для MVP перед релизом. Поэтому
-              я начала с анализа текущего пользовательского пути и точек неопределённости:
+              Анализ обращений в поддержку показал, что основная причина проблем пользователей —
+              непонимание текущего состояния аккаунта и баланса. Это особенно критично в путешествиях,
+              где важна немедленная доступность связи и интернета.
             </p>
-          </div>
 
-          <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
-            <p className="font-semibold">1. Сценарий активации разорван между вебом и приложением</p>
-            <ul className="list-disc space-y-2 pl-6">
-              <li>Регистрация вынесена в веб-кабинет и требует ручной верификации менеджером.</li>
-              <li>После отправки заявки нет объяснения со статусом и следующими действиями.</li>
-            </ul>
-            <p>
-              Пользователи откладывают покупку номера и первый звонок →{" "}
-              <span className="text-[#ff6060]">отток на этапе регистрации</span>.
-            </p>
-          </div>
-
-          <div className="mx-auto w-full max-w-[760px]">
-            <Image
-              alt=""
-              src={assets.discoveryActivation}
-              width={800}
-              height={757}
-              sizes="(max-width: 640px) 100vw, 760px"
-              className="h-auto w-full object-contain"
-              loading="lazy"
-              unoptimized
-            />
-          </div>
-
-          <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
-            <p className="font-semibold">2. Стоимость и списания не прозрачны в момент звонка</p>
-            <ul className="list-disc space-y-2 pl-6">
-              <li>Информацию о стоимости звонков в роуминге нужно было искать на сайте.</li>
-              <li>После завершения звонка списания выглядят неожиданными.</li>
-            </ul>
-            <p>
-              Пользователи не понимают, сколько и за что они платят →{" "}
-              <span className="text-[#ff6060]">рост обращений в поддержку</span>.
-            </p>
-          </div>
-
-          <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
-            <div className="mx-auto w-full max-w-[427px] px-4 sm:px-0">
-              <Image
-                alt=""
-                src={assets.discoveryCost}
-                width={427}
-                height={400}
-                sizes="(max-width: 640px) 100vw, 427px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-                unoptimized
-              />
+            <div className="flex flex-col gap-3">
+              <h3 className="text-[24px] font-semibold leading-[32px]">Анализ конкурентов</h3>
+              <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+                В ходе discovery я также изучила аналогичные продукты, в которых есть звонки.
+                Например, после опыта работы с мессенджерами у пользователей формируется ожидание
+                мгновенной готовности к коммуникации (и звонкам в том числе) сразу после регистрации.
+              </p>
             </div>
-          </div>
 
-          <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
-            <p className="font-semibold">3. Некачественная обратная связь</p>
-            <ul className="list-disc space-y-2 pl-6">
-              <li>В приложении нет понятной точки входа в поддержку.</li>
-              <li>Пользователи ищут ответы в разных каналах и повторяют вопросы.</li>
-            </ul>
-            <p>
-              Пользователи не знают, где искать помощь →{" "}
-              <span className="text-[#ff6060]">повторные обращения в разных каналах</span>.
-            </p>
-          </div>
-
-          <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
-            <div className="mx-auto flex w-full max-w-[427px] flex-col gap-4 px-4 sm:px-0">
-              <Image
-                alt=""
-                src={assets.discoveryFeedback1}
-                width={427}
-                height={136}
-                sizes="(max-width: 640px) 100vw, 427px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-                unoptimized
-              />
-              <Image
-                alt=""
-                src={assets.discoveryFeedback2}
-                width={427}
-                height={103}
-                sizes="(max-width: 640px) 100vw, 427px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-                unoptimized
-              />
+            <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
+              <div className="mx-auto w-full max-w-[600px] px-4 sm:px-0">
+                <Image
+                  alt=""
+                  src={assets.competitorWhatsapp}
+                  width={600}
+                  height={300}
+                  sizes="(max-width: 640px) 100vw, 600px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  unoptimized
+                />
+              </div>
+              <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
+                WhatsApp (регистрация – выбор контакта – звонок)
+              </p>
             </div>
-          </div>
 
-          <p className="text-[18px] leading-[160%] tracking-[0.32px]">
-            Анализ обращений в поддержку показал, что основная причина проблем пользователей —
-            непонимание текущего состояния аккаунта и баланса. Это особенно критично в путешествиях,
-            где важна немедленная доступность связи и интернета.
-          </p>
-
-          <div className="flex flex-col gap-3">
-            <h3 className="text-[24px] font-semibold leading-[32px]">Анализ конкурентов</h3>
             <p className="text-[18px] leading-[160%] tracking-[0.32px]">
-              В ходе discovery я также изучила аналогичные продукты, в которых есть звонки.
-              Например, после опыта работы с мессенджерами у пользователей формируется ожидание
-              мгновенной готовности к коммуникации (и звонкам в том числе) сразу после регистрации.
+              В softphone-приложениях, где есть обязательные шаги (выбор номера, верификация,
+              тарификация), путь к первому звонку объективно сложнее. Поэтому в таком сценарии
+              пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
-          </div>
 
-          <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
-            <div className="mx-auto w-full max-w-[600px] px-4 sm:px-0">
-              <Image
-                alt=""
-                src={assets.competitorWhatsapp}
-                width={600}
-                height={300}
-                sizes="(max-width: 640px) 100vw, 600px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-                unoptimized
-              />
+            <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
+              <div className="mx-auto w-full max-w-[754px] px-4 sm:px-0">
+                <Image
+                  alt=""
+                  src={assets.competitorOpenphone}
+                  width={754}
+                  height={300}
+                  sizes="(max-width: 640px) 100vw, 754px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  unoptimized
+                />
+              </div>
+              <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
+                Open Phone (выбор номера – регистрация – покупка – звонок)
+              </p>
             </div>
-            <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
-              WhatsApp (регистрация – выбор контакта – звонок)
-            </p>
-          </div>
 
-          <p className="text-[18px] leading-[160%] tracking-[0.32px]">
-            В softphone-приложениях, где есть обязательные шаги (выбор номера, верификация,
-            тарификация), путь к первому звонку объективно сложнее. Поэтому в таком сценарии
-            пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
-          </p>
-
-          <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
-            <div className="mx-auto w-full max-w-[754px] px-4 sm:px-0">
-              <Image
-                alt=""
-                src={assets.competitorOpenphone}
-                width={754}
-                height={300}
-                sizes="(max-width: 640px) 100vw, 754px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-                unoptimized
-              />
-            </div>
-            <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
-              Open Phone (выбор номера – регистрация – покупка – звонок)
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-3">
-            <h3 className="text-[24px] font-semibold leading-[32px]">Гипотезы</h3>
-            <p className="text-[18px] leading-[160%] tracking-[0.32px]">На основе анализа и инсайтов я составила список основных гипотез:</p>
-            <div className="flex flex-col gap-4 text-[18px] leading-[160%] tracking-[0.32px]">
-              <div>
-                <p className="font-semibold">1. Онбординг</p>
-                <p>
-                  Если мы перенесём процесс активации в приложение, показывая прогресс и статус на
-                  каждом этапе, то отток уменьшится, а конверсия в первый звонок вырастет, потому
-                  что пользователь поймёт, когда можно начать звонить.
-                </p>
-              </div>
-              <div>
-                <p className="font-semibold">2. Тарификация</p>
-                <p>
-                  Если показывать стоимость звонка до его начала и баланс на экране набора, то
-                  количество обращений в поддержку по списаниям уменьшится, потому что пользователь
-                  будет видеть цену заранее.
-                </p>
-              </div>
-              <div>
-                <p className="font-semibold">3. Поддержка</p>
-                <p>
-                  Если добавить в меню раздел «Поддержка» с FAQ и чатом, то повторные обращения в
-                  разные каналы снизятся, потому что пользователь найдёт ответ за 2 шага.
-                </p>
-              </div>
-              <div>
-                <p className="font-semibold">4. Подсказки</p>
-                <p>
-                  Если добавить интерактивные подсказки, то обращения в техподдержку снизятся, так
-                  как следующее действие будет всегда очевидно.
-                </p>
+            <div className="flex flex-col gap-3">
+              <h3 className="text-[24px] font-semibold leading-[32px]">Гипотезы</h3>
+              <p className="text-[18px] leading-[160%] tracking-[0.32px]">На основе анализа и инсайтов я составила список основных гипотез:</p>
+              <div className="flex flex-col gap-4 text-[18px] leading-[160%] tracking-[0.32px]">
+                <div>
+                  <p className="font-semibold">1. Онбординг</p>
+                  <p>
+                    Если мы перенесём процесс активации в приложение, показывая прогресс и статус на
+                    каждом этапе, то отток уменьшится, а конверсия в первый звонок вырастет, потому
+                    что пользователь поймёт, когда можно начать звонить.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold">2. Тарификация</p>
+                  <p>
+                    Если показывать стоимость звонка до его начала и баланс на экране набора, то
+                    количество обращений в поддержку по списаниям уменьшится, потому что пользователь
+                    будет видеть цену заранее.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold">3. Поддержка</p>
+                  <p>
+                    Если добавить в меню раздел «Поддержка» с FAQ и чатом, то повторные обращения в
+                    разные каналы снизятся, потому что пользователь найдёт ответ за 2 шага.
+                  </p>
+                </div>
+                <div>
+                  <p className="font-semibold">4. Подсказки</p>
+                  <p>
+                    Если добавить интерактивные подсказки, то обращения в техподдержку снизятся, так
+                    как следующее действие будет всегда очевидно.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -719,57 +721,61 @@ export function CaseStudyPage() {
           id="design"
           data-section-anchor="design"
           variants={item}
-          className="scroll-mt-[90px] flex flex-col gap-6"
+          className="scroll-mt-[90px] flex flex-col gap-3"
         >
           <h2 className="text-[32px] font-semibold leading-[40px]">Проектирование</h2>
-          <p className="text-[18px] leading-[160%] tracking-[0.32px]">
-            Цель этапа — определить, как система будет вести себя в диалоге с пользователем, чтобы
-            он не терялся в случае если что-то пойдёт не так. Основные решения касались логики
-            сценариев, проработки состояний и корнер-кейсов.
-          </p>
-          <p className="text-[18px] leading-[160%] tracking-[0.32px]">
-            Когда я проектировала новый путь, главным было убрать неопределённость. Пользователь не
-            должен гадать: «А номер уже мой? А сколько это стоит? А что делать, если что-то пошло не
-            так?». Вот что получилось:
-          </p>
-
-          <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
-            <div className="mx-auto w-full max-w-[750px] px-4 sm:px-6">
-              <button
-                type="button"
-                aria-label="Open userflow"
-                onClick={() => setIsUserflowOpen(true)}
-                className="w-full cursor-zoom-in"
-              >
-                <Image
-                  alt=""
-                  src={assets.userflow}
-                  width={userflowDisplay.width}
-                  height={userflowDisplay.height}
-                  sizes="(max-width: 640px) 100vw, 750px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                  unoptimized
-                />
-              </button>
+          <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-3">
+              <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+                Цель этапа — определить, как система будет вести себя в диалоге с пользователем, чтобы
+                он не терялся в случае если что-то пойдёт не так. Основные решения касались логики
+                сценариев, проработки состояний и корнер-кейсов.
+              </p>
+              <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+                Когда я проектировала новый путь, главным было убрать неопределённость. Пользователь не
+                должен гадать: «А номер уже мой? А сколько это стоит? А что делать, если что-то пошло не
+                так?». Вот что получилось:
+              </p>
             </div>
-            <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#9e9e9e] sm:px-0">
-              UserFlow сценария звонка (чтобы увеличить нажмите на картинку).
-            </p>
-          </div>
 
-          <ul className="list-disc space-y-2 pl-6 text-[18px] leading-[160%] tracking-[0.32px]">
-            <li>От первого запуска приложения до звонка — 4–5 шагов (вместо 8-10).</li>
-            <li>
-              Стали показывать стоимость звонка ещё до вызова, а после ключевых шагов success screen
-              (на схеме — ✅), чтобы убрать тревогу и неопределенность.
-            </li>
-            <li>Ошибки не оставляют в тупике, а предлагают решение и возвращают на сценарий.</li>
-            <li>
-              Поддержка всегда доступна, но не как основной, а как дополнительный шаг в решении
-              проблемы.
-            </li>
-          </ul>
+            <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
+              <div className="mx-auto w-full max-w-[750px] px-4 sm:px-6">
+                <button
+                  type="button"
+                  aria-label="Open userflow"
+                  onClick={() => setIsUserflowOpen(true)}
+                  className="w-full cursor-zoom-in"
+                >
+                  <Image
+                    alt=""
+                    src={assets.userflow}
+                    width={userflowDisplay.width}
+                    height={userflowDisplay.height}
+                    sizes="(max-width: 640px) 100vw, 750px"
+                    className="h-auto w-full object-contain"
+                    loading="lazy"
+                    unoptimized
+                  />
+                </button>
+              </div>
+              <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#9e9e9e] sm:px-0">
+                UserFlow сценария звонка (чтобы увеличить нажмите на картинку).
+              </p>
+            </div>
+
+            <ul className="list-disc space-y-2 pl-6 text-[18px] leading-[160%] tracking-[0.32px]">
+              <li>От первого запуска приложения до звонка — 4–5 шагов (вместо 8-10).</li>
+              <li>
+                Стали показывать стоимость звонка ещё до вызова, а после ключевых шагов success screen
+                (на схеме — ✅), чтобы убрать тревогу и неопределенность.
+              </li>
+              <li>Ошибки не оставляют в тупике, а предлагают решение и возвращают на сценарий.</li>
+              <li>
+                Поддержка всегда доступна, но не как основной, а как дополнительный шаг в решении
+                проблемы.
+              </li>
+            </ul>
+          </div>
         </motion.section>
 
         <motion.section
@@ -873,52 +879,53 @@ export function CaseStudyPage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-[90px] flex flex-col gap-6"
+          className="scroll-mt-[90px] flex flex-col gap-3"
         >
           <h2 className="text-[32px] font-semibold leading-[40px]">Результаты</h2>
+          <div className="flex flex-col gap-6">
+            <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+              Теперь пользователь видит, когда номер активен, сколько стоит звонок и что делать, если
+              что-то пошло не так. Коммуникация перестала быть просто функциональной и начала напрямую
+              влиять на поведение — сокращать путь и снижать количество ошибок.
+            </p>
 
-          <p className="text-[18px] leading-[160%] tracking-[0.32px]">
-            Теперь пользователь видит, когда номер активен, сколько стоит звонок и что делать, если
-            что-то пошло не так. Коммуникация перестала быть просто функциональной и начала напрямую
-            влиять на поведение — сокращать путь и снижать количество ошибок.
-          </p>
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+              <p>Изменения в интерфейсе закономерно отразились на ключевых метриках продукта:</p>
+              <ul className="list-disc space-y-0 pl-[27px]">
+                <li>
+                  <span className="text-[#89ff45]">Путь до звонка сократился</span>
+                  {" "}с 8 шагов и переходами в веб до 3 шагов в приложении.
+                </li>
+                <li>
+                  <span className="text-[#89ff45]">Конверсия в первый звонок выросла</span>
+                  {" "}на 23%, а общее количество звонков при том же трафике увеличилось (13k → 17k).
+                </li>
+                <li>
+                  <span className="text-[#89ff45]">Удержание пользователей увеличилось</span>
+                  {" "}для 2 недели — на 11 %, а 4-й — на 6 %.
+                </li>
+                <li>
+                  <span className="text-[#89ff45]">Обращения в поддержку сократились</span>
+                  {" "}почти в 2 раза (40% → 18%).
+                </li>
+              </ul>
+            </div>
 
-          <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
-            <p>Изменения в интерфейсе закономерно отразились на ключевых метриках продукта:</p>
-            <ul className="list-disc space-y-0 pl-[27px]">
-              <li>
-                <span className="text-[#89ff45]">Путь до звонка сократился</span>
-                {" "}с 8 шагов и переходами в веб до 3 шагов в приложении.
-              </li>
-              <li>
-                <span className="text-[#89ff45]">Конверсия в первый звонок выросла</span>
-                {" "}на 23%, а общее количество звонков при том же трафике увеличилось (13k → 17k).
-              </li>
-              <li>
-                <span className="text-[#89ff45]">Удержание пользователей увеличилось</span>
-                {" "}для 2 недели — на 11 %, а 4-й — на 6 %.
-              </li>
-              <li>
-                <span className="text-[#89ff45]">Обращения в поддержку сократились</span>
-                {" "}почти в 2 раза (40% → 18%).
-              </li>
-            </ul>
-          </div>
+            <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+              Дальнейшее развитие софтфона продолжилось через обратную связь от пользователей:
+              добавление избранных контактов, повтор звонка из истории и push-уведомления о низком
+              балансе. Всё это ушло в бэклог и дальше — в ближайшие обновления.
+            </p>
 
-          <p className="text-[18px] leading-[160%] tracking-[0.32px]">
-            Дальнейшее развитие софтфона продолжилось через обратную связь от пользователей:
-            добавление избранных контактов, повтор звонка из истории и push-уведомления о низком
-            балансе. Всё это ушло в бэклог и дальше — в ближайшие обновления.
-          </p>
+            <div className="h-px w-full bg-[#282828]" />
 
-          <div className="h-px w-full bg-[#282828]" />
-
-          <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
-            <p>Этот проект стал для меня важной точкой роста. Вот что я вынесла:</p>
-            <div className="space-y-0">
-              <p>1. Прозрачность интерфейса — основа доверия и коммуникации с пользователем.</p>
-              <p>2. Большие результаты часто приходят через маленькие изменения.</p>
-              <p>3. Тесты — лучший инструмент для аргументации своих решений перед бизнесом.</p>
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+              <p>Этот проект стал для меня важной точкой роста. Вот что я вынесла:</p>
+              <div className="space-y-0">
+                <p>1. Прозрачность интерфейса — основа доверия и коммуникации с пользователем.</p>
+                <p>2. Большие результаты часто приходят через маленькие изменения.</p>
+                <p>3. Тесты — лучший инструмент для аргументации своих решений перед бизнесом.</p>
+              </div>
             </div>
           </div>
         </motion.section>
