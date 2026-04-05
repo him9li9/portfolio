@@ -784,7 +784,7 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-[90px] flex flex-col gap-6"
         >
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-6">
             <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
             <p className="text-[18px] leading-[160%] tracking-[0.32px]">
               Первый раунд тестирования показал: даже там, где логика казалась очевидной, пользователи
@@ -843,7 +843,7 @@ export function CaseStudyPage() {
           </div>
 
           <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
-            <p className="font-semibold">3. Ошибка при звонке</p>
+            <p className="font-semibold">3. Помощь и подсказки</p>
             <p>
               Ранее был экран ошибки, где просто выводилась причина: «Регистрация не пройдена»,
               «Недостаточно средств» и другие, но пользователи всё равно не понимали, что делать
