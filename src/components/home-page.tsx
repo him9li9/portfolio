@@ -52,15 +52,15 @@ export function HomePage() {
   }, []);
 
   return (
-    <main className="bg-[#121212] text-white">
+    <main className="bg-[#171717] text-white">
       <motion.header
         initial={{ opacity: 0, y: -12 }}
         animate={hideTopbar ? { opacity: 0, y: -12 } : { opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 220, damping: 22, mass: 0.7 }}
-        className="sticky top-0 z-10 h-[74px] w-full bg-[rgba(18,18,18,0.6)] backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
+        className="sticky top-0 z-10 h-[74px] w-full bg-[rgba(23,23,23,0.6)] backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
         <div className="flex h-full w-full items-center justify-between px-4 py-[13px] sm:px-8">
-          <div className="font-oldenburg flex items-center gap-1 text-[18px] leading-[32px] tracking-[0.32px]">
+          <div className="font-oldenburg flex items-center gap-1 text-[18px] leading-[160%] tracking-[0.32px]">
             <span>nastya</span>
             <span>with</span>
             <img alt="" src={assets.heart} className="h-6 w-6" />
@@ -69,7 +69,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[32px] tracking-[0.32px]"
+              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%] tracking-[0.32px]"
               href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
             >
               CV
@@ -77,7 +77,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[32px] tracking-[0.32px]"
+              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%] tracking-[0.32px]"
               href="https://t.me/him9li9"
             >
               Telegram
@@ -103,7 +103,7 @@ export function HomePage() {
               На связи Настя Ермошина
             </h1>
           </div>
-          <p className="text-[18px] leading-[32px] tracking-[0.32px] text-white">
+          <p className="text-[18px] leading-[160%] tracking-[0.32px] text-white">
             Продуктовый дизайнер с опытом 3+ года в телекоме и стартапах, проектирую b2b- и
             b2c-решения. Умею быстро разбираться в сложных системах и превращать их в удобные,
             интуитивные интерфейсы, создавая ценность для пользователя. В работе мне нравится
@@ -121,14 +121,14 @@ export function HomePage() {
               className="relative z-50 flex w-full flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
               style={{
                 backgroundImage:
-                  "radial-gradient(120% 130% at 20% 30%, rgba(58,58,58,0.45) 0%, rgba(24,24,24,1) 62%, rgba(18,18,18,1) 100%), radial-gradient(90% 110% at 82% 78%, rgba(52,52,52,0.5) 0%, rgba(18,18,18,0.98) 70%, rgba(18,18,18,1) 100%)"
+                  "radial-gradient(120% 130% at 20% 30%, rgba(58,58,58,0.45) 0%, rgba(24,24,24,1) 62%, rgba(23,23,23,1) 100%), radial-gradient(90% 110% at 82% 78%, rgba(52,52,52,0.5) 0%, rgba(23,23,23,0.98) 70%, rgba(23,23,23,1) 100%)"
               }}
             >
               <div className="flex w-full flex-col gap-[108px] sm:max-w-[338px]">
                 <div className="w-[252px]">
                   <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
                 </div>
-                <p className="text-[18px] leading-[32px] tracking-[0.32px] text-white">
+                <p className="text-[18px] leading-[160%] tracking-[0.32px] text-white">
                   Как я сократила время активации и увеличила количество звонков из приложения на 23%
                 </p>
               </div>
