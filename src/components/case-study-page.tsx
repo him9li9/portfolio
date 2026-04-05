@@ -413,7 +413,7 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-[90px] flex flex-col gap-8"
         >
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3">
             <h2 className="text-[32px] font-semibold leading-[40px]">О проекте</h2>
             <p className="text-[18px] leading-[160%] tracking-[0.32px]">
               Когда я пришла в команду, продукт уже находился на стадии MVP около 9 месяцев.
@@ -423,7 +423,7 @@ export function CaseStudyPage() {
             <div className="h-px w-full bg-[#282828]" />
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3">
             <h3 className="text-[24px] font-semibold leading-[32px]">Проблема</h3>
             <p className="text-[18px] leading-[160%] tracking-[0.32px]">
               Первичный анализ выявил системную проблему — пользователь остается в неведении на
@@ -477,7 +477,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3">
             <h3 className="text-[24px] font-semibold leading-[32px]">Задача</h3>
             <p className="text-[18px] leading-[160%] tracking-[0.32px]">
               Основная задача проекта состояла в том, чтобы внедрить в продукт систему коммуникации
@@ -490,7 +490,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3">
             <h3 className="text-[24px] font-semibold leading-[32px]">Что я сделала</h3>
             <ol className="list-decimal space-y-2 pl-6 text-[18px] leading-[160%] tracking-[0.32px]">
               <li>Проанализировала MVP и обратную связь от пользователей.</li>
@@ -522,7 +522,7 @@ export function CaseStudyPage() {
 
           <div className="h-px w-full bg-[#282828]" />
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3">
             <h3 className="text-[24px] font-semibold leading-[32px]">Анализ текущей версии</h3>
             <p className="text-[18px] leading-[160%] tracking-[0.32px]">
               Цель этапа — понять, где именно пользователи теряются, совершают ошибки или тратят
@@ -626,7 +626,7 @@ export function CaseStudyPage() {
             где важна немедленная доступность связи и интернета.
           </p>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3">
             <h3 className="text-[24px] font-semibold leading-[32px]">Анализ конкурентов</h3>
             <p className="text-[18px] leading-[160%] tracking-[0.32px]">
               В ходе discovery я также изучила аналогичные продукты, в которых есть звонки.
@@ -677,7 +677,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-3">
             <h3 className="text-[24px] font-semibold leading-[32px]">Гипотезы</h3>
             <p className="text-[18px] leading-[160%] tracking-[0.32px]">На основе анализа и инсайтов я составила список основных гипотез:</p>
             <div className="flex flex-col gap-4 text-[18px] leading-[160%] tracking-[0.32px]">
@@ -778,7 +778,7 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-[90px] flex flex-col gap-6"
         >
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-3">
             <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
             <p className="text-[18px] leading-[160%] tracking-[0.32px]">
               Первый раунд тестирования показал: даже там, где логика казалась очевидной, пользователи
