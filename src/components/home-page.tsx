@@ -92,8 +92,8 @@ export function HomePage() {
         animate="show"
         className="flex w-full flex-col gap-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:gap-[100px] sm:px-0 sm:pt-[66px] sm:pb-[140px]"
       >
-        <motion.section variants={item} className="flex flex-col gap-6">
-          <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
+        <motion.section variants={item} className="flex flex-col gap-8">
+          <div className="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
             <div className="h-[100px] w-[120px] overflow-hidden rounded-[100px]">
               <img alt="" src={assets.avatar} className="h-full w-full object-cover" />
             </div>
@@ -118,7 +118,7 @@ export function HomePage() {
             <motion.section
               whileHover={canHover ? { scale: 1.02 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="relative z-50 flex w-full transform-gpu flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] will-change-transform sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
+              className="relative z-50 flex w-full flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
               style={{
                 backgroundImage:
                   "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
