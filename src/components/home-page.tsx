@@ -14,6 +14,7 @@ const assets = {
 export function HomePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
+  const [isCardHovered, setIsCardHovered] = useState(false);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -111,12 +112,28 @@ export function HomePage() {
           </p>
         </motion.section>
 
-        <motion.div variants={item} className="relative z-50 group/card">
+        <motion.div variants={item} className="relative z-50">
           <h2 className="mb-4 text-[20px] font-semibold leading-[160%] tracking-[0.32px]">Мои проекты</h2>
-          <div className="pointer-events-none fixed inset-0 z-40 hidden bg-black opacity-0 transition-opacity duration-200 ease-out will-change-opacity sm:block sm:group-hover/card:opacity-[0.65]" />
-          <Link href="/app" className="block">
+          <motion.div
+            aria-hidden
+            className="pointer-events-none fixed inset-0 z-40 hidden bg-black will-change-opacity sm:block"
+            initial={false}
+            animate={{ opacity: canHover && isCardHovered ? 0.65 : 0 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+          />
+          <Link
+            href="/app"
+            className="block"
+            onMouseEnter={() => canHover && setIsCardHovered(true)}
+            onMouseLeave={() => setIsCardHovered(false)}
+            onFocus={() => canHover && setIsCardHovered(true)}
+            onBlur={() => setIsCardHovered(false)}
+          >
             <motion.section
-              className="relative z-50 flex w-full transform-gpu flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] transition-transform duration-200 ease-out will-change-transform sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px] sm:group-hover/card:scale-[1.02]"
+              initial={false}
+              animate={{ scale: canHover && isCardHovered ? 1.02 : 1 }}
+              transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              className="relative z-50 flex w-full transform-gpu flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] will-change-transform sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
               style={{
                 backgroundImage:
                   "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
