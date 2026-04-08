@@ -116,9 +116,7 @@ export function HomePage() {
           <div className="pointer-events-none fixed inset-0 z-40 hidden bg-black opacity-0 transition-opacity duration-200 ease-out will-change-opacity sm:block sm:group-hover/card:opacity-[0.65]" />
           <Link href="/app" className="block">
             <motion.section
-              whileHover={canHover ? { scale: 1.02 } : undefined}
-              transition={{ duration: 0.2, ease: "easeOut" }}
-              className="relative z-50 flex w-full transform-gpu flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] will-change-transform sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
+              className="relative z-50 flex w-full transform-gpu flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] transition-transform duration-200 ease-out will-change-transform sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px] sm:group-hover/card:scale-[1.02]"
               style={{
                 backgroundImage:
                   "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
