@@ -111,13 +111,10 @@ export function HomePage() {
           </p>
         </motion.section>
 
-        <motion.div variants={item} className="relative z-50 group/card">
+        <div className="relative z-50">
           <h2 className="mb-4 text-[20px] font-semibold leading-[160%] tracking-[0.32px]">Мои проекты</h2>
-          <div className="pointer-events-none fixed inset-0 z-40 bg-black opacity-0 transition-opacity group-hover/card:opacity-100" />
           <Link href="/app" prefetch={false} className="block">
-            <motion.section
-              whileHover={canHover ? { scale: 1.02 } : undefined}
-              transition={{ duration: 0.2, ease: "easeOut" }}
+            <section
               className="relative z-50 flex w-full flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
               style={{
                 backgroundImage:
@@ -135,9 +132,9 @@ export function HomePage() {
               <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-[330px] sm:w-[334px] sm:aspect-auto">
                 <img alt="" src={assets.phones} className="h-full w-full object-contain" />
               </div>
-            </motion.section>
+            </section>
           </Link>
-        </motion.div>
+        </div>
       </motion.div>
     </main>
   );
