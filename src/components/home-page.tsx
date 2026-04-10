@@ -113,7 +113,7 @@ export function HomePage() {
 
         <motion.div variants={item} className="relative z-50 group/card">
           <h2 className="mb-4 text-[20px] font-semibold leading-[160%] tracking-[0.32px]">Мои проекты</h2>
-          <div className="pointer-events-none fixed inset-0 z-40 hidden bg-black opacity-0 transition-opacity duration-200 ease-out sm:block sm:group-hover/card:opacity-[0.65]" />
+          <div className="pointer-events-none fixed inset-0 z-40 bg-black opacity-0 transition-opacity group-hover/card:opacity-100" />
           <Link href="/app" prefetch={false} className="block">
             <motion.section
               whileHover={canHover ? { scale: 1.02 } : undefined}
