@@ -111,11 +111,14 @@ export function HomePage() {
           </p>
         </motion.section>
 
-        <div className="relative z-50">
+        <div className="relative z-50 group/card">
           <h2 className="mb-4 text-[20px] font-semibold leading-[160%] tracking-[0.32px]">Мои проекты</h2>
+          <div className="pointer-events-none fixed inset-0 z-40 hidden bg-black opacity-0 transition-opacity duration-200 ease-out sm:block sm:group-hover/card:opacity-40" />
           <Link href="/app" prefetch={false} className="block">
-            <section
-              className="relative z-50 flex w-full flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
+            <motion.section
+              whileHover={canHover ? { scale: 1.02 } : undefined}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="relative z-50 flex w-full transform-gpu flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] will-change-transform sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
               style={{
                 backgroundImage:
                   "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
@@ -132,7 +135,7 @@ export function HomePage() {
               <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-[330px] sm:w-[334px] sm:aspect-auto">
                 <img alt="" src={assets.phones} className="h-full w-full object-contain" />
               </div>
-            </section>
+            </motion.section>
           </Link>
         </div>
       </motion.div>
