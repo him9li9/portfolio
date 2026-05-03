@@ -19,7 +19,7 @@ const assets = {
   userflow: "/figma/case-userflow.png",
   solutionSuccess: "/figma/case-solution-success.png?v=20260405",
   solutionCost: "/figma/case-solution-cost.png?v=20260405",
-  solutionError: "/figma/case-solution-error.png?v=20260405"
+  solutionError: "/figma/case-solution-error.png?v=20260503"
 };
 
 export function CaseStudyPage() {
