@@ -792,7 +792,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="mt-2 flex flex-col gap-0 text-[18px] leading-[160%]">
+          <div className="mt-2 flex flex-col gap-2 text-[18px] leading-[160%]">
             <p className="font-semibold">1. Экран успеха после регистрации</p>
             <p>
               Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
@@ -817,7 +817,7 @@ export function CaseStudyPage() {
             />
           </div>
 
-          <div className="flex flex-col gap-0 text-[18px] leading-[160%]">
+          <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
             <p className="font-semibold">2. Узнать стоимость звонка</p>
             <p>
               В первой версии цену можно было увидеть, только начав набирать номер. Некоторым пользователям
@@ -842,7 +842,7 @@ export function CaseStudyPage() {
             />
           </div>
 
-          <div className="flex flex-col gap-0 text-[18px] leading-[160%]">
+          <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
             <p className="font-semibold">3. Помощь и подсказки</p>
             <p>
               Ранее был экран ошибки, где просто выводилась причина: «Регистрация не пройдена»,
