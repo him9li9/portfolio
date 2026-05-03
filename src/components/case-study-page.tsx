@@ -416,10 +416,9 @@ export function CaseStudyPage() {
           <div className="flex flex-col">
             <h2 className="text-[32px] font-semibold leading-[40px]">О проекте</h2>
             <p className="mt-4 text-[18px] leading-[160%]">
-              Когда я пришла в команду, продукт уже находился в стадии MVP около <span className="font-semibold">9 месяцев</span>.
-              Пользователи скачивали приложение, но <span className="font-semibold">звонков было мало</span>, а
-              результаты для бизнеса оставались <span className="font-semibold">ниже ожидаемых</span>. Нужно
-              было разобраться, что именно не работает, и исправить это.
+              Когда я присоединилась к проекту, приложение существовало в формате MVP, но проседала
+              основная метрика — количество звонков, вместе с командой мне предстояло разобраться
+              почему так происходит и исправить это.
             </p>
             <div className="mt-8 h-px w-full bg-[#282828]" />
           </div>
@@ -527,13 +526,13 @@ export function CaseStudyPage() {
             <div className="flex flex-col gap-4">
               <h3 className="text-[24px] font-semibold leading-[32px]">Анализ текущей версии</h3>
               <p className="text-[18px] leading-[160%]">
-                Цель этапа — понять, где именно пользователи теряются, совершают ошибки или тратят
+                <span className="font-semibold">Цель этапа —</span> понять, где именно пользователи теряются, совершают ошибки или тратят
                 лишнее время, и какие из этих проблем особенно критичны для MVP перед релизом. Поэтому
                 я начала с анализа текущего пользовательского пути и точек неопределённости:
               </p>
             </div>
 
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
+            <div className="flex flex-col gap-0 text-[18px] leading-[160%]">
               <p className="font-semibold">1. Сценарий активации разорван между вебом и приложением</p>
               <ul className="list-disc space-y-2 pl-6">
                 <li>регистрация вынесена в веб-кабинет и требует ручной верификации менеджером</li>
@@ -541,7 +540,7 @@ export function CaseStudyPage() {
               </ul>
               <p>
                 Пользователи откладывают покупку номера и первый звонок →{" "}
-                <span>отток на этапе регистрации</span>
+                <span className="font-semibold">отток на этапе регистрации</span>
               </p>
             </div>
 
@@ -558,7 +557,7 @@ export function CaseStudyPage() {
               />
             </div>
 
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
+            <div className="flex flex-col gap-0 text-[18px] leading-[160%]">
               <p className="font-semibold">2. Стоимость и списания не прозрачны в момент звонка</p>
               <ul className="list-disc space-y-2 pl-6">
                 <li>информацию о стоимости звонков в роуминге нужно было искать на сайте</li>
@@ -566,7 +565,7 @@ export function CaseStudyPage() {
               </ul>
               <p>
                 Пользователи не понимают, сколько и за что они платят →{" "}
-                <span>рост обращений в поддержку</span>
+                <span className="font-semibold">рост обращений в поддержку</span>
               </p>
             </div>
 
@@ -585,7 +584,7 @@ export function CaseStudyPage() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
+            <div className="flex flex-col gap-0 text-[18px] leading-[160%]">
               <p className="font-semibold">3. Некачественная обратная связь</p>
               <ul className="list-disc space-y-2 pl-6">
                 <li>в приложении нет понятной точки входа в поддержку</li>
@@ -593,7 +592,7 @@ export function CaseStudyPage() {
               </ul>
               <p>
                 Пользователи не знают, где искать помощь →{" "}
-                <span>повторные обращения в разных каналах</span>
+                <span className="font-semibold">повторные обращения в разных каналах</span>
               </p>
             </div>
 
@@ -624,7 +623,7 @@ export function CaseStudyPage() {
 
             <p className="text-[18px] leading-[160%]">
               Анализ обращений в поддержку показал, что основная причина проблем пользователей —
-              непонимание текущего состояния аккаунта и баланса. Это особенно критично в путешествиях,
+              <span className="font-semibold">непонимание текущего состояния аккаунта и баланса</span>. Это особенно критично в путешествиях,
               где важна немедленная доступность связи и интернета.
             </p>
 
@@ -728,7 +727,7 @@ export function CaseStudyPage() {
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
               <p className="text-[18px] leading-[160%]">
-                Цель этапа — определить, как система будет вести себя в диалоге с пользователем, чтобы
+                <span className="font-semibold">Цель этапа —</span> определить, как система будет вести себя в диалоге с пользователем, чтобы
                 он не терялся в случае если что-то пойдёт не так. Основные решения касались логики
                 сценариев, проработки состояний и корнер-кейсов.
               </p>
@@ -793,7 +792,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="mt-8 flex flex-col gap-2 text-[18px] leading-[160%]">
+          <div className="mt-8 flex flex-col gap-0 text-[18px] leading-[160%]">
             <p className="font-semibold">1. Экран успеха после регистрации</p>
             <p>
               Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
@@ -818,7 +817,7 @@ export function CaseStudyPage() {
             />
           </div>
 
-          <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
+          <div className="flex flex-col gap-0 text-[18px] leading-[160%]">
             <p className="font-semibold">2. Узнать стоимость звонка</p>
             <p>
               В первой версии цену можно было увидеть, только начав набирать номер. Некоторым пользователям
@@ -843,7 +842,7 @@ export function CaseStudyPage() {
             />
           </div>
 
-          <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
+          <div className="flex flex-col gap-0 text-[18px] leading-[160%]">
             <p className="font-semibold">3. Помощь и подсказки</p>
             <p>
               Ранее был экран ошибки, где просто выводилась причина: «Регистрация не пройдена»,
@@ -893,23 +892,23 @@ export function CaseStudyPage() {
               влиять на поведение — сокращать путь и снижать количество ошибок.
             </p>
 
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
+            <div className="flex flex-col gap-0 text-[18px] leading-[160%]">
               <p>Изменения в интерфейсе закономерно отразились на ключевых метриках продукта:</p>
               <ul className="list-disc space-y-0 pl-[27px]">
                 <li>
-                  <span>путь до звонка сократился</span>
+                  <span className="font-semibold">Путь до звонка сократился</span>
                   {" "}с 8 шагов и переходами в веб до 3 шагов в приложении
                 </li>
                 <li>
-                  <span>конверсия в первый звонок выросла</span>
+                  <span className="font-semibold">Конверсия в первый звонок выросла</span>
                   {" "}на 23%, а общее количество звонков при том же трафике увеличилось (13k → 17k)
                 </li>
                 <li>
-                  <span>удержание пользователей увеличилось</span>
+                  <span className="font-semibold">Удержание пользователей увеличилось</span>
                   {" "}для 2 недели — на 11 %, а 4-й — на 6 %
                 </li>
                 <li>
-                  <span>обращения в поддержку сократились</span>
+                  <span className="font-semibold">Обращения в поддержку сократились</span>
                   {" "}почти в 2 раза (40% → 18%)
                 </li>
               </ul>
