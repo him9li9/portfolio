@@ -532,14 +532,14 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-0 text-[18px] leading-[160%]">
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
               <p className="font-semibold">1. Сценарий активации разорван между вебом и приложением</p>
               <ul className="list-disc space-y-2 pl-6">
                 <li>регистрация вынесена в веб-кабинет и требует ручной верификации менеджером</li>
                 <li>после отправки заявки нет объяснения со статусом и следующими действиями</li>
               </ul>
               <p>
-                Пользователи откладывают покупку номера и первый звонок →{" "}
+                Пользователи откладывают покупку номера и первый звонок <span className="font-semibold">→</span>{" "}
                 <span className="font-semibold">отток на этапе регистрации</span>
               </p>
             </div>
@@ -557,14 +557,14 @@ export function CaseStudyPage() {
               />
             </div>
 
-            <div className="flex flex-col gap-0 text-[18px] leading-[160%]">
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
               <p className="font-semibold">2. Стоимость и списания не прозрачны в момент звонка</p>
               <ul className="list-disc space-y-2 pl-6">
                 <li>информацию о стоимости звонков в роуминге нужно было искать на сайте</li>
                 <li>после завершения звонка списания выглядят неожиданными</li>
               </ul>
               <p>
-                Пользователи не понимают, сколько и за что они платят →{" "}
+                Пользователи не понимают, сколько и за что они платят <span className="font-semibold">→</span>{" "}
                 <span className="font-semibold">рост обращений в поддержку</span>
               </p>
             </div>
@@ -584,14 +584,14 @@ export function CaseStudyPage() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-0 text-[18px] leading-[160%]">
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
               <p className="font-semibold">3. Некачественная обратная связь</p>
               <ul className="list-disc space-y-2 pl-6">
                 <li>в приложении нет понятной точки входа в поддержку</li>
                 <li>пользователи ищут ответы в разных каналах и повторяют вопросы</li>
               </ul>
               <p>
-                Пользователи не знают, где искать помощь →{" "}
+                Пользователи не знают, где искать помощь <span className="font-semibold">→</span>{" "}
                 <span className="font-semibold">повторные обращения в разных каналах</span>
               </p>
             </div>
@@ -792,7 +792,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="mt-8 flex flex-col gap-0 text-[18px] leading-[160%]">
+          <div className="mt-2 flex flex-col gap-0 text-[18px] leading-[160%]">
             <p className="font-semibold">1. Экран успеха после регистрации</p>
             <p>
               Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
