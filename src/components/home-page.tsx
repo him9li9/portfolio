@@ -60,7 +60,7 @@ export function HomePage() {
         className="sticky top-0 z-10 h-[74px] w-full bg-[rgba(23,23,23,0.6)] backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
         <div className="flex h-full w-full items-center justify-between px-4 py-[13px] sm:px-8">
-          <div className="font-oldenburg flex items-center gap-1 text-[18px] leading-[160%] tracking-[0.32px]">
+          <div className="font-oldenburg flex items-center gap-1 text-[18px] leading-[160%]">
             <span>nastya</span>
             <span>with</span>
             <img alt="" src={assets.heart} className="h-6 w-6" />
@@ -69,7 +69,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%] tracking-[0.32px]"
+              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%]"
               href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
             >
               CV
@@ -77,7 +77,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%] tracking-[0.32px]"
+              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%]"
               href="https://t.me/him9li9"
             >
               Telegram
@@ -103,7 +103,7 @@ export function HomePage() {
               На связи Настя Ермошина
             </h1>
           </div>
-          <p className="text-[18px] leading-[160%] tracking-[0.32px] text-white">
+          <p className="text-[18px] leading-[160%] text-white">
             Продуктовый дизайнер с опытом 3+ года в телекоме и стартапах, проектирую b2b- и
             b2c-решения. Умею быстро разбираться в сложных системах и превращать их в удобные,
             интуитивные интерфейсы, создавая ценность для пользователя. В работе мне нравится
@@ -112,7 +112,7 @@ export function HomePage() {
         </motion.section>
 
         <div className="relative z-50 group/card">
-          <h2 className="mb-4 text-[20px] font-semibold leading-[160%] tracking-[0.32px]">Мои проекты</h2>
+          <h2 className="mb-4 text-[20px] font-semibold leading-[160%]">Мои проекты</h2>
           <div className="pointer-events-none fixed inset-0 z-40 hidden bg-black opacity-0 transition-opacity duration-200 ease-out sm:block sm:group-hover/card:opacity-40" />
           <Link href="/app" prefetch={false} className="block">
             <motion.section
@@ -128,7 +128,7 @@ export function HomePage() {
                 <div className="w-[252px]">
                   <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
                 </div>
-                <p className="text-[18px] leading-[160%] tracking-[0.32px] text-white">
+                <p className="text-[18px] leading-[160%] text-white">
                   Как я сократила время активации и увеличила количество звонков из приложения на 23%
                 </p>
               </div>

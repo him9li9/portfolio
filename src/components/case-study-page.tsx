@@ -346,7 +346,7 @@ export function CaseStudyPage() {
         className="sticky top-0 z-10 h-[74px] w-full bg-[rgba(23,23,23,0.6)] backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
         <div className="flex h-full w-full items-center justify-between px-4 py-[13px] sm:px-8">
-          <Link href="/" className="font-oldenburg flex items-center gap-1 text-[18px] leading-[160%] tracking-[0.32px]">
+          <Link href="/" className="font-oldenburg flex items-center gap-1 text-[18px] leading-[160%]">
             <span>nastya</span>
             <span>with</span>
             <img alt="" src={assets.heart} className="h-6 w-6" />
@@ -355,7 +355,7 @@ export function CaseStudyPage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%] tracking-[0.32px]"
+              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%]"
               href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
             >
               CV
@@ -363,7 +363,7 @@ export function CaseStudyPage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%] tracking-[0.32px]"
+              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%]"
               href="https://t.me/him9li9"
             >
               Telegram
@@ -386,7 +386,7 @@ export function CaseStudyPage() {
         >
           <div className="flex flex-col gap-4 text-white">
             <h1 className="text-[40px] font-semibold leading-[48px]">MCN Softphone</h1>
-            <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+            <p className="text-[18px] leading-[160%]">
               — мобильное приложение для звонков через интернет и управление личным кабинетом. Аудитория —
               путешественники, которым нужна дешёвая и надёжная связь за границей.
             </p>
@@ -415,25 +415,26 @@ export function CaseStudyPage() {
         >
           <div className="flex flex-col">
             <h2 className="text-[32px] font-semibold leading-[40px]">О проекте</h2>
-            <p className="mt-4 text-[18px] leading-[160%] tracking-[0.32px]">
-              Когда я пришла в команду, продукт уже находился на стадии MVP около 9 месяцев.
-              Пользователи скачивали приложение, но звонков было мало и результаты для бизнеса были
-              ниже ожидаемых. Нужно было разобраться, что конкретно не работает и исправить это.
+            <p className="mt-4 text-[18px] leading-[160%]">
+              Когда я пришла в команду, продукт уже находился в стадии MVP около <span className="font-semibold">9 месяцев</span>.
+              Пользователи скачивали приложение, но <span className="font-semibold">звонков было мало</span>, а
+              результаты для бизнеса оставались <span className="font-semibold">ниже ожидаемых</span>. Нужно
+              было разобраться, что именно не работает, и исправить это.
             </p>
             <div className="mt-8 h-px w-full bg-[#282828]" />
           </div>
 
           <div className="flex flex-col gap-4">
             <h3 className="text-[24px] font-semibold leading-[32px]">Проблема</h3>
-            <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+            <p className="text-[18px] leading-[160%]">
               Первичный анализ выявил системную проблему — пользователь остается в неведении на
               критических этапах: после регистрации, во время звонка, при технических сбоях. Это
               напрямую повлияло на ключевые метрики:
             </p>
-            <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%] tracking-[0.32px]">
+            <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%]">
               <li>
                 <span className="font-semibold">Низкая конверсия в первый звонок</span>
-                {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
+                {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен`}
               </li>
             </ul>
             <div className="mx-auto w-full max-w-[323px]">
@@ -448,10 +449,10 @@ export function CaseStudyPage() {
                 unoptimized
               />
             </div>
-            <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%] tracking-[0.32px]">
+            <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%]">
               <li>
                 <span className="font-semibold">Низкий Retention</span>
-                {` — люди скачивали приложение, пробовали разобраться, но из 2.1К новых пользователей возвращалась лишь половина. По данным аналитики Retention падает до 15% к четвёртой неделе.`}
+                {` — люди скачивали приложение, пробовали разобраться, но из 2.1К новых пользователей возвращалась лишь половина. По данным аналитики retention падает до 15% к четвёртой неделе`}
               </li>
             </ul>
             <div className="mx-auto w-full max-w-[527px]">
@@ -466,25 +467,25 @@ export function CaseStudyPage() {
                 unoptimized
               />
             </div>
-            <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%] tracking-[0.32px]">
+            <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%]">
               <li>
                 <span className="font-semibold">Растущие затраты на поддержку</span>
                 {` — 40% NST (обращений) — вопросы про статус аккаунта и списания, которые можно было бы закрыть сразу в приложении`}
               </li>
             </ul>
-            <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+            <p className="text-[18px] leading-[160%]">
               Главная причина снижения метрик — потеря коммуникации между системой и пользователем.
             </p>
           </div>
 
           <div className="flex flex-col gap-4">
             <h3 className="text-[24px] font-semibold leading-[32px]">Задача</h3>
-            <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+            <p className="text-[18px] leading-[160%]">
               Основная задача проекта состояла в том, чтобы внедрить в продукт систему коммуникации
               из четких шагов, подсказок и с полной прозрачностью расходов. Это позволит вернуть
               пользователю ощущение контроля и уверенности, сократив отток и нагрузку на поддержку.
             </p>
-            <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+            <p className="text-[18px] leading-[160%]">
               <span className="font-semibold">Метрики успеха</span>
               {` — рост количества звонков из приложения, снижение повторных обращений в поддержку.`}
             </p>
@@ -492,12 +493,12 @@ export function CaseStudyPage() {
 
           <div className="flex flex-col gap-4">
             <h3 className="text-[24px] font-semibold leading-[32px]">Что я сделала</h3>
-            <ol className="list-decimal space-y-2 pl-6 text-[18px] leading-[160%] tracking-[0.32px]">
-              <li>Проанализировала MVP и обратную связь от пользователей.</li>
-              <li>Определила проблемы и сформулировала гипотезы (вместе с командой).</li>
-              <li>Спроектировала и упростила ключевые сценарии.</li>
-              <li>Проверила решения на быстрых прототипах с пользователями.</li>
-              <li>Подготовила дизайн и компоненты для передачи в разработку + материалы для релиза.</li>
+            <ol className="list-decimal space-y-2 pl-6 text-[18px] leading-[160%]">
+              <li>проанализировала MVP и обратную связь от пользователей</li>
+              <li>определила проблемы и сформулировала гипотезы (вместе с командой)</li>
+              <li>спроектировала и упростила ключевые сценарии</li>
+              <li>проверила решения на быстрых прототипах с пользователями</li>
+              <li>подготовила дизайн и компоненты для передачи в разработку + материалы для релиза</li>
             </ol>
           </div>
         </motion.section>
@@ -511,13 +512,13 @@ export function CaseStudyPage() {
           <h2 className="text-[32px] font-semibold leading-[40px]">Дискавери</h2>
 
           <div className="flex flex-col gap-8">
-            <div className="text-[18px] leading-[160%] tracking-[0.32px]">
+            <div className="text-[18px] leading-[160%]">
               <p>В рамках discovery я опиралась на:</p>
               <ul className="list-disc space-y-2 pl-6">
-                <li>Анализ текущих пользовательских сценариев и логики экранов.</li>
-                <li>Обращения пользователей в поддержку (частые вопросы и типовые ошибки).</li>
-                <li>Обзор аналогичных softphone- и коммуникационных решений.</li>
-                <li>Обсуждения с командой поддержки и разработки.</li>
+                <li>анализ текущих пользовательских сценариев и логики экранов</li>
+                <li>обращения пользователей в поддержку (частые вопросы и типовые ошибки)</li>
+                <li>обзор аналогичных softphone- и коммуникационных решений</li>
+                <li>обсуждения с командой поддержки и разработки</li>
               </ul>
             </div>
 
@@ -525,22 +526,22 @@ export function CaseStudyPage() {
 
             <div className="flex flex-col gap-4">
               <h3 className="text-[24px] font-semibold leading-[32px]">Анализ текущей версии</h3>
-              <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+              <p className="text-[18px] leading-[160%]">
                 Цель этапа — понять, где именно пользователи теряются, совершают ошибки или тратят
                 лишнее время, и какие из этих проблем особенно критичны для MVP перед релизом. Поэтому
                 я начала с анализа текущего пользовательского пути и точек неопределённости:
               </p>
             </div>
 
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
               <p className="font-semibold">1. Сценарий активации разорван между вебом и приложением</p>
               <ul className="list-disc space-y-2 pl-6">
-                <li>Регистрация вынесена в веб-кабинет и требует ручной верификации менеджером.</li>
-                <li>После отправки заявки нет объяснения со статусом и следующими действиями.</li>
+                <li>регистрация вынесена в веб-кабинет и требует ручной верификации менеджером</li>
+                <li>после отправки заявки нет объяснения со статусом и следующими действиями</li>
               </ul>
               <p>
                 Пользователи откладывают покупку номера и первый звонок →{" "}
-                <span className="text-[#ff6060]">отток на этапе регистрации</span>.
+                <span>отток на этапе регистрации</span>
               </p>
             </div>
 
@@ -557,15 +558,15 @@ export function CaseStudyPage() {
               />
             </div>
 
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
               <p className="font-semibold">2. Стоимость и списания не прозрачны в момент звонка</p>
               <ul className="list-disc space-y-2 pl-6">
-                <li>Информацию о стоимости звонков в роуминге нужно было искать на сайте.</li>
-                <li>После завершения звонка списания выглядят неожиданными.</li>
+                <li>информацию о стоимости звонков в роуминге нужно было искать на сайте</li>
+                <li>после завершения звонка списания выглядят неожиданными</li>
               </ul>
               <p>
                 Пользователи не понимают, сколько и за что они платят →{" "}
-                <span className="text-[#ff6060]">рост обращений в поддержку</span>.
+                <span>рост обращений в поддержку</span>
               </p>
             </div>
 
@@ -584,15 +585,15 @@ export function CaseStudyPage() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
               <p className="font-semibold">3. Некачественная обратная связь</p>
               <ul className="list-disc space-y-2 pl-6">
-                <li>В приложении нет понятной точки входа в поддержку.</li>
-                <li>Пользователи ищут ответы в разных каналах и повторяют вопросы.</li>
+                <li>в приложении нет понятной точки входа в поддержку</li>
+                <li>пользователи ищут ответы в разных каналах и повторяют вопросы</li>
               </ul>
               <p>
                 Пользователи не знают, где искать помощь →{" "}
-                <span className="text-[#ff6060]">повторные обращения в разных каналах</span>.
+                <span>повторные обращения в разных каналах</span>
               </p>
             </div>
 
@@ -621,7 +622,7 @@ export function CaseStudyPage() {
               </div>
             </div>
 
-            <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+            <p className="text-[18px] leading-[160%]">
               Анализ обращений в поддержку показал, что основная причина проблем пользователей —
               непонимание текущего состояния аккаунта и баланса. Это особенно критично в путешествиях,
               где важна немедленная доступность связи и интернета.
@@ -629,7 +630,7 @@ export function CaseStudyPage() {
 
             <div className="flex flex-col gap-4">
               <h3 className="text-[24px] font-semibold leading-[32px]">Анализ конкурентов</h3>
-              <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+              <p className="text-[18px] leading-[160%]">
                 В ходе discovery я также изучила аналогичные продукты, в которых есть звонки.
                 Например, после опыта работы с мессенджерами у пользователей формируется ожидание
                 мгновенной готовности к коммуникации (и звонкам в том числе) сразу после регистрации.
@@ -654,7 +655,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+            <p className="text-[18px] leading-[160%]">
               В softphone-приложениях, где есть обязательные шаги (выбор номера, верификация,
               тарификация), путь к первому звонку объективно сложнее. Поэтому в таком сценарии
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
@@ -680,8 +681,8 @@ export function CaseStudyPage() {
 
             <div className="flex flex-col gap-4">
               <h3 className="text-[24px] font-semibold leading-[32px]">Гипотезы</h3>
-              <p className="text-[18px] leading-[160%] tracking-[0.32px]">На основе анализа и инсайтов я составила список основных гипотез:</p>
-              <div className="flex flex-col gap-4 text-[18px] leading-[160%] tracking-[0.32px]">
+              <p className="text-[18px] leading-[160%]">На основе анализа и инсайтов я составила список основных гипотез:</p>
+              <div className="flex flex-col gap-4 text-[18px] leading-[160%]">
                 <div className="flex flex-col gap-2">
                   <p className="font-semibold">1. Онбординг</p>
                   <p>
@@ -726,12 +727,12 @@ export function CaseStudyPage() {
           <h2 className="text-[32px] font-semibold leading-[40px]">Проектирование</h2>
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-4">
-              <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+              <p className="text-[18px] leading-[160%]">
                 Цель этапа — определить, как система будет вести себя в диалоге с пользователем, чтобы
                 он не терялся в случае если что-то пойдёт не так. Основные решения касались логики
                 сценариев, проработки состояний и корнер-кейсов.
               </p>
-              <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+              <p className="text-[18px] leading-[160%]">
                 Когда я проектировала новый путь, главным было убрать неопределённость. Пользователь не
                 должен гадать: «А номер уже мой? А сколько это стоит? А что делать, если что-то пошло не
                 так?». Вот что получилось:
@@ -763,16 +764,16 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <ul className="list-disc space-y-2 pl-6 text-[18px] leading-[160%] tracking-[0.32px]">
-              <li>От первого запуска приложения до звонка — 4–5 шагов (вместо 8-10).</li>
+            <ul className="list-disc space-y-2 pl-6 text-[18px] leading-[160%]">
+              <li>от первого запуска приложения до звонка — 4–5 шагов (вместо 8-10)</li>
               <li>
-                Стали показывать стоимость звонка ещё до вызова, а после ключевых шагов success screen
-                (на схеме — ✅), чтобы убрать тревогу и неопределенность.
+                стали показывать стоимость звонка ещё до вызова, а после ключевых шагов success screen
+                (на схеме — ✅), чтобы убрать тревогу и неопределенность
               </li>
-              <li>Ошибки не оставляют в тупике, а предлагают решение и возвращают на сценарий.</li>
+              <li>ошибки не оставляют в тупике, а предлагают решение и возвращают на сценарий</li>
               <li>
-                Поддержка всегда доступна, но не как основной, а как дополнительный шаг в решении
-                проблемы.
+                поддержка всегда доступна, но не как основной, а как дополнительный шаг в решении
+                проблемы
               </li>
             </ul>
           </div>
@@ -786,20 +787,20 @@ export function CaseStudyPage() {
         >
           <div className="flex flex-col">
             <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
-            <p className="mt-4 text-[18px] leading-[160%] tracking-[0.32px]">
+            <p className="mt-4 text-[18px] leading-[160%]">
               Первый раунд тестирования показал: даже там, где логика казалась очевидной, пользователи
               ошибались. Я собрала обратную связь, переработала несколько сценариев и проверила их:
             </p>
           </div>
 
-          <div className="mt-8 flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+          <div className="mt-8 flex flex-col gap-2 text-[18px] leading-[160%]">
             <p className="font-semibold">1. Экран успеха после регистрации</p>
             <p>
               Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
               что люди зависали на 2-3 минуты — галочка привлекала внимание, а кнопка терялась.
             </p>
             <p>
-              <span className="text-[#89FF45]">→</span> Объединила экран успеха с оформлением заказа, чтобы после регистрации через Госуслуги
+              <span>→</span> Объединила экран успеха с оформлением заказа, чтобы после регистрации через Госуслуги
               пользователь сразу видел свой номер и условия тарифа — без лишних шагов и пауз.
             </p>
           </div>
@@ -817,14 +818,14 @@ export function CaseStudyPage() {
             />
           </div>
 
-          <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+          <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
             <p className="font-semibold">2. Узнать стоимость звонка</p>
             <p>
               В первой версии цену можно было увидеть, только начав набирать номер. Некоторым пользователям
               было неудобно вводить знакомый номер каждый раз, чтобы оценить стоимость.
             </p>
             <p>
-              <span className="text-[#89FF45]">→</span> Добавила кнопку «Выбрать контакт» прямо на экран набора. При выборе контакта цена
+              <span>→</span> Добавила кнопку «Выбрать контакт» прямо на экран набора. При выборе контакта цена
               сразу отображается — как и при ручном вводе.
             </p>
           </div>
@@ -842,7 +843,7 @@ export function CaseStudyPage() {
             />
           </div>
 
-          <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+          <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
             <p className="font-semibold">3. Помощь и подсказки</p>
             <p>
               Ранее был экран ошибки, где просто выводилась причина: «Регистрация не пройдена»,
@@ -850,7 +851,7 @@ export function CaseStudyPage() {
               дальше и писали в поддержку.
             </p>
             <p>
-              <span className="text-[#89FF45]">→</span> Добавила контекстные кнопки для возвращения на сценарий — «Вернуться в Госуслуги»,
+              <span>→</span> Добавила контекстные кнопки для возвращения на сценарий — «Вернуться в Госуслуги»,
               «Пополнить баланс» и «Написать в поддержку», чтобы пользователь мог что-то уточнить или
               задать вопрос о проблеме.
             </p>
@@ -868,11 +869,11 @@ export function CaseStudyPage() {
                 unoptimized
             />
           </div>
-          <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
-            Сценарий ошибки: пользователь получает подсказку и сразу возвращается в целевой поток.
+          <p className="mt-[12px] px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
+            Сценарий ошибки: пользователь получает понятные действия и возвращается в целевой поток.
           </p>
 
-          <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+          <p className="text-[18px] leading-[160%]">
             Каждая итерация убирала конкретную точку трения, и хотя визуально интерфейс почти не
             менялся, пользовательский путь стал прозрачнее.
           </p>
@@ -886,35 +887,35 @@ export function CaseStudyPage() {
         >
           <h2 className="text-[32px] font-semibold leading-[40px]">Результаты</h2>
           <div className="flex flex-col gap-8">
-            <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+            <p className="text-[18px] leading-[160%]">
               Теперь пользователь видит, когда номер активен, сколько стоит звонок и что делать, если
               что-то пошло не так. Коммуникация перестала быть просто функциональной и начала напрямую
               влиять на поведение — сокращать путь и снижать количество ошибок.
             </p>
 
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
               <p>Изменения в интерфейсе закономерно отразились на ключевых метриках продукта:</p>
               <ul className="list-disc space-y-0 pl-[27px]">
                 <li>
-                  <span className="text-[#89ff45]">Путь до звонка сократился</span>
-                  {" "}с 8 шагов и переходами в веб до 3 шагов в приложении.
+                  <span>путь до звонка сократился</span>
+                  {" "}с 8 шагов и переходами в веб до 3 шагов в приложении
                 </li>
                 <li>
-                  <span className="text-[#89ff45]">Конверсия в первый звонок выросла</span>
-                  {" "}на 23%, а общее количество звонков при том же трафике увеличилось (13k → 17k).
+                  <span>конверсия в первый звонок выросла</span>
+                  {" "}на 23%, а общее количество звонков при том же трафике увеличилось (13k → 17k)
                 </li>
                 <li>
-                  <span className="text-[#89ff45]">Удержание пользователей увеличилось</span>
-                  {" "}для 2 недели — на 11 %, а 4-й — на 6 %.
+                  <span>удержание пользователей увеличилось</span>
+                  {" "}для 2 недели — на 11 %, а 4-й — на 6 %
                 </li>
                 <li>
-                  <span className="text-[#89ff45]">Обращения в поддержку сократились</span>
-                  {" "}почти в 2 раза (40% → 18%).
+                  <span>обращения в поддержку сократились</span>
+                  {" "}почти в 2 раза (40% → 18%)
                 </li>
               </ul>
             </div>
 
-            <p className="text-[18px] leading-[160%] tracking-[0.32px]">
+            <p className="text-[18px] leading-[160%]">
               Дальнейшее развитие софтфона продолжилось через обратную связь от пользователей:
               добавление избранных контактов, повтор звонка из истории и push-уведомления о низком
               балансе. Всё это ушло в бэклог и дальше — в ближайшие обновления.
@@ -922,7 +923,7 @@ export function CaseStudyPage() {
 
             <div className="h-px w-full bg-[#282828]" />
 
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%] tracking-[0.32px]">
+            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
               <p>Этот проект стал для меня важной точкой роста. Вот что я вынесла:</p>
               <div className="space-y-0">
                 <p>1. Прозрачность интерфейса — основа доверия и коммуникации с пользователем.</p>
