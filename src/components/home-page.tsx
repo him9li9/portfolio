@@ -126,14 +126,16 @@ export function HomePage() {
                       "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
                   }}
                 >
-                  <div className="flex h-full w-full flex-col justify-between gap-[108px] sm:max-w-[338px] sm:gap-0">
+                  <div className="flex w-full flex-col gap-[108px] sm:max-w-[338px]">
                     <div className="w-[252px]">
                       <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
                     </div>
                     <p className="text-[18px] leading-[160%] text-white">
-                      Как я помогла увеличить
+                      Как я помогла сократить путь
                       <br />
-                      количество звонков на 23%
+                      до 3 шагов и увеличить конверсию
+                      <br />
+                      в первый звонок на 23%
                     </p>
                   </div>
                   <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-[330px] sm:w-[334px] sm:aspect-auto">
