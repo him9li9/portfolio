@@ -111,43 +111,44 @@ export function HomePage() {
           </p>
         </motion.section>
 
-        <div className="relative z-50">
+        <div className="group/projects relative">
           <h2 className="mb-4 text-[20px] font-semibold leading-[160%]">Мои проекты</h2>
+          <div className="pointer-events-none fixed inset-0 z-40 hidden bg-black opacity-0 transition-opacity duration-200 ease-out sm:block sm:group-hover/projects:opacity-40" />
           <div className="flex flex-col gap-8">
-            <div className="group/card relative">
-              <div className="pointer-events-none fixed inset-0 z-40 hidden bg-black opacity-0 transition-opacity duration-200 ease-out sm:block sm:group-hover/card:opacity-40" />
+            <div className="group/card relative z-30 hover:z-50">
               <Link href="/app" prefetch={false} className="block">
                 <motion.section
                   whileHover={canHover ? { scale: 1.02 } : undefined}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="relative z-50 flex w-full transform-gpu flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] will-change-transform sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
+                  className="relative flex w-full transform-gpu flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] will-change-transform sm:h-[300px] sm:flex-row sm:items-start sm:justify-between sm:gap-[33px] sm:px-8 sm:py-8"
                   style={{
                     backgroundImage:
                       "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
                   }}
                 >
-                  <div className="flex w-full flex-col gap-[108px] sm:max-w-[338px]">
+                  <div className="flex h-full w-full flex-col justify-between gap-[108px] sm:max-w-[338px] sm:gap-0">
                     <div className="w-[252px]">
                       <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
                     </div>
                     <p className="text-[18px] leading-[160%] text-white">
-                      Как я сократила время активации и увеличила количество звонков из приложения на 23%
+                      Как я помогла увеличить
+                      <br />
+                      количество звонков на 23%
                     </p>
                   </div>
-                  <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-[330px] sm:w-[334px] sm:aspect-auto">
+                  <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-[254px] sm:w-[266px] sm:aspect-auto">
                     <img alt="" src={assets.phones} className="h-full w-full object-contain" />
                   </div>
                 </motion.section>
               </Link>
             </div>
 
-            <div className="group/card relative">
-              <div className="pointer-events-none fixed inset-0 z-40 hidden bg-black opacity-0 transition-opacity duration-200 ease-out sm:block sm:group-hover/card:opacity-40" />
+            <div className="group/card relative z-30 hover:z-50">
               <motion.section
                 aria-label="Пустая карточка проекта"
                 whileHover={canHover ? { scale: 1.02 } : undefined}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="relative z-50 h-[376px] w-full transform-gpu overflow-hidden will-change-transform"
+                className="relative h-[300px] w-full transform-gpu overflow-hidden will-change-transform"
                 style={{
                   backgroundImage:
                     "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
