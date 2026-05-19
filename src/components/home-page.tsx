@@ -120,7 +120,7 @@ export function HomePage() {
                 <motion.section
                   whileHover={canHover ? { scale: 1.02 } : undefined}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="relative flex w-full transform-gpu flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] will-change-transform sm:h-[300px] sm:flex-row sm:items-start sm:justify-between sm:gap-[33px] sm:px-8 sm:py-8"
+                  className="relative flex w-full transform-gpu flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] will-change-transform sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
                   style={{
                     backgroundImage:
                       "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
@@ -136,7 +136,7 @@ export function HomePage() {
                       количество звонков на 23%
                     </p>
                   </div>
-                  <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-[254px] sm:w-[266px] sm:aspect-auto">
+                  <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-[330px] sm:w-[334px] sm:aspect-auto">
                     <img alt="" src={assets.phones} className="h-full w-full object-contain" />
                   </div>
                 </motion.section>
@@ -148,7 +148,7 @@ export function HomePage() {
                 aria-label="Пустая карточка проекта"
                 whileHover={canHover ? { scale: 1.02 } : undefined}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="relative h-[300px] w-full transform-gpu overflow-hidden will-change-transform"
+                className="relative h-[376px] w-full transform-gpu overflow-hidden will-change-transform"
                 style={{
                   backgroundImage:
                     "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
