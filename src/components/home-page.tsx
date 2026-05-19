@@ -148,7 +148,7 @@ export function HomePage() {
                 aria-label="Пустая карточка проекта"
                 whileHover={canHover ? { scale: 1.02 } : undefined}
                 transition={{ duration: 0.2, ease: "easeOut" }}
-                className="relative h-[376px] w-full transform-gpu overflow-hidden will-change-transform"
+                className="relative h-[378px] w-full transform-gpu overflow-hidden will-change-transform"
                 style={{
                   backgroundImage:
                     "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
