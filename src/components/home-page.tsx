@@ -112,7 +112,11 @@ export function HomePage() {
           </p>
         </motion.section>
 
-        <div className="relative">
+        <div
+          className="relative"
+          onMouseEnter={() => setIsProjectHovered(true)}
+          onMouseLeave={() => setIsProjectHovered(false)}
+        >
           <h2 className="mb-4 text-[20px] font-semibold leading-[160%]">Мои проекты</h2>
           <motion.div
             aria-hidden="true"
@@ -122,11 +126,7 @@ export function HomePage() {
             className="pointer-events-none fixed inset-0 z-40 hidden bg-black sm:block"
           />
           <div className="flex flex-col gap-8">
-            <div
-              className="group/card relative z-30 hover:z-50"
-              onMouseEnter={() => setIsProjectHovered(true)}
-              onMouseLeave={() => setIsProjectHovered(false)}
-            >
+            <div className="group/card relative z-30 hover:z-50">
               <Link href="/app" prefetch={false} className="block">
                 <motion.section
                   whileHover={canHover ? { scale: 1.02 } : undefined}
@@ -156,11 +156,7 @@ export function HomePage() {
               </Link>
             </div>
 
-            <div
-              className="group/card relative z-30 hover:z-50"
-              onMouseEnter={() => setIsProjectHovered(true)}
-              onMouseLeave={() => setIsProjectHovered(false)}
-            >
+            <div className="group/card relative z-30 hover:z-50">
               <motion.section
                 aria-label="Пустая карточка проекта"
                 whileHover={canHover ? { scale: 1.02 } : undefined}
