@@ -122,7 +122,7 @@ export function HomePage() {
             aria-hidden="true"
             initial={false}
             animate={canHover && isProjectHovered ? { opacity: 0.4 } : { opacity: 0 }}
-            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
             className="pointer-events-none fixed inset-0 z-40 hidden bg-black sm:block"
           />
           <div className="flex flex-col gap-8">
