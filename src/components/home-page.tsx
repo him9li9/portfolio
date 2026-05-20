@@ -112,11 +112,7 @@ export function HomePage() {
           </p>
         </motion.section>
 
-        <div
-          className="relative"
-          onMouseEnter={() => setIsProjectHovered(true)}
-          onMouseLeave={() => setIsProjectHovered(false)}
-        >
+        <div className="relative">
           <h2 className="mb-4 text-[20px] font-semibold leading-[160%]">Мои проекты</h2>
           <motion.div
             aria-hidden="true"
@@ -125,7 +121,11 @@ export function HomePage() {
             transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
             className="pointer-events-none fixed inset-0 z-40 hidden bg-black sm:block"
           />
-          <div className="flex flex-col gap-8">
+          <div
+            className="flex flex-col gap-8"
+            onMouseEnter={() => setIsProjectHovered(true)}
+            onMouseLeave={() => setIsProjectHovered(false)}
+          >
             <div className="group/card relative z-30 hover:z-50">
               <Link href="/app" prefetch={false} className="block">
                 <motion.section
