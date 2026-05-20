@@ -14,6 +14,7 @@ const assets = {
 export function HomePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
+  const [isProjectHovered, setIsProjectHovered] = useState(false);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -111,11 +112,21 @@ export function HomePage() {
           </p>
         </motion.section>
 
-        <div className="group/projects relative">
+        <div className="relative">
           <h2 className="mb-4 text-[20px] font-semibold leading-[160%]">Мои проекты</h2>
-          <div className="pointer-events-none fixed inset-0 z-40 hidden bg-black opacity-0 transition-opacity duration-200 ease-out sm:block sm:group-hover/projects:opacity-40" />
+          <motion.div
+            aria-hidden="true"
+            initial={false}
+            animate={canHover && isProjectHovered ? { opacity: 0.4 } : { opacity: 0 }}
+            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+            className="pointer-events-none fixed inset-0 z-40 hidden bg-black sm:block"
+          />
           <div className="flex flex-col gap-8">
-            <div className="group/card relative z-30 hover:z-50">
+            <div
+              className="group/card relative z-30 hover:z-50"
+              onMouseEnter={() => setIsProjectHovered(true)}
+              onMouseLeave={() => setIsProjectHovered(false)}
+            >
               <Link href="/app" prefetch={false} className="block">
                 <motion.section
                   whileHover={canHover ? { scale: 1.02 } : undefined}
@@ -145,7 +156,11 @@ export function HomePage() {
               </Link>
             </div>
 
-            <div className="group/card relative z-30 hover:z-50">
+            <div
+              className="group/card relative z-30 hover:z-50"
+              onMouseEnter={() => setIsProjectHovered(true)}
+              onMouseLeave={() => setIsProjectHovered(false)}
+            >
               <motion.section
                 aria-label="Пустая карточка проекта"
                 whileHover={canHover ? { scale: 1.02 } : undefined}
