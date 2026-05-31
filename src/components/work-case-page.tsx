@@ -405,6 +405,116 @@ export function WorkCasePage() {
             </p>
           </div>
         </motion.section>
+
+        <motion.section variants={item} className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4">
+            <h2 className="text-[32px] font-semibold leading-[40px]">Проектирование</h2>
+            <p className="text-[18px] leading-[160%]">
+              Проектирование строилось вокруг трёх ключевых принципах:
+            </p>
+          </div>
+
+          <div className="grid gap-[13px] md:grid-cols-3">
+            <div className="flex h-full flex-col gap-4 rounded-[20px] bg-[#262626] p-6">
+              <div className="flex items-center gap-3">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
+                  1
+                </div>
+                <div className="flex min-w-0 flex-col gap-[2px]">
+                  <p className="text-[16px] font-semibold leading-[19px] text-white">Understand</p>
+                  <p className="text-[14px] leading-[17px] text-[#828282]">Понять сценарий</p>
+                </div>
+              </div>
+              <p className="text-[14px] leading-[160%] text-white">
+                Пользователь должен быстро считать структуру сценария и понять, как он работает.
+              </p>
+              <div className="flex flex-col gap-1 text-[14px] leading-[160%] text-white">
+                <p>• Визуальная иерархия</p>
+                <p>• Группировка и понятные названия блоков</p>
+                <p>• Создание или выбор готовых элементов на схеме</p>
+              </div>
+            </div>
+
+            <div className="flex h-full flex-col gap-4 rounded-[20px] bg-[#262626] p-6">
+              <div className="flex items-center gap-3">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
+                  2
+                </div>
+                <div className="flex min-w-0 flex-col gap-[2px]">
+                  <p className="text-[16px] font-semibold leading-[19px] text-white">Edit</p>
+                  <p className="text-[14px] leading-[17px] text-[#828282]">Внести изменения</p>
+                </div>
+              </div>
+              <p className="text-[14px] leading-[160%] text-white">
+                Изменения должны вноситься прямо в потоке — без лишних переходов и потери
+                контекста.
+              </p>
+              <div className="flex flex-col gap-1 text-[14px] leading-[160%] text-white">
+                <p>• Inline-редактирование блоков</p>
+                <p>• Единый контекст между схемой и настройками</p>
+                <p>• Массовые операции с блоками и переходами</p>
+              </div>
+            </div>
+
+            <div className="flex h-full flex-col gap-4 rounded-[20px] bg-[#262626] p-6">
+              <div className="flex items-center gap-3">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
+                  3
+                </div>
+                <div className="flex min-w-0 flex-col gap-[2px]">
+                  <p className="text-[16px] font-semibold leading-[19px] text-white">Validate</p>
+                  <p className="text-[14px] leading-[17px] text-[#828282]">Проверить</p>
+                </div>
+              </div>
+              <p className="text-[14px] leading-[160%] text-white">
+                Пользователь должен убедиться, что изменения работают без ошибок.
+              </p>
+              <div className="flex flex-col gap-1 text-[14px] leading-[160%] text-white">
+                <p>• Статусы для сценариев</p>
+                <p>(черновик / опубликовано)</p>
+                <p>• Тестирование до публикации</p>
+                <p>• История версий с возможностью отката</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <p className="text-[18px] leading-[160%]">
+              <span className="font-semibold">Пользователь больше не теряет контекст</span>
+              {` — создание, настройка и тестирование сценария происходят на одном экране. Это позволило системно закрыть как проблемы восприятия, так и страх ошибок, чтобы менеджер мог работать самостоятельно.`}
+            </p>
+
+            <div className="flex flex-col gap-1">
+              <h3 className="text-[24px] font-semibold leading-[32px]">Было</h3>
+              <p className="text-[18px] leading-[160%]">
+                Создаёт сценарий →{" "}
+                <span className="line-through">Переходит в раздел «Настройки»</span> →{" "}
+                <span className="line-through">Создаёт элемент</span> → Настраивает →{" "}
+                <span className="line-through">Возвращается на сценарий</span> → Добавляет
+                элемент на схему
+              </p>
+              <p className="text-[18px] italic leading-[160%]">
+                Действия разорваны между экранами, а изменения сразу влияют на рабочий сценарий.
+              </p>
+            </div>
+
+            <div className="flex flex-col gap-1">
+              <h3 className="text-[24px] font-semibold leading-[32px]">Стало</h3>
+              <p className="text-[18px] leading-[160%]">
+                Создаёт сценарий → Добавляет элемент на схему → Настраивает → Тестирует
+              </p>
+              <p className="text-[18px] italic leading-[160%]">
+                Работа происходит в одном контексте, а публикация становится отдельным и более
+                осознанным действием.
+              </p>
+            </div>
+
+            <p className="text-[18px] leading-[160%]">
+              В итоговом решении нужно было учесть, что пользователям важно понимать, когда
+              сценарий опубликован и какие изменения уже влияют на реальные звонки.
+            </p>
+          </div>
+        </motion.section>
       </motion.div>
     </main>
   );
