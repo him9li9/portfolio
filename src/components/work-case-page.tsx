@@ -16,6 +16,7 @@ const assets = {
 export function WorkCasePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
+  const [activeSection, setActiveSection] = useState("overview");
 
   const container = {
     hidden: { opacity: 0 },
@@ -54,6 +55,75 @@ export function WorkCasePage() {
     mql.addEventListener("change", update);
     return () => mql.removeEventListener("change", update);
   }, []);
+
+  useEffect(() => {
+    const sections = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-section-anchor]")
+    );
+    if (sections.length === 0) {
+      return;
+    }
+    const updateFromScroll = () => {
+      const scrollPos =
+        (document.documentElement.scrollTop || document.body.scrollTop || window.scrollY) + 140;
+      let current = sections[0]?.dataset.sectionAnchor || "overview";
+      sections.forEach((section) => {
+        if (section.offsetTop <= scrollPos) {
+          current = section.dataset.sectionAnchor || current;
+        }
+      });
+      setActiveSection(current);
+    };
+    updateFromScroll();
+    const timeouts = [0, 120, 300, 600, 1000].map((delay) =>
+      window.setTimeout(updateFromScroll, delay)
+    );
+    const raf = requestAnimationFrame(updateFromScroll);
+    const fontsReady = document.fonts?.ready;
+    fontsReady?.then(() => updateFromScroll());
+    window.addEventListener("pageshow", updateFromScroll);
+    window.addEventListener("resize", updateFromScroll);
+    window.addEventListener("scroll", updateFromScroll, { passive: true });
+    let observer: IntersectionObserver | null = null;
+    if ("IntersectionObserver" in window) {
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const next = (entry.target as HTMLElement).dataset.sectionAnchor;
+              if (next) {
+                setActiveSection(next);
+              }
+            }
+          });
+        },
+        { root: null, rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+      );
+      sections.forEach((section) => observer?.observe(section));
+    }
+    return () => {
+      timeouts.forEach((id) => window.clearTimeout(id));
+      cancelAnimationFrame(raf);
+      window.removeEventListener("pageshow", updateFromScroll);
+      window.removeEventListener("resize", updateFromScroll);
+      window.removeEventListener("scroll", updateFromScroll);
+      observer?.disconnect();
+    };
+  }, []);
+
+  const handleSectionNavClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+    id: string
+  ) => {
+    event.preventDefault();
+    setActiveSection(id);
+    const target = document.getElementById(id);
+    if (!target) {
+      return;
+    }
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    window.history.replaceState(null, "", `#${id}`);
+  };
 
   return (
     <main className="bg-[#171717] text-white">
@@ -96,33 +166,39 @@ export function WorkCasePage() {
         animate="show"
         className="flex w-full flex-col gap-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:gap-[100px] sm:px-0 sm:pb-[140px]"
       >
-        <motion.section variants={item} className="flex flex-col gap-8">
+        <motion.section
+          id="overview"
+          data-section-anchor="overview"
+          variants={item}
+          className="scroll-mt-[90px] flex flex-col gap-8"
+        >
           <div className="flex flex-col gap-3 text-white">
             <h1 className="text-[40px] font-semibold leading-[48px]">KOMPaaS</h1>
             <p className="text-[18px] leading-[160%]">
-              Продукт — B2B-платформа для автоматизации контакт-центров. Используется в банках,
+              — B2B-платформа для автоматизации контакт-центров. Используется в банках,
               клиниках, образовательных продуктах и ритейле — везде, где важна скорость обработки
               обращений и уровень клиентского сервиса.
             </p>
           </div>
 
-          <div className="bg-[#222222] px-6 py-6">
-            <div className="sm:mx-auto sm:max-w-[626px]">
-              <Image
-                alt="KOMPaaS canvas"
-                src={assets.hero}
-                width={626}
-                height={391}
-                sizes="(max-width: 800px) 100vw, 626px"
-                className="h-auto w-full object-contain"
-                priority
-                unoptimized
-              />
-            </div>
-          </div>
+          <Image
+            alt="KOMPaaS canvas"
+            src={assets.hero}
+            width={800}
+            height={500}
+            sizes="(max-width: 800px) 100vw, 800px"
+            className="h-auto w-full rounded-[20px] object-contain"
+            priority
+            unoptimized
+          />
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col gap-8">
+        <motion.section
+          id="about"
+          data-section-anchor="about"
+          variants={item}
+          className="scroll-mt-[90px] flex flex-col gap-8"
+        >
           <div className="flex flex-col gap-4">
             <h2 className="text-[32px] font-semibold leading-[40px]">О проекте</h2>
             <p className="text-[18px] leading-[160%]">
@@ -186,7 +262,12 @@ export function WorkCasePage() {
           </div>
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col gap-8">
+        <motion.section
+          id="discovery"
+          data-section-anchor="discovery"
+          variants={item}
+          className="scroll-mt-[90px] flex flex-col gap-8"
+        >
           <div className="flex flex-col gap-4">
             <h2 className="text-[32px] font-semibold leading-[40px]">Дискавери</h2>
             <div className="text-[18px] leading-[160%]">
@@ -252,44 +333,16 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="bg-[#222222] px-6 py-6">
-            <div className="flex flex-col gap-4">
-              <div className="grid gap-4 sm:grid-cols-[443px_1fr] sm:grid-rows-[auto_auto]">
-                <div className="sm:row-span-2">
-                  <Image
-                    alt="Флоу добавления элемента"
-                    src={assets.addFlow}
-                    width={443}
-                    height={256}
-                    sizes="(max-width: 800px) 100vw, 443px"
-                    className="h-auto w-full object-contain"
-                    loading="lazy"
-                    unoptimized
-                  />
-                </div>
-                <div className="sm:justify-self-end sm:max-w-[224px]">
-                  <Image
-                    alt="Таблица настроек элемента"
-                    src={assets.table}
-                    width={224}
-                    height={164}
-                    sizes="(max-width: 800px) 100vw, 224px"
-                    className="h-auto w-full object-contain"
-                    loading="lazy"
-                    unoptimized
-                  />
-                </div>
-                <div className="flex flex-col justify-end">
-                  <p className="text-[18px] font-semibold leading-[160%]">Флоу добавления элемента</p>
-                  <ol className="list-decimal space-y-0 pl-6 text-[14px] leading-[160%] text-white">
-                    <li>Создаём элемент в модальном окне</li>
-                    <li>Настраиваем в футере под в таблицей</li>
-                    <li>Добавляем блок на схему из сайдбара</li>
-                  </ol>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Image
+            alt="Флоу добавления элемента"
+            src={assets.addFlow}
+            width={800}
+            height={505}
+            sizes="(max-width: 800px) 100vw, 800px"
+            className="h-auto w-full rounded-[20px] object-contain"
+            loading="lazy"
+            unoptimized
+          />
 
           <div className="flex flex-col gap-2">
             <p className="text-[18px] font-semibold leading-[160%]">4. Сценарии становились трудно читаемыми</p>
@@ -331,18 +384,16 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="bg-[#222222] px-6 py-6">
-            <Image
-              alt="Таблица анализа конкурентов"
-              src={assets.table}
-              width={800}
-              height={457}
-              sizes="(max-width: 800px) 100vw, 800px"
-              className="h-auto w-full object-contain"
-              loading="lazy"
-              unoptimized
-            />
-          </div>
+          <Image
+            alt="Таблица анализа конкурентов"
+            src={assets.table}
+            width={800}
+            height={457}
+            sizes="(max-width: 800px) 100vw, 800px"
+            className="h-auto w-full rounded-[20px] object-contain"
+            loading="lazy"
+            unoptimized
+          />
 
           <p className="text-[18px] leading-[160%]">
             Во время исследования я заметила, что workflow-builder инструменты уходят от отдельных
@@ -406,7 +457,12 @@ export function WorkCasePage() {
           </div>
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col gap-8">
+        <motion.section
+          id="design"
+          data-section-anchor="design"
+          variants={item}
+          className="scroll-mt-[90px] flex flex-col gap-8"
+        >
           <div className="flex flex-col gap-4">
             <h2 className="text-[32px] font-semibold leading-[40px]">Проектирование</h2>
             <p className="text-[18px] leading-[160%]">
@@ -414,8 +470,8 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="grid gap-[13px] md:grid-cols-3">
-            <div className="flex h-full flex-col gap-4 rounded-[20px] bg-[#262626] p-6">
+          <div className="flex flex-col gap-[13px] md:flex-row md:items-stretch">
+            <div className="flex h-[300px] flex-col rounded-[20px] bg-[#262626] p-6 md:w-[258px]">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   1
@@ -428,14 +484,14 @@ export function WorkCasePage() {
               <p className="text-[14px] leading-[160%] text-white">
                 Пользователь должен быстро считать структуру сценария и понять, как он работает.
               </p>
-              <div className="flex flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="mt-auto flex flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Визуальная иерархия</p>
                 <p>• Группировка и понятные названия блоков</p>
                 <p>• Создание или выбор готовых элементов на схеме</p>
               </div>
             </div>
 
-            <div className="flex h-full flex-col gap-4 rounded-[20px] bg-[#262626] p-6">
+            <div className="flex h-[300px] flex-col rounded-[20px] bg-[#262626] p-6 md:w-[258px]">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   2
@@ -449,14 +505,14 @@ export function WorkCasePage() {
                 Изменения должны вноситься прямо в потоке — без лишних переходов и потери
                 контекста.
               </p>
-              <div className="flex flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="mt-auto flex flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Inline-редактирование блоков</p>
                 <p>• Единый контекст между схемой и настройками</p>
                 <p>• Массовые операции с блоками и переходами</p>
               </div>
             </div>
 
-            <div className="flex h-full flex-col gap-4 rounded-[20px] bg-[#262626] p-6">
+            <div className="flex h-[300px] flex-col rounded-[20px] bg-[#262626] p-6 md:w-[258px]">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   3
@@ -469,9 +525,8 @@ export function WorkCasePage() {
               <p className="text-[14px] leading-[160%] text-white">
                 Пользователь должен убедиться, что изменения работают без ошибок.
               </p>
-              <div className="flex flex-col gap-1 text-[14px] leading-[160%] text-white">
-                <p>• Статусы для сценариев</p>
-                <p>(черновик / опубликовано)</p>
+              <div className="mt-auto flex flex-col gap-1 text-[14px] leading-[160%] text-white">
+                <p>• Статусы для сценариев (черновик / опубликовано)</p>
                 <p>• Тестирование до публикации</p>
                 <p>• История версий с возможностью отката</p>
               </div>
@@ -516,6 +571,31 @@ export function WorkCasePage() {
           </div>
         </motion.section>
       </motion.div>
+
+      <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-3 lg:flex">
+        {[
+          { id: "overview", label: "Введение" },
+          { id: "about", label: "О проекте" },
+          { id: "discovery", label: "Дискавери" },
+          { id: "design", label: "Проектирование" },
+        ].map((item) => (
+          <a
+            key={item.id}
+            href={`#${item.id}`}
+            className="group pointer-events-auto flex items-center justify-end gap-3 text-right"
+            onClick={(event) => handleSectionNavClick(event, item.id)}
+          >
+            <span className="pointer-events-none max-w-[160px] rounded-full bg-[#2a2a2a] px-3 py-1 text-[14px] leading-[1.4] text-[#cfcfcf] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              {item.label}
+            </span>
+            <span
+              className={`h-[6px] w-[22px] rounded-full transition-colors duration-200 ${
+                activeSection === item.id ? "bg-white" : "bg-[#3a3a3a]"
+              }`}
+            />
+          </a>
+        ))}
+      </nav>
     </main>
   );
 }
