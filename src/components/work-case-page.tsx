@@ -9,8 +9,8 @@ const assets = {
   heart: "/figma/heart.svg",
   hero: "/figma/Case_2/vpbx-canvas.png",
   oldCanvas: "/figma/Case_2/old-canvas.png",
-  addFlow: "/figma/Case_2/add-flow.png",
-  table: "/figma/Case_2/table.png"
+  addFlow: "/figma/Case_2/add-flow.png?v=2",
+  table: "/figma/Case_2/table.png?v=2"
 };
 
 export function WorkCasePage() {
@@ -292,15 +292,15 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="bg-[#222222] px-6 py-6">
-            <div className="mx-auto flex max-w-[700px] flex-col gap-4">
+          <div className="h-[490px] rounded-[20px] bg-[#222222] px-6 pt-10 pb-8">
+            <div className="mx-auto flex h-full max-w-[700px] flex-col justify-between">
               <Image
                 alt="Текущая версия редактора сценариев"
                 src={assets.oldCanvas}
                 width={700}
                 height={396}
                 sizes="(max-width: 800px) 100vw, 700px"
-                className="h-auto w-full rounded-[8px] object-contain"
+                className="h-auto w-full object-contain"
                 loading="lazy"
                 unoptimized
               />
@@ -339,7 +339,7 @@ export function WorkCasePage() {
             width={800}
             height={505}
             sizes="(max-width: 800px) 100vw, 800px"
-            className="h-auto w-full rounded-[20px] object-contain"
+            className="h-auto w-full object-contain"
             loading="lazy"
             unoptimized
           />
@@ -357,14 +357,16 @@ export function WorkCasePage() {
           </div>
 
           <div className="flex flex-col gap-2">
-            <p className="text-[18px] font-semibold leading-[160%]">5. Отсутствовало безопасное тестирование и бэкапы</p>
-            <ul className="list-disc space-y-0 pl-6 text-[18px] leading-[160%]">
-              <li>нельзя протестировать сценарий до публикации</li>
-              <li>отсутствовали бэкапы и история изменений</li>
-            </ul>
+            <p className="text-[18px] font-semibold leading-[160%]">5. Ошибки в продакшене</p>
+            <p className="text-[18px] leading-[160%]">
+              Во время интервью менеджеры часто говорили, что боятся вносить изменения в
+              сценарии, потому что не понимают, как они повлияют на рабочий флоу. Изменения
+              нельзя было безопасно проверить до публикации, а ошибки обнаруживались уже в
+              продакшене.
+            </p>
             <p className="text-[18px] italic leading-[160%]">
-              → Ошибки обнаруживались только в продакшене, из-за этого менеджеры боялись вносить
-              изменения без разработчиков.
+              → Из-за этого пользователи предпочитали не редактировать сценарии без участия
+              разработчиков.
             </p>
           </div>
 
@@ -390,7 +392,7 @@ export function WorkCasePage() {
             width={800}
             height={457}
             sizes="(max-width: 800px) 100vw, 800px"
-            className="h-auto w-full rounded-[20px] object-contain"
+            className="h-auto w-full object-contain"
             loading="lazy"
             unoptimized
           />
@@ -470,8 +472,8 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-[13px] md:flex-row md:items-stretch">
-            <div className="flex h-[300px] flex-col rounded-[20px] bg-[#262626] p-6 md:w-[258px]">
+          <div className="flex flex-col gap-[13px] md:grid md:grid-cols-[258px_258px_258px] md:gap-[13px]">
+            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] p-6">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   1
@@ -484,14 +486,14 @@ export function WorkCasePage() {
               <p className="text-[14px] leading-[160%] text-white">
                 Пользователь должен быстро считать структуру сценария и понять, как он работает.
               </p>
-              <div className="mt-auto flex flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="flex h-[118px] flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Визуальная иерархия</p>
                 <p>• Группировка и понятные названия блоков</p>
                 <p>• Создание или выбор готовых элементов на схеме</p>
               </div>
             </div>
 
-            <div className="flex h-[300px] flex-col rounded-[20px] bg-[#262626] p-6 md:w-[258px]">
+            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] p-6">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   2
@@ -505,14 +507,14 @@ export function WorkCasePage() {
                 Изменения должны вноситься прямо в потоке — без лишних переходов и потери
                 контекста.
               </p>
-              <div className="mt-auto flex flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="flex h-[118px] flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Inline-редактирование блоков</p>
                 <p>• Единый контекст между схемой и настройками</p>
                 <p>• Массовые операции с блоками и переходами</p>
               </div>
             </div>
 
-            <div className="flex h-[300px] flex-col rounded-[20px] bg-[#262626] p-6 md:w-[258px]">
+            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] p-6">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   3
@@ -525,7 +527,7 @@ export function WorkCasePage() {
               <p className="text-[14px] leading-[160%] text-white">
                 Пользователь должен убедиться, что изменения работают без ошибок.
               </p>
-              <div className="mt-auto flex flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="flex h-[118px] flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Статусы для сценариев (черновик / опубликовано)</p>
                 <p>• Тестирование до публикации</p>
                 <p>• История версий с возможностью отката</p>
