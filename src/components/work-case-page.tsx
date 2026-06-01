@@ -483,10 +483,10 @@ export function WorkCasePage() {
                   <p className="text-[14px] leading-[17px] text-[#828282]">Понять сценарий</p>
                 </div>
               </div>
-              <p className="max-w-[210px] text-[14px] leading-[160%] text-white">
+              <p className="text-[14px] leading-[160%] text-white">
                 Пользователь должен быстро считать структуру сценария и понять, как он работает.
               </p>
-              <div className="flex h-[118px] max-w-[210px] flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="flex h-[118px] flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Визуальная иерархия</p>
                 <p>• Группировка и понятные названия блоков</p>
                 <p>• Создание или выбор готовых элементов на схеме</p>
@@ -503,11 +503,11 @@ export function WorkCasePage() {
                   <p className="text-[14px] leading-[17px] text-[#828282]">Внести изменения</p>
                 </div>
               </div>
-              <p className="max-w-[210px] text-[14px] leading-[160%] text-white">
+              <p className="text-[14px] leading-[160%] text-white">
                 Изменения должны вноситься прямо в потоке — без лишних переходов и потери
                 контекста.
               </p>
-              <div className="flex h-[118px] max-w-[210px] flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="flex h-[118px] flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Inline-редактирование блоков</p>
                 <p>• Единый контекст между схемой и настройками</p>
                 <p>• Массовые операции с блоками и переходами</p>
@@ -524,10 +524,10 @@ export function WorkCasePage() {
                   <p className="text-[14px] leading-[17px] text-[#828282]">Проверить</p>
                 </div>
               </div>
-              <p className="max-w-[210px] text-[14px] leading-[160%] text-white">
+              <p className="text-[14px] leading-[160%] text-white">
                 Пользователь должен убедиться, что изменения работают без ошибок.
               </p>
-              <div className="flex h-[118px] max-w-[210px] flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="flex h-[118px] flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Статусы для сценариев (черновик / опубликовано)</p>
                 <p>• Тестирование до публикации</p>
                 <p>• История версий с возможностью отката</p>
