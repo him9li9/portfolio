@@ -292,7 +292,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="h-[490px] rounded-[20px] bg-[#222222] px-6 pt-10 pb-8">
+          <div className="h-[490px] bg-[#222222] px-6 pt-10 pb-8">
             <div className="mx-auto flex h-full max-w-[700px] flex-col justify-between">
               <Image
                 alt="Текущая версия редактора сценариев"
@@ -300,7 +300,7 @@ export function WorkCasePage() {
                 width={700}
                 height={396}
                 sizes="(max-width: 800px) 100vw, 700px"
-                className="h-auto w-full object-contain"
+                className="h-auto w-full rounded-[20px] object-contain"
                 loading="lazy"
                 unoptimized
               />
@@ -473,7 +473,7 @@ export function WorkCasePage() {
           </div>
 
           <div className="flex flex-col gap-[13px] md:grid md:grid-cols-[258px_258px_258px] md:gap-[13px]">
-            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] p-6">
+            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] px-6 py-6">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   1
@@ -483,17 +483,17 @@ export function WorkCasePage() {
                   <p className="text-[14px] leading-[17px] text-[#828282]">Понять сценарий</p>
                 </div>
               </div>
-              <p className="text-[14px] leading-[160%] text-white">
+              <p className="max-w-[210px] text-[14px] leading-[160%] text-white">
                 Пользователь должен быстро считать структуру сценария и понять, как он работает.
               </p>
-              <div className="flex h-[118px] flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="flex h-[118px] max-w-[210px] flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Визуальная иерархия</p>
                 <p>• Группировка и понятные названия блоков</p>
                 <p>• Создание или выбор готовых элементов на схеме</p>
               </div>
             </div>
 
-            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] p-6">
+            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] px-6 py-6">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   2
@@ -503,18 +503,18 @@ export function WorkCasePage() {
                   <p className="text-[14px] leading-[17px] text-[#828282]">Внести изменения</p>
                 </div>
               </div>
-              <p className="text-[14px] leading-[160%] text-white">
+              <p className="max-w-[210px] text-[14px] leading-[160%] text-white">
                 Изменения должны вноситься прямо в потоке — без лишних переходов и потери
                 контекста.
               </p>
-              <div className="flex h-[118px] flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="flex h-[118px] max-w-[210px] flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Inline-редактирование блоков</p>
                 <p>• Единый контекст между схемой и настройками</p>
                 <p>• Массовые операции с блоками и переходами</p>
               </div>
             </div>
 
-            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] p-6">
+            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] px-6 py-6">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   3
@@ -524,10 +524,10 @@ export function WorkCasePage() {
                   <p className="text-[14px] leading-[17px] text-[#828282]">Проверить</p>
                 </div>
               </div>
-              <p className="text-[14px] leading-[160%] text-white">
+              <p className="max-w-[210px] text-[14px] leading-[160%] text-white">
                 Пользователь должен убедиться, что изменения работают без ошибок.
               </p>
-              <div className="flex h-[118px] flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="flex h-[118px] max-w-[210px] flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Статусы для сценариев (черновик / опубликовано)</p>
                 <p>• Тестирование до публикации</p>
                 <p>• История версий с возможностью отката</p>
