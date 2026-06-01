@@ -473,7 +473,7 @@ export function WorkCasePage() {
           </div>
 
           <div className="flex flex-col gap-2 md:grid md:grid-cols-3 md:gap-2">
-            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] px-6 py-6 md:w-full md:min-w-0">
+            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] py-6 pl-6 pr-5 md:w-full md:min-w-0">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   1
@@ -493,7 +493,7 @@ export function WorkCasePage() {
               </div>
             </div>
 
-            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] px-6 py-6 md:w-full md:min-w-0">
+            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] py-6 pl-6 pr-5 md:w-full md:min-w-0">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   2
@@ -514,7 +514,7 @@ export function WorkCasePage() {
               </div>
             </div>
 
-            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] px-6 py-6 md:w-full md:min-w-0">
+            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] py-6 pl-6 pr-5 md:w-full md:min-w-0">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   3
