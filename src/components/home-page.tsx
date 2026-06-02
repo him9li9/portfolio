@@ -106,7 +106,7 @@ export function HomePage() {
               На связи Настя Ермошина
             </h1>
           </div>
-          <p className="text-[18px] leading-[160%] text-white">
+          <p className="text-[20px] leading-[160%] text-white">
             Продуктовый дизайнер с опытом 3+ года в телекоме и стартапах, проектирую b2b- и
             b2c-решения. Умею быстро разбираться в сложных системах и превращать их в удобные,
             интуитивные интерфейсы, создавая ценность для пользователя. В работе мне нравится
@@ -144,7 +144,7 @@ export function HomePage() {
                       <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
                     </div>
                     <div className="flex flex-col gap-4">
-                      <p className="max-w-[318px] text-[14px] leading-[160%] text-white">
+                      <p className="max-w-[318px] text-[16px] leading-[160%] text-white">
                         Поменяла подход к звонкам заграницей,
                         <br />
                         сделав их стоимость в приложении
@@ -189,7 +189,7 @@ export function HomePage() {
                       <img alt="KOMPaaS" src={assets.kompaas} className="h-auto w-full" />
                     </div>
                     <div className="flex flex-col gap-4">
-                      <p className="max-w-[320px] text-[14px] leading-[160%] text-white">
+                      <p className="max-w-[320px] text-[16px] leading-[160%] text-white">
                         Снизила зависимость B2B-клиентов
                         <br />
                         от разработки и упростила управление
