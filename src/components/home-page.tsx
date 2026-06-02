@@ -1,7 +1,6 @@
 "use client";
 
 import { cubicBezier, motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -9,7 +8,8 @@ const assets = {
   avatar: "/figma/avatar.png",
   phones: "/figma/phones.png",
   heart: "/figma/heart.svg",
-  mcn: "/figma/mcn-softphone.svg",
+  mcn: "/figma/Case_2/MCN%20Softphone.svg",
+  kompaas: "/figma/Case_2/KOMPaaS.svg",
   vpbxCrop: "/figma/Case_2/vpbx-canvas_crop.png"
 };
 
@@ -140,7 +140,7 @@ export function HomePage() {
                   }}
                 >
                   <div className="flex w-full flex-col gap-8 sm:max-w-[330px] sm:justify-between">
-                    <div className="w-[252px] sm:w-[262px]">
+                    <div className="w-[252px] sm:w-[314px]">
                       <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
                     </div>
                     <div className="flex flex-col gap-4">
@@ -152,24 +152,20 @@ export function HomePage() {
                         более прозрачной
                       </p>
                       <div className="flex flex-col items-start gap-2">
-                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[14px] leading-[160%] text-white">
+                        <span className="rounded-full bg-[#2D2D2D] px-3 py-[7px] text-[14px] leading-[160%] text-white">
                           +23% onboarding CR
                         </span>
-                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[14px] leading-[160%] text-white">
+                        <span className="rounded-full bg-[#2D2D2D] px-3 py-[7px] text-[14px] leading-[160%] text-white">
                           8 → 3 шага активации
                         </span>
                       </div>
                     </div>
                   </div>
-                  <div className="relative aspect-[3504/3354] w-full overflow-hidden sm:h-full sm:w-[420px] sm:aspect-auto sm:py-1">
-                    <Image
+                  <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-full sm:w-[420px] sm:aspect-auto sm:py-1">
+                    <img
                       alt="MCN Softphone preview"
                       src={assets.phones}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 420px"
-                      className="object-contain"
-                      priority
-                      unoptimized
+                      className="h-full w-full object-contain"
                     />
                   </div>
                 </motion.section>
@@ -188,9 +184,9 @@ export function HomePage() {
                       "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
                   }}
                 >
-                  <div className="flex w-full flex-col gap-8 sm:max-w-[330px] sm:justify-between">
-                    <div className="max-w-[300px] text-[84px] font-semibold leading-[0.88] tracking-[-0.04em] text-transparent [background:linear-gradient(90deg,#4f4f4f_0%,#eeeeee_48%,#6a6a6a_78%,#232323_100%)] bg-clip-text sm:text-[80px]">
-                      KOMPaaS
+                  <div className="relative z-10 flex w-full flex-col gap-8 sm:max-w-[330px] sm:justify-between">
+                    <div className="w-[252px] sm:w-[314px]">
+                      <img alt="KOMPaaS" src={assets.kompaas} className="h-auto w-full" />
                     </div>
                     <div className="flex flex-col gap-4">
                       <p className="max-w-[320px] text-[14px] leading-[160%] text-white">
@@ -201,24 +197,20 @@ export function HomePage() {
                         сценариями звонков
                       </p>
                       <div className="flex flex-col items-start gap-2">
-                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[14px] leading-[160%] text-white">
+                        <span className="rounded-full bg-[#2D2D2D] px-3 py-[7px] text-[14px] leading-[160%] text-white">
                           +28% self-service
                         </span>
-                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[14px] leading-[160%] text-white">
+                        <span className="rounded-full bg-[#2D2D2D] px-3 py-[7px] text-[14px] leading-[160%] text-white">
                           −16% обращений в поддержку
                         </span>
                       </div>
                     </div>
                   </div>
-                  <div className="relative w-full overflow-hidden rounded-[14px] bg-white sm:h-full sm:w-[514px]">
-                    <Image
+                  <div className="relative w-full overflow-hidden rounded-[24px] bg-white sm:absolute sm:bottom-0 sm:right-0 sm:h-[346px] sm:w-[514px]">
+                    <img
                       alt="KOMPaaS canvas preview"
-                      src={`${assets.vpbxCrop}?v=1`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 514px"
-                      className="object-cover object-left-top"
-                      priority
-                      unoptimized
+                      src={`${assets.vpbxCrop}?v=2`}
+                      className="h-full w-full object-cover object-left-top"
                     />
                   </div>
                 </motion.section>
