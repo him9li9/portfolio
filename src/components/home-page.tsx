@@ -1,6 +1,7 @@
 "use client";
 
 import { cubicBezier, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -143,7 +144,7 @@ export function HomePage() {
                       <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
                     </div>
                     <div className="flex flex-col gap-4">
-                      <p className="max-w-[318px] text-[18px] leading-[160%] text-white">
+                      <p className="max-w-[318px] text-[14px] leading-[160%] text-white">
                         Поменяла подход к звонкам заграницей,
                         <br />
                         сделав их стоимость в приложении
@@ -151,17 +152,25 @@ export function HomePage() {
                         более прозрачной
                       </p>
                       <div className="flex flex-col items-start gap-2">
-                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[18px] leading-[160%] text-white">
+                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[14px] leading-[160%] text-white">
                           +23% onboarding CR
                         </span>
-                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[18px] leading-[160%] text-white">
+                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[14px] leading-[160%] text-white">
                           8 → 3 шага активации
                         </span>
                       </div>
                     </div>
                   </div>
-                  <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-full sm:w-[420px] sm:aspect-auto sm:py-1">
-                    <img alt="" src={assets.phones} className="h-full w-full object-contain" />
+                  <div className="relative aspect-[3504/3354] w-full overflow-hidden sm:h-full sm:w-[420px] sm:aspect-auto sm:py-1">
+                    <Image
+                      alt="MCN Softphone preview"
+                      src={assets.phones}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 420px"
+                      className="object-contain"
+                      priority
+                      unoptimized
+                    />
                   </div>
                 </motion.section>
               </Link>
@@ -180,11 +189,11 @@ export function HomePage() {
                   }}
                 >
                   <div className="flex w-full flex-col gap-8 sm:max-w-[330px] sm:justify-between">
-                    <h3 className="max-w-[300px] text-[84px] font-semibold leading-[0.88] tracking-[-0.04em] text-transparent [background:linear-gradient(180deg,#6F6F6F_0%,#F2F2F2_35%,#6B6B6B_70%,#2D2D2D_100%)] bg-clip-text sm:text-[80px]">
+                    <div className="max-w-[300px] text-[84px] font-semibold leading-[0.88] tracking-[-0.04em] text-transparent [background:linear-gradient(90deg,#4f4f4f_0%,#eeeeee_48%,#6a6a6a_78%,#232323_100%)] bg-clip-text sm:text-[80px]">
                       KOMPaaS
-                    </h3>
+                    </div>
                     <div className="flex flex-col gap-4">
-                      <p className="max-w-[320px] text-[18px] leading-[160%] text-white">
+                      <p className="max-w-[320px] text-[14px] leading-[160%] text-white">
                         Снизила зависимость B2B-клиентов
                         <br />
                         от разработки и упростила управление
@@ -192,20 +201,24 @@ export function HomePage() {
                         сценариями звонков
                       </p>
                       <div className="flex flex-col items-start gap-2">
-                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[18px] leading-[160%] text-white">
+                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[14px] leading-[160%] text-white">
                           +28% self-service
                         </span>
-                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[18px] leading-[160%] text-white">
+                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[14px] leading-[160%] text-white">
                           −16% обращений в поддержку
                         </span>
                       </div>
                     </div>
                   </div>
-                  <div className="w-full overflow-hidden rounded-[14px] bg-white sm:h-full sm:w-[514px]">
-                    <img
+                  <div className="relative w-full overflow-hidden rounded-[14px] bg-white sm:h-full sm:w-[514px]">
+                    <Image
                       alt="KOMPaaS canvas preview"
-                      src={assets.vpbxCrop}
-                      className="h-full w-full object-cover object-left-top"
+                      src={`${assets.vpbxCrop}?v=1`}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 514px"
+                      className="object-cover object-left-top"
+                      priority
+                      unoptimized
                     />
                   </div>
                 </motion.section>
