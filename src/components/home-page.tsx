@@ -8,7 +8,8 @@ const assets = {
   avatar: "/figma/avatar.png",
   phones: "/figma/phones.png",
   heart: "/figma/heart.svg",
-  mcn: "/figma/mcn-softphone.svg"
+  mcn: "/figma/mcn-softphone.svg",
+  vpbxCrop: "/figma/Case_2/vpbx-canvas_crop.png"
 };
 
 export function HomePage() {
@@ -122,7 +123,7 @@ export function HomePage() {
             className="pointer-events-none fixed inset-0 z-40 hidden bg-black sm:block"
           />
           <div
-            className="flex flex-col gap-8"
+            className="flex flex-col gap-6"
             onMouseEnter={() => setIsProjectHovered(true)}
             onMouseLeave={() => setIsProjectHovered(false)}
           >
@@ -131,25 +132,35 @@ export function HomePage() {
                 <motion.section
                   whileHover={canHover ? { scale: 1.02 } : undefined}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="relative flex w-full transform-gpu flex-col items-start gap-[33px] overflow-hidden px-4 py-[23px] will-change-transform sm:flex-row sm:items-center sm:justify-between sm:gap-[33px] sm:px-8 sm:py-[23px]"
+                  className="relative flex w-full transform-gpu flex-col items-start gap-8 overflow-hidden rounded-[20px] px-6 py-6 will-change-transform sm:h-[378px] sm:flex-row sm:items-stretch sm:justify-between sm:gap-6 sm:px-10 sm:py-9"
                   style={{
                     backgroundImage:
                       "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
                   }}
                 >
-                  <div className="flex w-full flex-col gap-[108px] sm:max-w-[338px]">
-                    <div className="w-[252px]">
+                  <div className="flex w-full flex-col gap-8 sm:max-w-[330px] sm:justify-between">
+                    <div className="w-[252px] sm:w-[262px]">
                       <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
                     </div>
-                    <p className="text-[18px] leading-[160%] text-white">
-                      Как я помогла сократить путь
-                      <br />
-                      до 3 шагов и увеличить конверсию
-                      <br />
-                      в первый звонок на 23%
-                    </p>
+                    <div className="flex flex-col gap-4">
+                      <p className="max-w-[318px] text-[18px] leading-[160%] text-white">
+                        Поменяла подход к звонкам заграницей,
+                        <br />
+                        сделав их стоимость в приложении
+                        <br />
+                        более прозрачной
+                      </p>
+                      <div className="flex flex-col items-start gap-2">
+                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[18px] leading-[160%] text-white">
+                          +23% onboarding CR
+                        </span>
+                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[18px] leading-[160%] text-white">
+                          8 → 3 шага активации
+                        </span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-[330px] sm:w-[334px] sm:aspect-auto">
+                  <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-full sm:w-[420px] sm:aspect-auto sm:py-1">
                     <img alt="" src={assets.phones} className="h-full w-full object-contain" />
                   </div>
                 </motion.section>
@@ -162,12 +173,42 @@ export function HomePage() {
                   aria-label="Открыть кейс KOMPaaS"
                   whileHover={canHover ? { scale: 1.02 } : undefined}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="relative h-[378px] w-full transform-gpu overflow-hidden will-change-transform"
+                  className="relative flex h-[378px] w-full transform-gpu flex-col items-start gap-8 overflow-hidden rounded-[20px] px-6 py-6 will-change-transform sm:flex-row sm:items-stretch sm:justify-between sm:gap-6 sm:px-10 sm:py-9"
                   style={{
                     backgroundImage:
                       "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
                   }}
-                />
+                >
+                  <div className="flex w-full flex-col gap-8 sm:max-w-[330px] sm:justify-between">
+                    <h3 className="max-w-[300px] text-[84px] font-semibold leading-[0.88] tracking-[-0.04em] text-transparent [background:linear-gradient(180deg,#6F6F6F_0%,#F2F2F2_35%,#6B6B6B_70%,#2D2D2D_100%)] bg-clip-text sm:text-[80px]">
+                      KOMPaaS
+                    </h3>
+                    <div className="flex flex-col gap-4">
+                      <p className="max-w-[320px] text-[18px] leading-[160%] text-white">
+                        Снизила зависимость B2B-клиентов
+                        <br />
+                        от разработки и упростила управление
+                        <br />
+                        сценариями звонков
+                      </p>
+                      <div className="flex flex-col items-start gap-2">
+                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[18px] leading-[160%] text-white">
+                          +28% self-service
+                        </span>
+                        <span className="rounded-full bg-[#2D2D2D] px-4 py-2 text-[18px] leading-[160%] text-white">
+                          −16% обращений в поддержку
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="w-full overflow-hidden rounded-[14px] bg-white sm:h-full sm:w-[514px]">
+                    <img
+                      alt="KOMPaaS canvas preview"
+                      src={assets.vpbxCrop}
+                      className="h-full w-full object-cover object-left-top"
+                    />
+                  </div>
+                </motion.section>
               </Link>
             </div>
           </div>
