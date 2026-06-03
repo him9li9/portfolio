@@ -8,8 +8,8 @@ const assets = {
   avatar: "/figma/avatar.png",
   phones: "/figma/phones.png",
   heart: "/figma/heart.svg",
-  mcn: "/figma/Case_2/MCN%20Softphone.svg",
-  kompaas: "/figma/Case_2/KOMPaaS.svg",
+  mcn: "/figma/Case_2/MCN%20Softphone.png",
+  kompaas: "/figma/Case_2/KOMPaaS.png",
   vpbxCrop: "/figma/Case_2/vpbx-canvas_crop.png"
 };
 
@@ -107,8 +107,8 @@ export function HomePage() {
             </h1>
           </div>
           <p className="text-[20px] leading-[160%] text-white">
-            Продуктовый дизайнер с опытом 3+ года в телекоме и стартапах, проектирую b2b- и
-            b2c-решения. Умею быстро разбираться в сложных системах и превращать их в удобные,
+            Продуктовый дизайнер с опытом 3+ года в телекоме и стартапах, проектирую B2B- и
+            B2C-решения. Умею быстро разбираться в сложных системах и превращать их в удобные,
             интуитивные интерфейсы, создавая ценность для пользователя. В работе мне нравится
             находить точки роста в неочевидных задачах и участвовать в брейнштормах с командой.
           </p>
@@ -140,7 +140,7 @@ export function HomePage() {
                   }}
                 >
                   <div className="flex w-full flex-col gap-8 sm:max-w-[330px] sm:justify-between">
-                    <div className="w-[252px] sm:w-[314px]">
+                    <div className="w-[262px]">
                       <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
                     </div>
                     <div className="flex flex-col gap-4">
@@ -151,11 +151,11 @@ export function HomePage() {
                         <br />
                         более прозрачной
                       </p>
-                      <div className="flex flex-col items-start gap-2">
-                        <span className="rounded-full bg-[#2D2D2D] px-3 py-[7px] text-[14px] leading-[160%] text-white">
+                      <div className="flex flex-wrap items-start gap-2">
+                        <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
                           +23% onboarding CR
                         </span>
-                        <span className="rounded-full bg-[#2D2D2D] px-3 py-[7px] text-[14px] leading-[160%] text-white">
+                        <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
                           8 → 3 шага активации
                         </span>
                       </div>
@@ -185,7 +185,7 @@ export function HomePage() {
                   }}
                 >
                   <div className="relative z-10 flex w-full flex-col gap-8 sm:max-w-[330px] sm:justify-between">
-                    <div className="w-[252px] sm:w-[314px]">
+                    <div className="w-[252px]">
                       <img alt="KOMPaaS" src={assets.kompaas} className="h-auto w-full" />
                     </div>
                     <div className="flex flex-col gap-4">
@@ -196,17 +196,17 @@ export function HomePage() {
                         <br />
                         сценариями звонков
                       </p>
-                      <div className="flex flex-col items-start gap-2">
-                        <span className="rounded-full bg-[#2D2D2D] px-3 py-[7px] text-[14px] leading-[160%] text-white">
-                          +28% self-service
+                      <div className="flex flex-wrap items-start gap-2">
+                        <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
+                          +28% self-service rate
                         </span>
-                        <span className="rounded-full bg-[#2D2D2D] px-3 py-[7px] text-[14px] leading-[160%] text-white">
-                          −16% обращений в поддержку
+                        <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
+                          +16% CSAT
                         </span>
                       </div>
                     </div>
                   </div>
-                  <div className="relative w-full overflow-hidden rounded-[24px] bg-white sm:absolute sm:bottom-0 sm:right-0 sm:h-[346px] sm:w-[514px]">
+                  <div className="relative w-full overflow-hidden bg-white [border-radius:8px_0_8px_0] sm:absolute sm:bottom-0 sm:right-0 sm:h-[346px] sm:w-[514px]">
                     <img
                       alt="KOMPaaS canvas preview"
                       src={`${assets.vpbxCrop}?v=2`}
