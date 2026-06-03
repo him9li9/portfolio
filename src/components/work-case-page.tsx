@@ -194,7 +194,7 @@ export function WorkCasePage() {
             width={800}
             height={500}
             sizes="(max-width: 800px) 100vw, 800px"
-            className="h-auto w-full rounded-[20px] object-contain"
+            className="h-auto w-full rounded-[8px] object-contain"
             priority
             unoptimized
           />
@@ -307,7 +307,7 @@ export function WorkCasePage() {
                 width={700}
                 height={396}
                 sizes="(max-width: 800px) 100vw, 700px"
-                className="h-auto w-full rounded-[20px] object-contain"
+                className="h-auto w-full rounded-[8px] object-contain"
                 loading="lazy"
                 unoptimized
               />
