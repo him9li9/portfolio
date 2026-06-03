@@ -133,7 +133,7 @@ export function HomePage() {
                 <motion.section
                   whileHover={canHover ? { scale: 1.02 } : undefined}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="relative flex w-full transform-gpu flex-col items-start gap-8 overflow-hidden rounded-[8px] px-6 py-6 will-change-transform sm:h-[378px] sm:flex-row sm:items-stretch sm:justify-between sm:gap-6 sm:px-10 sm:py-9"
+                  className="relative flex w-full transform-gpu flex-col items-start gap-8 overflow-hidden rounded-none px-6 py-6 will-change-transform sm:h-[378px] sm:flex-row sm:items-stretch sm:justify-between sm:gap-6 sm:px-10 sm:py-9"
                   style={{
                     backgroundImage:
                       "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
@@ -178,7 +178,7 @@ export function HomePage() {
                   aria-label="Открыть кейс KOMPaaS"
                   whileHover={canHover ? { scale: 1.02 } : undefined}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="relative flex h-[378px] w-full transform-gpu flex-col items-start gap-8 overflow-hidden rounded-[8px] px-6 py-6 will-change-transform sm:flex-row sm:items-stretch sm:justify-between sm:gap-6 sm:px-10 sm:py-9"
+                  className="relative flex h-[378px] w-full transform-gpu flex-col items-start gap-8 overflow-hidden rounded-none px-6 py-6 will-change-transform sm:flex-row sm:items-stretch sm:justify-between sm:gap-6 sm:px-10 sm:py-9"
                   style={{
                     backgroundImage:
                       "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
@@ -206,7 +206,7 @@ export function HomePage() {
                       </div>
                     </div>
                   </div>
-                  <div className="relative w-full overflow-hidden bg-white [border-radius:8px_0_8px_0] sm:absolute sm:bottom-0 sm:right-0 sm:h-[360px] sm:w-[457px]">
+                  <div className="relative w-full overflow-hidden bg-white [border-radius:8px_0_8px_0] sm:absolute sm:bottom-0 sm:right-0 sm:h-[342px] sm:w-[434px]">
                     <img
                       alt="KOMPaaS canvas preview"
                       src={`${assets.vpbxCrop}?v=2`}
