@@ -480,7 +480,7 @@ export function WorkCasePage() {
           </div>
 
           <div className="flex flex-col gap-2 md:grid md:grid-cols-3 md:gap-2">
-            <div className="flex h-[300px] flex-col rounded-[20px] bg-[#262626] p-6 md:w-full md:min-w-0">
+            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] py-6 pl-6 pr-5 md:w-full md:min-w-0">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   1
@@ -490,18 +490,17 @@ export function WorkCasePage() {
                   <p className="text-[14px] leading-[17px] text-[#828282]">Понять сценарий</p>
                 </div>
               </div>
-              <p className="mt-5 text-[14px] leading-[160%] text-white">
+              <p className="text-[14px] leading-[160%] text-white">
                 Пользователь должен быстро считать структуру сценария и понять, как он работает.
               </p>
-              <div className="my-4 h-px w-full bg-[#3A3A3A]" />
-              <div className="flex flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="flex h-[118px] flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Визуальная иерархия</p>
                 <p>• Группировка и понятные названия блоков</p>
                 <p>• Создание или выбор готовых элементов на схеме</p>
               </div>
             </div>
 
-            <div className="flex h-[300px] flex-col rounded-[20px] bg-[#262626] p-6 md:w-full md:min-w-0">
+            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] py-6 pl-6 pr-5 md:w-full md:min-w-0">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   2
@@ -511,19 +510,18 @@ export function WorkCasePage() {
                   <p className="text-[14px] leading-[17px] text-[#828282]">Внести изменения</p>
                 </div>
               </div>
-              <p className="mt-5 text-[14px] leading-[160%] text-white">
+              <p className="text-[14px] leading-[160%] text-white">
                 Изменения должны вноситься прямо в потоке — без лишних переходов и потери
                 контекста.
               </p>
-              <div className="my-4 h-px w-full bg-[#3A3A3A]" />
-              <div className="flex flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="flex h-[118px] flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Inline-редактирование блоков</p>
                 <p>• Единый контекст между схемой и настройками</p>
                 <p>• Массовые операции с блоками и переходами</p>
               </div>
             </div>
 
-            <div className="flex h-[300px] flex-col rounded-[20px] bg-[#262626] p-6 md:w-full md:min-w-0">
+            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-4 rounded-[20px] bg-[#262626] py-6 pl-6 pr-5 md:w-full md:min-w-0">
               <div className="flex items-center gap-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#ff8566] text-[18px] font-semibold leading-[160%] text-white">
                   3
@@ -533,11 +531,10 @@ export function WorkCasePage() {
                   <p className="text-[14px] leading-[17px] text-[#828282]">Проверить</p>
                 </div>
               </div>
-              <p className="mt-5 text-[14px] leading-[160%] text-white">
+              <p className="text-[14px] leading-[160%] text-white">
                 Пользователь должен убедиться, что изменения работают без ошибок.
               </p>
-              <div className="my-4 h-px w-full bg-[#3A3A3A]" />
-              <div className="flex flex-col gap-1 text-[14px] leading-[160%] text-white">
+              <div className="flex h-[118px] flex-col gap-1 text-[14px] leading-[160%] text-white">
                 <p>• Статусы для сценариев (черновик / опубликовано)</p>
                 <p>• Тестирование до публикации</p>
                 <p>• История версий с возможностью отката</p>
