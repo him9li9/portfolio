@@ -398,10 +398,9 @@ export function CaseStudyPage() {
                 src={assets.hero}
                 width={417}
                 height={400}
-                sizes="(max-width: 640px) 100vw, 417px"
+                sizes="(max-width: 640px) calc(100vw - 32px), 417px"
                 className="h-auto w-full object-contain"
                 priority
-                unoptimized
               />
             </div>
           </div>
@@ -442,10 +441,9 @@ export function CaseStudyPage() {
                 src={assets.chartSmall}
                 width={323}
                 height={64}
-                sizes="(max-width: 640px) 100vw, 323px"
+                sizes="(max-width: 640px) calc(100vw - 32px), 323px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
               />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%]">
@@ -460,10 +458,9 @@ export function CaseStudyPage() {
                 src={assets.chartBig}
                 width={527}
                 height={300}
-                sizes="(max-width: 640px) 100vw, 527px"
+                sizes="(max-width: 640px) calc(100vw - 32px), 527px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
               />
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%]">
@@ -550,10 +547,9 @@ export function CaseStudyPage() {
                 src={assets.discoveryActivation}
                 width={800}
                 height={757}
-                sizes="(max-width: 640px) 100vw, 760px"
+                sizes="(max-width: 640px) calc(100vw - 32px), 760px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
               />
             </div>
 
@@ -576,10 +572,9 @@ export function CaseStudyPage() {
                   src={assets.discoveryCost}
                   width={427}
                   height={400}
-                  sizes="(max-width: 640px) 100vw, 427px"
+                  sizes="(max-width: 640px) calc(100vw - 32px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
-                  unoptimized
                 />
               </div>
             </div>
@@ -603,20 +598,18 @@ export function CaseStudyPage() {
                   src={assets.discoveryFeedback1}
                   width={427}
                   height={136}
-                  sizes="(max-width: 640px) 100vw, 427px"
+                  sizes="(max-width: 640px) calc(100vw - 32px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
-                  unoptimized
                 />
                 <Image
                   alt=""
                   src={assets.discoveryFeedback2}
                   width={427}
                   height={103}
-                  sizes="(max-width: 640px) 100vw, 427px"
+                  sizes="(max-width: 640px) calc(100vw - 32px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
-                  unoptimized
                 />
               </div>
             </div>
@@ -643,10 +636,9 @@ export function CaseStudyPage() {
                   src={assets.competitorWhatsapp}
                   width={600}
                   height={300}
-                  sizes="(max-width: 640px) 100vw, 600px"
+                  sizes="(max-width: 640px) calc(100vw - 32px), 600px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
-                  unoptimized
                 />
               </div>
               <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
@@ -667,10 +659,9 @@ export function CaseStudyPage() {
                   src={assets.competitorOpenphone}
                   width={754}
                   height={300}
-                  sizes="(max-width: 640px) 100vw, 754px"
+                  sizes="(max-width: 640px) calc(100vw - 32px), 754px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
-                  unoptimized
                 />
               </div>
               <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
@@ -755,10 +746,9 @@ export function CaseStudyPage() {
                     src={assets.userflow}
                     width={userflowDisplay.width}
                     height={userflowDisplay.height}
-                    sizes="(max-width: 640px) 100vw, 750px"
+                    sizes="(max-width: 640px) calc(100vw - 32px), 750px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
-                    unoptimized
                   />
                 </button>
               </div>
@@ -814,11 +804,10 @@ export function CaseStudyPage() {
                 alt=""
                 src={assets.solutionSuccess}
                 width={2400}
-                height={1440}
-                sizes="(max-width: 640px) 100vw, 800px"
+                height={1347}
+                sizes="(max-width: 640px) calc(100vw - 32px), 800px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
             />
           </div>
 
@@ -838,12 +827,11 @@ export function CaseStudyPage() {
               <Image
                 alt=""
                 src={assets.solutionCost}
-                width={2400}
-                height={1290}
-                sizes="(max-width: 640px) 100vw, 800px"
+                width={1600}
+                height={800}
+                sizes="(max-width: 640px) calc(100vw - 32px), 800px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
             />
           </div>
 
@@ -865,12 +853,11 @@ export function CaseStudyPage() {
               <Image
                 alt=""
                 src={assets.solutionError}
-                width={2400}
-                height={1380}
-                sizes="(max-width: 640px) 100vw, 800px"
+                width={1600}
+                height={858}
+                sizes="(max-width: 640px) calc(100vw - 32px), 800px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
             />
           </div>
 
@@ -1022,11 +1009,10 @@ export function CaseStudyPage() {
                     src={assets.userflow}
                     width={userflowBase.width}
                     height={userflowBase.height}
-                    sizes="80vw"
+                    sizes="(max-width: 640px) 96vw, 80vw"
                     className="pointer-events-none h-full w-full select-none object-contain"
                     draggable={false}
                     priority
-                    unoptimized
                   />
                 </div>
               </div>

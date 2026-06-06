@@ -1,6 +1,7 @@
 "use client";
 
 import { cubicBezier, motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
@@ -141,7 +142,14 @@ export function HomePage() {
                 >
                   <div className="flex w-full flex-col gap-8 sm:max-w-[330px] sm:justify-between">
                     <div className="w-[262px]">
-                      <img alt="MCN Softphone" src={assets.mcn} className="h-auto w-full" />
+                      <Image
+                        alt="MCN Softphone"
+                        src={assets.mcn}
+                        width={786}
+                        height={327}
+                        sizes="262px"
+                        className="h-auto w-full"
+                      />
                     </div>
                     <div className="flex flex-col gap-4">
                       <p className="max-w-[318px] text-[16px] leading-[160%] text-white">
@@ -162,9 +170,12 @@ export function HomePage() {
                     </div>
                   </div>
                   <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-full sm:w-[420px] sm:aspect-auto sm:py-1">
-                    <img
+                    <Image
                       alt="MCN Softphone preview"
                       src={assets.phones}
+                      width={1212}
+                      height={1200}
+                      sizes="(max-width: 640px) calc(100vw - 80px), 420px"
                       className="h-full w-full object-contain"
                     />
                   </div>
@@ -178,7 +189,7 @@ export function HomePage() {
                   aria-label="Открыть кейс KOMPaaS"
                   whileHover={canHover ? { scale: 1.02 } : undefined}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="relative flex h-[378px] w-full transform-gpu flex-col items-start gap-8 overflow-hidden rounded-none px-6 py-6 will-change-transform sm:flex-row sm:items-stretch sm:justify-between sm:gap-6 sm:px-10 sm:py-9"
+                  className="relative flex h-auto w-full transform-gpu flex-col items-start gap-8 overflow-hidden rounded-none px-6 py-6 will-change-transform sm:h-[378px] sm:flex-row sm:items-stretch sm:justify-between sm:gap-6 sm:px-10 sm:py-9"
                   style={{
                     backgroundImage:
                       "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
@@ -186,7 +197,14 @@ export function HomePage() {
                 >
                   <div className="relative z-10 flex w-full flex-col gap-8 sm:max-w-[330px] sm:justify-between">
                     <div className="w-[252px]">
-                      <img alt="KOMPaaS" src={assets.kompaas} className="h-auto w-full" />
+                      <Image
+                        alt="KOMPaaS"
+                        src={assets.kompaas}
+                        width={756}
+                        height={126}
+                        sizes="252px"
+                        className="h-auto w-full"
+                      />
                     </div>
                     <div className="flex flex-col gap-4">
                       <p className="max-w-[320px] text-[16px] leading-[160%] text-white">
@@ -207,9 +225,12 @@ export function HomePage() {
                     </div>
                   </div>
                   <div className="relative w-full overflow-hidden bg-white [border-radius:8px_0_8px_0] sm:absolute sm:bottom-0 sm:right-0 sm:h-[342px] sm:w-[434px]">
-                    <img
+                    <Image
                       alt="KOMPaaS canvas preview"
                       src={`${assets.vpbxCrop}?v=2`}
+                      width={1371}
+                      height={1080}
+                      sizes="(max-width: 640px) calc(100vw - 48px), 434px"
                       className="h-full w-full object-contain object-left-top"
                     />
                   </div>

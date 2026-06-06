@@ -193,10 +193,9 @@ export function WorkCasePage() {
             src={assets.hero}
             width={800}
             height={500}
-            sizes="(max-width: 800px) 100vw, 800px"
+            sizes="(max-width: 800px) calc(100vw - 32px), 800px"
             className="h-auto w-full rounded-[8px] object-contain"
             priority
-            unoptimized
           />
         </motion.section>
 
@@ -306,10 +305,9 @@ export function WorkCasePage() {
                 src={assets.oldCanvas}
                 width={700}
                 height={396}
-                sizes="(max-width: 800px) 100vw, 700px"
+                sizes="(max-width: 800px) calc(100vw - 80px), 700px"
                 className="h-auto w-full rounded-[8px] object-contain"
                 loading="lazy"
-                unoptimized
               />
               <p className="text-center text-[14px] leading-[160%] text-[#828282]">
                 1 - сценарии, 2 - настройки, 3 - элементы, 4 - канвас с блоками и переходами
@@ -345,10 +343,9 @@ export function WorkCasePage() {
             src={assets.addFlow}
             width={800}
             height={505}
-            sizes="(max-width: 800px) 100vw, 800px"
+            sizes="(max-width: 800px) calc(100vw - 32px), 800px"
             className="h-auto w-full object-contain"
             loading="lazy"
-            unoptimized
           />
 
           <div className="flex flex-col gap-2">
@@ -398,10 +395,9 @@ export function WorkCasePage() {
             src={assets.table}
             width={800}
             height={457}
-            sizes="(max-width: 800px) 100vw, 800px"
+            sizes="(max-width: 800px) calc(100vw - 32px), 800px"
             className="h-auto w-full object-contain"
             loading="lazy"
-            unoptimized
           />
 
           <p className="text-[18px] leading-[160%]">
@@ -600,10 +596,9 @@ export function WorkCasePage() {
             src={assets.hero}
             width={800}
             height={500}
-            sizes="(max-width: 800px) 100vw, 800px"
+            sizes="(max-width: 800px) calc(100vw - 32px), 800px"
             className="h-auto w-full object-contain"
             loading="lazy"
-            unoptimized
           />
 
           <div className="flex flex-col gap-4">
@@ -627,10 +622,9 @@ export function WorkCasePage() {
                     src={assets.oldSidebar}
                     width={330}
                     height={236}
-                    sizes="(max-width: 640px) 100vw, 330px"
+                    sizes="(max-width: 640px) calc(100vw - 80px), 330px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
-                    unoptimized
                   />
                   <p className="text-center text-[14px] leading-[160%] text-[#afafaf]">Было</p>
                 </div>
@@ -640,10 +634,9 @@ export function WorkCasePage() {
                     src={assets.newSidebar}
                     width={330}
                     height={236}
-                    sizes="(max-width: 640px) 100vw, 330px"
+                    sizes="(max-width: 640px) calc(100vw - 80px), 330px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
-                    unoptimized
                   />
                   <p className="text-center text-[14px] leading-[160%] text-[#afafaf]">Стало</p>
                 </div>
@@ -671,10 +664,9 @@ export function WorkCasePage() {
               src={assets.library}
               width={800}
               height={521}
-              sizes="(max-width: 800px) 100vw, 800px"
+              sizes="(max-width: 800px) calc(100vw - 32px), 800px"
               className="h-auto w-full object-contain"
               loading="lazy"
-              unoptimized
             />
           </div>
 
@@ -696,10 +688,9 @@ export function WorkCasePage() {
                 src={assets.element}
                 width={595}
                 height={347}
-                sizes="(max-width: 800px) 100vw, 595px"
+                sizes="(max-width: 800px) calc(100vw - 80px), 595px"
                 className="mx-auto h-auto w-full max-w-[595px] object-contain"
                 loading="lazy"
-                unoptimized
               />
               <p className="mt-2 text-center text-[14px] leading-[160%] text-[#afafaf]">
                 Флоу добавления элемента на схему и inline редактирования
@@ -715,10 +706,9 @@ export function WorkCasePage() {
               src={assets.dialog}
               width={800}
               height={500}
-              sizes="(max-width: 800px) 100vw, 800px"
+              sizes="(max-width: 800px) calc(100vw - 32px), 800px"
               className="h-auto w-full object-contain"
               loading="lazy"
-              unoptimized
             />
           </div>
 
@@ -744,10 +734,9 @@ export function WorkCasePage() {
                 src={assets.map}
                 width={595}
                 height={300}
-                sizes="(max-width: 800px) 100vw, 595px"
+                sizes="(max-width: 800px) calc(100vw - 80px), 595px"
                 className="mx-auto h-auto w-full max-w-[595px] object-contain"
                 loading="lazy"
-                unoptimized
               />
               <p className="mt-2 text-center text-[14px] leading-[160%] text-[#afafaf]">
                 На большом масштабе пользователь ориентируется с помощью smart zoom и minimap
@@ -777,10 +766,9 @@ export function WorkCasePage() {
                 src={assets.publish}
                 width={800}
                 height={97}
-                sizes="(max-width: 800px) 100vw, 800px"
+                sizes="(max-width: 800px) calc(100vw - 32px), 800px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
-                unoptimized
               />
               <p className="mt-2 text-center text-[14px] leading-[160%] text-[#afafaf]">
                 1 - актуальный статус, 2 - публикация сценария
