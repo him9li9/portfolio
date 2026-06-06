@@ -376,7 +376,7 @@ export function CaseStudyPage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-y-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-[66px] sm:pb-[140px] md:gap-y-[100px]"
+        className="flex w-full flex-col gap-y-[50px] px-4 pb-[80px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-[66px] sm:pb-[100px] md:gap-y-[100px]"
       >
         <motion.section
           id="overview"
@@ -387,8 +387,9 @@ export function CaseStudyPage() {
           <div className="flex flex-col gap-4 text-white">
             <h1 className="text-[40px] font-semibold leading-[48px]">MCN Softphone</h1>
             <p className="text-[18px] leading-[160%]">
-              — мобильное приложение для звонков через интернет и управление личным кабинетом. Аудитория —
-              путешественники, которым нужна дешёвая и надёжная связь за границей.
+              — мобильное приложение для звонков через интернет и управления личным кабинетом.
+              Целевая аудитория — путешественники, которым нужна доступная связь за границей без
+              сложной настройки SIM и роуминга.
             </p>
           </div>
             <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
@@ -416,8 +417,8 @@ export function CaseStudyPage() {
             <h2 className="text-[32px] font-semibold leading-[40px]">О проекте</h2>
             <p className="mt-4 text-[18px] leading-[160%]">
               Когда я присоединилась к проекту, приложение существовало в формате MVP, но проседала
-              основная метрика — количество звонков, вместе с командой мне предстояло разобраться
-              почему так происходит и исправить это.
+              основная метрика — количество звонков. Вместе с командой мне предстояло разобраться,
+              почему так происходит, и исправить это.
             </p>
             <div className="mt-8 h-px w-full bg-[#282828]" />
           </div>
@@ -425,9 +426,9 @@ export function CaseStudyPage() {
           <div className="flex flex-col gap-4">
             <h3 className="text-[24px] font-semibold leading-[32px]">Проблема</h3>
             <p className="text-[18px] leading-[160%]">
-              Первичный анализ выявил системную проблему — пользователь остается в неведении на
-              критических этапах: после регистрации, во время звонка, при технических сбоях. Это
-              напрямую повлияло на ключевые метрики:
+              Первичный анализ показал системную проблему: на критических этапах пользователь не
+              понимал статус процесса, стоимость действий и следующий шаг. Это напрямую повлияло
+              на ключевые метрики:
             </p>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%]">
               <li>
@@ -478,7 +479,7 @@ export function CaseStudyPage() {
             <h3 className="text-[24px] font-semibold leading-[32px]">Задача</h3>
             <p className="text-[18px] leading-[160%]">
               Основная задача проекта состояла в том, чтобы внедрить в продукт систему коммуникации
-              из четких шагов, подсказок и с полной прозрачностью расходов. Это позволит вернуть
+              с чёткими шагами, подсказками и полной прозрачностью расходов. Это позволит вернуть
               пользователю ощущение контроля и уверенности, сократив отток и нагрузку на поддержку.
             </p>
             <p className="text-[18px] leading-[160%]">
@@ -758,10 +759,10 @@ export function CaseStudyPage() {
             </div>
 
             <ul className="list-disc space-y-2 pl-6 text-[18px] leading-[160%]">
-              <li>от первого запуска приложения до звонка — 4–5 шагов (вместо 8-10)</li>
+              <li>от первого запуска приложения до звонка — 4–5 шагов вместо 8–10</li>
               <li>
-                стали показывать стоимость звонка ещё до вызова, а после ключевых шагов success screen
-                (на схеме — ✅), чтобы убрать тревогу и неопределенность
+                стали показывать стоимость звонка ещё до вызова, а после ключевых шагов — success screen,
+                чтобы убрать тревогу и неопределённость
               </li>
               <li>ошибки не оставляют в тупике, а предлагают решение и возвращают на сценарий</li>
               <li>
@@ -843,9 +844,9 @@ export function CaseStudyPage() {
               дальше и писали в поддержку.
             </p>
             <p>
-              <span>→</span> Добавила контекстные кнопки для возвращения на сценарий — «Вернуться в Госуслуги»,
-              «Пополнить баланс» и «Написать в поддержку», чтобы пользователь мог что-то уточнить или
-              задать вопрос о проблеме.
+              <span>→</span> Добавила контекстные кнопки для возвращения в сценарий — «Вернуться в Госуслуги»,
+              «Пополнить баланс» и «Написать в поддержку», чтобы пользователь мог быстро перейти к
+              нужному действию или написать в поддержку.
             </p>
           </div>
 
@@ -862,8 +863,8 @@ export function CaseStudyPage() {
           </div>
 
           <p className="text-[18px] leading-[160%]">
-            Каждая итерация убирала конкретную точку трения, и хотя визуально интерфейс почти не
-            менялся, пользовательский путь стал прозрачнее.
+            Каждая итерация убирала конкретную точку трения: хотя визуально интерфейс почти не
+            менялся, пользовательский путь становился прозрачнее.
           </p>
         </motion.section>
 
@@ -887,11 +888,11 @@ export function CaseStudyPage() {
                 </li>
                 <li>
                   <span className="font-semibold">Конверсия в первый звонок выросла</span>
-                  {" "}на 23%, а общее количество звонков при том же трафике увеличилось (13k → 17k)
+                  {" "}на 23%, а количество звонков при том же трафике увеличилось с 13K до 17K
                 </li>
                 <li>
                   <span className="font-semibold">Retention rate увеличился</span>
-                  {" "}для 2 недели — на 11 %, а 4-й — на 6 %
+                  {" "}на 2-й неделе — на 11%, а на 4-й — на 6%
                 </li>
                 <li>
                   <span className="font-semibold">Обращения в поддержку сократились</span>
@@ -906,19 +907,30 @@ export function CaseStudyPage() {
               балансе. Всё это ушло в бэклог и дальше — в ближайшие обновления.
             </p>
 
-            <div className="h-px w-full bg-[#282828]" />
-
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
-              <p>Этот проект стал для меня важной точкой роста. Вот что я вынесла:</p>
-              <div className="space-y-0">
-                <p>1. Прозрачность интерфейса — основа доверия и коммуникации с пользователем.</p>
-                <p>2. Большие результаты часто приходят через маленькие изменения.</p>
-                <p>3. Тесты — лучший инструмент для аргументации своих решений перед бизнесом.</p>
-              </div>
-            </div>
+            <p className="text-[18px] leading-[160%]">
+              Для себя я вынесла, что в мобильных продуктах доверие часто строится за счёт
+              коммуникации в критические моменты: понятных статусов, прозрачной стоимости,
+              обратной связи об ошибках и следующем шаге.
+            </p>
           </div>
         </motion.section>
       </motion.div>
+
+      <nav
+        aria-label="Навигация между страницами"
+        className="flex w-full items-center justify-between border-t border-[#282828] px-4 py-5 text-[28px] font-semibold leading-[120%] sm:px-8 sm:text-[32px]"
+      >
+        <Link href="/" className="group">
+          <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_2px]">
+            ←На главную
+          </span>
+        </Link>
+        <Link href="/work" className="group">
+          <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_2px]">
+            KOMPaaS →
+          </span>
+        </Link>
+      </nav>
 
       <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-3 lg:flex">
         {[
