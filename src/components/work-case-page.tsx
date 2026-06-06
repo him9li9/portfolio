@@ -827,23 +827,24 @@ export function WorkCasePage() {
             </p>
           </div>
         </motion.section>
-      </motion.div>
 
-      <nav
-        aria-label="Навигация между страницами"
-        className="flex w-full items-center justify-between border-t border-[#282828] px-4 py-5 text-[28px] font-semibold leading-[120%] sm:px-8 sm:text-[32px]"
-      >
-        <Link href="/" className="group">
-          <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_2px]">
-            ←На главную
-          </span>
-        </Link>
-        <Link href="/app" className="group">
-          <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_2px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_2px]">
-            MCN Softphone →
-          </span>
-        </Link>
-      </nav>
+        <motion.nav
+          variants={item}
+          aria-label="Навигация между страницами"
+          className="flex w-full items-start justify-between border-t border-[#282828] pt-4 text-[18px] font-normal leading-[160%]"
+        >
+          <Link href="/" className="group shrink-0">
+            <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_1px]">
+              ← На главную
+            </span>
+          </Link>
+          <Link href="/app" className="group shrink-0">
+            <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_1px]">
+              Кейс MCN Softphone →
+            </span>
+          </Link>
+        </motion.nav>
+      </motion.div>
 
       <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-3 lg:flex">
         {[
