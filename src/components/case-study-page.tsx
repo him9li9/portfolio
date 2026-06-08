@@ -927,7 +927,7 @@ export function CaseStudyPage() {
                   <span className="text-[18px] leading-[160%]">%</span>
                 </div>
                 <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
-                  обращений в поддержку
+                  обращений в саппорт
                 </p>
               </div>
             </div>
