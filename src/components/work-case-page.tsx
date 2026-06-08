@@ -814,7 +814,7 @@ export function WorkCasePage() {
                   <span className="text-[24px] leading-[32px]">28</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">self-service</p>
+                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">self-service rate</p>
               </div>
               <div className="flex flex-col gap-1.5 rounded-[8px] bg-[#262626] px-3 py-2">
                 <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
@@ -823,7 +823,7 @@ export function WorkCasePage() {
                   <span className="text-[24px] leading-[32px]">19</span>
                   <span className="text-[14px] leading-[160%]">мин</span>
                 </div>
-                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">изменение</p>
+                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">time-to-change</p>
               </div>
               <div className="flex flex-col gap-1.5 rounded-[8px] bg-[#262626] px-3 py-2">
                 <p className="whitespace-nowrap font-semibold text-white">
@@ -831,7 +831,7 @@ export function WorkCasePage() {
                   <span className="text-[24px] leading-[32px]">21</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">ошибок</p>
+                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">ошибок после публикации</p>
               </div>
               <div className="flex flex-col gap-1.5 rounded-[8px] bg-[#262626] px-3 py-2">
                 <p className="whitespace-nowrap font-semibold text-white">
@@ -839,7 +839,7 @@ export function WorkCasePage() {
                   <span className="text-[24px] leading-[32px]">16</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">поддержка</p>
+                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">обращений в поддержку</p>
               </div>
             </div>
 
