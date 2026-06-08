@@ -797,27 +797,50 @@ export function WorkCasePage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-[90px] flex flex-col gap-8"
+          className="scroll-mt-[90px] flex flex-col gap-4"
         >
+          <h2 className="text-[32px] font-semibold leading-[40px]">Результаты</h2>
           <div className="flex flex-col gap-8">
-            <h2 className="text-[32px] font-semibold leading-[40px]">Результаты</h2>
-            <div className="flex flex-col gap-4 text-[18px] leading-[160%]">
-              <p>
-                Редактор стал более управляемым для бизнес-пользователей, так как основные
-                действия теперь происходят в одном контексте, а сложные сценарии проще читать и
-                поддерживать.
-              </p>
-              <p>Как изменения повлияли на ключевые метрики:</p>
-              <ul className="list-disc space-y-0 pl-6">
-                <li>self-service rate вырос на 28%, частично освободив разработку</li>
-                <li>time-to-change для новых сценариев сократилось в 1,7 раза (33 → 19 минут)</li>
-                <li>количество ошибок после публикации уменьшилось на 21%</li>
-                <li>количество обращений в поддержку по базовым вопросам снизилось на 16%</li>
-              </ul>
-              <p>
-                Новый подход улучшил опыт существующих пользователей и дал возможность развивать
-                сценарии итеративно, без полной переработки системы.
-              </p>
+            <p className="text-[18px] leading-[160%]">
+              Новый редактор сделал работу со сценариями самостоятельнее: пользователи стали чаще
+              вносить изменения без разработки, быстрее собирали новые сценарии и реже ошибались
+              при публикации. Команда поддержки стала меньше подключаться к базовым вопросам.
+            </p>
+
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              <div className="flex flex-col gap-1.5 rounded-[8px] bg-[#262626] px-3 py-2">
+                <p className="whitespace-nowrap font-semibold text-white">
+                  <span className="text-[18px] leading-[160%]">+</span>
+                  <span className="text-[24px] leading-[32px]">28</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
+                </p>
+                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">self-service</p>
+              </div>
+              <div className="flex flex-col gap-1.5 rounded-[8px] bg-[#262626] px-3 py-2">
+                <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
+                  <span className="text-[24px] leading-[32px]">33</span>
+                  <span className="text-[18px] leading-[160%]">→</span>
+                  <span className="text-[24px] leading-[32px]">19</span>
+                  <span className="text-[14px] leading-[160%]">мин</span>
+                </div>
+                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">изменение</p>
+              </div>
+              <div className="flex flex-col gap-1.5 rounded-[8px] bg-[#262626] px-3 py-2">
+                <p className="whitespace-nowrap font-semibold text-white">
+                  <span className="text-[18px] leading-[160%]">−</span>
+                  <span className="text-[24px] leading-[32px]">21</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
+                </p>
+                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">ошибок</p>
+              </div>
+              <div className="flex flex-col gap-1.5 rounded-[8px] bg-[#262626] px-3 py-2">
+                <p className="whitespace-nowrap font-semibold text-white">
+                  <span className="text-[18px] leading-[160%]">−</span>
+                  <span className="text-[24px] leading-[32px]">16</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
+                </p>
+                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">поддержка</p>
+              </div>
             </div>
 
             <p className="text-[18px] leading-[160%]">

@@ -877,40 +877,60 @@ export function CaseStudyPage() {
           <h2 className="text-[32px] font-semibold leading-[40px]">Результаты</h2>
           <div className="flex flex-col gap-8">
             <p className="text-[18px] leading-[160%]">
-              В ближайшие 2-3 месяца после релиза изменения также отразились на метриках продукта:
+              Ключевые изменения закрыли основные проблемы, выявленные на старте: путь до первого
+              звонка стал короче, пользователи лучше понимали статус и стоимость действий, а часть
+              вопросов больше не уходила в поддержку. При том же трафике количество звонков выросло
+              с <span className="font-semibold">13k</span> до{" "}
+              <span className="font-semibold">17k.</span>
             </p>
 
-            <div className="flex flex-col gap-0 text-[18px] leading-[160%]">
-              <ul className="list-disc space-y-1 pl-[27px]">
-                <li>
-                  <span className="font-semibold">Путь до звонка сократился</span>
-                  {" "}с 8 шагов и переходами в веб до 3 шагов в приложении
-                </li>
-                <li>
-                  <span className="font-semibold">Конверсия в первый звонок выросла</span>
-                  {" "}на 23%, а количество звонков при том же трафике увеличилось с 13K до 17K
-                </li>
-                <li>
-                  <span className="font-semibold">Retention rate увеличился</span>
-                  {" "}на 2-й неделе — на 11%, а на 4-й — на 6%
-                </li>
-                <li>
-                  <span className="font-semibold">Обращения в поддержку сократились</span>
-                  {" "}почти в 2 раза (40% → 18%)
-                </li>
-              </ul>
+            <div className="grid grid-cols-2 gap-2 py-2 sm:grid-cols-4">
+              <div className="flex flex-col gap-3 rounded-[12px] bg-[#262626] px-3 py-2">
+                <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
+                  <span className="text-[24px] leading-[32px]">8</span>
+                  <span className="text-[18px] leading-[160%]">→</span>
+                  <span className="text-[24px] leading-[32px]">3</span>
+                  <span className="text-[14px] leading-[160%]">шага</span>
+                </div>
+                <p className="text-[14px] leading-[160%] text-[#c0c0c0]">путь до звонка</p>
+              </div>
+              <div className="flex flex-col gap-3 rounded-[12px] bg-[#262626] px-3 py-2">
+                <p className="whitespace-nowrap font-semibold text-white">
+                  <span className="text-[18px] leading-[160%]">+</span>
+                  <span className="text-[24px] leading-[32px]">23</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
+                </p>
+                <p className="text-[14px] leading-[160%] text-[#c0c0c0]">конверсия в 1-й звонок</p>
+              </div>
+              <div className="flex flex-col gap-3 rounded-[12px] bg-[#262626] px-3 py-2">
+                <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
+                  <span className="text-[24px] leading-[32px]">15</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
+                  <span className="text-[18px] leading-[160%]">→</span>
+                  <span className="text-[24px] leading-[32px]">22</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
+                </div>
+                <p className="text-[14px] leading-[160%] text-[#c0c0c0]">
+                  retention на 4-й неделе
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 rounded-[12px] bg-[#262626] px-3 py-2">
+                <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
+                  <span className="text-[24px] leading-[32px]">40</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
+                  <span className="text-[18px] leading-[160%]">→</span>
+                  <span className="text-[24px] leading-[32px]">18</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
+                </div>
+                <p className="text-[14px] leading-[160%] text-[#c0c0c0]">
+                  обращений в поддержку
+                </p>
+              </div>
             </div>
 
             <p className="text-[18px] leading-[160%]">
-              Дальнейшее развитие софтфона продолжилось через обратную связь от пользователей:
-              добавление избранных контактов, повтор звонка из истории и push-уведомления о низком
-              балансе. Всё это ушло в бэклог и дальше — в ближайшие обновления.
-            </p>
-
-            <p className="text-[18px] leading-[160%]">
-              Для себя я вынесла, что в мобильных продуктах доверие часто строится за счёт
-              коммуникации в критические моменты: понятных статусов, прозрачной стоимости,
-              обратной связи об ошибках и следующем шаге.
+              Для себя я вынесла, что в мобильных продуктах доверие строится через понятную
+              коммуникацию в критические моменты: статус, стоимость, ошибки и следующий шаг.
             </p>
           </div>
         </motion.section>
