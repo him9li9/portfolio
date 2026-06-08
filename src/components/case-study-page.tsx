@@ -875,7 +875,7 @@ export function CaseStudyPage() {
           className="scroll-mt-[90px] flex flex-col gap-4"
         >
           <h2 className="text-[32px] font-semibold leading-[40px]">Результаты</h2>
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-4">
             <p className="text-[18px] leading-[160%]">
               Ключевые изменения закрыли основные проблемы, выявленные на старте: путь до первого
               звонка стал короче, пользователи лучше понимали статус и стоимость действий, а часть
