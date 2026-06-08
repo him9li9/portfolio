@@ -134,7 +134,7 @@ export function HomePage() {
                 <motion.section
                   whileHover={canHover ? { scale: 1.02 } : undefined}
                   transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="relative flex w-full transform-gpu flex-col items-start gap-8 overflow-hidden rounded-none px-6 py-6 will-change-transform sm:h-[378px] sm:flex-row sm:items-stretch sm:justify-between sm:gap-6 sm:px-10 sm:py-9"
+                  className="relative flex w-full transform-gpu flex-col items-start gap-8 overflow-hidden rounded-none px-6 py-6 will-change-transform sm:h-[378px] sm:flex-row sm:items-stretch sm:justify-between sm:gap-6 sm:py-9 sm:pl-8 sm:pr-10"
                   style={{
                     backgroundImage:
                       "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
@@ -159,7 +159,7 @@ export function HomePage() {
                         <br />
                         стоимости в приложении
                       </p>
-                      <div className="flex flex-wrap items-start gap-2">
+                      <div className="flex flex-wrap items-start gap-2 sm:w-[342px]">
                         <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
                           8 → 3 шагов до звонка
                         </span>
@@ -167,7 +167,7 @@ export function HomePage() {
                           +23% CR в 1-й звонок
                         </span>
                       </div>
-                      <span className="w-fit text-[14px] leading-[120%] text-[#828282] transition-colors duration-200 group-hover/card:text-white">
+                      <span className="w-fit bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[14px] leading-[120%] text-[#828282] transition-[background-size,color] duration-300 ease-out group-hover/card:bg-[length:100%_1px] group-hover/card:text-white">
                         Смотреть кейс →
                       </span>
                     </div>
@@ -222,10 +222,10 @@ export function HomePage() {
                           +28% self-service rate
                         </span>
                         <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
-                          -21% кол-во ошибок
+                          -21% ошибок
                         </span>
                       </div>
-                      <span className="w-fit text-[14px] leading-[120%] text-[#828282] transition-colors duration-200 group-hover/card:text-white">
+                      <span className="w-fit bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[14px] leading-[120%] text-[#828282] transition-[background-size,color] duration-300 ease-out group-hover/card:bg-[length:100%_1px] group-hover/card:text-white">
                         Смотреть кейс →
                       </span>
                     </div>
