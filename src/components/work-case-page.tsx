@@ -831,7 +831,7 @@ export function WorkCasePage() {
                   <span className="text-[24px] leading-[32px]">21</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">ошибок после публикации</p>
+                <p className="text-[14px] leading-[140%] text-[#c0c0c0]">ошибок в сценариях</p>
               </div>
               <div className="flex flex-col gap-1.5 rounded-[8px] bg-[#262626] px-3 py-2">
                 <p className="whitespace-nowrap font-semibold text-white">
