@@ -884,25 +884,29 @@ export function CaseStudyPage() {
               <span className="font-semibold">17k.</span>
             </p>
 
-            <div className="grid grid-cols-2 gap-2 py-2 sm:grid-cols-4">
-              <div className="flex flex-col gap-3 rounded-[12px] bg-[#262626] px-3 py-2">
+            <div className="grid grid-cols-1 gap-4 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
+              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] p-3 lg:w-[184px]">
                 <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
                   <span className="text-[24px] leading-[32px]">8</span>
                   <span className="text-[18px] leading-[160%]">→</span>
                   <span className="text-[24px] leading-[32px]">3</span>
                   <span className="text-[14px] leading-[160%]">шага</span>
                 </div>
-                <p className="text-[14px] leading-[160%] text-[#c0c0c0]">путь до звонка</p>
+                <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
+                  путь до звонка
+                </p>
               </div>
-              <div className="flex flex-col gap-3 rounded-[12px] bg-[#262626] px-3 py-2">
+              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] p-3 lg:w-[184px]">
                 <p className="whitespace-nowrap font-semibold text-white">
                   <span className="text-[18px] leading-[160%]">+</span>
                   <span className="text-[24px] leading-[32px]">23</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="text-[14px] leading-[160%] text-[#c0c0c0]">конверсия в 1-й звонок</p>
+                <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
+                  конверсия в 1-й звонок
+                </p>
               </div>
-              <div className="flex flex-col gap-3 rounded-[12px] bg-[#262626] px-3 py-2">
+              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] p-3 lg:w-[184px]">
                 <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
                   <span className="text-[24px] leading-[32px]">15</span>
                   <span className="text-[18px] leading-[160%]">%</span>
@@ -910,11 +914,11 @@ export function CaseStudyPage() {
                   <span className="text-[24px] leading-[32px]">22</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </div>
-                <p className="text-[14px] leading-[160%] text-[#c0c0c0]">
+                <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
                   retention на 4-й неделе
                 </p>
               </div>
-              <div className="flex flex-col gap-3 rounded-[12px] bg-[#262626] px-3 py-2">
+              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] p-3 lg:w-[184px]">
                 <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
                   <span className="text-[24px] leading-[32px]">40</span>
                   <span className="text-[18px] leading-[160%]">%</span>
@@ -922,7 +926,7 @@ export function CaseStudyPage() {
                   <span className="text-[24px] leading-[32px]">18</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </div>
-                <p className="text-[14px] leading-[160%] text-[#c0c0c0]">
+                <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
                   обращений в поддержку
                 </p>
               </div>

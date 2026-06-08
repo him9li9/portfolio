@@ -807,8 +807,8 @@ export function WorkCasePage() {
               при публикации. Команда поддержки стала меньше подключаться к базовым вопросам.
             </p>
 
-            <div className="grid grid-cols-1 gap-4 min-[440px]:grid-cols-2 sm:grid-cols-4">
-              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] p-3 sm:w-[184px]">
+            <div className="grid grid-cols-1 gap-4 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
+              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] p-3 lg:w-[184px]">
                 <p className="whitespace-nowrap font-semibold text-white">
                   <span className="text-[18px] leading-[160%]">+</span>
                   <span className="text-[24px] leading-[32px]">28</span>
@@ -818,7 +818,7 @@ export function WorkCasePage() {
                   self-service rate
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] p-3 sm:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] p-3 lg:w-[184px]">
                 <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
                   <span className="text-[24px] leading-[32px]">33</span>
                   <span className="text-[18px] leading-[160%]">→</span>
@@ -829,7 +829,7 @@ export function WorkCasePage() {
                   time-to-change
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] p-3 sm:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] p-3 lg:w-[184px]">
                 <p className="whitespace-nowrap font-semibold text-white">
                   <span className="text-[18px] leading-[160%]">-</span>
                   <span className="text-[24px] leading-[32px]">21</span>
@@ -839,7 +839,7 @@ export function WorkCasePage() {
                   ошибок в сценариях
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] p-3 sm:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] p-3 lg:w-[184px]">
                 <p className="whitespace-nowrap font-semibold text-white">
                   <span className="text-[18px] leading-[160%]">-</span>
                   <span className="text-[24px] leading-[32px]">16</span>
