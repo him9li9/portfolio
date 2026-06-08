@@ -819,7 +819,7 @@ export function WorkCasePage() {
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
-                <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
+                <div className="flex items-baseline gap-1 whitespace-nowrap font-semibold text-white">
                   <span className="text-[24px] leading-[32px]">33</span>
                   <span className="text-[18px] leading-[160%]">→</span>
                   <span className="text-[24px] leading-[32px]">19</span>
