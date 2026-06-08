@@ -151,7 +151,7 @@ export function HomePage() {
                         className="h-auto w-full"
                       />
                     </div>
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-3">
                       <p className="max-w-[318px] text-[16px] leading-[160%] text-white">
                         Поменяла подход к звонкам за границей:
                         <br />
@@ -161,12 +161,15 @@ export function HomePage() {
                       </p>
                       <div className="flex flex-wrap items-start gap-2">
                         <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
-                          +23% onboarding CR
+                          8 → 3 шагов до звонка
                         </span>
                         <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
-                          8 → 3 шага активации
+                          +23% CR в 1-й звонок
                         </span>
                       </div>
+                      <span className="w-fit text-[14px] leading-[120%] text-[#828282] transition-colors duration-200 group-hover/card:text-white">
+                        Смотреть кейс →
+                      </span>
                     </div>
                   </div>
                   <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-full sm:w-[420px] sm:aspect-auto sm:py-1">
@@ -206,7 +209,7 @@ export function HomePage() {
                         className="h-auto w-full"
                       />
                     </div>
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-3">
                       <p className="max-w-[320px] text-[16px] leading-[160%] text-white">
                         Снизила зависимость B2B-клиентов
                         <br />
@@ -219,9 +222,12 @@ export function HomePage() {
                           +28% self-service rate
                         </span>
                         <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
-                          +16% CSAT
+                          -21% кол-во ошибок
                         </span>
                       </div>
+                      <span className="w-fit text-[14px] leading-[120%] text-[#828282] transition-colors duration-200 group-hover/card:text-white">
+                        Смотреть кейс →
+                      </span>
                     </div>
                   </div>
                   <div className="relative w-full overflow-hidden bg-white [border-radius:8px_0_8px_0] sm:absolute sm:bottom-0 sm:right-0 sm:h-[342px] sm:w-[434px]">
