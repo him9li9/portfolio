@@ -800,7 +800,7 @@ export function WorkCasePage() {
           className="scroll-mt-[90px] flex flex-col gap-4"
         >
           <h2 className="text-[32px] font-semibold leading-[40px]">Результаты</h2>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-5">
             <p className="text-[18px] leading-[160%]">
               Новый редактор сделал работу со сценариями самостоятельнее: пользователи стали чаще
               вносить изменения без разработки, быстрее собирали новые сценарии и реже ошибались
