@@ -885,7 +885,7 @@ export function CaseStudyPage() {
             </p>
 
             <div className="grid grid-cols-1 gap-4 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
-              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
+              <div className="flex min-h-[112px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-5 lg:w-[184px]">
                 <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">8</span>
                   <span className="inline-flex h-10 items-center text-[18px] font-bold leading-none">→</span>
@@ -895,7 +895,7 @@ export function CaseStudyPage() {
                   шагов до звонка
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
+              <div className="flex min-h-[112px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-5 lg:w-[184px]">
                 <p className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-end pb-[5px] text-[18px] font-bold leading-none">+</span>
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">23</span>
@@ -905,7 +905,7 @@ export function CaseStudyPage() {
                   конверсия в 1-й звонок
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
+              <div className="flex min-h-[112px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-5 lg:w-[184px]">
                 <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">15</span>
                   <span className="inline-flex h-10 items-center text-[18px] font-bold leading-none">→</span>
@@ -916,7 +916,7 @@ export function CaseStudyPage() {
                   retention на 4-й неделе
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
+              <div className="flex min-h-[112px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-5 lg:w-[184px]">
                 <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">40</span>
                   <span className="inline-flex h-10 items-center text-[18px] font-bold leading-none">→</span>
