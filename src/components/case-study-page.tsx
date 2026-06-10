@@ -886,9 +886,9 @@ export function CaseStudyPage() {
 
             <div className="grid grid-cols-1 gap-4 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
               <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
-                <div className="flex items-baseline gap-1 whitespace-nowrap font-semibold text-white">
+                <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
                   <span className="text-[32px] leading-[40px]">8</span>
-                  <span className="text-[18px] leading-[160%]">→</span>
+                  <span className="font-semibold text-[18px] leading-none">→</span>
                   <span className="text-[32px] leading-[40px]">3</span>
                 </div>
                 <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
@@ -896,34 +896,34 @@ export function CaseStudyPage() {
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
-                <p className="whitespace-nowrap font-semibold text-white">
-                  <span className="text-[18px] leading-[160%]">+</span>
+                <p className="inline-flex items-end whitespace-nowrap font-semibold text-white">
+                  <span className="font-semibold text-[18px] leading-none">+</span>
                   <span className="text-[32px] leading-[40px]">23</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
+                  <span className="font-semibold text-[18px] leading-none">%</span>
                 </p>
                 <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
                   конверсия в 1-й звонок
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
-                <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
+                <div className="flex items-end gap-1 whitespace-nowrap font-semibold text-white">
                   <span className="text-[32px] leading-[40px]">15</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
-                  <span className="text-[18px] leading-[160%]">→</span>
+                  <span className="font-semibold text-[18px] leading-none">%</span>
+                  <span className="self-center font-semibold text-[18px] leading-none">→</span>
                   <span className="text-[32px] leading-[40px]">22</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
+                  <span className="font-semibold text-[18px] leading-none">%</span>
                 </div>
                 <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
                   retention на 4-й неделе
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
-                <div className="flex items-center gap-1 whitespace-nowrap font-semibold text-white">
+                <div className="flex items-end gap-1 whitespace-nowrap font-semibold text-white">
                   <span className="text-[32px] leading-[40px]">40</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
-                  <span className="text-[18px] leading-[160%]">→</span>
+                  <span className="font-semibold text-[18px] leading-none">%</span>
+                  <span className="self-center font-semibold text-[18px] leading-none">→</span>
                   <span className="text-[32px] leading-[40px]">18</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
+                  <span className="font-semibold text-[18px] leading-none">%</span>
                 </div>
                 <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
                   обращений в саппорт
