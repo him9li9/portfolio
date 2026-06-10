@@ -808,41 +808,41 @@ export function WorkCasePage() {
             </p>
 
             <div className="grid grid-cols-1 gap-4 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
-              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
                 <p className="whitespace-nowrap font-semibold text-white">
                   <span className="text-[18px] leading-[160%]">+</span>
-                  <span className="text-[24px] leading-[32px]">28</span>
+                  <span className="text-[32px] leading-[40px]">28</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
                   self-service rate
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
                 <div className="flex items-baseline gap-1 whitespace-nowrap font-semibold text-white">
-                  <span className="text-[24px] leading-[32px]">33</span>
+                  <span className="text-[32px] leading-[40px]">33</span>
                   <span className="text-[18px] leading-[160%]">→</span>
-                  <span className="text-[24px] leading-[32px]">19</span>
+                  <span className="text-[32px] leading-[40px]">19</span>
                   <span className="text-[14px] leading-[160%]">мин</span>
                 </div>
                 <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
                   time-to-change
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
                 <p className="whitespace-nowrap font-semibold text-white">
                   <span className="text-[18px] leading-[160%]">-</span>
-                  <span className="text-[24px] leading-[32px]">21</span>
+                  <span className="text-[32px] leading-[40px]">21</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
                   ошибок в сценариях
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-4 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
                 <p className="whitespace-nowrap font-semibold text-white">
                   <span className="text-[18px] leading-[160%]">-</span>
-                  <span className="text-[24px] leading-[32px]">16</span>
+                  <span className="text-[32px] leading-[40px]">16</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">

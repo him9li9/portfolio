@@ -167,7 +167,7 @@ export function HomePage() {
                           +23% CR в 1-й звонок
                         </span>
                       </div>
-                      <span className="w-fit bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[14px] leading-[120%] text-[#828282] transition-[background-size,color] duration-300 ease-out group-hover/card:bg-[length:100%_1px] group-hover/card:text-white">
+                      <span className="w-fit bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[14px] leading-[120%] text-[#828282] transition-[background-size,color] duration-300 ease-out sm:group-hover/card:bg-[length:100%_1px] sm:group-hover/card:text-white">
                         Смотреть кейс →
                       </span>
                     </div>
@@ -225,7 +225,7 @@ export function HomePage() {
                           -21% ошибок
                         </span>
                       </div>
-                      <span className="w-fit bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[14px] leading-[120%] text-[#828282] transition-[background-size,color] duration-300 ease-out group-hover/card:bg-[length:100%_1px] group-hover/card:text-white">
+                      <span className="w-fit bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[14px] leading-[120%] text-[#828282] transition-[background-size,color] duration-300 ease-out sm:group-hover/card:bg-[length:100%_1px] sm:group-hover/card:text-white">
                         Смотреть кейс →
                       </span>
                     </div>
