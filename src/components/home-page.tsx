@@ -197,7 +197,7 @@ export function HomePage() {
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                    className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[18px] leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
                   >
                     Смотреть кейс →
                   </Link>
@@ -250,7 +250,7 @@ export function HomePage() {
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                    className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[18px] leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
                   >
                     Смотреть кейс →
                   </Link>
