@@ -180,7 +180,7 @@ export function HomePage() {
                 </div>
               </Link>
 
-              <div className="flex w-full max-w-[800px] flex-col items-start gap-2">
+              <div className="flex w-full max-w-[800px] flex-col items-start gap-3">
                 <div className="flex w-full items-end justify-between gap-4 text-white">
                   <h3 className="text-[32px] font-semibold leading-[40px]">MCN Softphone</h3>
                   <Link
@@ -228,7 +228,7 @@ export function HomePage() {
                 </div>
               </Link>
 
-              <div className="flex w-full max-w-[800px] flex-col items-start gap-2">
+              <div className="flex w-full max-w-[800px] flex-col items-start gap-3">
                 <div className="flex w-full items-end justify-between gap-4 text-white">
                   <h3 className="text-[32px] font-semibold leading-[40px]">KOMPaaS</h3>
                   <Link
