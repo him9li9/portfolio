@@ -235,7 +235,7 @@ export function HomePage() {
                 </div>
                 <div className="flex flex-col items-start gap-3">
                   <div className="h-px w-full bg-[#262626] sm:w-[800px]" />
-                  <p className="max-w-[490px] text-[18px] leading-[140%] text-white">
+                  <p className="max-w-[490px] text-[18px] leading-[160%] text-white">
                     B2B-платформа для автоматизации контакт-центров. Помогла уменьшить зависимость
                     клиентов от разработки в управлении сценариями звонков.
                   </p>
