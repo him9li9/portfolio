@@ -173,23 +173,21 @@ export function HomePage() {
                 </div>
               </Link>
 
-              <div className="flex w-full max-w-[800px] flex-col items-start gap-3">
-                <div className="flex w-full items-end justify-between gap-4 text-white">
-                  <h3 className="text-[32px] font-semibold leading-[40px]">MCN Softphone</h3>
-                  <Link
-                    href="/app"
-                    prefetch={false}
-                    className="mb-[3px] shrink-0 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-semibold leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
-                  >
-                    Смотреть кейс →
-                  </Link>
+              <div className="flex w-full max-w-[800px] flex-col items-start">
+                <div className="flex w-full flex-col gap-2 text-white sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+                  <h3 className="text-[32px] font-semibold leading-[40px] sm:text-[40px] sm:leading-[48px]">
+                    MCN Softphone
+                  </h3>
+                  <p className="text-[16px] leading-[160%] text-[#c0c0c0]">
+                    Продуктовый дизайнер · 2024 — н.в.
+                  </p>
                 </div>
-                <div className="h-px w-full bg-[#262626]" />
-                <p className="max-w-[500px] text-[18px] leading-[160%] text-white">
+                <div className="mt-2 h-px w-full bg-[#262626]" />
+                <p className="mt-6 max-w-[620px] text-[18px] leading-[160%] text-white">
                   Мобильное приложение для звонков за границей. Упростила путь до первого звонка и
                   сделала стоимость связи прозрачнее до начала вызова.
                 </p>
-                <div className="flex flex-wrap items-start gap-2">
+                <div className="mt-6 flex flex-wrap items-start gap-2">
                   <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                     8 → 3 шагов до звонка
                   </span>
@@ -197,6 +195,13 @@ export function HomePage() {
                     +23% CR в 1-й звонок
                   </span>
                 </div>
+                <Link
+                  href="/app"
+                  prefetch={false}
+                  className="mt-6 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                >
+                  Смотреть кейс →
+                </Link>
               </div>
             </article>
 
@@ -221,23 +226,21 @@ export function HomePage() {
                 </div>
               </Link>
 
-              <div className="flex w-full max-w-[800px] flex-col items-start gap-3">
-                <div className="flex w-full items-end justify-between gap-4 text-white">
-                  <h3 className="text-[32px] font-semibold leading-[40px]">KOMPaaS</h3>
-                  <Link
-                    href="/work"
-                    prefetch={false}
-                    className="mb-[3px] shrink-0 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-semibold leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
-                  >
-                    Смотреть кейс →
-                  </Link>
+              <div className="flex w-full max-w-[800px] flex-col items-start">
+                <div className="flex w-full flex-col gap-2 text-white sm:flex-row sm:items-end sm:justify-between sm:gap-4">
+                  <h3 className="text-[32px] font-semibold leading-[40px] sm:text-[40px] sm:leading-[48px]">
+                    KOMPaaS
+                  </h3>
+                  <p className="text-[16px] leading-[160%] text-[#c0c0c0]">
+                    Продуктовый дизайнер · 2022 — 2024
+                  </p>
                 </div>
-                <div className="h-px w-full bg-[#262626]" />
-                <p className="max-w-[500px] text-[18px] leading-[160%] text-white">
-                  Конструктор сценариев звонков для B2B-клиентов. Снизила зависимость клиентов от
-                  разработки в управлении сценариями звонков.
+                <div className="mt-2 h-px w-full bg-[#262626]" />
+                <p className="mt-6 max-w-[620px] text-[18px] leading-[160%] text-white">
+                  B2B-платформа для автоматизации контакт-центров. Помогла уменьшить зависимость
+                  клиентов от разработки в управлении сценариями звонков.
                 </p>
-                <div className="flex flex-wrap items-start gap-2">
+                <div className="mt-6 flex flex-wrap items-start gap-2">
                   <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                     +28% self-service rate
                   </span>
@@ -245,6 +248,13 @@ export function HomePage() {
                     -21% ошибок после публикации
                   </span>
                 </div>
+                <Link
+                  href="/work"
+                  prefetch={false}
+                  className="mt-6 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                >
+                  Смотреть кейс →
+                </Link>
               </div>
             </article>
           </div>
