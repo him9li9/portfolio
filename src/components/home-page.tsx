@@ -93,7 +93,7 @@ export function HomePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto flex w-full max-w-[1124px] flex-col gap-[72px] px-4 pb-[120px] pt-[66px] sm:gap-[100px] sm:px-8 sm:pb-[140px] lg:px-0"
+        className="mx-auto flex w-full max-w-[800px] flex-col gap-[120px] px-4 pb-[120px] pt-[66px] sm:px-8 sm:pb-[140px] lg:px-0"
       >
         <motion.section variants={item} className="mx-auto flex w-full max-w-[800px] flex-col items-center gap-4">
           <div className="flex flex-col items-center justify-center gap-8">
@@ -112,14 +112,10 @@ export function HomePage() {
               Привет, я Настя Ермошина
             </h1>
           </div>
-          <p className="max-w-[720px] text-center text-[18px] leading-[160%] text-white">
-            Продуктовый дизайнер с опытом 3+ года в телекоме,
-            <br className="hidden sm:block" />
-            B2B-сервисах и стартапах. Умею разбираться в сложной
-            <br className="hidden sm:block" />
-            доменной логике и превращать её в понятные,
-            <br className="hidden sm:block" />
-            работающие решения вместе с командой.
+          <p className="max-w-[482px] text-center text-[18px] leading-[160%] text-white">
+            Продуктовый дизайнер с опытом 3+ года в телекоме, B2B-сервисах и стартапах. Умею
+            разбираться в сложной доменной логике и превращать её в понятные, работающие решения
+            вместе с командой.
           </p>
         </motion.section>
 
@@ -128,7 +124,7 @@ export function HomePage() {
             Избранные проекты
           </h2>
 
-          <div className="flex w-full flex-col items-center gap-[72px] sm:gap-[100px]">
+          <div className="flex w-full flex-col items-center gap-[120px]">
             <article className="flex w-full flex-col items-center gap-6">
               <Link
                 href="/app"
@@ -136,15 +132,15 @@ export function HomePage() {
                 aria-label="Открыть кейс MCN Softphone"
                 className="group block w-full"
               >
-                <div className="flex w-full items-center justify-center gap-4 rounded-[12px] bg-[#222222] px-4 py-8 sm:gap-8 sm:px-12 sm:py-10 lg:h-[580px] lg:gap-10 lg:px-[119px]">
-                  <div className="relative h-auto w-[31%] max-w-[245px]">
+                <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-4 rounded-[12px] bg-[#222222] px-4 py-8 sm:gap-6 sm:px-[49px] sm:py-10">
+                  <div className="relative h-auto w-[29%] max-w-[205px]">
                     <Image
                       alt="Экран регистрации MCN Softphone"
                       src={assets.phone1}
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 28vw, 245px"
+                      sizes="(max-width: 640px) 27vw, 205px"
                       className="h-auto w-full"
                     />
                   </div>
@@ -159,14 +155,14 @@ export function HomePage() {
                       className="h-auto w-full"
                     />
                   </div>
-                  <div className="relative h-auto w-[31%] max-w-[245px]">
+                  <div className="relative h-auto w-[29%] max-w-[205px]">
                     <Image
                       alt="Экран звонка MCN Softphone"
                       src={assets.phone3}
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 28vw, 245px"
+                      sizes="(max-width: 640px) 27vw, 205px"
                       className="h-auto w-full"
                     />
                   </div>
@@ -176,9 +172,13 @@ export function HomePage() {
               <div className="flex w-full max-w-[800px] flex-col items-start gap-2">
                 <div className="flex w-full flex-col gap-2 text-white sm:flex-row sm:items-end sm:justify-between sm:gap-4">
                   <h3 className="text-[32px] font-semibold leading-[40px]">MCN Softphone</h3>
-                  <p className="text-[16px] leading-[160%] text-[#c0c0c0]">
-                    Продуктовый дизайнер · 2024 — н.в.
-                  </p>
+                  <Link
+                    href="/app"
+                    prefetch={false}
+                    className="shrink-0 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-semibold leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                  >
+                    Смотреть кейс →
+                  </Link>
                 </div>
                 <div className="flex flex-col items-start gap-3">
                   <div className="h-px w-full bg-[#262626] sm:w-[800px]" />
@@ -194,13 +194,6 @@ export function HomePage() {
                       +23% CR в 1-й звонок
                     </span>
                   </div>
-                  <Link
-                    href="/app"
-                    prefetch={false}
-                    className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[18px] leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
-                  >
-                    Смотреть кейс →
-                  </Link>
                 </div>
               </div>
             </article>
@@ -212,26 +205,28 @@ export function HomePage() {
                 aria-label="Открыть кейс KOMPaaS"
                 className="group block w-full"
               >
-                <div className="flex w-full items-center justify-center rounded-[12px] bg-[#222222] px-4 py-8 sm:px-12 sm:py-10 lg:h-[580px] lg:px-[119px]">
-                  <div className="relative w-full max-w-[800px] overflow-hidden rounded-[8px]">
-                    <Image
-                      alt="KOMPaaS canvas preview"
-                      src={assets.vpbxCanvas}
-                      width={2400}
-                      height={1500}
-                      sizes="(max-width: 640px) calc(100vw - 32px), 800px"
-                      className="h-auto w-full"
-                    />
-                  </div>
+                <div className="relative w-full overflow-hidden rounded-[8px]">
+                  <Image
+                    alt="KOMPaaS canvas preview"
+                    src={assets.vpbxCanvas}
+                    width={2400}
+                    height={1500}
+                    sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                    className="h-auto w-full"
+                  />
                 </div>
               </Link>
 
               <div className="flex w-full max-w-[800px] flex-col items-start gap-2">
                 <div className="flex w-full flex-col gap-2 text-white sm:flex-row sm:items-end sm:justify-between sm:gap-4">
                   <h3 className="text-[32px] font-semibold leading-[40px]">KOMPaaS</h3>
-                  <p className="text-[16px] leading-[160%] text-[#c0c0c0]">
-                    Продуктовый дизайнер · 2022 — 2024
-                  </p>
+                  <Link
+                    href="/work"
+                    prefetch={false}
+                    className="shrink-0 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-semibold leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                  >
+                    Смотреть кейс →
+                  </Link>
                 </div>
                 <div className="flex flex-col items-start gap-3">
                   <div className="h-px w-full bg-[#262626] sm:w-[800px]" />
@@ -247,13 +242,6 @@ export function HomePage() {
                       -21% ошибок после публикации
                     </span>
                   </div>
-                  <Link
-                    href="/work"
-                    prefetch={false}
-                    className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[18px] leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
-                  >
-                    Смотреть кейс →
-                  </Link>
                 </div>
               </div>
             </article>
