@@ -355,7 +355,7 @@ export function CaseStudyPage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%]"
+              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[16px] leading-[160%]"
               href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
             >
               CV
@@ -363,7 +363,7 @@ export function CaseStudyPage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%]"
+              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[16px] leading-[160%]"
               href="https://t.me/him9li9"
             >
               Telegram

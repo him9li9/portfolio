@@ -72,7 +72,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%]"
+              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[16px] leading-[160%]"
               href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
             >
               CV
@@ -80,7 +80,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[18px] leading-[160%]"
+              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[16px] leading-[160%]"
               href="https://t.me/him9li9"
             >
               Telegram
@@ -186,7 +186,7 @@ export function HomePage() {
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="mb-[3px] shrink-0 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[14px] font-semibold leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                    className="mb-[3px] shrink-0 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-semibold leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
                   >
                     Смотреть кейс →
                   </Link>
@@ -197,10 +197,10 @@ export function HomePage() {
                   сделала стоимость связи прозрачнее до начала вызова.
                 </p>
                 <div className="flex flex-wrap items-start gap-2">
-                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-2 py-1 text-[14px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-2 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                     8 → 3 шагов до звонка
                   </span>
-                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-2 py-1 text-[14px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-2 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                     +23% CR в 1-й звонок
                   </span>
                 </div>
@@ -234,7 +234,7 @@ export function HomePage() {
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="mb-[3px] shrink-0 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[14px] font-semibold leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                    className="mb-[3px] shrink-0 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-semibold leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
                   >
                     Смотреть кейс →
                   </Link>
@@ -245,10 +245,10 @@ export function HomePage() {
                   разработки в управлении сценариями звонков.
                 </p>
                 <div className="flex flex-wrap items-start gap-2">
-                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-2 py-1 text-[14px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-2 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                     +28% self-service rate
                   </span>
-                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-2 py-1 text-[14px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-2 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                     -21% ошибок после публикации
                   </span>
                 </div>
