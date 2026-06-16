@@ -7,17 +7,16 @@ import { useEffect, useState } from "react";
 
 const assets = {
   avatar: "/figma/avatar.png",
-  phones: "/figma/phones.png",
   heart: "/figma/heart.svg",
-  mcn: "/figma/Case_2/MCN%20Softphone.png",
-  kompaas: "/figma/Case_2/KOMPaaS.png",
-  vpbxCrop: "/figma/Case_2/vpbx-canvas_crop.png"
+  phone1: "/figma/Main/phone%201.png",
+  phone2: "/figma/Main/phone%202.png",
+  phone3: "/figma/Main/phone%203.png",
+  vpbxCanvas: "/figma/Case_2/vpbx-canvas.png"
 };
 
 export function HomePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
-  const [isProjectHovered, setIsProjectHovered] = useState(false);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -94,157 +93,158 @@ export function HomePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-[50px] px-4 pb-[120px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:gap-[100px] sm:px-0 sm:pt-[66px] sm:pb-[140px]"
+        className="mx-auto flex w-full max-w-[1124px] flex-col gap-[72px] px-4 pb-[120px] pt-[66px] sm:gap-[100px] sm:px-8 sm:pb-[140px] lg:px-0"
       >
-        <motion.section variants={item} className="flex flex-col gap-8">
-          <div className="flex flex-col items-start gap-8 sm:flex-row sm:items-center">
-            <div className="h-[100px] w-[120px] overflow-hidden rounded-[100px]">
-              <img alt="" src={assets.avatar} className="h-full w-full object-cover" />
+        <motion.section variants={item} className="mx-auto flex w-full max-w-[800px] flex-col items-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-8">
+            <div className="relative h-[100px] w-[120px] overflow-hidden rounded-[100px]">
+              <Image
+                alt=""
+                src={assets.avatar}
+                width={120}
+                height={100}
+                priority
+                sizes="120px"
+                className="h-full w-full object-cover"
+              />
             </div>
-            <h1 className="text-[40px] font-semibold leading-[48px] sm:text-[40px] sm:leading-[48px]">
-              Привет!
-              <br />
-              На связи Настя Ермошина
+            <h1 className="text-center text-[32px] font-semibold leading-[40px]">
+              Привет, я Настя Ермошина
             </h1>
           </div>
-          <p className="text-[20px] leading-[160%] text-white">
+          <p className="max-w-[482px] text-center text-[18px] leading-[160%] text-white">
             Продуктовый дизайнер с опытом 3+ года в телекоме, B2B-сервисах и стартапах.
-            Проектирую интерфейсы для сложных сценариев: от мобильной активации до внутренних
-            workflow-инструментов. Умею быстро разбираться в доменной логике, находить точки роста
-            и доводить решения до реализации вместе с командой.
+            Умею разбираться в сложной доменной логике и превращать её в понятные, работающие
+            решения вместе с командой.
           </p>
         </motion.section>
 
-        <div className="relative">
-          <h2 className="mb-4 text-[20px] font-semibold leading-[160%]">Мои проекты</h2>
-          <motion.div
-            aria-hidden="true"
-            initial={false}
-            animate={canHover && isProjectHovered ? { opacity: 0.4 } : { opacity: 0 }}
-            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-            className="pointer-events-none fixed inset-0 z-40 hidden bg-black sm:block"
-          />
-          <div
-            className="flex flex-col gap-6"
-            onMouseEnter={() => setIsProjectHovered(true)}
-            onMouseLeave={() => setIsProjectHovered(false)}
-          >
-            <div className="group/card relative z-30 hover:z-50">
-              <Link href="/app" prefetch={false} className="block">
-                <motion.section
-                  whileHover={canHover ? { scale: 1.02 } : undefined}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="relative flex w-full transform-gpu flex-col items-start gap-8 overflow-hidden rounded-none px-6 py-6 will-change-transform sm:h-[378px] sm:flex-row sm:items-stretch sm:justify-between sm:gap-6 sm:py-9 sm:pl-8 sm:pr-10"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
-                  }}
-                >
-                  <div className="flex w-full flex-col gap-8 sm:max-w-[330px] sm:justify-between">
-                    <div className="w-[262px]">
-                      <Image
-                        alt="MCN Softphone"
-                        src={assets.mcn}
-                        width={786}
-                        height={327}
-                        sizes="262px"
-                        className="h-auto w-full"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      <p className="max-w-[318px] text-[16px] leading-[160%] text-white">
-                        Поменяла подход к звонкам за границей:
-                        <br />
-                        от активации номера до прозрачной
-                        <br />
-                        стоимости в приложении
-                      </p>
-                      <div className="flex flex-wrap items-start gap-2 sm:w-[342px]">
-                        <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
-                          8 → 3 шагов до звонка
-                        </span>
-                        <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
-                          +23% CR в 1-й звонок
-                        </span>
-                      </div>
-                      <span className="w-fit bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[14px] leading-[120%] text-[#828282] transition-[background-size,color] duration-300 ease-out sm:group-hover/card:bg-[length:100%_1px] sm:group-hover/card:text-white">
-                        Смотреть кейс →
-                      </span>
-                    </div>
-                  </div>
-                  <div className="aspect-[3504/3354] w-full overflow-hidden sm:h-full sm:w-[420px] sm:aspect-auto sm:py-1">
+        <motion.section variants={item} className="flex flex-col items-center gap-6">
+          <h2 className="text-center text-[24px] font-semibold leading-[32px]">
+            Избранные проекты
+          </h2>
+
+          <div className="flex w-full flex-col items-center gap-[72px] sm:gap-[100px]">
+            <article className="flex w-full flex-col items-center gap-6">
+              <Link
+                href="/app"
+                prefetch={false}
+                aria-label="Открыть кейс MCN Softphone"
+                className="group block w-full"
+              >
+                <div className="flex w-full items-center justify-center gap-4 rounded-[12px] bg-[#222222] px-4 py-8 sm:gap-8 sm:px-12 sm:py-10 lg:h-[580px] lg:gap-10 lg:px-[119px]">
+                  <div className="relative h-auto w-[31%] max-w-[245px]">
                     <Image
-                      alt="MCN Softphone preview"
-                      src={assets.phones}
-                      width={1212}
-                      height={1200}
-                      sizes="(max-width: 640px) calc(100vw - 80px), 420px"
-                      className="h-full w-full object-contain"
+                      alt="Экран регистрации MCN Softphone"
+                      src={assets.phone1}
+                      width={735}
+                      height={1500}
+                      priority
+                      sizes="(max-width: 640px) 28vw, 245px"
+                      className="h-auto w-full"
                     />
                   </div>
-                </motion.section>
-              </Link>
-            </div>
-
-            <div className="group/card relative z-30 hover:z-50">
-              <Link href="/work" prefetch={false} className="block">
-                <motion.section
-                  aria-label="Открыть кейс KOMPaaS"
-                  whileHover={canHover ? { scale: 1.02 } : undefined}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="relative flex h-auto w-full transform-gpu flex-col items-start gap-8 overflow-hidden rounded-none px-6 py-6 will-change-transform sm:h-[378px] sm:flex-row sm:items-stretch sm:justify-between sm:gap-6 sm:px-10 sm:py-9"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(80% 120% at 48% 70%, rgba(82,82,82,0.42) 0%, rgba(38,38,38,0.28) 42%, rgba(23,23,23,0) 72%), linear-gradient(180deg, #1D1D1D 0%, #141414 100%)"
-                  }}
-                >
-                  <div className="relative z-10 flex w-full flex-col gap-8 sm:max-w-[330px] sm:justify-between">
-                    <div className="w-[252px]">
-                      <Image
-                        alt="KOMPaaS"
-                        src={assets.kompaas}
-                        width={756}
-                        height={126}
-                        sizes="252px"
-                        className="h-auto w-full"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-3">
-                      <p className="max-w-[320px] text-[16px] leading-[160%] text-white">
-                        Снизила зависимость B2B-клиентов
-                        <br />
-                        от разработки, упростив управление
-                        <br />
-                        сценариями звонков
-                      </p>
-                      <div className="flex flex-wrap items-start gap-2">
-                        <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
-                          +28% self-service rate
-                        </span>
-                        <span className="rounded-full bg-[#2D2D2D] px-2 py-1 text-[14px] leading-[160%] text-white">
-                          -21% ошибок
-                        </span>
-                      </div>
-                      <span className="w-fit bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[14px] leading-[120%] text-[#828282] transition-[background-size,color] duration-300 ease-out sm:group-hover/card:bg-[length:100%_1px] sm:group-hover/card:text-white">
-                        Смотреть кейс →
-                      </span>
-                    </div>
+                  <div className="relative h-auto w-[31%] max-w-[244px]">
+                    <Image
+                      alt="Экран тарифа MCN Softphone"
+                      src={assets.phone2}
+                      width={732}
+                      height={1500}
+                      priority
+                      sizes="(max-width: 640px) 28vw, 244px"
+                      className="h-auto w-full"
+                    />
                   </div>
-                  <div className="relative w-full overflow-hidden bg-white [border-radius:8px_0_8px_0] sm:absolute sm:bottom-0 sm:right-0 sm:h-[342px] sm:w-[434px]">
+                  <div className="relative h-auto w-[31%] max-w-[245px]">
+                    <Image
+                      alt="Экран звонка MCN Softphone"
+                      src={assets.phone3}
+                      width={735}
+                      height={1500}
+                      priority
+                      sizes="(max-width: 640px) 28vw, 245px"
+                      className="h-auto w-full"
+                    />
+                  </div>
+                </div>
+              </Link>
+
+              <div className="flex w-full max-w-[800px] flex-col items-start gap-2">
+                <div className="flex w-full items-end justify-between gap-4 text-white">
+                  <h3 className="text-[32px] font-semibold leading-[40px]">MCN Softphone</h3>
+                  <Link
+                    href="/app"
+                    prefetch={false}
+                    className="mb-[3px] shrink-0 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[14px] font-semibold leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                  >
+                    Смотреть кейс →
+                  </Link>
+                </div>
+                <div className="h-px w-full bg-[#262626]" />
+                <p className="max-w-[500px] text-[18px] leading-[160%] text-white">
+                  Мобильное приложение для звонков за границей. Упростила путь до первого звонка и
+                  сделала стоимость связи прозрачнее до начала вызова.
+                </p>
+                <div className="flex flex-wrap items-start gap-2">
+                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-2 py-1 text-[14px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                    8 → 3 шагов до звонка
+                  </span>
+                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-2 py-1 text-[14px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                    +23% CR в 1-й звонок
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article className="flex w-full flex-col items-center gap-6">
+              <Link
+                href="/work"
+                prefetch={false}
+                aria-label="Открыть кейс KOMPaaS"
+                className="group block w-full"
+              >
+                <div className="flex w-full items-center justify-center rounded-[12px] bg-[#222222] px-4 py-8 sm:px-12 sm:py-10 lg:h-[580px] lg:px-[119px]">
+                  <div className="relative w-full max-w-[800px] overflow-hidden rounded-[8px]">
                     <Image
                       alt="KOMPaaS canvas preview"
-                      src={`${assets.vpbxCrop}?v=2`}
-                      width={1371}
-                      height={1080}
-                      sizes="(max-width: 640px) calc(100vw - 48px), 434px"
-                      className="h-full w-full object-contain object-left-top"
+                      src={assets.vpbxCanvas}
+                      width={2400}
+                      height={1500}
+                      sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                      className="h-auto w-full"
                     />
                   </div>
-                </motion.section>
+                </div>
               </Link>
-            </div>
+
+              <div className="flex w-full max-w-[800px] flex-col items-start gap-2">
+                <div className="flex w-full items-end justify-between gap-4 text-white">
+                  <h3 className="text-[32px] font-semibold leading-[40px]">KOMPaaS</h3>
+                  <Link
+                    href="/work"
+                    prefetch={false}
+                    className="mb-[3px] shrink-0 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[14px] font-semibold leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                  >
+                    Смотреть кейс →
+                  </Link>
+                </div>
+                <div className="h-px w-full bg-[#262626]" />
+                <p className="max-w-[500px] text-[18px] leading-[160%] text-white">
+                  Конструктор сценариев звонков для B2B-клиентов. Снизила зависимость клиентов от
+                  разработки в управлении сценариями звонков.
+                </p>
+                <div className="flex flex-wrap items-start gap-2">
+                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-2 py-1 text-[14px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                    +28% self-service rate
+                  </span>
+                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-2 py-1 text-[14px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                    -21% ошибок после публикации
+                  </span>
+                </div>
+              </div>
+            </article>
           </div>
-        </div>
+        </motion.section>
       </motion.div>
     </main>
   );
