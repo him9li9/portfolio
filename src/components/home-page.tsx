@@ -11,7 +11,8 @@ const assets = {
   phone1: "/figma/Main/phone%201.png",
   phone2: "/figma/Main/phone%202.png",
   phone3: "/figma/Main/phone%203.png",
-  vpbxCanvas: "/figma/Case_2/vpbx-canvas.png"
+  vpbxCanvas: "/figma/Case_2/vpbx-canvas.png",
+  arrowForward: "/figma/Main/arrow_forward.svg"
 };
 
 export function HomePage() {
@@ -108,7 +109,7 @@ export function HomePage() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <h1 className="text-center text-[32px] font-semibold leading-[40px]">
+            <h1 className="text-center text-[32px] font-medium leading-[40px]">
               Привет, я Настя Ермошина
             </h1>
           </div>
@@ -120,7 +121,7 @@ export function HomePage() {
         </motion.section>
 
         <motion.section variants={item} className="flex flex-col items-center gap-6">
-          <h2 className="text-center text-[24px] font-semibold leading-[32px]">
+          <h2 className="text-center text-[24px] font-medium leading-[32px]">
             Избранные проекты
           </h2>
 
@@ -132,8 +133,8 @@ export function HomePage() {
                 aria-label="Открыть кейс MCN Softphone"
                 className="group block w-full"
               >
-                <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-4 rounded-[12px] bg-[#222222] px-4 py-8 sm:gap-6 sm:px-[49px] sm:py-10">
-                  <div className="relative h-auto w-[29%] max-w-[205px]">
+                <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-4 rounded-[12px] bg-[#222222] px-4 py-8 sm:gap-6 sm:px-10 sm:py-10">
+                  <div className="relative h-auto w-[27%] max-w-[205px]">
                     <Image
                       alt="Экран регистрации MCN Softphone"
                       src={assets.phone1}
@@ -144,7 +145,7 @@ export function HomePage() {
                       className="h-auto w-full"
                     />
                   </div>
-                  <div className="relative h-auto w-[31%] max-w-[244px]">
+                  <div className="relative h-auto w-[34%] max-w-[256px]">
                     <Image
                       alt="Экран тарифа MCN Softphone"
                       src={assets.phone2}
@@ -155,7 +156,7 @@ export function HomePage() {
                       className="h-auto w-full"
                     />
                   </div>
-                  <div className="relative h-auto w-[29%] max-w-[205px]">
+                  <div className="relative h-auto w-[27%] max-w-[205px]">
                     <Image
                       alt="Экран звонка MCN Softphone"
                       src={assets.phone3}
@@ -171,13 +172,14 @@ export function HomePage() {
 
               <div className="flex w-full max-w-[800px] flex-col items-start gap-2">
                 <div className="flex w-full flex-col gap-2 text-white sm:flex-row sm:items-end sm:justify-between sm:gap-4">
-                  <h3 className="text-[32px] font-semibold leading-[40px]">MCN Softphone</h3>
+                  <h3 className="text-[32px] font-medium leading-[40px]">MCN Softphone</h3>
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="shrink-0 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-semibold leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                    className="flex shrink-0 items-center gap-1 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-normal leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
                   >
-                    Смотреть кейс →
+                    <span>Смотреть кейс</span>
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
                 <div className="flex flex-col items-start gap-3">
@@ -219,13 +221,14 @@ export function HomePage() {
 
               <div className="flex w-full max-w-[800px] flex-col items-start gap-2">
                 <div className="flex w-full flex-col gap-2 text-white sm:flex-row sm:items-end sm:justify-between sm:gap-4">
-                  <h3 className="text-[32px] font-semibold leading-[40px]">KOMPaaS</h3>
+                  <h3 className="text-[32px] font-medium leading-[40px]">KOMPaaS</h3>
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="shrink-0 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-semibold leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                    className="flex shrink-0 items-center gap-1 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-normal leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
                   >
-                    Смотреть кейс →
+                    <span>Смотреть кейс</span>
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
                 <div className="flex flex-col items-start gap-3">
