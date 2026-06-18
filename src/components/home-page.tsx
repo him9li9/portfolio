@@ -113,7 +113,7 @@ export function HomePage() {
               Привет, я Настя Ермошина
             </h1>
           </div>
-          <p className="w-full text-left text-[18px] leading-[160%] text-white sm:w-[680px] sm:text-center">
+          <p className="w-full text-left text-[18px] leading-[160%] text-white sm:w-[482px] sm:text-center">
             Продуктовый дизайнер с опытом 3+ года в телекоме, B2B-сервисах и стартапах. Умею
             разбираться в сложной доменной логике и превращать её в понятные, работающие решения
             вместе с командой.
