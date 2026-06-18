@@ -113,11 +113,10 @@ export function HomePage() {
               Привет, я Настя Ермошина
             </h1>
           </div>
-          <p className="max-w-[482px] text-left text-[18px] leading-[160%] text-white sm:text-center">
-            Продуктовый дизайнер с опытом 3+ года в телекоме,<br className="hidden sm:block" />
-            B2B-сервисах и стартапах. Умею разбираться в сложной<br className="hidden sm:block" />
-            доменной логике и превращать её в понятные,<br className="hidden sm:block" />
-            работающие решения вместе с командой.
+          <p className="w-full text-left text-[18px] leading-[160%] text-white sm:w-[482px] sm:text-center">
+            Продуктовый дизайнер с опытом 3+ года в телекоме, B2B-сервисах и стартапах. Умею
+            разбираться в сложной доменной логике и превращать её в понятные, работающие решения
+            вместе с командой.
           </p>
         </motion.section>
 
