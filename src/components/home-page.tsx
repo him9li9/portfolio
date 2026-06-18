@@ -96,8 +96,8 @@ export function HomePage() {
         animate="show"
         className="mx-auto flex w-full max-w-[800px] flex-col gap-[120px] px-4 pb-[120px] pt-[66px] sm:px-8 sm:pb-[140px] lg:px-0"
       >
-        <motion.section variants={item} className="mx-auto flex w-full max-w-[800px] flex-col items-center gap-4">
-          <div className="flex flex-col items-center justify-center gap-8">
+        <motion.section variants={item} className="mx-auto flex w-full max-w-[800px] flex-col items-start gap-4 sm:items-center">
+          <div className="flex flex-col items-start justify-center gap-8 sm:items-center">
             <div className="relative h-[100px] w-[120px] overflow-hidden rounded-[100px]">
               <Image
                 alt=""
@@ -109,24 +109,25 @@ export function HomePage() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <h1 className="text-center text-[32px] font-medium leading-[40px]">
+            <h1 className="text-left text-[32px] font-medium leading-[40px] sm:text-center">
               Привет, я Настя Ермошина
             </h1>
           </div>
-          <p className="max-w-[482px] text-center text-[18px] leading-[160%] text-white">
-            Продуктовый дизайнер с опытом 3+ года в телекоме, B2B-сервисах и стартапах. Умею
-            разбираться в сложной доменной логике и превращать её в понятные, работающие решения
-            вместе с командой.
+          <p className="max-w-[482px] text-left text-[18px] leading-[160%] text-white sm:text-center">
+            Продуктовый дизайнер с опытом 3+ года в телекоме,<br className="hidden sm:block" />
+            B2B-сервисах и стартапах. Умею разбираться в сложной<br className="hidden sm:block" />
+            доменной логике и превращать её в понятные,<br className="hidden sm:block" />
+            работающие решения вместе с командой.
           </p>
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col items-center gap-6">
-          <h2 className="text-center text-[24px] font-medium leading-[32px]">
+        <motion.section variants={item} className="flex flex-col items-start gap-6 sm:items-center">
+          <h2 className="text-left text-[24px] font-medium leading-[32px] sm:text-center">
             Избранные проекты
           </h2>
 
-          <div className="flex w-full flex-col items-center gap-[120px]">
-            <article className="flex w-full flex-col items-center gap-6">
+          <div className="flex w-full flex-col items-start gap-[120px] sm:items-center">
+            <article className="flex w-full flex-col items-start gap-6 sm:items-center">
               <Link
                 href="/app"
                 prefetch={false}
@@ -176,7 +177,7 @@ export function HomePage() {
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="flex shrink-0 items-center gap-1 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-normal leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                    className="hidden shrink-0 items-center gap-1 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-normal leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px] sm:flex"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -190,17 +191,25 @@ export function HomePage() {
                   </p>
                   <div className="flex flex-wrap items-start gap-2">
                     <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
-                      8 → 3 шагов до звонка
+                      8 → 3 шага до звонка
                     </span>
                     <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                       +23% CR в 1-й звонок
                     </span>
                   </div>
+                  <Link
+                    href="/app"
+                    prefetch={false}
+                    className="mt-1 flex items-center gap-1 text-[16px] font-normal leading-[160%] text-white sm:hidden"
+                  >
+                    <span>Смотреть кейс</span>
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             </article>
 
-            <article className="flex w-full flex-col items-center gap-6">
+            <article className="flex w-full flex-col items-start gap-6 sm:items-center">
               <Link
                 href="/work"
                 prefetch={false}
@@ -225,7 +234,7 @@ export function HomePage() {
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="flex shrink-0 items-center gap-1 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-normal leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px]"
+                    className="hidden shrink-0 items-center gap-1 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-normal leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px] sm:flex"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -234,8 +243,8 @@ export function HomePage() {
                 <div className="flex flex-col items-start gap-3">
                   <div className="h-px w-full bg-[#262626] sm:w-[800px]" />
                   <p className="max-w-[490px] text-[18px] leading-[160%] text-white">
-                    B2B-платформа для автоматизации контакт-центров. Помогла уменьшить зависимость
-                    клиентов от разработки в управлении сценариями звонков.
+                    B2B-платформа для автоматизации контакт-центров. Снизила зависимость клиентов
+                    от разработки в управлении сценариями звонков.
                   </p>
                   <div className="flex flex-wrap items-start gap-2">
                     <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
@@ -245,6 +254,14 @@ export function HomePage() {
                       -21% ошибок после публикации
                     </span>
                   </div>
+                  <Link
+                    href="/work"
+                    prefetch={false}
+                    className="mt-1 flex items-center gap-1 text-[16px] font-normal leading-[160%] text-white sm:hidden"
+                  >
+                    <span>Смотреть кейс</span>
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             </article>
