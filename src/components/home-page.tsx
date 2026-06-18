@@ -114,9 +114,9 @@ export function HomePage() {
             </h1>
           </div>
           <p className="max-w-[482px] text-left text-[18px] leading-[160%] text-white sm:text-center">
-            Продуктовый дизайнер с опытом 3+ года в телекоме,<br className="hidden sm:block" />
+            Продуктовый дизайнер с опытом 3+ года в телекоме<span className="sm:hidden"> </span>,<br className="hidden sm:block" />
             B2B-сервисах и стартапах. Умею разбираться в сложной<br className="hidden sm:block" />
-            доменной логике и превращать её в понятные,<br className="hidden sm:block" />
+            доменной логике и превращать её в понятные<span className="sm:hidden"> </span>,<br className="hidden sm:block" />
             работающие решения вместе с командой.
           </p>
         </motion.section>
