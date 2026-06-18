@@ -109,7 +109,7 @@ export function HomePage() {
                 className="h-full w-full object-cover"
               />
             </div>
-            <h1 className="text-left text-[32px] font-medium leading-[40px] sm:text-center">
+            <h1 className="text-left text-[32px] font-semibold leading-[40px] sm:text-center">
               Привет, я Настя Ермошина
             </h1>
           </div>
@@ -123,7 +123,7 @@ export function HomePage() {
         </motion.section>
 
         <motion.section variants={item} className="flex flex-col items-start gap-6 sm:items-center">
-          <h2 className="text-left text-[24px] font-medium leading-[32px] sm:text-center">
+          <h2 className="text-left text-[24px] font-semibold leading-[32px] sm:text-center">
             Избранные проекты
           </h2>
 
@@ -174,7 +174,7 @@ export function HomePage() {
 
               <div className="flex w-full max-w-[800px] flex-col items-start gap-2">
                 <div className="flex w-full flex-col gap-2 text-white sm:flex-row sm:items-end sm:justify-between sm:gap-4">
-                  <h3 className="text-[32px] font-medium leading-[40px]">MCN Softphone</h3>
+                  <h3 className="text-[32px] font-semibold leading-[40px]">MCN Softphone</h3>
                   <Link
                     href="/app"
                     prefetch={false}
@@ -231,7 +231,7 @@ export function HomePage() {
 
               <div className="flex w-full max-w-[800px] flex-col items-start gap-2">
                 <div className="flex w-full flex-col gap-2 text-white sm:flex-row sm:items-end sm:justify-between sm:gap-4">
-                  <h3 className="text-[32px] font-medium leading-[40px]">KOMPaaS</h3>
+                  <h3 className="text-[32px] font-semibold leading-[40px]">KOMPaaS</h3>
                   <Link
                     href="/work"
                     prefetch={false}
