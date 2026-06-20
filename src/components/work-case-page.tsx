@@ -183,9 +183,9 @@ export function WorkCasePage() {
           className="scroll-mt-[90px] flex flex-col gap-8"
         >
           <div className="flex flex-col gap-3 text-white">
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div className="flex flex-col gap-1">
               <h1 className="text-[40px] font-semibold leading-[48px]">KOMPaaS</h1>
-              <p className="text-[16px] leading-[160%] text-[#c0c0c0] sm:text-[18px]">
+              <p className="text-[16px] leading-[160%] text-[#c0c0c0]">
                 Продуктовый дизайнер · 2022 — 2024
               </p>
             </div>
@@ -873,7 +873,7 @@ export function WorkCasePage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="flex w-full items-start justify-between border-t border-[#282828] pt-4 text-[16px] font-normal leading-[160%]"
+          className="flex w-full items-start justify-between border-t border-[#282828] pt-4 text-[18px] font-normal leading-[160%]"
         >
           <Link href="/" className="group shrink-0">
             <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_1px]">
