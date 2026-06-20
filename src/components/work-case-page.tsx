@@ -7,7 +7,8 @@ import { useEffect, useState } from "react";
 
 const assets = {
   heart: "/figma/heart.svg",
-  hero: "/figma/Case_2/vpbx-canvas.png",
+  hero: "/figma/Case_2/Case_2/vpbx-canvas.png",
+  arrowForward: "/figma/Main/arrow_forward.svg",
   oldCanvas: "/figma/Case_2/old-canvas.png",
   addFlow: "/figma/Case_2/add-flow.png?v=2",
   table: "/figma/Case_2/table.png?v=2",
@@ -19,6 +20,8 @@ const assets = {
   map: "/figma/Case_2/map.png",
   publish: "/figma/Case_2/public.png"
 };
+
+const workStages = ["Дискавери", "Гипотезы", "Проектирование", "Тестирование", "Передача в разработку"];
 
 export function WorkCasePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
@@ -180,11 +183,15 @@ export function WorkCasePage() {
           className="scroll-mt-[90px] flex flex-col gap-8"
         >
           <div className="flex flex-col gap-3 text-white">
-            <h1 className="text-[40px] font-semibold leading-[48px]">KOMPaaS</h1>
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <h1 className="text-[40px] font-semibold leading-[48px]">KOMPaaS</h1>
+              <p className="text-[16px] leading-[160%] text-[#c0c0c0] sm:text-[18px]">
+                Продуктовый дизайнер · 2022 — 2024
+              </p>
+            </div>
             <p className="text-[18px] leading-[160%]">
-              — B2B-платформа для автоматизации контакт-центров. Используется в банках,
-              клиниках, образовательных продуктах и ритейле — везде, где важна скорость обработки
-              обращений и уровень клиентского сервиса.
+              Конструктор сценариев звонков для B2B-клиентов. Снизила зависимость клиентов от
+              разработки в управлении сценариями звонков.
             </p>
           </div>
 
@@ -256,15 +263,20 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <h3 className="text-[24px] font-semibold leading-[32px]">Что я сделала</h3>
-            <ol className="list-decimal space-y-0 pl-6 text-[18px] leading-[160%]">
-              <li>Изучила, как клиенты и команда поддержки работают с текущими сценариями.</li>
-              <li>Выявила ключевые проблемы, где требовалось вмешательство разработчиков.</li>
-              <li>Спроектировала более понятную и управляемую структуру сценариев.</li>
-              <li>Проверила варианты решений на реальных кейсах клиентов.</li>
-              <li>Подготовила финальный дизайн и спецификации для передачи в разработку.</li>
-            </ol>
+          <div className="flex flex-col gap-3">
+            <h3 className="text-[24px] font-semibold leading-[32px]">Этапы работы</h3>
+            <div className="flex flex-wrap items-center gap-1">
+              {workStages.map((stage, index) => (
+                <div key={stage} className="flex items-center gap-1">
+                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#e6e6e6] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                    {stage}
+                  </span>
+                  {index < workStages.length - 1 ? (
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                  ) : null}
+                </div>
+              ))}
+            </div>
           </div>
         </motion.section>
 
@@ -861,7 +873,7 @@ export function WorkCasePage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="flex w-full items-start justify-between border-t border-[#282828] pt-4 text-[18px] font-normal leading-[160%]"
+          className="flex w-full items-start justify-between border-t border-[#282828] pt-4 text-[16px] font-normal leading-[160%]"
         >
           <Link href="/" className="group shrink-0">
             <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_1px]">

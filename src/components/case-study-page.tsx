@@ -7,7 +7,10 @@ import { useEffect, useRef, useState } from "react";
 
 const assets = {
   heart: "/figma/heart.svg",
-  hero: "/figma/phones.png",
+  phone1: "/figma/Main/phone%201.png",
+  phone2: "/figma/Main/phone%202.png",
+  phone3: "/figma/Main/phone%203.png",
+  arrowForward: "/figma/Main/arrow_forward.svg",
   chartSmall: "/figma/case-chart-small.png",
   chartBig: "/figma/case-chart-big.png",
   discoveryActivation: "/figma/case-discovery-activation.png",
@@ -21,6 +24,8 @@ const assets = {
   solutionCost: "/figma/case-solution-cost.png?v=20260405",
   solutionError: "/figma/case-solution-error.png?v=20260503"
 };
+
+const workStages = ["Дискавери", "Гипотезы", "Проектирование", "Тестирование", "Передача в разработку"];
 
 export function CaseStudyPage() {
   const [hideTopbar, setHideTopbar] = useState(false);
@@ -385,22 +390,44 @@ export function CaseStudyPage() {
           className="scroll-mt-[90px] flex flex-col gap-8 sm:gap-8"
         >
           <div className="flex flex-col gap-4 text-white">
-            <h1 className="text-[40px] font-semibold leading-[48px]">MCN Softphone</h1>
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <h1 className="text-[40px] font-semibold leading-[48px]">MCN Softphone</h1>
+              <p className="text-[16px] leading-[160%] text-[#c0c0c0] sm:text-[18px]">
+                Продуктовый дизайнер · 2024 — н.в.
+              </p>
+            </div>
             <p className="text-[18px] leading-[160%]">
-              — мобильное приложение для звонков через интернет и управления личным кабинетом.
-              Целевая аудитория — путешественники, которым нужна доступная связь за границей без
-              сложной настройки SIM и роуминга.
+              Мобильное приложение для звонков за границей. Упростила путь до первого звонка и
+              сделала стоимость связи прозрачнее до начала вызова.
             </p>
           </div>
-            <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
-            <div className="mx-auto w-full max-w-[417px] px-4 sm:px-0">
+          <div className="-mx-4 bg-[#222] py-8 sm:mx-0 sm:rounded-[12px] sm:px-[49px] sm:py-10">
+            <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-4 px-4 sm:gap-6 sm:px-0">
               <Image
-                alt=""
-                src={assets.hero}
-                width={417}
-                height={400}
-                sizes="(max-width: 640px) calc(100vw - 32px), 417px"
-                className="h-auto w-full object-contain"
+                alt="Экран регистрации MCN Softphone"
+                src={assets.phone1}
+                width={735}
+                height={1500}
+                sizes="(max-width: 640px) 27vw, 205px"
+                className="h-auto w-[27%] max-w-[205px]"
+                priority
+              />
+              <Image
+                alt="Экран тарифа MCN Softphone"
+                src={assets.phone2}
+                width={732}
+                height={1500}
+                sizes="(max-width: 640px) 34vw, 244px"
+                className="h-auto w-[34%] max-w-[244px]"
+                priority
+              />
+              <Image
+                alt="Экран звонка MCN Softphone"
+                src={assets.phone3}
+                width={735}
+                height={1500}
+                sizes="(max-width: 640px) 27vw, 205px"
+                className="h-auto w-[27%] max-w-[205px]"
                 priority
               />
             </div>
@@ -488,15 +515,20 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <h3 className="text-[24px] font-semibold leading-[32px]">Что я сделала</h3>
-            <ol className="list-decimal space-y-2 pl-6 text-[18px] leading-[160%]">
-              <li>Проанализировала MVP и обратную связь от пользователей.</li>
-              <li>Определила проблемы и сформулировала гипотезы (вместе с командой).</li>
-              <li>Спроектировала и упростила ключевые сценарии.</li>
-              <li>Проверила решения на быстрых прототипах с пользователями.</li>
-              <li>Подготовила дизайн и компоненты для передачи в разработку + материалы для релиза.</li>
-            </ol>
+          <div className="flex flex-col gap-3">
+            <h3 className="text-[24px] font-semibold leading-[32px]">Этапы работы</h3>
+            <div className="flex flex-wrap items-center gap-1">
+              {workStages.map((stage, index) => (
+                <div key={stage} className="flex items-center gap-1">
+                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#e6e6e6] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                    {stage}
+                  </span>
+                  {index < workStages.length - 1 ? (
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                  ) : null}
+                </div>
+              ))}
+            </div>
           </div>
         </motion.section>
 
@@ -939,7 +971,7 @@ export function CaseStudyPage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="flex w-full items-start justify-between border-t border-[#282828] pt-4 text-[18px] font-normal leading-[160%]"
+          className="flex w-full items-start justify-between border-t border-[#282828] pt-4 text-[16px] font-normal leading-[160%]"
         >
           <Link href="/" className="group shrink-0">
             <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_1px]">
