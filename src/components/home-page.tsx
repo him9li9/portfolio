@@ -135,7 +135,7 @@ export function HomePage() {
                 aria-label="Открыть кейс MCN Softphone"
                 className="group block w-full"
               >
-                <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-4 rounded-[12px] bg-[#222222] px-4 py-8 sm:gap-6 sm:px-10 sm:py-10">
+                <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-4 rounded-[12px] bg-[#1c1c1c] px-4 py-8 sm:gap-6 sm:px-10 sm:py-10">
                   <div className="relative h-auto w-[27%] max-w-[205px]">
                     <Image
                       alt="Экран регистрации MCN Softphone"
