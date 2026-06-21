@@ -874,7 +874,7 @@ export function WorkCasePage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="flex w-full items-start justify-between border-t border-[#282828] pt-4 text-[18px] font-normal leading-[160%]"
+          className="mt-[-34px] flex w-full items-start justify-between border-t border-[#282828] pt-4 text-[18px] font-normal leading-[160%] sm:mt-[-84px]"
         >
           <Link href="/" className="group shrink-0">
             <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_1px]">
