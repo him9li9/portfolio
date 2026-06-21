@@ -185,10 +185,11 @@ export function CaseStudyPage() {
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
       const documentHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
       const isAtPageEnd = scrollTop + viewportHeight >= documentHeight - 2;
-      const scrollPos = scrollTop + 140;
+      const activationY = Math.min(220, viewportHeight * 0.35);
       let current = sections[0]?.dataset.sectionAnchor || "overview";
       sections.forEach((section, index) => {
-        if (section.offsetTop <= scrollPos || (isAtPageEnd && index === sections.length - 1)) {
+        const rect = section.getBoundingClientRect();
+        if ((rect.top <= activationY && rect.bottom > 0) || (isAtPageEnd && index === sections.length - 1)) {
           current = section.dataset.sectionAnchor || current;
         }
       });
@@ -204,25 +205,12 @@ export function CaseStudyPage() {
     window.addEventListener("pageshow", updateFromScroll);
     window.addEventListener("resize", updateFromScroll);
     window.addEventListener("scroll", updateFromScroll, { passive: true });
-    let observer: IntersectionObserver | null = null;
-    if ("IntersectionObserver" in window) {
-      observer = new IntersectionObserver(
-        (entries) => {
-          if (entries.some((entry) => entry.isIntersecting)) {
-            updateFromScroll();
-          }
-        },
-        { root: null, rootMargin: "-40% 0px -50% 0px", threshold: 0 }
-      );
-      sections.forEach((section) => observer?.observe(section));
-    }
     return () => {
       timeouts.forEach((id) => window.clearTimeout(id));
       cancelAnimationFrame(raf);
       window.removeEventListener("pageshow", updateFromScroll);
       window.removeEventListener("resize", updateFromScroll);
       window.removeEventListener("scroll", updateFromScroll);
-      observer?.disconnect();
     };
   }, []);
 
