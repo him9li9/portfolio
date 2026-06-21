@@ -7,9 +7,9 @@ import { useEffect, useRef, useState } from "react";
 
 const assets = {
   heart: "/figma/heart.svg",
-  phone1: "/figma/Main/phone%201.png",
-  phone2: "/figma/Main/phone%202.png",
-  phone3: "/figma/Main/phone%203.png",
+  phone1: "/figma/Main/phone%201.png?v=20260621",
+  phone2: "/figma/Main/phone%202.png?v=20260621",
+  phone3: "/figma/Main/phone%203.png?v=20260621",
   arrowForward: "/figma/Main/arrow_forward.svg",
   chartSmall: "/figma/case-chart-small.png",
   chartBig: "/figma/case-chart-big.png",
@@ -20,12 +20,18 @@ const assets = {
   competitorWhatsapp: "/figma/case-competitor-whatsapp.png",
   competitorOpenphone: "/figma/case-competitor-openphone.png",
   userflow: "/figma/case-userflow.png",
-  solutionSuccess: "/figma/case-solution-success.png?v=20260405",
-  solutionCost: "/figma/case-solution-cost.png?v=20260405",
-  solutionError: "/figma/case-solution-error.png?v=20260503"
+  solutionSuccess: "/figma/case-solution-success.png?v=20260621",
+  solutionCost: "/figma/case-solution-cost.png?v=20260621",
+  solutionError: "/figma/case-solution-error.png?v=20260621"
 };
 
-const workStages = ["Дискавери", "Гипотезы", "Проектирование", "Тестирование", "Передача в разработку"];
+const workStages = [
+  { label: "Дискавери", href: "#discovery" },
+  { label: "Гипотезы", href: "#hypotheses" },
+  { label: "Проектирование", href: "#design" },
+  { label: "Тестирование", href: "#solution" },
+  { label: "Передача в разработку", href: "#results" }
+];
 
 export function CaseStudyPage() {
   const [hideTopbar, setHideTopbar] = useState(false);
@@ -387,7 +393,7 @@ export function CaseStudyPage() {
           id="overview"
           data-section-anchor="overview"
           variants={item}
-          className="scroll-mt-[90px] flex flex-col gap-8 sm:gap-8"
+          className="mb-[-18px] scroll-mt-[90px] flex flex-col gap-8 sm:gap-8 md:mb-[-68px]"
         >
           <div className="flex flex-col gap-4 text-white">
             <div className="flex flex-col gap-1">
@@ -520,10 +526,15 @@ export function CaseStudyPage() {
             <h3 className="text-[24px] font-semibold leading-[32px]">Этапы работы</h3>
             <div className="flex flex-wrap items-center gap-1">
               {workStages.map((stage, index) => (
-                <div key={stage} className="flex items-center gap-1">
-                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#e6e6e6] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
-                    {stage}
-                  </span>
+                <div key={stage.label} className="flex items-center gap-1">
+                  <motion.a
+                    href={stage.href}
+                    whileHover={canHover ? { backgroundColor: "rgba(255,255,255,0.08)", scale: 1.05 } : undefined}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#e6e6e6] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]"
+                  >
+                    {stage.label}
+                  </motion.a>
                   {index < workStages.length - 1 ? (
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   ) : null}
@@ -599,7 +610,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
+            <div className="-mx-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] py-6 sm:mx-0">
               <div className="mx-auto w-full max-w-[427px] px-4 sm:px-0">
                 <Image
                   alt=""
@@ -625,7 +636,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
+            <div className="-mx-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] py-6 sm:mx-0">
               <div className="mx-auto flex w-full max-w-[427px] flex-col gap-4 px-4 sm:px-0">
                 <Image
                   alt=""
@@ -654,7 +665,7 @@ export function CaseStudyPage() {
               где важна немедленная доступность связи и интернета.
             </p>
 
-            <div className="flex flex-col gap-4">
+            <div id="hypotheses" className="flex scroll-mt-[90px] flex-col gap-4">
               <h3 className="text-[24px] font-semibold leading-[32px]">Анализ конкурентов</h3>
               <p className="text-[18px] leading-[160%]">
                 В ходе discovery я также изучила аналогичные продукты, в которых есть звонки.
@@ -663,20 +674,20 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
-              <div className="mx-auto w-full max-w-[600px] px-4 sm:px-0">
+            <div className="w-full">
+              <div className="mx-auto w-full max-w-[800px]">
                 <Image
                   alt=""
                   src={assets.competitorWhatsapp}
                   width={600}
                   height={300}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 600px"
+                  sizes="(max-width: 640px) calc(100vw - 32px), 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 />
               </div>
-              <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
-                WhatsApp (регистрация – выбор контакта – звонок)
+              <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#afafaf]">
+                WhatsApp: регистрация → выбор контакта → звонок
               </p>
             </div>
 
@@ -686,20 +697,20 @@ export function CaseStudyPage() {
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
 
-            <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
-              <div className="mx-auto w-full max-w-[754px] px-4 sm:px-0">
+            <div className="w-full">
+              <div className="mx-auto w-full max-w-[800px]">
                 <Image
                   alt=""
                   src={assets.competitorOpenphone}
                   width={754}
                   height={300}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 754px"
+                  sizes="(max-width: 640px) calc(100vw - 32px), 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 />
               </div>
-              <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#afafaf] sm:px-0">
-                Open Phone (выбор номера – регистрация – покупка – звонок)
+              <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#afafaf]">
+                OpenPhone: выбор номера → регистрация → покупка → звонок
               </p>
             </div>
 
@@ -767,7 +778,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-6">
+            <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-8">
               <div className="mx-auto w-full max-w-[1000px] px-4 sm:px-0">
                 <button
                   type="button"
@@ -787,12 +798,12 @@ export function CaseStudyPage() {
                 </button>
               </div>
               <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#9e9e9e] sm:px-0">
-                UserFlow сценария звонка (чтобы увеличить нажмите на картинку).
+                User Flow сценария первого звонка
               </p>
             </div>
 
             <ul className="list-disc space-y-2 pl-6 text-[18px] leading-[160%]">
-              <li>от первого запуска приложения до звонка — 4–5 шагов вместо 8–10</li>
+              <li>путь до первого звонка сократился с 8 до 3 шагов</li>
               <li>
                 стали показывать стоимость звонка ещё до вызова, а после ключевых шагов — success screen,
                 чтобы убрать тревогу и неопределённость
