@@ -74,11 +74,14 @@ export function WorkCasePage() {
       return;
     }
     const updateFromScroll = () => {
-      const scrollPos =
-        (document.documentElement.scrollTop || document.body.scrollTop || window.scrollY) + 140;
+      const scrollTop = document.documentElement.scrollTop || document.body.scrollTop || window.scrollY;
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const documentHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+      const isAtPageEnd = scrollTop + viewportHeight >= documentHeight - 2;
+      const scrollPos = scrollTop + 140;
       let current = sections[0]?.dataset.sectionAnchor || "overview";
-      sections.forEach((section) => {
-        if (section.offsetTop <= scrollPos) {
+      sections.forEach((section, index) => {
+        if (section.offsetTop <= scrollPos || (isAtPageEnd && index === sections.length - 1)) {
           current = section.dataset.sectionAnchor || current;
         }
       });
@@ -98,14 +101,9 @@ export function WorkCasePage() {
     if ("IntersectionObserver" in window) {
       observer = new IntersectionObserver(
         (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const next = (entry.target as HTMLElement).dataset.sectionAnchor;
-              if (next) {
-                setActiveSection(next);
-              }
-            }
-          });
+          if (entries.some((entry) => entry.isIntersecting)) {
+            updateFromScroll();
+          }
         },
         { root: null, rootMargin: "-40% 0px -50% 0px", threshold: 0 }
       );
