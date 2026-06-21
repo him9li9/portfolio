@@ -527,14 +527,9 @@ export function CaseStudyPage() {
             <div className="flex flex-wrap items-center gap-1">
               {workStages.map((stage, index) => (
                 <div key={stage.label} className="flex items-center gap-1">
-                  <motion.a
-                    href={stage.href}
-                    whileHover={canHover ? { backgroundColor: "rgba(255,255,255,0.08)", scale: 1.05 } : undefined}
-                    transition={{ duration: 0.2, ease: "easeOut" }}
-                    className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#e6e6e6] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]"
-                  >
+                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#e6e6e6] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                     {stage.label}
-                  </motion.a>
+                  </span>
                   {index < workStages.length - 1 ? (
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   ) : null}
@@ -586,13 +581,13 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="mx-auto w-full max-w-[760px]">
+            <div className="w-full">
               <Image
                 alt=""
                 src={assets.discoveryActivation}
                 width={800}
                 height={757}
-                sizes="(max-width: 640px) calc(100vw - 32px), 760px"
+                sizes="(max-width: 640px) calc(100vw - 32px), 1000px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
               />
@@ -687,7 +682,7 @@ export function CaseStudyPage() {
                 />
               </div>
               <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#afafaf]">
-                WhatsApp: регистрация → выбор контакта → звонок
+                WhatsApp (регистрация · выбор контакта · звонок)
               </p>
             </div>
 
@@ -710,7 +705,7 @@ export function CaseStudyPage() {
                 />
               </div>
               <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#afafaf]">
-                OpenPhone: выбор номера → регистрация → покупка → звонок
+                Open Phone (выбор номера · регистрация · покупка номера · звонок)
               </p>
             </div>
 
@@ -798,7 +793,7 @@ export function CaseStudyPage() {
                 </button>
               </div>
               <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#9e9e9e] sm:px-0">
-                User Flow сценария первого звонка
+                Новый userflow 1-го звонка (регистрация · покупка номера · звонок)
               </p>
             </div>
 
