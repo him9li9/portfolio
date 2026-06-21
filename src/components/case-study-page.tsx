@@ -46,8 +46,8 @@ export function CaseStudyPage() {
     startOffsetX: 0,
     startOffsetY: 0,
   });
-  const userflowBase = { width: 750, height: 309 };
-  const userflowDisplay = { width: 750, height: 309 };
+  const userflowBase = { width: 800, height: 330 };
+  const userflowDisplay = { width: 800, height: 330 };
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -397,11 +397,12 @@ export function CaseStudyPage() {
               </p>
             </div>
             <p className="text-[18px] leading-[160%]">
-              Мобильное приложение для звонков за границей. Упростила путь до первого звонка и
-              сделала стоимость связи прозрачнее до начала вызова.
+              Мобильное приложение для звонков через интернет и управления личным кабинетом.
+              Аудитория — путешественники, которым нужна доступная связь за границей без сложной
+              настройки SIM и роуминга.
             </p>
           </div>
-          <div className="-mx-4 bg-[#222] py-8 sm:mx-0 sm:rounded-[12px] sm:px-[49px] sm:py-10">
+          <div className="-mx-4 bg-[#1c1c1c] py-8 sm:mx-0 sm:rounded-[12px] sm:px-[49px] sm:py-10">
             <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-4 px-4 sm:gap-6 sm:px-0">
               <Image
                 alt="Экран регистрации MCN Softphone"
@@ -409,7 +410,7 @@ export function CaseStudyPage() {
                 width={735}
                 height={1500}
                 sizes="(max-width: 640px) 27vw, 205px"
-                className="h-auto w-[27%] max-w-[205px]"
+                className="h-auto w-[27%] max-w-[205px] sm:w-[205px]"
                 priority
               />
               <Image
@@ -418,7 +419,7 @@ export function CaseStudyPage() {
                 width={732}
                 height={1500}
                 sizes="(max-width: 640px) 34vw, 244px"
-                className="h-auto w-[34%] max-w-[244px]"
+                className="h-auto w-[34%] max-w-[244px] sm:w-[244px]"
                 priority
               />
               <Image
@@ -427,7 +428,7 @@ export function CaseStudyPage() {
                 width={735}
                 height={1500}
                 sizes="(max-width: 640px) 27vw, 205px"
-                className="h-auto w-[27%] max-w-[205px]"
+                className="h-auto w-[27%] max-w-[205px] sm:w-[205px]"
                 priority
               />
             </div>
@@ -598,7 +599,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
+            <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
               <div className="mx-auto w-full max-w-[427px] px-4 sm:px-0">
                 <Image
                   alt=""
@@ -624,7 +625,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
+            <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
               <div className="mx-auto flex w-full max-w-[427px] flex-col gap-4 px-4 sm:px-0">
                 <Image
                   alt=""
@@ -662,7 +663,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
+            <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
               <div className="mx-auto w-full max-w-[600px] px-4 sm:px-0">
                 <Image
                   alt=""
@@ -685,7 +686,7 @@ export function CaseStudyPage() {
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
 
-            <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
+            <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
               <div className="mx-auto w-full max-w-[754px] px-4 sm:px-0">
                 <Image
                   alt=""
@@ -766,8 +767,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-4 bg-[#222] py-6 sm:mx-0">
-              <div className="mx-auto w-full max-w-[750px] px-4 sm:px-6">
+            <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
+              <div className="mx-auto w-full max-w-[800px] px-4 sm:px-0">
                 <button
                   type="button"
                   aria-label="Open userflow"
@@ -779,7 +780,7 @@ export function CaseStudyPage() {
                     src={assets.userflow}
                     width={userflowDisplay.width}
                     height={userflowDisplay.height}
-                    sizes="(max-width: 640px) calc(100vw - 32px), 750px"
+                    sizes="(max-width: 640px) calc(100vw - 32px), 800px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                   />
@@ -917,7 +918,7 @@ export function CaseStudyPage() {
             </p>
 
             <div className="grid grid-cols-1 gap-4 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
-              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#1c1c1c] px-4 py-3 lg:w-[184px]">
                 <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">8</span>
                   <span className="inline-flex h-10 items-center text-[18px] font-bold leading-none">→</span>
@@ -927,7 +928,7 @@ export function CaseStudyPage() {
                   шагов до звонка
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#1c1c1c] px-4 py-3 lg:w-[184px]">
                 <p className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-end pb-[5px] text-[18px] font-bold leading-none">+</span>
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">23</span>
@@ -937,7 +938,7 @@ export function CaseStudyPage() {
                   конверсия в 1-й звонок
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#1c1c1c] px-4 py-3 lg:w-[184px]">
                 <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">15</span>
                   <span className="inline-flex h-10 items-center text-[18px] font-bold leading-none">→</span>
@@ -948,7 +949,7 @@ export function CaseStudyPage() {
                   retention на 4-й неделе
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#1c1c1c] px-4 py-3 lg:w-[184px]">
                 <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">40</span>
                   <span className="inline-flex h-10 items-center text-[18px] font-bold leading-none">→</span>
@@ -1021,7 +1022,7 @@ export function CaseStudyPage() {
           onTouchMove={(event) => event.preventDefault()}
         >
           <div className="lightbox-backdrop absolute inset-0" />
-          <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[28px] bg-[#222] p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
+          <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[28px] bg-[#1c1c1c] p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
             <div className="absolute right-3 top-3 z-10 flex gap-2 sm:right-6 sm:top-6">
               <button
                 type="button"
