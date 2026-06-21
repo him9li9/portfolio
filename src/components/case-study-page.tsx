@@ -46,8 +46,8 @@ export function CaseStudyPage() {
     startOffsetX: 0,
     startOffsetY: 0,
   });
-  const userflowBase = { width: 800, height: 330 };
-  const userflowDisplay = { width: 800, height: 330 };
+  const userflowBase = { width: 1000, height: 412 };
+  const userflowDisplay = { width: 1000, height: 412 };
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -402,15 +402,15 @@ export function CaseStudyPage() {
               настройки SIM и роуминга.
             </p>
           </div>
-          <div className="-mx-4 bg-[#1c1c1c] py-8 sm:mx-0 sm:rounded-[12px] sm:px-[49px] sm:py-10">
-            <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-4 px-4 sm:gap-6 sm:px-0">
+          <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-8 sm:py-10">
+            <div className="mx-auto flex w-full max-w-[845px] items-center justify-center gap-4 px-4 sm:gap-6 sm:px-0">
               <Image
                 alt="Экран регистрации MCN Softphone"
                 src={assets.phone1}
                 width={735}
                 height={1500}
-                sizes="(max-width: 640px) 27vw, 205px"
-                className="h-auto w-[27%] max-w-[205px] sm:w-[205px]"
+                sizes="(max-width: 640px) 27vw, 236px"
+                className="h-auto w-[27%] max-w-[236px] sm:w-[236px]"
                 priority
               />
               <Image
@@ -418,8 +418,8 @@ export function CaseStudyPage() {
                 src={assets.phone2}
                 width={732}
                 height={1500}
-                sizes="(max-width: 640px) 34vw, 244px"
-                className="h-auto w-[34%] max-w-[244px] sm:w-[244px]"
+                sizes="(max-width: 640px) 34vw, 280px"
+                className="h-auto w-[34%] max-w-[280px] sm:w-[280px]"
                 priority
               />
               <Image
@@ -427,8 +427,8 @@ export function CaseStudyPage() {
                 src={assets.phone3}
                 width={735}
                 height={1500}
-                sizes="(max-width: 640px) 27vw, 205px"
-                className="h-auto w-[27%] max-w-[205px] sm:w-[205px]"
+                sizes="(max-width: 640px) 27vw, 236px"
+                className="h-auto w-[27%] max-w-[236px] sm:w-[236px]"
                 priority
               />
             </div>
@@ -767,8 +767,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
-              <div className="mx-auto w-full max-w-[800px] px-4 sm:px-0">
+            <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-6">
+              <div className="mx-auto w-full max-w-[1000px] px-4 sm:px-0">
                 <button
                   type="button"
                   aria-label="Open userflow"
@@ -780,7 +780,7 @@ export function CaseStudyPage() {
                     src={assets.userflow}
                     width={userflowDisplay.width}
                     height={userflowDisplay.height}
-                    sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                    sizes="(max-width: 640px) calc(100vw - 32px), 1000px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                   />
@@ -833,14 +833,14 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
-            <div className="mx-auto w-full max-w-[800px] px-4 sm:px-0">
+          <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-6">
+            <div className="mx-auto w-full max-w-[845px] px-4 sm:px-0">
               <Image
                 alt=""
                 src={assets.solutionSuccess}
                 width={2400}
                 height={1347}
-                sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                sizes="(max-width: 640px) calc(100vw - 32px), 845px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
               />
@@ -859,14 +859,14 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
-            <div className="mx-auto w-full max-w-[800px] px-4 sm:px-0">
+          <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-6">
+            <div className="mx-auto w-full max-w-[1000px] px-4 sm:px-0">
               <Image
                 alt=""
                 src={assets.solutionCost}
                 width={1600}
                 height={800}
-                sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                sizes="(max-width: 640px) calc(100vw - 32px), 1000px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
               />
@@ -887,14 +887,14 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="-mx-4 bg-[#1c1c1c] py-6 sm:mx-0">
-            <div className="mx-auto w-full max-w-[800px] px-4 sm:px-0">
+          <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-6">
+            <div className="mx-auto w-full max-w-[1000px] px-4 sm:px-0">
               <Image
                 alt=""
                 src={assets.solutionError}
                 width={1600}
                 height={858}
-                sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                sizes="(max-width: 640px) calc(100vw - 32px), 1000px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
               />
