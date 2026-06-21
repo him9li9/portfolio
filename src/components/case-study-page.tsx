@@ -408,7 +408,7 @@ export function CaseStudyPage() {
               настройки SIM и роуминга.
             </p>
           </div>
-          <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-8 sm:py-10">
+          <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-8">
             <div className="mx-auto flex w-full max-w-[845px] items-center justify-center gap-4 px-4 sm:gap-6 sm:px-0">
               <Image
                 alt="Экран регистрации MCN Softphone"
@@ -1034,7 +1034,7 @@ export function CaseStudyPage() {
           onTouchMove={(event) => event.preventDefault()}
         >
           <div className="lightbox-backdrop absolute inset-0" />
-          <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[28px] bg-[#1c1c1c] p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
+          <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[12px] bg-[#1c1c1c] p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
             <div className="absolute right-3 top-3 z-10 flex gap-2 sm:right-6 sm:top-6">
               <button
                 type="button"
