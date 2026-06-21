@@ -501,7 +501,7 @@ export function CaseStudyPage() {
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%]">
               <li>
                 <span className="font-semibold">Растущие затраты на поддержку</span>
-                {` — 40% NST (обращений) — вопросы про статус аккаунта и списания, которые можно было бы закрыть сразу в приложении`}
+                {` — 40% обращений в поддержку касались статуса аккаунта и списаний — вопросов, которые можно было закрыть сразу в приложении.`}
               </li>
             </ul>
             <p className="text-[18px] leading-[160%]">
@@ -937,7 +937,7 @@ export function CaseStudyPage() {
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">3</span>
                 </div>
                 <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
-                  шагов до звонка
+                  шага до звонка
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
