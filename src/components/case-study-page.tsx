@@ -524,7 +524,7 @@ export function CaseStudyPage() {
                     {stage.label}
                   </span>
                   {index < workStages.length - 1 ? (
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4 brightness-0 invert-[51%]" />
                   ) : null}
                 </div>
               ))}
@@ -940,7 +940,7 @@ export function CaseStudyPage() {
                 <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">8</span>
                   <span className="inline-flex h-10 items-center">
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                    <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">3</span>
                 </div>
@@ -962,7 +962,7 @@ export function CaseStudyPage() {
                 <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">15</span>
                   <span className="inline-flex h-10 items-center">
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                    <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">22</span>
                   <span className="inline-flex h-10 items-end pb-[5px] text-[18px] font-bold leading-none">%</span>
@@ -975,7 +975,7 @@ export function CaseStudyPage() {
                 <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">40</span>
                   <span className="inline-flex h-10 items-center">
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                    <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">18</span>
                   <span className="inline-flex h-10 items-end pb-[5px] text-[18px] font-bold leading-none">%</span>
