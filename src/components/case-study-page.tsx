@@ -7,22 +7,22 @@ import { useEffect, useRef, useState } from "react";
 
 const assets = {
   heart: "/figma/heart.svg",
-  phone1: "/figma/Main/phone%201.png?v=20260621",
-  phone2: "/figma/Main/phone%202.png?v=20260621",
-  phone3: "/figma/Main/phone%203.png?v=20260621",
+  phone1: "/figma/Main/phone%201.png?v=20260621b",
+  phone2: "/figma/Main/phone%202.png?v=20260621b",
+  phone3: "/figma/Main/phone%203.png?v=20260621b",
   arrowForward: "/figma/Main/arrow_forward.svg",
-  chartSmall: "/figma/case-chart-small.png",
-  chartBig: "/figma/case-chart-big.png",
-  discoveryActivation: "/figma/case-discovery-activation.png",
-  discoveryCost: "/figma/case-discovery-cost.png",
-  discoveryFeedback1: "/figma/case-discovery-feedback-1.png",
-  discoveryFeedback2: "/figma/case-discovery-feedback-2.png",
-  competitorWhatsapp: "/figma/case-competitor-whatsapp.png",
-  competitorOpenphone: "/figma/case-competitor-openphone.png",
-  userflow: "/figma/case-userflow.png",
-  solutionSuccess: "/figma/case-solution-success.png?v=20260621",
-  solutionCost: "/figma/case-solution-cost.png?v=20260621",
-  solutionError: "/figma/case-solution-error.png?v=20260621"
+  chartSmall: "/figma/case-chart-small.png?v=20260621b",
+  chartBig: "/figma/case-chart-big.png?v=20260621b",
+  discoveryActivation: "/figma/case-discovery-activation.png?v=20260621b",
+  discoveryCost: "/figma/case-discovery-cost.png?v=20260621b",
+  discoveryFeedback1: "/figma/case-discovery-feedback-1.png?v=20260621b",
+  discoveryFeedback2: "/figma/case-discovery-feedback-2.png?v=20260621b",
+  competitorWhatsapp: "/figma/case-competitor-whatsapp.png?v=20260621b",
+  competitorOpenphone: "/figma/case-competitor-openphone.png?v=20260621b",
+  userflow: "/figma/case-userflow.png?v=20260621b",
+  solutionSuccess: "/figma/case-solution-success.png?v=20260621b",
+  solutionCost: "/figma/case-solution-cost.png?v=20260621b",
+  solutionError: "/figma/case-solution-error.png?v=20260621b"
 };
 
 const workStages = [
@@ -52,8 +52,7 @@ export function CaseStudyPage() {
     startOffsetX: 0,
     startOffsetY: 0,
   });
-  const userflowBase = { width: 1000, height: 412 };
-  const userflowDisplay = { width: 1000, height: 412 };
+  const userflowBase = { width: 1000, height: 413 };
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -394,13 +393,12 @@ export function CaseStudyPage() {
               настройки SIM и роуминга.
             </p>
           </div>
-          <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-8">
-            <div className="mx-auto flex w-full max-w-[845px] items-center justify-center gap-4 px-4 sm:gap-6 sm:px-0">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center gap-4 rounded-[12px] bg-[#1c1c1c] px-4 py-8 sm:gap-6 sm:px-[49px]">
               <Image
                 alt="Экран регистрации MCN Softphone"
                 src={assets.phone1}
-                width={735}
-                height={1500}
+                width={900}
+                height={1840}
                 sizes="(max-width: 640px) 27vw, 236px"
                 className="h-auto w-[27%] max-w-[236px] sm:w-[236px]"
                 priority
@@ -408,8 +406,8 @@ export function CaseStudyPage() {
               <Image
                 alt="Экран тарифа MCN Softphone"
                 src={assets.phone2}
-                width={732}
-                height={1500}
+                width={900}
+                height={1840}
                 sizes="(max-width: 640px) 34vw, 280px"
                 className="h-auto w-[34%] max-w-[280px] sm:w-[280px]"
                 priority
@@ -417,13 +415,12 @@ export function CaseStudyPage() {
               <Image
                 alt="Экран звонка MCN Softphone"
                 src={assets.phone3}
-                width={735}
-                height={1500}
+                width={900}
+                height={1840}
                 sizes="(max-width: 640px) 27vw, 236px"
                 className="h-auto w-[27%] max-w-[236px] sm:w-[236px]"
                 priority
               />
-            </div>
           </div>
         </motion.section>
 
@@ -456,16 +453,21 @@ export function CaseStudyPage() {
                 {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен`}
               </li>
             </ul>
-            <div className="mx-auto w-full max-w-[323px]">
-              <Image
-                alt=""
-                src={assets.chartSmall}
-                width={323}
-                height={64}
-                sizes="(max-width: 640px) calc(100vw - 32px), 323px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-              />
+            <div className="flex w-full flex-col items-center justify-center gap-3 rounded-[12px] bg-[#1c1c1c] pb-6 pt-8">
+              <div className="w-full max-w-[323px] px-4 sm:px-0">
+                <Image
+                  alt=""
+                  src={assets.chartSmall}
+                  width={726}
+                  height={144}
+                  sizes="(max-width: 640px) calc(100vw - 64px), 323px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-center text-[14px] leading-[160%] text-[#afafaf]">
+                CR в 1-й звонок, 2023 г.
+              </p>
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%]">
               <li>
@@ -473,16 +475,21 @@ export function CaseStudyPage() {
                 {` — люди скачивали приложение, пробовали разобраться, но из 2.1К новых пользователей возвращалась лишь половина. По данным аналитики retention падает до 15% к четвёртой неделе`}
               </li>
             </ul>
-            <div className="mx-auto w-full max-w-[527px]">
-              <Image
-                alt=""
-                src={assets.chartBig}
-                width={527}
-                height={300}
-                sizes="(max-width: 640px) calc(100vw - 32px), 527px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-              />
+            <div className="flex w-full flex-col items-center justify-center gap-3 rounded-[12px] bg-[#1c1c1c] pb-6 pt-8">
+              <div className="w-full max-w-[527px] px-4 sm:px-0">
+                <Image
+                  alt=""
+                  src={assets.chartBig}
+                  width={1222}
+                  height={696}
+                  sizes="(max-width: 640px) calc(100vw - 64px), 527px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <p className="text-center text-[14px] leading-[160%] text-[#afafaf]">
+                Retention MCN Softphone, 2023 г.
+              </p>
             </div>
             <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%]">
               <li>
@@ -567,16 +574,21 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="w-full">
-              <Image
-                alt=""
-                src={assets.discoveryActivation}
-                width={800}
-                height={757}
-                sizes="(max-width: 640px) calc(100vw - 32px), 1000px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-              />
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-6 rounded-[12px] bg-[#1c1c1c] pb-6 pt-8">
+              <div className="w-full max-w-[800px] px-4 sm:px-0">
+                <Image
+                  alt=""
+                  src={assets.discoveryActivation}
+                  width={3512}
+                  height={3324}
+                  sizes="(max-width: 640px) calc(100vw - 64px), 800px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+              <p className="px-4 text-center text-[14px] leading-[160%] text-[#afafaf] sm:px-0">
+                Анализ текущего userflow (регистрация · покупка номера · звонок)
+              </p>
             </div>
 
             <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
@@ -591,13 +603,13 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] py-6 sm:mx-0">
+            <div className="-mx-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] py-8 sm:mx-0">
               <div className="mx-auto w-full max-w-[427px] px-4 sm:px-0">
                 <Image
                   alt=""
                   src={assets.discoveryCost}
-                  width={427}
-                  height={400}
+                  width={1070}
+                  height={1002}
                   sizes="(max-width: 640px) calc(100vw - 32px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
@@ -617,13 +629,13 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] py-6 sm:mx-0">
+            <div className="-mx-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] py-8 sm:mx-0">
               <div className="mx-auto flex w-full max-w-[427px] flex-col gap-4 px-4 sm:px-0">
                 <Image
                   alt=""
                   src={assets.discoveryFeedback1}
-                  width={427}
-                  height={136}
+                  width={1044}
+                  height={332}
                   sizes="(max-width: 640px) calc(100vw - 32px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
@@ -631,8 +643,8 @@ export function CaseStudyPage() {
                 <Image
                   alt=""
                   src={assets.discoveryFeedback2}
-                  width={427}
-                  height={103}
+                  width={2116}
+                  height={512}
                   sizes="(max-width: 640px) calc(100vw - 32px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
@@ -655,20 +667,20 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="w-full">
-              <div className="mx-auto w-full max-w-[800px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-3 rounded-[12px] bg-[#1c1c1c] py-8">
+              <div className="w-full max-w-[800px] px-4 sm:px-0">
                 <Image
                   alt=""
                   src={assets.competitorWhatsapp}
-                  width={600}
-                  height={300}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                  width={3104}
+                  height={1550}
+                  sizes="(max-width: 640px) calc(100vw - 64px), 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 />
               </div>
-              <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#afafaf]">
-                WhatsApp (регистрация · выбор контакта · звонок)
+              <p className="px-4 text-center text-[14px] leading-[160%] text-[#afafaf] sm:px-0">
+                WhatsApp  (регистрация · выбор контакта · звонок)
               </p>
             </div>
 
@@ -678,20 +690,20 @@ export function CaseStudyPage() {
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
 
-            <div className="w-full">
-              <div className="mx-auto w-full max-w-[800px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-3 rounded-[12px] bg-[#1c1c1c] py-8">
+              <div className="w-full max-w-[1000px] px-4 sm:px-0">
                 <Image
                   alt=""
                   src={assets.competitorOpenphone}
-                  width={754}
-                  height={300}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                  width={3901}
+                  height={1552}
+                  sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 />
               </div>
-              <p className="mt-4 text-center text-[14px] leading-[1.4] text-[#afafaf]">
-                Open Phone (выбор номера · регистрация · покупка номера · звонок)
+              <p className="px-4 text-center text-[14px] leading-[160%] text-[#afafaf] sm:px-0">
+                Open Phone  (выбор номера · регистрация · покупка номера · звонок)
               </p>
             </div>
 
@@ -759,8 +771,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-8">
-              <div className="mx-auto w-full max-w-[1000px] px-4 sm:px-0">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-6 rounded-[12px] bg-[#1c1c1c] pb-6 pt-8">
+              <div className="w-full max-w-[1000px] px-4 sm:px-0">
                 <button
                   type="button"
                   aria-label="Open userflow"
@@ -770,15 +782,15 @@ export function CaseStudyPage() {
                   <Image
                     alt=""
                     src={assets.userflow}
-                    width={userflowDisplay.width}
-                    height={userflowDisplay.height}
-                    sizes="(max-width: 640px) calc(100vw - 32px), 1000px"
+                    width={4096}
+                    height={1690}
+                    sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                   />
                 </button>
               </div>
-              <p className="mt-4 px-4 text-center text-[14px] leading-[1.4] text-[#9e9e9e] sm:px-0">
+              <p className="px-4 text-center text-[14px] leading-[160%] text-[#9e9e9e] sm:px-0">
                 Новый userflow 1-го звонка (регистрация · покупка номера · звонок)
               </p>
             </div>
@@ -825,14 +837,14 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-6">
-            <div className="mx-auto w-full max-w-[845px] px-4 sm:px-0">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-[#1c1c1c] py-8">
+            <div className="w-full max-w-[845px] px-4 sm:px-0">
               <Image
                 alt=""
                 src={assets.solutionSuccess}
-                width={2400}
-                height={1347}
-                sizes="(max-width: 640px) calc(100vw - 32px), 845px"
+                width={3148}
+                height={1999}
+                sizes="(max-width: 640px) calc(100vw - 64px), 845px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
               />
@@ -851,14 +863,14 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-6">
-            <div className="mx-auto w-full max-w-[1000px] px-4 sm:px-0">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-[#1c1c1c] py-8">
+            <div className="w-full max-w-[1000px] px-4 sm:px-0">
               <Image
                 alt=""
                 src={assets.solutionCost}
-                width={1600}
-                height={800}
-                sizes="(max-width: 640px) calc(100vw - 32px), 1000px"
+                width={3780}
+                height={1999}
+                sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
               />
@@ -879,14 +891,14 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 w-screen -translate-x-1/2 bg-[#1c1c1c] py-6">
-            <div className="mx-auto w-full max-w-[1000px] px-4 sm:px-0">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-[#1c1c1c] py-8">
+            <div className="w-full max-w-[1000px] px-4 sm:px-0">
               <Image
                 alt=""
                 src={assets.solutionError}
-                width={1600}
-                height={858}
-                sizes="(max-width: 640px) calc(100vw - 32px), 1000px"
+                width={3780}
+                height={2020}
+                sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
               />
