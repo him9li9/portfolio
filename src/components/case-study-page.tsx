@@ -707,12 +707,14 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-4">
-              <h3 className="text-[24px] font-semibold leading-[32px]">Гипотезы</h3>
-              <p className="text-[18px] leading-[160%]">
-                На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками продукта.
-              </p>
-              <div className="grid gap-5 sm:grid-cols-2">
+            <div className="flex max-w-[800px] flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <h3 className="text-[24px] font-semibold leading-[32px]">Гипотезы</h3>
+                <p className="text-[18px] leading-[160%]">
+                  На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками продукта.
+                </p>
+              </div>
+              <div className="grid gap-5 sm:grid-cols-[repeat(2,387px)]">
                 <div className="flex flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5">
                   <p className="text-[18px] font-semibold leading-[160%]">1. Ясность на старте</p>
                   <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
