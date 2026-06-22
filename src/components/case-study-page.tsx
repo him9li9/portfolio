@@ -712,37 +712,48 @@ export function CaseStudyPage() {
               <p className="text-[18px] leading-[160%]">
                 На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками продукта.
               </p>
-              <div className="flex flex-col gap-4 text-[18px] leading-[160%]">
-                <div className="flex flex-col gap-2">
-                  <p className="font-semibold">1. Ясность на старте</p>
-                  <p>
-                    Если пользователь будет понимать, на каком этапе подключения находится и когда
-                    сможет начать звонить, снизится отток и вырастет конверсия в первый звонок,
+              <div className="grid gap-5 sm:grid-cols-2">
+                <div className="flex flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5">
+                  <p className="text-[18px] font-semibold leading-[160%]">1. Ясность на старте</p>
+                  <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                    Если пользователь понимает, на каком этапе подключения находится и когда сможет
+                    начать звонить
+                  </p>
+                  <p className="text-[16px] leading-[160%]">
+                    <span className="font-semibold">→ вырастет конверсия в первый звонок, </span>
                     потому что уменьшится неопределённость.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <p className="font-semibold">2. Прозрачность стоимости</p>
-                  <p>
-                    Если пользователь будет видеть стоимость звонка и состояние баланса до начала
-                    вызова, количество обращений в поддержку по вопросам списаний снизится, потому
-                    что условия тарификации станут более прозрачными.
+                <div className="flex flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5">
+                  <p className="text-[18px] font-semibold leading-[160%]">2. Прозрачность стоимости</p>
+                  <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                    Если пользователь видит стоимость звонка и состояние баланса до начала вызова
+                  </p>
+                  <p className="text-[16px] leading-[160%]">
+                    <span className="font-semibold">→ снизится количество обращений в поддержку, </span>
+                    потому что условия тарификации станут более прозрачными.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <p className="font-semibold">3. Доступность ответов</p>
-                  <p>
-                    Если пользователь сможет быстро находить ответы на свои вопросы внутри
-                    приложения, количество повторных обращений в поддержку снизится, потому что вся
-                    информация будет доступна в одном месте.
+                <div className="flex flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5">
+                  <p className="text-[18px] font-semibold leading-[160%]">3. Доступность ответов</p>
+                  <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                    Если ответы на частые вопросы доступны внутри приложения
+                  </p>
+                  <p className="text-[16px] leading-[160%]">
+                    <span className="font-semibold">
+                      → количество повторных обращений в поддержку снизится,
+                    </span>{" "}
+                    потому что вся информация будет доступна в одном месте.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <p className="font-semibold">4. Очевидность следующего шага</p>
-                  <p>
-                    Если следующие действия внутри приложения станут более очевидными, количество
-                    обращений в поддержку снизится, потому что пользователю будет проще
-                    ориентироваться.
+                <div className="flex flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5">
+                  <p className="text-[18px] font-semibold leading-[160%]">4. Очевидность следующего шага</p>
+                  <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                    Если пользователь видит следующий шаг после ошибки или незавершённого действия
+                  </p>
+                  <p className="text-[16px] leading-[160%]">
+                    <span className="font-semibold">→ количество обращений в поддержку снизится,</span>{" "}
+                    потому что пользователю будет проще вернуться в сценарий.
                   </p>
                 </div>
               </div>
