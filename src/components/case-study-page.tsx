@@ -707,15 +707,15 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="flex max-w-[800px] flex-col gap-6">
+            <div className="flex w-full max-w-[800px] flex-col gap-6">
               <div className="flex flex-col gap-4">
                 <h3 className="text-[24px] font-semibold leading-[32px]">Гипотезы</h3>
                 <p className="text-[18px] leading-[160%]">
                   На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками продукта.
                 </p>
               </div>
-              <div className="grid gap-5 sm:grid-cols-[repeat(2,387px)]">
-                <div className="flex flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5">
+              <div className="flex flex-col gap-5 sm:flex-row sm:flex-wrap">
+                <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:h-[217px] sm:w-[387px]">
                   <p className="text-[18px] font-semibold leading-[160%]">1. Ясность на старте</p>
                   <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
                     Если пользователь понимает, на каком этапе подключения находится и когда сможет
@@ -726,7 +726,7 @@ export function CaseStudyPage() {
                     потому что уменьшится неопределённость.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5">
+                <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:h-[217px] sm:w-[387px]">
                   <p className="text-[18px] font-semibold leading-[160%]">2. Прозрачность стоимости</p>
                   <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
                     Если пользователь видит стоимость звонка и состояние баланса до начала вызова
@@ -736,7 +736,7 @@ export function CaseStudyPage() {
                     потому что условия тарификации станут более прозрачными.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5">
+                <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:h-[217px] sm:w-[387px]">
                   <p className="text-[18px] font-semibold leading-[160%]">3. Доступность ответов</p>
                   <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
                     Если ответы на частые вопросы доступны внутри приложения
@@ -748,7 +748,7 @@ export function CaseStudyPage() {
                     потому что вся информация будет доступна в одном месте.
                   </p>
                 </div>
-                <div className="flex flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5">
+                <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:h-[217px] sm:w-[387px]">
                   <p className="text-[18px] font-semibold leading-[160%]">4. Очевидность следующего шага</p>
                   <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
                     Если пользователь видит следующий шаг после ошибки или незавершённого действия
