@@ -190,6 +190,7 @@ export function WorkCasePage() {
             sizes="(max-width: 800px) calc(100vw - 32px), 800px"
             className="h-auto w-full rounded-[8px] object-contain"
             priority
+          quality={100}
           />
         </motion.section>
 
@@ -307,6 +308,7 @@ export function WorkCasePage() {
                 sizes="(max-width: 800px) calc(100vw - 80px), 700px"
                 className="h-auto w-full rounded-[8px] object-contain"
                 loading="lazy"
+              quality={100}
               />
               <p className="text-center text-[14px] leading-[160%] text-[#828282]">
                 1 - сценарии, 2 - настройки, 3 - элементы, 4 - канвас с блоками и переходами
@@ -345,6 +347,7 @@ export function WorkCasePage() {
             sizes="(max-width: 800px) calc(100vw - 32px), 800px"
             className="h-auto w-full object-contain"
             loading="lazy"
+          quality={100}
           />
 
           <div className="flex flex-col gap-2">
@@ -397,6 +400,7 @@ export function WorkCasePage() {
             sizes="(max-width: 800px) calc(100vw - 32px), 800px"
             className="h-auto w-full object-contain"
             loading="lazy"
+          quality={100}
           />
 
           <p className="text-[18px] leading-[160%]">
@@ -598,6 +602,7 @@ export function WorkCasePage() {
             sizes="(max-width: 800px) calc(100vw - 32px), 800px"
             className="h-auto w-full object-contain"
             loading="lazy"
+          quality={100}
           />
 
           <div className="flex flex-col gap-4">
@@ -624,6 +629,7 @@ export function WorkCasePage() {
                     sizes="(max-width: 640px) calc(100vw - 80px), 330px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
+                  quality={100}
                   />
                   <p className="text-center text-[14px] leading-[160%] text-[#afafaf]">Было</p>
                 </div>
@@ -636,6 +642,7 @@ export function WorkCasePage() {
                     sizes="(max-width: 640px) calc(100vw - 80px), 330px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
+                  quality={100}
                   />
                   <p className="text-center text-[14px] leading-[160%] text-[#afafaf]">Стало</p>
                 </div>
@@ -666,6 +673,7 @@ export function WorkCasePage() {
               sizes="(max-width: 800px) calc(100vw - 32px), 800px"
               className="h-auto w-full object-contain"
               loading="lazy"
+            quality={100}
             />
           </div>
 
@@ -690,6 +698,7 @@ export function WorkCasePage() {
                 sizes="(max-width: 800px) calc(100vw - 80px), 595px"
                 className="mx-auto h-auto w-full max-w-[595px] object-contain"
                 loading="lazy"
+              quality={100}
               />
               <p className="mt-2 text-center text-[14px] leading-[160%] text-[#afafaf]">
                 Флоу добавления элемента на схему и inline редактирования
@@ -711,6 +720,7 @@ export function WorkCasePage() {
               sizes="(max-width: 800px) calc(100vw - 32px), 800px"
               className="h-auto w-full object-contain"
               loading="lazy"
+            quality={100}
             />
           </div>
 
@@ -739,6 +749,7 @@ export function WorkCasePage() {
                 sizes="(max-width: 800px) calc(100vw - 80px), 595px"
                 className="mx-auto h-auto w-full max-w-[595px] object-contain"
                 loading="lazy"
+              quality={100}
               />
               <p className="mt-2 text-center text-[14px] leading-[160%] text-[#afafaf]">
                 На большом масштабе пользователь ориентируется с помощью smart zoom и minimap
@@ -772,6 +783,7 @@ export function WorkCasePage() {
                 sizes="(max-width: 800px) calc(100vw - 32px), 800px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+              quality={100}
               />
               <p className="mt-2 text-center text-[14px] leading-[160%] text-[#afafaf]">
                 1 - актуальный статус, 2 - публикация сценария

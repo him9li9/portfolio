@@ -107,6 +107,7 @@ export function HomePage() {
                 priority
                 sizes="120px"
                 className="h-full w-full object-cover"
+              quality={100}
               />
             </div>
             <h1 className="text-left text-[32px] font-semibold leading-[40px] sm:text-center">
@@ -145,6 +146,7 @@ export function HomePage() {
                       priority
                       sizes="(max-width: 640px) 27vw, 205px"
                       className="h-auto w-full"
+                    quality={100}
                     />
                   </div>
                   <div className="relative h-auto w-[34%] max-w-[256px]">
@@ -156,6 +158,7 @@ export function HomePage() {
                       priority
                       sizes="(max-width: 640px) 28vw, 244px"
                       className="h-auto w-full"
+                    quality={100}
                     />
                   </div>
                   <div className="relative h-auto w-[27%] max-w-[205px]">
@@ -167,6 +170,7 @@ export function HomePage() {
                       priority
                       sizes="(max-width: 640px) 27vw, 205px"
                       className="h-auto w-full"
+                    quality={100}
                     />
                   </div>
                 </div>
@@ -225,6 +229,7 @@ export function HomePage() {
                     height={1500}
                     sizes="(max-width: 640px) calc(100vw - 32px), 800px"
                     className="h-auto w-full"
+                  quality={100}
                   />
                 </div>
               </Link>

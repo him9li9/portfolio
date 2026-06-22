@@ -402,6 +402,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 27vw, 236px"
                 className="h-auto w-[27%] max-w-[236px] sm:w-[236px]"
                 priority
+              quality={100}
               />
               <Image
                 alt="Экран тарифа MCN Softphone"
@@ -411,6 +412,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 34vw, 280px"
                 className="h-auto w-[34%] max-w-[280px] sm:w-[280px]"
                 priority
+              quality={100}
               />
               <Image
                 alt="Экран звонка MCN Softphone"
@@ -420,6 +422,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) 27vw, 236px"
                 className="h-auto w-[27%] max-w-[236px] sm:w-[236px]"
                 priority
+              quality={100}
               />
           </div>
         </motion.section>
@@ -463,6 +466,7 @@ export function CaseStudyPage() {
                   sizes="(max-width: 640px) calc(100vw - 64px), 323px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
+                quality={100}
                 />
               </div>
               <p className="text-center text-[14px] leading-[160%] text-[#afafaf]">
@@ -485,6 +489,7 @@ export function CaseStudyPage() {
                   sizes="(max-width: 640px) calc(100vw - 64px), 527px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
+                quality={100}
                 />
               </div>
               <p className="text-center text-[14px] leading-[160%] text-[#afafaf]">
@@ -584,6 +589,7 @@ export function CaseStudyPage() {
                   sizes="(max-width: 640px) calc(100vw - 64px), 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
+                quality={100}
                 />
               </div>
               <p className="px-4 text-center text-[14px] leading-[160%] text-[#afafaf] sm:px-0">
@@ -613,6 +619,7 @@ export function CaseStudyPage() {
                   sizes="(max-width: 640px) calc(100vw - 32px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
+                quality={100}
                 />
               </div>
             </div>
@@ -639,6 +646,7 @@ export function CaseStudyPage() {
                   sizes="(max-width: 640px) calc(100vw - 32px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
+                quality={100}
                 />
                 <Image
                   alt=""
@@ -648,6 +656,7 @@ export function CaseStudyPage() {
                   sizes="(max-width: 640px) calc(100vw - 32px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
+                quality={100}
                 />
               </div>
             </div>
@@ -677,6 +686,7 @@ export function CaseStudyPage() {
                   sizes="(max-width: 640px) calc(100vw - 64px), 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
+                quality={100}
                 />
               </div>
               <p className="px-4 text-center text-[14px] leading-[160%] text-[#afafaf] sm:px-0">
@@ -700,6 +710,7 @@ export function CaseStudyPage() {
                   sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
+                quality={100}
                 />
               </div>
               <p className="px-4 text-center text-[14px] leading-[160%] text-[#afafaf] sm:px-0">
@@ -800,6 +811,7 @@ export function CaseStudyPage() {
                     sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
+                  quality={100}
                   />
                 </button>
               </div>
@@ -863,6 +875,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) calc(100vw - 64px), 845px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+              quality={100}
               />
             </div>
           </div>
@@ -892,6 +905,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+              quality={100}
               />
             </div>
           </div>
@@ -923,6 +937,7 @@ export function CaseStudyPage() {
                 sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
+              quality={100}
               />
             </div>
           </div>
@@ -1126,6 +1141,7 @@ export function CaseStudyPage() {
                     className="pointer-events-none h-full w-full select-none object-contain"
                     draggable={false}
                     priority
+                  quality={100}
                   />
                 </div>
               </div>
