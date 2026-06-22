@@ -939,7 +939,9 @@ export function CaseStudyPage() {
               <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
                 <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">8</span>
-                  <span className="inline-flex h-10 items-center text-[18px] font-bold leading-none">→</span>
+                  <span className="inline-flex h-10 items-center">
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                  </span>
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">3</span>
                 </div>
                 <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
@@ -959,7 +961,9 @@ export function CaseStudyPage() {
               <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
                 <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">15</span>
-                  <span className="inline-flex h-10 items-center text-[18px] font-bold leading-none">→</span>
+                  <span className="inline-flex h-10 items-center">
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                  </span>
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">22</span>
                   <span className="inline-flex h-10 items-end pb-[5px] text-[18px] font-bold leading-none">%</span>
                 </div>
@@ -970,7 +974,9 @@ export function CaseStudyPage() {
               <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-4 py-3 lg:w-[184px]">
                 <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">40</span>
-                  <span className="inline-flex h-10 items-center text-[18px] font-bold leading-none">→</span>
+                  <span className="inline-flex h-10 items-center">
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                  </span>
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">18</span>
                   <span className="inline-flex h-10 items-end pb-[5px] text-[18px] font-bold leading-none">%</span>
                 </div>
