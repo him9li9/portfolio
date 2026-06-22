@@ -711,7 +711,7 @@ export function CaseStudyPage() {
               <div className="flex flex-col gap-4">
                 <h3 className="text-[24px] font-semibold leading-[32px]">Гипотезы</h3>
                 <p className="text-[18px] leading-[160%]">
-                  На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками продукта.
+                  На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками:
                 </p>
               </div>
               <div className="flex flex-col gap-5 sm:flex-row sm:flex-wrap">
