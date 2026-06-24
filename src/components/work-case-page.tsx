@@ -411,50 +411,70 @@ export function WorkCasePage() {
 
           <div className="h-px w-full bg-[#282828]" />
 
-          <div className="flex flex-col gap-4">
-            <h3 className="text-[24px] font-semibold leading-[32px]">Гипотезы</h3>
-            <p className="text-[18px] leading-[160%]">
-              На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками
-              продукта.
-            </p>
-            <div className="flex flex-col gap-4 text-[18px] leading-[160%]">
-              <div className="flex flex-col gap-2">
-                <p className="font-semibold">1. Организация сценариев</p>
-                <p>
-                  Если сценарии станут более структурированными, сократится время на поиск и
-                  редактирование, потому что пользователям будет проще ориентироваться в них.
+          <div className="flex w-full max-w-[800px] flex-col gap-6">
+            <div className="flex flex-col gap-4">
+              <h3 className="text-[24px] font-semibold leading-[32px]">Гипотезы</h3>
+              <p className="text-[18px] leading-[160%]">
+                На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками:
+              </p>
+            </div>
+            <div className="flex flex-col gap-5 sm:flex-row sm:flex-wrap">
+              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:min-h-[217px] sm:w-[387px]">
+                <p className="text-[18px] font-semibold leading-[160%]">1. Организация сценариев</p>
+                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                  Если сценарии станут более структурированными
+                </p>
+                <p className="text-[16px] leading-[160%]">
+                  <span className="font-semibold">
+                    → сократится время на поиск и редактирование,
+                  </span>{" "}
+                  потому что пользователям будет проще ориентироваться в них.
                 </p>
               </div>
-              <div className="flex flex-col gap-2">
-                <p className="font-semibold">2. Единый контекст</p>
-                <p>
-                  Если пользователь будет работать со сценарием в рамках одного контекста,
-                  сократится количество ошибок и нагрузка на поддержку, потому что изменения
-                  станут более предсказуемыми.
+              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:min-h-[217px] sm:w-[387px]">
+                <p className="text-[18px] font-semibold leading-[160%]">2. Единый контекст</p>
+                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                  Если пользователь будет работать со сценарием в рамках одного контекста
+                </p>
+                <p className="text-[16px] leading-[160%]">
+                  <span className="font-semibold">
+                    → сократится количество ошибок и нагрузка на поддержку,
+                  </span>{" "}
+                  потому что изменения станут более предсказуемыми.
                 </p>
               </div>
-              <div className="flex flex-col gap-2">
-                <p className="font-semibold">3. Понятные сущности</p>
-                <p>
-                  Если пользователь быстро разберется, зачем нужны элементы, снизится порог входа и
-                  сократится time-to-change, потому что сможет оценивать их влияние на сценарий в
-                  целом.
+              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:min-h-[217px] sm:w-[387px]">
+                <p className="text-[18px] font-semibold leading-[160%]">3. Понятные сущности</p>
+                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                  Если пользователь быстро разберется, зачем нужны элементы
+                </p>
+                <p className="text-[16px] leading-[160%]">
+                  <span className="font-semibold">
+                    → снизится порог входа и сократится time-to-change,
+                  </span>{" "}
+                  потому что сможет оценивать их влияние на сценарий в целом.
                 </p>
               </div>
-              <div className="flex flex-col gap-2">
-                <p className="font-semibold">4. Читаемость</p>
-                <p>
-                  Если пользователь сможет считывать структуру сценария даже при его росте,
-                  сократится время на редактирование, потому что сценарий будет восприниматься как
-                  единая система.
+              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:min-h-[217px] sm:w-[387px]">
+                <p className="text-[18px] font-semibold leading-[160%]">4. Читаемость</p>
+                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                  Если пользователь сможет считывать структуру сценария даже при его росте
+                </p>
+                <p className="text-[16px] leading-[160%]">
+                  <span className="font-semibold">→ сократится время на редактирование,</span>{" "}
+                  потому что сценарий будет восприниматься как единая система.
                 </p>
               </div>
-              <div className="flex flex-col gap-2">
-                <p className="font-semibold">5. Безопасные изменения</p>
-                <p>
-                  Если пользователь будет понимать, что любые изменения можно проконтролировать,
-                  уменьшится зависимость от разработки и вырастет self-service rate, потому что
-                  исчезнет страх что-то сломать.
+              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:min-h-[217px] sm:w-[387px]">
+                <p className="text-[18px] font-semibold leading-[160%]">5. Безопасные изменения</p>
+                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                  Если пользователь будет понимать, что любые изменения можно проконтролировать
+                </p>
+                <p className="text-[16px] leading-[160%]">
+                  <span className="font-semibold">
+                    → уменьшится зависимость от разработки и вырастет self-service rate,
+                  </span>{" "}
+                  потому что исчезнет страх что-то сломать.
                 </p>
               </div>
             </div>
