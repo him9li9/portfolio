@@ -415,66 +415,58 @@ export function WorkCasePage() {
             <div className="flex flex-col gap-4">
               <h3 className="text-[24px] font-semibold leading-[32px]">Гипотезы</h3>
               <p className="text-[18px] leading-[160%]">
-                На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками:
+                На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками продукта.
               </p>
             </div>
-            <div className="flex flex-col gap-5 sm:flex-row sm:flex-wrap">
-              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:min-h-[217px] sm:w-[387px]">
-                <p className="text-[18px] font-semibold leading-[160%]">1. Организация сценариев</p>
-                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
-                  Если сценарии станут более структурированными
+            <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:h-[240px] sm:w-[261px]">
+                <p className="text-[16px] font-semibold leading-[160%]">1. Организация сценариев</p>
+                <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
+                  Поиск, группировка и статусы должны помочь пользователям быстрее находить нужные
+                  сценарии и переключаться между ними.
                 </p>
-                <p className="text-[16px] leading-[160%]">
-                  <span className="font-semibold">
-                    → сократится время на поиск и редактирование,
-                  </span>{" "}
-                  потому что пользователям будет проще ориентироваться в них.
+                <p className="text-[14px] leading-[160%]">
+                  <span className="font-semibold">Метрика: </span>time-to-change
                 </p>
               </div>
-              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:min-h-[217px] sm:w-[387px]">
-                <p className="text-[18px] font-semibold leading-[160%]">2. Единый контекст</p>
-                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
-                  Если пользователь будет работать со сценарием в рамках одного контекста
+              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[262px]">
+                <p className="text-[16px] font-semibold leading-[160%]">2. Единый контекст</p>
+                <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
+                  Если схема и настройки находятся в одном рабочем пространстве, пользователи
+                  меньше теряют контекст и реже ошибаются при изменениях.
                 </p>
-                <p className="text-[16px] leading-[160%]">
-                  <span className="font-semibold">
-                    → сократится количество ошибок и нагрузка на поддержку,
-                  </span>{" "}
-                  потому что изменения станут более предсказуемыми.
+                <p className="text-[14px] leading-[160%]">
+                  <span className="font-semibold">Метрика: </span>количество ошибок после публикации
                 </p>
               </div>
-              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:min-h-[217px] sm:w-[387px]">
-                <p className="text-[18px] font-semibold leading-[160%]">3. Понятные сущности</p>
-                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
-                  Если пользователь быстро разберется, зачем нужны элементы
+              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[261px]">
+                <p className="text-[16px] font-semibold leading-[160%]">3. Понятные сущности</p>
+                <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
+                  Описание элементов через поведение должно помочь пользователям быстрее понимать,
+                  какой блок нужен и как он повлияет на сценарий.
                 </p>
-                <p className="text-[16px] leading-[160%]">
-                  <span className="font-semibold">
-                    → снизится порог входа и сократится time-to-change,
-                  </span>{" "}
-                  потому что сможет оценивать их влияние на сценарий в целом.
+                <p className="text-[14px] leading-[160%]">
+                  <span className="font-semibold">Метрика: </span>time-to-change, обращения в поддержку
                 </p>
               </div>
-              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:min-h-[217px] sm:w-[387px]">
-                <p className="text-[18px] font-semibold leading-[160%]">4. Читаемость</p>
-                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
-                  Если пользователь сможет считывать структуру сценария даже при его росте
+              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[395px]">
+                <p className="text-[16px] font-semibold leading-[160%]">4. Читаемость</p>
+                <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
+                  Визуальная иерархия, масштабирование и миникарта должны помочь пользователям
+                  считывать структуру сценария даже при росте схемы.
                 </p>
-                <p className="text-[16px] leading-[160%]">
-                  <span className="font-semibold">→ сократится время на редактирование,</span>{" "}
-                  потому что сценарий будет восприниматься как единая система.
+                <p className="text-[14px] leading-[160%]">
+                  <span className="font-semibold">Метрика: </span>time-to-change
                 </p>
               </div>
-              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:min-h-[217px] sm:w-[387px]">
-                <p className="text-[18px] font-semibold leading-[160%]">5. Безопасные изменения</p>
-                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
-                  Если пользователь будет понимать, что любые изменения можно проконтролировать
+              <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[395px]">
+                <p className="text-[16px] font-semibold leading-[160%]">5. Безопасные изменения</p>
+                <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
+                  Статусы, проверка и публикация должны снизить страх сломать рабочий сценарий и
+                  позволить чаще вносить изменения без разработки.
                 </p>
-                <p className="text-[16px] leading-[160%]">
-                  <span className="font-semibold">
-                    → уменьшится зависимость от разработки и вырастет self-service rate,
-                  </span>{" "}
-                  потому что исчезнет страх что-то сломать.
+                <p className="text-[14px] leading-[160%]">
+                  <span className="font-semibold">Метрика: </span>self-service rate, количество ошибок
                 </p>
               </div>
             </div>
