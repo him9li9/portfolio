@@ -728,41 +728,41 @@ export function CaseStudyPage() {
               <div className="flex flex-col gap-5 sm:flex-row sm:flex-wrap">
                 <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[390px]">
                   <p className="text-[18px] font-semibold leading-[160%]">1. Ясность на старте</p>
-                  <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                  <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
                     Если пользователь понимает, на каком этапе онбординга находится и когда сможет
                     начать звонить, ему проще дойти до первого звонка.
                   </p>
-                  <p className="text-[16px] leading-[160%]">
+                  <p className="text-[14px] leading-[160%]">
                     <span className="font-semibold">Метрика: </span>CR в первый звонок
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[390px]">
                   <p className="text-[18px] font-semibold leading-[160%]">2. Прозрачность стоимости</p>
-                  <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                  <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
                     Если пользователь видит стоимость звонка и состояние баланса до начала вызова,
                     условия тарификации станут более прозрачными.
                   </p>
-                  <p className="text-[16px] leading-[160%]">
+                  <p className="text-[14px] leading-[160%]">
                     <span className="font-semibold">Метрика: </span>retention, обращения в поддержку
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[390px]">
                   <p className="text-[18px] font-semibold leading-[160%]">3. Доступность ответов</p>
-                  <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                  <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
                     Если ответы на частые вопросы доступны внутри приложения, он реже будет
                     прерывать сценарий и обращаться в поддержку.
                   </p>
-                  <p className="text-[16px] leading-[160%]">
+                  <p className="text-[14px] leading-[160%]">
                     <span className="font-semibold">Метрика: </span>обращения в поддержку
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[390px]">
                   <p className="text-[18px] font-semibold leading-[160%]">4. Очевидность следующего шага</p>
-                  <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                  <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
                     Если после ошибки или незавершённого действия пользователь понимает, что делать
                     дальше, ему проще вернуться к действию.
                   </p>
-                  <p className="text-[16px] leading-[160%]">
+                  <p className="text-[14px] leading-[160%]">
                     <span className="font-semibold">Метрика: </span>retention, обращения в поддержку
                   </p>
                 </div>
