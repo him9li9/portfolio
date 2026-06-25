@@ -334,32 +334,32 @@ export function CaseStudyPage() {
 
 
   return (
-    <main className="bg-[#171717] text-white">
+    <main className="bg-primary text-primary">
       <motion.header
         initial={{ opacity: 0, y: -12 }}
         animate={hideTopbar ? { opacity: 0, y: -12 } : { opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 220, damping: 22, mass: 0.7 }}
-        className="sticky top-0 z-10 h-[74px] w-full bg-[rgba(23,23,23,0.6)] backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
+        className="sticky top-0 z-10 h-[74px] w-full bg-primary/60 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
-        <div className="flex h-full w-full items-center justify-between px-4 py-[13px] sm:px-8">
-          <Link href="/" className="font-oldenburg flex items-center gap-1 text-[18px] leading-[160%]">
+        <div className="flex h-full w-full items-center justify-between px-space-4 py-space-3 sm:px-space-8">
+          <Link href="/" className="font-oldenburg flex items-center gap-space-1 text-body-18">
             <span>nastya</span>
             <span>with</span>
             <img alt="" src={assets.heart} className="h-6 w-6" />
           </Link>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-space-2">
             <motion.a
-              whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
+              whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[16px] leading-[160%]"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16"
               href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
             >
               CV
             </motion.a>
             <motion.a
-              whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
+              whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[16px] leading-[160%]"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16"
               href="https://t.me/him9li9"
             >
               Telegram
@@ -372,28 +372,28 @@ export function CaseStudyPage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-y-[50px] px-4 pb-[80px] pt-[66px] sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-[66px] sm:pb-[100px] md:gap-y-[100px]"
+        className="flex w-full flex-col gap-y-space-16 px-space-4 pb-space-16 pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-space-16 sm:pb-space-16 md:gap-y-space-16"
       >
         <motion.section
           id="overview"
           data-section-anchor="overview"
           variants={item}
-          className="mb-[-18px] scroll-mt-[90px] flex flex-col gap-8 sm:gap-8 md:mb-[-68px]"
+          className="-mb-space-4 scroll-mt-space-16 flex flex-col gap-space-8 sm:gap-space-8 md:-mb-space-16"
         >
-          <div className="flex flex-col gap-4 text-white">
-            <div className="flex flex-col gap-1">
-              <h1 className="text-[40px] font-semibold leading-[48px]">MCN Softphone</h1>
-              <p className="text-[16px] leading-[160%] text-[#c0c0c0]">
+          <div className="flex flex-col gap-space-4 text-primary">
+            <div className="flex flex-col gap-space-1">
+              <h1 className="text-h1">MCN Softphone</h1>
+              <p className="text-body-16 text-secondary">
                 Продуктовый дизайнер · 2024 — н.в.
               </p>
             </div>
-            <p className="text-[18px] leading-[160%]">
+            <p className="text-body-18">
               Мобильное приложение для звонков через интернет и управления личным кабинетом.
               Аудитория — путешественники, которым нужна доступная связь за границей без сложной
               настройки SIM и роуминга.
             </p>
           </div>
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center gap-4 rounded-[12px] bg-[#1c1c1c] px-4 py-8 sm:gap-6 sm:px-[49px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center gap-space-4 rounded-[12px] bg-secondary px-space-4 py-space-8 sm:gap-space-6 sm:px-space-12">
               <Image
                 alt="Экран регистрации MCN Softphone"
                 src={assets.phone1}
@@ -431,33 +431,33 @@ export function CaseStudyPage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="scroll-mt-[90px] flex flex-col gap-8"
+          className="scroll-mt-space-16 flex flex-col gap-space-8"
         >
           <div className="flex flex-col">
-            <h2 className="text-[32px] font-semibold leading-[40px]">О проекте</h2>
-            <p className="mt-4 text-[18px] leading-[160%]">
+            <h2 className="text-h2">О проекте</h2>
+            <p className="mt-space-4 text-body-18">
               Когда я присоединилась к проекту, приложение существовало в формате MVP, но проседала
               основная метрика — количество звонков. Вместе с командой мне предстояло разобраться,
               почему так происходит, и исправить это.
             </p>
-            <div className="mt-8 h-px w-full bg-[#282828]" />
+            <div className="mt-space-8 h-px w-full bg-elevated" />
           </div>
 
-          <div className="flex flex-col gap-4">
-            <h3 className="text-[24px] font-semibold leading-[32px]">Проблема</h3>
-            <p className="text-[18px] leading-[160%]">
+          <div className="flex flex-col gap-space-4">
+            <h3 className="text-h3">Проблема</h3>
+            <p className="text-body-18">
               Первичный анализ показал системную проблему: на критических этапах пользователь не
               понимал статус процесса, стоимость действий и следующий шаг. Это напрямую повлияло
               на ключевые метрики:
             </p>
-            <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%]">
+            <ul className="list-disc space-y-space-4 pl-space-6 text-body-18">
               <li>
-                <span className="font-semibold">Низкая конверсия в первый звонок</span>
+                <span className="text-body-18-semibold">Низкая конверсия в первый звонок</span>
                 {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен`}
               </li>
             </ul>
-            <div className="flex w-full flex-col items-center justify-center gap-3 rounded-[12px] bg-[#1c1c1c] pb-6 pt-8">
-              <div className="w-full max-w-[323px] px-4 sm:px-0">
+            <div className="flex w-full flex-col items-center justify-center gap-space-3 rounded-[12px] bg-secondary pb-space-6 pt-space-8">
+              <div className="w-full max-w-[323px] px-space-4 sm:px-0">
                 <Image
                   alt=""
                   src={assets.chartSmall}
@@ -469,18 +469,18 @@ export function CaseStudyPage() {
                 quality={100}
                 />
               </div>
-              <p className="text-center text-[14px] leading-[160%] text-[#afafaf]">
+              <p className="text-center text-caption-14 text-secondary">
                 CR в 1-й звонок, 2023 г.
               </p>
             </div>
-            <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%]">
+            <ul className="list-disc space-y-space-4 pl-space-6 text-body-18">
               <li>
-                <span className="font-semibold">Низкий Retention</span>
+                <span className="text-body-18-semibold">Низкий Retention</span>
                 {` — люди скачивали приложение, пробовали разобраться, но из 2.1К новых пользователей возвращалась лишь половина. По данным аналитики retention падает до 15% к четвёртой неделе`}
               </li>
             </ul>
-            <div className="flex w-full flex-col items-center justify-center gap-3 rounded-[12px] bg-[#1c1c1c] pb-6 pt-8">
-              <div className="w-full max-w-[527px] px-4 sm:px-0">
+            <div className="flex w-full flex-col items-center justify-center gap-space-3 rounded-[12px] bg-secondary pb-space-6 pt-space-8">
+              <div className="w-full max-w-[527px] px-space-4 sm:px-0">
                 <Image
                   alt=""
                   src={assets.chartBig}
@@ -492,40 +492,40 @@ export function CaseStudyPage() {
                 quality={100}
                 />
               </div>
-              <p className="text-center text-[14px] leading-[160%] text-[#afafaf]">
+              <p className="text-center text-caption-14 text-secondary">
                 Retention MCN Softphone, 2023 г.
               </p>
             </div>
-            <ul className="list-disc space-y-4 pl-6 text-[18px] leading-[160%]">
+            <ul className="list-disc space-y-space-4 pl-space-6 text-body-18">
               <li>
-                <span className="font-semibold">Растущие затраты на поддержку</span>
+                <span className="text-body-18-semibold">Растущие затраты на поддержку</span>
                 {` — 40% обращений в поддержку касались статуса аккаунта и списаний — вопросов, которые можно было закрыть сразу в приложении.`}
               </li>
             </ul>
-            <p className="text-[18px] leading-[160%]">
+            <p className="text-body-18">
               Главная причина снижения метрик — потеря коммуникации между системой и пользователем.
             </p>
           </div>
 
-          <div className="flex flex-col gap-4">
-            <h3 className="text-[24px] font-semibold leading-[32px]">Задача</h3>
-            <p className="text-[18px] leading-[160%]">
+          <div className="flex flex-col gap-space-4">
+            <h3 className="text-h3">Задача</h3>
+            <p className="text-body-18">
               Основная задача проекта состояла в том, чтобы внедрить в продукт систему коммуникации
               с чёткими шагами, подсказками и полной прозрачностью расходов. Это позволит вернуть
               пользователю ощущение контроля и уверенности, сократив отток и нагрузку на поддержку.
             </p>
-            <p className="text-[18px] leading-[160%]">
-              <span className="font-semibold">Метрики успеха</span>
+            <p className="text-body-18">
+              <span className="text-body-18-semibold">Метрики успеха</span>
               {` — рост количества звонков из приложения, снижение повторных обращений в поддержку.`}
             </p>
           </div>
 
-          <div className="flex flex-col gap-3">
-            <h3 className="text-[24px] font-semibold leading-[32px]">Этапы работы</h3>
-            <div className="flex flex-wrap items-center gap-1">
+          <div className="flex flex-col gap-space-3">
+            <h3 className="text-h3">Этапы работы</h3>
+            <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
-                <div key={stage.label} className="flex items-center gap-1">
-                  <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#e6e6e6] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                <div key={stage.label} className="flex items-center gap-space-1">
+                  <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                     {stage.label}
                   </span>
                   {index < workStages.length - 1 ? (
@@ -541,14 +541,14 @@ export function CaseStudyPage() {
           id="discovery"
           data-section-anchor="discovery"
           variants={item}
-          className="scroll-mt-[90px] flex flex-col gap-4"
+          className="scroll-mt-space-16 flex flex-col gap-space-4"
         >
-          <h2 className="text-[32px] font-semibold leading-[40px]">Дискавери</h2>
+          <h2 className="text-h2">Дискавери</h2>
 
-          <div className="flex flex-col gap-8">
-            <div className="text-[18px] leading-[160%]">
+          <div className="flex flex-col gap-space-8">
+            <div className="text-body-18">
               <p>В рамках discovery я опиралась на:</p>
-              <ul className="list-disc space-y-2 pl-6">
+              <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>анализ текущих пользовательских сценариев и логики экранов</li>
                 <li>обращения пользователей в поддержку (частые вопросы и типовые ошибки)</li>
                 <li>обзор аналогичных softphone- и коммуникационных решений</li>
@@ -556,31 +556,31 @@ export function CaseStudyPage() {
               </ul>
             </div>
 
-            <div className="h-px w-full bg-[#282828]" />
+            <div className="h-px w-full bg-elevated" />
 
-            <div className="flex flex-col gap-4">
-              <h3 className="text-[24px] font-semibold leading-[32px]">Анализ текущей версии</h3>
-              <p className="text-[18px] leading-[160%]">
-                <span className="font-semibold">Цель этапа —</span> понять, где именно пользователи теряются, совершают ошибки или тратят
+            <div className="flex flex-col gap-space-4">
+              <h3 className="text-h3">Анализ текущей версии</h3>
+              <p className="text-body-18">
+                <span className="text-body-18-semibold">Цель этапа —</span> понять, где именно пользователи теряются, совершают ошибки или тратят
                 лишнее время, и какие из этих проблем особенно критичны для MVP перед релизом. Поэтому
                 я начала с анализа текущего пользовательского пути и точек неопределённости:
               </p>
             </div>
 
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
-              <p className="font-semibold">1. Сценарий активации разорван между вебом и приложением</p>
-              <ul className="list-disc space-y-2 pl-6">
+            <div className="flex flex-col gap-space-2 text-body-18">
+              <p className="text-body-18-semibold">1. Сценарий активации разорван между вебом и приложением</p>
+              <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>регистрация вынесена в веб-кабинет и требует ручной верификации менеджером</li>
                 <li>после отправки заявки нет объяснения со статусом и следующими действиями</li>
               </ul>
               <p>
-                Пользователи откладывают покупку номера и первый звонок <span className="font-semibold">→</span>{" "}
-                <span className="font-semibold">отток на этапе регистрации</span>
+                Пользователи откладывают покупку номера и первый звонок <span className="text-body-18-semibold">→</span>{" "}
+                <span className="text-body-18-semibold">отток на этапе регистрации</span>
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-6 rounded-[12px] bg-[#1c1c1c] pb-6 pt-8">
-              <div className="w-full max-w-[800px] px-4 sm:px-0">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-6 rounded-[12px] bg-secondary pb-space-6 pt-space-8">
+              <div className="w-full max-w-[800px] px-space-4 sm:px-0">
                 <Image
                   alt=""
                   src={assets.discoveryActivation}
@@ -592,25 +592,25 @@ export function CaseStudyPage() {
                 quality={100}
                 />
               </div>
-              <p className="px-4 text-center text-[14px] leading-[160%] text-[#afafaf] sm:px-0">
+              <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
                 Анализ текущего userflow (регистрация · покупка номера · звонок)
               </p>
             </div>
 
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
-              <p className="font-semibold">2. Стоимость и списания не прозрачны в момент звонка</p>
-              <ul className="list-disc space-y-2 pl-6">
+            <div className="flex flex-col gap-space-2 text-body-18">
+              <p className="text-body-18-semibold">2. Стоимость и списания не прозрачны в момент звонка</p>
+              <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>информацию о стоимости звонков в роуминге нужно было искать на сайте</li>
                 <li>после завершения звонка списания выглядят неожиданными</li>
               </ul>
               <p>
-                Пользователи не понимают, сколько и за что они платят <span className="font-semibold">→</span>{" "}
-                <span className="font-semibold">рост обращений в поддержку</span>
+                Пользователи не понимают, сколько и за что они платят <span className="text-body-18-semibold">→</span>{" "}
+                <span className="text-body-18-semibold">рост обращений в поддержку</span>
               </p>
             </div>
 
-            <div className="-mx-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] py-8 sm:mx-0">
-              <div className="mx-auto w-full max-w-[427px] px-4 sm:px-0">
+            <div className="-mx-space-4 overflow-hidden rounded-[12px] bg-secondary py-space-8 sm:mx-0">
+              <div className="mx-auto w-full max-w-[427px] px-space-4 sm:px-0">
                 <Image
                   alt=""
                   src={assets.discoveryCost}
@@ -624,20 +624,20 @@ export function CaseStudyPage() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
-              <p className="font-semibold">3. Некачественная обратная связь</p>
-              <ul className="list-disc space-y-2 pl-6">
+            <div className="flex flex-col gap-space-2 text-body-18">
+              <p className="text-body-18-semibold">3. Некачественная обратная связь</p>
+              <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>в приложении нет понятной точки входа в поддержку</li>
                 <li>пользователи ищут ответы в разных каналах и повторяют вопросы</li>
               </ul>
               <p>
-                Пользователи не знают, где искать помощь <span className="font-semibold">→</span>{" "}
-                <span className="font-semibold">повторные обращения в разных каналах</span>
+                Пользователи не знают, где искать помощь <span className="text-body-18-semibold">→</span>{" "}
+                <span className="text-body-18-semibold">повторные обращения в разных каналах</span>
               </p>
             </div>
 
-            <div className="-mx-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] py-8 sm:mx-0">
-              <div className="mx-auto flex w-full max-w-[427px] flex-col gap-4 px-4 sm:px-0">
+            <div className="-mx-space-4 overflow-hidden rounded-[12px] bg-secondary py-space-8 sm:mx-0">
+              <div className="mx-auto flex w-full max-w-[427px] flex-col gap-space-4 px-space-4 sm:px-0">
                 <Image
                   alt=""
                   src={assets.discoveryFeedback1}
@@ -661,23 +661,23 @@ export function CaseStudyPage() {
               </div>
             </div>
 
-            <p className="text-[18px] leading-[160%]">
+            <p className="text-body-18">
               Анализ обращений в поддержку показал, что основная причина проблем пользователей —
-              <span className="font-semibold">непонимание текущего состояния аккаунта и баланса</span>. Это особенно критично в путешествиях,
+              <span className="text-body-18-semibold">непонимание текущего состояния аккаунта и баланса</span>. Это особенно критично в путешествиях,
               где важна немедленная доступность связи и интернета.
             </p>
 
-            <div id="hypotheses" className="flex scroll-mt-[90px] flex-col gap-4">
-              <h3 className="text-[24px] font-semibold leading-[32px]">Анализ конкурентов</h3>
-              <p className="text-[18px] leading-[160%]">
+            <div id="hypotheses" className="flex scroll-mt-space-16 flex-col gap-space-4">
+              <h3 className="text-h3">Анализ конкурентов</h3>
+              <p className="text-body-18">
                 В ходе discovery я также изучила аналогичные продукты, в которых есть звонки.
                 Например, после опыта работы с мессенджерами у пользователей формируется ожидание
                 мгновенной готовности к коммуникации (и звонкам в том числе) сразу после регистрации.
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-3 rounded-[12px] bg-[#1c1c1c] py-8">
-              <div className="w-full max-w-[800px] px-4 sm:px-0">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-3 rounded-[12px] bg-secondary py-space-8">
+              <div className="w-full max-w-[800px] px-space-4 sm:px-0">
                 <Image
                   alt=""
                   src={assets.competitorWhatsapp}
@@ -689,19 +689,19 @@ export function CaseStudyPage() {
                 quality={100}
                 />
               </div>
-              <p className="px-4 text-center text-[14px] leading-[160%] text-[#afafaf] sm:px-0">
+              <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
                 WhatsApp  (регистрация · выбор контакта · звонок)
               </p>
             </div>
 
-            <p className="text-[18px] leading-[160%]">
+            <p className="text-body-18">
               В softphone-приложениях, где есть обязательные шаги (выбор номера, верификация,
               тарификация), путь к первому звонку объективно сложнее. Поэтому в таком сценарии
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-3 rounded-[12px] bg-[#1c1c1c] py-8">
-              <div className="w-full max-w-[1000px] px-4 sm:px-0">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-3 rounded-[12px] bg-secondary py-space-8">
+              <div className="w-full max-w-[1000px] px-space-4 sm:px-0">
                 <Image
                   alt=""
                   src={assets.competitorOpenphone}
@@ -713,61 +713,61 @@ export function CaseStudyPage() {
                 quality={100}
                 />
               </div>
-              <p className="px-4 text-center text-[14px] leading-[160%] text-[#afafaf] sm:px-0">
+              <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
                 Open Phone  (выбор номера · регистрация · покупка номера · звонок)
               </p>
             </div>
 
-            <div className="flex w-full max-w-[800px] flex-col gap-6">
-              <div className="flex flex-col gap-4">
-                <h3 className="text-[24px] font-semibold leading-[32px]">Гипотезы</h3>
-                <p className="text-[18px] leading-[160%]">
+            <div className="flex w-full max-w-[800px] flex-col gap-space-6">
+              <div className="flex flex-col gap-space-4">
+                <h3 className="text-h3">Гипотезы</h3>
+                <p className="text-body-18">
                   На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками продукта.
                 </p>
               </div>
-              <div className="flex flex-col gap-5 sm:flex-row sm:flex-wrap">
-                <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[390px]">
-                  <p className="text-[18px] font-semibold leading-[160%]">1. Ясность на старте</p>
-                  <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+              <div className="flex flex-col gap-space-5 sm:flex-row sm:flex-wrap">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
+                  <p className="text-body-18-semibold">1. Ясность на старте</p>
+                  <p className="text-body-16 text-secondary">
                     Если пользователь понимает, на каком этапе онбординга находится и когда сможет
                     начать звонить, ему проще дойти до первого звонка.
                   </p>
-                  <p className="text-[16px] leading-[160%]">
-                    <span className="font-semibold">Метрика: </span>CR в первый звонок
+                  <p className="text-body-16">
+                    <span className="text-body-18-semibold">Метрика: </span>CR в первый звонок
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[390px]">
-                  <p className="text-[18px] font-semibold leading-[160%]">2. Прозрачность стоимости</p>
-                  <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
+                  <p className="text-body-18-semibold">2. Прозрачность стоимости</p>
+                  <p className="text-body-16 text-secondary">
                     Если пользователь видит стоимость звонка и состояние баланса до начала вызова,
                     условия тарификации станут более прозрачными.
                   </p>
-                  <p className="text-[16px] leading-[160%]">
-                    <span className="font-semibold">Метрика: </span>retention, обращения в поддержку
+                  <p className="text-body-16">
+                    <span className="text-body-18-semibold">Метрика: </span>retention, обращения в поддержку
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[390px]">
-                  <p className="text-[18px] font-semibold leading-[160%]">3. Доступность ответов</p>
-                  <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
+                  <p className="text-body-18-semibold">3. Доступность ответов</p>
+                  <p className="text-body-16 text-secondary">
                     Если ответы на частые вопросы доступны внутри приложения, он реже будет
                     прерывать сценарий и обращаться в поддержку.
                   </p>
-                  <p className="text-[16px] leading-[160%]">
-                    <span className="font-semibold">Метрика: </span>обращения в поддержку
+                  <p className="text-body-16">
+                    <span className="text-body-18-semibold">Метрика: </span>обращения в поддержку
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[390px]">
-                  <p className="text-[18px] font-semibold leading-[160%]">4. Очевидность следующего шага</p>
-                  <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
+                  <p className="text-body-18-semibold">4. Очевидность следующего шага</p>
+                  <p className="text-body-16 text-secondary">
                     Если после ошибки или незавершённого действия пользователь понимает, что делать
                     дальше, ему проще вернуться к действию.
                   </p>
-                  <p className="text-[16px] leading-[160%]">
-                    <span className="font-semibold">Метрика: </span>retention, обращения в поддержку
+                  <p className="text-body-16">
+                    <span className="text-body-18-semibold">Метрика: </span>retention, обращения в поддержку
                   </p>
                 </div>
               </div>
-              <p className="text-[18px] leading-[160%]">
+              <p className="text-body-18">
                 Гипотезы помогли определить основные направления работы, но в процессе проверки на
                 реальных сценариях они могли уточняться и корректироваться.
               </p>
@@ -779,25 +779,25 @@ export function CaseStudyPage() {
           id="design"
           data-section-anchor="design"
           variants={item}
-          className="scroll-mt-[90px] flex flex-col gap-4"
+          className="scroll-mt-space-16 flex flex-col gap-space-4"
         >
-          <h2 className="text-[32px] font-semibold leading-[40px]">Проектирование</h2>
-          <div className="flex flex-col gap-8">
-            <div className="flex flex-col gap-4">
-              <p className="text-[18px] leading-[160%]">
-                <span className="font-semibold">Цель этапа —</span> определить, как система будет вести себя в диалоге с пользователем, чтобы
+          <h2 className="text-h2">Проектирование</h2>
+          <div className="flex flex-col gap-space-8">
+            <div className="flex flex-col gap-space-4">
+              <p className="text-body-18">
+                <span className="text-body-18-semibold">Цель этапа —</span> определить, как система будет вести себя в диалоге с пользователем, чтобы
                 он не терялся в случае если что-то пойдёт не так. Основные решения касались логики
                 сценариев, проработки состояний и корнер-кейсов.
               </p>
-              <p className="text-[18px] leading-[160%]">
+              <p className="text-body-18">
                 Когда я проектировала новый путь, главным было убрать неопределённость. Пользователь не
                 должен гадать: «А номер уже мой? А сколько это стоит? А что делать, если что-то пошло не
                 так?». Вот что получилось:
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-6 rounded-[12px] bg-[#1c1c1c] pb-6 pt-8">
-              <div className="w-full max-w-[1000px] px-4 sm:px-0">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-6 rounded-[12px] bg-secondary pb-space-6 pt-space-8">
+              <div className="w-full max-w-[1000px] px-space-4 sm:px-0">
                 <button
                   type="button"
                   aria-label="Open userflow"
@@ -816,12 +816,12 @@ export function CaseStudyPage() {
                   />
                 </button>
               </div>
-              <p className="px-4 text-center text-[14px] leading-[160%] text-[#9e9e9e] sm:px-0">
+              <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
                 Новый userflow 1-го звонка (регистрация · покупка номера · звонок)
               </p>
             </div>
 
-            <ul className="list-disc space-y-2 pl-6 text-[18px] leading-[160%]">
+            <ul className="list-disc space-y-space-2 pl-space-6 text-body-18">
               <li>путь до первого звонка сократился с 8 до 3 шагов</li>
               <li>
                 стали показывать стоимость звонка ещё до вызова, а после ключевых шагов — success screen,
@@ -840,19 +840,19 @@ export function CaseStudyPage() {
           id="solution"
           data-section-anchor="solution"
           variants={item}
-          className="scroll-mt-[90px] flex flex-col gap-6"
+          className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
           <div className="flex flex-col">
-            <h2 className="text-[32px] font-semibold leading-[40px]">Решение</h2>
-            <p className="mt-4 text-[18px] leading-[160%]">
+            <h2 className="text-h2">Решение</h2>
+            <p className="mt-space-4 text-body-18">
               Первые тесты показали: даже там, где логика казалась очевидной, пользователи
               ошибались. Поэтому я собрала обратную связь, переработала несколько сценариев и
               перепроверила их:
             </p>
           </div>
 
-          <div className="mt-2 flex flex-col gap-2 text-[18px] leading-[160%]">
-            <p className="font-semibold">1. Экран успеха после регистрации</p>
+          <div className="mt-space-2 flex flex-col gap-space-2 text-body-18">
+            <p className="text-body-18-semibold">1. Экран успеха после регистрации</p>
             <p>
               Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
               что люди зависали на 2-3 минуты — галочка привлекала внимание, а кнопка терялась.
@@ -866,8 +866,8 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-[#1c1c1c] py-8">
-            <div className="w-full max-w-[845px] px-4 sm:px-0">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-secondary py-space-8">
+            <div className="w-full max-w-[845px] px-space-4 sm:px-0">
               <Image
                 alt=""
                 src={assets.solutionSuccess}
@@ -881,8 +881,8 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
-            <p className="font-semibold">2. Узнать стоимость звонка</p>
+          <div className="flex flex-col gap-space-2 text-body-18">
+            <p className="text-body-18-semibold">2. Узнать стоимость звонка</p>
             <p>
               В первой версии цену можно было увидеть, только начав набирать номер. Некоторым пользователям
               было неудобно вводить знакомый номер каждый раз, чтобы оценить стоимость.
@@ -896,8 +896,8 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-[#1c1c1c] py-8">
-            <div className="w-full max-w-[1000px] px-4 sm:px-0">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-secondary py-space-8">
+            <div className="w-full max-w-[1000px] px-space-4 sm:px-0">
               <Image
                 alt=""
                 src={assets.solutionCost}
@@ -911,8 +911,8 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-2 text-[18px] leading-[160%]">
-            <p className="font-semibold">3. Помощь и подсказки</p>
+          <div className="flex flex-col gap-space-2 text-body-18">
+            <p className="text-body-18-semibold">3. Помощь и подсказки</p>
             <p>
               Ранее был экран ошибки, где просто выводилась причина: «Регистрация не пройдена»,
               «Недостаточно средств» и другие, но пользователи всё равно не понимали, что делать
@@ -928,8 +928,8 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-[#1c1c1c] py-8">
-            <div className="w-full max-w-[1000px] px-4 sm:px-0">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-secondary py-space-8">
+            <div className="w-full max-w-[1000px] px-space-4 sm:px-0">
               <Image
                 alt=""
                 src={assets.solutionError}
@@ -943,7 +943,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-8 text-[18px] leading-[160%]">
+          <div className="flex flex-col gap-space-8 text-body-18">
             <p>
               Каждая итерация закрывала конкретную точку неопределённости: пользователь видел, когда
               номер активен, сколько стоит звонок и что делать при ошибке. За счёт этого путь стал
@@ -961,70 +961,70 @@ export function CaseStudyPage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-[90px] flex flex-col gap-4"
+          className="scroll-mt-space-16 flex flex-col gap-space-4"
         >
-          <h2 className="text-[32px] font-semibold leading-[40px]">Результаты</h2>
-          <div className="flex flex-col gap-5">
-            <p className="text-[18px] leading-[160%]">
+          <h2 className="text-h2">Результаты</h2>
+          <div className="flex flex-col gap-space-5">
+            <p className="text-body-18">
               Ключевые изменения закрыли основные проблемы, выявленные на старте: путь до первого
               звонка стал короче, пользователи лучше понимали статус и стоимость действий, а часть
               вопросов больше не уходила в поддержку. При том же трафике количество звонков выросло
-              с <span className="font-semibold">13k</span> до{" "}
-              <span className="font-semibold">17k.</span>
+              с <span className="text-body-18-semibold">13k</span> до{" "}
+              <span className="text-body-18-semibold">17k.</span>
             </p>
 
-            <div className="grid grid-cols-1 gap-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
-              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-3 py-3 lg:w-[184px]">
-                <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
-                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">8</span>
+            <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
+                <div className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
+                  <span className="inline-flex h-10 items-center text-h2">8</span>
                   <span className="inline-flex h-10 items-center">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">3</span>
+                  <span className="inline-flex h-10 items-center text-h2">3</span>
                 </div>
-                <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   шага до звонка
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-3 py-3 lg:w-[184px]">
-                <p className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
-                  <span className="inline-flex h-10 items-end pb-[5px] text-[18px] font-bold leading-none">+</span>
-                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">23</span>
-                  <span className="inline-flex h-10 items-end pb-[5px] text-[18px] font-bold leading-none">%</span>
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
+                <p className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
+                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">+</span>
+                  <span className="inline-flex h-10 items-center text-h2">23</span>
+                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
                 </p>
-                <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   конверсия в 1-й звонок
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-3 py-3 lg:w-[184px]">
-                <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
-                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">15</span>
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
+                <div className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
+                  <span className="inline-flex h-10 items-center text-h2">15</span>
                   <span className="inline-flex h-10 items-center">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">22</span>
-                  <span className="inline-flex h-10 items-end pb-[5px] text-[18px] font-bold leading-none">%</span>
+                  <span className="inline-flex h-10 items-center text-h2">22</span>
+                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
                 </div>
-                <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   retention на 4-й неделе
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-2 rounded-[12px] bg-[#262626] px-3 py-3 lg:w-[184px]">
-                <div className="flex h-10 items-start gap-1 whitespace-nowrap text-white">
-                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">40</span>
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
+                <div className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
+                  <span className="inline-flex h-10 items-center text-h2">40</span>
                   <span className="inline-flex h-10 items-center">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-none">18</span>
-                  <span className="inline-flex h-10 items-end pb-[5px] text-[18px] font-bold leading-none">%</span>
+                  <span className="inline-flex h-10 items-center text-h2">18</span>
+                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
                 </div>
-                <p className="whitespace-nowrap text-[14px] leading-[160%] text-[#c0c0c0]">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   обращений в саппорт
                 </p>
               </div>
             </div>
 
-            <p className="text-[18px] leading-[160%]">
+            <p className="text-body-18">
               Для себя я вынесла, что в мобильных продуктах доверие строится через понятную
               коммуникацию в критические моменты: статус, стоимость, ошибки и следующий шаг.
             </p>
@@ -1034,22 +1034,22 @@ export function CaseStudyPage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="flex w-full items-start justify-between border-t border-[#282828] pt-4 text-[18px] font-normal leading-[160%]"
+          className="flex w-full items-start justify-between border-t border-bg-elevated pt-space-4 text-body-18"
         >
           <Link href="/" className="group shrink-0">
-            <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_1px]">
+            <span className="link-underline">
               ← На главную
             </span>
           </Link>
           <Link href="/work" className="group shrink-0">
-            <span className="bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat transition-[background-size] duration-300 ease-out group-hover:bg-[length:100%_1px]">
+            <span className="link-underline">
               Кейс KOMPaaS →
             </span>
           </Link>
         </motion.nav>
       </motion.div>
 
-      <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-3 lg:flex">
+      <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-space-3 lg:flex">
         {[
           { id: "overview", label: "Введение" },
           { id: "about", label: "О проекте" },
@@ -1061,15 +1061,15 @@ export function CaseStudyPage() {
           <a
             key={item.id}
             href={`#${item.id}`}
-            className="group pointer-events-auto flex items-center justify-end gap-3 text-right"
+            className="group pointer-events-auto flex items-center justify-end gap-space-3 text-right"
             onClick={(event) => handleSectionNavClick(event, item.id)}
           >
-            <span className="pointer-events-none max-w-[160px] rounded-full bg-[#2a2a2a] px-3 py-1 text-[14px] leading-[1.4] text-[#cfcfcf] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <span className="pointer-events-none max-w-[160px] rounded-full bg-elevated-hover px-space-3 py-space-1 text-caption-14 text-secondary opacity-0 transition-opacity duration-200 group-hover:opacity-100">
               {item.label}
             </span>
             <span
               className={`h-[6px] w-[22px] rounded-full transition-colors duration-200 ${
-                activeSection === item.id ? "bg-white" : "bg-[#3a3a3a]"
+                activeSection === item.id ? "bg-text-primary" : "bg-elevated-hover"
               }`}
             />
           </a>
@@ -1078,14 +1078,14 @@ export function CaseStudyPage() {
 
       {isUserflowOpen ? (
         <div
-          className="fixed inset-0 z-20 flex items-center justify-center px-6"
+          className="fixed inset-0 z-20 flex items-center justify-center px-space-6"
           onClick={() => setIsUserflowOpen(false)}
           role="presentation"
           onTouchMove={(event) => event.preventDefault()}
         >
           <div className="lightbox-backdrop absolute inset-0" />
-          <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[12px] bg-[#1c1c1c] p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
-            <div className="absolute right-3 top-3 z-10 flex gap-2 sm:right-6 sm:top-6">
+          <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[12px] bg-secondary p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
+            <div className="absolute right-3 top-3 z-10 flex gap-space-2 sm:right-6 sm:top-6">
               <button
                 type="button"
                 aria-label="Close"
@@ -1097,7 +1097,7 @@ export function CaseStudyPage() {
                   setIsUserflowOpen(false);
                 }}
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary">
                   <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
                     <path
                       d="M4 4l8 8M12 4l-8 8"
@@ -1147,7 +1147,7 @@ export function CaseStudyPage() {
                 </div>
               </div>
             </div>
-            <div className="absolute bottom-3 right-3 z-10 flex gap-2 sm:bottom-6 sm:right-6">
+            <div className="absolute bottom-3 right-3 z-10 flex gap-space-2 sm:bottom-6 sm:right-6">
               <button
                 type="button"
                 aria-label="Zoom out"
@@ -1159,7 +1159,7 @@ export function CaseStudyPage() {
                   setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
                 }}
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary">
                   <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
                     <path d="M3 6h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                   </svg>
@@ -1176,7 +1176,7 @@ export function CaseStudyPage() {
                   setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
                 }}
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-[#2b2b2b] text-[#a0a0a0]">
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary">
                   <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
                     <path d="M6 3v6M3 6h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                   </svg>

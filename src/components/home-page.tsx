@@ -56,32 +56,32 @@ export function HomePage() {
   }, []);
 
   return (
-    <main className="bg-[#171717] text-white">
+    <main className="bg-primary text-primary">
       <motion.header
         initial={{ opacity: 0, y: -12 }}
         animate={hideTopbar ? { opacity: 0, y: -12 } : { opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 220, damping: 22, mass: 0.7 }}
-        className="sticky top-0 z-10 h-[74px] w-full bg-[rgba(23,23,23,0.6)] backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
+        className="sticky top-0 z-10 h-[74px] w-full bg-primary/60 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
-        <div className="flex h-full w-full items-center justify-between px-4 py-[13px] sm:px-8">
-          <div className="font-oldenburg flex items-center gap-1 text-[18px] leading-[160%]">
+        <div className="flex h-full w-full items-center justify-between px-space-4 py-space-3 sm:px-space-8">
+          <div className="font-oldenburg flex items-center gap-space-1 text-body-18">
             <span>nastya</span>
             <span>with</span>
             <img alt="" src={assets.heart} className="h-6 w-6" />
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-space-2">
             <motion.a
-              whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
+              whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[16px] leading-[160%]"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16"
               href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
             >
               CV
             </motion.a>
             <motion.a
-              whileHover={canHover ? { backgroundColor: "#333333", scale: 1.05 } : undefined}
+              whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-[#262626] px-4 py-2 text-[16px] leading-[160%]"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16"
               href="https://t.me/him9li9"
             >
               Telegram
@@ -94,10 +94,10 @@ export function HomePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto flex w-full max-w-[800px] flex-col gap-[120px] px-4 pb-[120px] pt-[66px] sm:px-8 sm:pb-[140px] lg:px-0"
+        className="mx-auto flex w-full max-w-[800px] flex-col gap-space-16 px-space-4 pb-space-16 pt-space-16 sm:px-space-8 sm:pb-space-16 lg:px-0"
       >
-        <motion.section variants={item} className="mx-auto flex w-full max-w-[800px] flex-col items-start gap-4 sm:items-center">
-          <div className="flex flex-col items-start justify-center gap-8 sm:items-center">
+        <motion.section variants={item} className="mx-auto flex w-full max-w-[800px] flex-col items-start gap-space-4 sm:items-center">
+          <div className="flex flex-col items-start justify-center gap-space-8 sm:items-center">
             <div className="relative h-[100px] w-[120px] overflow-hidden rounded-[100px]">
               <Image
                 alt=""
@@ -110,11 +110,11 @@ export function HomePage() {
               quality={100}
               />
             </div>
-            <h1 className="text-left text-[32px] font-semibold leading-[40px] sm:text-center">
+            <h1 className="text-left text-h2 sm:text-center">
               Привет, я Настя Ермошина
             </h1>
           </div>
-          <p className="w-full text-left text-[18px] leading-[160%] text-white sm:w-[482px] sm:text-center">
+          <p className="w-full text-left text-body-18 text-primary sm:w-[482px] sm:text-center">
             Продуктовый дизайнер с опытом 3+ года в телекоме,<span className="sm:hidden"> </span><br className="hidden sm:block" />
             <span className="sm:whitespace-nowrap">B2B-сервисах и стартапах. Умею разбираться в сложной</span><span className="sm:hidden"> </span><br className="hidden sm:block" />
             доменной логике и превращать её в понятные,<span className="sm:hidden"> </span><br className="hidden sm:block" />
@@ -123,20 +123,20 @@ export function HomePage() {
           </p>
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col items-start gap-6 sm:items-center">
-          <h2 className="text-left text-[24px] font-semibold leading-[32px] sm:text-center">
+        <motion.section variants={item} className="flex flex-col items-start gap-space-6 sm:items-center">
+          <h2 className="text-left text-h3 sm:text-center">
             Избранные проекты
           </h2>
 
-          <div className="flex w-full flex-col items-start gap-[120px] sm:items-center">
-            <article className="flex w-full flex-col items-start gap-6 sm:items-center">
+          <div className="flex w-full flex-col items-start gap-space-16 sm:items-center">
+            <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
               <Link
                 href="/app"
                 prefetch={false}
                 aria-label="Открыть кейс MCN Softphone"
                 className="group block w-full"
               >
-                <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-4 rounded-[12px] bg-[#1c1c1c] px-4 py-8 sm:gap-6 sm:px-10 sm:py-10">
+                <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-space-4 rounded-[12px] bg-secondary px-space-4 py-space-8 sm:gap-space-6 sm:px-space-10 sm:py-space-10">
                   <div className="relative h-auto w-[27%] max-w-[205px]">
                     <Image
                       alt="Экран регистрации MCN Softphone"
@@ -176,36 +176,36 @@ export function HomePage() {
                 </div>
               </Link>
 
-              <div className="flex w-full max-w-[800px] flex-col items-start gap-2">
-                <div className="flex w-full flex-col gap-2 text-white sm:flex-row sm:items-end sm:justify-between sm:gap-4">
-                  <h3 className="text-[32px] font-semibold leading-[40px]">MCN Softphone</h3>
+              <div className="flex w-full max-w-[800px] flex-col items-start gap-space-2">
+                <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
+                  <h3 className="text-h2">MCN Softphone</h3>
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="hidden shrink-0 items-center gap-1 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-normal leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px] sm:flex"
+                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary  sm:flex"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="flex flex-col items-start gap-3">
-                  <div className="h-px w-full bg-[#262626] sm:w-[800px]" />
-                  <p className="max-w-[490px] text-[18px] leading-[160%] text-white">
+                <div className="flex flex-col items-start gap-space-3">
+                  <div className="h-px w-full bg-elevated sm:w-[800px]" />
+                  <p className="max-w-[490px] text-body-18 text-primary">
                     Мобильное приложение для звонков за границей. Упростила путь до первого звонка и
                     сделала стоимость связи прозрачнее до начала вызова.
                   </p>
-                  <div className="flex flex-wrap items-start gap-2">
-                    <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                  <div className="flex flex-wrap items-start gap-space-2">
+                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                       8 → 3 шага до звонка
                     </span>
-                    <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                       +23% CR в 1-й звонок
                     </span>
                   </div>
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="mt-1 flex items-center gap-1 text-[16px] font-normal leading-[160%] text-white sm:hidden"
+                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -214,7 +214,7 @@ export function HomePage() {
               </div>
             </article>
 
-            <article className="flex w-full flex-col items-start gap-6 sm:items-center">
+            <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
               <Link
                 href="/work"
                 prefetch={false}
@@ -234,36 +234,36 @@ export function HomePage() {
                 </div>
               </Link>
 
-              <div className="flex w-full max-w-[800px] flex-col items-start gap-2">
-                <div className="flex w-full flex-col gap-2 text-white sm:flex-row sm:items-end sm:justify-between sm:gap-4">
-                  <h3 className="text-[32px] font-semibold leading-[40px]">KOMPaaS</h3>
+              <div className="flex w-full max-w-[800px] flex-col items-start gap-space-2">
+                <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
+                  <h3 className="text-h2">KOMPaaS</h3>
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="hidden shrink-0 items-center gap-1 bg-[linear-gradient(currentColor,currentColor)] bg-[length:0%_1px] bg-left-bottom bg-no-repeat text-[16px] font-normal leading-[160%] text-white transition-[background-size] duration-300 ease-out hover:bg-[length:100%_1px] sm:flex"
+                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary  sm:flex"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="flex flex-col items-start gap-3">
-                  <div className="h-px w-full bg-[#262626] sm:w-[800px]" />
-                  <p className="max-w-[490px] text-[18px] leading-[160%] text-white">
+                <div className="flex flex-col items-start gap-space-3">
+                  <div className="h-px w-full bg-elevated sm:w-[800px]" />
+                  <p className="max-w-[490px] text-body-18 text-primary">
                     B2B-платформа для автоматизации контакт-центров. Снизила зависимость клиентов
                     от разработки в управлении сценариями звонков.
                   </p>
-                  <div className="flex flex-wrap items-start gap-2">
-                    <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                  <div className="flex flex-wrap items-start gap-space-2">
+                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                       +28% self-service rate
                     </span>
-                    <span className="rounded-full bg-[rgba(255,255,255,0.05)] px-3 py-1 text-[16px] leading-[160%] text-[#c0c0c0] shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
                       -21% ошибок после публикации
                     </span>
                   </div>
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="mt-1 flex items-center gap-1 text-[16px] font-normal leading-[160%] text-white sm:hidden"
+                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />

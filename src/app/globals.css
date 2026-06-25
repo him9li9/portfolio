@@ -3,8 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --paper: #f8f6f2;
-  --ink: #f5f6f8;
+  --color-bg-primary: #171717;
+  --color-bg-primary-rgb: 23 23 23;
+  --color-bg-secondary: #1c1c1c;
+  --color-bg-elevated: #232323;
+  --color-bg-elevated-hover: #333333;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #afafaf;
 }
 
 * {
@@ -15,8 +20,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #171717;
-  color: var(--ink);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
   min-height: 100%;
 }
 
@@ -33,4 +38,109 @@ a {
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+}
+
+@layer utilities {
+  .bg-primary {
+    background-color: var(--color-bg-primary);
+  }
+
+  .bg-primary\/60 {
+    background-color: rgb(var(--color-bg-primary-rgb) / 0.6);
+  }
+
+  .bg-secondary {
+    background-color: var(--color-bg-secondary);
+  }
+
+  .bg-elevated {
+    background-color: var(--color-bg-elevated);
+  }
+
+  .bg-elevated-hover,
+  .hover\:bg-elevated-hover:hover {
+    background-color: var(--color-bg-elevated-hover);
+  }
+
+  .text-primary {
+    color: var(--color-text-primary);
+  }
+
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  .text-h1 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 48px;
+  }
+
+  .text-h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+  }
+
+  .text-h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+
+  .text-body-18 {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 160%;
+  }
+
+  .text-body-18-semibold {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 160%;
+  }
+
+  .text-body-18-italic {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 160%;
+  }
+
+  .text-body-16 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+  }
+
+  .text-body-16-semibold {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 160%;
+  }
+
+  .text-caption-14 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
+  }
+
+  .text-caption-14-semibold {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 160%;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size 300ms ease-out;
+  }
+
+  .group:hover .link-underline,
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
 }

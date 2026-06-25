@@ -8,12 +8,27 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      spacing: {
+        "space-0-5": "2px",
+        "space-1": "4px",
+        "space-2": "8px",
+        "space-3": "12px",
+        "space-4": "16px",
+        "space-5": "20px",
+        "space-6": "24px",
+        "space-8": "32px",
+        "space-10": "40px",
+        "space-12": "48px",
+        "space-14": "56px",
+        "space-16": "64px"
+      },
       colors: {
-        paper: "#f8f6f2",
-        ink: "#111111",
-        clay: "#b8672c",
-        moss: "#5a7a6f",
-        sun: "#f2d18f"
+        "bg-primary": "var(--color-bg-primary)",
+        "bg-secondary": "var(--color-bg-secondary)",
+        "bg-elevated": "var(--color-bg-elevated)",
+        "bg-elevated-hover": "var(--color-bg-elevated-hover)",
+        "text-primary": "var(--color-text-primary)",
+        "text-secondary": "var(--color-text-secondary)"
       },
       boxShadow: {
         card: "0 20px 60px rgba(16, 24, 40, 0.15)"
