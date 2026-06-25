@@ -421,51 +421,51 @@ export function WorkCasePage() {
             <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
               <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:h-[240px] sm:w-[261px]">
                 <p className="text-[16px] font-semibold leading-[160%]">1. Организация сценариев</p>
-                <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
+                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
                   Поиск, группировка и статусы должны помочь пользователям быстрее находить нужные
                   сценарии и переключаться между ними.
                 </p>
-                <p className="text-[14px] leading-[160%]">
+                <p className="text-[16px] leading-[160%]">
                   <span className="font-semibold">Метрика: </span>time-to-change
                 </p>
               </div>
               <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[262px]">
                 <p className="text-[16px] font-semibold leading-[160%]">2. Единый контекст</p>
-                <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
+                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
                   Если схема и настройки находятся в одном рабочем пространстве, пользователи
                   меньше теряют контекст и реже ошибаются при изменениях.
                 </p>
-                <p className="text-[14px] leading-[160%]">
+                <p className="text-[16px] leading-[160%]">
                   <span className="font-semibold">Метрика: </span>количество ошибок после публикации
                 </p>
               </div>
               <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[261px]">
                 <p className="text-[16px] font-semibold leading-[160%]">3. Понятные сущности</p>
-                <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
+                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
                   Описание элементов через поведение должно помочь пользователям быстрее понимать,
                   какой блок нужен и как он повлияет на сценарий.
                 </p>
-                <p className="text-[14px] leading-[160%]">
+                <p className="text-[16px] leading-[160%]">
                   <span className="font-semibold">Метрика: </span>time-to-change, обращения в поддержку
                 </p>
               </div>
               <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[395px]">
                 <p className="text-[16px] font-semibold leading-[160%]">4. Читаемость</p>
-                <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
+                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
                   Визуальная иерархия, масштабирование и миникарта должны помочь пользователям
                   считывать структуру сценария даже при росте схемы.
                 </p>
-                <p className="text-[14px] leading-[160%]">
+                <p className="text-[16px] leading-[160%]">
                   <span className="font-semibold">Метрика: </span>time-to-change
                 </p>
               </div>
               <div className="flex w-full flex-col gap-2 rounded-[20px] bg-[#262626] px-6 pb-6 pt-5 sm:w-[395px]">
                 <p className="text-[16px] font-semibold leading-[160%]">5. Безопасные изменения</p>
-                <p className="text-[14px] leading-[160%] text-[#e6e6e6]">
+                <p className="text-[16px] leading-[160%] text-[#e6e6e6]">
                   Статусы, проверка и публикация должны снизить страх сломать рабочий сценарий и
                   позволить чаще вносить изменения без разработки.
                 </p>
-                <p className="text-[14px] leading-[160%]">
+                <p className="text-[16px] leading-[160%]">
                   <span className="font-semibold">Метрика: </span>self-service rate, количество ошибок
                 </p>
               </div>
