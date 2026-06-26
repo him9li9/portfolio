@@ -453,23 +453,6 @@ export function CaseStudyPage() {
                 метрики.
               </p>
             </div>
-            <div className="flex flex-col items-center gap-space-3">
-              <div className="w-[323px] max-w-full">
-                <Image
-                  alt=""
-                  src={assets.chartSmall}
-                  width={726}
-                  height={144}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 323px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
-              </div>
-              <p className="text-center text-caption-14 text-secondary">
-                CR в 1-й звонок, 2023 г.
-              </p>
-            </div>
             <div className="flex w-full flex-col gap-space-4">
               <ul className="list-disc pl-space-6 text-body-18">
                 <li>
@@ -477,6 +460,23 @@ export function CaseStudyPage() {
                   {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
                 </li>
               </ul>
+              <div className="flex flex-col items-center gap-space-3">
+                <div className="w-[323px] max-w-full">
+                  <Image
+                    alt=""
+                    src={assets.chartSmall}
+                    width={726}
+                    height={144}
+                    sizes="(max-width: 640px) calc(100vw - 64px), 323px"
+                    className="h-auto w-full object-contain"
+                    loading="lazy"
+                    quality={100}
+                  />
+                </div>
+                <p className="text-center text-caption-14 text-secondary">
+                  CR в 1-й звонок, 2023 г.
+                </p>
+              </div>
               <ul className="list-disc pl-space-6 text-body-18">
                 <li>
                   <span className="text-body-18-semibold">Низкий Retention</span>
