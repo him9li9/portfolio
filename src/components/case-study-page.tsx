@@ -448,12 +448,12 @@ export function CaseStudyPage() {
             <p className="text-body-18">
               Первичный анализ показал системную проблему: на критических этапах пользователь не
               понимал статус процесса, стоимость действий и следующий шаг. Это напрямую повлияло
-              на ключевые метрики:
+              на ключевые метрики.
             </p>
             <ul className="list-disc space-y-space-4 pl-space-6 text-body-18">
               <li>
                 <span className="text-body-18-semibold">Низкая конверсия в первый звонок</span>
-                {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен`}
+                {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
               </li>
             </ul>
             <div className="flex w-full flex-col items-center justify-center gap-space-3 rounded-[12px] bg-secondary pb-space-6 pt-space-8">
@@ -476,26 +476,9 @@ export function CaseStudyPage() {
             <ul className="list-disc space-y-space-4 pl-space-6 text-body-18">
               <li>
                 <span className="text-body-18-semibold">Низкий Retention</span>
-                {` — люди скачивали приложение, пробовали разобраться, но из 2.1К новых пользователей возвращалась лишь половина. По данным аналитики retention падает до 15% к четвёртой неделе`}
+                {` — люди скачивали приложение, пробовали разобраться, но из 2.1К новых пользователей возвращалась лишь половина. По данным аналитики retention падает до 15% к четвёртой неделе.`}
               </li>
             </ul>
-            <div className="flex w-full flex-col items-center justify-center gap-space-3 rounded-[12px] bg-secondary pb-space-6 pt-space-8">
-              <div className="w-full max-w-[527px] px-space-4 sm:px-0">
-                <Image
-                  alt=""
-                  src={assets.chartBig}
-                  width={1222}
-                  height={696}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 527px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
-              </div>
-              <p className="text-center text-caption-14 text-secondary">
-                Retention MCN Softphone, 2023 г.
-              </p>
-            </div>
             <ul className="list-disc space-y-space-4 pl-space-6 text-body-18">
               <li>
                 <span className="text-body-18-semibold">Растущие затраты на поддержку</span>
