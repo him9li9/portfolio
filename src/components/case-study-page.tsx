@@ -443,21 +443,18 @@ export function CaseStudyPage() {
             <div className="mt-space-8 h-px w-full bg-elevated" />
           </div>
 
-          <div className="flex flex-col gap-space-4">
-            <h3 className="text-h3">Проблема</h3>
-            <p className="text-body-18">
-              Первичный анализ показал системную проблему: на критических этапах пользователь не
-              понимал статус процесса, стоимость действий и следующий шаг. Это напрямую повлияло
-              на ключевые метрики.
-            </p>
-            <ul className="list-disc space-y-space-4 pl-space-6 text-body-18">
-              <li>
-                <span className="text-body-18-semibold">Низкая конверсия в первый звонок</span>
-                {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
-              </li>
-            </ul>
-            <div className="flex w-full flex-col items-center justify-center gap-space-3 rounded-[12px] bg-secondary pb-space-6 pt-space-8">
-              <div className="w-full max-w-[323px] px-space-4 sm:px-0">
+          <div className="flex flex-col items-center gap-space-6">
+            <div className="flex w-full flex-col gap-space-4">
+              <h3 className="text-h3">Проблема</h3>
+              <p className="text-body-18">
+                На обсуждении с командой выяснилась системная проблема — пользователь не понимал
+                статус в процессе подключения, стоимость звонка и следующий шаг в критические
+                моменты. Потеря коммуникации между системой и пользователем напрямую повлияла на
+                метрики.
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-space-3">
+              <div className="w-[323px] max-w-full">
                 <Image
                   alt=""
                   src={assets.chartSmall}
@@ -473,21 +470,26 @@ export function CaseStudyPage() {
                 CR в 1-й звонок, 2023 г.
               </p>
             </div>
-            <ul className="list-disc space-y-space-4 pl-space-6 text-body-18">
-              <li>
-                <span className="text-body-18-semibold">Низкий Retention</span>
-                {` — люди скачивали приложение, пробовали разобраться, но из 2.1К новых пользователей возвращалась лишь половина. По данным аналитики retention падает до 15% к четвёртой неделе.`}
-              </li>
-            </ul>
-            <ul className="list-disc space-y-space-4 pl-space-6 text-body-18">
-              <li>
-                <span className="text-body-18-semibold">Растущие затраты на поддержку</span>
-                {` — 40% обращений в поддержку касались статуса аккаунта и списаний — вопросов, которые можно было закрыть сразу в приложении.`}
-              </li>
-            </ul>
-            <p className="text-body-18">
-              Главная причина снижения метрик — потеря коммуникации между системой и пользователем.
-            </p>
+            <div className="flex w-full flex-col gap-space-4">
+              <ul className="list-disc pl-space-6 text-body-18">
+                <li>
+                  <span className="text-body-18-semibold">Низкая конверсия в первый звонок</span>
+                  {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
+                </li>
+              </ul>
+              <ul className="list-disc pl-space-6 text-body-18">
+                <li>
+                  <span className="text-body-18-semibold">Низкий Retention</span>
+                  {` — люди скачивали приложение, пробовали разобраться, но из 2.1К новых пользователей возвращалась лишь половина. Retention падает до 15% к 4-й неделе.`}
+                </li>
+              </ul>
+              <ul className="list-disc pl-space-6 text-body-18">
+                <li>
+                  <span className="text-body-18-semibold">Растущие затраты на поддержку</span>
+                  {` — 40% обращений в поддержку касались статуса аккаунта и списаний — вопросов, которые можно было закрыть сразу в приложении.`}
+                </li>
+              </ul>
+            </div>
           </div>
 
           <div className="flex flex-col gap-space-4">
