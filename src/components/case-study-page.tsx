@@ -43,12 +43,7 @@ export function CaseStudyPage() {
   const [canDragUserflow, setCanDragUserflow] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
-  const [isCallFlowLoaded, setIsCallFlowLoaded] = useState(false);
-  const [isCallFlowPaused, setIsCallFlowPaused] = useState(true);
-  const [showCallFlowControl, setShowCallFlowControl] = useState(false);
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
-  const callFlowVideoRef = useRef<HTMLVideoElement | null>(null);
-  const callFlowControlTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const bodyScrollYRef = useRef(0);
   const userflowDragRef = useRef({
     isDown: false,
@@ -59,29 +54,6 @@ export function CaseStudyPage() {
     startOffsetY: 0,
   });
   const userflowBase = { width: 1000, height: 413 };
-  const toggleCallFlowVideo = () => {
-    const video = callFlowVideoRef.current;
-    if (!video) return;
-
-    if (video.paused) {
-      void video.play();
-      setIsCallFlowPaused(false);
-    } else {
-      video.pause();
-      setIsCallFlowPaused(true);
-    }
-  };
-  const showCallFlowControlTemporarily = () => {
-    setShowCallFlowControl(true);
-
-    if (callFlowControlTimerRef.current) {
-      clearTimeout(callFlowControlTimerRef.current);
-    }
-
-    callFlowControlTimerRef.current = setTimeout(() => {
-      setShowCallFlowControl(false);
-    }, 1800);
-  };
 
   const container = {
     hidden: { opacity: 0 },
@@ -118,14 +90,6 @@ export function CaseStudyPage() {
     update();
     mql.addEventListener("change", update);
     return () => mql.removeEventListener("change", update);
-  }, []);
-
-  useEffect(() => {
-    return () => {
-      if (callFlowControlTimerRef.current) {
-        clearTimeout(callFlowControlTimerRef.current);
-      }
-    };
   }, []);
 
   useEffect(() => {
@@ -925,12 +889,10 @@ export function CaseStudyPage() {
               style={{ height: 600 }}
             >
               <div
-                className="group relative h-full max-w-full"
+                className="relative h-full max-w-full"
                 style={{ width: "min(299px, calc(100vw - 64px))" }}
-                onTouchStart={showCallFlowControlTemporarily}
               >
                 <video
-                  ref={callFlowVideoRef}
                   className="h-full w-full object-contain"
                   style={{ height: "100%", maxHeight: "100%" }}
                   src={assets.callFlowVideo}
@@ -940,52 +902,7 @@ export function CaseStudyPage() {
                   loop
                   playsInline
                   preload="metadata"
-                  onLoadedData={(event) => {
-                    setIsCallFlowLoaded(true);
-                    setIsCallFlowPaused(event.currentTarget.paused);
-                  }}
-                  onCanPlay={(event) => {
-                    setIsCallFlowLoaded(true);
-                    setIsCallFlowPaused(event.currentTarget.paused);
-                  }}
-                  onPlay={() => setIsCallFlowPaused(false)}
-                  onPause={() => setIsCallFlowPaused(true)}
                 />
-                {!isCallFlowLoaded ? (
-                  <Image
-                    alt=""
-                    src={assets.callFlowPoster}
-                    width={900}
-                    height={1840}
-                    sizes="(max-width: 640px) calc(100vw - 64px), 900px"
-                    className="absolute left-0 top-0 h-full w-full object-contain"
-                    style={{ height: "100%", maxHeight: "100%" }}
-                    loading="lazy"
-                  />
-                ) : null}
-                <button
-                  type="button"
-                  aria-label={isCallFlowPaused ? "Play video" : "Pause video"}
-                  onClick={toggleCallFlowVideo}
-                  className={`absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/45 text-white backdrop-blur-md transition-opacity duration-200 ${
-                    showCallFlowControl
-                      ? "pointer-events-auto opacity-100"
-                      : "pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100 focus-visible:pointer-events-auto focus-visible:opacity-100"
-                  }`}
-                  style={{ width: 48, height: 48 }}
-                >
-                  {isCallFlowPaused ? (
-                    <span
-                      aria-hidden="true"
-                      className="ml-[3px] block h-0 w-0 border-y-[8px] border-l-[13px] border-y-transparent border-l-current"
-                    />
-                  ) : (
-                    <span aria-hidden="true" className="flex items-center gap-[5px]">
-                      <span className="block h-[16px] w-[4px] rounded-full bg-current" />
-                      <span className="block h-[16px] w-[4px] rounded-full bg-current" />
-                    </span>
-                  )}
-                </button>
               </div>
             </div>
           </div>
