@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const assets = {
   heart: "/figma/heart.svg",
-  hero: "/figma/Case_2/Case_2/vpbx-canvas.png",
+  hero: "/figma/Case_2/vpbx-canvas.png",
   arrowForward: "/figma/Main/arrow_forward.svg",
   oldCanvas: "/figma/Case_2/old-canvas.png",
   addFlow: "/figma/Case_2/add-flow.png?v=2",
@@ -139,7 +139,7 @@ export function WorkCasePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
             >
               CV
@@ -147,7 +147,7 @@ export function WorkCasePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://t.me/him9li9"
             >
               Telegram
@@ -160,7 +160,7 @@ export function WorkCasePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-space-12 px-space-4 pb-space-16 pt-space-16 sm:mx-auto sm:max-w-[800px] sm:gap-space-16 sm:px-0 sm:pb-space-16"
+        className="flex w-full flex-col gap-[120px] px-space-4 pb-space-16 pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pb-space-16"
       >
         <motion.section
           id="overview"
@@ -211,7 +211,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="h-px w-full bg-elevated" />
+          <div className="h-px w-full bg-border-elevated" />
 
           <div className="flex flex-col gap-space-2">
             <h3 className="text-h3">Проблема</h3>
@@ -256,7 +256,7 @@ export function WorkCasePage() {
             <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
                 <div key={stage} className="flex items-center gap-space-1">
-                  <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                  <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                     {stage}
                   </span>
                   {index < workStages.length - 1 ? (
@@ -287,7 +287,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="h-px w-full bg-elevated" />
+          <div className="h-px w-full bg-border-elevated" />
 
           <div className="flex flex-col gap-space-4">
             <h3 className="text-h3">Анализ текущей версии</h3>
@@ -310,7 +310,7 @@ export function WorkCasePage() {
                 loading="lazy"
               quality={100}
               />
-              <p className="text-center text-caption-14 text-secondary">
+              <p className="text-center text-caption-14 text-secondary-elevated">
                 1 - сценарии, 2 - настройки, 3 - элементы, 4 - канвас с блоками и переходами
               </p>
             </div>
@@ -409,7 +409,7 @@ export function WorkCasePage() {
             видеть связи между блоками и понимать, как работает сценарий целиком.
           </p>
 
-          <div className="h-px w-full bg-elevated" />
+          <div className="h-px w-full bg-border-elevated" />
 
           <div className="flex w-full max-w-[800px] flex-col gap-space-6">
             <div className="flex flex-col gap-space-4">
@@ -421,52 +421,52 @@ export function WorkCasePage() {
             <div className="flex flex-col gap-space-2 sm:flex-row sm:flex-wrap">
               <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:h-[240px] sm:w-[261px]">
                 <p className="text-body-16-semibold">1. Организация сценариев</p>
-                <p className="text-body-16 text-secondary">
+                <p className="text-body-16 text-secondary-elevated">
                   Поиск, группировка и статусы должны помочь пользователям быстрее находить нужные
                   сценарии и переключаться между ними.
                 </p>
                 <p className="text-body-16">
-                  <span className="text-body-18-semibold">Метрика: </span>time-to-change
+                  <span className="text-caption-14-semibold">Метрика: </span>time-to-change
                 </p>
               </div>
               <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[262px]">
                 <p className="text-body-16-semibold">2. Единый контекст</p>
-                <p className="text-body-16 text-secondary">
+                <p className="text-body-16 text-secondary-elevated">
                   Если схема и настройки находятся в одном рабочем пространстве, пользователи
                   меньше теряют контекст и реже ошибаются при изменениях.
                 </p>
                 <p className="text-body-16">
-                  <span className="text-body-18-semibold">Метрика: </span>количество ошибок после публикации
+                  <span className="text-caption-14-semibold">Метрика: </span>количество ошибок после публикации
                 </p>
               </div>
               <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[261px]">
                 <p className="text-body-16-semibold">3. Понятные сущности</p>
-                <p className="text-body-16 text-secondary">
+                <p className="text-body-16 text-secondary-elevated">
                   Описание элементов через поведение должно помочь пользователям быстрее понимать,
                   какой блок нужен и как он повлияет на сценарий.
                 </p>
                 <p className="text-body-16">
-                  <span className="text-body-18-semibold">Метрика: </span>time-to-change, обращения в поддержку
+                  <span className="text-caption-14-semibold">Метрика: </span>time-to-change, обращения в поддержку
                 </p>
               </div>
               <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[395px]">
                 <p className="text-body-16-semibold">4. Читаемость</p>
-                <p className="text-body-16 text-secondary">
+                <p className="text-body-16 text-secondary-elevated">
                   Визуальная иерархия, масштабирование и миникарта должны помочь пользователям
                   считывать структуру сценария даже при росте схемы.
                 </p>
                 <p className="text-body-16">
-                  <span className="text-body-18-semibold">Метрика: </span>time-to-change
+                  <span className="text-caption-14-semibold">Метрика: </span>time-to-change
                 </p>
               </div>
               <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[395px]">
                 <p className="text-body-16-semibold">5. Безопасные изменения</p>
-                <p className="text-body-16 text-secondary">
+                <p className="text-body-16 text-secondary-elevated">
                   Статусы, проверка и публикация должны снизить страх сломать рабочий сценарий и
                   позволить чаще вносить изменения без разработки.
                 </p>
                 <p className="text-body-16">
-                  <span className="text-body-18-semibold">Метрика: </span>self-service rate, количество ошибок
+                  <span className="text-caption-14-semibold">Метрика: </span>self-service rate, количество ошибок
                 </p>
               </div>
             </div>
@@ -493,12 +493,12 @@ export function WorkCasePage() {
           <div className="flex flex-col gap-space-2 md:grid md:grid-cols-3 md:gap-space-2">
             <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-space-4 rounded-[20px] bg-elevated py-space-6 pl-space-6 pr-space-5 md:w-full md:min-w-0">
               <div className="flex items-center gap-space-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-elevated-hover text-body-18-semibold text-primary">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-elevated-accent text-body-18-semibold text-primary">
                   1
                 </div>
                 <div className="flex min-w-0 flex-col gap-space-0-5">
                   <p className="text-body-16-semibold text-primary">Understand</p>
-                  <p className="text-caption-14 text-secondary">Понять сценарий</p>
+                  <p className="text-caption-14 text-secondary-elevated">Понять сценарий</p>
                 </div>
               </div>
               <p className="text-caption-14 text-primary">
@@ -513,12 +513,12 @@ export function WorkCasePage() {
 
             <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-space-4 rounded-[20px] bg-elevated py-space-6 pl-space-6 pr-space-5 md:w-full md:min-w-0">
               <div className="flex items-center gap-space-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-elevated-hover text-body-18-semibold text-primary">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-elevated-accent text-body-18-semibold text-primary">
                   2
                 </div>
                 <div className="flex min-w-0 flex-col gap-space-0-5">
                   <p className="text-body-16-semibold text-primary">Edit</p>
-                  <p className="text-caption-14 text-secondary">Внести изменения</p>
+                  <p className="text-caption-14 text-secondary-elevated">Внести изменения</p>
                 </div>
               </div>
               <p className="text-caption-14 text-primary">
@@ -534,12 +534,12 @@ export function WorkCasePage() {
 
             <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-space-4 rounded-[20px] bg-elevated py-space-6 pl-space-6 pr-space-5 md:w-full md:min-w-0">
               <div className="flex items-center gap-space-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-elevated-hover text-body-18-semibold text-primary">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-elevated-accent text-body-18-semibold text-primary">
                   3
                 </div>
                 <div className="flex min-w-0 flex-col gap-space-0-5">
                   <p className="text-body-16-semibold text-primary">Validate</p>
-                  <p className="text-caption-14 text-secondary">Проверить</p>
+                  <p className="text-caption-14 text-secondary-elevated">Проверить</p>
                 </div>
               </div>
               <p className="text-caption-14 text-primary">
@@ -643,7 +643,7 @@ export function WorkCasePage() {
                     loading="lazy"
                   quality={100}
                   />
-                  <p className="text-center text-caption-14 text-secondary">Было</p>
+                  <p className="text-center text-caption-14 text-secondary-elevated">Было</p>
                 </div>
                 <div className="flex flex-col gap-space-3">
                   <Image
@@ -656,7 +656,7 @@ export function WorkCasePage() {
                     loading="lazy"
                   quality={100}
                   />
-                  <p className="text-center text-caption-14 text-secondary">Стало</p>
+                  <p className="text-center text-caption-14 text-secondary-elevated">Стало</p>
                 </div>
               </div>
             </div>
@@ -712,7 +712,7 @@ export function WorkCasePage() {
                 loading="lazy"
               quality={100}
               />
-              <p className="mt-space-2 text-center text-caption-14 text-secondary">
+              <p className="mt-space-2 text-center text-caption-14 text-secondary-elevated">
                 Флоу добавления элемента на схему и inline редактирования
               </p>
             </div>
@@ -763,7 +763,7 @@ export function WorkCasePage() {
                 loading="lazy"
               quality={100}
               />
-              <p className="mt-space-2 text-center text-caption-14 text-secondary">
+              <p className="mt-space-2 text-center text-caption-14 text-secondary-elevated">
                 На большом масштабе пользователь ориентируется с помощью smart zoom и minimap
               </p>
             </div>
@@ -797,7 +797,7 @@ export function WorkCasePage() {
                 loading="lazy"
               quality={100}
               />
-              <p className="mt-space-2 text-center text-caption-14 text-secondary">
+              <p className="mt-space-2 text-center text-caption-14 text-secondary-elevated">
                 1 - актуальный статус, 2 - публикация сценария
               </p>
             </div>
@@ -808,7 +808,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="h-px w-full bg-elevated" />
+          <div className="h-px w-full bg-border-elevated" />
 
           <p className="text-body-18">
             После нескольких итераций с клиентскими кейсами я подготовила финальные макеты и
@@ -837,7 +837,7 @@ export function WorkCasePage() {
                   <span className="inline-flex h-10 items-center text-h2">28</span>
                   <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
                 </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
+                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
                   self-service rate
                 </p>
               </div>
@@ -849,7 +849,7 @@ export function WorkCasePage() {
                   </span>
                   <span className="inline-flex h-10 items-center text-h2">19</span>
                 </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
+                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
                   минут, time-to-change
                 </p>
               </div>
@@ -859,7 +859,7 @@ export function WorkCasePage() {
                   <span className="inline-flex h-10 items-center text-h2">21</span>
                   <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
                 </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
+                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
                   ошибок в сценариях
                 </p>
               </div>
@@ -869,7 +869,7 @@ export function WorkCasePage() {
                   <span className="inline-flex h-10 items-center text-h2">16</span>
                   <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
                 </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
+                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
                   обращений в саппорт
                 </p>
               </div>
@@ -886,7 +886,7 @@ export function WorkCasePage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="flex w-full items-start justify-between border-t border-bg-elevated pt-space-4 text-body-18"
+          className="flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
@@ -916,7 +916,7 @@ export function WorkCasePage() {
             className="group pointer-events-auto flex items-center justify-end gap-space-3 text-right"
             onClick={(event) => handleSectionNavClick(event, item.id)}
           >
-            <span className="pointer-events-none max-w-[160px] rounded-full bg-elevated-hover px-space-3 py-space-1 text-caption-14 text-secondary opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <span className="pointer-events-none max-w-[160px] rounded-full bg-elevated-hover px-space-3 py-space-1 text-caption-14 text-secondary-elevated opacity-0 transition-opacity duration-200 group-hover:opacity-100">
               {item.label}
             </span>
             <span

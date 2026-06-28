@@ -73,7 +73,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
             >
               CV
@@ -81,7 +81,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://t.me/him9li9"
             >
               Telegram
@@ -94,7 +94,7 @@ export function HomePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto flex w-full max-w-[800px] flex-col gap-space-16 px-space-4 pb-space-16 pt-space-16 sm:px-space-8 sm:pb-space-16 lg:px-0"
+        className="mx-auto flex w-full max-w-[800px] flex-col gap-[120px] px-space-4 pb-space-16 pt-space-16 sm:px-space-8 sm:pb-space-16 lg:px-0"
       >
         <motion.section variants={item} className="mx-auto flex w-full max-w-[800px] flex-col items-start gap-space-4 sm:items-center">
           <div className="flex flex-col items-start justify-center gap-space-8 sm:items-center">
@@ -128,7 +128,7 @@ export function HomePage() {
             Избранные проекты
           </h2>
 
-          <div className="flex w-full flex-col items-start gap-space-16 sm:items-center">
+          <div className="flex w-full flex-col items-start gap-[120px] sm:items-center">
             <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
               <Link
                 href="/app"
@@ -189,16 +189,16 @@ export function HomePage() {
                   </Link>
                 </div>
                 <div className="flex flex-col items-start gap-space-3">
-                  <div className="h-px w-full bg-elevated sm:w-[800px]" />
+                  <div className="h-px w-full bg-border-elevated sm:w-[800px]" />
                   <p className="max-w-[490px] text-body-18 text-primary">
                     Мобильное приложение для звонков за границей. Упростила путь до первого звонка и
                     сделала стоимость связи прозрачнее до начала вызова.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-2">
-                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       8 → 3 шага до звонка
                     </span>
-                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       +23% CR в 1-й звонок
                     </span>
                   </div>
@@ -247,16 +247,16 @@ export function HomePage() {
                   </Link>
                 </div>
                 <div className="flex flex-col items-start gap-space-3">
-                  <div className="h-px w-full bg-elevated sm:w-[800px]" />
+                  <div className="h-px w-full bg-border-elevated sm:w-[800px]" />
                   <p className="max-w-[490px] text-body-18 text-primary">
                     B2B-платформа для автоматизации контакт-центров. Снизила зависимость клиентов
                     от разработки в управлении сценариями звонков.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-2">
-                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       +28% self-service rate
                     </span>
-                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       -21% ошибок после публикации
                     </span>
                   </div>

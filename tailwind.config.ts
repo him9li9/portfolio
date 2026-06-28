@@ -20,18 +20,19 @@ const config: Config = {
         "space-10": "40px",
         "space-12": "48px",
         "space-14": "56px",
-        "space-16": "64px"
+        "space-16": "64px",
+        "space-30": "120px"
       },
       colors: {
         "bg-primary": "var(--color-bg-primary)",
         "bg-secondary": "var(--color-bg-secondary)",
         "bg-elevated": "var(--color-bg-elevated)",
         "bg-elevated-hover": "var(--color-bg-elevated-hover)",
+        "bg-elevated-accent": "var(--color-bg-elevated-accent)",
+        "border-elevated": "var(--color-border-elevated)",
         "text-primary": "var(--color-text-primary)",
-        "text-secondary": "var(--color-text-secondary)"
-      },
-      boxShadow: {
-        card: "0 20px 60px rgba(16, 24, 40, 0.15)"
+        "text-secondary": "var(--color-text-secondary-background)",
+        "text-secondary-elevated": "var(--color-text-secondary-elevated)"
       }
     }
   },

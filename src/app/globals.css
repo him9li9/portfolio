@@ -8,8 +8,11 @@
   --color-bg-secondary: #1c1c1c;
   --color-bg-elevated: #232323;
   --color-bg-elevated-hover: #333333;
+  --color-bg-elevated-accent: #ff8566;
+  --color-border-elevated: #282828;
   --color-text-primary: #ffffff;
-  --color-text-secondary: #afafaf;
+  --color-text-secondary-background: #afafaf;
+  --color-text-secondary-elevated: #e4e4e4;
 }
 
 * {
@@ -35,7 +38,7 @@ a {
 }
 
 .lightbox-backdrop {
-  background: rgba(0, 0, 0, 0.45);
+  background: rgb(var(--color-bg-primary-rgb) / 0.6);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 }
@@ -62,12 +65,28 @@ a {
     background-color: var(--color-bg-elevated-hover);
   }
 
+  .bg-elevated-accent {
+    background-color: var(--color-bg-elevated-accent);
+  }
+
+  .bg-border-elevated {
+    background-color: var(--color-border-elevated);
+  }
+
+  .border-border-elevated {
+    border-color: var(--color-border-elevated);
+  }
+
   .text-primary {
     color: var(--color-text-primary);
   }
 
   .text-secondary {
-    color: var(--color-text-secondary);
+    color: var(--color-text-secondary-background);
+  }
+
+  .text-secondary-elevated {
+    color: var(--color-text-secondary-elevated);
   }
 
   .text-h1 {

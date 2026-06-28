@@ -21,7 +21,8 @@ const assets = {
   competitorOpenphone: "/figma/case-competitor-openphone.png?v=20260621b",
   userflow: "/figma/case-userflow.png?v=20260621b",
   solutionSuccess: "/figma/case-solution-success.png?v=20260621b",
-  solutionCost: "/figma/case-solution-cost.png?v=20260621b",
+  callFlowVideo: "/figma/call-flow-site.mp4",
+  callFlowPoster: "/figma/call-flow-poster.png",
   solutionError: "/figma/case-solution-error.png?v=20260621b"
 };
 
@@ -42,7 +43,12 @@ export function CaseStudyPage() {
   const [canDragUserflow, setCanDragUserflow] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
+  const [isCallFlowLoaded, setIsCallFlowLoaded] = useState(false);
+  const [isCallFlowPaused, setIsCallFlowPaused] = useState(true);
+  const [showCallFlowControl, setShowCallFlowControl] = useState(false);
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
+  const callFlowVideoRef = useRef<HTMLVideoElement | null>(null);
+  const callFlowControlTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const bodyScrollYRef = useRef(0);
   const userflowDragRef = useRef({
     isDown: false,
@@ -53,6 +59,30 @@ export function CaseStudyPage() {
     startOffsetY: 0,
   });
   const userflowBase = { width: 1000, height: 413 };
+  const toggleCallFlowVideo = () => {
+    const video = callFlowVideoRef.current;
+    if (!video) return;
+
+    if (video.paused) {
+      void video.play();
+      setIsCallFlowPaused(false);
+    } else {
+      video.pause();
+      setIsCallFlowPaused(true);
+    }
+  };
+  const showCallFlowControlTemporarily = () => {
+    setShowCallFlowControl(true);
+
+    if (callFlowControlTimerRef.current) {
+      clearTimeout(callFlowControlTimerRef.current);
+    }
+
+    callFlowControlTimerRef.current = setTimeout(() => {
+      setShowCallFlowControl(false);
+    }, 1800);
+  };
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -88,6 +118,14 @@ export function CaseStudyPage() {
     update();
     mql.addEventListener("change", update);
     return () => mql.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      if (callFlowControlTimerRef.current) {
+        clearTimeout(callFlowControlTimerRef.current);
+      }
+    };
   }, []);
 
   useEffect(() => {
@@ -351,7 +389,7 @@ export function CaseStudyPage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
             >
               CV
@@ -359,7 +397,7 @@ export function CaseStudyPage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://t.me/him9li9"
             >
               Telegram
@@ -372,13 +410,13 @@ export function CaseStudyPage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-y-space-16 px-space-4 pb-space-16 pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-space-16 sm:pb-space-16 md:gap-y-space-16"
+        className="flex w-full flex-col gap-y-[120px] px-space-4 pb-space-16 pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-space-16 sm:pb-space-16"
       >
         <motion.section
           id="overview"
           data-section-anchor="overview"
           variants={item}
-          className="-mb-space-4 scroll-mt-space-16 flex flex-col gap-space-8 sm:gap-space-8 md:-mb-space-16"
+          className="scroll-mt-space-16 flex flex-col gap-space-8 sm:gap-space-8"
         >
           <div className="flex flex-col gap-space-4 text-primary">
             <div className="flex flex-col gap-space-1">
@@ -440,7 +478,7 @@ export function CaseStudyPage() {
               основная метрика — количество звонков. Вместе с командой мне предстояло разобраться,
               почему так происходит, и исправить это.
             </p>
-            <div className="mt-space-8 h-px w-full bg-elevated" />
+            <div className="mt-space-8 h-px w-full bg-border-elevated" />
           </div>
 
           <div className="flex flex-col items-center gap-space-6">
@@ -473,7 +511,7 @@ export function CaseStudyPage() {
                     quality={100}
                   />
                 </div>
-                <p className="text-center text-caption-14 text-secondary">
+                <p className="text-center text-caption-14 text-secondary-elevated">
                   CR в 1-й звонок, 2023 г.
                 </p>
               </div>
@@ -510,7 +548,7 @@ export function CaseStudyPage() {
             <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
                 <div key={stage.label} className="flex items-center gap-space-1">
-                  <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary shadow-[0px_4px_100px_0px_rgba(0,0,0,0.25)]">
+                  <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                     {stage.label}
                   </span>
                   {index < workStages.length - 1 ? (
@@ -541,7 +579,7 @@ export function CaseStudyPage() {
               </ul>
             </div>
 
-            <div className="h-px w-full bg-elevated" />
+            <div className="h-px w-full bg-border-elevated" />
 
             <div className="flex flex-col gap-space-4">
               <h3 className="text-h3">Анализ текущей версии</h3>
@@ -577,7 +615,7 @@ export function CaseStudyPage() {
                 quality={100}
                 />
               </div>
-              <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
+              <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
                 Анализ текущего userflow (регистрация · покупка номера · звонок)
               </p>
             </div>
@@ -674,7 +712,7 @@ export function CaseStudyPage() {
                 quality={100}
                 />
               </div>
-              <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
+              <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
                 WhatsApp  (регистрация · выбор контакта · звонок)
               </p>
             </div>
@@ -698,7 +736,7 @@ export function CaseStudyPage() {
                 quality={100}
                 />
               </div>
-              <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
+              <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
                 Open Phone  (выбор номера · регистрация · покупка номера · звонок)
               </p>
             </div>
@@ -713,42 +751,42 @@ export function CaseStudyPage() {
               <div className="flex flex-col gap-space-5 sm:flex-row sm:flex-wrap">
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">1. Ясность на старте</p>
-                  <p className="text-body-16 text-secondary">
+                  <p className="text-body-16 text-secondary-elevated">
                     Если пользователь понимает, на каком этапе онбординга находится и когда сможет
                     начать звонить, ему проще дойти до первого звонка.
                   </p>
                   <p className="text-body-16">
-                    <span className="text-body-18-semibold">Метрика: </span>CR в первый звонок
+                    <span className="text-caption-14-semibold">Метрика: </span>CR в первый звонок
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">2. Прозрачность стоимости</p>
-                  <p className="text-body-16 text-secondary">
+                  <p className="text-body-16 text-secondary-elevated">
                     Если пользователь видит стоимость звонка и состояние баланса до начала вызова,
                     условия тарификации станут более прозрачными.
                   </p>
                   <p className="text-body-16">
-                    <span className="text-body-18-semibold">Метрика: </span>retention, обращения в поддержку
+                    <span className="text-caption-14-semibold">Метрика: </span>retention, обращения в поддержку
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">3. Доступность ответов</p>
-                  <p className="text-body-16 text-secondary">
+                  <p className="text-body-16 text-secondary-elevated">
                     Если ответы на частые вопросы доступны внутри приложения, он реже будет
                     прерывать сценарий и обращаться в поддержку.
                   </p>
                   <p className="text-body-16">
-                    <span className="text-body-18-semibold">Метрика: </span>обращения в поддержку
+                    <span className="text-caption-14-semibold">Метрика: </span>обращения в поддержку
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">4. Очевидность следующего шага</p>
-                  <p className="text-body-16 text-secondary">
+                  <p className="text-body-16 text-secondary-elevated">
                     Если после ошибки или незавершённого действия пользователь понимает, что делать
                     дальше, ему проще вернуться к действию.
                   </p>
                   <p className="text-body-16">
-                    <span className="text-body-18-semibold">Метрика: </span>retention, обращения в поддержку
+                    <span className="text-caption-14-semibold">Метрика: </span>retention, обращения в поддержку
                   </p>
                 </div>
               </div>
@@ -801,7 +839,7 @@ export function CaseStudyPage() {
                   />
                 </button>
               </div>
-              <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
+              <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
                 Новый userflow 1-го звонка (регистрация · покупка номера · звонок)
               </p>
             </div>
@@ -881,18 +919,74 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-secondary py-space-8">
-            <div className="w-full max-w-[1000px] px-space-4 sm:px-0">
-              <Image
-                alt=""
-                src={assets.solutionCost}
-                width={3780}
-                height={1999}
-                sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-              quality={100}
-              />
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
+            <div
+              className="flex w-full items-center justify-center px-space-4 sm:px-0"
+              style={{ height: 600 }}
+            >
+              <div
+                className="group relative h-full max-w-full"
+                style={{ width: "min(299px, calc(100vw - 64px))" }}
+                onTouchStart={showCallFlowControlTemporarily}
+              >
+                <video
+                  ref={callFlowVideoRef}
+                  className="h-full w-full object-contain"
+                  style={{ height: "100%", maxHeight: "100%" }}
+                  src={assets.callFlowVideo}
+                  poster={assets.callFlowPoster}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  onLoadedData={(event) => {
+                    setIsCallFlowLoaded(true);
+                    setIsCallFlowPaused(event.currentTarget.paused);
+                  }}
+                  onCanPlay={(event) => {
+                    setIsCallFlowLoaded(true);
+                    setIsCallFlowPaused(event.currentTarget.paused);
+                  }}
+                  onPlay={() => setIsCallFlowPaused(false)}
+                  onPause={() => setIsCallFlowPaused(true)}
+                />
+                {!isCallFlowLoaded ? (
+                  <Image
+                    alt=""
+                    src={assets.callFlowPoster}
+                    width={900}
+                    height={1840}
+                    sizes="(max-width: 640px) calc(100vw - 64px), 900px"
+                    className="absolute left-0 top-0 h-full w-full object-contain"
+                    style={{ height: "100%", maxHeight: "100%" }}
+                    loading="lazy"
+                  />
+                ) : null}
+                <button
+                  type="button"
+                  aria-label={isCallFlowPaused ? "Play video" : "Pause video"}
+                  onClick={toggleCallFlowVideo}
+                  className={`absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-black/45 text-white backdrop-blur-md transition-opacity duration-200 ${
+                    showCallFlowControl
+                      ? "pointer-events-auto opacity-100"
+                      : "pointer-events-none opacity-0 group-hover:pointer-events-auto group-hover:opacity-100 focus-visible:pointer-events-auto focus-visible:opacity-100"
+                  }`}
+                  style={{ width: 48, height: 48 }}
+                >
+                  {isCallFlowPaused ? (
+                    <span
+                      aria-hidden="true"
+                      className="ml-[3px] block h-0 w-0 border-y-[8px] border-l-[13px] border-y-transparent border-l-current"
+                    />
+                  ) : (
+                    <span aria-hidden="true" className="flex items-center gap-[5px]">
+                      <span className="block h-[16px] w-[4px] rounded-full bg-current" />
+                      <span className="block h-[16px] w-[4px] rounded-full bg-current" />
+                    </span>
+                  )}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -967,7 +1061,7 @@ export function CaseStudyPage() {
                   </span>
                   <span className="inline-flex h-10 items-center text-h2">3</span>
                 </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
+                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
                   шага до звонка
                 </p>
               </div>
@@ -977,7 +1071,7 @@ export function CaseStudyPage() {
                   <span className="inline-flex h-10 items-center text-h2">23</span>
                   <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
                 </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
+                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
                   конверсия в 1-й звонок
                 </p>
               </div>
@@ -990,7 +1084,7 @@ export function CaseStudyPage() {
                   <span className="inline-flex h-10 items-center text-h2">22</span>
                   <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
                 </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
+                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
                   retention на 4-й неделе
                 </p>
               </div>
@@ -1003,7 +1097,7 @@ export function CaseStudyPage() {
                   <span className="inline-flex h-10 items-center text-h2">18</span>
                   <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
                 </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
+                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
                   обращений в саппорт
                 </p>
               </div>
@@ -1019,7 +1113,7 @@ export function CaseStudyPage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="flex w-full items-start justify-between border-t border-bg-elevated pt-space-4 text-body-18"
+          className="flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
@@ -1049,7 +1143,7 @@ export function CaseStudyPage() {
             className="group pointer-events-auto flex items-center justify-end gap-space-3 text-right"
             onClick={(event) => handleSectionNavClick(event, item.id)}
           >
-            <span className="pointer-events-none max-w-[160px] rounded-full bg-elevated-hover px-space-3 py-space-1 text-caption-14 text-secondary opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <span className="pointer-events-none max-w-[160px] rounded-full bg-elevated-hover px-space-3 py-space-1 text-caption-14 text-secondary-elevated opacity-0 transition-opacity duration-200 group-hover:opacity-100">
               {item.label}
             </span>
             <span
@@ -1069,7 +1163,7 @@ export function CaseStudyPage() {
           onTouchMove={(event) => event.preventDefault()}
         >
           <div className="lightbox-backdrop absolute inset-0" />
-          <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[12px] bg-secondary p-0 shadow-[0_20px_60px_rgba(0,0,0,0.45)] sm:w-[90vw] sm:p-0">
+          <div className="relative h-[88vh] w-[96vw] overflow-hidden rounded-[12px] bg-secondary p-0 sm:w-[90vw] sm:p-0">
             <div className="absolute right-3 top-3 z-10 flex gap-space-2 sm:right-6 sm:top-6">
               <button
                 type="button"
@@ -1082,7 +1176,7 @@ export function CaseStudyPage() {
                   setIsUserflowOpen(false);
                 }}
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary">
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary-elevated">
                   <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
                     <path
                       d="M4 4l8 8M12 4l-8 8"
@@ -1144,7 +1238,7 @@ export function CaseStudyPage() {
                   setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
                 }}
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary">
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary-elevated">
                   <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
                     <path d="M3 6h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                   </svg>
@@ -1161,7 +1255,7 @@ export function CaseStudyPage() {
                   setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
                 }}
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary">
+                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary-elevated">
                   <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
                     <path d="M6 3v6M3 6h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                   </svg>
