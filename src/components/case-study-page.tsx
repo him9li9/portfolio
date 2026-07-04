@@ -442,7 +442,6 @@ export function CaseStudyPage() {
               основная метрика — количество звонков. Вместе с командой мне предстояло разобраться,
               почему так происходит, и исправить это.
             </p>
-            <div className="mt-space-8 h-px w-full bg-border-elevated" />
           </div>
 
           <div className="flex flex-col items-center gap-space-6">
@@ -542,8 +541,6 @@ export function CaseStudyPage() {
                 <li>обсуждения с командой поддержки и разработки</li>
               </ul>
             </div>
-
-            <div className="h-px w-full bg-border-elevated" />
 
             <div className="flex flex-col gap-space-4">
               <h3 className="text-h3">Анализ текущей версии</h3>

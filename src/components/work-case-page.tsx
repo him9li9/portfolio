@@ -210,8 +210,6 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="h-px w-full bg-border-elevated" />
-
           <div className="flex flex-col gap-space-2">
             <h3 className="text-h3">Проблема</h3>
             <p className="text-body-18">
@@ -269,8 +267,6 @@ export function WorkCasePage() {
               </ul>
             </div>
           </div>
-
-          <div className="h-px w-full bg-border-elevated" />
 
           <div className="flex flex-col gap-space-4">
             <h3 className="text-h3">Анализ текущей версии</h3>
@@ -392,47 +388,45 @@ export function WorkCasePage() {
             контролировать изменения до того, как они попадут в работу.
           </p>
 
-          <div className="h-px w-full bg-border-elevated" />
-
-          <div className="flex w-full max-w-[800px] flex-col gap-space-6">
+          <div className="flex w-full max-w-[800px] flex-col gap-space-4">
             <div className="flex flex-col gap-space-4">
               <h3 className="text-h3">Гипотезы</h3>
               <p className="text-body-18">
                 На основе анализа я выделила направления, которые могли повлиять на ключевые метрики:
               </p>
             </div>
-            <div className="flex flex-col gap-space-2 sm:flex-row sm:flex-wrap">
-              <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:h-[240px] sm:w-[261px]">
-                <p className="text-body-16-semibold">1. Организация сценариев</p>
-                <p className="text-body-16 text-secondary-elevated">
+            <div className="flex flex-col gap-space-4 text-body-18">
+              <div className="flex flex-col gap-space-1">
+                <p className="text-body-18-semibold">1. Организация сценариев</p>
+                <p>
                   Если сценарии станут более структурированными, пользователям будет проще находить
                   нужный сценарий и быстрее вносить изменения.
                 </p>
               </div>
-              <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[262px]">
-                <p className="text-body-16-semibold">2. Единый контекст</p>
-                <p className="text-body-16 text-secondary-elevated">
+              <div className="flex flex-col gap-space-1">
+                <p className="text-body-18-semibold">2. Единый контекст</p>
+                <p>
                   Если работа со сценарием будет происходить в одном контексте, снизится количество
                   ошибок и нагрузка на поддержку, так как изменения станут более предсказуемыми.
                 </p>
               </div>
-              <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[261px]">
-                <p className="text-body-16-semibold">3. Понятные сущности</p>
-                <p className="text-body-16 text-secondary-elevated">
+              <div className="flex flex-col gap-space-1">
+                <p className="text-body-18-semibold">3. Понятные сущности</p>
+                <p>
                   Если элементы будут названы и сгруппированы по задачам пользователя, снизится
                   порог входа и сократится time-to-change.
                 </p>
               </div>
-              <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[395px]">
-                <p className="text-body-16-semibold">4. Читаемость</p>
-                <p className="text-body-16 text-secondary-elevated">
+              <div className="flex flex-col gap-space-1">
+                <p className="text-body-18-semibold">4. Читаемость</p>
+                <p>
                   Если структура сценария останется понятной даже при росте, пользователям будет
                   проще воспринимать сценарий как единую систему и быстрее его редактировать.
                 </p>
               </div>
-              <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[395px]">
-                <p className="text-body-16-semibold">5. Безопасные изменения</p>
-                <p className="text-body-16 text-secondary-elevated">
+              <div className="flex flex-col gap-space-1">
+                <p className="text-body-18-semibold">5. Безопасные изменения</p>
+                <p>
                   Если пользователь будет понимать, что изменения можно проверить до публикации,
                   снизится зависимость от разработки и вырастет self-service rate.
                 </p>
@@ -458,60 +452,63 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-2 md:grid md:grid-cols-3 md:gap-space-2">
-            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-space-4 rounded-[20px] bg-elevated py-space-6 pl-space-6 pr-space-5 md:w-full md:min-w-0">
-              <div className="flex items-center gap-space-3">
+          <div className="flex flex-col gap-space-2 md:grid md:h-[262px] md:grid-cols-3 md:gap-space-2">
+            <div className="flex h-[262px] flex-col items-start gap-space-3 rounded-[20px] bg-elevated px-space-6 py-space-5 md:min-w-0">
+              <div className="flex w-full items-center gap-space-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-elevated-accent text-body-18-semibold text-primary">
                   1
                 </div>
-                <div className="flex min-w-0 flex-col gap-space-0-5">
+                <div className="flex min-w-0 flex-1 flex-col gap-space-0-5 leading-none">
                   <p className="text-body-16-semibold text-primary">Understand</p>
-                  <p className="text-caption-14 text-secondary-elevated">Понять сценарий</p>
+                  <p className="text-caption-14 text-[#828282]">Понять сценарий</p>
                 </div>
               </div>
-              <p className="text-caption-14 text-primary">
+              <p className="w-full text-body-16 text-primary">
                 Быстро считать структуру сценария и понять, как он работает.
               </p>
-              <div className="flex h-[118px] flex-col gap-space-1 text-caption-14 text-primary">
+              <div className="flex w-full flex-col gap-space-1 text-body-16 text-primary">
                 <p>• Группировка</p>
                 <p>• Понятные названия элементов</p>
               </div>
             </div>
 
-            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-space-4 rounded-[20px] bg-elevated py-space-6 pl-space-6 pr-space-5 md:w-full md:min-w-0">
-              <div className="flex items-center gap-space-3">
+            <div className="flex h-[262px] flex-col items-start gap-space-3 rounded-[20px] bg-elevated px-space-6 py-space-5 md:min-w-0">
+              <div className="flex w-full items-center gap-space-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-elevated-accent text-body-18-semibold text-primary">
                   2
                 </div>
-                <div className="flex min-w-0 flex-col gap-space-0-5">
+                <div className="flex min-w-0 flex-1 flex-col gap-space-0-5 leading-none">
                   <p className="text-body-16-semibold text-primary">Edit</p>
-                  <p className="text-caption-14 text-secondary-elevated">Внести изменения</p>
+                  <p className="text-caption-14 text-[#828282]">Внести изменения</p>
                 </div>
               </div>
-              <p className="text-caption-14 text-primary">
+              <p className="w-full text-body-16 text-primary">
                 Внести изменения без лишних переходов и потери контекста.
               </p>
-              <div className="flex h-[118px] flex-col gap-space-1 text-caption-14 text-primary">
+              <div className="flex w-full flex-col gap-space-1 text-body-16 text-primary">
                 <p>• Создание и настройка элементов на схеме</p>
                 <p>• Inline-редактирование</p>
               </div>
             </div>
 
-            <div className="grid h-[300px] grid-rows-[38px_66px_118px] content-start gap-space-4 rounded-[20px] bg-elevated py-space-6 pl-space-6 pr-space-5 md:w-full md:min-w-0">
-              <div className="flex items-center gap-space-3">
+            <div className="flex h-[262px] flex-col items-start gap-space-3 rounded-[20px] bg-elevated px-space-6 py-space-5 md:min-w-0">
+              <div className="flex w-full items-center gap-space-3">
                 <div className="flex h-8 w-8 items-center justify-center rounded-full bg-elevated-accent text-body-18-semibold text-primary">
                   3
                 </div>
-                <div className="flex min-w-0 flex-col gap-space-0-5">
+                <div className="flex min-w-0 flex-1 flex-col gap-space-0-5 leading-none">
                   <p className="text-body-16-semibold text-primary">Validate</p>
-                  <p className="text-caption-14 text-secondary-elevated">Проверить</p>
+                  <p className="text-caption-14 text-[#828282]">Проверить</p>
                 </div>
               </div>
-              <p className="text-caption-14 text-primary">
+              <p className="w-full text-body-16 text-primary">
                 Убедиться, что изменения работают без ошибок.
               </p>
-              <div className="flex h-[118px] flex-col gap-space-1 text-caption-14 text-primary">
-                <p>• Статусы для сценариев (черновик / опубликовано)</p>
+              <div className="flex w-full flex-col gap-space-1 text-body-16 text-primary">
+                <div>
+                  <p>• Статусы для сценариев</p>
+                  <p>(черновик / опубликовано)</p>
+                </div>
                 <p>• Тестирование до публикации</p>
               </div>
             </div>
@@ -543,7 +540,7 @@ export function WorkCasePage() {
                 Создаёт сценарий → Добавляет элемент на схему → Настраивает → Тестирует
               </p>
               <p className="text-body-18-italic">
-                Работа происходит в одном контексте, а публикация становится отдельным и более
+                Работа происходит в едином контексте, а публикация становится отдельным и более
                 осознанным действием.
               </p>
             </div>
@@ -771,8 +768,6 @@ export function WorkCasePage() {
               базовых сценариев работы с редактором.
             </p>
           </div>
-
-          <div className="h-px w-full bg-border-elevated" />
 
           <p className="text-body-18">
             После нескольких итераций с клиентскими кейсами я подготовила финальные макеты и
