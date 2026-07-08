@@ -11,7 +11,7 @@ const assets = {
   phone1: "/figma/Main/phone%201.png",
   phone2: "/figma/Main/phone%202.png",
   phone3: "/figma/Main/phone%203.png",
-  vpbxCanvas: "/figma/Case_2/vpbx-canvas.png",
+  vpbxCanvas: "/figma/Case_2/Case_2/vpbx-canvas.png",
   arrowForward: "/figma/Main/arrow_forward.svg"
 };
 

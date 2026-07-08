@@ -452,13 +452,13 @@ export function WorkCasePage() {
 
           <div className="flex flex-col gap-space-2 md:grid md:h-[262px] md:grid-cols-3 md:gap-space-2">
             <div className="flex h-[262px] flex-col items-start gap-space-3 rounded-[20px] bg-elevated px-space-6 py-space-5 md:min-w-0">
-              <div className="flex w-full items-center gap-space-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-elevated-accent text-body-18-semibold text-primary">
+              <div className="flex h-[38px] w-full items-center gap-space-3">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-[18px] font-semibold leading-[29px] text-primary">
                   1
                 </div>
-                <div className="flex min-w-0 flex-1 flex-col gap-space-0-5 leading-none">
-                  <p className="text-body-16-semibold text-primary">Understand</p>
-                  <p className="text-caption-14 text-[#828282]">Понять сценарий</p>
+                <div className="flex min-w-0 flex-1 flex-col gap-space-0-5">
+                  <p className="text-[16px] font-semibold leading-[19px] text-primary">Understand</p>
+                  <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Понять сценарий</p>
                 </div>
               </div>
               <p className="w-full text-body-16 text-primary">
@@ -471,13 +471,13 @@ export function WorkCasePage() {
             </div>
 
             <div className="flex h-[262px] flex-col items-start gap-space-3 rounded-[20px] bg-elevated px-space-6 py-space-5 md:min-w-0">
-              <div className="flex w-full items-center gap-space-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-elevated-accent text-body-18-semibold text-primary">
+              <div className="flex h-[38px] w-full items-center gap-space-3">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-[18px] font-semibold leading-[29px] text-primary">
                   2
                 </div>
-                <div className="flex min-w-0 flex-1 flex-col gap-space-0-5 leading-none">
-                  <p className="text-body-16-semibold text-primary">Edit</p>
-                  <p className="text-caption-14 text-[#828282]">Внести изменения</p>
+                <div className="flex min-w-0 flex-1 flex-col gap-space-0-5">
+                  <p className="text-[16px] font-semibold leading-[19px] text-primary">Edit</p>
+                  <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Внести изменения</p>
                 </div>
               </div>
               <p className="w-full text-body-16 text-primary">
@@ -490,13 +490,13 @@ export function WorkCasePage() {
             </div>
 
             <div className="flex h-[262px] flex-col items-start gap-space-3 rounded-[20px] bg-elevated px-space-6 py-space-5 md:min-w-0">
-              <div className="flex w-full items-center gap-space-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-elevated-accent text-body-18-semibold text-primary">
+              <div className="flex h-[38px] w-full items-center gap-space-3">
+                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-[18px] font-semibold leading-[29px] text-primary">
                   3
                 </div>
-                <div className="flex min-w-0 flex-1 flex-col gap-space-0-5 leading-none">
-                  <p className="text-body-16-semibold text-primary">Validate</p>
-                  <p className="text-caption-14 text-[#828282]">Проверить</p>
+                <div className="flex min-w-0 flex-1 flex-col gap-space-0-5">
+                  <p className="text-[16px] font-semibold leading-[19px] text-primary">Validate</p>
+                  <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Проверить</p>
                 </div>
               </div>
               <p className="w-full text-body-16 text-primary">
