@@ -10,7 +10,7 @@ const assets = {
   hero: "/figma/Case_2/Case_2/vpbx-canvas.png",
   arrowForward: "/figma/Main/arrow_forward.svg",
   oldCanvas: "/figma/Case_2/old-canvas.png",
-  addFlow: "/figma/Case_2/add-flow.png?v=2",
+  addFlow: "/figma/Case_2/Case_2/Case_2/flow.png",
   table: "/figma/Case_2/table.png?v=2",
   leftSidebar: "/figma/Case_2/Case_2/left_sidebar.png",
   rightSidebar: "/figma/Case_2/Case_2/right_sidebar.png",
@@ -274,8 +274,8 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="h-[490px] bg-elevated px-space-6 pt-space-10 pb-space-8">
-            <div className="mx-auto flex h-full max-w-[700px] flex-col justify-between">
+          <div className="flex flex-col items-center gap-space-6 rounded-[20px] bg-elevated px-space-6 py-space-8">
+            <div className="mx-auto w-full max-w-[700px]">
               <Image
                 alt="Текущая версия редактора сценариев"
                 src={assets.oldCanvas}
@@ -284,12 +284,12 @@ export function WorkCasePage() {
                 sizes="(max-width: 800px) calc(100vw - 80px), 700px"
                 className="h-auto w-full rounded-[8px] object-contain"
                 loading="lazy"
-              quality={100}
+                quality={100}
               />
-              <p className="text-center text-caption-14 text-secondary-elevated">
-                Текущий редактор: сценарии, настройка, элементы, канвас
-              </p>
             </div>
+            <p className="text-center text-caption-14 text-secondary-elevated">
+              Текущий редактор: 1. сценарии&nbsp;&nbsp;2. настройка&nbsp;&nbsp;3. элементы&nbsp;&nbsp;4. канвас
+            </p>
           </div>
 
           <div className="flex flex-col gap-space-2">
@@ -314,21 +314,19 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-3">
-            <Image
-              alt="Флоу добавления элемента"
-              src={assets.addFlow}
-              width={800}
-              height={505}
-              sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-              className="h-auto w-full object-contain"
-              loading="lazy"
-            quality={100}
-            />
-            <p className="text-center text-caption-14 text-secondary-background">
-              Флоу элемента: создаём в настройках (в модальном окне), настраиваем в футере под
-              таблицей, возвращаемся на сценарий и добавляем на схему
-            </p>
+          <div className="flex flex-col items-center gap-space-6 rounded-[20px] bg-elevated px-space-6 py-space-8">
+            <div className="mx-auto w-full max-w-[700px]">
+              <Image
+                alt="Флоу работы с элементами"
+                src={assets.addFlow}
+                width={2400}
+                height={1494}
+                sizes="(max-width: 800px) calc(100vw - 80px), 700px"
+                className="h-auto w-full rounded-[8px] object-contain"
+                loading="lazy"
+                quality={100}
+              />
+            </div>
           </div>
 
           <div className="flex flex-col gap-space-2">

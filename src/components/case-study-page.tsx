@@ -709,7 +709,7 @@ export function CaseStudyPage() {
                   На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками продукта.
                 </p>
               </div>
-              <div className="flex flex-col gap-space-5 sm:flex-row sm:flex-wrap">
+              <div className="flex flex-col gap-space-3 sm:flex-row sm:flex-wrap">
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">1. Ясность на старте</p>
                   <p className="text-body-16 text-secondary-elevated">
