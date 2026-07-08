@@ -980,36 +980,36 @@ export function CaseStudyPage() {
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <p className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">+</span>
-                  <span className="inline-flex h-10 items-center text-h2">23</span>
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
+                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
+                  <span className="text-[18px] leading-[160%]">+</span>
+                  <span className="text-[24px] leading-8">23</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
                   конверсия в 1-й звонок
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <div className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-center text-h2">15</span>
-                  <span className="inline-flex h-10 items-center">
+                <div className="flex items-center gap-space-1 whitespace-nowrap text-primary">
+                  <span className="text-[24px] font-semibold leading-8">15</span>
+                  <span className="inline-flex">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="inline-flex h-10 items-center text-h2">22</span>
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
+                  <span className="text-[24px] font-semibold leading-8">22</span>
+                  <span className="text-[18px] font-semibold leading-[160%]">%</span>
                 </div>
                 <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
                   retention на 4-й неделе
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <div className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-center text-h2">40</span>
-                  <span className="inline-flex h-10 items-center">
+                <div className="flex items-center gap-space-1 whitespace-nowrap text-primary">
+                  <span className="text-[24px] font-semibold leading-8">40</span>
+                  <span className="inline-flex">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="inline-flex h-10 items-center text-h2">18</span>
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
+                  <span className="text-[24px] font-semibold leading-8">18</span>
+                  <span className="text-[18px] font-semibold leading-[160%]">%</span>
                 </div>
                 <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
                   обращений в саппорт
