@@ -274,14 +274,14 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center gap-space-6 rounded-[20px] bg-elevated px-space-6 py-space-8">
-            <div className="mx-auto w-full max-w-[700px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center gap-space-6 rounded-[12px] bg-elevated px-space-6 py-space-6">
+            <div className="mx-auto w-full max-w-[800px]">
               <Image
                 alt="Текущая версия редактора сценариев"
                 src={assets.oldCanvas}
                 width={700}
                 height={396}
-                sizes="(max-width: 800px) calc(100vw - 80px), 700px"
+                sizes="(max-width: 832px) calc(100vw - 80px), 800px"
                 className="h-auto w-full rounded-[8px] object-contain"
                 loading="lazy"
                 quality={100}
@@ -314,7 +314,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center rounded-[20px] bg-elevated px-space-6 py-space-6">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center rounded-[12px] bg-elevated px-space-6 py-space-6">
             <div className="mx-auto w-full max-w-[800px]">
               <Image
                 alt="Флоу работы с элементами"
@@ -448,8 +448,8 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-2 md:grid md:h-[262px] md:grid-cols-3 md:gap-space-2">
-            <div className="flex h-[262px] flex-col items-start gap-space-3 rounded-[20px] bg-elevated px-space-6 py-space-5 md:min-w-0">
+          <div className="flex flex-col gap-space-3 md:grid md:h-[232px] md:grid-cols-3">
+            <div className="flex h-[232px] flex-col items-start gap-space-4 rounded-[20px] bg-elevated p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-[18px] font-semibold leading-[29px] text-primary">
                   1
@@ -459,16 +459,16 @@ export function WorkCasePage() {
                   <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Понять сценарий</p>
                 </div>
               </div>
-              <p className="w-full text-body-16 text-primary">
+              <p className="w-full text-[14px] leading-[160%] text-primary">
                 Быстро считать структуру сценария и понять, как он работает.
               </p>
-              <div className="flex w-full flex-col gap-space-1 text-body-16 text-primary">
+              <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
                 <p>• Группировка</p>
                 <p>• Понятные названия элементов</p>
               </div>
             </div>
 
-            <div className="flex h-[262px] flex-col items-start gap-space-3 rounded-[20px] bg-elevated px-space-6 py-space-5 md:min-w-0">
+            <div className="flex h-[232px] flex-col items-start gap-space-4 rounded-[20px] bg-elevated p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-[18px] font-semibold leading-[29px] text-primary">
                   2
@@ -478,16 +478,16 @@ export function WorkCasePage() {
                   <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Внести изменения</p>
                 </div>
               </div>
-              <p className="w-full text-body-16 text-primary">
+              <p className="w-full text-[14px] leading-[160%] text-primary">
                 Внести изменения без лишних переходов и потери контекста.
               </p>
-              <div className="flex w-full flex-col gap-space-1 text-body-16 text-primary">
+              <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
                 <p>• Создание и настройка элементов на схеме</p>
                 <p>• Inline-редактирование</p>
               </div>
             </div>
 
-            <div className="flex h-[262px] flex-col items-start gap-space-3 rounded-[20px] bg-elevated px-space-6 py-space-5 md:min-w-0">
+            <div className="flex h-[232px] flex-col items-start gap-space-4 rounded-[20px] bg-elevated p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-[18px] font-semibold leading-[29px] text-primary">
                   3
@@ -497,10 +497,10 @@ export function WorkCasePage() {
                   <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Проверить</p>
                 </div>
               </div>
-              <p className="w-full text-body-16 text-primary">
+              <p className="w-full text-[14px] leading-[160%] text-primary">
                 Убедиться, что изменения работают без ошибок.
               </p>
-              <div className="flex w-full flex-col gap-space-1 text-body-16 text-primary">
+              <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
                 <div>
                   <p>• Статусы для сценариев</p>
                   <p>(черновик / опубликовано)</p>
@@ -748,7 +748,7 @@ export function WorkCasePage() {
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">+</span>
-                  <span className="text-[24px] leading-8">28</span>
+                  <span className="text-[32px] leading-10">28</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
@@ -756,12 +756,12 @@ export function WorkCasePage() {
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <div className="flex items-center gap-space-1 whitespace-nowrap text-primary">
-                  <span className="text-[24px] font-semibold leading-8">33</span>
+                <div className="flex items-center gap-0 whitespace-nowrap text-primary">
+                  <span className="text-[32px] font-semibold leading-10">33</span>
                   <span className="inline-flex">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="text-[24px] font-semibold leading-8">19</span>
+                  <span className="text-[32px] font-semibold leading-10">19</span>
                 </div>
                 <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
                   минут, time-to-change
@@ -770,7 +770,7 @@ export function WorkCasePage() {
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">-</span>
-                  <span className="text-[24px] leading-8">21</span>
+                  <span className="text-[32px] leading-10">21</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
@@ -780,7 +780,7 @@ export function WorkCasePage() {
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">-</span>
-                  <span className="text-[24px] leading-8">16</span>
+                  <span className="text-[32px] leading-10">16</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
