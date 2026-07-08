@@ -7,18 +7,16 @@ import { useEffect, useState } from "react";
 
 const assets = {
   heart: "/figma/heart.svg",
-  hero: "/figma/Case_2/vpbx-canvas.png",
+  hero: "/figma/Case_2/Case_2/vpbx-canvas.png",
   arrowForward: "/figma/Main/arrow_forward.svg",
   oldCanvas: "/figma/Case_2/old-canvas.png",
   addFlow: "/figma/Case_2/add-flow.png?v=2",
   table: "/figma/Case_2/table.png?v=2",
-  oldSidebar: "/figma/Case_2/old-sidebar.png",
-  newSidebar: "/figma/Case_2/new-sidebar.png",
-  library: "/figma/Case_2/library.png",
-  element: "/figma/Case_2/element.png",
-  dialog: "/figma/Case_2/dialog.png",
-  map: "/figma/Case_2/map.png",
-  publish: "/figma/Case_2/public.png"
+  leftSidebar: "/figma/Case_2/Case_2/left_sidebar.png",
+  rightSidebar: "/figma/Case_2/Case_2/right_sidebar.png",
+  canvasMotion: "/figma/Case_2/Case_2/canvas.mp4",
+  minimap: "/figma/Case_2/Case_2/minimap.png",
+  publishMotion: "/figma/Case_2/Case_2/publish_motion.mp4"
 };
 
 const workStages = ["Дискавери", "Гипотезы", "Проектирование", "Тестирование", "Передача в разработку"];
@@ -561,66 +559,51 @@ export function WorkCasePage() {
           <div className="flex flex-col gap-space-4">
             <h2 className="text-h2">Решение</h2>
             <p className="text-body-18">
-              Работу над редактором я вела итеративно: тестировала сценарии на менеджерах и
-              клиентских кейсах, а результаты обсуждала с разработкой. Так мы постепенно уточняли
-              решения и адаптировали их под реальное использование.
+              Работая над редактором я проверяла, насколько менеджеры понимают структуру сценария,
+              могут вносить изменения самостоятельно и не боятся публиковать обновления. После каждой
+              итерации я обсуждала спорные места с командой, чтобы решение оставалось понятным и
+              реализуемым.
             </p>
           </div>
 
-          <Image
-            alt="KOMPaaS solution overview"
-            src={assets.hero}
-            width={800}
-            height={500}
-            sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-            className="h-auto w-full object-contain"
-            loading="lazy"
-          quality={100}
-          />
+          <div className="flex flex-col items-center gap-space-4">
+            <Image
+              alt="KOMPaaS solution overview"
+              src={assets.hero}
+              width={800}
+              height={500}
+              sizes="(max-width: 800px) calc(100vw - 32px), 800px"
+              className="h-auto w-full rounded-[8px] object-cover"
+              loading="lazy"
+              quality={100}
+            />
+            <p className="text-center text-caption-14 text-secondary">
+              Сценарии, canvas, элементы и публикация — в едином рабочем пространстве
+            </p>
+          </div>
 
           <div className="flex flex-col gap-space-4">
             <div className="flex flex-col gap-space-2 text-body-18">
               <p className="text-body-18-semibold">1. Организовать сценарии</p>
               <p>
-                Я не стала усложнять систему, потому что пользователи уже к ней привыкли, только
-                добавила группировку по сценариям, поиск и объединила действия со сценарием в
-                контекстном меню.
+                Я сохранила привычную модель списка и улучшила навигацию по сценариям: добавила
+                группировку по проектам, поиск, статусы и быстрые действия.
               </p>
               <p className="italic">
-                → Это упростило навигацию и сделало работу со сценариями более предсказуемой.
+                → Пользователь быстрее находит нужный сценарий и понимает его текущее состояние.
               </p>
             </div>
 
-            <div className="bg-elevated px-space-6 py-space-8">
-              <div className="grid gap-space-8 sm:grid-cols-2">
-                <div className="flex flex-col gap-space-3">
-                  <Image
-                    alt="Старый сайдбар"
-                    src={assets.oldSidebar}
-                    width={330}
-                    height={236}
-                    sizes="(max-width: 640px) calc(100vw - 80px), 330px"
-                    className="h-auto w-full object-contain"
-                    loading="lazy"
-                  quality={100}
-                  />
-                  <p className="text-center text-caption-14 text-secondary-elevated">Было</p>
-                </div>
-                <div className="flex flex-col gap-space-3">
-                  <Image
-                    alt="Новый сайдбар"
-                    src={assets.newSidebar}
-                    width={330}
-                    height={236}
-                    sizes="(max-width: 640px) calc(100vw - 80px), 330px"
-                    className="h-auto w-full object-contain"
-                    loading="lazy"
-                  quality={100}
-                  />
-                  <p className="text-center text-caption-14 text-secondary-elevated">Стало</p>
-                </div>
-              </div>
-            </div>
+            <Image
+              alt="Навигация по сценариям и быстрые действия"
+              src={assets.leftSidebar}
+              width={800}
+              height={400}
+              sizes="(max-width: 800px) calc(100vw - 32px), 800px"
+              className="h-auto w-full object-cover"
+              loading="lazy"
+              quality={100}
+            />
           </div>
 
           <div className="flex flex-col gap-space-4">
@@ -628,25 +611,24 @@ export function WorkCasePage() {
               <p className="text-body-18-semibold">2. Сделать элементы понятнее</p>
               <p>
                 Во время тестов пользователи часто выбирали элементы по названию и не всегда
-                понимали разницу между ними. Чтобы разделить их по сценариям использования, я
-                провела карточную сортировку и по её результатам сгруппировала и добавила более
-                понятные описания.
+                понимали разницу между ними. Чтобы это исправить, я провела карточную сортировку,
+                сгруппировала элементы по сценариям использования и добавила описания, объясняющие
+                поведение блока.
               </p>
               <p className="italic">
-                → Пользователи стали быстрее находить нужные элементы, сократилось количество
-                действий «методом проб и ошибок» при сборке сценариев и обращений в поддержку.
+                → Пользователям стало проще выбрать нужный элемент и добавить его на схему.
               </p>
             </div>
 
             <Image
-              alt="Библиотека элементов"
-              src={assets.library}
+              alt="Библиотека элементов и настройки правой панели"
+              src={assets.rightSidebar}
               width={800}
-              height={521}
+              height={600}
               sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-              className="h-auto w-full object-contain"
+              className="h-auto w-full object-cover"
               loading="lazy"
-            quality={100}
+              quality={100}
             />
           </div>
 
@@ -655,124 +637,98 @@ export function WorkCasePage() {
               <p className="text-body-18-semibold">3. Вернуть пользователю контекст</p>
               <p>
                 Перенесла создание и настройку блоков прямо в canvas, чтобы пользователь мог
-                добавлять элементы на схему, редактировать их и сразу видеть изменения.
+                добавлять элементы на схему, редактировать их и сразу увидеть как изменения влияют
+                на сценарий.
+              </p>
+              <p>
+                Для сложных настроек оставили модальные окна, это стало компромиссом между скоростью
+                редактирования и более точной настройкой элементов, когда это действительно
+                необходимо.
               </p>
               <p className="italic">
-                → Сократилось количество переходов между экранами, а базовые действия стали проще.
+                → Сократилось количество переходов между экранами, а работа с элементами стала
+                единым процессом.
               </p>
             </div>
 
-            <div className="bg-elevated px-space-6 py-space-8">
-              <Image
-                alt="Флоу добавления элемента на схему и inline редактирования"
-                src={assets.element}
-                width={595}
-                height={347}
-                sizes="(max-width: 800px) calc(100vw - 80px), 595px"
-                className="mx-auto h-auto w-full max-w-[595px] object-contain"
-                loading="lazy"
-              quality={100}
+            <div className="flex flex-col items-center gap-space-3">
+              <video
+                src={assets.canvasMotion}
+                className="h-auto w-full rounded-[8px] object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="Пользователь добавляет и настраивает блок, оставаясь в контексте"
               />
-              <p className="mt-space-2 text-center text-caption-14 text-secondary-elevated">
-                Флоу добавления элемента на схему и inline редактирования
+              <p className="text-center text-caption-14 text-secondary">
+                Пользователь добавляет и настраивает блок, оставаясь в контексте.
               </p>
             </div>
-
-            <p className="text-body-18">
-              Для сложных настроек я оставила модальные окна, чтобы canvas не перегружался
-              деталями, а пользователи могли быстро редактировать частые блоки прямо на схеме. Это
-              стало компромиссом между скоростью редактирования и необходимостью более точной
-              настройки.
-            </p>
-
-            <Image
-              alt="Диалог настройки элемента"
-              src={assets.dialog}
-              width={800}
-              height={500}
-              sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-              className="h-auto w-full object-contain"
-              loading="lazy"
-            quality={100}
-            />
           </div>
 
           <div className="flex flex-col gap-space-4">
             <div className="flex flex-col gap-space-2 text-body-18">
               <p className="text-body-18-semibold">4. Сделать большие сценарии читаемыми</p>
-              <p>Чтобы улучшить читаемость больших флоу, я переработала визуальную иерархию сценария:</p>
-              <ul className="list-disc space-y-0 pl-space-6">
-                <li>упростила ветки, не входящие в основной флоу</li>
-                <li>выделила связи между блоками при нажатии на элемент</li>
-                <li>добавила smart zoom (крупные иконки) при увеличении масштаба и minimap для навигации</li>
-              </ul>
+              <p>
+                Чтобы большие флоу было проще читать, я упростила вторичные ветки, добавила
+                подсветку связей между блоками, minimap и панель для навигации по схеме.
+              </p>
               <p className="italic">
-                → Стало проще ориентироваться в структуре сценария и понимать влияние изменений на
-                общую логику. Даже когда схема разрастается до 20+ блоков, менеджер может быстро
-                переключаться между участками сценария.
+                → Пользователю стало проще ориентироваться в структуре сценария, отличать основной
+                флоу от второстепенных веток и понимать, какие участки затронет изменение.
               </p>
             </div>
 
-            <div className="bg-elevated px-space-6 py-space-8">
-              <Image
-                alt="Smart zoom и minimap"
-                src={assets.map}
-                width={595}
-                height={300}
-                sizes="(max-width: 800px) calc(100vw - 80px), 595px"
-                className="mx-auto h-auto w-full max-w-[595px] object-contain"
-                loading="lazy"
+            <Image
+              alt="Minimap и навигация по большой схеме"
+              src={assets.minimap}
+              width={800}
+              height={513}
+              sizes="(max-width: 800px) calc(100vw - 32px), 800px"
+              className="h-auto w-full object-cover"
+              loading="lazy"
               quality={100}
-              />
-              <p className="mt-space-2 text-center text-caption-14 text-secondary-elevated">
-                На большом масштабе пользователь ориентируется с помощью smart zoom и minimap
-              </p>
-            </div>
+            />
           </div>
 
           <div className="flex flex-col gap-space-4">
             <div className="flex flex-col gap-space-2 text-body-18">
-              <p className="text-body-18-semibold">5. Снизить страх ошибок</p>
+              <p className="text-body-18-semibold">5. Сделать публикацию предсказуемой</p>
               <p>
-                В первой итерации я сфокусировалась на том, чтобы сделать изменения более осознанными:
+                Ранее менеджеры не всегда понимали, какие изменения уже влияют на реальные звонки, а
+                какие ещё находятся в работе. Поэтому я добавила статусы сценария (draft / published)
+                и вынесла публикацию как отдельное действие.
               </p>
-              <ul className="list-disc space-y-0 pl-space-6">
-                <li>добавила явный статус сценария (draft / published)</li>
-                <li>вынесла публикацию в отдельный этап</li>
-              </ul>
               <p className="italic">
-                → Пользователям стало проще понимать, в каком состоянии находится сценарий и когда
-                изменения попадут в работу. Это отделило черновые изменения от рабочего сценария и
-                сделало публикацию осознанным действием.
+                → Пользователь видит, находится сценарий в черновике или уже опубликован, и понимает,
+                когда изменения попадут в работу.
               </p>
             </div>
 
-            <div className="bg-elevated px-0 pt-0 pb-0">
-              <Image
-                alt="Статус и публикация сценария"
-                src={assets.publish}
-                width={800}
-                height={97}
-                sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-              quality={100}
+            <div className="flex flex-col items-center gap-space-2">
+              <video
+                src={assets.publishMotion}
+                className="aspect-[2278/1068] w-full rounded-[8px] object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label="После публикации изменений статус обновляется, а кнопка становится неактивной"
               />
-              <p className="mt-space-2 text-center text-caption-14 text-secondary-elevated">
-                1 - актуальный статус, 2 - публикация сценария
+              <p className="text-center text-caption-14 text-secondary">
+                После публикации изменений статус обновляется, а кнопка становится неактивной.
               </p>
             </div>
 
             <p className="text-body-18">
-              Полноценное тестирование и историю версий вынесли в следующий этап — после проверки
-              базовых сценариев работы с редактором.
+              Полноценное тестирование и историю версий вынесли в следующий этап. После проверки
+              редактирования и публикации с клиентскими кейсами я подготовила финальные макеты и
+              спецификации для передачи в разработку.
             </p>
           </div>
-
-          <p className="text-body-18">
-            После нескольких итераций с клиентскими кейсами я подготовила финальные макеты и
-            спецификации для передачи в разработку.
-          </p>
         </motion.section>
 
         <motion.section
@@ -784,60 +740,60 @@ export function WorkCasePage() {
           <h2 className="text-h2">Результаты</h2>
           <div className="flex flex-col gap-space-5">
             <p className="text-body-18">
-              Новый редактор сделал работу со сценариями самостоятельнее: пользователи стали чаще
-              вносить изменения без разработки, быстрее собирали новые сценарии и реже ошибались
-              при публикации. Команда поддержки стала меньше подключаться к базовым вопросам.
+              Редактор сделал работу со сценариями более самостоятельной и предсказуемой: менеджеры
+              быстрее находили нужные сценарии, вносили изменения без разработки и лучше понимали,
+              когда правки попадут в работу. Эффект оценивали по клиентским сценариям, обращениям в
+              поддержку и времени выполнения типовых изменений.
             </p>
 
-            <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
+            <div className="grid grid-cols-1 gap-space-2 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,1fr)]">
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <p className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">+</span>
-                  <span className="inline-flex h-10 items-center text-h2">28</span>
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
+                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
+                  <span className="text-[18px] leading-[160%]">+</span>
+                  <span className="text-[24px] leading-8">28</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
+                <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
                   self-service rate
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <div className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-center text-h2">33</span>
-                  <span className="inline-flex h-10 items-center">
+                <div className="flex items-center gap-space-1 whitespace-nowrap text-primary">
+                  <span className="text-[24px] font-semibold leading-8">33</span>
+                  <span className="inline-flex">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="inline-flex h-10 items-center text-h2">19</span>
+                  <span className="text-[24px] font-semibold leading-8">19</span>
                 </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
+                <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
                   минут, time-to-change
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <p className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">-</span>
-                  <span className="inline-flex h-10 items-center text-h2">21</span>
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
+                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
+                  <span className="text-[18px] leading-[160%]">-</span>
+                  <span className="text-[24px] leading-8">21</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
-                  ошибок в сценариях
+                <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
+                  ошибок после публикации
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <p className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">-</span>
-                  <span className="inline-flex h-10 items-center text-h2">16</span>
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
+                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
+                  <span className="text-[18px] leading-[160%]">-</span>
+                  <span className="text-[24px] leading-8">16</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
+                <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
                   обращений в саппорт
                 </p>
               </div>
             </div>
 
             <p className="text-body-18">
-              По итогам проекта я поняла, что даже сложные сценарии могут быть управляемыми, если
-              пользователь остаётся в контексте и понимает последствия своих действий на каждом
-              этапе.
+              По итогам проекта я поняла, что сложные сценарии становятся управляемыми, когда
+              пользователь остаётся в контексте и понимает, как его действия влияют на рабочий флоу.
             </p>
           </div>
         </motion.section>
