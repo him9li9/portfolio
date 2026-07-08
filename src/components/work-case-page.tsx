@@ -314,14 +314,14 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex w-full flex-col items-center rounded-[20px] bg-elevated px-space-6 py-space-6">
-            <div className="mx-auto w-full max-w-[584px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center rounded-[20px] bg-elevated px-space-6 py-space-6">
+            <div className="mx-auto w-full max-w-[800px]">
               <Image
                 alt="Флоу работы с элементами"
                 src={assets.addFlow}
                 width={2400}
                 height={1494}
-                sizes="(max-width: 640px) calc(100vw - 80px), 584px"
+                sizes="(max-width: 832px) calc(100vw - 80px), 800px"
                 className="h-auto w-full rounded-[8px] object-contain"
                 loading="lazy"
                 quality={100}
