@@ -10,7 +10,7 @@ const assets = {
   hero: "/figma/Case_2/Case_2/vpbx-canvas.png",
   arrowForward: "/figma/Main/arrow_forward.svg",
   oldCanvas: "/figma/Case_2/old-canvas.png",
-  addFlow: "/figma/Case_2/Case_2/Case_2/flow.png",
+  addFlow: "/figma/Case_2/Case_2/flow.png",
   table: "/figma/Case_2/table.png?v=2",
   leftSidebar: "/figma/Case_2/Case_2/left_sidebar.png",
   rightSidebar: "/figma/Case_2/Case_2/right_sidebar.png",
@@ -463,7 +463,7 @@ export function WorkCasePage() {
                 Быстро считать структуру сценария и понять, как он работает.
               </p>
               <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
-                <p>• Группировка</p>
+                <p>• Группировка элементов</p>
                 <p>• Понятные названия элементов</p>
               </div>
             </div>

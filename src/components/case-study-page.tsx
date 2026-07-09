@@ -968,12 +968,12 @@ export function CaseStudyPage() {
 
             <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <div className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-center text-h2">8</span>
+                <div className="flex h-10 items-start gap-0 whitespace-nowrap text-primary">
+                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-10">8</span>
                   <span className="inline-flex h-10 items-center">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="inline-flex h-10 items-center text-h2">3</span>
+                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-10">3</span>
                 </div>
                 <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
                   шага до звонка
@@ -982,7 +982,7 @@ export function CaseStudyPage() {
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">+</span>
-                  <span className="text-[24px] leading-8">23</span>
+                  <span className="text-[32px] leading-10">23</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
@@ -990,12 +990,12 @@ export function CaseStudyPage() {
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <div className="flex items-center gap-space-1 whitespace-nowrap text-primary">
-                  <span className="text-[24px] font-semibold leading-8">15</span>
+                <div className="flex items-center gap-0 whitespace-nowrap text-primary">
+                  <span className="text-[32px] font-semibold leading-10">15</span>
                   <span className="inline-flex">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="text-[24px] font-semibold leading-8">22</span>
+                  <span className="text-[32px] font-semibold leading-10">22</span>
                   <span className="text-[18px] font-semibold leading-[160%]">%</span>
                 </div>
                 <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
@@ -1003,12 +1003,12 @@ export function CaseStudyPage() {
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <div className="flex items-center gap-space-1 whitespace-nowrap text-primary">
-                  <span className="text-[24px] font-semibold leading-8">40</span>
+                <div className="flex items-center gap-0 whitespace-nowrap text-primary">
+                  <span className="text-[32px] font-semibold leading-10">40</span>
                   <span className="inline-flex">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="text-[24px] font-semibold leading-8">18</span>
+                  <span className="text-[32px] font-semibold leading-10">18</span>
                   <span className="text-[18px] font-semibold leading-[160%]">%</span>
                 </div>
                 <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
