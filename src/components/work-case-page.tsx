@@ -464,7 +464,7 @@ export function WorkCasePage() {
               </p>
               <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
                 <p>• Группировка элементов</p>
-                <p>• Понятные названия элементов</p>
+                <p>• Понятные названия</p>
               </div>
             </div>
 
@@ -774,7 +774,7 @@ export function WorkCasePage() {
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
-                  ошибок после публикации
+                  ошибок в сценариях
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
