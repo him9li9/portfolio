@@ -395,7 +395,7 @@ export function CaseStudyPage() {
               настройки SIM и роуминга.
             </p>
           </div>
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center gap-space-4 rounded-[12px] bg-secondary px-space-4 py-space-8 sm:gap-space-6 sm:px-space-12">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center gap-space-4 sm:gap-space-6">
               <Image
                 alt="Экран регистрации MCN Softphone"
                 src={assets.phone1}
@@ -461,7 +461,7 @@ export function CaseStudyPage() {
                   {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
                 </li>
               </ul>
-              <div className="flex flex-col items-center gap-space-3">
+              <div className="flex flex-col items-center gap-[16px]">
                 <div className="w-[323px] max-w-full">
                   <Image
                     alt=""
@@ -474,7 +474,7 @@ export function CaseStudyPage() {
                     quality={100}
                   />
                 </div>
-                <p className="text-center text-caption-14 text-secondary-elevated">
+                <p className="text-center text-caption-14 text-secondary">
                   CR в 1-й звонок, 2023 г.
                 </p>
               </div>
@@ -531,7 +531,7 @@ export function CaseStudyPage() {
         >
           <h2 className="text-h2">Дискавери</h2>
 
-          <div className="flex flex-col gap-space-8">
+          <div className="flex flex-col gap-[24px]">
             <div className="text-body-18">
               <p>В рамках discovery я опиралась на:</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
@@ -563,20 +563,20 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-6 rounded-[12px] bg-secondary pb-space-6 pt-space-8">
-              <div className="w-full max-w-[800px] px-space-4 sm:px-0">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-[16px]">
+              <div className="w-full max-w-[800px]">
                 <Image
                   alt=""
                   src={assets.discoveryActivation}
                   width={3512}
                   height={3324}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 800px"
+                  sizes="(max-width: 640px) calc(100vw - 32px), 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
                 />
               </div>
-              <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
+              <p className="text-center text-caption-14 text-secondary">
                 Анализ текущего userflow (регистрация · покупка номера · звонок)
               </p>
             </div>
@@ -600,7 +600,7 @@ export function CaseStudyPage() {
                   src={assets.discoveryCost}
                   width={1070}
                   height={1002}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 427px"
+                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
@@ -627,7 +627,7 @@ export function CaseStudyPage() {
                   src={assets.discoveryFeedback1}
                   width={1044}
                   height={332}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 427px"
+                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
@@ -637,7 +637,7 @@ export function CaseStudyPage() {
                   src={assets.discoveryFeedback2}
                   width={2116}
                   height={512}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 427px"
+                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
@@ -660,20 +660,20 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-3 rounded-[12px] bg-secondary py-space-8">
-              <div className="w-full max-w-[800px] px-space-4 sm:px-0">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-[16px]">
+              <div className="w-full max-w-[800px]">
                 <Image
                   alt=""
                   src={assets.competitorWhatsapp}
                   width={3104}
                   height={1550}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 800px"
+                  sizes="(max-width: 640px) calc(100vw - 32px), 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
                 />
               </div>
-              <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
+              <p className="text-center text-caption-14 text-secondary">
                 WhatsApp  (регистрация · выбор контакта · звонок)
               </p>
             </div>
@@ -684,20 +684,20 @@ export function CaseStudyPage() {
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-3 rounded-[12px] bg-secondary py-space-8">
-              <div className="w-full max-w-[1000px] px-space-4 sm:px-0">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-[16px]">
+              <div className="w-full max-w-[1000px]">
                 <Image
                   alt=""
                   src={assets.competitorOpenphone}
                   width={3901}
                   height={1552}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
+                  sizes="(max-width: 640px) calc(100vw - 32px), 1000px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
                 />
               </div>
-              <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
+              <p className="text-center text-caption-14 text-secondary">
                 Open Phone  (выбор номера · регистрация · покупка номера · звонок)
               </p>
             </div>
@@ -766,7 +766,7 @@ export function CaseStudyPage() {
           className="scroll-mt-space-16 flex flex-col gap-space-4"
         >
           <h2 className="text-h2">Проектирование</h2>
-          <div className="flex flex-col gap-space-8">
+          <div className="flex flex-col gap-[24px]">
             <div className="flex flex-col gap-space-4">
               <p className="text-body-18">
                 <span className="text-body-18-semibold">Цель этапа —</span> определить, как система будет вести себя в диалоге с пользователем, чтобы
@@ -780,8 +780,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-6 rounded-[12px] bg-secondary pb-space-6 pt-space-8">
-              <div className="w-full max-w-[1000px] px-space-4 sm:px-0">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-[12px]">
+              <div className="w-full max-w-[1000px]">
                 <button
                   type="button"
                   aria-label="Open userflow"
@@ -800,7 +800,7 @@ export function CaseStudyPage() {
                   />
                 </button>
               </div>
-              <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
+              <p className="text-center text-caption-14 text-secondary">
                 Новый userflow 1-го звонка (регистрация · покупка номера · звонок)
               </p>
             </div>
@@ -850,14 +850,14 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-secondary py-space-8">
-            <div className="w-full max-w-[845px] px-space-4 sm:px-0">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
+            <div className="w-full max-w-[845px]">
               <Image
                 alt=""
                 src={assets.solutionSuccess}
                 width={3148}
                 height={1999}
-                sizes="(max-width: 640px) calc(100vw - 64px), 845px"
+                sizes="(max-width: 640px) calc(100vw - 32px), 845px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
               quality={100}
@@ -921,14 +921,14 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-secondary py-space-8">
-            <div className="w-full max-w-[1000px] px-space-4 sm:px-0">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
+            <div className="w-full max-w-[1000px]">
               <Image
                 alt=""
                 src={assets.solutionError}
                 width={3780}
                 height={2020}
-                sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
+                sizes="(max-width: 640px) calc(100vw - 32px), 1000px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
               quality={100}

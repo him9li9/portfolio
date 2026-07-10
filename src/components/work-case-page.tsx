@@ -188,7 +188,7 @@ export function WorkCasePage() {
             sizes="(max-width: 800px) calc(100vw - 32px), 800px"
             className="h-auto w-full rounded-[8px] object-contain"
             priority
-          quality={100}
+            quality={100}
           />
         </motion.section>
 
@@ -375,7 +375,7 @@ export function WorkCasePage() {
             sizes="(max-width: 800px) calc(100vw - 32px), 800px"
             className="h-auto w-full object-contain"
             loading="lazy"
-          quality={100}
+            quality={100}
           />
 
           <p className="text-body-18">
@@ -564,14 +564,14 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center gap-space-4">
+          <div className="flex flex-col items-center gap-[16px]">
             <Image
               alt="KOMPaaS solution overview"
               src={assets.hero}
               width={800}
               height={500}
               sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-              className="h-auto w-full rounded-[8px] object-cover"
+              className="h-auto w-full rounded-[8px] object-contain"
               loading="lazy"
               quality={100}
             />
@@ -598,7 +598,7 @@ export function WorkCasePage() {
               width={800}
               height={400}
               sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-              className="h-auto w-full object-cover"
+              className="h-auto w-full object-contain"
               loading="lazy"
               quality={100}
             />
@@ -624,7 +624,7 @@ export function WorkCasePage() {
               width={800}
               height={600}
               sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-              className="h-auto w-full object-cover"
+              className="h-auto w-full object-contain"
               loading="lazy"
               quality={100}
             />
@@ -649,10 +649,10 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center gap-space-3">
+            <div className="flex flex-col items-center gap-[16px]">
               <video
                 src={assets.canvasMotion}
-                className="h-auto w-full rounded-[8px] object-cover"
+                className="h-auto w-full rounded-[8px] object-contain"
                 autoPlay
                 muted
                 loop
@@ -685,7 +685,7 @@ export function WorkCasePage() {
               width={800}
               height={513}
               sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-              className="h-auto w-full object-cover"
+              className="h-auto w-full object-contain"
               loading="lazy"
               quality={100}
             />
@@ -705,10 +705,10 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center gap-space-2">
+            <div className="flex flex-col items-center gap-[16px]">
               <video
                 src={assets.publishMotion}
-                className="aspect-[2278/1068] w-full rounded-[8px] object-cover"
+                className="aspect-[2278/1068] w-full rounded-[8px] object-contain"
                 autoPlay
                 muted
                 loop
