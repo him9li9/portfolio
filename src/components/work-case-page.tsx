@@ -274,7 +274,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-6">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
             <div className="mx-auto w-full max-w-[800px]">
               <Image
                 alt="Текущая версия редактора сценариев"
@@ -784,7 +784,7 @@ export function WorkCasePage() {
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
-                  обращений в саппорт
+                  вопросов в поддержку
                 </p>
               </div>
             </div>
