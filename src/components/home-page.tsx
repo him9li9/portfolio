@@ -199,7 +199,7 @@ export function HomePage() {
                       8 → 3 шага до звонка
                     </span>
                     <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      +23% CR в 1-й звонок
+                      +23% конверсия в 1-й звонок
                     </span>
                   </div>
                   <Link

@@ -274,7 +274,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center gap-space-6 rounded-[12px] bg-elevated px-space-6 py-space-6">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-6">
             <div className="mx-auto w-full max-w-[800px]">
               <Image
                 alt="Текущая версия редактора сценариев"
@@ -314,7 +314,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center rounded-[12px] bg-elevated px-space-6 py-space-6">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center">
             <div className="mx-auto w-full max-w-[800px]">
               <Image
                 alt="Флоу работы с элементами"
