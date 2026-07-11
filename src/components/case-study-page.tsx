@@ -558,8 +558,8 @@ export function CaseStudyPage() {
                 <li>после отправки заявки нет объяснения со статусом и следующими действиями</li>
               </ul>
               <p>
-                Пользователи откладывают покупку номера и первый звонок <span className="text-body-18-semibold">→</span>{" "}
-                <span className="text-body-18-semibold">отток на этапе регистрации</span>
+                Пользователи откладывают покупку номера и первый звонок <span className="italic">→</span>{" "}
+                <span className="italic">отток на этапе регистрации</span>
               </p>
             </div>
 
@@ -588,8 +588,8 @@ export function CaseStudyPage() {
                 <li>после завершения звонка списания выглядят неожиданными</li>
               </ul>
               <p>
-                Пользователи не понимают, сколько и за что они платят <span className="text-body-18-semibold">→</span>{" "}
-                <span className="text-body-18-semibold">рост обращений в поддержку</span>
+                Пользователи не понимают, сколько и за что они платят <span className="italic">→</span>{" "}
+                <span className="italic">рост обращений в поддержку</span>
               </p>
             </div>
 
@@ -615,8 +615,8 @@ export function CaseStudyPage() {
                 <li>пользователи ищут ответы в разных каналах и повторяют вопросы</li>
               </ul>
               <p>
-                Пользователи не знают, где искать помощь <span className="text-body-18-semibold">→</span>{" "}
-                <span className="text-body-18-semibold">повторные обращения в разных каналах</span>
+                Пользователи не знают, где искать помощь <span className="italic">→</span>{" "}
+                <span className="italic">повторные обращения в разных каналах</span>
               </p>
             </div>
 

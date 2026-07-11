@@ -784,7 +784,7 @@ export function WorkCasePage() {
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
-                  вопросов в поддержку
+                  обращений в поддержку
                 </p>
               </div>
             </div>
