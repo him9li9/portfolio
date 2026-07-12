@@ -563,8 +563,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center justify-center gap-[16px]">
-              <div className="w-full rounded-[12px] bg-secondary px-[16px] pb-[24px] pt-[20px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center justify-center">
+              <div className="flex w-full flex-col items-center gap-[16px] rounded-[12px] bg-secondary px-[16px] pb-[24px] pt-[20px]">
                 <Image
                   alt=""
                   src={assets.discoveryActivation}
@@ -575,10 +575,10 @@ export function CaseStudyPage() {
                   loading="lazy"
                 quality={100}
                 />
+                <p className="text-center text-caption-14 text-secondary">
+                  Анализ основных сценариев приложения в MVP
+                </p>
               </div>
-              <p className="text-center text-caption-14 text-secondary">
-                Анализ основных сценариев приложения в MVP
-              </p>
             </div>
 
             <div className="flex flex-col gap-space-2 text-body-18">
