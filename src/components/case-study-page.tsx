@@ -563,21 +563,21 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-[16px]">
-              <div className="w-full max-w-[800px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center justify-center gap-[16px]">
+              <div className="w-full rounded-[12px] bg-secondary px-[16px] pb-[24px] pt-[20px]">
                 <Image
                   alt=""
                   src={assets.discoveryActivation}
-                  width={3512}
-                  height={3324}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                  width={2304}
+                  height={2595}
+                  sizes="(max-width: 640px) calc(100vw - 64px), 768px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
                 />
               </div>
               <p className="text-center text-caption-14 text-secondary">
-                Анализ текущего userflow (регистрация · покупка номера · звонок)
+                Анализ основных сценариев приложения в MVP
               </p>
             </div>
 
