@@ -564,7 +564,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center justify-center">
-              <div className="flex w-full flex-col items-center gap-[20px] rounded-[12px] bg-secondary px-[24px] pb-[24px] pt-[16px]">
+              <div className="flex w-full flex-col items-center gap-[16px] rounded-[12px] bg-secondary p-[24px]">
                 <Image
                   alt=""
                   src={assets.discoveryActivation}
@@ -593,8 +593,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 overflow-hidden rounded-[12px] bg-secondary py-space-8 sm:mx-0">
-              <div className="mx-auto w-full max-w-[427px] px-space-4 sm:px-0">
+            <div className="-mx-space-4 overflow-hidden rounded-[12px] bg-secondary p-[24px] sm:mx-0">
+              <div className="mx-auto w-full max-w-[427px]">
                 <Image
                   alt=""
                   src={assets.discoveryCost}
@@ -620,8 +620,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 overflow-hidden rounded-[12px] bg-secondary py-space-8 sm:mx-0">
-              <div className="mx-auto flex w-full max-w-[427px] flex-col gap-space-4 px-space-4 sm:px-0">
+            <div className="-mx-space-4 overflow-hidden rounded-[12px] bg-secondary p-[24px] sm:mx-0">
+              <div className="mx-auto flex w-full max-w-[427px] flex-col gap-[16px]">
                 <Image
                   alt=""
                   src={assets.discoveryFeedback1}
@@ -851,14 +851,14 @@ export function CaseStudyPage() {
           </div>
 
           <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 items-center justify-center">
-            <div className="flex w-full items-center justify-center rounded-[12px] bg-secondary px-[32px] pb-[24px] pt-[32px]">
-              <div className="w-full max-w-[845px]">
+            <div className="flex w-full items-center justify-center rounded-[12px] bg-secondary p-[24px]">
+              <div className="w-full max-w-[952px]">
                 <Image
                   alt=""
                   src={assets.solutionSuccess}
                   width={2535}
                   height={1620}
-                  sizes="(max-width: 640px) calc(100vw - 96px), 845px"
+                  sizes="(max-width: 640px) calc(100vw - 80px), 952px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
@@ -924,14 +924,14 @@ export function CaseStudyPage() {
           </div>
 
           <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
-            <div className="flex w-full items-center justify-center rounded-[12px] bg-secondary px-[40px] pb-[24px] pt-[32px]">
-              <div className="w-full max-w-[1020px]">
+            <div className="flex w-full items-center justify-center rounded-[12px] bg-secondary p-[24px]">
+              <div className="w-full max-w-[1052px]">
                 <Image
                   alt=""
                   src={assets.solutionError}
                   width={3060}
                   height={1644}
-                  sizes="(max-width: 640px) calc(100vw - 112px), 1020px"
+                  sizes="(max-width: 640px) calc(100vw - 80px), 1052px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
