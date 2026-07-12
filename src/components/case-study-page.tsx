@@ -13,17 +13,17 @@ const assets = {
   arrowForward: "/figma/Main/arrow_forward.svg",
   chartSmall: "/figma/case-chart-small.png?v=20260621b",
   chartBig: "/figma/case-chart-big.png?v=20260621b",
-  discoveryActivation: "/figma/case-discovery-activation.png?v=20260621b",
+  discoveryActivation: "/figma/case-discovery-activation.png?v=20260712b",
   discoveryCost: "/figma/case-discovery-cost.png?v=20260621b",
   discoveryFeedback1: "/figma/case-discovery-feedback-1.png?v=20260621b",
   discoveryFeedback2: "/figma/case-discovery-feedback-2.png?v=20260621b",
-  competitorWhatsapp: "/figma/case-competitor-whatsapp.png?v=20260621b",
+  competitorWhatsapp: "/figma/case-competitor-whatsapp.png?v=20260712b",
   competitorOpenphone: "/figma/case-competitor-openphone.png?v=20260621b",
   userflow: "/figma/case-userflow.png?v=20260621b",
-  solutionSuccess: "/figma/case-solution-success.png?v=20260621b",
+  solutionSuccess: "/figma/case-solution-success.png?v=20260712b",
   callFlowVideo: "/figma/call-flow-site.mp4",
   callFlowPoster: "/figma/call-flow-poster.png",
-  solutionError: "/figma/case-solution-error.png?v=20260621b"
+  solutionError: "/figma/case-solution-error.png?v=20260712b"
 };
 
 const workStages = [
@@ -564,13 +564,13 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center justify-center">
-              <div className="flex w-full flex-col items-center gap-[16px] rounded-[12px] bg-secondary px-[16px] pb-[24px] pt-[20px]">
+              <div className="flex w-full flex-col items-center gap-[20px] rounded-[12px] bg-secondary px-[24px] pb-[24px] pt-[16px]">
                 <Image
                   alt=""
                   src={assets.discoveryActivation}
-                  width={2304}
-                  height={2595}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 768px"
+                  width={2256}
+                  height={2541}
+                  sizes="(max-width: 640px) calc(100vw - 80px), 752px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
@@ -660,13 +660,13 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-[16px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-[12px]">
               <div className="w-full max-w-[800px]">
                 <Image
                   alt=""
                   src={assets.competitorWhatsapp}
-                  width={3104}
-                  height={1550}
+                  width={800}
+                  height={399}
                   sizes="(max-width: 640px) calc(100vw - 32px), 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
@@ -850,18 +850,20 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
-            <div className="w-full max-w-[845px]">
-              <Image
-                alt=""
-                src={assets.solutionSuccess}
-                width={3148}
-                height={1999}
-                sizes="(max-width: 640px) calc(100vw - 32px), 845px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-              quality={100}
-              />
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 items-center justify-center">
+            <div className="flex w-full items-center justify-center rounded-[12px] bg-secondary px-[32px] pb-[24px] pt-[32px]">
+              <div className="w-full max-w-[845px]">
+                <Image
+                  alt=""
+                  src={assets.solutionSuccess}
+                  width={2535}
+                  height={1620}
+                  sizes="(max-width: 640px) calc(100vw - 96px), 845px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  quality={100}
+                />
+              </div>
             </div>
           </div>
 
@@ -922,17 +924,19 @@ export function CaseStudyPage() {
           </div>
 
           <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
-            <div className="w-full max-w-[1000px]">
-              <Image
-                alt=""
-                src={assets.solutionError}
-                width={3780}
-                height={2020}
-                sizes="(max-width: 640px) calc(100vw - 32px), 1000px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-              quality={100}
-              />
+            <div className="flex w-full items-center justify-center rounded-[12px] bg-secondary px-[40px] pb-[24px] pt-[32px]">
+              <div className="w-full max-w-[1020px]">
+                <Image
+                  alt=""
+                  src={assets.solutionError}
+                  width={3060}
+                  height={1644}
+                  sizes="(max-width: 640px) calc(100vw - 112px), 1020px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  quality={100}
+                />
+              </div>
             </div>
           </div>
 
