@@ -17,9 +17,9 @@ const assets = {
   discoveryCost: "/figma/case-discovery-cost.png?v=20260621b",
   discoveryFeedback1: "/figma/case-discovery-feedback-1.png?v=20260621b",
   discoveryFeedback2: "/figma/case-discovery-feedback-2.png?v=20260621b",
-  competitorWhatsapp: "/figma/case-competitor-whatsapp.png?v=20260712b",
-  competitorOpenphone: "/figma/case-competitor-openphone.png?v=20260621b",
-  userflow: "/figma/case-userflow.png?v=20260621b",
+  competitorWhatsapp: "/figma/case-competitor-whatsapp.png?v=20260712c",
+  competitorOpenphone: "/figma/case-competitor-openphone.png?v=20260712c",
+  userflow: "/figma/case-userflow.png?v=20260712c",
   solutionSuccess: "/figma/case-solution-success.png?v=20260712b",
   callFlowVideo: "/figma/call-flow-site.mp4",
   callFlowPoster: "/figma/call-flow-poster.png",
@@ -660,22 +660,22 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-[12px]">
-              <div className="w-full max-w-[800px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center justify-center">
+              <div className="flex w-full flex-col items-center gap-[12px] rounded-[12px] bg-secondary px-[32px] pb-[24px] pt-[32px]">
                 <Image
                   alt=""
                   src={assets.competitorWhatsapp}
-                  width={800}
-                  height={399}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                  width={2208}
+                  height={1103}
+                  sizes="(max-width: 640px) calc(100vw - 96px), 736px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
                 />
+                <p className="text-center text-caption-14 text-secondary">
+                  WhatsApp  (регистрация · выбор контакта · звонок)
+                </p>
               </div>
-              <p className="text-center text-caption-14 text-secondary">
-                WhatsApp  (регистрация · выбор контакта · звонок)
-              </p>
             </div>
 
             <p className="text-body-18">
@@ -684,22 +684,22 @@ export function CaseStudyPage() {
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-[16px]">
-              <div className="w-full max-w-[1000px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center">
+              <div className="flex w-full flex-col items-center gap-[12px] rounded-[12px] bg-secondary px-[32px] pb-[24px] pt-[32px]">
                 <Image
                   alt=""
                   src={assets.competitorOpenphone}
                   width={3901}
                   height={1552}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 1000px"
+                  sizes="(max-width: 640px) calc(100vw - 96px), 936px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
                 />
+                <p className="text-center text-caption-14 text-secondary">
+                  Open Phone  (выбор номера · регистрация · покупка номера · звонок)
+                </p>
               </div>
-              <p className="text-center text-caption-14 text-secondary">
-                Open Phone  (выбор номера · регистрация · покупка номера · звонок)
-              </p>
             </div>
 
             <div className="flex w-full max-w-[800px] flex-col gap-space-6">
@@ -780,29 +780,29 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-[12px]">
-              <div className="w-full max-w-[1000px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center">
+              <div className="flex w-full flex-col items-center gap-[12px] rounded-[12px] bg-secondary px-[32px] pb-[24px] pt-[32px]">
                 <button
                   type="button"
                   aria-label="Open userflow"
                   onClick={() => setIsUserflowOpen(true)}
-                  className="w-full cursor-zoom-in"
+                  className="w-full max-w-[1000px] cursor-zoom-in"
                 >
                   <Image
                     alt=""
                     src={assets.userflow}
                     width={4096}
                     height={1690}
-                    sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
+                    sizes="(max-width: 640px) calc(100vw - 96px), 1000px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                   quality={100}
                   />
                 </button>
+                <p className="text-center text-caption-14 text-secondary">
+                  Новый userflow 1-го звонка (регистрация · покупка номера · звонок)
+                </p>
               </div>
-              <p className="text-center text-caption-14 text-secondary">
-                Новый userflow 1-го звонка (регистрация · покупка номера · звонок)
-              </p>
             </div>
 
             <ul className="list-disc space-y-space-2 pl-space-6 text-body-18">
