@@ -660,15 +660,15 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center justify-center">
-              <div className="flex w-full flex-col items-center gap-[12px] rounded-[12px] bg-secondary px-[32px] pb-[24px] pt-[32px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center">
+              <div className="flex w-full flex-col items-center gap-[16px] rounded-[12px] bg-secondary p-[24px]">
                 <Image
                   alt=""
                   src={assets.competitorWhatsapp}
                   width={2208}
                   height={1103}
-                  sizes="(max-width: 640px) calc(100vw - 96px), 736px"
-                  className="h-auto w-full object-contain"
+                  sizes="(max-width: 640px) calc(100vw - 80px), 950px"
+                  className="h-auto w-full max-w-[950px] object-contain"
                   loading="lazy"
                 quality={100}
                 />
@@ -685,13 +685,13 @@ export function CaseStudyPage() {
             </p>
 
             <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center">
-              <div className="flex w-full flex-col items-center gap-[12px] rounded-[12px] bg-secondary px-[32px] pb-[24px] pt-[32px]">
+              <div className="flex w-full flex-col items-center gap-[16px] rounded-[12px] bg-secondary p-[24px]">
                 <Image
                   alt=""
                   src={assets.competitorOpenphone}
                   width={3901}
                   height={1552}
-                  sizes="(max-width: 640px) calc(100vw - 96px), 936px"
+                  sizes="(max-width: 640px) calc(100vw - 80px), 952px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
@@ -780,20 +780,20 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center">
-              <div className="flex w-full flex-col items-center gap-[12px] rounded-[12px] bg-secondary px-[32px] pb-[24px] pt-[32px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center">
+              <div className="flex w-full flex-col items-center gap-[16px] rounded-[12px] bg-secondary p-[24px]">
                 <button
                   type="button"
                   aria-label="Open userflow"
                   onClick={() => setIsUserflowOpen(true)}
-                  className="w-full max-w-[1000px] cursor-zoom-in"
+                  className="w-full cursor-zoom-in"
                 >
                   <Image
                     alt=""
                     src={assets.userflow}
                     width={4096}
                     height={1690}
-                    sizes="(max-width: 640px) calc(100vw - 96px), 1000px"
+                    sizes="(max-width: 640px) calc(100vw - 80px), 952px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                   quality={100}
