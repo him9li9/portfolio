@@ -576,7 +576,7 @@ export function CaseStudyPage() {
                 quality={100}
                 />
                 <p className="text-center text-caption-14 text-secondary">
-                  Анализ основных сценариев приложения в MVP
+                  Анализ основных сценариев в MVP приложения
                 </p>
               </div>
             </div>
