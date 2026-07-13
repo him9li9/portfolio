@@ -563,8 +563,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center justify-center">
-              <div className="flex w-full flex-col items-center gap-[16px] rounded-[12px] bg-secondary p-[24px]">
+            <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
                 <Image
                   alt=""
                   src={assets.discoveryActivation}
@@ -593,7 +593,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 overflow-hidden rounded-[12px] bg-secondary p-[24px] sm:mx-0">
+            <div className="-mx-space-4 overflow-hidden bg-secondary px-space-4 py-[24px] sm:mx-0 sm:rounded-[12px] sm:p-[24px]">
               <div className="mx-auto w-full max-w-[427px]">
                 <Image
                   alt=""
@@ -620,7 +620,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 overflow-hidden rounded-[12px] bg-secondary p-[24px] sm:mx-0">
+            <div className="-mx-space-4 overflow-hidden bg-secondary px-space-4 py-[24px] sm:mx-0 sm:rounded-[12px] sm:p-[24px]">
               <div className="mx-auto flex w-full max-w-[427px] flex-col gap-[16px]">
                 <Image
                   alt=""
@@ -660,8 +660,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center">
-              <div className="flex w-full flex-col items-center gap-[16px] rounded-[12px] bg-secondary p-[24px]">
+            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
                 <Image
                   alt=""
                   src={assets.competitorWhatsapp}
@@ -684,8 +684,8 @@ export function CaseStudyPage() {
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center">
-              <div className="flex w-full flex-col items-center gap-[16px] rounded-[12px] bg-secondary p-[24px]">
+            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
                 <Image
                   alt=""
                   src={assets.competitorOpenphone}
@@ -780,8 +780,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center">
-              <div className="flex w-full flex-col items-center gap-[16px] rounded-[12px] bg-secondary p-[24px]">
+            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
                 <button
                   type="button"
                   aria-label="Open userflow"
@@ -850,8 +850,8 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 items-center justify-center">
-            <div className="flex w-full items-center justify-center rounded-[12px] bg-secondary p-[24px]">
+          <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
+            <div className="flex w-full items-center justify-center bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
               <div className="w-full max-w-[952px]">
                 <Image
                   alt=""
@@ -923,8 +923,8 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
-            <div className="flex w-full items-center justify-center rounded-[12px] bg-secondary p-[24px]">
+          <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
+            <div className="flex w-full items-center justify-center bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
               <div className="w-full max-w-[1052px]">
                 <Image
                   alt=""
