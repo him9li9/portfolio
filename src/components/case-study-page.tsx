@@ -59,11 +59,11 @@ const lightboxItems = {
 
 function ZoomIcon() {
   return (
-    <span className="pointer-events-none absolute right-space-4 top-space-4 flex h-16 w-16 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 group-hover:bg-elevated-hover">
+    <span className="pointer-events-none absolute bottom-space-3 right-space-3 flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 group-hover:bg-elevated-hover">
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
-        className="h-8 w-8"
+        className="h-5 w-5"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
