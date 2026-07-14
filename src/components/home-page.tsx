@@ -145,7 +145,7 @@ export function HomePage() {
         </motion.section>
 
         <motion.section variants={item} className="flex flex-col items-start gap-space-6 sm:items-center">
-          <h2 className="text-left text-[20px] font-semibold leading-[160%] sm:text-center">
+          <h2 className="text-left text-body-18-semibold sm:text-center">
             Избранные проекты
           </h2>
 
@@ -159,7 +159,7 @@ export function HomePage() {
               >
                 <div
                   ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary py-space-6 sm:flex sm:w-[1000px] sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-6"
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary py-space-6 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-6"
                 >
                   <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-6">
                     <Image
@@ -196,7 +196,7 @@ export function HomePage() {
                 </div>
               </Link>
 
-              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[1000px]">
+              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[900px]">
                 <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
                   <h3 className="text-h2">MCN Softphone</h3>
                   <Link
@@ -210,7 +210,7 @@ export function HomePage() {
                 </div>
                 <div className="flex w-full flex-col items-start gap-space-3">
                   <div className="h-px w-full bg-border-elevated" />
-                  <p className="w-full text-body-18 text-primary">
+                  <p className="w-full max-w-[500px] text-body-18 text-primary">
                     Мобильное приложение для звонков за границей. Упростила путь до первого звонка и
                     сделала стоимость связи прозрачнее до начала вызова.
                   </p>
@@ -241,20 +241,20 @@ export function HomePage() {
                 aria-label="Открыть кейс KOMPaaS"
                 className="group block w-full"
               >
-                <div className="relative w-full overflow-hidden rounded-[8px] sm:left-1/2 sm:w-[928px] sm:-translate-x-1/2">
+                <div className="relative w-full overflow-hidden rounded-[8px] sm:left-1/2 sm:w-[900px] sm:-translate-x-1/2">
                   <Image
                     alt="KOMPaaS canvas preview"
                     src={assets.vpbxCanvas}
                     width={2400}
                     height={1500}
-                    sizes="(max-width: 640px) calc(100vw - 32px), 928px"
+                    sizes="(max-width: 640px) calc(100vw - 32px), 900px"
                     className="h-auto w-full"
                   quality={100}
                   />
                 </div>
               </Link>
 
-              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[1000px]">
+              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[900px]">
                 <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
                   <h3 className="text-h2">KOMPaaS</h3>
                   <Link
@@ -268,7 +268,7 @@ export function HomePage() {
                 </div>
                 <div className="flex flex-col items-start gap-space-3">
                   <div className="h-px w-full bg-border-elevated" />
-                  <p className="w-full text-body-18 text-primary">
+                  <p className="w-full max-w-[500px] text-body-18 text-primary">
                     B2B-платформа для автоматизации контакт-центров. Снизила зависимость клиентов
                     от разработки в управлении сценариями звонков.
                   </p>
