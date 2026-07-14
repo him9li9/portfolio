@@ -441,7 +441,7 @@ export function CaseStudyPage() {
           </div>
           <div
             ref={heroPhonesRef}
-            className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto px-space-4 pb-space-3 sm:flex sm:w-[calc(100vw-32px)] sm:max-w-[1100px] sm:items-center sm:justify-center sm:overflow-visible sm:px-0 sm:pb-0"
+            className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary px-space-4 py-space-6 sm:flex sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:items-center sm:justify-center sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-6"
           >
             <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-6">
               <Image
@@ -449,8 +449,8 @@ export function CaseStudyPage() {
                 src={assets.phone1}
                 width={900}
                 height={1840}
-                sizes="(max-width: 640px) 210px, 236px"
-                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[236px]"
+                sizes="(max-width: 640px) 210px, 250px"
+                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[250px]"
                 priority
                 quality={100}
               />
@@ -459,8 +459,8 @@ export function CaseStudyPage() {
                 src={assets.phone2}
                 width={900}
                 height={1840}
-                sizes="(max-width: 640px) 294px, 280px"
-                className="h-[600px] w-auto shrink-0 sm:h-auto sm:w-[280px]"
+                sizes="(max-width: 640px) 294px, 300px"
+                className="h-[600px] w-auto shrink-0 sm:h-auto sm:w-[300px]"
                 priority
                 quality={100}
               />
@@ -469,8 +469,8 @@ export function CaseStudyPage() {
                 src={assets.phone3}
                 width={900}
                 height={1840}
-                sizes="(max-width: 640px) 210px, 236px"
-                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[236px]"
+                sizes="(max-width: 640px) 210px, 250px"
+                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[250px]"
                 priority
                 quality={100}
               />

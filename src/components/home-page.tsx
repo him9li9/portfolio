@@ -159,17 +159,17 @@ export function HomePage() {
               >
                 <div
                   ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary pb-space-3 pt-space-8 sm:left-auto sm:mx-auto sm:flex sm:w-full sm:max-w-[800px] sm:translate-x-0 sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-10"
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary py-space-6 sm:left-auto sm:mx-auto sm:flex sm:w-full sm:max-w-[1000px] sm:translate-x-0 sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-6"
                 >
-                  <div className="flex w-max items-center justify-center gap-space-4 sm:w-full sm:gap-space-6">
+                  <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-6">
                     <Image
                       alt="Экран регистрации MCN Softphone"
                       src={assets.phone1}
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 190px, 205px"
-                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[27%] sm:max-w-[205px]"
+                      sizes="(max-width: 640px) 190px, 250px"
+                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[250px]"
                       quality={100}
                     />
                     <Image
@@ -178,8 +178,8 @@ export function HomePage() {
                       width={732}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 263px, 244px"
-                      className="h-[540px] w-auto shrink-0 sm:h-auto sm:w-[34%] sm:max-w-[256px]"
+                      sizes="(max-width: 640px) 263px, 300px"
+                      className="h-[540px] w-auto shrink-0 sm:h-auto sm:w-[300px]"
                       quality={100}
                     />
                     <Image
@@ -188,8 +188,8 @@ export function HomePage() {
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 190px, 205px"
-                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[27%] sm:max-w-[205px]"
+                      sizes="(max-width: 640px) 190px, 250px"
+                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[250px]"
                       quality={100}
                     />
                   </div>
