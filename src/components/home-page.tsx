@@ -75,6 +75,8 @@ export function HomePage() {
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://drive.google.com/file/d/1ALRDSDjIbFMIzG5EQ-808D5EnGD3keR7/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               CV
             </motion.a>
@@ -83,6 +85,8 @@ export function HomePage() {
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://t.me/him9li9"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Telegram
             </motion.a>
