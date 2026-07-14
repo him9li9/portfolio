@@ -1,19 +1,34 @@
 import type { Metadata } from "next";
-import { Inter, Oldenburg } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import type { ReactNode } from "react";
 
-const inter = Inter({
-  subsets: ["latin", "cyrillic"],
+const interDisplay = localFont({
+  src: [
+    {
+      path: "./fonts/inter-display-400.woff2",
+      weight: "400",
+      style: "normal"
+    },
+    {
+      path: "./fonts/inter-display-600.woff2",
+      weight: "600",
+      style: "normal"
+    },
+    {
+      path: "./fonts/inter-display-700.woff2",
+      weight: "700",
+      style: "normal"
+    }
+  ],
   variable: "--font-inter",
   display: "swap"
 });
 
-const oldenburg = Oldenburg({
-  subsets: ["latin"],
+const oldenburg = localFont({
+  src: "./fonts/oldenburg-400.ttf",
   variable: "--font-oldenburg",
-  display: "swap",
-  weight: "400"
+  display: "swap"
 });
 
 export const metadata: Metadata = {
@@ -32,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${inter.variable} ${oldenburg.variable} font-[var(--font-inter)] antialiased`}>
+      <body className={`${interDisplay.variable} ${oldenburg.variable} font-[var(--font-inter)] antialiased`}>
         {children}
       </body>
     </html>

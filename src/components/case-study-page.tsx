@@ -205,12 +205,9 @@ export function CaseStudyPage() {
         }
         const rect = userflowViewportRef.current.getBoundingClientRect();
         const scaledWidth = activeLightbox.baseWidth * initialScale;
-        const scaledHeight = activeLightbox.baseHeight * initialScale;
         const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-        const maxY = Math.max(0, (scaledHeight - rect.height) / 2);
-        const initialX = isMobile && activeLightbox.mobileStart === "left" ? maxX : isMobile && activeLightbox.mobileStart === "right" ? -maxX : 0;
-        const initialY = isMobile && activeLightbox.mobileStart === "top" ? maxY : 0;
-        setUserflowOffset(clampUserflowOffset(initialX, initialY, initialScale));
+        const initialX = isMobile && activeLightbox.mobileStart === "left" ? maxX : 0;
+        setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
       });
     }
   }, [activeLightbox, clampUserflowOffset]);
