@@ -803,7 +803,7 @@ export function WorkCasePage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="relative left-1/2 flex w-full -translate-x-1/2 items-start justify-between border-t border-border-elevated pt-space-4 text-body-18 sm:w-[900px]"
+          className="relative left-1/2 flex w-full -translate-x-1/2 items-start justify-between border-t border-border-elevated pt-space-4 text-body-18 sm:w-[1000px]"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">

@@ -718,14 +718,14 @@ export function CaseStudyPage() {
 
             <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
               <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
-                <div className="w-full overflow-x-auto pb-space-3">
-                  <div className="mx-auto w-[1000px] max-w-none">
+                <div className="w-full overflow-x-auto pb-space-3 sm:overflow-visible sm:pb-0">
+                  <div className="mx-auto w-[1000px] max-w-none sm:w-full sm:max-w-[950px]">
                     <Image
                       alt=""
                       src={assets.competitorWhatsapp}
                       width={2208}
                       height={1103}
-                      sizes="1000px"
+                      sizes="(max-width: 640px) 1000px, 950px"
                       className="h-auto w-full object-contain"
                       loading="lazy"
                       quality={100}
@@ -746,14 +746,14 @@ export function CaseStudyPage() {
 
             <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
               <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
-                <div className="w-full overflow-x-auto pb-space-3">
-                  <div className="mx-auto w-[1250px] max-w-none">
+                <div className="w-full overflow-x-auto pb-space-3 sm:overflow-visible sm:pb-0">
+                  <div className="mx-auto w-[1250px] max-w-none sm:w-full">
                     <Image
                       alt=""
                       src={assets.competitorOpenphone}
                       width={3901}
                       height={1552}
-                      sizes="1250px"
+                      sizes="(max-width: 640px) 1250px, 952px"
                       className="h-auto w-full object-contain"
                       loading="lazy"
                       quality={100}
