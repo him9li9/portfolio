@@ -441,7 +441,7 @@ export function CaseStudyPage() {
           </div>
           <div
             ref={heroPhonesRef}
-            className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary px-space-4 py-space-6 sm:flex sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:items-center sm:justify-center sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-6"
+            className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary px-space-4 py-space-6 sm:flex sm:w-max sm:items-center sm:justify-center sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-6"
           >
             <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-6">
               <Image

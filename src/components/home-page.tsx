@@ -159,7 +159,7 @@ export function HomePage() {
               >
                 <div
                   ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary py-space-6 sm:left-auto sm:mx-auto sm:flex sm:w-full sm:max-w-[1000px] sm:translate-x-0 sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-6"
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary py-space-6 sm:flex sm:w-max sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-6"
                 >
                   <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-6">
                     <Image
@@ -241,13 +241,13 @@ export function HomePage() {
                 aria-label="Открыть кейс KOMPaaS"
                 className="group block w-full"
               >
-                <div className="relative w-full overflow-hidden rounded-[8px]">
+                <div className="relative w-full overflow-hidden rounded-[8px] sm:left-1/2 sm:w-[928px] sm:-translate-x-1/2">
                   <Image
                     alt="KOMPaaS canvas preview"
                     src={assets.vpbxCanvas}
                     width={2400}
                     height={1500}
-                    sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                    sizes="(max-width: 640px) calc(100vw - 32px), 928px"
                     className="h-auto w-full"
                   quality={100}
                   />
