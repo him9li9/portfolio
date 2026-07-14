@@ -3,7 +3,7 @@
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const assets = {
   avatar: "/figma/avatar.png",
@@ -18,6 +18,7 @@ const assets = {
 export function HomePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
+  const softphonePreviewRef = useRef<HTMLDivElement | null>(null);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -53,6 +54,22 @@ export function HomePage() {
     update();
     mql.addEventListener("change", update);
     return () => mql.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    const centerSoftphonePreview = () => {
+      if (!softphonePreviewRef.current || !window.matchMedia("(max-width: 639px)").matches) {
+        return;
+      }
+      const element = softphonePreviewRef.current;
+      element.scrollLeft = (element.scrollWidth - element.clientWidth) / 2;
+    };
+    const raf = requestAnimationFrame(centerSoftphonePreview);
+    window.addEventListener("resize", centerSoftphonePreview);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", centerSoftphonePreview);
+    };
   }, []);
 
   return (
@@ -140,41 +157,40 @@ export function HomePage() {
                 aria-label="Открыть кейс MCN Softphone"
                 className="group block w-full"
               >
-                <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-space-4 rounded-[12px] bg-secondary px-space-4 py-space-8 sm:gap-space-6 sm:px-space-10 sm:py-space-10">
-                  <div className="relative h-auto w-[27%] max-w-[205px]">
+                <div
+                  ref={softphonePreviewRef}
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary pb-space-3 pt-space-8 sm:left-auto sm:mx-auto sm:flex sm:w-full sm:max-w-[800px] sm:translate-x-0 sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-10"
+                >
+                  <div className="flex w-max items-center justify-center gap-space-4 sm:w-full sm:gap-space-6">
                     <Image
                       alt="Экран регистрации MCN Softphone"
                       src={assets.phone1}
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 27vw, 205px"
-                      className="h-auto w-full"
-                    quality={100}
+                      sizes="(max-width: 640px) 190px, 205px"
+                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[27%] sm:max-w-[205px]"
+                      quality={100}
                     />
-                  </div>
-                  <div className="relative h-auto w-[34%] max-w-[256px]">
                     <Image
                       alt="Экран тарифа MCN Softphone"
                       src={assets.phone2}
                       width={732}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 28vw, 244px"
-                      className="h-auto w-full"
-                    quality={100}
+                      sizes="(max-width: 640px) 263px, 244px"
+                      className="h-[540px] w-auto shrink-0 sm:h-auto sm:w-[34%] sm:max-w-[256px]"
+                      quality={100}
                     />
-                  </div>
-                  <div className="relative h-auto w-[27%] max-w-[205px]">
                     <Image
                       alt="Экран звонка MCN Softphone"
                       src={assets.phone3}
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 27vw, 205px"
-                      className="h-auto w-full"
-                    quality={100}
+                      sizes="(max-width: 640px) 190px, 205px"
+                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[27%] sm:max-w-[205px]"
+                      quality={100}
                     />
                   </div>
                 </div>
