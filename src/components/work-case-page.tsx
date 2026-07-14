@@ -184,13 +184,13 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[900px] -translate-x-1/2">
+          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2">
             <Image
               alt="KOMPaaS canvas"
               src={assets.hero}
-              width={900}
-              height={563}
-              sizes="(max-width: 932px) calc(100vw - 32px), 900px"
+              width={820}
+              height={513}
+              sizes="(max-width: 852px) calc(100vw - 32px), 820px"
               className="h-auto w-full rounded-[8px] object-contain"
               priority
               quality={100}
@@ -280,14 +280,14 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center gap-[16px] rounded-[12px] bg-secondary px-space-4 py-space-6 sm:px-space-10">
-            <div className="mx-auto w-full max-w-[900px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2 flex-col items-center gap-[16px]">
+            <div className="mx-auto w-full max-w-[820px]">
               <Image
                 alt="Текущая версия редактора сценариев"
                 src={assets.oldCanvas}
-                width={900}
-                height={509}
-                sizes="(max-width: 1032px) calc(100vw - 80px), 900px"
+                width={820}
+                height={464}
+                sizes="(max-width: 852px) calc(100vw - 32px), 820px"
                 className="h-auto w-full rounded-[8px] object-contain"
                 loading="lazy"
                 quality={100}
@@ -321,13 +321,13 @@ export function WorkCasePage() {
           </div>
 
           <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center rounded-[12px] bg-secondary px-space-4 py-space-6">
-            <div className="mx-auto w-full max-w-[900px]">
+            <div className="mx-auto w-full max-w-[820px]">
               <Image
                 alt="Флоу работы с элементами"
                 src={assets.addFlow}
                 width={2700}
                 height={1725}
-                sizes="(max-width: 1032px) calc(100vw - 80px), 900px"
+                sizes="(max-width: 1032px) calc(100vw - 80px), 820px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
                 quality={100}
@@ -373,16 +373,18 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <Image
-            alt="Таблица анализа конкурентов"
-            src={assets.table}
-            width={800}
-            height={457}
-            sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-            className="h-auto w-full object-contain"
-            loading="lazy"
-            quality={100}
-          />
+          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2">
+            <Image
+              alt="Таблица анализа конкурентов"
+              src={assets.table}
+              width={820}
+              height={468}
+              sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+              className="h-auto w-full object-contain"
+              loading="lazy"
+              quality={100}
+            />
+          </div>
 
           <p className="text-body-18">
             Вывод: workflow-builder инструменты уходят от отдельных настроек к управлению процессом
@@ -570,14 +572,14 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center gap-[16px] rounded-[12px] bg-secondary px-space-4 py-space-6 sm:px-space-10">
-            <div className="mx-auto w-full max-w-[900px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2 flex-col items-center gap-[16px]">
+            <div className="mx-auto w-full max-w-[820px]">
               <Image
                 alt="KOMPaaS solution overview"
                 src={assets.hero}
-                width={900}
-                height={563}
-                sizes="(max-width: 1032px) calc(100vw - 80px), 900px"
+                width={820}
+                height={513}
+                sizes="(max-width: 852px) calc(100vw - 32px), 820px"
                 className="h-auto w-full rounded-[8px] object-contain"
                 loading="lazy"
                 quality={100}
@@ -600,16 +602,18 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <Image
-              alt="Навигация по сценариям и быстрые действия"
-              src={assets.leftSidebar}
-              width={800}
-              height={400}
-              sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-              className="h-auto w-full object-contain"
-              loading="lazy"
-              quality={100}
-            />
+            <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2">
+              <Image
+                alt="Навигация по сценариям и быстрые действия"
+                src={assets.leftSidebar}
+                width={820}
+                height={410}
+                sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+                quality={100}
+              />
+            </div>
           </div>
 
           <div className="flex flex-col gap-space-4">
@@ -626,16 +630,18 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <Image
-              alt="Библиотека элементов и настройки правой панели"
-              src={assets.rightSidebar}
-              width={800}
-              height={600}
-              sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-              className="h-auto w-full object-contain"
-              loading="lazy"
-              quality={100}
-            />
+            <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2">
+              <Image
+                alt="Библиотека элементов и настройки правой панели"
+                src={assets.rightSidebar}
+                width={820}
+                height={615}
+                sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+                quality={100}
+              />
+            </div>
           </div>
 
           <div className="flex flex-col gap-space-4">
@@ -657,8 +663,8 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center gap-[16px] rounded-[12px] bg-secondary px-space-4 py-space-6 sm:px-space-10">
-              <div className="mx-auto w-full max-w-[900px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2 flex-col items-center gap-[16px]">
+              <div className="mx-auto w-full max-w-[820px]">
                 <video
                   src={assets.canvasMotion}
                   className="h-auto w-full rounded-[8px] object-contain"
@@ -689,16 +695,18 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <Image
-              alt="Minimap и навигация по большой схеме"
-              src={assets.minimap}
-              width={800}
-              height={513}
-              sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-              className="h-auto w-full object-contain"
-              loading="lazy"
-              quality={100}
-            />
+            <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2">
+              <Image
+                alt="Minimap и навигация по большой схеме"
+                src={assets.minimap}
+                width={820}
+                height={526}
+                sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+                quality={100}
+              />
+            </div>
           </div>
 
           <div className="flex flex-col gap-space-4">
@@ -715,7 +723,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center gap-[16px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2 flex-col items-center gap-[16px]">
               <video
                 src={assets.publishMotion}
                 className="aspect-[2278/1068] w-full rounded-[8px] object-contain"

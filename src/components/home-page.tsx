@@ -266,7 +266,7 @@ export function HomePage() {
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="flex flex-col items-start gap-space-3">
+                <div className="flex w-full flex-col items-start gap-space-3">
                   <div className="h-px w-full bg-border-elevated" />
                   <p className="w-full max-w-[500px] text-body-18 text-primary">
                     B2B-платформа для автоматизации контакт-центров. Снизила зависимость клиентов
