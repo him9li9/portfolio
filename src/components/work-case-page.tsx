@@ -258,7 +258,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2">
+          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[840px] -translate-x-1/2">
             <button
               type="button"
               className="group relative block w-full cursor-zoom-in"
@@ -268,9 +268,9 @@ export function WorkCasePage() {
               <Image
                 alt="KOMPaaS canvas"
                 src={assets.hero}
-                width={820}
-                height={513}
-                sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+                width={840}
+                height={525}
+                sizes="(max-width: 872px) calc(100vw - 32px), 840px"
                 className="h-auto w-full rounded-[8px] object-contain"
                 priority
                 quality={100}
@@ -363,8 +363,8 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2 flex-col items-center gap-[16px]">
-            <div className="mx-auto w-full max-w-[820px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[840px] -translate-x-1/2 flex-col items-center gap-[16px]">
+            <div className="mx-auto w-full max-w-[840px]">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in"
@@ -374,9 +374,9 @@ export function WorkCasePage() {
                 <Image
                   alt="Текущая версия редактора сценариев"
                   src={assets.oldCanvas}
-                  width={820}
-                  height={464}
-                  sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+                  width={840}
+                  height={475}
+                  sizes="(max-width: 872px) calc(100vw - 32px), 840px"
                   className="h-auto w-full rounded-[8px] object-contain"
                   loading="lazy"
                   quality={100}
@@ -673,8 +673,8 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2 flex-col items-center gap-[16px]">
-            <div className="mx-auto w-full max-w-[820px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[840px] -translate-x-1/2 flex-col items-center gap-[16px]">
+            <div className="mx-auto w-full max-w-[840px]">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in"
@@ -684,9 +684,9 @@ export function WorkCasePage() {
                 <Image
                   alt="KOMPaaS solution overview"
                   src={assets.hero}
-                  width={820}
-                  height={513}
-                  sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+                  width={840}
+                  height={525}
+                  sizes="(max-width: 872px) calc(100vw - 32px), 840px"
                   className="h-auto w-full rounded-[8px] object-contain"
                   loading="lazy"
                   quality={100}
@@ -773,8 +773,8 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2 flex-col items-center gap-[16px]">
-              <div className="mx-auto w-full max-w-[820px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[840px] -translate-x-1/2 flex-col items-center gap-[16px]">
+              <div className="mx-auto w-full max-w-[840px]">
                 <video
                   src={assets.canvasMotion}
                   className="h-auto w-full rounded-[8px] object-contain"
@@ -833,7 +833,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2 flex-col items-center gap-[16px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[840px] -translate-x-1/2 flex-col items-center gap-[16px]">
               <video
                 src={assets.publishMotion}
                 className="aspect-[2278/1068] w-full rounded-[8px] object-contain"
@@ -971,7 +971,7 @@ export function WorkCasePage() {
 
       {activeZoomImage ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-primary/95 px-space-4 py-space-4 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-primary px-space-4 py-space-4"
           role="dialog"
           aria-modal="true"
           aria-label={activeZoomImage.alt}
@@ -1001,18 +1001,21 @@ export function WorkCasePage() {
             </svg>
           </button>
           <div
-            className={`flex max-h-full w-full max-w-[1000px] items-center justify-center rounded-[12px] ${
-              activeZoomImage.hasPanel ? "bg-secondary p-space-4 sm:p-space-6" : "bg-primary/40"
+            className={`relative flex max-h-full w-full max-w-[1000px] items-center justify-center rounded-[12px] ${
+              activeZoomImage.hasPanel ? "bg-secondary p-space-4 sm:p-space-6" : "bg-secondary"
             }`}
             onClick={(event) => event.stopPropagation()}
           >
+            {activeZoomImage.hasPanel ? (
+              <div className="absolute inset-space-4 rounded-[8px] bg-primary/40 blur-[24px] sm:inset-space-6" />
+            ) : null}
             <Image
               alt={activeZoomImage.alt}
               src={activeZoomImage.src}
               width={activeZoomImage.width}
               height={activeZoomImage.height}
               sizes="100vw"
-              className="h-auto max-h-[calc(100vh-64px)] w-full object-contain"
+              className="relative h-auto max-h-[calc(100vh-64px)] w-full object-contain"
               quality={100}
             />
           </div>
