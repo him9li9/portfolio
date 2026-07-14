@@ -258,7 +258,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[840px] -translate-x-1/2">
+          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
             <button
               type="button"
               className="group relative block w-full cursor-zoom-in"
@@ -268,9 +268,9 @@ export function WorkCasePage() {
               <Image
                 alt="KOMPaaS canvas"
                 src={assets.hero}
-                width={840}
-                height={525}
-                sizes="(max-width: 872px) calc(100vw - 32px), 840px"
+                width={800}
+                height={500}
+                sizes="(max-width: 832px) calc(100vw - 32px), 800px"
                 className="h-auto w-full rounded-[8px] object-contain"
                 priority
                 quality={100}
@@ -363,8 +363,8 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[840px] -translate-x-1/2 flex-col items-center gap-[16px]">
-            <div className="mx-auto w-full max-w-[840px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
+            <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in"
@@ -374,9 +374,9 @@ export function WorkCasePage() {
                 <Image
                   alt="Текущая версия редактора сценариев"
                   src={assets.oldCanvas}
-                  width={840}
-                  height={475}
-                  sizes="(max-width: 872px) calc(100vw - 32px), 840px"
+                  width={800}
+                  height={453}
+                  sizes="(max-width: 832px) calc(100vw - 32px), 800px"
                   className="h-auto w-full rounded-[8px] object-contain"
                   loading="lazy"
                   quality={100}
@@ -413,7 +413,7 @@ export function WorkCasePage() {
           </div>
 
           <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center rounded-[12px] bg-secondary px-space-4 py-space-6">
-            <div className="mx-auto w-full max-w-[820px]">
+            <div className="mx-auto w-full max-w-[900px]">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in"
@@ -425,7 +425,7 @@ export function WorkCasePage() {
                   src={assets.addFlow}
                   width={2700}
                   height={1749}
-                  sizes="(max-width: 1032px) calc(100vw - 80px), 820px"
+                  sizes="(max-width: 1032px) calc(100vw - 80px), 900px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
@@ -673,8 +673,8 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[840px] -translate-x-1/2 flex-col items-center gap-[16px]">
-            <div className="mx-auto w-full max-w-[840px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
+            <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in"
@@ -684,9 +684,9 @@ export function WorkCasePage() {
                 <Image
                   alt="KOMPaaS solution overview"
                   src={assets.hero}
-                  width={840}
-                  height={525}
-                  sizes="(max-width: 872px) calc(100vw - 32px), 840px"
+                  width={800}
+                  height={500}
+                  sizes="(max-width: 832px) calc(100vw - 32px), 800px"
                   className="h-auto w-full rounded-[8px] object-contain"
                   loading="lazy"
                   quality={100}
@@ -773,8 +773,8 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[840px] -translate-x-1/2 flex-col items-center gap-[16px]">
-              <div className="mx-auto w-full max-w-[840px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
+              <div className="mx-auto w-full max-w-[800px]">
                 <video
                   src={assets.canvasMotion}
                   className="h-auto w-full rounded-[8px] object-contain"
@@ -833,7 +833,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[840px] -translate-x-1/2 flex-col items-center gap-[16px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
               <video
                 src={assets.publishMotion}
                 className="aspect-[2278/1068] w-full rounded-[8px] object-contain"
