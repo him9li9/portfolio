@@ -184,16 +184,18 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <Image
-            alt="KOMPaaS canvas"
-            src={assets.hero}
-            width={800}
-            height={500}
-            sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-            className="h-auto w-full rounded-[8px] object-contain"
-            priority
-            quality={100}
-          />
+          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[900px] -translate-x-1/2">
+            <Image
+              alt="KOMPaaS canvas"
+              src={assets.hero}
+              width={900}
+              height={563}
+              sizes="(max-width: 932px) calc(100vw - 32px), 900px"
+              className="h-auto w-full rounded-[8px] object-contain"
+              priority
+              quality={100}
+            />
+          </div>
         </motion.section>
 
         <motion.section
@@ -278,14 +280,14 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
-            <div className="mx-auto w-full max-w-[800px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center gap-[16px] rounded-[12px] bg-secondary px-space-4 py-space-6 sm:px-space-10">
+            <div className="mx-auto w-full max-w-[900px]">
               <Image
                 alt="Текущая версия редактора сценариев"
                 src={assets.oldCanvas}
-                width={700}
-                height={396}
-                sizes="(max-width: 832px) calc(100vw - 80px), 800px"
+                width={900}
+                height={509}
+                sizes="(max-width: 1032px) calc(100vw - 80px), 900px"
                 className="h-auto w-full rounded-[8px] object-contain"
                 loading="lazy"
                 quality={100}
@@ -568,17 +570,19 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center gap-[16px]">
-            <Image
-              alt="KOMPaaS solution overview"
-              src={assets.hero}
-              width={800}
-              height={500}
-              sizes="(max-width: 800px) calc(100vw - 32px), 800px"
-              className="h-auto w-full rounded-[8px] object-contain"
-              loading="lazy"
-              quality={100}
-            />
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center gap-[16px] rounded-[12px] bg-secondary px-space-4 py-space-6 sm:px-space-10">
+            <div className="mx-auto w-full max-w-[900px]">
+              <Image
+                alt="KOMPaaS solution overview"
+                src={assets.hero}
+                width={900}
+                height={563}
+                sizes="(max-width: 1032px) calc(100vw - 80px), 900px"
+                className="h-auto w-full rounded-[8px] object-contain"
+                loading="lazy"
+                quality={100}
+              />
+            </div>
             <p className="text-center text-caption-14 text-secondary">
               Сценарии, canvas, элементы и публикация — в едином рабочем пространстве
             </p>
@@ -803,7 +807,7 @@ export function WorkCasePage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="relative left-1/2 flex w-full -translate-x-1/2 items-start justify-between border-t border-border-elevated pt-space-4 text-body-18 sm:w-[1000px]"
+          className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
