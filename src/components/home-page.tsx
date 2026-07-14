@@ -145,7 +145,7 @@ export function HomePage() {
         </motion.section>
 
         <motion.section variants={item} className="flex flex-col items-start gap-space-6 sm:items-center">
-          <h2 className="text-left text-h3 sm:text-center">
+          <h2 className="text-left text-[20px] font-semibold leading-[160%] sm:text-center">
             Избранные проекты
           </h2>
 
@@ -159,7 +159,7 @@ export function HomePage() {
               >
                 <div
                   ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary py-space-6 sm:flex sm:w-max sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-6"
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary py-space-6 sm:flex sm:w-[1000px] sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-6"
                 >
                   <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-6">
                     <Image
@@ -196,7 +196,7 @@ export function HomePage() {
                 </div>
               </Link>
 
-              <div className="flex w-full max-w-[800px] flex-col items-start gap-space-2">
+              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[1000px]">
                 <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
                   <h3 className="text-h2">MCN Softphone</h3>
                   <Link
@@ -208,9 +208,9 @@ export function HomePage() {
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="flex flex-col items-start gap-space-3">
-                  <div className="h-px w-full bg-border-elevated sm:w-[800px]" />
-                  <p className="max-w-[490px] text-body-18 text-primary">
+                <div className="flex w-full flex-col items-start gap-space-3">
+                  <div className="h-px w-full bg-border-elevated" />
+                  <p className="w-full text-body-18 text-primary">
                     Мобильное приложение для звонков за границей. Упростила путь до первого звонка и
                     сделала стоимость связи прозрачнее до начала вызова.
                   </p>
@@ -254,7 +254,7 @@ export function HomePage() {
                 </div>
               </Link>
 
-              <div className="flex w-full max-w-[800px] flex-col items-start gap-space-2">
+              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[1000px]">
                 <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
                   <h3 className="text-h2">KOMPaaS</h3>
                   <Link
@@ -267,8 +267,8 @@ export function HomePage() {
                   </Link>
                 </div>
                 <div className="flex flex-col items-start gap-space-3">
-                  <div className="h-px w-full bg-border-elevated sm:w-[800px]" />
-                  <p className="max-w-[490px] text-body-18 text-primary">
+                  <div className="h-px w-full bg-border-elevated" />
+                  <p className="w-full text-body-18 text-primary">
                     B2B-платформа для автоматизации контакт-центров. Снизила зависимость клиентов
                     от разработки в управлении сценариями звонков.
                   </p>
