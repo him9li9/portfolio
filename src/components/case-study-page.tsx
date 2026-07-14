@@ -482,7 +482,7 @@ export function CaseStudyPage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-8"
+          className="-mt-[88px] scroll-mt-space-16 flex flex-col gap-space-8"
         >
           <div className="flex flex-col">
             <h2 className="text-h2">О проекте</h2>

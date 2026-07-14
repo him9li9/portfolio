@@ -150,7 +150,7 @@ export function HomePage() {
           </h2>
 
           <div className="flex w-full flex-col items-start gap-[120px] sm:items-center">
-            <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
+            <article className="flex w-full flex-col items-start gap-space-6 sm:w-[900px] sm:items-center">
               <Link
                 href="/app"
                 prefetch={false}
@@ -234,7 +234,7 @@ export function HomePage() {
               </div>
             </article>
 
-            <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
+            <article className="flex w-full flex-col items-start gap-space-6 sm:w-[900px] sm:items-center">
               <Link
                 href="/work"
                 prefetch={false}
