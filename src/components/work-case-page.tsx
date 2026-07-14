@@ -657,17 +657,19 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center gap-[16px]">
-              <video
-                src={assets.canvasMotion}
-                className="h-auto w-full rounded-[8px] object-contain"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-label="Пользователь добавляет и настраивает блок, оставаясь в контексте"
-              />
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center gap-[16px] rounded-[12px] bg-secondary px-space-4 py-space-6 sm:px-space-10">
+              <div className="mx-auto w-full max-w-[900px]">
+                <video
+                  src={assets.canvasMotion}
+                  className="h-auto w-full rounded-[8px] object-contain"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label="Пользователь добавляет и настраивает блок, оставаясь в контексте"
+                />
+              </div>
               <p className="text-center text-caption-14 text-secondary">
                 Пользователь добавляет и настраивает блок, оставаясь в контексте.
               </p>
@@ -807,7 +809,7 @@ export function WorkCasePage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
+          className="flex w-full max-w-[1000px] items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
