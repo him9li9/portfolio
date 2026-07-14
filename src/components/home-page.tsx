@@ -115,7 +115,7 @@ export function HomePage() {
             </h1>
           </div>
           <p className="w-full text-left text-body-18 text-primary sm:w-[482px] sm:text-center">
-            Продуктовый дизайнер с опытом 3+ года в телекоме,<span className="sm:hidden"> </span><br className="hidden sm:block" />
+            Продуктовый дизайнер с 4+ года опыта в телекоме,<span className="sm:hidden"> </span><br className="hidden sm:block" />
             <span className="sm:whitespace-nowrap">B2B-сервисах и стартапах. Умею разбираться в сложной</span><span className="sm:hidden"> </span><br className="hidden sm:block" />
             доменной логике и превращать её в понятные,<span className="sm:hidden"> </span><br className="hidden sm:block" />
             работающие решения
