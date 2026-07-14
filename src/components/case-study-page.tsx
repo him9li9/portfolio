@@ -3,27 +3,27 @@
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const assets = {
-  heart: "/figma/heart.svg",
-  phone1: "/figma/Main/phone%201.png?v=20260621b",
-  phone2: "/figma/Main/phone%202.png?v=20260621b",
-  phone3: "/figma/Main/phone%203.png?v=20260621b",
-  arrowForward: "/figma/Main/arrow_forward.svg",
-  chartSmall: "/figma/case-chart-small.png?v=20260621b",
-  chartBig: "/figma/case-chart-big.png?v=20260621b",
-  discoveryActivation: "/figma/case-discovery-activation.png?v=20260712b",
-  discoveryCost: "/figma/case-discovery-cost.png?v=20260621b",
-  discoveryFeedback1: "/figma/case-discovery-feedback-1.png?v=20260621b",
-  discoveryFeedback2: "/figma/case-discovery-feedback-2.png?v=20260621b",
-  competitorWhatsapp: "/figma/case-competitor-whatsapp.png?v=20260712c",
-  competitorOpenphone: "/figma/case-competitor-openphone.png?v=20260712c",
-  userflow: "/figma/case-userflow.png?v=20260712c",
-  solutionSuccess: "/figma/case-solution-success.png?v=20260712b",
-  callFlowVideo: "/figma/call-flow-site.mp4",
-  callFlowPoster: "/figma/call-flow-poster.png",
-  solutionError: "/figma/case-solution-error.png?v=20260712b"
+  heart: "/figma/Icons/heart.svg",
+  phone1: "/figma/Case_1/Section_1/softphone-success.png",
+  phone2: "/figma/Case_1/Section_1/softphone-home.png",
+  phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
+  arrowForward: "/figma/Icons/arrow_forward.svg",
+  chartSmall: "/figma/Case_1/Section_1/case-chart-small.png",
+  discoveryActivation: "/figma/Case_1/Section_2/case-discovery-activation.png",
+  discoveryCost: "/figma/Case_1/Section_2/case-discovery-cost.png",
+  discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1.png",
+  discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2.png",
+  competitorWhatsapp: "/figma/Case_1/Section_2/case-competitor-whatsapp.png",
+  competitorOpenphone: "/figma/Case_1/Section_2/case-competitor-openphone.png",
+  userflow: "/figma/Case_1/Section_3/case-userflow.png",
+  solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
+  callFlowVideo: "/figma/Case_1/Section_4/call-flow-site.mp4",
+  callFlowPoster: "/figma/Case_1/Section_4/call-flow-poster.png",
+  solutionError: "/figma/Case_1/Section_4/case-solution-error.png",
+  solutionErrorMobile: "/figma/Case_1/Section_4/case-solution-error.png"
 };
 
 const workStages = [
@@ -34,9 +34,32 @@ const workStages = [
   { label: "Передача в разработку", href: "#results" }
 ];
 
+const lightboxItems = {
+  discovery: {
+    src: assets.discoveryActivation,
+    imageWidth: 2256,
+    imageHeight: 2541,
+    baseWidth: 800,
+    baseHeight: 901,
+    mobileScale: 1.15,
+    desktopScale: 1.1,
+    mobileStart: "left"
+  },
+  userflow: {
+    src: assets.userflow,
+    imageWidth: 4096,
+    imageHeight: 1690,
+    baseWidth: 1000,
+    baseHeight: 413,
+    mobileScale: 1.6,
+    desktopScale: 1.5,
+    mobileStart: "left"
+  }
+} as const;
+
 export function CaseStudyPage() {
   const [hideTopbar, setHideTopbar] = useState(false);
-  const [isUserflowOpen, setIsUserflowOpen] = useState(false);
+  const [openLightbox, setOpenLightbox] = useState<keyof typeof lightboxItems | null>(null);
   const [canHover, setCanHover] = useState(false);
   const [lightboxScale, setLightboxScale] = useState(1.3);
   const [isDraggingUserflow, setIsDraggingUserflow] = useState(false);
@@ -44,7 +67,9 @@ export function CaseStudyPage() {
   const [activeSection, setActiveSection] = useState("overview");
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
+  const heroPhonesRef = useRef<HTMLDivElement | null>(null);
   const bodyScrollYRef = useRef(0);
+  const activeLightbox = openLightbox ? lightboxItems[openLightbox] : null;
   const userflowDragRef = useRef({
     isDown: false,
     moved: false,
@@ -53,7 +78,6 @@ export function CaseStudyPage() {
     startOffsetX: 0,
     startOffsetY: 0,
   });
-  const userflowBase = { width: 1000, height: 413 };
 
   const container = {
     hidden: { opacity: 0 },
@@ -70,6 +94,22 @@ export function CaseStudyPage() {
       transition: { duration: 1.6, ease: cubicBezier(0.16, 1, 0.3, 1) }
     }
   };
+
+  const clampUserflowOffset = useCallback((x: number, y: number, scale: number) => {
+    if (!userflowViewportRef.current || !activeLightbox) {
+      return { x: 0, y: 0 };
+    }
+    const rect = userflowViewportRef.current.getBoundingClientRect();
+    const edgePadding = rect.width < 640 ? 16 : 32;
+    const scaledWidth = activeLightbox.baseWidth * scale;
+    const scaledHeight = activeLightbox.baseHeight * scale;
+    const maxX = Math.max(0, (scaledWidth - (rect.width - edgePadding * 2)) / 2);
+    const maxY = Math.max(0, (scaledHeight - (rect.height - edgePadding * 2)) / 2);
+    return {
+      x: Math.max(-maxX, Math.min(maxX, x)),
+      y: Math.max(-maxY, Math.min(maxY, y)),
+    };
+  }, [activeLightbox]);
 
   useEffect(() => {
     let lastY = window.scrollY;
@@ -93,12 +133,28 @@ export function CaseStudyPage() {
   }, []);
 
   useEffect(() => {
-    if (!isUserflowOpen) {
+    const centerHeroPhones = () => {
+      if (!heroPhonesRef.current || !window.matchMedia("(max-width: 639px)").matches) {
+        return;
+      }
+      const element = heroPhonesRef.current;
+      element.scrollLeft = (element.scrollWidth - element.clientWidth) / 2;
+    };
+    const raf = requestAnimationFrame(centerHeroPhones);
+    window.addEventListener("resize", centerHeroPhones);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", centerHeroPhones);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!openLightbox) {
       return;
     }
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setIsUserflowOpen(false);
+        setOpenLightbox(null);
       }
     };
     document.addEventListener("keydown", onKeyDown);
@@ -125,7 +181,7 @@ export function CaseStudyPage() {
       document.body.style.width = previousWidth;
       window.scrollTo({ top: bodyScrollYRef.current, left: 0, behavior: "instant" });
     };
-  }, [isUserflowOpen]);
+  }, [openLightbox]);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -138,9 +194,9 @@ export function CaseStudyPage() {
   }, []);
 
   useEffect(() => {
-    if (isUserflowOpen) {
+    if (activeLightbox) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
-      const initialScale = isMobile ? 1.6 : 1.5;
+      const initialScale = isMobile ? activeLightbox.mobileScale : activeLightbox.desktopScale;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
@@ -148,16 +204,19 @@ export function CaseStudyPage() {
           return;
         }
         const rect = userflowViewportRef.current.getBoundingClientRect();
-        const scaledWidth = userflowBase.width * initialScale;
+        const scaledWidth = activeLightbox.baseWidth * initialScale;
+        const scaledHeight = activeLightbox.baseHeight * initialScale;
         const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-        const initialX = isMobile ? -maxX : 0;
-        setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
+        const maxY = Math.max(0, (scaledHeight - rect.height) / 2);
+        const initialX = isMobile && activeLightbox.mobileStart === "left" ? maxX : isMobile && activeLightbox.mobileStart === "right" ? -maxX : 0;
+        const initialY = isMobile && activeLightbox.mobileStart === "top" ? maxY : 0;
+        setUserflowOffset(clampUserflowOffset(initialX, initialY, initialScale));
       });
     }
-  }, [isUserflowOpen]);
+  }, [activeLightbox, clampUserflowOffset]);
 
   useEffect(() => {
-    if (!isUserflowOpen) {
+    if (!activeLightbox) {
       return;
     }
     const updateCanDrag = () => {
@@ -165,14 +224,14 @@ export function CaseStudyPage() {
         return;
       }
       const rect = userflowViewportRef.current.getBoundingClientRect();
-      const scaledWidth = userflowBase.width * lightboxScale;
-      const scaledHeight = userflowBase.height * lightboxScale;
+      const scaledWidth = activeLightbox.baseWidth * lightboxScale;
+      const scaledHeight = activeLightbox.baseHeight * lightboxScale;
       setCanDragUserflow(scaledWidth > rect.width || scaledHeight > rect.height);
     };
     updateCanDrag();
     window.addEventListener("resize", updateCanDrag);
     return () => window.removeEventListener("resize", updateCanDrag);
-  }, [isUserflowOpen, lightboxScale]);
+  }, [activeLightbox, lightboxScale]);
 
   useEffect(() => {
     const sections = Array.from(
@@ -215,28 +274,12 @@ export function CaseStudyPage() {
     };
   }, []);
 
-  const clampUserflowOffset = (x: number, y: number, scale: number) => {
-    if (!userflowViewportRef.current) {
-      return { x: 0, y: 0 };
-    }
-    const rect = userflowViewportRef.current.getBoundingClientRect();
-    const edgePadding = rect.width < 640 ? 16 : 32;
-    const scaledWidth = userflowBase.width * scale;
-    const scaledHeight = userflowBase.height * scale;
-    const maxX = Math.max(0, (scaledWidth - (rect.width - edgePadding * 2)) / 2);
-    const maxY = Math.max(0, (scaledHeight - (rect.height - edgePadding * 2)) / 2);
-    return {
-      x: Math.max(-maxX, Math.min(maxX, x)),
-      y: Math.max(-maxY, Math.min(maxY, y)),
-    };
-  };
-
   useEffect(() => {
-    if (!isUserflowOpen) {
+    if (!activeLightbox) {
       return;
     }
     setUserflowOffset((prev) => clampUserflowOffset(prev.x, prev.y, lightboxScale));
-  }, [isUserflowOpen, lightboxScale]);
+  }, [activeLightbox, lightboxScale, clampUserflowOffset]);
 
   const startUserflowDrag = (clientX: number, clientY: number) => {
     if (!canDragUserflow) {
@@ -395,37 +438,42 @@ export function CaseStudyPage() {
               настройки SIM и роуминга.
             </p>
           </div>
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center gap-space-4 sm:gap-space-6">
+          <div
+            ref={heroPhonesRef}
+            className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto px-space-4 pb-space-3 sm:flex sm:w-[calc(100vw-32px)] sm:max-w-[1100px] sm:items-center sm:justify-center sm:overflow-visible sm:px-0 sm:pb-0"
+          >
+            <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-6">
               <Image
                 alt="Экран регистрации MCN Softphone"
                 src={assets.phone1}
                 width={900}
                 height={1840}
-                sizes="(max-width: 640px) 27vw, 236px"
-                className="h-auto w-[27%] max-w-[236px] sm:w-[236px]"
+                sizes="(max-width: 640px) 210px, 236px"
+                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[236px]"
                 priority
-              quality={100}
+                quality={100}
               />
               <Image
                 alt="Экран тарифа MCN Softphone"
                 src={assets.phone2}
                 width={900}
                 height={1840}
-                sizes="(max-width: 640px) 34vw, 280px"
-                className="h-auto w-[34%] max-w-[280px] sm:w-[280px]"
+                sizes="(max-width: 640px) 294px, 280px"
+                className="h-[600px] w-auto shrink-0 sm:h-auto sm:w-[280px]"
                 priority
-              quality={100}
+                quality={100}
               />
               <Image
                 alt="Экран звонка MCN Softphone"
                 src={assets.phone3}
                 width={900}
                 height={1840}
-                sizes="(max-width: 640px) 27vw, 236px"
-                className="h-auto w-[27%] max-w-[236px] sm:w-[236px]"
+                sizes="(max-width: 640px) 210px, 236px"
+                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[236px]"
                 priority
-              quality={100}
+                quality={100}
               />
+            </div>
           </div>
         </motion.section>
 
@@ -565,18 +613,25 @@ export function CaseStudyPage() {
 
             <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
               <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
-                <Image
-                  alt=""
-                  src={assets.discoveryActivation}
-                  width={2256}
-                  height={2541}
-                  sizes="(max-width: 640px) calc(100vw - 80px), 752px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
+                <button
+                  type="button"
+                  aria-label="Open discovery scheme"
+                  onClick={() => setOpenLightbox("discovery")}
+                  className="w-full cursor-zoom-in"
+                >
+                  <Image
+                    alt=""
+                    src={assets.discoveryActivation}
+                    width={2256}
+                    height={2541}
+                    sizes="(max-width: 640px) calc(100vw - 80px), 752px"
+                    className="h-auto w-full object-contain"
+                    loading="lazy"
+                    quality={100}
+                  />
+                </button>
                 <p className="text-center text-caption-14 text-secondary">
-                  Анализ основных сценариев в MVP приложения
+                  Анализ основных сценариев в MVP приложения (нажмите на схему, чтобы увеличить)
                 </p>
               </div>
             </div>
@@ -662,16 +717,20 @@ export function CaseStudyPage() {
 
             <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
               <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
-                <Image
-                  alt=""
-                  src={assets.competitorWhatsapp}
-                  width={2208}
-                  height={1103}
-                  sizes="(max-width: 640px) calc(100vw - 80px), 950px"
-                  className="h-auto w-full max-w-[950px] object-contain"
-                  loading="lazy"
-                quality={100}
-                />
+                <div className="w-full overflow-x-auto pb-space-3">
+                  <div className="mx-auto w-[1000px] max-w-none">
+                    <Image
+                      alt=""
+                      src={assets.competitorWhatsapp}
+                      width={2208}
+                      height={1103}
+                      sizes="1000px"
+                      className="h-auto w-full object-contain"
+                      loading="lazy"
+                      quality={100}
+                    />
+                  </div>
+                </div>
                 <p className="text-center text-caption-14 text-secondary">
                   WhatsApp  (регистрация · выбор контакта · звонок)
                 </p>
@@ -686,16 +745,20 @@ export function CaseStudyPage() {
 
             <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
               <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
-                <Image
-                  alt=""
-                  src={assets.competitorOpenphone}
-                  width={3901}
-                  height={1552}
-                  sizes="(max-width: 640px) calc(100vw - 80px), 952px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
+                <div className="w-full overflow-x-auto pb-space-3">
+                  <div className="mx-auto w-[1250px] max-w-none">
+                    <Image
+                      alt=""
+                      src={assets.competitorOpenphone}
+                      width={3901}
+                      height={1552}
+                      sizes="1250px"
+                      className="h-auto w-full object-contain"
+                      loading="lazy"
+                      quality={100}
+                    />
+                  </div>
+                </div>
                 <p className="text-center text-caption-14 text-secondary">
                   Open Phone  (выбор номера · регистрация · покупка номера · звонок)
                 </p>
@@ -785,7 +848,7 @@ export function CaseStudyPage() {
                 <button
                   type="button"
                   aria-label="Open userflow"
-                  onClick={() => setIsUserflowOpen(true)}
+                  onClick={() => setOpenLightbox("userflow")}
                   className="w-full cursor-zoom-in"
                 >
                   <Image
@@ -800,7 +863,7 @@ export function CaseStudyPage() {
                   />
                 </button>
                 <p className="text-center text-caption-14 text-secondary">
-                  Новый userflow 1-го звонка (регистрация · покупка номера · звонок)
+                  Новый userflow 1-го звонка (нажмите на схему, чтобы увеличить)
                 </p>
               </div>
             </div>
@@ -851,14 +914,14 @@ export function CaseStudyPage() {
           </div>
 
           <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
-            <div className="flex w-full items-center justify-center bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
-              <div className="w-full max-w-[952px]">
+            <div className="w-full overflow-x-auto bg-secondary px-space-4 pb-space-8 pt-[24px] sm:overflow-visible sm:rounded-[12px] sm:p-[24px]">
+              <div className="w-[1040px] max-w-none sm:mx-auto sm:w-full sm:max-w-[1040px]">
                 <Image
                   alt=""
                   src={assets.solutionSuccess}
                   width={2535}
                   height={1620}
-                  sizes="(max-width: 640px) calc(100vw - 80px), 952px"
+                  sizes="(max-width: 640px) 1040px, 1040px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
@@ -885,11 +948,11 @@ export function CaseStudyPage() {
           <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
             <div
               className="flex w-full items-center justify-center px-space-4 sm:px-0"
-              style={{ height: 600 }}
+              style={{ height: 680 }}
             >
               <div
                 className="relative h-full max-w-full"
-                style={{ width: "min(299px, calc(100vw - 64px))" }}
+                style={{ width: "min(339px, calc(100vw - 64px))" }}
               >
                 <video
                   className="h-full w-full object-contain"
@@ -924,19 +987,36 @@ export function CaseStudyPage() {
           </div>
 
           <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
-            <div className="flex w-full items-center justify-center bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
-              <div className="w-full max-w-[1052px]">
-                <Image
-                  alt=""
-                  src={assets.solutionError}
-                  width={3060}
-                  height={1644}
-                  sizes="(max-width: 640px) calc(100vw - 80px), 1052px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                  quality={100}
-                />
+            <div className="w-full bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
+              <div className="overflow-x-auto pb-space-3 sm:overflow-visible sm:pb-0">
+                <div className="w-[1280px] max-w-none sm:hidden">
+                  <Image
+                    alt=""
+                    src={assets.solutionErrorMobile}
+                    width={1052}
+                    height={532}
+                    sizes="1280px"
+                    className="h-auto w-full object-contain"
+                    loading="lazy"
+                    quality={100}
+                  />
+                </div>
+                <div className="hidden sm:mx-auto sm:block sm:w-full sm:max-w-[1180px]">
+                  <Image
+                    alt=""
+                    src={assets.solutionError}
+                    width={1052}
+                    height={532}
+                    sizes="1052px"
+                    className="h-auto w-full object-contain"
+                    loading="lazy"
+                    quality={100}
+                  />
+                </div>
               </div>
+              <p className="mt-[12px] w-full text-center text-caption-14 leading-[160%] text-secondary sm:mx-auto sm:max-w-[1052px]">
+                Возвращаем на сценарий, но оставляем возможность написать в поддержку
+              </p>
             </div>
           </div>
 
@@ -979,7 +1059,7 @@ export function CaseStudyPage() {
                   </span>
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-10">3</span>
                 </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   шага до звонка
                 </p>
               </div>
@@ -989,7 +1069,7 @@ export function CaseStudyPage() {
                   <span className="text-[32px] leading-10">23</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   конверсия в 1-й звонок
                 </p>
               </div>
@@ -1002,7 +1082,7 @@ export function CaseStudyPage() {
                   <span className="text-[32px] font-semibold leading-10">22</span>
                   <span className="text-[18px] font-semibold leading-[160%]">%</span>
                 </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   retention на 4-й неделе
                 </p>
               </div>
@@ -1015,7 +1095,7 @@ export function CaseStudyPage() {
                   <span className="text-[32px] font-semibold leading-10">18</span>
                   <span className="text-[18px] font-semibold leading-[160%]">%</span>
                 </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   вопросов в поддержку
                 </p>
               </div>
@@ -1061,7 +1141,7 @@ export function CaseStudyPage() {
             className="group pointer-events-auto flex items-center justify-end gap-space-3 text-right"
             onClick={(event) => handleSectionNavClick(event, item.id)}
           >
-            <span className="pointer-events-none max-w-[160px] rounded-full bg-elevated-hover px-space-3 py-space-1 text-caption-14 text-secondary-elevated opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <span className="pointer-events-none max-w-[160px] rounded-full bg-elevated-hover px-space-3 py-space-1 text-caption-14 text-secondary opacity-0 transition-opacity duration-200 group-hover:opacity-100">
               {item.label}
             </span>
             <span
@@ -1073,10 +1153,10 @@ export function CaseStudyPage() {
         ))}
       </nav>
 
-      {isUserflowOpen ? (
+      {activeLightbox ? (
         <div
           className="fixed inset-0 z-20 flex items-center justify-center px-space-6"
-          onClick={() => setIsUserflowOpen(false)}
+          onClick={() => setOpenLightbox(null)}
           role="presentation"
           onTouchMove={(event) => event.preventDefault()}
         >
@@ -1091,7 +1171,7 @@ export function CaseStudyPage() {
                 onTouchStart={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
-                  setIsUserflowOpen(false);
+                  setOpenLightbox(null);
                 }}
               >
                 <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary-elevated">
@@ -1124,22 +1204,22 @@ export function CaseStudyPage() {
               <div className="absolute left-1/2 top-1/2">
                 <div
                   style={{
-                    width: `${userflowBase.width}px`,
-                    height: `${userflowBase.height}px`,
+                    width: `${activeLightbox.baseWidth}px`,
+                    height: `${activeLightbox.baseHeight}px`,
                     transform: `translate(-50%, -50%) translate(${userflowOffset.x}px, ${userflowOffset.y}px) scale(${lightboxScale})`,
                     transformOrigin: "center",
                   }}
                 >
                   <Image
                     alt=""
-                    src={assets.userflow}
-                    width={userflowBase.width}
-                    height={userflowBase.height}
-                    sizes="(max-width: 640px) 96vw, 80vw"
+                    src={activeLightbox.src}
+                    width={activeLightbox.imageWidth}
+                    height={activeLightbox.imageHeight}
+                    sizes="(max-width: 640px) 1600px, 1500px"
                     className="pointer-events-none h-full w-full select-none object-contain"
                     draggable={false}
                     priority
-                  quality={100}
+                    quality={100}
                   />
                 </div>
               </div>

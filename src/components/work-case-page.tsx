@@ -6,17 +6,17 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const assets = {
-  heart: "/figma/heart.svg",
-  hero: "/figma/Case_2/Case_2/vpbx-canvas.png",
-  arrowForward: "/figma/Main/arrow_forward.svg",
-  oldCanvas: "/figma/Case_2/old-canvas.png",
-  addFlow: "/figma/Case_2/Case_2/flow.png",
-  table: "/figma/Case_2/table.png?v=2",
-  leftSidebar: "/figma/Case_2/Case_2/left_sidebar.png",
-  rightSidebar: "/figma/Case_2/Case_2/right_sidebar.png",
-  canvasMotion: "/figma/Case_2/Case_2/canvas.mp4",
-  minimap: "/figma/Case_2/Case_2/minimap.png",
-  publishMotion: "/figma/Case_2/Case_2/publish_motion.mp4"
+  heart: "/figma/Icons/heart.svg",
+  hero: "/figma/Case_2/Section_1/vpbx-canvas.png",
+  arrowForward: "/figma/Icons/arrow_forward.svg",
+  oldCanvas: "/figma/Case_2/Section_2/old-canvas.png",
+  addFlow: "/figma/Case_2/Section_2/flow.png?v=20260714c",
+  table: "/figma/Case_2/Section_2/table.png",
+  leftSidebar: "/figma/Case_2/Section_4/left_sidebar.png",
+  rightSidebar: "/figma/Case_2/Section_4/right_sidebar.png",
+  canvasMotion: "/figma/Case_2/Section_4/canvas.mp4",
+  minimap: "/figma/Case_2/Section_4/minimap.png",
+  publishMotion: "/figma/Case_2/Section_4/publish_motion.mp4"
 };
 
 const workStages = ["Дискавери", "Гипотезы", "Проектирование", "Тестирование", "Передача в разработку"];
@@ -287,7 +287,7 @@ export function WorkCasePage() {
                 quality={100}
               />
             </div>
-            <p className="text-center text-caption-14 text-secondary-elevated">
+            <p className="text-center text-caption-14 text-secondary">
               Текущий редактор: 1. сценарии&nbsp;&nbsp;2. настройка&nbsp;&nbsp;3. элементы&nbsp;&nbsp;4. канвас
             </p>
           </div>
@@ -314,15 +314,15 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center">
-            <div className="mx-auto w-full max-w-[800px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center rounded-[12px] bg-secondary px-space-4 py-space-6">
+            <div className="mx-auto w-full max-w-[900px]">
               <Image
                 alt="Флоу работы с элементами"
                 src={assets.addFlow}
-                width={2400}
-                height={1494}
-                sizes="(max-width: 832px) calc(100vw - 80px), 800px"
-                className="h-auto w-full rounded-[8px] object-contain"
+                width={2700}
+                height={1725}
+                sizes="(max-width: 1032px) calc(100vw - 80px), 900px"
+                className="h-auto w-full object-contain"
                 loading="lazy"
                 quality={100}
               />
@@ -751,7 +751,7 @@ export function WorkCasePage() {
                   <span className="text-[32px] leading-10">28</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   self-service rate
                 </p>
               </div>
@@ -763,7 +763,7 @@ export function WorkCasePage() {
                   </span>
                   <span className="text-[32px] font-semibold leading-10">19</span>
                 </div>
-                <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   минут, time-to-change
                 </p>
               </div>
@@ -773,7 +773,7 @@ export function WorkCasePage() {
                   <span className="text-[32px] leading-10">21</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   ошибок в сценариях
                 </p>
               </div>
@@ -783,7 +783,7 @@ export function WorkCasePage() {
                   <span className="text-[32px] leading-10">16</span>
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="whitespace-nowrap text-caption-14 text-[#c0c0c0]">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   обращений в поддержку
                 </p>
               </div>
@@ -829,7 +829,7 @@ export function WorkCasePage() {
             className="group pointer-events-auto flex items-center justify-end gap-space-3 text-right"
             onClick={(event) => handleSectionNavClick(event, item.id)}
           >
-            <span className="pointer-events-none max-w-[160px] rounded-full bg-elevated-hover px-space-3 py-space-1 text-caption-14 text-secondary-elevated opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <span className="pointer-events-none max-w-[160px] rounded-full bg-elevated-hover px-space-3 py-space-1 text-caption-14 text-secondary opacity-0 transition-opacity duration-200 group-hover:opacity-100">
               {item.label}
             </span>
             <span

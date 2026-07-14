@@ -7,12 +7,12 @@ import { useEffect, useState } from "react";
 
 const assets = {
   avatar: "/figma/avatar.png",
-  heart: "/figma/heart.svg",
-  phone1: "/figma/Main/phone%201.png",
-  phone2: "/figma/Main/phone%202.png",
-  phone3: "/figma/Main/phone%203.png",
-  vpbxCanvas: "/figma/Case_2/Case_2/vpbx-canvas.png",
-  arrowForward: "/figma/Main/arrow_forward.svg"
+  heart: "/figma/Icons/heart.svg",
+  phone1: "/figma/Case_1/Section_1/softphone-success.png",
+  phone2: "/figma/Case_1/Section_1/softphone-home.png",
+  phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
+  vpbxCanvas: "/figma/Case_2/Section_1/vpbx-canvas.png",
+  arrowForward: "/figma/Icons/arrow_forward.svg"
 };
 
 export function HomePage() {
