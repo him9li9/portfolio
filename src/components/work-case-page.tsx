@@ -21,10 +21,53 @@ const assets = {
 
 const workStages = ["Дискавери", "Гипотезы", "Проектирование", "Тестирование", "Передача в разработку"];
 
+const zoomImages = {
+  hero: {
+    alt: "KOMPaaS canvas",
+    src: assets.hero,
+    width: 2400,
+    height: 1500
+  },
+  oldCanvas: {
+    alt: "Текущая версия редактора сценариев",
+    src: assets.oldCanvas,
+    width: 2100,
+    height: 1188
+  },
+  addFlow: {
+    alt: "Флоу работы с элементами",
+    src: assets.addFlow,
+    width: 2700,
+    height: 1749
+  }
+};
+
+function ZoomIcon() {
+  return (
+    <span className="pointer-events-none absolute right-space-3 top-space-3 flex h-10 w-10 items-center justify-center rounded-full bg-elevated/90 text-primary transition-colors duration-200 group-hover:bg-elevated-hover">
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      >
+        <circle cx="11" cy="11" r="7" />
+        <path d="m16.5 16.5 4 4" />
+      </svg>
+    </span>
+  );
+}
+
 export function WorkCasePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
+  const [openImage, setOpenImage] = useState<keyof typeof zoomImages | null>(null);
+  const activeZoomImage = openImage ? zoomImages[openImage] : null;
 
   const container = {
     hidden: { opacity: 0 },
@@ -104,6 +147,24 @@ export function WorkCasePage() {
       window.removeEventListener("scroll", updateFromScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (!activeZoomImage) {
+      return;
+    }
+    const originalOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpenImage(null);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = originalOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [activeZoomImage]);
 
   const handleSectionNavClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
@@ -185,16 +246,24 @@ export function WorkCasePage() {
           </div>
 
           <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2">
-            <Image
-              alt="KOMPaaS canvas"
-              src={assets.hero}
-              width={820}
-              height={513}
-              sizes="(max-width: 852px) calc(100vw - 32px), 820px"
-              className="h-auto w-full rounded-[8px] object-contain"
-              priority
-              quality={100}
-            />
+            <button
+              type="button"
+              className="group relative block w-full cursor-zoom-in"
+              onClick={() => setOpenImage("hero")}
+              aria-label="Увеличить схему KOMPaaS canvas"
+            >
+              <Image
+                alt="KOMPaaS canvas"
+                src={assets.hero}
+                width={820}
+                height={513}
+                sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+                className="h-auto w-full rounded-[8px] object-contain"
+                priority
+                quality={100}
+              />
+              <ZoomIcon />
+            </button>
           </div>
         </motion.section>
 
@@ -282,16 +351,24 @@ export function WorkCasePage() {
 
           <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2 flex-col items-center gap-[16px]">
             <div className="mx-auto w-full max-w-[820px]">
-              <Image
-                alt="Текущая версия редактора сценариев"
-                src={assets.oldCanvas}
-                width={820}
-                height={464}
-                sizes="(max-width: 852px) calc(100vw - 32px), 820px"
-                className="h-auto w-full rounded-[8px] object-contain"
-                loading="lazy"
-                quality={100}
-              />
+              <button
+                type="button"
+                className="group relative block w-full cursor-zoom-in"
+                onClick={() => setOpenImage("oldCanvas")}
+                aria-label="Увеличить текущую версию редактора сценариев"
+              >
+                <Image
+                  alt="Текущая версия редактора сценариев"
+                  src={assets.oldCanvas}
+                  width={820}
+                  height={464}
+                  sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+                  className="h-auto w-full rounded-[8px] object-contain"
+                  loading="lazy"
+                  quality={100}
+                />
+                <ZoomIcon />
+              </button>
             </div>
             <p className="text-center text-caption-14 text-secondary">
               Текущий редактор: 1. сценарии&nbsp;&nbsp;2. настройка&nbsp;&nbsp;3. элементы&nbsp;&nbsp;4. канвас
@@ -322,16 +399,24 @@ export function WorkCasePage() {
 
           <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center rounded-[12px] bg-secondary px-space-4 py-space-6">
             <div className="mx-auto w-full max-w-[820px]">
-              <Image
-                alt="Флоу работы с элементами"
-                src={assets.addFlow}
-                width={2700}
-                height={1725}
-                sizes="(max-width: 1032px) calc(100vw - 80px), 820px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-                quality={100}
-              />
+              <button
+                type="button"
+                className="group relative block w-full cursor-zoom-in"
+                onClick={() => setOpenImage("addFlow")}
+                aria-label="Увеличить флоу работы с элементами"
+              >
+                <Image
+                  alt="Флоу работы с элементами"
+                  src={assets.addFlow}
+                  width={2700}
+                  height={1749}
+                  sizes="(max-width: 1032px) calc(100vw - 80px), 820px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  quality={100}
+                />
+                <ZoomIcon />
+              </button>
             </div>
           </div>
 
@@ -574,16 +659,24 @@ export function WorkCasePage() {
 
           <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2 flex-col items-center gap-[16px]">
             <div className="mx-auto w-full max-w-[820px]">
-              <Image
-                alt="KOMPaaS solution overview"
-                src={assets.hero}
-                width={820}
-                height={513}
-                sizes="(max-width: 852px) calc(100vw - 32px), 820px"
-                className="h-auto w-full rounded-[8px] object-contain"
-                loading="lazy"
-                quality={100}
-              />
+              <button
+                type="button"
+                className="group relative block w-full cursor-zoom-in"
+                onClick={() => setOpenImage("hero")}
+                aria-label="Увеличить схему единого рабочего пространства"
+              >
+                <Image
+                  alt="KOMPaaS solution overview"
+                  src={assets.hero}
+                  width={820}
+                  height={513}
+                  sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+                  className="h-auto w-full rounded-[8px] object-contain"
+                  loading="lazy"
+                  quality={100}
+                />
+                <ZoomIcon />
+              </button>
             </div>
             <p className="text-center text-caption-14 text-secondary">
               Сценарии, canvas, элементы и публикация — в едином рабочем пространстве
@@ -739,7 +832,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <p className="text-body-18">
+            <p className="mt-space-4 text-body-18">
               Полноценное тестирование и историю версий вынесли в следующий этап. После проверки
               редактирования и публикации с клиентскими кейсами я подготовила финальные макеты и
               спецификации для передачи в разработку.
@@ -858,6 +951,54 @@ export function WorkCasePage() {
           </a>
         ))}
       </nav>
+
+      {activeZoomImage ? (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-primary/90 px-space-4 py-space-4 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeZoomImage.alt}
+          onClick={() => setOpenImage(null)}
+        >
+          <button
+            type="button"
+            aria-label="Закрыть"
+            className="absolute right-space-4 top-space-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
+            onClick={(event) => {
+              event.stopPropagation();
+              setOpenImage(null);
+            }}
+          >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 24 24"
+              className="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            >
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
+            </svg>
+          </button>
+          <div
+            className="flex max-h-full w-full max-w-[1000px] items-center justify-center"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <Image
+              alt={activeZoomImage.alt}
+              src={activeZoomImage.src}
+              width={activeZoomImage.width}
+              height={activeZoomImage.height}
+              sizes="100vw"
+              className="h-auto max-h-[calc(100vh-64px)] w-full object-contain"
+              quality={100}
+            />
+          </div>
+        </div>
+      ) : null}
     </main>
   );
 }
