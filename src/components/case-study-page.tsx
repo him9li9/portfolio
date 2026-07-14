@@ -394,7 +394,7 @@ export function CaseStudyPage() {
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
-              href="https://drive.google.com/file/d/1ALRDSDjIbFMIzG5EQ-808D5EnGD3keR7/view?usp=sharing"
+              href="https://drive.google.com/file/d/1srTs3sn5jrgr6PlKthMkucNrslEvm0Tp/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
