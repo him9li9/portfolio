@@ -26,29 +26,32 @@ const zoomImages = {
     alt: "KOMPaaS canvas",
     src: assets.hero,
     width: 2400,
-    height: 1500
+    height: 1500,
+    hasPanel: false
   },
   oldCanvas: {
     alt: "Текущая версия редактора сценариев",
     src: assets.oldCanvas,
     width: 2100,
-    height: 1188
+    height: 1188,
+    hasPanel: false
   },
   addFlow: {
     alt: "Флоу работы с элементами",
     src: assets.addFlow,
     width: 2700,
-    height: 1749
+    height: 1749,
+    hasPanel: true
   }
 };
 
 function ZoomIcon() {
   return (
-    <span className="pointer-events-none absolute right-space-3 top-space-3 flex h-10 w-10 items-center justify-center rounded-full bg-elevated/90 text-primary transition-colors duration-200 group-hover:bg-elevated-hover">
+    <span className="pointer-events-none absolute right-space-4 top-space-4 flex h-16 w-16 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 group-hover:bg-elevated-hover">
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
-        className="h-5 w-5"
+        className="h-8 w-8"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
@@ -59,6 +62,16 @@ function ZoomIcon() {
         <path d="m16.5 16.5 4 4" />
       </svg>
     </span>
+  );
+}
+
+function ZoomImageShade({ rounded = true }: { rounded?: boolean }) {
+  return (
+    <span
+      className={`pointer-events-none absolute inset-0 bg-primary/0 transition-colors duration-200 group-hover:bg-primary/20 ${
+        rounded ? "rounded-[8px]" : ""
+      }`}
+    />
   );
 }
 
@@ -262,6 +275,7 @@ export function WorkCasePage() {
                 priority
                 quality={100}
               />
+              <ZoomImageShade />
               <ZoomIcon />
             </button>
           </div>
@@ -367,6 +381,7 @@ export function WorkCasePage() {
                   loading="lazy"
                   quality={100}
                 />
+                <ZoomImageShade />
                 <ZoomIcon />
               </button>
             </div>
@@ -415,6 +430,7 @@ export function WorkCasePage() {
                   loading="lazy"
                   quality={100}
                 />
+                <ZoomImageShade rounded={false} />
                 <ZoomIcon />
               </button>
             </div>
@@ -458,13 +474,13 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2">
+          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
             <Image
               alt="Таблица анализа конкурентов"
               src={assets.table}
-              width={820}
-              height={468}
-              sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+              width={800}
+              height={457}
+              sizes="(max-width: 832px) calc(100vw - 32px), 800px"
               className="h-auto w-full object-contain"
               loading="lazy"
               quality={100}
@@ -675,6 +691,7 @@ export function WorkCasePage() {
                   loading="lazy"
                   quality={100}
                 />
+                <ZoomImageShade />
                 <ZoomIcon />
               </button>
             </div>
@@ -695,13 +712,13 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2">
+            <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
               <Image
                 alt="Навигация по сценариям и быстрые действия"
                 src={assets.leftSidebar}
-                width={820}
-                height={410}
-                sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+                width={800}
+                height={400}
+                sizes="(max-width: 832px) calc(100vw - 32px), 800px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
                 quality={100}
@@ -723,13 +740,13 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2">
+            <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
               <Image
                 alt="Библиотека элементов и настройки правой панели"
                 src={assets.rightSidebar}
-                width={820}
-                height={615}
-                sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+                width={800}
+                height={600}
+                sizes="(max-width: 832px) calc(100vw - 32px), 800px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
                 quality={100}
@@ -788,13 +805,13 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[820px] -translate-x-1/2">
+            <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
               <Image
                 alt="Minimap и навигация по большой схеме"
                 src={assets.minimap}
-                width={820}
-                height={526}
-                sizes="(max-width: 852px) calc(100vw - 32px), 820px"
+                width={800}
+                height={513}
+                sizes="(max-width: 832px) calc(100vw - 32px), 800px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
                 quality={100}
@@ -954,7 +971,7 @@ export function WorkCasePage() {
 
       {activeZoomImage ? (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-primary/90 px-space-4 py-space-4 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-primary/95 px-space-4 py-space-4 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
           role="dialog"
           aria-modal="true"
           aria-label={activeZoomImage.alt}
@@ -984,7 +1001,9 @@ export function WorkCasePage() {
             </svg>
           </button>
           <div
-            className="flex max-h-full w-full max-w-[1000px] items-center justify-center"
+            className={`flex max-h-full w-full max-w-[1000px] items-center justify-center rounded-[12px] ${
+              activeZoomImage.hasPanel ? "bg-secondary p-space-4 sm:p-space-6" : "bg-primary/40"
+            }`}
             onClick={(event) => event.stopPropagation()}
           >
             <Image

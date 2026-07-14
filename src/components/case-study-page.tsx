@@ -57,6 +57,32 @@ const lightboxItems = {
   }
 } as const;
 
+function ZoomIcon() {
+  return (
+    <span className="pointer-events-none absolute right-space-4 top-space-4 flex h-16 w-16 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 group-hover:bg-elevated-hover">
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className="h-8 w-8"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      >
+        <circle cx="11" cy="11" r="7" />
+        <path d="m16.5 16.5 4 4" />
+      </svg>
+    </span>
+  );
+}
+
+function ZoomImageShade() {
+  return (
+    <span className="pointer-events-none absolute inset-0 bg-primary/0 transition-colors duration-200 group-hover:bg-primary/20" />
+  );
+}
+
 export function CaseStudyPage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [openLightbox, setOpenLightbox] = useState<keyof typeof lightboxItems | null>(null);
@@ -618,7 +644,7 @@ export function CaseStudyPage() {
                   type="button"
                   aria-label="Open discovery scheme"
                   onClick={() => setOpenLightbox("discovery")}
-                  className="w-full cursor-zoom-in"
+                  className="group relative block w-full cursor-zoom-in overflow-hidden"
                 >
                   <Image
                     alt=""
@@ -630,6 +656,8 @@ export function CaseStudyPage() {
                     loading="lazy"
                     quality={100}
                   />
+                  <ZoomImageShade />
+                  <ZoomIcon />
                 </button>
                 <p className="text-center text-caption-14 text-secondary">
                   Анализ основных сценариев в MVP приложения (нажмите на схему, чтобы увеличить)
@@ -850,7 +878,7 @@ export function CaseStudyPage() {
                   type="button"
                   aria-label="Open userflow"
                   onClick={() => setOpenLightbox("userflow")}
-                  className="w-full cursor-zoom-in"
+                  className="group relative block w-full cursor-zoom-in overflow-hidden"
                 >
                   <Image
                     alt=""
@@ -862,6 +890,8 @@ export function CaseStudyPage() {
                     loading="lazy"
                   quality={100}
                   />
+                  <ZoomImageShade />
+                  <ZoomIcon />
                 </button>
                 <p className="text-center text-caption-14 text-secondary">
                   Новый userflow 1-го звонка (нажмите на схему, чтобы увеличить)
