@@ -80,6 +80,7 @@ export function WorkCasePage() {
   const [canHover, setCanHover] = useState(false);
   const [activeSection, setActiveSection] = useState("overview");
   const [openImage, setOpenImage] = useState<keyof typeof zoomImages | null>(null);
+  const [zoomScale, setZoomScale] = useState(1);
   const activeZoomImage = openImage ? zoomImages[openImage] : null;
 
   const container = {
@@ -178,6 +179,10 @@ export function WorkCasePage() {
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [activeZoomImage]);
+
+  useEffect(() => {
+    setZoomScale(1);
+  }, [openImage]);
 
   const handleSectionNavClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
@@ -1001,7 +1006,7 @@ export function WorkCasePage() {
             </svg>
           </button>
           <div
-            className={`relative flex max-h-full w-full max-w-[1000px] items-center justify-center rounded-[12px] ${
+            className={`relative flex max-h-full w-full max-w-[1000px] items-start justify-start overflow-auto rounded-[12px] sm:items-center sm:justify-center ${
               activeZoomImage.hasPanel ? "bg-secondary p-space-4 sm:p-space-6" : "bg-secondary"
             }`}
             onClick={(event) => event.stopPropagation()}
@@ -1015,9 +1020,40 @@ export function WorkCasePage() {
               width={activeZoomImage.width}
               height={activeZoomImage.height}
               sizes="100vw"
-              className="relative h-auto max-h-[calc(100vh-64px)] w-full object-contain"
+              className="relative h-[var(--zoom-image-height)] w-auto max-w-none object-contain sm:h-auto sm:max-h-[calc(100vh-64px)] sm:w-full"
+              style={{
+                "--zoom-image-height": `calc(${zoomScale * 100}vh - ${96 * zoomScale}px)`
+              } as React.CSSProperties}
               quality={100}
             />
+          </div>
+          <div className="absolute bottom-space-4 right-space-4 z-10 flex gap-space-2 sm:hidden">
+            <button
+              type="button"
+              aria-label="Уменьшить"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
+              onClick={(event) => {
+                event.stopPropagation();
+                setZoomScale((value) => Math.max(1, Math.round((value - 0.25) * 100) / 100));
+              }}
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                <path d="M6 12h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              aria-label="Увеличить"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
+              onClick={(event) => {
+                event.stopPropagation();
+                setZoomScale((value) => Math.min(2, Math.round((value + 0.25) * 100) / 100));
+              }}
+            >
+              <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                <path d="M12 6v12M6 12h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+              </svg>
+            </button>
           </div>
         </div>
       ) : null}
