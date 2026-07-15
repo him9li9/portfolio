@@ -1197,7 +1197,7 @@ export function CaseStudyPage() {
               <button
                 type="button"
                 aria-label="Close"
-                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6 sm:cursor-default"
+                className="relative flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
                 onMouseDown={(event) => event.stopPropagation()}
                 onTouchStart={(event) => event.stopPropagation()}
                 onClick={(event) => {
@@ -1205,16 +1205,19 @@ export function CaseStudyPage() {
                   setOpenLightbox(null);
                 }}
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary-elevated">
-                  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                    <path
-                      d="M4 4l8 8M12 4l-8 8"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
               </button>
             </div>
             <div
@@ -1259,7 +1262,7 @@ export function CaseStudyPage() {
               <button
                 type="button"
                 aria-label="Zoom out"
-                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
+                className="relative flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
                 onMouseDown={(event) => event.stopPropagation()}
                 onTouchStart={(event) => event.stopPropagation()}
                 onClick={(event) => {
@@ -1267,16 +1270,14 @@ export function CaseStudyPage() {
                   setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
                 }}
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary-elevated">
-                  <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-                    <path d="M3 6h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                </span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                  <path d="M6 12h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+                </svg>
               </button>
               <button
                 type="button"
                 aria-label="Zoom in"
-                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
+                className="relative flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
                 onMouseDown={(event) => event.stopPropagation()}
                 onTouchStart={(event) => event.stopPropagation()}
                 onClick={(event) => {
@@ -1284,11 +1285,9 @@ export function CaseStudyPage() {
                   setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
                 }}
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary-elevated">
-                  <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-                    <path d="M6 3v6M3 6h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                </span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                  <path d="M12 6v12M6 12h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+                </svg>
               </button>
             </div>
           </div>

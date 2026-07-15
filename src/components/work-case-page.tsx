@@ -25,6 +25,7 @@ const zoomImages = {
   hero: {
     alt: "KOMPaaS canvas",
     src: assets.hero,
+    mediaType: "image",
     width: 2400,
     height: 1500,
     hasPanel: false
@@ -32,6 +33,7 @@ const zoomImages = {
   oldCanvas: {
     alt: "Текущая версия редактора сценариев",
     src: assets.oldCanvas,
+    mediaType: "image",
     width: 2100,
     height: 1188,
     hasPanel: false
@@ -39,11 +41,56 @@ const zoomImages = {
   addFlow: {
     alt: "Флоу работы с элементами",
     src: assets.addFlow,
+    mediaType: "image",
     width: 2700,
     height: 1749,
     hasPanel: true
+  },
+  table: {
+    alt: "Таблица анализа конкурентов",
+    src: assets.table,
+    mediaType: "image",
+    width: 2400,
+    height: 1371,
+    hasPanel: false
+  },
+  leftSidebar: {
+    alt: "Навигация по сценариям и быстрые действия",
+    src: assets.leftSidebar,
+    mediaType: "image",
+    width: 2400,
+    height: 1200,
+    hasPanel: false
+  },
+  rightSidebar: {
+    alt: "Библиотека элементов и настройки правой панели",
+    src: assets.rightSidebar,
+    mediaType: "image",
+    width: 2400,
+    height: 1800,
+    hasPanel: false
+  },
+  canvasMotion: {
+    alt: "Пользователь добавляет и настраивает блок, оставаясь в контексте",
+    src: assets.canvasMotion,
+    mediaType: "video",
+    hasPanel: false
+  },
+  minimap: {
+    alt: "Minimap и навигация по большой схеме",
+    src: assets.minimap,
+    mediaType: "image",
+    width: 2400,
+    height: 1539,
+    hasPanel: false
+  },
+  publishMotion: {
+    alt: "После публикации изменений статус обновляется, а кнопка становится неактивной",
+    src: assets.publishMotion,
+    mediaType: "video",
+    hasPanel: false
   }
-};
+} as const;
 
 function ZoomIcon() {
   return (
@@ -480,16 +527,25 @@ export function WorkCasePage() {
           </div>
 
           <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
-            <Image
-              alt="Таблица анализа конкурентов"
-              src={assets.table}
-              width={800}
-              height={457}
-              sizes="(max-width: 832px) calc(100vw - 32px), 800px"
-              className="h-auto w-full object-contain"
-              loading="lazy"
-              quality={100}
-            />
+            <button
+              type="button"
+              className="group relative block w-full cursor-zoom-in"
+              onClick={() => setOpenImage("table")}
+              aria-label="Увеличить таблицу анализа конкурентов"
+            >
+              <Image
+                alt="Таблица анализа конкурентов"
+                src={assets.table}
+                width={800}
+                height={457}
+                sizes="(max-width: 832px) calc(100vw - 32px), 800px"
+                className="h-auto w-full object-contain"
+                loading="lazy"
+                quality={100}
+              />
+              <ZoomImageShade rounded={false} />
+              <ZoomIcon />
+            </button>
           </div>
 
           <p className="text-body-18">
@@ -718,16 +774,25 @@ export function WorkCasePage() {
             </div>
 
             <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
-              <Image
-                alt="Навигация по сценариям и быстрые действия"
-                src={assets.leftSidebar}
-                width={800}
-                height={400}
-                sizes="(max-width: 832px) calc(100vw - 32px), 800px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-                quality={100}
-              />
+              <button
+                type="button"
+                className="group relative block w-full cursor-zoom-in"
+                onClick={() => setOpenImage("leftSidebar")}
+                aria-label="Увеличить навигацию по сценариям и быстрые действия"
+              >
+                <Image
+                  alt="Навигация по сценариям и быстрые действия"
+                  src={assets.leftSidebar}
+                  width={800}
+                  height={400}
+                  sizes="(max-width: 832px) calc(100vw - 32px), 800px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  quality={100}
+                />
+                <ZoomImageShade rounded={false} />
+                <ZoomIcon />
+              </button>
             </div>
           </div>
 
@@ -746,16 +811,25 @@ export function WorkCasePage() {
             </div>
 
             <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
-              <Image
-                alt="Библиотека элементов и настройки правой панели"
-                src={assets.rightSidebar}
-                width={800}
-                height={600}
-                sizes="(max-width: 832px) calc(100vw - 32px), 800px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-                quality={100}
-              />
+              <button
+                type="button"
+                className="group relative block w-full cursor-zoom-in"
+                onClick={() => setOpenImage("rightSidebar")}
+                aria-label="Увеличить библиотеку элементов и настройки правой панели"
+              >
+                <Image
+                  alt="Библиотека элементов и настройки правой панели"
+                  src={assets.rightSidebar}
+                  width={800}
+                  height={600}
+                  sizes="(max-width: 832px) calc(100vw - 32px), 800px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  quality={100}
+                />
+                <ZoomImageShade rounded={false} />
+                <ZoomIcon />
+              </button>
             </div>
           </div>
 
@@ -780,16 +854,25 @@ export function WorkCasePage() {
 
             <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
               <div className="mx-auto w-full max-w-[800px]">
-                <video
-                  src={assets.canvasMotion}
-                  className="h-auto w-full rounded-[8px] object-contain"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  aria-label="Пользователь добавляет и настраивает блок, оставаясь в контексте"
-                />
+                <button
+                  type="button"
+                  className="group relative block w-full cursor-zoom-in"
+                  onClick={() => setOpenImage("canvasMotion")}
+                  aria-label="Увеличить анимацию добавления и настройки блока"
+                >
+                  <video
+                    src={assets.canvasMotion}
+                    className="h-auto w-full rounded-[8px] object-contain"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="metadata"
+                    aria-label="Пользователь добавляет и настраивает блок, оставаясь в контексте"
+                  />
+                  <ZoomImageShade />
+                  <ZoomIcon />
+                </button>
               </div>
               <p className="text-center text-caption-14 text-secondary">
                 Пользователь добавляет и настраивает блок, оставаясь в контексте.
@@ -811,16 +894,25 @@ export function WorkCasePage() {
             </div>
 
             <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
-              <Image
-                alt="Minimap и навигация по большой схеме"
-                src={assets.minimap}
-                width={800}
-                height={513}
-                sizes="(max-width: 832px) calc(100vw - 32px), 800px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-                quality={100}
-              />
+              <button
+                type="button"
+                className="group relative block w-full cursor-zoom-in"
+                onClick={() => setOpenImage("minimap")}
+                aria-label="Увеличить minimap и навигацию по большой схеме"
+              >
+                <Image
+                  alt="Minimap и навигация по большой схеме"
+                  src={assets.minimap}
+                  width={800}
+                  height={513}
+                  sizes="(max-width: 832px) calc(100vw - 32px), 800px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  quality={100}
+                />
+                <ZoomImageShade rounded={false} />
+                <ZoomIcon />
+              </button>
             </div>
           </div>
 
@@ -839,16 +931,25 @@ export function WorkCasePage() {
             </div>
 
             <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
-              <video
-                src={assets.publishMotion}
-                className="aspect-[2278/1068] w-full rounded-[8px] object-contain"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-label="После публикации изменений статус обновляется, а кнопка становится неактивной"
-              />
+              <button
+                type="button"
+                className="group relative block w-full cursor-zoom-in"
+                onClick={() => setOpenImage("publishMotion")}
+                aria-label="Увеличить анимацию публикации сценария"
+              >
+                <video
+                  src={assets.publishMotion}
+                  className="aspect-[2278/1068] w-full rounded-[8px] object-contain"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  aria-label="После публикации изменений статус обновляется, а кнопка становится неактивной"
+                />
+                <ZoomImageShade />
+                <ZoomIcon />
+              </button>
               <p className="text-center text-caption-14 text-secondary">
                 После публикации изменений статус обновляется, а кнопка становится неактивной.
               </p>
@@ -932,7 +1033,7 @@ export function WorkCasePage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="flex w-full max-w-[1000px] items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
+          className="-mt-[88px] flex w-full max-w-[1000px] items-start justify-between border-t border-border-elevated pt-space-4 text-body-18 sm:mt-0"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
@@ -1014,18 +1115,32 @@ export function WorkCasePage() {
             {activeZoomImage.hasPanel ? (
               <div className="absolute inset-space-4 rounded-[8px] bg-primary/40 blur-[24px] sm:inset-space-6" />
             ) : null}
-            <Image
-              alt={activeZoomImage.alt}
-              src={activeZoomImage.src}
-              width={activeZoomImage.width}
-              height={activeZoomImage.height}
-              sizes="100vw"
-              className="relative h-[var(--zoom-image-height)] w-auto max-w-none object-contain sm:h-auto sm:max-h-[calc(100vh-64px)] sm:w-full"
-              style={{
-                "--zoom-image-height": `calc(${zoomScale * 100}vh - ${96 * zoomScale}px)`
-              } as React.CSSProperties}
-              quality={100}
-            />
+            {activeZoomImage.mediaType === "video" ? (
+              <video
+                src={activeZoomImage.src}
+                className="relative h-[var(--zoom-image-height)] w-auto max-w-none object-contain sm:h-auto sm:max-h-[calc(100vh-64px)] sm:w-full"
+                style={{
+                  "--zoom-image-height": `calc(${zoomScale * 100}vh - ${96 * zoomScale}px)`
+                } as React.CSSProperties}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            ) : (
+              <Image
+                alt={activeZoomImage.alt}
+                src={activeZoomImage.src}
+                width={activeZoomImage.width}
+                height={activeZoomImage.height}
+                sizes="100vw"
+                className="relative h-[var(--zoom-image-height)] w-auto max-w-none object-contain sm:h-auto sm:max-h-[calc(100vh-64px)] sm:w-full"
+                style={{
+                  "--zoom-image-height": `calc(${zoomScale * 100}vh - ${96 * zoomScale}px)`
+                } as React.CSSProperties}
+                quality={100}
+              />
+            )}
           </div>
           <div className="absolute bottom-space-4 right-space-4 z-10 flex gap-space-2 sm:hidden">
             <button
