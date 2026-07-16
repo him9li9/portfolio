@@ -214,7 +214,7 @@ export function HomePage() {
                     Мобильное приложение для звонков за границей. Упростила путь до первого звонка и
                     сделала стоимость связи прозрачнее до начала вызова.
                   </p>
-                  <div className="flex flex-wrap items-start gap-space-2">
+                  <div className="flex flex-wrap items-start gap-space-1">
                     <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       8 → 3 шага до звонка
                     </span>
@@ -272,7 +272,7 @@ export function HomePage() {
                     B2B-платформа для автоматизации контакт-центров. Снизила зависимость клиентов
                     от разработки в управлении сценариями звонков.
                   </p>
-                  <div className="flex flex-wrap items-start gap-space-2">
+                  <div className="flex flex-wrap items-start gap-space-1">
                     <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       +28% self-service rate
                     </span>
