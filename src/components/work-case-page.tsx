@@ -231,6 +231,16 @@ export function WorkCasePage() {
     setZoomScale(1);
   }, [openImage]);
 
+  const handleZoomOpen = (
+    image: keyof typeof zoomImages,
+    desktopEnabled = true
+  ) => {
+    if (!desktopEnabled && window.matchMedia("(min-width: 640px)").matches) {
+      return;
+    }
+    setOpenImage(image);
+  };
+
   const handleSectionNavClick = (
     event: React.MouseEvent<HTMLAnchorElement>,
     id: string
@@ -529,8 +539,8 @@ export function WorkCasePage() {
           <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
             <button
               type="button"
-              className="group relative block w-full cursor-zoom-in"
-              onClick={() => setOpenImage("table")}
+              className="group relative block w-full cursor-zoom-in sm:cursor-default"
+              onClick={() => handleZoomOpen("table", false)}
               aria-label="Увеличить таблицу анализа конкурентов"
             >
               <Image
@@ -543,8 +553,12 @@ export function WorkCasePage() {
                 loading="lazy"
                 quality={100}
               />
-              <ZoomImageShade rounded={false} />
-              <ZoomIcon />
+              <span className="sm:hidden">
+                <ZoomImageShade rounded={false} />
+              </span>
+              <span className="sm:hidden">
+                <ZoomIcon />
+              </span>
             </button>
           </div>
 
@@ -776,8 +790,8 @@ export function WorkCasePage() {
             <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
               <button
                 type="button"
-                className="group relative block w-full cursor-zoom-in"
-                onClick={() => setOpenImage("leftSidebar")}
+                className="group relative block w-full cursor-zoom-in sm:cursor-default"
+                onClick={() => handleZoomOpen("leftSidebar", false)}
                 aria-label="Увеличить навигацию по сценариям и быстрые действия"
               >
                 <Image
@@ -790,8 +804,12 @@ export function WorkCasePage() {
                   loading="lazy"
                   quality={100}
                 />
-                <ZoomImageShade rounded={false} />
-                <ZoomIcon />
+                <span className="sm:hidden">
+                  <ZoomImageShade rounded={false} />
+                </span>
+                <span className="sm:hidden">
+                  <ZoomIcon />
+                </span>
               </button>
             </div>
           </div>
@@ -813,8 +831,8 @@ export function WorkCasePage() {
             <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
               <button
                 type="button"
-                className="group relative block w-full cursor-zoom-in"
-                onClick={() => setOpenImage("rightSidebar")}
+                className="group relative block w-full cursor-zoom-in sm:cursor-default"
+                onClick={() => handleZoomOpen("rightSidebar", false)}
                 aria-label="Увеличить библиотеку элементов и настройки правой панели"
               >
                 <Image
@@ -827,8 +845,12 @@ export function WorkCasePage() {
                   loading="lazy"
                   quality={100}
                 />
-                <ZoomImageShade rounded={false} />
-                <ZoomIcon />
+                <span className="sm:hidden">
+                  <ZoomImageShade rounded={false} />
+                </span>
+                <span className="sm:hidden">
+                  <ZoomIcon />
+                </span>
               </button>
             </div>
           </div>
@@ -856,8 +878,8 @@ export function WorkCasePage() {
               <div className="mx-auto w-full max-w-[800px]">
                 <button
                   type="button"
-                  className="group relative block w-full cursor-zoom-in"
-                  onClick={() => setOpenImage("canvasMotion")}
+                  className="group relative block w-full cursor-zoom-in sm:cursor-default"
+                  onClick={() => handleZoomOpen("canvasMotion", false)}
                   aria-label="Увеличить анимацию добавления и настройки блока"
                 >
                   <video
@@ -870,8 +892,12 @@ export function WorkCasePage() {
                     preload="metadata"
                     aria-label="Пользователь добавляет и настраивает блок, оставаясь в контексте"
                   />
-                  <ZoomImageShade />
-                  <ZoomIcon />
+                  <span className="sm:hidden">
+                    <ZoomImageShade />
+                  </span>
+                  <span className="sm:hidden">
+                    <ZoomIcon />
+                  </span>
                 </button>
               </div>
               <p className="text-center text-caption-14 text-secondary">
@@ -896,8 +922,8 @@ export function WorkCasePage() {
             <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
               <button
                 type="button"
-                className="group relative block w-full cursor-zoom-in"
-                onClick={() => setOpenImage("minimap")}
+                className="group relative block w-full cursor-zoom-in sm:cursor-default"
+                onClick={() => handleZoomOpen("minimap", false)}
                 aria-label="Увеличить minimap и навигацию по большой схеме"
               >
                 <Image
@@ -910,8 +936,12 @@ export function WorkCasePage() {
                   loading="lazy"
                   quality={100}
                 />
-                <ZoomImageShade rounded={false} />
-                <ZoomIcon />
+                <span className="sm:hidden">
+                  <ZoomImageShade rounded={false} />
+                </span>
+                <span className="sm:hidden">
+                  <ZoomIcon />
+                </span>
               </button>
             </div>
           </div>
@@ -933,8 +963,8 @@ export function WorkCasePage() {
             <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
               <button
                 type="button"
-                className="group relative block w-full cursor-zoom-in"
-                onClick={() => setOpenImage("publishMotion")}
+                className="group relative block w-full cursor-zoom-in sm:cursor-default"
+                onClick={() => handleZoomOpen("publishMotion", false)}
                 aria-label="Увеличить анимацию публикации сценария"
               >
                 <video
@@ -947,8 +977,12 @@ export function WorkCasePage() {
                   preload="metadata"
                   aria-label="После публикации изменений статус обновляется, а кнопка становится неактивной"
                 />
-                <ZoomImageShade />
-                <ZoomIcon />
+                <span className="sm:hidden">
+                  <ZoomImageShade />
+                </span>
+                <span className="sm:hidden">
+                  <ZoomIcon />
+                </span>
               </button>
               <p className="text-center text-caption-14 text-secondary">
                 После публикации изменений статус обновляется, а кнопка становится неактивной.
@@ -1149,7 +1183,7 @@ export function WorkCasePage() {
               className="flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
               onClick={(event) => {
                 event.stopPropagation();
-                setZoomScale((value) => Math.max(1, Math.round((value - 0.25) * 100) / 100));
+                setZoomScale((value) => Math.max(0.75, Math.round((value - 0.25) * 100) / 100));
               }}
             >
               <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">

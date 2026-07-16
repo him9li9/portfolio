@@ -1267,7 +1267,8 @@ export function CaseStudyPage() {
                 onTouchStart={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
-                  setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
+                  const minScale = window.matchMedia("(max-width: 639px)").matches ? 0.75 : 1;
+                  setLightboxScale((value) => Math.max(minScale, Math.round((value - 0.5) * 10) / 10));
                 }}
               >
                 <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">
