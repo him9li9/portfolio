@@ -94,7 +94,7 @@ const zoomImages = {
 
 function ZoomIcon() {
   return (
-    <span className="pointer-events-none absolute bottom-space-3 right-space-3 flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 group-hover:bg-elevated-hover">
+    <span className="pointer-events-none absolute bottom-space-3 right-space-3 flex h-10 w-10 items-center justify-center rounded-full bg-elevated/65 text-primary transition-colors duration-200 group-hover:bg-elevated-hover">
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
@@ -1183,7 +1183,7 @@ export function WorkCasePage() {
               className="flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
               onClick={(event) => {
                 event.stopPropagation();
-                setZoomScale((value) => Math.max(0.75, Math.round((value - 0.25) * 100) / 100));
+                setZoomScale((value) => Math.max(0.3, Math.round((value - 0.25) * 100) / 100));
               }}
             >
               <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">

@@ -59,7 +59,7 @@ const lightboxItems = {
 
 function ZoomIcon() {
   return (
-    <span className="pointer-events-none absolute bottom-space-3 right-space-3 flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 group-hover:bg-elevated-hover">
+    <span className="pointer-events-none absolute bottom-space-3 right-space-3 flex h-10 w-10 items-center justify-center rounded-full bg-elevated/65 text-primary transition-colors duration-200 group-hover:bg-elevated-hover">
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
@@ -1142,7 +1142,7 @@ export function CaseStudyPage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
+          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18 sm:mt-0"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
@@ -1267,7 +1267,7 @@ export function CaseStudyPage() {
                 onTouchStart={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
-                  const minScale = window.matchMedia("(max-width: 639px)").matches ? 0.75 : 1;
+                  const minScale = window.matchMedia("(max-width: 639px)").matches ? 0.3 : 1;
                   setLightboxScale((value) => Math.max(minScale, Math.round((value - 0.5) * 10) / 10));
                 }}
               >
