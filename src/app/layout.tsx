@@ -31,9 +31,34 @@ const oldenburg = localFont({
   display: "swap"
 });
 
+const title = "Anastasia Ermoshina — Product Designer";
+const description =
+  "Product Designer with 4+ years of experience in B2B/B2C SaaS, telecom and complex workflows.";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://nastya-ermoshina.vercel.app";
+const ogImage = "/og-image.png";
+
 export const metadata: Metadata = {
-  title: "Nastya Ermoshina Portfolio",
-  description: "Product designer and data-driven strategist portfolio",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    images: [
+      {
+        url: ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Anastasia Ermoshina — Product Designer"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [ogImage]
+  },
   icons: {
     icon: "/favicon.png",
     apple: "/apple-touch-icon.png"
