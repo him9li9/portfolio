@@ -154,9 +154,9 @@ export function HomePage() {
         </motion.section>
 
         <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-6 sm:items-center">
-          <h4 className="w-full text-left text-h4 sm:text-center">
+          <h3 className="w-full text-left text-h3 sm:text-center">
             Избранные проекты
-          </h4>
+          </h3>
 
           <div className="flex w-full flex-col items-start gap-[140px] sm:items-center">
             <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
@@ -305,7 +305,7 @@ export function HomePage() {
       </motion.div>
       <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-space-6 sm:pb-[40px] sm:px-space-8 lg:px-0">
         <div className="flex flex-col gap-space-2">
-          <h4 className="text-h4">Связаться со мной</h4>
+          <h3 className="text-h3">Связаться со мной</h3>
         </div>
         <div className="h-px w-full bg-border-elevated" />
         <div className="flex w-full flex-col gap-space-6 sm:flex-row sm:items-center sm:justify-between sm:gap-space-2">
