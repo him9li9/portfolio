@@ -644,7 +644,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-0">
+              <div className="flex w-full flex-col items-center gap-space-4">
                 <button
                   type="button"
                   aria-label="Open discovery scheme"
@@ -760,7 +760,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-0">
+              <div className="flex w-full flex-col items-center gap-space-4">
                 <div className="w-full">
                   <div className="mx-auto h-[400px] w-full">
                     <Image
@@ -788,7 +788,7 @@ export function CaseStudyPage() {
             </p>
 
             <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-0">
+              <div className="flex w-full flex-col items-center gap-space-4">
                 <div className="w-full overflow-x-auto pb-space-3 sm:overflow-visible sm:pb-0">
                   <div className="mx-auto h-[400px] w-[1250px] max-w-none sm:w-full">
                     <Image
@@ -888,7 +888,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-space-4 bg-secondary p-space-6 sm:rounded-[12px]">
+              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-6 sm:rounded-[12px]">
                 <button
                   type="button"
                   aria-label="Open userflow"
@@ -1070,7 +1070,7 @@ export function CaseStudyPage() {
                   />
                 </div>
               </div>
-              <p className="mt-0 w-full text-center text-caption-14 leading-[160%] text-secondary sm:mx-auto sm:max-w-[1052px]">
+              <p className="mt-space-4 w-full text-center text-caption-14 leading-[160%] text-secondary sm:mx-auto sm:max-w-[1052px]">
                 Возвращаем на сценарий, но оставляем возможность написать в поддержку
               </p>
             </div>

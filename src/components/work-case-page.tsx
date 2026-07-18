@@ -430,7 +430,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-0">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-4">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -753,7 +753,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-0">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-4">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -879,7 +879,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-0">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-4">
               <div className="mx-auto w-full max-w-[800px]">
                 <button
                   type="button"
@@ -965,7 +965,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-0">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-4">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in sm:cursor-default"
