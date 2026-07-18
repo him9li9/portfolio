@@ -224,10 +224,10 @@ export function HomePage() {
                     сделала стоимость связи прозрачнее до начала вызова.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-1">
-                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-primary">
+                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       8 → 3 шага до звонка
                     </span>
-                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-primary">
+                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       +23% конверсия в 1-й звонок
                     </span>
                   </div>
@@ -282,10 +282,10 @@ export function HomePage() {
                     от разработки в управлении сценариями звонков.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-1">
-                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-primary">
+                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       +28% self-service rate
                     </span>
-                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-primary">
+                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       -21% ошибок после публикации
                     </span>
                   </div>
@@ -309,7 +309,7 @@ export function HomePage() {
         </div>
         <div className="h-px w-full bg-border-elevated" />
         <div className="flex w-full flex-col gap-space-6 sm:flex-row sm:items-center sm:justify-between sm:gap-space-2">
-          <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-16 text-primary">
+          <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-18 text-primary">
             {footerLinks.map((link, index) => (
               <div key={link.label} className="flex items-center gap-space-2">
                 <a
