@@ -469,7 +469,7 @@ export function CaseStudyPage() {
             ref={heroPhonesRef}
             className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-max sm:items-center sm:justify-center sm:overflow-visible"
           >
-            <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-6">
+            <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto">
               <Image
                 alt="Экран регистрации MCN Softphone"
                 src={assets.phone1}
