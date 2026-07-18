@@ -144,8 +144,8 @@ export function HomePage() {
           </p>
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col items-start gap-space-6 sm:items-center">
-          <h2 className="text-left text-h3 sm:text-center">
+        <motion.section variants={item} className="flex w-full flex-col items-start gap-space-6 sm:w-[900px] sm:self-center sm:items-center">
+          <h2 className="w-full text-left text-h3 sm:text-center">
             Избранные проекты
           </h2>
 
