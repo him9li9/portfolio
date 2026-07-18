@@ -1107,7 +1107,7 @@ export function CaseStudyPage() {
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[32px] leading-10">15</span>
-                  <span className="inline-flex h-10 align-top">
+                  <span className="inline-flex h-10 items-center">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
                   <span className="text-[32px] leading-10">22</span>
@@ -1120,7 +1120,7 @@ export function CaseStudyPage() {
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[32px] leading-10">40</span>
-                  <span className="inline-flex h-10 align-top">
+                  <span className="inline-flex h-10 items-center">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
                   <span className="text-[32px] leading-10">18</span>

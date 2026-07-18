@@ -347,7 +347,7 @@ export function WorkCasePage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="-mt-space-16 scroll-mt-space-16 flex flex-col gap-space-8"
+          className="-mt-space-14 scroll-mt-space-16 flex flex-col gap-space-8"
         >
           <div className="flex flex-col gap-space-4">
             <h2 className="text-h2">О проекте</h2>
