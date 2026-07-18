@@ -302,34 +302,31 @@ export function HomePage() {
             </article>
           </div>
         </motion.section>
-        <motion.footer
-          variants={item}
-          className="flex w-full flex-col gap-space-2 self-stretch sm:mx-auto sm:max-w-[900px] sm:self-center"
-        >
-          <div className="flex flex-col gap-space-2">
-            <h4 className="text-h4">Связаться со мной</h4>
-          </div>
-          <div className="h-px w-full bg-border-elevated" />
-          <div className="flex w-full flex-col gap-space-2 sm:flex-row sm:items-center sm:justify-between">
-            <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-18 text-primary">
-              {footerLinks.map((link, index) => (
-                <div key={link.label} className="flex items-center gap-space-2">
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="link-underline"
-                  >
-                    {link.label}
-                  </a>
-                  {index < footerLinks.length - 1 ? <span className="text-secondary">·</span> : null}
-                </div>
-              ))}
-            </nav>
-            <p className="text-body-16 text-secondary">Nastya Ermoshina © 2026</p>
-          </div>
-        </motion.footer>
       </motion.div>
+      <footer className="mx-auto flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-[70px] sm:px-space-8 lg:px-0">
+        <div className="flex flex-col gap-space-2">
+          <h4 className="text-h4">Связаться со мной</h4>
+        </div>
+        <div className="h-px w-full bg-border-elevated" />
+        <div className="flex w-full flex-col gap-space-2 sm:flex-row sm:items-center sm:justify-between">
+          <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-18 text-primary">
+            {footerLinks.map((link, index) => (
+              <div key={link.label} className="flex items-center gap-space-2">
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline"
+                >
+                  {link.label}
+                </a>
+                {index < footerLinks.length - 1 ? <span className="text-secondary">·</span> : null}
+              </div>
+            ))}
+          </nav>
+          <p className="text-body-16 text-secondary">Nastya Ermoshina © 2026</p>
+        </div>
+      </footer>
     </main>
   );
 }
