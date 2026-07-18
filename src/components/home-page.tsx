@@ -211,7 +211,7 @@ export function HomePage() {
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
+                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-18 text-primary sm:flex"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -234,7 +234,7 @@ export function HomePage() {
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
+                    className="mt-space-1 flex items-center gap-space-1 text-body-18 text-primary sm:hidden"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -269,7 +269,7 @@ export function HomePage() {
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
+                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-18 text-primary sm:flex"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -292,7 +292,7 @@ export function HomePage() {
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
+                    className="mt-space-1 flex items-center gap-space-1 text-body-18 text-primary sm:hidden"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
