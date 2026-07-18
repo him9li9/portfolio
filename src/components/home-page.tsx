@@ -168,9 +168,9 @@ export function HomePage() {
               >
                 <div
                   ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary py-space-8 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-4 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary py-space-8 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
                 >
-                  <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto">
+                  <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto">
                     <Image
                       alt="Экран регистрации MCN Softphone"
                       src={assets.phone1}
@@ -303,12 +303,12 @@ export function HomePage() {
           </div>
         </motion.section>
       </motion.div>
-      <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-[40px] sm:px-space-8 lg:px-0">
+      <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-space-6 sm:pb-[40px] sm:px-space-8 lg:px-0">
         <div className="flex flex-col gap-space-2">
           <h4 className="text-h4">Связаться со мной</h4>
         </div>
         <div className="h-px w-full bg-border-elevated" />
-        <div className="flex w-full flex-col gap-space-2 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex w-full flex-col gap-space-6 sm:flex-row sm:items-center sm:justify-between sm:gap-space-2">
           <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-16 text-primary">
             {footerLinks.map((link, index) => (
               <div key={link.label} className="flex items-center gap-space-2">

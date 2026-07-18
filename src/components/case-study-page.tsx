@@ -410,11 +410,16 @@ export function CaseStudyPage() {
         className="sticky top-0 z-10 h-[74px] w-full bg-primary/60 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
         <div className="flex h-full w-full items-center justify-between px-space-4 py-space-3 sm:px-space-8">
-          <Link href="/" className="font-oldenburg flex items-center gap-space-1 text-body-18">
-            <span>nastya</span>
-            <span>with</span>
-            <img alt="" src={assets.heart} className="h-6 w-6" />
-          </Link>
+          <motion.div
+            whileHover={canHover ? { scale: 1.05 } : undefined}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            <Link href="/" className="font-oldenburg flex items-center gap-space-1 text-body-18">
+              <span>nastya</span>
+              <span>with</span>
+              <img alt="" src={assets.heart} className="h-6 w-6" />
+            </Link>
+          </motion.div>
           <div className="flex items-center gap-space-2">
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
@@ -469,7 +474,7 @@ export function CaseStudyPage() {
             ref={heroPhonesRef}
             className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-max sm:items-center sm:justify-center sm:overflow-visible"
           >
-            <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto">
+            <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto">
               <Image
                 alt="Экран регистрации MCN Softphone"
                 src={assets.phone1}
@@ -757,14 +762,14 @@ export function CaseStudyPage() {
             <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
               <div className="flex w-full flex-col items-center gap-space-2">
                 <div className="w-full">
-                  <div className="mx-auto w-full">
+                  <div className="mx-auto h-[400px] w-full">
                     <Image
                       alt=""
                       src={assets.competitorWhatsapp}
                       width={2208}
                       height={1103}
                       sizes="(max-width: 640px) calc(100vw - 48px), 752px"
-                      className="h-auto w-full object-contain"
+                      className="h-full w-auto max-w-full object-contain"
                       loading="lazy"
                       quality={100}
                     />
@@ -785,14 +790,14 @@ export function CaseStudyPage() {
             <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
               <div className="flex w-full flex-col items-center gap-space-2">
                 <div className="w-full overflow-x-auto pb-space-3 sm:overflow-visible sm:pb-0">
-                  <div className="mx-auto w-[1250px] max-w-none sm:w-full">
+                  <div className="mx-auto h-[400px] w-[1250px] max-w-none sm:w-full">
                     <Image
                       alt=""
                       src={assets.competitorOpenphone}
                       width={3901}
                       height={1552}
                       sizes="(max-width: 640px) 1250px, 952px"
-                      className="h-auto w-full object-contain"
+                      className="h-full w-auto max-w-none object-contain sm:max-w-full"
                       loading="lazy"
                       quality={100}
                     />
@@ -883,7 +888,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-6 sm:rounded-[12px]">
+              <div className="flex w-full flex-col items-center gap-space-4 bg-secondary p-space-6 sm:rounded-[12px]">
                 <button
                   type="button"
                   aria-label="Open userflow"
@@ -1162,7 +1167,7 @@ export function CaseStudyPage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-16 sm:mt-0"
+          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-18 sm:mt-0"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">

@@ -264,11 +264,16 @@ export function WorkCasePage() {
         className="sticky top-0 z-10 h-[74px] w-full bg-primary/60 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
         <div className="flex h-full w-full items-center justify-between px-space-4 py-space-3 sm:px-space-8">
-          <Link href="/" className="font-oldenburg flex items-center gap-space-1 text-body-18">
-            <span>nastya</span>
-            <span>with</span>
-            <img alt="" src={assets.heart} className="h-6 w-6" />
-          </Link>
+          <motion.div
+            whileHover={canHover ? { scale: 1.05 } : undefined}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            <Link href="/" className="font-oldenburg flex items-center gap-space-1 text-body-18">
+              <span>nastya</span>
+              <span>with</span>
+              <img alt="" src={assets.heart} className="h-6 w-6" />
+            </Link>
+          </motion.div>
           <div className="flex items-center gap-space-2">
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
@@ -1067,7 +1072,7 @@ export function WorkCasePage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-16 sm:mt-0"
+          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-18 sm:mt-0"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
@@ -1142,13 +1147,10 @@ export function WorkCasePage() {
           </button>
           <div
             className={`relative flex max-h-full w-full max-w-[1100px] items-start justify-start overflow-auto rounded-[12px] sm:items-center sm:justify-center ${
-              activeZoomImage.hasPanel ? "bg-secondary p-space-4 sm:p-space-6" : "bg-secondary"
+              activeZoomImage.hasPanel ? "bg-secondary p-space-4 sm:p-space-6" : ""
             }`}
             onClick={(event) => event.stopPropagation()}
           >
-            {activeZoomImage.hasPanel ? (
-              <div className="absolute inset-space-4 rounded-[8px] bg-primary/40 blur-[24px] sm:inset-space-6" />
-            ) : null}
             {activeZoomImage.mediaType === "video" ? (
               <video
                 src={activeZoomImage.src}
