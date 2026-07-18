@@ -273,7 +273,7 @@ export function WorkCasePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
+              className="inline-flex items-center justify-center rounded-full bg-secondary px-space-4 py-space-2 text-body-16 text-primary"
               href="https://drive.google.com/file/d/1srTs3sn5jrgr6PlKthMkucNrslEvm0Tp/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
@@ -283,7 +283,7 @@ export function WorkCasePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
+              className="inline-flex items-center justify-center rounded-full bg-secondary px-space-4 py-space-2 text-body-16 text-primary"
               href="https://t.me/him9li9"
               target="_blank"
               rel="noopener noreferrer"
@@ -298,7 +298,7 @@ export function WorkCasePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-[120px] px-space-4 pb-space-16 pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pb-space-16"
+        className="flex w-full flex-col gap-[140px] px-space-4 pb-[70px] pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0"
       >
         <motion.section
           id="overview"
@@ -332,7 +332,7 @@ export function WorkCasePage() {
                 src={assets.hero}
                 width={800}
                 height={500}
-                sizes="(max-width: 832px) calc(100vw - 32px), 800px"
+                sizes="(max-width: 932px) calc(100vw - 32px), 800px"
                 className="h-auto w-full rounded-[8px] object-contain"
                 priority
                 quality={100}
@@ -438,7 +438,7 @@ export function WorkCasePage() {
                   src={assets.oldCanvas}
                   width={800}
                   height={453}
-                  sizes="(max-width: 832px) calc(100vw - 32px), 800px"
+                  sizes="(max-width: 932px) calc(100vw - 32px), 800px"
                   className="h-auto w-full rounded-[8px] object-contain"
                   loading="lazy"
                   quality={100}
@@ -474,8 +474,8 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center rounded-[12px] bg-secondary px-space-4 py-space-6">
-            <div className="mx-auto w-full max-w-[900px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center">
+            <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in"
@@ -487,7 +487,7 @@ export function WorkCasePage() {
                   src={assets.addFlow}
                   width={2700}
                   height={1749}
-                  sizes="(max-width: 1032px) calc(100vw - 80px), 900px"
+                  sizes="(max-width: 932px) calc(100vw - 32px), 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
@@ -548,7 +548,7 @@ export function WorkCasePage() {
                 src={assets.table}
                 width={800}
                 height={457}
-                sizes="(max-width: 832px) calc(100vw - 32px), 800px"
+                sizes="(max-width: 932px) calc(100vw - 32px), 800px"
                 className="h-auto w-full object-contain"
                 loading="lazy"
                 quality={100}
@@ -632,8 +632,8 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-3 md:grid md:h-[232px] md:grid-cols-3">
-            <div className="flex h-[232px] flex-col items-start gap-space-4 rounded-[20px] bg-elevated p-space-6 md:min-w-0">
+          <div className="flex flex-col gap-space-3 md:grid md:grid-cols-3">
+            <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-secondary p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-[18px] font-semibold leading-[29px] text-primary">
                   1
@@ -652,7 +652,7 @@ export function WorkCasePage() {
               </div>
             </div>
 
-            <div className="flex h-[232px] flex-col items-start gap-space-4 rounded-[20px] bg-elevated p-space-6 md:min-w-0">
+            <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-secondary p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-[18px] font-semibold leading-[29px] text-primary">
                   2
@@ -671,7 +671,7 @@ export function WorkCasePage() {
               </div>
             </div>
 
-            <div className="flex h-[232px] flex-col items-start gap-space-4 rounded-[20px] bg-elevated p-space-6 md:min-w-0">
+            <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-secondary p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-[18px] font-semibold leading-[29px] text-primary">
                   3
@@ -761,7 +761,7 @@ export function WorkCasePage() {
                   src={assets.hero}
                   width={800}
                   height={500}
-                  sizes="(max-width: 832px) calc(100vw - 32px), 800px"
+                  sizes="(max-width: 932px) calc(100vw - 32px), 800px"
                   className="h-auto w-full rounded-[8px] object-contain"
                   loading="lazy"
                   quality={100}
@@ -799,7 +799,7 @@ export function WorkCasePage() {
                   src={assets.leftSidebar}
                   width={800}
                   height={400}
-                  sizes="(max-width: 832px) calc(100vw - 32px), 800px"
+                  sizes="(max-width: 932px) calc(100vw - 32px), 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
@@ -840,7 +840,7 @@ export function WorkCasePage() {
                   src={assets.rightSidebar}
                   width={800}
                   height={600}
-                  sizes="(max-width: 832px) calc(100vw - 32px), 800px"
+                  sizes="(max-width: 932px) calc(100vw - 32px), 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
@@ -931,7 +931,7 @@ export function WorkCasePage() {
                   src={assets.minimap}
                   width={800}
                   height={513}
-                  sizes="(max-width: 832px) calc(100vw - 32px), 800px"
+                  sizes="(max-width: 932px) calc(100vw - 32px), 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
@@ -1013,7 +1013,7 @@ export function WorkCasePage() {
             </p>
 
             <div className="grid grid-cols-1 gap-[12px] min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,1fr)]">
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3">
+              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">+</span>
                   <span className="text-[32px] leading-10">28</span>
@@ -1023,7 +1023,7 @@ export function WorkCasePage() {
                   self-service rate
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3">
+              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
                 <div className="flex items-center gap-0 whitespace-nowrap text-primary">
                   <span className="text-[32px] font-semibold leading-10">33</span>
                   <span className="inline-flex">
@@ -1035,7 +1035,7 @@ export function WorkCasePage() {
                   минут, time-to-change
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3">
+              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">-</span>
                   <span className="text-[32px] leading-10">21</span>
@@ -1045,7 +1045,7 @@ export function WorkCasePage() {
                   ошибок в сценариях
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3">
+              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">-</span>
                   <span className="text-[32px] leading-10">16</span>
@@ -1067,7 +1067,7 @@ export function WorkCasePage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="-mt-[88px] flex w-full max-w-[1000px] items-start justify-between border-t border-border-elevated pt-space-4 text-body-18 sm:mt-0"
+          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-18 sm:mt-0"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
@@ -1141,7 +1141,7 @@ export function WorkCasePage() {
             </svg>
           </button>
           <div
-            className={`relative flex max-h-full w-full max-w-[1000px] items-start justify-start overflow-auto rounded-[12px] sm:items-center sm:justify-center ${
+            className={`relative flex max-h-full w-full max-w-[1100px] items-start justify-start overflow-auto rounded-[12px] sm:items-center sm:justify-center ${
               activeZoomImage.hasPanel ? "bg-secondary p-space-4 sm:p-space-6" : "bg-secondary"
             }`}
             onClick={(event) => event.stopPropagation()}

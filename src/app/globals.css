@@ -5,14 +5,14 @@
 :root {
   --color-bg-primary: #171717;
   --color-bg-primary-rgb: 23 23 23;
-  --color-bg-secondary: #1c1c1c;
-  --color-bg-elevated: #232323;
-  --color-bg-elevated-hover: #333333;
+  --color-bg-secondary: #232323;
+  --color-bg-elevated: #2d2d2d;
+  --color-bg-elevated-hover: #404040;
   --color-bg-elevated-accent: #ff8566;
   --color-border-elevated: #282828;
   --color-text-primary: #ffffff;
-  --color-text-secondary-background: #afafaf;
-  --color-text-secondary-elevated: #e4e4e4;
+  --color-text-secondary-background: #d2d2d2;
+  --color-text-secondary-elevated: #d2d2d2;
 }
 
 * {
@@ -105,6 +105,12 @@ a {
     font-size: 24px;
     font-weight: 600;
     line-height: 32px;
+  }
+
+  .text-h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
   }
 
   .text-body-18 {

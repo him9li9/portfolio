@@ -57,9 +57,9 @@ const lightboxItems = {
   }
 } as const;
 
-function ZoomIcon() {
+function ZoomIcon({ floating = true }: { floating?: boolean }) {
   return (
-    <span className="pointer-events-none absolute bottom-space-3 right-space-3 flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 group-hover:bg-elevated-hover">
+    <span className={`${floating ? "pointer-events-none absolute bottom-space-3 right-space-3" : ""} flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 group-hover:bg-elevated-hover`}>
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
@@ -419,7 +419,7 @@ export function CaseStudyPage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
+              className="inline-flex items-center justify-center rounded-full bg-secondary px-space-4 py-space-2 text-body-16 text-primary"
               href="https://drive.google.com/file/d/1srTs3sn5jrgr6PlKthMkucNrslEvm0Tp/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
@@ -429,7 +429,7 @@ export function CaseStudyPage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
+              className="inline-flex items-center justify-center rounded-full bg-secondary px-space-4 py-space-2 text-body-16 text-primary"
               href="https://t.me/him9li9"
               target="_blank"
               rel="noopener noreferrer"
@@ -444,7 +444,7 @@ export function CaseStudyPage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-y-[120px] px-space-4 pb-space-16 pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-space-16 sm:pb-space-16"
+        className="flex w-full flex-col gap-y-[140px] px-space-4 pb-[70px] pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-space-16"
       >
         <motion.section
           id="overview"
@@ -469,7 +469,7 @@ export function CaseStudyPage() {
             ref={heroPhonesRef}
             className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-max sm:items-center sm:justify-center sm:overflow-visible"
           >
-            <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-6">
+            <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto">
               <Image
                 alt="Экран регистрации MCN Softphone"
                 src={assets.phone1}
@@ -639,7 +639,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
+              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary p-space-6 sm:rounded-[12px]">
                 <button
                   type="button"
                   aria-label="Open discovery scheme"
@@ -657,11 +657,22 @@ export function CaseStudyPage() {
                     quality={100}
                   />
                   <ZoomImageShade />
-                  <ZoomIcon />
+                  
                 </button>
-                <p className="text-center text-caption-14 text-secondary">
-                  Анализ основных сценариев в MVP приложения (нажмите на схему, чтобы увеличить)
-                </p>
+                <div className="grid w-full grid-cols-[40px_1fr_40px] items-end gap-space-2">
+                  <span aria-hidden="true" />
+                  <p className="text-center text-caption-14 text-secondary">
+                    Анализ основных сценариев в MVP приложения
+                  </p>
+                  <button
+                    type="button"
+                    aria-label="Open discovery scheme"
+                    onClick={() => setOpenLightbox("discovery")}
+                    className="group cursor-zoom-in"
+                  >
+                    <ZoomIcon floating={false} />
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -677,7 +688,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 overflow-hidden bg-secondary px-space-4 py-[24px] sm:mx-0 sm:rounded-[12px] sm:p-[24px]">
+            <div className="-mx-space-4 overflow-hidden bg-secondary p-space-6 sm:mx-0 sm:rounded-[12px]">
               <div className="mx-auto w-full max-w-[427px]">
                 <Image
                   alt=""
@@ -704,7 +715,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 overflow-hidden bg-secondary px-space-4 py-[24px] sm:mx-0 sm:rounded-[12px] sm:p-[24px]">
+            <div className="-mx-space-4 overflow-hidden bg-secondary p-space-6 sm:mx-0 sm:rounded-[12px]">
               <div className="mx-auto flex w-full max-w-[427px] flex-col gap-[16px]">
                 <Image
                   alt=""
@@ -744,16 +755,16 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
-                <div className="w-full overflow-x-auto pb-space-3 sm:overflow-visible sm:pb-0">
-                  <div className="mx-auto w-[1000px] max-w-none sm:w-full sm:max-w-[950px]">
+            <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary p-space-6 sm:rounded-[12px]">
+                <div className="w-full">
+                  <div className="mx-auto w-full">
                     <Image
                       alt=""
                       src={assets.competitorWhatsapp}
                       width={2208}
                       height={1103}
-                      sizes="(max-width: 640px) 1000px, 950px"
+                      sizes="(max-width: 640px) calc(100vw - 48px), 752px"
                       className="h-auto w-full object-contain"
                       loading="lazy"
                       quality={100}
@@ -772,8 +783,8 @@ export function CaseStudyPage() {
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
 
-            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
+            <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary p-space-8 sm:rounded-[12px]">
                 <div className="w-full overflow-x-auto pb-space-3 sm:overflow-visible sm:pb-0">
                   <div className="mx-auto w-[1250px] max-w-none sm:w-full">
                     <Image
@@ -802,43 +813,43 @@ export function CaseStudyPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-space-3 sm:flex-row sm:flex-wrap">
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">1. Ясность на старте</p>
-                  <p className="text-body-16 text-secondary-elevated">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary p-space-6 sm:w-[390px]">
+                  <p className="text-body-16-semibold">1. Ясность на старте</p>
+                  <p className="text-caption-14 text-primary">
                     Если пользователь понимает, на каком этапе онбординга находится и когда сможет
                     начать звонить, ему проще дойти до первого звонка.
                   </p>
-                  <p className="text-body-16">
+                  <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Метрика: </span>CR в первый звонок
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">2. Прозрачность стоимости</p>
-                  <p className="text-body-16 text-secondary-elevated">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary p-space-6 sm:w-[390px]">
+                  <p className="text-body-16-semibold">2. Прозрачность стоимости</p>
+                  <p className="text-caption-14 text-primary">
                     Если пользователь видит стоимость звонка и состояние баланса до начала вызова,
                     условия тарификации станут более прозрачными.
                   </p>
-                  <p className="text-body-16">
+                  <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Метрика: </span>retention, обращения в поддержку
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">3. Доступность ответов</p>
-                  <p className="text-body-16 text-secondary-elevated">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary p-space-6 sm:w-[390px]">
+                  <p className="text-body-16-semibold">3. Доступность ответов</p>
+                  <p className="text-caption-14 text-primary">
                     Если ответы на частые вопросы доступны внутри приложения, он реже будет
                     прерывать сценарий и обращаться в поддержку.
                   </p>
-                  <p className="text-body-16">
+                  <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Метрика: </span>обращения в поддержку
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">4. Очевидность следующего шага</p>
-                  <p className="text-body-16 text-secondary-elevated">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary p-space-6 sm:w-[390px]">
+                  <p className="text-body-16-semibold">4. Очевидность следующего шага</p>
+                  <p className="text-caption-14 text-primary">
                     Если после ошибки или незавершённого действия пользователь понимает, что делать
                     дальше, ему проще вернуться к действию.
                   </p>
-                  <p className="text-body-16">
+                  <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Метрика: </span>retention, обращения в поддержку
                   </p>
                 </div>
@@ -872,8 +883,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
+            <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary p-space-8 sm:rounded-[12px]">
                 <button
                   type="button"
                   aria-label="Open userflow"
@@ -891,11 +902,22 @@ export function CaseStudyPage() {
                   quality={100}
                   />
                   <ZoomImageShade />
-                  <ZoomIcon />
+                  
                 </button>
-                <p className="text-center text-caption-14 text-secondary">
-                  Новый userflow 1-го звонка (нажмите на схему, чтобы увеличить)
-                </p>
+                <div className="grid w-full grid-cols-[40px_1fr_40px] items-end gap-space-2">
+                  <span aria-hidden="true" />
+                  <p className="text-center text-caption-14 text-secondary">
+                    Новый userflow 1-го звонка
+                  </p>
+                  <button
+                    type="button"
+                    aria-label="Open userflow scheme"
+                    onClick={() => setOpenLightbox("userflow")}
+                    className="group cursor-zoom-in"
+                  >
+                    <ZoomIcon floating={false} />
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -944,15 +966,15 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
-            <div className="w-full overflow-x-auto bg-secondary px-space-4 pb-space-8 pt-[24px] sm:overflow-visible sm:rounded-[12px] sm:p-[24px]">
-              <div className="w-[1040px] max-w-none sm:mx-auto sm:w-full sm:max-w-[1040px]">
+          <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
+            <div className="w-full overflow-x-auto bg-secondary p-space-8 sm:overflow-visible sm:rounded-[12px]">
+              <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
                 <Image
                   alt=""
                   src={assets.solutionSuccess}
                   width={2535}
                   height={1620}
-                  sizes="(max-width: 640px) 1040px, 1040px"
+                  sizes="(max-width: 640px) 850px, 850px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
@@ -979,7 +1001,7 @@ export function CaseStudyPage() {
           <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
             <div
               className="flex w-full items-center justify-center px-space-4 sm:px-0"
-              style={{ height: 680 }}
+              style={{ height: 600 }}
             >
               <div
                 className="relative h-full max-w-full"
@@ -1018,7 +1040,7 @@ export function CaseStudyPage() {
           </div>
 
           <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
-            <div className="w-full bg-secondary px-space-4 py-[24px] sm:rounded-[12px] sm:p-[24px]">
+            <div className="w-full bg-secondary p-space-8 sm:rounded-[12px]">
               <div className="overflow-x-auto pb-space-3 sm:overflow-visible sm:pb-0">
                 <div className="w-[1280px] max-w-none sm:hidden">
                   <Image
@@ -1082,7 +1104,7 @@ export function CaseStudyPage() {
             </p>
 
             <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
                 <div className="flex h-10 items-start gap-0 whitespace-nowrap text-primary">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-10">8</span>
                   <span className="inline-flex h-10 items-center">
@@ -1094,7 +1116,7 @@ export function CaseStudyPage() {
                   шага до звонка
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">+</span>
                   <span className="text-[32px] leading-10">23</span>
@@ -1104,7 +1126,7 @@ export function CaseStudyPage() {
                   конверсия в 1-й звонок
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[32px] leading-10">15</span>
                   <span className="inline-flex h-10 items-center">
@@ -1117,7 +1139,7 @@ export function CaseStudyPage() {
                   retention на 4-й неделе
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[32px] leading-10">40</span>
                   <span className="inline-flex h-10 items-center">
@@ -1142,7 +1164,7 @@ export function CaseStudyPage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18 sm:mt-0"
+          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-18 sm:mt-0"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">

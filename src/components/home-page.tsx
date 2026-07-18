@@ -15,6 +15,15 @@ const assets = {
   arrowForward: "/figma/Icons/arrow_forward.svg"
 };
 
+const footerLinks = [
+  { label: "Telegram", href: "https://t.me/him9li9" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/nastya-ermoshina-781714274" },
+  {
+    label: "CV",
+    href: "https://drive.google.com/file/d/1srTs3sn5jrgr6PlKthMkucNrslEvm0Tp/view?usp=sharing"
+  }
+];
+
 export function HomePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
@@ -90,7 +99,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
+              className="inline-flex items-center justify-center rounded-full bg-secondary px-space-4 py-space-2 text-body-16 text-primary"
               href="https://drive.google.com/file/d/1srTs3sn5jrgr6PlKthMkucNrslEvm0Tp/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
@@ -100,7 +109,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
+              className="inline-flex items-center justify-center rounded-full bg-secondary px-space-4 py-space-2 text-body-16 text-primary"
               href="https://t.me/him9li9"
               target="_blank"
               rel="noopener noreferrer"
@@ -115,9 +124,9 @@ export function HomePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto flex w-full max-w-[800px] flex-col gap-[120px] px-space-4 pb-space-16 pt-space-16 sm:px-space-8 sm:pb-space-16 lg:px-0"
+        className="mx-auto flex w-full max-w-[900px] flex-col gap-[140px] px-space-4 pb-[70px] pt-space-16 sm:px-space-8 lg:px-0"
       >
-        <motion.section variants={item} className="mx-auto flex w-full max-w-[800px] flex-col items-start gap-space-4 sm:items-center">
+        <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-4 sm:items-center">
           <div className="flex flex-col items-start justify-center gap-space-8 sm:items-center">
             <div className="relative h-[100px] w-[120px] overflow-hidden rounded-[100px]">
               <Image
@@ -144,13 +153,13 @@ export function HomePage() {
           </p>
         </motion.section>
 
-        <motion.section variants={item} className="flex w-full flex-col items-start gap-space-6 sm:w-[900px] sm:self-center sm:items-center">
-          <h2 className="w-full text-left text-h3 sm:text-center">
+        <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-6 sm:items-center">
+          <h4 className="w-full text-left text-h4 sm:text-center">
             Избранные проекты
-          </h2>
+          </h4>
 
-          <div className="flex w-full flex-col items-start gap-[120px] sm:items-center">
-            <article className="flex w-full flex-col items-start gap-space-6 sm:w-[900px] sm:items-center">
+          <div className="flex w-full flex-col items-start gap-[140px] sm:items-center">
+            <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
               <Link
                 href="/app"
                 prefetch={false}
@@ -159,9 +168,9 @@ export function HomePage() {
               >
                 <div
                   ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary py-space-6 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-6"
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary py-space-8 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-4 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
                 >
-                  <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-6">
+                  <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto">
                     <Image
                       alt="Экран регистрации MCN Softphone"
                       src={assets.phone1}
@@ -178,8 +187,8 @@ export function HomePage() {
                       width={732}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 263px, 300px"
-                      className="h-[540px] w-auto shrink-0 sm:h-auto sm:w-[300px]"
+                      sizes="(max-width: 640px) 263px, 280px"
+                      className="h-[540px] w-auto shrink-0 sm:h-auto sm:w-[280px]"
                       quality={100}
                     />
                     <Image
@@ -202,7 +211,7 @@ export function HomePage() {
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary  sm:flex"
+                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-18 text-primary sm:flex"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -215,17 +224,17 @@ export function HomePage() {
                     сделала стоимость связи прозрачнее до начала вызова.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-1">
-                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       8 → 3 шага до звонка
                     </span>
-                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       +23% конверсия в 1-й звонок
                     </span>
                   </div>
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
+                    className="mt-space-1 flex items-center gap-space-1 text-body-18 text-primary sm:hidden"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -234,7 +243,7 @@ export function HomePage() {
               </div>
             </article>
 
-            <article className="flex w-full flex-col items-start gap-space-6 sm:w-[900px] sm:items-center">
+            <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
               <Link
                 href="/work"
                 prefetch={false}
@@ -260,7 +269,7 @@ export function HomePage() {
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary  sm:flex"
+                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-18 text-primary sm:flex"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -273,17 +282,17 @@ export function HomePage() {
                     от разработки в управлении сценариями звонков.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-1">
-                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       +28% self-service rate
                     </span>
-                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       -21% ошибок после публикации
                     </span>
                   </div>
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
+                    className="mt-space-1 flex items-center gap-space-1 text-body-18 text-primary sm:hidden"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -293,6 +302,33 @@ export function HomePage() {
             </article>
           </div>
         </motion.section>
+        <motion.footer
+          variants={item}
+          className="mx-auto flex w-full max-w-[900px] flex-col gap-space-2"
+        >
+          <div className="flex flex-col gap-space-2">
+            <h4 className="text-h4">Связаться со мной</h4>
+          </div>
+          <div className="h-px w-full bg-border-elevated" />
+          <div className="flex flex-col gap-space-2 sm:flex-row sm:items-center sm:justify-between">
+            <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-18 text-primary">
+              {footerLinks.map((link, index) => (
+                <div key={link.label} className="flex items-center gap-space-2">
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-underline"
+                  >
+                    {link.label}
+                  </a>
+                  {index < footerLinks.length - 1 ? <span className="text-secondary">·</span> : null}
+                </div>
+              ))}
+            </nav>
+            <p className="text-body-16 text-secondary">Nastya Ermoshina © 2026</p>
+          </div>
+        </motion.footer>
       </motion.div>
     </main>
   );
