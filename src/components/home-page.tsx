@@ -124,7 +124,7 @@ export function HomePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto flex w-full max-w-[900px] flex-col gap-[140px] px-space-4 pb-[70px] pt-space-16 sm:px-space-8 lg:px-0"
+        className="mx-auto flex w-full max-w-[900px] flex-col gap-[140px] px-space-4 pb-0 pt-space-16 sm:px-space-8 lg:px-0"
       >
         <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-4 sm:items-center">
           <div className="flex flex-col items-start justify-center gap-space-8 sm:items-center">
@@ -145,7 +145,7 @@ export function HomePage() {
             </h1>
           </div>
           <p className="w-full text-left text-body-18 text-primary sm:w-[482px] sm:text-center">
-            Продуктовый дизайнер с 4+ года опыта в телекоме,<span className="sm:hidden"> </span><br className="hidden sm:block" />
+            Продуктовый дизайнер с 4+ лет опыта в телекоме,<span className="sm:hidden"> </span><br className="hidden sm:block" />
             <span className="sm:whitespace-nowrap">B2B-сервисах и стартапах. Умею разбираться в сложной</span><span className="sm:hidden"> </span><br className="hidden sm:block" />
             доменной логике и превращать её в понятные,<span className="sm:hidden"> </span><br className="hidden sm:block" />
             работающие решения
@@ -303,7 +303,7 @@ export function HomePage() {
           </div>
         </motion.section>
       </motion.div>
-      <footer className="mx-auto flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-[70px] sm:px-space-8 lg:px-0">
+      <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-[70px] sm:px-space-8 lg:px-0">
         <div className="flex flex-col gap-space-2">
           <h4 className="text-h4">Связаться со мной</h4>
         </div>
