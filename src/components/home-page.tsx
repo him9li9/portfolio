@@ -145,7 +145,7 @@ export function HomePage() {
         </motion.section>
 
         <motion.section variants={item} className="flex flex-col items-start gap-space-6 sm:items-center">
-          <h2 className="text-left text-body-18-semibold sm:text-center">
+          <h2 className="text-left text-h3 sm:text-center">
             Избранные проекты
           </h2>
 
@@ -208,7 +208,7 @@ export function HomePage() {
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="flex w-full flex-col items-start gap-space-3">
+                <div className="flex w-full flex-col items-start gap-space-2">
                   <div className="h-px w-full bg-border-elevated" />
                   <p className="w-full max-w-[500px] text-body-18 text-primary">
                     Мобильное приложение для звонков за границей. Упростила путь до первого звонка и
@@ -266,7 +266,7 @@ export function HomePage() {
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="flex w-full flex-col items-start gap-space-3">
+                <div className="flex w-full flex-col items-start gap-space-2">
                   <div className="h-px w-full bg-border-elevated" />
                   <p className="w-full max-w-[500px] text-body-18 text-primary">
                     B2B-платформа для автоматизации контакт-центров. Снизила зависимость клиентов
