@@ -304,13 +304,13 @@ export function HomePage() {
         </motion.section>
         <motion.footer
           variants={item}
-          className="mx-auto flex w-full max-w-[900px] flex-col gap-space-2"
+          className="flex w-full flex-col gap-space-2 self-stretch sm:mx-auto sm:max-w-[900px] sm:self-center"
         >
           <div className="flex flex-col gap-space-2">
             <h4 className="text-h4">Связаться со мной</h4>
           </div>
           <div className="h-px w-full bg-border-elevated" />
-          <div className="flex flex-col gap-space-2 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex w-full flex-col gap-space-2 sm:flex-row sm:items-center sm:justify-between">
             <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-18 text-primary">
               {footerLinks.map((link, index) => (
                 <div key={link.label} className="flex items-center gap-space-2">
