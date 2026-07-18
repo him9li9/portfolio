@@ -419,7 +419,7 @@ export function CaseStudyPage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-secondary px-space-4 py-space-2 text-body-16 text-primary"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://drive.google.com/file/d/1srTs3sn5jrgr6PlKthMkucNrslEvm0Tp/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
@@ -429,7 +429,7 @@ export function CaseStudyPage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-secondary px-space-4 py-space-2 text-body-16 text-primary"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://t.me/him9li9"
               target="_blank"
               rel="noopener noreferrer"
@@ -444,7 +444,7 @@ export function CaseStudyPage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-y-[140px] px-space-4 pb-[70px] pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-space-16"
+        className="flex w-full flex-col gap-y-[140px] px-space-4 pb-[40px] pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-space-16"
       >
         <motion.section
           id="overview"
@@ -475,8 +475,8 @@ export function CaseStudyPage() {
                 src={assets.phone1}
                 width={900}
                 height={1840}
-                sizes="(max-width: 640px) 210px, 250px"
-                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[250px]"
+                sizes="(max-width: 640px) 210px, 240px"
+                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
                 priority
                 quality={100}
               />
@@ -485,8 +485,8 @@ export function CaseStudyPage() {
                 src={assets.phone2}
                 width={900}
                 height={1840}
-                sizes="(max-width: 640px) 294px, 300px"
-                className="h-[600px] w-auto shrink-0 sm:h-auto sm:w-[300px]"
+                sizes="(max-width: 640px) 294px, 280px"
+                className="h-[600px] w-auto shrink-0 sm:h-auto sm:w-[280px]"
                 priority
                 quality={100}
               />
@@ -495,8 +495,8 @@ export function CaseStudyPage() {
                 src={assets.phone3}
                 width={900}
                 height={1840}
-                sizes="(max-width: 640px) 210px, 250px"
-                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[250px]"
+                sizes="(max-width: 640px) 210px, 240px"
+                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
                 priority
                 quality={100}
               />
@@ -586,7 +586,7 @@ export function CaseStudyPage() {
             <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
                 <div key={stage.label} className="flex items-center gap-space-1">
-                  <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                  <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-primary">
                     {stage.label}
                   </span>
                   {index < workStages.length - 1 ? (
@@ -639,7 +639,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary p-space-6 sm:rounded-[12px]">
+              <div className="flex w-full flex-col items-center gap-space-2">
                 <button
                   type="button"
                   aria-label="Open discovery scheme"
@@ -656,11 +656,8 @@ export function CaseStudyPage() {
                     loading="lazy"
                     quality={100}
                   />
-                  <ZoomImageShade />
-                  
                 </button>
-                <div className="grid w-full grid-cols-[40px_1fr_40px] items-end gap-space-2">
-                  <span aria-hidden="true" />
+                <div className="grid w-full grid-cols-[1fr_40px] items-end gap-space-2">
                   <p className="text-center text-caption-14 text-secondary">
                     Анализ основных сценариев в MVP приложения
                   </p>
@@ -670,7 +667,9 @@ export function CaseStudyPage() {
                     onClick={() => setOpenLightbox("discovery")}
                     className="group cursor-zoom-in"
                   >
-                    <ZoomIcon floating={false} />
+                    <span className="sm:hidden">
+                      <ZoomIcon floating={false} />
+                    </span>
                   </button>
                 </div>
               </div>
@@ -756,7 +755,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary p-space-6 sm:rounded-[12px]">
+              <div className="flex w-full flex-col items-center gap-space-2">
                 <div className="w-full">
                   <div className="mx-auto w-full">
                     <Image
@@ -784,7 +783,7 @@ export function CaseStudyPage() {
             </p>
 
             <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary p-space-8 sm:rounded-[12px]">
+              <div className="flex w-full flex-col items-center gap-space-2">
                 <div className="w-full overflow-x-auto pb-space-3 sm:overflow-visible sm:pb-0">
                   <div className="mx-auto w-[1250px] max-w-none sm:w-full">
                     <Image
@@ -884,7 +883,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-[16px] bg-secondary p-space-8 sm:rounded-[12px]">
+              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-6 sm:rounded-[12px]">
                 <button
                   type="button"
                   aria-label="Open userflow"
@@ -904,8 +903,7 @@ export function CaseStudyPage() {
                   <ZoomImageShade />
                   
                 </button>
-                <div className="grid w-full grid-cols-[40px_1fr_40px] items-end gap-space-2">
-                  <span aria-hidden="true" />
+                <div className="grid w-full grid-cols-[1fr_40px] items-end gap-0">
                   <p className="text-center text-caption-14 text-secondary">
                     Новый userflow 1-го звонка
                   </p>
@@ -967,7 +965,7 @@ export function CaseStudyPage() {
           </div>
 
           <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
-            <div className="w-full overflow-x-auto bg-secondary p-space-8 sm:overflow-visible sm:rounded-[12px]">
+            <div className="w-full overflow-x-auto sm:overflow-visible">
               <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
                 <Image
                   alt=""
@@ -1040,7 +1038,7 @@ export function CaseStudyPage() {
           </div>
 
           <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
-            <div className="w-full bg-secondary p-space-8 sm:rounded-[12px]">
+            <div className="w-full">
               <div className="overflow-x-auto pb-space-3 sm:overflow-visible sm:pb-0">
                 <div className="w-[1280px] max-w-none sm:hidden">
                   <Image
@@ -1164,7 +1162,7 @@ export function CaseStudyPage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-18 sm:mt-0"
+          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-16 sm:mt-0"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">

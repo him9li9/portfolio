@@ -99,7 +99,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-secondary px-space-4 py-space-2 text-body-16 text-primary"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://drive.google.com/file/d/1srTs3sn5jrgr6PlKthMkucNrslEvm0Tp/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
@@ -109,7 +109,7 @@ export function HomePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-secondary px-space-4 py-space-2 text-body-16 text-primary"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://t.me/him9li9"
               target="_blank"
               rel="noopener noreferrer"
@@ -177,8 +177,8 @@ export function HomePage() {
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 190px, 250px"
-                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[250px]"
+                      sizes="(max-width: 640px) 190px, 240px"
+                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
                       quality={100}
                     />
                     <Image
@@ -197,8 +197,8 @@ export function HomePage() {
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 190px, 250px"
-                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[250px]"
+                      sizes="(max-width: 640px) 190px, 240px"
+                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
                       quality={100}
                     />
                   </div>
@@ -211,7 +211,7 @@ export function HomePage() {
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-18 text-primary sm:flex"
+                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -224,17 +224,17 @@ export function HomePage() {
                     сделала стоимость связи прозрачнее до начала вызова.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-1">
-                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-primary">
                       8 → 3 шага до звонка
                     </span>
-                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-primary">
                       +23% конверсия в 1-й звонок
                     </span>
                   </div>
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="mt-space-1 flex items-center gap-space-1 text-body-18 text-primary sm:hidden"
+                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -269,7 +269,7 @@ export function HomePage() {
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-18 text-primary sm:flex"
+                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -282,17 +282,17 @@ export function HomePage() {
                     от разработки в управлении сценариями звонков.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-1">
-                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-primary">
                       +28% self-service rate
                     </span>
-                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                    <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-primary">
                       -21% ошибок после публикации
                     </span>
                   </div>
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="mt-space-1 flex items-center gap-space-1 text-body-18 text-primary sm:hidden"
+                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -303,13 +303,13 @@ export function HomePage() {
           </div>
         </motion.section>
       </motion.div>
-      <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-[70px] sm:px-space-8 lg:px-0">
+      <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-[40px] sm:px-space-8 lg:px-0">
         <div className="flex flex-col gap-space-2">
           <h4 className="text-h4">Связаться со мной</h4>
         </div>
         <div className="h-px w-full bg-border-elevated" />
         <div className="flex w-full flex-col gap-space-2 sm:flex-row sm:items-center sm:justify-between">
-          <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-18 text-primary">
+          <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-16 text-primary">
             {footerLinks.map((link, index) => (
               <div key={link.label} className="flex items-center gap-space-2">
                 <a
@@ -324,7 +324,7 @@ export function HomePage() {
               </div>
             ))}
           </nav>
-          <p className="text-body-16 text-secondary">Nastya Ermoshina © 2026</p>
+          <p className="text-body-16 text-secondary sm:ml-auto">Nastya Ermoshina © 2026</p>
         </div>
       </footer>
     </main>

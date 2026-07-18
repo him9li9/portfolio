@@ -273,7 +273,7 @@ export function WorkCasePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-secondary px-space-4 py-space-2 text-body-16 text-primary"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://drive.google.com/file/d/1srTs3sn5jrgr6PlKthMkucNrslEvm0Tp/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
@@ -283,7 +283,7 @@ export function WorkCasePage() {
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
-              className="inline-flex items-center justify-center rounded-full bg-secondary px-space-4 py-space-2 text-body-16 text-primary"
+              className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://t.me/him9li9"
               target="_blank"
               rel="noopener noreferrer"
@@ -298,7 +298,7 @@ export function WorkCasePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-[140px] px-space-4 pb-[70px] pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0"
+        className="flex w-full flex-col gap-[140px] px-space-4 pb-[40px] pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0"
       >
         <motion.section
           id="overview"
@@ -386,7 +386,7 @@ export function WorkCasePage() {
             <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
                 <div key={stage} className="flex items-center gap-space-1">
-                  <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                  <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-primary">
                     {stage}
                   </span>
                   {index < workStages.length - 1 ? (
@@ -1067,7 +1067,7 @@ export function WorkCasePage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-18 sm:mt-0"
+          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-16 sm:mt-0"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
