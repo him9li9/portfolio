@@ -430,7 +430,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-0">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -644,7 +644,7 @@ export function WorkCasePage() {
                   1
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-space-0-5">
-                  <p className="text-[16px] font-semibold leading-[19px] text-primary">Understand</p>
+                  <p className="text-body-18-semibold text-primary">Understand</p>
                   <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Понять сценарий</p>
                 </div>
               </div>
@@ -663,7 +663,7 @@ export function WorkCasePage() {
                   2
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-space-0-5">
-                  <p className="text-[16px] font-semibold leading-[19px] text-primary">Edit</p>
+                  <p className="text-body-18-semibold text-primary">Edit</p>
                   <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Внести изменения</p>
                 </div>
               </div>
@@ -682,7 +682,7 @@ export function WorkCasePage() {
                   3
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-space-0-5">
-                  <p className="text-[16px] font-semibold leading-[19px] text-primary">Validate</p>
+                  <p className="text-body-18-semibold text-primary">Validate</p>
                   <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Проверить</p>
                 </div>
               </div>
@@ -753,7 +753,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-0">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -879,7 +879,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-0">
               <div className="mx-auto w-full max-w-[800px]">
                 <button
                   type="button"
@@ -965,7 +965,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-[16px]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-0">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in sm:cursor-default"
