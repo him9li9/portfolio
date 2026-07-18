@@ -306,7 +306,7 @@ export function WorkCasePage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-8"
         >
-          <div className="flex flex-col gap-space-3 text-primary">
+          <div className="flex flex-col gap-space-5 text-primary">
             <div className="flex flex-col gap-space-1">
               <h1 className="text-h1">KOMPaaS</h1>
               <p className="text-body-16 text-secondary">
@@ -347,7 +347,7 @@ export function WorkCasePage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="-mt-[88px] scroll-mt-space-16 flex flex-col gap-space-8"
+          className="-mt-space-16 scroll-mt-space-16 flex flex-col gap-space-8"
         >
           <div className="flex flex-col gap-space-4">
             <h2 className="text-h2">О проекте</h2>
