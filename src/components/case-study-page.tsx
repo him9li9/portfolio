@@ -467,7 +467,7 @@ export function CaseStudyPage() {
           </div>
           <div
             ref={heroPhonesRef}
-            className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary px-space-4 py-space-6 sm:flex sm:w-max sm:items-center sm:justify-center sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-6"
+            className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-max sm:items-center sm:justify-center sm:overflow-visible"
           >
             <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-6">
               <Image
@@ -508,7 +508,7 @@ export function CaseStudyPage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="-mt-[88px] scroll-mt-space-16 flex flex-col gap-space-8"
+          className="-mt-space-14 scroll-mt-space-16 flex flex-col gap-space-8"
         >
           <div className="flex flex-col">
             <h2 className="text-h2">О проекте</h2>
