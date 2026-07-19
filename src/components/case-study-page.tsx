@@ -657,7 +657,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
+              <div className="flex w-full flex-col items-center gap-space-4 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
                 <button
                   type="button"
                   aria-label="Open discovery scheme"
@@ -770,7 +770,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-0 flex w-[calc(100vw-16px)] flex-col items-center justify-center sm:left-1/2 sm:w-[calc(100vw-32px)] sm:max-w-[800px] sm:-translate-x-1/2">
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[800px] sm:pl-0">
               <div className="flex w-full flex-col items-center gap-space-4">
                 <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
                   <div className="h-[400px] w-[900px] max-w-none sm:mx-auto sm:w-full">
@@ -798,7 +798,7 @@ export function CaseStudyPage() {
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
 
-            <div className="relative left-0 flex w-[calc(100vw-16px)] flex-col items-center justify-center sm:left-1/2 sm:w-[calc(100vw-32px)] sm:max-w-[1100px] sm:-translate-x-1/2">
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1100px] sm:pl-0">
               <div className="flex w-full flex-col items-center gap-space-4">
                 <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
                   <div className="h-[400px] w-[1250px] max-w-none sm:mx-auto sm:w-full">
@@ -828,7 +828,7 @@ export function CaseStudyPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-space-3 sm:flex-row sm:flex-wrap">
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary p-space-6 sm:w-[390px]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">1. Ясность на старте</p>
                   <p className="text-caption-14 text-primary">
                     Если пользователь понимает, на каком этапе онбординга находится и когда сможет
@@ -838,7 +838,7 @@ export function CaseStudyPage() {
                     <span className="text-caption-14-semibold">Метрика: </span>CR в первый звонок
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary p-space-6 sm:w-[390px]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">2. Прозрачность стоимости</p>
                   <p className="text-caption-14 text-primary">
                     Если пользователь видит стоимость звонка и состояние баланса до начала вызова,
@@ -848,7 +848,7 @@ export function CaseStudyPage() {
                     <span className="text-caption-14-semibold">Метрика: </span>retention, обращения в поддержку
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary p-space-6 sm:w-[390px]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">3. Доступность ответов</p>
                   <p className="text-caption-14 text-primary">
                     Если ответы на частые вопросы доступны внутри приложения, он реже будет
@@ -858,7 +858,7 @@ export function CaseStudyPage() {
                     <span className="text-caption-14-semibold">Метрика: </span>обращения в поддержку
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary p-space-6 sm:w-[390px]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">4. Очевидность следующего шага</p>
                   <p className="text-caption-14 text-primary">
                     Если после ошибки или незавершённого действия пользователь понимает, что делать
@@ -980,7 +980,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center justify-center">
+            <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
               <div className="w-[800px] max-w-none sm:mx-auto sm:w-full sm:max-w-[800px]">
                 <Image
@@ -1053,7 +1053,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
+          <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div className="w-full">
               <div className="overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
                 <div className="w-[950px] max-w-none sm:hidden">
