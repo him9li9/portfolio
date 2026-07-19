@@ -369,9 +369,9 @@ export function WorkCasePage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="-mt-space-14 scroll-mt-space-16 flex flex-col gap-space-8"
+          className="-mt-space-14 scroll-mt-space-16 flex flex-col gap-space-6"
         >
-          <div className="flex flex-col gap-space-4">
+          <div className="flex flex-col gap-space-5">
             <h2 className="text-h2">О проекте</h2>
             <p className="text-body-18">
               Один из продуктов KOMPaaS — конструктор сценариев звонков из элементов: голосового
@@ -424,9 +424,9 @@ export function WorkCasePage() {
           id="discovery"
           data-section-anchor="discovery"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-8"
+          className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
-          <div className="flex flex-col gap-space-4">
+          <div className="flex flex-col gap-space-5">
             <h2 className="text-h2">Дискавери</h2>
             <div className="text-body-18">
               <p>В рамках discovery я изучила, как пользователи работают со сценариями в текущей версии продукта:</p>
@@ -470,9 +470,9 @@ export function WorkCasePage() {
                 </span>
               </button>
             </div>
-            <div className="grid w-full grid-cols-[1fr_40px] items-end gap-space-2 sm:block">
+            <div className="grid w-full grid-cols-[1fr_40px] items-end gap-space-4 sm:block">
               <p className="text-center text-caption-14 text-secondary">
-                Текущий редактор: 1. сценарии&nbsp;&nbsp;2. настройка&nbsp;&nbsp;3. элементы&nbsp;&nbsp;4. канвас
+                Текущий редактор: 1. сценарии&nbsp; 2. настройка&nbsp; 3. элементы&nbsp; 4. канвас
               </p>
               <button
                 type="button"
@@ -663,9 +663,9 @@ export function WorkCasePage() {
           id="design"
           data-section-anchor="design"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-8"
+          className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
-          <div className="flex flex-col gap-space-4">
+          <div className="flex flex-col gap-space-5">
             <h2 className="text-h2">Проектирование</h2>
             <p className="text-body-18">
               Проектирование строилось вокруг трёх ключевых принципов:
@@ -776,9 +776,9 @@ export function WorkCasePage() {
           id="solution"
           data-section-anchor="solution"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-8"
+          className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
-          <div className="flex flex-col gap-space-4">
+          <div className="flex flex-col gap-space-5">
             <h2 className="text-h2">Решение</h2>
             <p className="text-body-18">
               Работая над редактором я проверяла, насколько менеджеры понимают структуру сценария,
@@ -1033,7 +1033,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <p className="mt-space-4 text-body-18">
+            <p className="text-body-18">
               Полноценное тестирование и историю версий вынесли в следующий этап. После проверки
               редактирования и публикации с клиентскими кейсами я подготовила финальные макеты и
               спецификации для передачи в разработку.
@@ -1045,7 +1045,7 @@ export function WorkCasePage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-4"
+          className="scroll-mt-space-16 flex flex-col gap-space-5"
         >
           <h2 className="text-h2">Результаты</h2>
           <div className="flex flex-col gap-space-5">
@@ -1056,7 +1056,7 @@ export function WorkCasePage() {
               поддержку и времени выполнения типовых изменений.
             </p>
 
-            <div className="grid grid-cols-1 gap-[12px] min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,1fr)]">
+            <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,1fr)]">
               <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-chips px-space-3 py-space-3">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">+</span>

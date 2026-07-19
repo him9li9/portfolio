@@ -528,9 +528,9 @@ export function CaseStudyPage() {
           variants={item}
           className="-mt-space-14 scroll-mt-space-16 flex flex-col gap-space-8"
         >
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-space-5">
             <h2 className="text-h2">О проекте</h2>
-            <p className="mt-space-4 text-body-18">
+            <p className="text-body-18">
               Когда я присоединилась к проекту, приложение существовало в формате MVP, но проседала
               основная метрика — количество звонков. Вместе с командой мне предстояло разобраться,
               почему так происходит, и исправить это.
@@ -554,7 +554,7 @@ export function CaseStudyPage() {
                   {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
                 </li>
               </ul>
-              <div className="flex flex-col items-center gap-[16px]">
+              <div className="flex flex-col items-center gap-space-4">
                 <div className="w-[323px] max-w-full">
                   <Image
                     alt=""
@@ -620,11 +620,11 @@ export function CaseStudyPage() {
           id="discovery"
           data-section-anchor="discovery"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-4"
+          className="scroll-mt-space-16 flex flex-col gap-space-5"
         >
           <h2 className="text-h2">Дискавери</h2>
 
-          <div className="flex flex-col gap-[24px]">
+          <div className="flex flex-col gap-space-6">
             <div className="text-body-18">
               <p>В рамках discovery я опиралась на:</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
@@ -731,7 +731,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="-mx-space-4 overflow-hidden bg-secondary p-space-4 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
-              <div className="mx-auto flex w-full max-w-[427px] flex-col gap-[16px]">
+              <div className="mx-auto flex w-full max-w-[427px] flex-col gap-space-4">
                 <Image
                   alt=""
                   src={assets.discoveryFeedback1}
@@ -773,14 +773,14 @@ export function CaseStudyPage() {
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[800px] sm:pl-0">
               <div className="flex w-full flex-col items-center gap-space-4">
                 <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
-                  <div className="h-[400px] w-[900px] max-w-none sm:mx-auto sm:w-full">
+                  <div className="w-[800px] max-w-none sm:mx-auto sm:w-full">
                     <Image
                       alt=""
                       src={assets.competitorWhatsapp}
                       width={2208}
                       height={1103}
-                      sizes="(max-width: 640px) 900px, 752px"
-                      className="h-full w-auto max-w-none object-contain sm:max-w-full"
+                      sizes="(max-width: 640px) 800px, 752px"
+                      className="h-auto w-full object-contain"
                       loading="lazy"
                       quality={100}
                     />
@@ -801,14 +801,14 @@ export function CaseStudyPage() {
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1100px] sm:pl-0">
               <div className="flex w-full flex-col items-center gap-space-4">
                 <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
-                  <div className="h-[400px] w-[1250px] max-w-none sm:mx-auto sm:w-full">
+                  <div className="w-[950px] max-w-none sm:mx-auto sm:w-full">
                     <Image
                       alt=""
                       src={assets.competitorOpenphone}
                       width={3901}
                       height={1552}
-                      sizes="(max-width: 640px) 1250px, 952px"
-                      className="h-full w-auto max-w-none object-contain sm:max-w-full"
+                      sizes="(max-width: 640px) 950px, 952px"
+                      className="h-auto w-full object-contain"
                       loading="lazy"
                       quality={100}
                     />
@@ -881,10 +881,10 @@ export function CaseStudyPage() {
           id="design"
           data-section-anchor="design"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-4"
+          className="scroll-mt-space-16 flex flex-col gap-space-5"
         >
           <h2 className="text-h2">Проектирование</h2>
-          <div className="flex flex-col gap-[24px]">
+          <div className="flex flex-col gap-space-6">
             <div className="flex flex-col gap-space-4">
               <p className="text-body-18">
                 <span className="text-body-18-semibold">Цель этапа —</span> определить, как система будет вести себя в диалоге с пользователем, чтобы
@@ -956,16 +956,16 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
-          <div className="flex flex-col">
+          <div className="flex flex-col gap-space-5">
             <h2 className="text-h2">Решение</h2>
-            <p className="mt-space-4 text-body-18">
+            <p className="text-body-18">
               Первые тесты показали: даже там, где логика казалась очевидной, пользователи
               ошибались. Поэтому я собрала обратную связь, переработала несколько сценариев и
               перепроверила их:
             </p>
           </div>
 
-          <div className="mt-space-2 flex flex-col gap-space-2 text-body-18">
+          <div className="flex flex-col gap-space-2 text-body-18">
             <p className="text-body-18-semibold">1. Экран успеха после регистрации</p>
             <p>
               Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
@@ -980,15 +980,15 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-            <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+            <div className="relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
-              <div className="w-[800px] max-w-none sm:mx-auto sm:w-full sm:max-w-[800px]">
+              <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
                 <Image
                   alt=""
                   src={assets.solutionSuccess}
                   width={2535}
                   height={1620}
-                  sizes="(max-width: 640px) 800px, 800px"
+                  sizes="(max-width: 640px) 850px, 850px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
@@ -1056,38 +1056,38 @@ export function CaseStudyPage() {
           <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div className="w-full">
               <div className="overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
-                <div className="w-[950px] max-w-none sm:hidden">
+                <div className="w-[1000px] max-w-none sm:hidden">
                   <Image
                     alt=""
                     src={assets.solutionErrorMobile}
                     width={1052}
                     height={532}
-                    sizes="950px"
+                    sizes="1000px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                     quality={100}
                   />
                 </div>
-                <div className="hidden sm:mx-auto sm:block sm:w-full sm:max-w-[950px]">
+                <div className="hidden sm:mx-auto sm:block sm:w-full sm:max-w-[1000px]">
                   <Image
                     alt=""
                     src={assets.solutionError}
                     width={1052}
                     height={532}
-                    sizes="950px"
+                    sizes="1000px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                     quality={100}
                   />
                 </div>
               </div>
-              <p className="mt-space-4 w-full text-center text-caption-14 leading-[160%] text-secondary sm:mx-auto sm:max-w-[950px]">
+              <p className="mt-space-4 w-full text-center text-caption-14 leading-[160%] text-secondary sm:mx-auto sm:max-w-[1000px]">
                 Возвращаем на сценарий, но оставляем возможность написать в поддержку
               </p>
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-8 text-body-18">
+          <div className="flex flex-col gap-space-4 text-body-18">
             <p>
               Каждая итерация закрывала конкретную точку неопределённости: пользователь видел, когда
               номер активен, сколько стоит звонок и что делать при ошибке. За счёт этого путь стал
@@ -1105,7 +1105,7 @@ export function CaseStudyPage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-4"
+          className="scroll-mt-space-16 flex flex-col gap-space-5"
         >
           <h2 className="text-h2">Результаты</h2>
           <div className="flex flex-col gap-space-5">
