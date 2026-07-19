@@ -149,12 +149,25 @@ export function WorkCasePage() {
 
   useEffect(() => {
     let lastY = window.scrollY;
+    let ticking = false;
     const onScroll = () => {
-      const currentY = window.scrollY;
-      const isDown = currentY > lastY;
-      const pastThreshold = currentY > 80;
-      setHideTopbar(isDown && pastThreshold);
-      lastY = currentY;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+        const delta = currentY - lastY;
+
+        if (currentY <= 80) {
+          setHideTopbar(false);
+        } else if (delta > 6) {
+          setHideTopbar(true);
+        } else if (delta < -6) {
+          setHideTopbar(false);
+        }
+
+        lastY = currentY;
+        ticking = false;
+      });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -430,7 +443,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-4">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center gap-space-4 bg-secondary p-space-6 sm:rounded-[12px]">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -780,8 +793,12 @@ export function WorkCasePage() {
                   loading="lazy"
                   quality={100}
                 />
-                <ZoomImageShade />
-                <ZoomIcon />
+                <span className="sm:hidden">
+                  <ZoomImageShade />
+                </span>
+                <span className="sm:hidden">
+                  <ZoomIcon />
+                </span>
               </button>
             </div>
             <p className="text-center text-caption-14 text-secondary">
@@ -1027,7 +1044,7 @@ export function WorkCasePage() {
             </p>
 
             <div className="grid grid-cols-1 gap-[12px] min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,1fr)]">
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
+              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-chips px-space-3 py-space-3">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">+</span>
                   <span className="text-[32px] leading-10">28</span>
@@ -1037,7 +1054,7 @@ export function WorkCasePage() {
                   self-service rate
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
+              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-chips px-space-3 py-space-3">
                 <div className="flex items-center gap-0 whitespace-nowrap text-primary">
                   <span className="text-[32px] font-semibold leading-10">33</span>
                   <span className="inline-flex">
@@ -1049,7 +1066,7 @@ export function WorkCasePage() {
                   минут, time-to-change
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
+              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-chips px-space-3 py-space-3">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">-</span>
                   <span className="text-[32px] leading-10">21</span>
@@ -1059,7 +1076,7 @@ export function WorkCasePage() {
                   ошибок в сценариях
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
+              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-chips px-space-3 py-space-3">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">-</span>
                   <span className="text-[32px] leading-10">16</span>

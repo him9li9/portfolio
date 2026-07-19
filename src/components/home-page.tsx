@@ -46,12 +46,25 @@ export function HomePage() {
 
   useEffect(() => {
     let lastY = window.scrollY;
+    let ticking = false;
     const onScroll = () => {
-      const currentY = window.scrollY;
-      const isDown = currentY > lastY;
-      const pastThreshold = currentY > 80;
-      setHideTopbar(isDown && pastThreshold);
-      lastY = currentY;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+        const delta = currentY - lastY;
+
+        if (currentY <= 80) {
+          setHideTopbar(false);
+        } else if (delta > 6) {
+          setHideTopbar(true);
+        } else if (delta < -6) {
+          setHideTopbar(false);
+        }
+
+        lastY = currentY;
+        ticking = false;
+      });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -154,7 +167,7 @@ export function HomePage() {
         </motion.section>
 
         <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-6 sm:items-center">
-          <h3 className="w-full text-left text-h3 sm:text-center">
+          <h3 className="w-full text-left text-h4 sm:text-center">
             Избранные проекты
           </h3>
 
@@ -303,9 +316,9 @@ export function HomePage() {
           </div>
         </motion.section>
       </motion.div>
-      <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-space-6 sm:pb-[40px] sm:px-space-8 lg:px-0">
+      <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-space-6 sm:px-0 sm:pb-[40px]">
         <div className="flex flex-col gap-space-2">
-          <h3 className="text-h3">Связаться со мной</h3>
+          <h3 className="text-h4">Связаться со мной</h3>
         </div>
         <div className="h-px w-full bg-border-elevated" />
         <div className="flex w-full flex-col gap-space-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:justify-between min-[900px]:gap-space-2">

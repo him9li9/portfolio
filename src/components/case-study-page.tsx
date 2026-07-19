@@ -139,12 +139,25 @@ export function CaseStudyPage() {
 
   useEffect(() => {
     let lastY = window.scrollY;
+    let ticking = false;
     const onScroll = () => {
-      const currentY = window.scrollY;
-      const isDown = currentY > lastY;
-      const pastThreshold = currentY > 80;
-      setHideTopbar(isDown && pastThreshold);
-      lastY = currentY;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+        const delta = currentY - lastY;
+
+        if (currentY <= 80) {
+          setHideTopbar(false);
+        } else if (delta > 6) {
+          setHideTopbar(true);
+        } else if (delta < -6) {
+          setHideTopbar(false);
+        }
+
+        lastY = currentY;
+        ticking = false;
+      });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -1105,7 +1118,7 @@ export function CaseStudyPage() {
             </p>
 
             <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-chips px-space-3 py-space-3 lg:w-[184px]">
                 <div className="flex h-10 items-start gap-0 whitespace-nowrap text-primary">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-10">8</span>
                   <span className="inline-flex h-10 items-center">
@@ -1117,7 +1130,7 @@ export function CaseStudyPage() {
                   шага до звонка
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-chips px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">+</span>
                   <span className="text-[32px] leading-10">23</span>
@@ -1127,7 +1140,7 @@ export function CaseStudyPage() {
                   конверсия в 1-й звонок
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-chips px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[32px] leading-10">15</span>
                   <span className="inline-flex h-10 items-center">
@@ -1140,7 +1153,7 @@ export function CaseStudyPage() {
                   retention на 4-й неделе
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-chips px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[32px] leading-10">40</span>
                   <span className="inline-flex h-10 items-center">
