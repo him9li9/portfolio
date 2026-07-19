@@ -507,7 +507,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center bg-secondary p-space-6 sm:rounded-[12px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center rounded-[12px] bg-secondary p-space-4 sm:p-space-6">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -534,7 +534,7 @@ export function WorkCasePage() {
               onClick={() => setOpenImage("addFlow")}
               aria-label="Увеличить флоу работы с элементами"
             >
-              <ZoomIcon />
+              <ZoomIcon floating={false} />
             </button>
           </div>
 

@@ -485,9 +485,9 @@ export function CaseStudyPage() {
           </div>
           <div
             ref={heroPhonesRef}
-            className="relative left-1/2 w-[calc(100vw-32px)] -translate-x-1/2 overflow-x-auto pb-space-4 sm:flex sm:w-max sm:items-center sm:justify-center sm:overflow-visible sm:pb-0"
+            className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto pb-space-4 sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible sm:pb-0"
           >
-            <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto">
+            <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
               <Image
                 alt="Экран регистрации MCN Softphone"
                 src={assets.phone1}
@@ -657,7 +657,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-6 sm:rounded-[12px]">
+              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
                 <button
                   type="button"
                   aria-label="Open discovery scheme"
@@ -703,7 +703,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 overflow-hidden bg-secondary p-space-6 sm:mx-0 sm:rounded-[12px]">
+            <div className="-mx-space-4 overflow-hidden bg-secondary p-space-4 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
               <div className="mx-auto w-full max-w-[427px]">
                 <Image
                   alt=""
@@ -730,7 +730,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 overflow-hidden bg-secondary p-space-6 sm:mx-0 sm:rounded-[12px]">
+            <div className="-mx-space-4 overflow-hidden bg-secondary p-space-4 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
               <div className="mx-auto flex w-full max-w-[427px] flex-col gap-[16px]">
                 <Image
                   alt=""
@@ -770,10 +770,10 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center justify-center">
+            <div className="relative left-0 flex w-[calc(100vw-16px)] flex-col items-center justify-center sm:left-1/2 sm:w-[calc(100vw-32px)] sm:max-w-[800px] sm:-translate-x-1/2">
               <div className="flex w-full flex-col items-center gap-space-4">
                 <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
-                  <div className="mx-auto h-[400px] w-[900px] max-w-none sm:w-full">
+                  <div className="h-[400px] w-[900px] max-w-none sm:mx-auto sm:w-full">
                     <Image
                       alt=""
                       src={assets.competitorWhatsapp}
@@ -798,10 +798,10 @@ export function CaseStudyPage() {
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center">
+            <div className="relative left-0 flex w-[calc(100vw-16px)] flex-col items-center justify-center sm:left-1/2 sm:w-[calc(100vw-32px)] sm:max-w-[1100px] sm:-translate-x-1/2">
               <div className="flex w-full flex-col items-center gap-space-4">
                 <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
-                  <div className="mx-auto h-[400px] w-[1250px] max-w-none sm:w-full">
+                  <div className="h-[400px] w-[1250px] max-w-none sm:mx-auto sm:w-full">
                     <Image
                       alt=""
                       src={assets.competitorOpenphone}
@@ -898,8 +898,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-6 sm:rounded-[12px]">
+            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
                 <button
                   type="button"
                   aria-label="Open userflow"
@@ -980,15 +980,15 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center justify-center">
             <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
-              <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
+              <div className="w-[800px] max-w-none sm:mx-auto sm:w-full sm:max-w-[800px]">
                 <Image
                   alt=""
                   src={assets.solutionSuccess}
                   width={2535}
                   height={1620}
-                  sizes="(max-width: 640px) 850px, 850px"
+                  sizes="(max-width: 640px) 800px, 800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
@@ -1012,7 +1012,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[950px] -translate-x-1/2 items-center justify-center">
             <div
               className="flex w-full items-center justify-center px-space-4 sm:px-0"
               style={{ height: 600 }}
@@ -1056,32 +1056,32 @@ export function CaseStudyPage() {
           <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
             <div className="w-full">
               <div className="overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
-                <div className="w-[1280px] max-w-none sm:hidden">
+                <div className="w-[950px] max-w-none sm:hidden">
                   <Image
                     alt=""
                     src={assets.solutionErrorMobile}
                     width={1052}
                     height={532}
-                    sizes="1280px"
+                    sizes="950px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                     quality={100}
                   />
                 </div>
-                <div className="hidden sm:mx-auto sm:block sm:w-full sm:max-w-[1180px]">
+                <div className="hidden sm:mx-auto sm:block sm:w-full sm:max-w-[950px]">
                   <Image
                     alt=""
                     src={assets.solutionError}
                     width={1052}
                     height={532}
-                    sizes="1052px"
+                    sizes="950px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                     quality={100}
                   />
                 </div>
               </div>
-              <p className="mt-space-4 w-full text-center text-caption-14 leading-[160%] text-secondary sm:mx-auto sm:max-w-[1052px]">
+              <p className="mt-space-4 w-full text-center text-caption-14 leading-[160%] text-secondary sm:mx-auto sm:max-w-[950px]">
                 Возвращаем на сценарий, но оставляем возможность написать в поддержку
               </p>
             </div>

@@ -181,9 +181,9 @@ export function HomePage() {
               >
                 <div
                   ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary px-space-6 py-space-4 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary px-space-4 py-space-4 sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:gap-space-4 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
                 >
-                  <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto">
+                  <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
                     <Image
                       alt="Экран регистрации MCN Softphone"
                       src={assets.phone1}
