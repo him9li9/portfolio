@@ -92,9 +92,9 @@ const zoomImages = {
   }
 } as const;
 
-function ZoomIcon() {
+function ZoomIcon({ floating = true }: { floating?: boolean }) {
   return (
-    <span className="pointer-events-none absolute bottom-space-3 right-space-3 flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 group-hover:bg-elevated-hover">
+    <span className={`${floating ? "pointer-events-none absolute bottom-space-3 right-space-3" : ""} flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 group-hover:bg-elevated-hover`}>
       <svg
         aria-hidden="true"
         viewBox="0 0 24 24"
@@ -391,7 +391,7 @@ export function WorkCasePage() {
             <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
                 <div key={stage} className="flex items-center gap-space-1">
-                  <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-primary">
+                  <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-primary">
                     {stage}
                   </span>
                   {index < workStages.length - 1 ? (
@@ -430,7 +430,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-4">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center gap-space-4 bg-secondary p-space-6 sm:rounded-[12px]">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -449,12 +449,21 @@ export function WorkCasePage() {
                   quality={100}
                 />
                 <ZoomImageShade />
-                <ZoomIcon />
               </button>
             </div>
-            <p className="text-center text-caption-14 text-secondary">
-              Текущий редактор: 1. сценарии&nbsp;&nbsp;2. настройка&nbsp;&nbsp;3. элементы&nbsp;&nbsp;4. канвас
-            </p>
+            <div className="grid w-full grid-cols-[1fr_40px] items-end gap-space-2">
+              <p className="text-center text-caption-14 text-secondary">
+                Текущий редактор: 1. сценарии&nbsp;&nbsp;2. настройка&nbsp;&nbsp;3. элементы&nbsp;&nbsp;4. канвас
+              </p>
+              <button
+                type="button"
+                className="group cursor-zoom-in"
+                onClick={() => setOpenImage("oldCanvas")}
+                aria-label="Увеличить текущую версию редактора сценариев"
+              >
+                <ZoomIcon floating={false} />
+              </button>
+            </div>
           </div>
 
           <div className="flex flex-col gap-space-2">
@@ -516,7 +525,7 @@ export function WorkCasePage() {
           </div>
 
           <div className="flex flex-col gap-space-2">
-            <p className="text-body-18-semibold">Сценарии не масштабируются</p>
+            <p className="text-body-18-semibold">4. Сценарии не масштабируются</p>
             <p className="text-body-18">
               По мере роста схемы связи пересекались, ветки накладывались друг на друга, а основной
               поток было сложно отличить от второстепенных.
@@ -640,10 +649,10 @@ export function WorkCasePage() {
           <div className="flex flex-col gap-space-3 md:grid md:grid-cols-3">
             <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-secondary p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-[18px] font-semibold leading-[29px] text-primary">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h3 text-primary">
                   1
                 </div>
-                <div className="flex min-w-0 flex-1 flex-col gap-space-0-5">
+                <div className="flex min-w-0 flex-1 flex-col gap-0">
                   <p className="text-body-18-semibold text-primary">Understand</p>
                   <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Понять сценарий</p>
                 </div>
@@ -659,10 +668,10 @@ export function WorkCasePage() {
 
             <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-secondary p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-[18px] font-semibold leading-[29px] text-primary">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h3 text-primary">
                   2
                 </div>
-                <div className="flex min-w-0 flex-1 flex-col gap-space-0-5">
+                <div className="flex min-w-0 flex-1 flex-col gap-0">
                   <p className="text-body-18-semibold text-primary">Edit</p>
                   <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Внести изменения</p>
                 </div>
@@ -678,10 +687,10 @@ export function WorkCasePage() {
 
             <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-secondary p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-[18px] font-semibold leading-[29px] text-primary">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h3 text-primary">
                   3
                 </div>
-                <div className="flex min-w-0 flex-1 flex-col gap-space-0-5">
+                <div className="flex min-w-0 flex-1 flex-col gap-0">
                   <p className="text-body-18-semibold text-primary">Validate</p>
                   <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Проверить</p>
                 </div>

@@ -472,7 +472,7 @@ export function CaseStudyPage() {
           </div>
           <div
             ref={heroPhonesRef}
-            className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-max sm:items-center sm:justify-center sm:overflow-visible"
+            className="relative left-1/2 w-[calc(100vw-32px)] -translate-x-1/2 overflow-x-auto pb-space-4 sm:flex sm:w-max sm:items-center sm:justify-center sm:overflow-visible sm:pb-0"
           >
             <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto">
               <Image
@@ -591,7 +591,7 @@ export function CaseStudyPage() {
             <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
                 <div key={stage.label} className="flex items-center gap-space-1">
-                  <span className="rounded-full bg-secondary px-space-3 py-space-1 text-body-16 text-primary">
+                  <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-primary">
                     {stage.label}
                   </span>
                   {index < workStages.length - 1 ? (
@@ -643,8 +643,8 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-space-4">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center">
+              <div className="flex w-full flex-col items-center gap-space-4 bg-secondary p-space-6 sm:rounded-[12px]">
                 <button
                   type="button"
                   aria-label="Open discovery scheme"
@@ -672,9 +672,7 @@ export function CaseStudyPage() {
                     onClick={() => setOpenLightbox("discovery")}
                     className="group cursor-zoom-in"
                   >
-                    <span className="sm:hidden">
-                      <ZoomIcon floating={false} />
-                    </span>
+                    <ZoomIcon floating={false} />
                   </button>
                 </div>
               </div>
@@ -789,7 +787,7 @@ export function CaseStudyPage() {
 
             <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
               <div className="flex w-full flex-col items-center gap-space-4">
-                <div className="w-full overflow-x-auto pb-space-3 sm:overflow-visible sm:pb-0">
+                <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
                   <div className="mx-auto h-[400px] w-[1250px] max-w-none sm:w-full">
                     <Image
                       alt=""
@@ -970,7 +968,7 @@ export function CaseStudyPage() {
           </div>
 
           <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
-            <div className="w-full overflow-x-auto sm:overflow-visible">
+            <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
               <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
                 <Image
                   alt=""
@@ -1044,7 +1042,7 @@ export function CaseStudyPage() {
 
           <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
             <div className="w-full">
-              <div className="overflow-x-auto pb-space-3 sm:overflow-visible sm:pb-0">
+              <div className="overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
                 <div className="w-[1280px] max-w-none sm:hidden">
                   <Image
                     alt=""
