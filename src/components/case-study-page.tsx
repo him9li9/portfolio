@@ -420,7 +420,7 @@ export function CaseStudyPage() {
         initial={{ opacity: 0, y: -12 }}
         animate={hideTopbar ? { opacity: 0, y: -12 } : { opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 220, damping: 22, mass: 0.7 }}
-        className="sticky top-0 z-10 h-[74px] w-full bg-primary/60 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
+        className="fixed top-0 z-10 h-[74px] w-full bg-primary/60 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
         <div className="flex h-full w-full items-center justify-between px-space-4 py-space-3 sm:px-space-8">
           <motion.div

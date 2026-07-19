@@ -274,7 +274,7 @@ export function WorkCasePage() {
         initial={{ opacity: 0, y: -12 }}
         animate={hideTopbar ? { opacity: 0, y: -12 } : { opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 220, damping: 22, mass: 0.7 }}
-        className="sticky top-0 z-10 h-[74px] w-full bg-primary/60 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
+        className="fixed top-0 z-10 h-[74px] w-full bg-primary/60 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
         <div className="flex h-full w-full items-center justify-between px-space-4 py-space-3 sm:px-space-8">
           <motion.div
@@ -355,8 +355,12 @@ export function WorkCasePage() {
                 priority
                 quality={100}
               />
-              <ZoomImageShade />
-              <ZoomIcon />
+              <span className="sm:hidden">
+                <ZoomImageShade />
+              </span>
+              <span className="sm:hidden">
+                <ZoomIcon />
+              </span>
             </button>
           </div>
         </motion.section>
@@ -443,7 +447,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center gap-space-4 bg-secondary p-space-6 sm:rounded-[12px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-4">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -461,16 +465,18 @@ export function WorkCasePage() {
                   loading="lazy"
                   quality={100}
                 />
-                <ZoomImageShade />
+                <span className="sm:hidden">
+                  <ZoomImageShade />
+                </span>
               </button>
             </div>
-            <div className="grid w-full grid-cols-[1fr_40px] items-end gap-space-2">
+            <div className="grid w-full grid-cols-[1fr_40px] items-end gap-space-2 sm:block">
               <p className="text-center text-caption-14 text-secondary">
                 Текущий редактор: 1. сценарии&nbsp;&nbsp;2. настройка&nbsp;&nbsp;3. элементы&nbsp;&nbsp;4. канвас
               </p>
               <button
                 type="button"
-                className="group cursor-zoom-in"
+                className="group cursor-zoom-in sm:hidden"
                 onClick={() => setOpenImage("oldCanvas")}
                 aria-label="Увеличить текущую версию редактора сценариев"
               >
@@ -520,9 +526,16 @@ export function WorkCasePage() {
                   quality={100}
                 />
                 <ZoomImageShade rounded={false} />
-                <ZoomIcon />
               </button>
             </div>
+            <button
+              type="button"
+              className="group absolute bottom-space-6 right-space-6 cursor-zoom-in"
+              onClick={() => setOpenImage("addFlow")}
+              aria-label="Увеличить флоу работы с элементами"
+            >
+              <ZoomIcon />
+            </button>
           </div>
 
           <div className="flex flex-col gap-space-2">
