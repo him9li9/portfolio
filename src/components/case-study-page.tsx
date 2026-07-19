@@ -462,7 +462,7 @@ export function CaseStudyPage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-y-[140px] px-space-4 pb-[40px] pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-space-16"
+        className="flex w-full flex-col gap-y-[140px] px-space-4 pb-[40px] pt-[140px] sm:mx-auto sm:max-w-[800px] sm:px-0"
       >
         <motion.section
           id="overview"
@@ -771,8 +771,8 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[800px] sm:pl-0">
-              <div className="flex w-full flex-col items-center gap-space-4">
-                <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
+              <div className="flex w-full flex-col items-center gap-space-2 sm:gap-space-4">
+                <div className="w-full overflow-x-auto pb-space-2 sm:overflow-visible sm:pb-0">
                   <div className="w-[800px] max-w-none sm:mx-auto sm:w-full">
                     <Image
                       alt=""
@@ -799,8 +799,8 @@ export function CaseStudyPage() {
             </p>
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1100px] sm:pl-0">
-              <div className="flex w-full flex-col items-center gap-space-4">
-                <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
+              <div className="flex w-full flex-col items-center gap-space-2 sm:gap-space-4">
+                <div className="w-full overflow-x-auto pb-space-2 sm:overflow-visible sm:pb-0">
                   <div className="w-[950px] max-w-none sm:mx-auto sm:w-full">
                     <Image
                       alt=""

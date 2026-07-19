@@ -137,9 +137,9 @@ export function HomePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto flex w-full max-w-[900px] flex-col gap-[140px] px-space-4 pb-0 pt-space-16 sm:px-space-8 lg:px-0"
+        className="mx-auto flex w-full max-w-[900px] flex-col gap-[140px] px-space-4 pb-0 pt-[140px] sm:px-space-8 lg:px-0"
       >
-        <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-4 sm:items-center">
+        <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-3 sm:items-center">
           <div className="flex flex-col items-start justify-center gap-space-8 sm:items-center">
             <div className="relative h-[100px] w-[120px] overflow-hidden rounded-[100px]">
               <Image
@@ -224,7 +224,7 @@ export function HomePage() {
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-18 text-primary sm:flex"
+                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -247,7 +247,7 @@ export function HomePage() {
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="mt-space-1 flex items-center gap-space-1 text-body-18 text-primary sm:hidden"
+                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -282,7 +282,7 @@ export function HomePage() {
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-18 text-primary sm:flex"
+                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -305,7 +305,7 @@ export function HomePage() {
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="mt-space-1 flex items-center gap-space-1 text-body-18 text-primary sm:hidden"
+                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
                   >
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
@@ -317,12 +317,12 @@ export function HomePage() {
         </motion.section>
       </motion.div>
       <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-space-6 sm:px-0 sm:pb-[40px]">
-        <div className="flex flex-col gap-space-2">
+        <div className="flex flex-col gap-space-3">
           <h3 className="text-h4">Связаться со мной</h3>
         </div>
         <div className="h-px w-full bg-border-elevated" />
         <div className="flex w-full flex-col gap-space-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:justify-between min-[900px]:gap-space-2">
-          <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-18 text-primary">
+          <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-16 text-primary">
             {footerLinks.map((link, index) => (
               <div key={link.label} className="flex items-center gap-space-2">
                 <a

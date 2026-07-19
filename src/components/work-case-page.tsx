@@ -316,7 +316,7 @@ export function WorkCasePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-[140px] px-space-4 pb-[40px] pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0"
+        className="flex w-full flex-col gap-[140px] px-space-4 pb-[40px] pt-[140px] sm:mx-auto sm:max-w-[800px] sm:px-0"
       >
         <motion.section
           id="overview"
