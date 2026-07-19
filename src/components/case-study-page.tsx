@@ -798,7 +798,7 @@ export function CaseStudyPage() {
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
 
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1100px] sm:pl-0">
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[950px] sm:pl-0">
               <div className="flex w-full flex-col items-center gap-space-2 sm:gap-space-4">
                 <div className="w-full overflow-x-auto pb-space-2 sm:overflow-visible sm:pb-0">
                   <div className="w-[950px] max-w-none sm:mx-auto sm:w-full">
@@ -830,41 +830,41 @@ export function CaseStudyPage() {
               <div className="flex flex-col gap-space-3 sm:flex-row sm:flex-wrap">
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">1. Ясность на старте</p>
-                  <p className="text-caption-14 text-primary">
+                  <p className="text-caption-14 text-secondary">
                     Если пользователь понимает, на каком этапе онбординга находится и когда сможет
                     начать звонить, ему проще дойти до первого звонка.
                   </p>
-                  <p className="text-caption-14 text-primary">
+                  <p className="text-caption-14 text-secondary">
                     <span className="text-caption-14-semibold">Метрика: </span>CR в первый звонок
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">2. Прозрачность стоимости</p>
-                  <p className="text-caption-14 text-primary">
+                  <p className="text-caption-14 text-secondary">
                     Если пользователь видит стоимость звонка и состояние баланса до начала вызова,
                     условия тарификации станут более прозрачными.
                   </p>
-                  <p className="text-caption-14 text-primary">
+                  <p className="text-caption-14 text-secondary">
                     <span className="text-caption-14-semibold">Метрика: </span>retention, обращения в поддержку
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">3. Доступность ответов</p>
-                  <p className="text-caption-14 text-primary">
+                  <p className="text-caption-14 text-secondary">
                     Если ответы на частые вопросы доступны внутри приложения, он реже будет
                     прерывать сценарий и обращаться в поддержку.
                   </p>
-                  <p className="text-caption-14 text-primary">
+                  <p className="text-caption-14 text-secondary">
                     <span className="text-caption-14-semibold">Метрика: </span>обращения в поддержку
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">4. Очевидность следующего шага</p>
-                  <p className="text-caption-14 text-primary">
+                  <p className="text-caption-14 text-secondary">
                     Если после ошибки или незавершённого действия пользователь понимает, что делать
                     дальше, ему проще вернуться к действию.
                   </p>
-                  <p className="text-caption-14 text-primary">
+                  <p className="text-caption-14 text-secondary">
                     <span className="text-caption-14-semibold">Метрика: </span>retention, обращения в поддержку
                   </p>
                 </div>
