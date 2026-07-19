@@ -256,7 +256,7 @@ export function WorkCasePage() {
   };
 
   return (
-    <main className="bg-primary text-primary">
+    <main className="overflow-x-hidden bg-primary text-primary">
       <motion.header
         initial={{ opacity: 0, y: -12 }}
         animate={hideTopbar ? { opacity: 0, y: -12 } : { opacity: 1, y: 0 }}
@@ -430,7 +430,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center gap-space-4 bg-secondary p-space-6 sm:rounded-[12px]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-4">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -488,7 +488,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center bg-secondary p-space-6 sm:rounded-[12px]">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -649,7 +649,7 @@ export function WorkCasePage() {
           <div className="flex flex-col gap-space-3 md:grid md:grid-cols-3">
             <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-secondary p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h3 text-primary">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h4 text-primary">
                   1
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-0">
@@ -668,7 +668,7 @@ export function WorkCasePage() {
 
             <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-secondary p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h3 text-primary">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h4 text-primary">
                   2
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-0">
@@ -687,7 +687,7 @@ export function WorkCasePage() {
 
             <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-secondary p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h3 text-primary">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h4 text-primary">
                   3
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-0">

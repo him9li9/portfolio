@@ -82,7 +82,7 @@ export function HomePage() {
   }, []);
 
   return (
-    <main className="bg-primary text-primary">
+    <main className="overflow-x-hidden bg-primary text-primary">
       <motion.header
         initial={{ opacity: 0, y: -12 }}
         animate={hideTopbar ? { opacity: 0, y: -12 } : { opacity: 1, y: 0 }}
@@ -168,7 +168,7 @@ export function HomePage() {
               >
                 <div
                   ref={softphonePreviewRef}
-                  className="relative left-1/2 w-[calc(100vw-32px)] -translate-x-1/2 overflow-x-auto bg-secondary px-space-6 pb-space-10 pt-space-8 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary px-space-6 py-space-4 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-6 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
                 >
                   <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto">
                     <Image
@@ -308,7 +308,7 @@ export function HomePage() {
           <h3 className="text-h3">Связаться со мной</h3>
         </div>
         <div className="h-px w-full bg-border-elevated" />
-        <div className="flex w-full flex-col gap-space-6 md:flex-row md:items-center md:justify-between md:gap-space-2">
+        <div className="flex w-full flex-col gap-space-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:justify-between min-[900px]:gap-space-2">
           <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-18 text-primary">
             {footerLinks.map((link, index) => (
               <div key={link.label} className="flex items-center gap-space-2">
@@ -324,7 +324,7 @@ export function HomePage() {
               </div>
             ))}
           </nav>
-          <p className="text-body-16 text-secondary md:ml-auto">Nastya Ermoshina © 2026</p>
+          <p className="text-body-16 text-secondary min-[900px]:ml-auto">Nastya Ermoshina © 2026</p>
         </div>
       </footer>
     </main>

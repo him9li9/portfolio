@@ -402,7 +402,7 @@ export function CaseStudyPage() {
 
 
   return (
-    <main className="bg-primary text-primary">
+    <main className="overflow-x-hidden bg-primary text-primary">
       <motion.header
         initial={{ opacity: 0, y: -12 }}
         animate={hideTopbar ? { opacity: 0, y: -12 } : { opacity: 1, y: 0 }}
@@ -643,26 +643,26 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center">
-              <div className="flex w-full flex-col items-center gap-space-4 bg-secondary p-space-6 sm:rounded-[12px]">
+            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-6 sm:rounded-[12px]">
                 <button
                   type="button"
                   aria-label="Open discovery scheme"
                   onClick={() => setOpenLightbox("discovery")}
-                  className="group relative block w-full cursor-zoom-in overflow-hidden"
+                  className="group relative block w-full max-w-[800px] cursor-zoom-in overflow-hidden"
                 >
                   <Image
                     alt=""
                     src={assets.discoveryActivation}
                     width={2256}
                     height={2541}
-                    sizes="(max-width: 640px) calc(100vw - 80px), 752px"
+                    sizes="(max-width: 640px) calc(100vw - 48px), 800px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                     quality={100}
                   />
                 </button>
-                <div className="grid w-full grid-cols-[1fr_40px] items-end gap-space-2">
+                <div className="grid w-full grid-cols-[1fr_40px] items-end gap-0">
                   <p className="text-center text-caption-14 text-secondary">
                     Анализ основных сценариев в MVP приложения
                   </p>
@@ -757,17 +757,17 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center justify-center">
               <div className="flex w-full flex-col items-center gap-space-4">
-                <div className="w-full">
-                  <div className="mx-auto h-[400px] w-full">
+                <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
+                  <div className="mx-auto h-[400px] w-[900px] max-w-none sm:w-full">
                     <Image
                       alt=""
                       src={assets.competitorWhatsapp}
                       width={2208}
                       height={1103}
-                      sizes="(max-width: 640px) calc(100vw - 48px), 752px"
-                      className="h-full w-auto max-w-full object-contain"
+                      sizes="(max-width: 640px) 900px, 752px"
+                      className="h-full w-auto max-w-none object-contain sm:max-w-full"
                       loading="lazy"
                       quality={100}
                     />
@@ -785,7 +785,7 @@ export function CaseStudyPage() {
               пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
             </p>
 
-            <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center">
               <div className="flex w-full flex-col items-center gap-space-4">
                 <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
                   <div className="mx-auto h-[400px] w-[1250px] max-w-none sm:w-full">
@@ -967,7 +967,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
             <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
               <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
                 <Image
@@ -1040,7 +1040,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
             <div className="w-full">
               <div className="overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
                 <div className="w-[1280px] max-w-none sm:hidden">
