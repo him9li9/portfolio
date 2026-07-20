@@ -166,15 +166,23 @@ a {
   }
 
   .case-h2-stack {
-    @apply flex flex-col gap-space-3;
+    @apply flex flex-col gap-space-4;
   }
 
   .case-h3-stack {
-    @apply flex flex-col gap-space-2;
+    @apply flex flex-col gap-space-3;
   }
 
   .case-content-stack {
-    @apply flex flex-col gap-space-6;
+    @apply flex flex-col gap-space-8;
+  }
+
+  .case-text-list-stack {
+    @apply flex flex-col gap-space-2;
+  }
+
+  .case-text-stack {
+    @apply flex flex-col gap-space-4;
   }
 
   .case-point-stack {

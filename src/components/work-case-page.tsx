@@ -428,7 +428,7 @@ export function WorkCasePage() {
         >
           <div className="case-h2-stack">
             <h2 className="text-h2">Дискавери</h2>
-            <div className="case-content-stack text-body-18">
+            <div className="case-text-list-stack text-body-18">
               <p>В рамках discovery я изучила, как пользователи работают со сценариями в текущей версии продукта:</p>
               <ul className="list-disc space-y-0 pl-space-6">
                 <li>проанализировала реальные сценарии и логику экранов</li>

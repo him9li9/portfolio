@@ -625,7 +625,7 @@ export function CaseStudyPage() {
           <h2 className="text-h2">Дискавери</h2>
 
           <div className="case-content-stack">
-            <div className="case-content-stack text-body-18">
+            <div className="case-text-list-stack text-body-18">
               <p>В рамках discovery я опиралась на:</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>анализ текущих пользовательских сценариев и логики экранов</li>
@@ -657,7 +657,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-space-4 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
+              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
                 <button
                   type="button"
                   aria-label="Open discovery scheme"
@@ -885,7 +885,7 @@ export function CaseStudyPage() {
         >
           <h2 className="text-h2">Проектирование</h2>
           <div className="case-content-stack">
-            <div className="case-content-stack">
+            <div className="case-text-stack">
               <p className="text-body-18">
                 <span className="text-body-18-semibold">Цель этапа —</span> определить, как система будет вести себя в диалоге с пользователем, чтобы
                 он не терялся в случае если что-то пойдёт не так. Основные решения касались логики
@@ -1089,7 +1089,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="case-content-stack text-body-18">
+          <div className="case-text-stack text-body-18">
             <p>
               Каждая итерация закрывала конкретную точку неопределённости: пользователь видел, когда
               номер активен, сколько стоит звонок и что делать при ошибке. За счёт этого путь стал
