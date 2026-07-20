@@ -161,6 +161,26 @@ a {
     line-height: 160%;
   }
 
+  .case-section-stack {
+    @apply flex flex-col gap-space-8;
+  }
+
+  .case-h2-stack {
+    @apply flex flex-col gap-space-3;
+  }
+
+  .case-h3-stack {
+    @apply flex flex-col gap-space-2;
+  }
+
+  .case-content-stack {
+    @apply flex flex-col gap-space-6;
+  }
+
+  .case-point-stack {
+    @apply flex flex-col gap-space-2;
+  }
+
   .link-underline {
     background-image: linear-gradient(currentColor, currentColor);
     background-position: left bottom;

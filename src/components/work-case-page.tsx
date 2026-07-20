@@ -369,9 +369,9 @@ export function WorkCasePage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="-mt-space-14 scroll-mt-space-16 flex flex-col gap-space-8"
+          className="-mt-space-14 scroll-mt-space-16 case-section-stack"
         >
-          <div className="flex flex-col gap-space-3">
+          <div className="case-h2-stack">
             <h2 className="text-h2">О проекте</h2>
             <p className="text-body-18">
               Один из продуктов KOMPaaS — конструктор сценариев звонков из элементов: голосового
@@ -381,7 +381,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Проблема</h3>
             <p className="text-body-18">
               Любые изменения в сценариях требовали участия разработки и занимали часы или дни. Из-за
@@ -391,7 +391,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Задача</h3>
             <p className="text-body-18">
               Нужно было устранить зависимость клиентов от разработки и превратить сценарии звонков
@@ -403,7 +403,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Этапы работы</h3>
             <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
@@ -424,11 +424,11 @@ export function WorkCasePage() {
           id="discovery"
           data-section-anchor="discovery"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-8"
+          className="scroll-mt-space-16 case-section-stack"
         >
-          <div className="flex flex-col gap-space-3">
+          <div className="case-h2-stack">
             <h2 className="text-h2">Дискавери</h2>
-            <div className="flex flex-col gap-space-6 text-body-18">
+            <div className="case-content-stack text-body-18">
               <p>В рамках discovery я изучила, как пользователи работают со сценариями в текущей версии продукта:</p>
               <ul className="list-disc space-y-0 pl-space-6">
                 <li>проанализировала реальные сценарии и логику экранов</li>
@@ -439,7 +439,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Анализ текущей версии</h3>
             <p className="text-body-18">
               Прежде чем предлагать изменения, я собрала обратную связь от поддержки, о том как
@@ -478,7 +478,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-2">
+          <div className="case-h3-stack">
             <p className="text-body-18-semibold">1. Сценариями неудобно управлять</p>
             <p className="text-body-18">
               Список сценариев в сайдбаре ограничен по высоте, отсутствовал поиск и группировка.
@@ -489,7 +489,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-2">
+          <div className="case-h3-stack">
             <p className="text-body-18-semibold">2. Настройка разделена между экранами</p>
             <p className="text-body-18">
               Создание элемента, его настройка и добавление на canvas происходили в разных местах.
@@ -531,7 +531,7 @@ export function WorkCasePage() {
             </button>
           </div>
 
-          <div className="flex flex-col gap-space-2">
+          <div className="case-h3-stack">
             <p className="text-body-18-semibold">3. Сложности с библиотекой элементов</p>
             <p className="text-body-18">
               Элементы не были сгруппированы по сценариям использования, а названия не всегда
@@ -543,7 +543,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-2">
+          <div className="case-h3-stack">
             <p className="text-body-18-semibold">4. Сценарии не масштабируются</p>
             <p className="text-body-18">
               По мере роста схемы связи пересекались, ветки накладывались друг на друга, а основной
@@ -560,7 +560,7 @@ export function WorkCasePage() {
             правки повлияют на реальные звонки.
           </p>
 
-          <div className="flex flex-col gap-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Анализ конкурентов</h3>
             <p className="text-body-18">
               Чтобы понять, как упростить работу с конструктором, я изучила прямых конкурентов и
@@ -602,7 +602,7 @@ export function WorkCasePage() {
           </p>
 
           <div className="flex w-full max-w-[800px] flex-col gap-space-8">
-            <div className="flex flex-col gap-space-2">
+            <div className="case-h3-stack">
               <h3 className="text-h3">Гипотезы</h3>
               <p className="text-body-18">
                 На основе анализа я выделила направления, которые могли повлиять на ключевые метрики:
@@ -656,9 +656,9 @@ export function WorkCasePage() {
           id="design"
           data-section-anchor="design"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-8"
+          className="scroll-mt-space-16 case-section-stack"
         >
-          <div className="flex flex-col gap-space-3">
+          <div className="case-h2-stack">
             <h2 className="text-h2">Проектирование</h2>
             <p className="text-body-18">
               Проектирование строилось вокруг трёх ключевых принципов:
@@ -727,13 +727,13 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-6">
+          <div className="case-content-stack">
             <p className="text-body-18">
               В итоговом решении нужно было учесть, что пользователям важно понимать, когда сценарий
               опубликован и какие изменения уже влияют на реальные звонки.
             </p>
 
-            <div className="flex flex-col gap-space-2">
+            <div className="case-h3-stack">
               <h3 className="text-h3">Было</h3>
               <p className="text-body-18">
                 Создаёт сценарий →{" "}
@@ -747,7 +747,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-space-2">
+            <div className="case-h3-stack">
               <h3 className="text-h3">Стало</h3>
               <p className="text-body-18">
                 Создаёт сценарий → Добавляет элемент на схему → Настраивает → Тестирует
@@ -769,9 +769,9 @@ export function WorkCasePage() {
           id="solution"
           data-section-anchor="solution"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-8"
+          className="scroll-mt-space-16 case-section-stack"
         >
-          <div className="flex flex-col gap-space-3">
+          <div className="case-h2-stack">
             <h2 className="text-h2">Решение</h2>
             <p className="text-body-18">
               Работая над редактором я проверяла, насколько менеджеры понимают структуру сценария,
@@ -812,8 +812,8 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-6">
-            <div className="flex flex-col gap-space-2 text-body-18">
+          <div className="case-content-stack">
+            <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">1. Организовать сценарии</p>
               <p>
                 Я сохранила привычную модель списка и улучшила навигацию по сценариям: добавила
@@ -851,8 +851,8 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-6">
-            <div className="flex flex-col gap-space-2 text-body-18">
+          <div className="case-content-stack">
+            <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">2. Сделать элементы понятнее</p>
               <p>
                 Во время тестов пользователи часто выбирали элементы по названию и не всегда
@@ -892,8 +892,8 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-6">
-            <div className="flex flex-col gap-space-2 text-body-18">
+          <div className="case-content-stack">
+            <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">3. Вернуть пользователю контекст</p>
               <p>
                 Перенесла создание и настройку блоков прямо в canvas, чтобы пользователь мог
@@ -943,8 +943,8 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-6">
-            <div className="flex flex-col gap-space-2 text-body-18">
+          <div className="case-content-stack">
+            <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">4. Сделать большие сценарии читаемыми</p>
               <p>
                 Чтобы большие флоу было проще читать, я упростила вторичные ветки, добавила
@@ -983,8 +983,8 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-6">
-            <div className="flex flex-col gap-space-2 text-body-18">
+          <div className="case-content-stack">
+            <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">5. Сделать публикацию предсказуемой</p>
               <p>
                 Ранее менеджеры не всегда понимали, какие изменения уже влияют на реальные звонки, а
@@ -1038,10 +1038,10 @@ export function WorkCasePage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-3"
+          className="scroll-mt-space-16 case-h2-stack"
         >
           <h2 className="text-h2">Результаты</h2>
-          <div className="flex flex-col gap-space-6">
+          <div className="case-content-stack">
             <p className="text-body-18">
               Редактор сделал работу со сценариями более самостоятельной и предсказуемой: менеджеры
               быстрее находили нужные сценарии, вносили изменения без разработки и лучше понимали,

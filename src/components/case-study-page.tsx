@@ -526,9 +526,9 @@ export function CaseStudyPage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="-mt-space-14 scroll-mt-space-16 flex flex-col gap-space-8"
+          className="-mt-space-14 scroll-mt-space-16 case-section-stack"
         >
-          <div className="flex flex-col gap-space-3">
+          <div className="case-h2-stack">
             <h2 className="text-h2">О проекте</h2>
             <p className="text-body-18">
               Когда я присоединилась к проекту, приложение существовало в формате MVP, но проседала
@@ -538,7 +538,7 @@ export function CaseStudyPage() {
           </div>
 
           <div className="flex flex-col items-center gap-space-8">
-            <div className="flex w-full flex-col gap-space-2">
+            <div className="case-h3-stack w-full">
               <h3 className="text-h3">Проблема</h3>
               <p className="text-body-18">
                 На обсуждении с командой выяснилась системная проблема — пользователь не понимал
@@ -586,7 +586,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Задача</h3>
             <p className="text-body-18">
               Основная задача проекта состояла в том, чтобы внедрить в продукт систему коммуникации
@@ -599,7 +599,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Этапы работы</h3>
             <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
@@ -620,12 +620,12 @@ export function CaseStudyPage() {
           id="discovery"
           data-section-anchor="discovery"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-3"
+          className="scroll-mt-space-16 case-h2-stack"
         >
           <h2 className="text-h2">Дискавери</h2>
 
-          <div className="flex flex-col gap-space-6">
-            <div className="flex flex-col gap-space-6 text-body-18">
+          <div className="case-content-stack">
+            <div className="case-content-stack text-body-18">
               <p>В рамках discovery я опиралась на:</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>анализ текущих пользовательских сценариев и логики экранов</li>
@@ -635,7 +635,7 @@ export function CaseStudyPage() {
               </ul>
             </div>
 
-            <div className="flex flex-col gap-space-2">
+            <div className="case-h3-stack">
               <h3 className="text-h3">Анализ текущей версии</h3>
               <p className="text-body-18">
                 <span className="text-body-18-semibold">Цель этапа —</span> понять, где именно пользователи теряются, совершают ошибки или тратят
@@ -644,7 +644,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-space-2 text-body-18">
+            <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">1. Сценарий активации разорван между вебом и приложением</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>регистрация вынесена в веб-кабинет и требует ручной верификации менеджером</li>
@@ -691,7 +691,7 @@ export function CaseStudyPage() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-space-2 text-body-18">
+            <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">2. Стоимость и списания не прозрачны в момент звонка</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>информацию о стоимости звонков в роуминге нужно было искать на сайте</li>
@@ -718,7 +718,7 @@ export function CaseStudyPage() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-space-2 text-body-18">
+            <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">3. Некачественная обратная связь</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>в приложении нет понятной точки входа в поддержку</li>
@@ -761,7 +761,7 @@ export function CaseStudyPage() {
               где важна немедленная доступность связи и интернета.
             </p>
 
-            <div id="hypotheses" className="flex scroll-mt-space-16 flex-col gap-space-2">
+            <div id="hypotheses" className="case-h3-stack scroll-mt-space-16">
               <h3 className="text-h3">Анализ конкурентов</h3>
               <p className="text-body-18">
                 В ходе discovery я также изучила аналогичные продукты, в которых есть звонки.
@@ -821,7 +821,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="flex w-full max-w-[800px] flex-col gap-space-8">
-              <div className="flex flex-col gap-space-2">
+              <div className="case-h3-stack">
                 <h3 className="text-h3">Гипотезы</h3>
                 <p className="text-body-18">
                   На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками продукта.
@@ -881,11 +881,11 @@ export function CaseStudyPage() {
           id="design"
           data-section-anchor="design"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-3"
+          className="scroll-mt-space-16 case-h2-stack"
         >
           <h2 className="text-h2">Проектирование</h2>
-          <div className="flex flex-col gap-space-6">
-            <div className="flex flex-col gap-space-6">
+          <div className="case-content-stack">
+            <div className="case-content-stack">
               <p className="text-body-18">
                 <span className="text-body-18-semibold">Цель этапа —</span> определить, как система будет вести себя в диалоге с пользователем, чтобы
                 он не терялся в случае если что-то пойдёт не так. Основные решения касались логики
@@ -954,10 +954,10 @@ export function CaseStudyPage() {
           id="solution"
           data-section-anchor="solution"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-8"
+          className="scroll-mt-space-16 case-section-stack"
         >
-          <div className="flex flex-col gap-space-6">
-            <div className="flex flex-col gap-space-3">
+          <div className="case-content-stack">
+            <div className="case-h2-stack">
               <h2 className="text-h2">Решение</h2>
               <p className="text-body-18">
                 Первые тесты показали: даже там, где логика казалась очевидной, пользователи
@@ -966,7 +966,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-space-2 text-body-18">
+            <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">1. Экран успеха после регистрации</p>
               <p>
                 Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
@@ -999,7 +999,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-2 text-body-18">
+          <div className="case-point-stack text-body-18">
             <p className="text-body-18-semibold">2. Узнать стоимость звонка</p>
             <p>
               В первой версии цену можно было увидеть, только начав набирать номер. Некоторым пользователям
@@ -1038,7 +1038,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-2 text-body-18">
+          <div className="case-point-stack text-body-18">
             <p className="text-body-18-semibold">3. Помощь и подсказки</p>
             <p>
               Ранее был экран ошибки, где просто выводилась причина: «Регистрация не пройдена»,
@@ -1089,7 +1089,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-6 text-body-18">
+          <div className="case-content-stack text-body-18">
             <p>
               Каждая итерация закрывала конкретную точку неопределённости: пользователь видел, когда
               номер активен, сколько стоит звонок и что делать при ошибке. За счёт этого путь стал
@@ -1107,10 +1107,10 @@ export function CaseStudyPage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-3"
+          className="scroll-mt-space-16 case-h2-stack"
         >
           <h2 className="text-h2">Результаты</h2>
-          <div className="flex flex-col gap-space-6">
+          <div className="case-content-stack">
             <p className="text-body-18">
               Ключевые изменения закрыли основные проблемы, выявленные на старте: путь до первого
               звонка стал короче, пользователи лучше понимали статус и стоимость действий, а часть
