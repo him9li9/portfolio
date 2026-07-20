@@ -428,7 +428,7 @@ export function WorkCasePage() {
         >
           <div className="flex flex-col gap-space-3">
             <h2 className="text-h2">Дискавери</h2>
-            <div className="flex flex-col gap-space-4 text-body-18">
+            <div className="flex flex-col gap-space-6 text-body-18">
               <p>В рамках discovery я изучила, как пользователи работают со сценариями в текущей версии продукта:</p>
               <ul className="list-disc space-y-0 pl-space-6">
                 <li>проанализировала реальные сценарии и логику экранов</li>
@@ -727,7 +727,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-8">
+          <div className="flex flex-col gap-space-6">
             <p className="text-body-18">
               В итоговом решении нужно было учесть, что пользователям важно понимать, когда сценарий
               опубликован и какие изменения уже влияют на реальные звонки.
@@ -812,7 +812,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-8">
+          <div className="flex flex-col gap-space-6">
             <div className="flex flex-col gap-space-2 text-body-18">
               <p className="text-body-18-semibold">1. Организовать сценарии</p>
               <p>
@@ -851,7 +851,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-8">
+          <div className="flex flex-col gap-space-6">
             <div className="flex flex-col gap-space-2 text-body-18">
               <p className="text-body-18-semibold">2. Сделать элементы понятнее</p>
               <p>
@@ -892,7 +892,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-8">
+          <div className="flex flex-col gap-space-6">
             <div className="flex flex-col gap-space-2 text-body-18">
               <p className="text-body-18-semibold">3. Вернуть пользователю контекст</p>
               <p>
@@ -943,7 +943,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-8">
+          <div className="flex flex-col gap-space-6">
             <div className="flex flex-col gap-space-2 text-body-18">
               <p className="text-body-18-semibold">4. Сделать большие сценарии читаемыми</p>
               <p>
@@ -983,7 +983,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-8">
+          <div className="flex flex-col gap-space-6">
             <div className="flex flex-col gap-space-2 text-body-18">
               <p className="text-body-18-semibold">5. Сделать публикацию предсказуемой</p>
               <p>
@@ -1041,7 +1041,7 @@ export function WorkCasePage() {
           className="scroll-mt-space-16 flex flex-col gap-space-3"
         >
           <h2 className="text-h2">Результаты</h2>
-          <div className="flex flex-col gap-space-8">
+          <div className="flex flex-col gap-space-6">
             <p className="text-body-18">
               Редактор сделал работу со сценариями более самостоятельной и предсказуемой: менеджеры
               быстрее находили нужные сценарии, вносили изменения без разработки и лучше понимали,

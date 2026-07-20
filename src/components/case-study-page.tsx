@@ -624,8 +624,8 @@ export function CaseStudyPage() {
         >
           <h2 className="text-h2">Дискавери</h2>
 
-          <div className="flex flex-col gap-space-8">
-            <div className="flex flex-col gap-space-4 text-body-18">
+          <div className="flex flex-col gap-space-6">
+            <div className="flex flex-col gap-space-6 text-body-18">
               <p>В рамках discovery я опиралась на:</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>анализ текущих пользовательских сценариев и логики экранов</li>
@@ -884,8 +884,8 @@ export function CaseStudyPage() {
           className="scroll-mt-space-16 flex flex-col gap-space-3"
         >
           <h2 className="text-h2">Проектирование</h2>
-          <div className="flex flex-col gap-space-8">
-            <div className="flex flex-col gap-space-8">
+          <div className="flex flex-col gap-space-6">
+            <div className="flex flex-col gap-space-6">
               <p className="text-body-18">
                 <span className="text-body-18-semibold">Цель этапа —</span> определить, как система будет вести себя в диалоге с пользователем, чтобы
                 он не терялся в случае если что-то пойдёт не так. Основные решения касались логики
@@ -956,7 +956,7 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-8"
         >
-          <div className="flex flex-col gap-space-4">
+          <div className="flex flex-col gap-space-6">
             <div className="flex flex-col gap-space-3">
               <h2 className="text-h2">Решение</h2>
               <p className="text-body-18">
@@ -1089,7 +1089,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-8 text-body-18">
+          <div className="flex flex-col gap-space-6 text-body-18">
             <p>
               Каждая итерация закрывала конкретную точку неопределённости: пользователь видел, когда
               номер активен, сколько стоит звонок и что делать при ошибке. За счёт этого путь стал
@@ -1110,7 +1110,7 @@ export function CaseStudyPage() {
           className="scroll-mt-space-16 flex flex-col gap-space-3"
         >
           <h2 className="text-h2">Результаты</h2>
-          <div className="flex flex-col gap-space-8">
+          <div className="flex flex-col gap-space-6">
             <p className="text-body-18">
               Ключевые изменения закрыли основные проблемы, выявленные на старте: путь до первого
               звонка стал короче, пользователи лучше понимали статус и стоимость действий, а часть
