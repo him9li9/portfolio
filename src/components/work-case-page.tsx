@@ -447,7 +447,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-4">
+          <div className="case-figure-stack relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -601,7 +601,7 @@ export function WorkCasePage() {
             контролировать изменения до того, как они попадут в работу.
           </p>
 
-          <div className="flex w-full max-w-[800px] flex-col gap-space-8">
+          <div className="case-media-stack w-full max-w-[800px]">
             <div className="case-h3-stack">
               <h3 className="text-h3">Гипотезы</h3>
               <p className="text-body-18">
@@ -781,7 +781,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-4">
+          <div className="case-figure-stack relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -911,7 +911,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-4">
+            <div className="case-figure-stack relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
               <div className="mx-auto w-full max-w-[800px]">
                 <button
                   type="button"
@@ -997,7 +997,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 flex-col items-center gap-space-4">
+            <div className="case-figure-stack relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in sm:cursor-default"

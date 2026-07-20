@@ -177,6 +177,14 @@ a {
     @apply flex flex-col gap-space-8;
   }
 
+  .case-media-stack {
+    @apply flex flex-col gap-space-6;
+  }
+
+  .case-figure-stack {
+    @apply flex flex-col gap-space-4;
+  }
+
   .case-text-list-stack {
     @apply flex flex-col gap-space-2;
   }

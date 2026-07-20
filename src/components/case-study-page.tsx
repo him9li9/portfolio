@@ -537,7 +537,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center gap-space-8">
+          <div className="case-media-stack items-center">
             <div className="case-h3-stack w-full">
               <h3 className="text-h3">Проблема</h3>
               <p className="text-body-18">
@@ -554,7 +554,7 @@ export function CaseStudyPage() {
                   {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
                 </li>
               </ul>
-              <div className="flex flex-col items-center gap-space-4">
+              <div className="case-figure-stack items-center">
                 <div className="w-[323px] max-w-full">
                   <Image
                     alt=""
@@ -771,7 +771,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[800px] sm:pl-0">
-              <div className="flex w-full flex-col items-center gap-space-2 sm:gap-space-4">
+              <div className="case-figure-stack w-full items-center">
                 <div className="w-full overflow-x-auto pb-space-2 sm:overflow-visible sm:pb-0">
                   <div className="w-[800px] max-w-none sm:mx-auto sm:w-full">
                     <Image
@@ -799,7 +799,7 @@ export function CaseStudyPage() {
             </p>
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[950px] sm:pl-0">
-              <div className="flex w-full flex-col items-center gap-space-2 sm:gap-space-4">
+              <div className="case-figure-stack w-full items-center">
                 <div className="w-full overflow-x-auto pb-space-2 sm:overflow-visible sm:pb-0">
                   <div className="w-[950px] max-w-none sm:mx-auto sm:w-full">
                     <Image
@@ -820,7 +820,7 @@ export function CaseStudyPage() {
               </div>
             </div>
 
-            <div className="flex w-full max-w-[800px] flex-col gap-space-8">
+            <div className="case-media-stack w-full max-w-[800px]">
               <div className="case-h3-stack">
                 <h3 className="text-h3">Гипотезы</h3>
                 <p className="text-body-18">
