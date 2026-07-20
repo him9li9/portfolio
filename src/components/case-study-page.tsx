@@ -625,7 +625,7 @@ export function CaseStudyPage() {
           <h2 className="text-h2">Дискавери</h2>
 
           <div className="flex flex-col gap-space-8">
-            <div className="text-body-18">
+            <div className="flex flex-col gap-space-4 text-body-18">
               <p>В рамках discovery я опиралась на:</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>анализ текущих пользовательских сценариев и логики экранов</li>
@@ -956,28 +956,30 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-8"
         >
-          <div className="flex flex-col gap-space-3">
-            <h2 className="text-h2">Решение</h2>
-            <p className="text-body-18">
-              Первые тесты показали: даже там, где логика казалась очевидной, пользователи
-              ошибались. Поэтому я собрала обратную связь, переработала несколько сценариев и
-              перепроверила их:
-            </p>
-          </div>
+          <div className="flex flex-col gap-space-4">
+            <div className="flex flex-col gap-space-3">
+              <h2 className="text-h2">Решение</h2>
+              <p className="text-body-18">
+                Первые тесты показали: даже там, где логика казалась очевидной, пользователи
+                ошибались. Поэтому я собрала обратную связь, переработала несколько сценариев и
+                перепроверила их:
+              </p>
+            </div>
 
-          <div className="flex flex-col gap-space-2 text-body-18">
-            <p className="text-body-18-semibold">1. Экран успеха после регистрации</p>
-            <p>
-              Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
-              что люди зависали на 2-3 минуты — галочка привлекала внимание, а кнопка терялась.
-            </p>
-            <p>
-              <span>→</span>{" "}
-              <span className="italic">
-                Объединила экран успеха с оформлением заказа, чтобы после регистрации через Госуслуги
-                пользователь сразу видел свой номер и условия тарифа — без лишних шагов и пауз.
-              </span>
-            </p>
+            <div className="flex flex-col gap-space-2 text-body-18">
+              <p className="text-body-18-semibold">1. Экран успеха после регистрации</p>
+              <p>
+                Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
+                что люди зависали на 2-3 минуты — галочка привлекала внимание, а кнопка терялась.
+              </p>
+              <p>
+                <span>→</span>{" "}
+                <span className="italic">
+                  Объединила экран успеха с оформлением заказа, чтобы после регистрации через Госуслуги
+                  пользователь сразу видел свой номер и условия тарифа — без лишних шагов и пауз.
+                </span>
+              </p>
+            </div>
           </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
