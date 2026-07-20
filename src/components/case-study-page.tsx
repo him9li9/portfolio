@@ -528,7 +528,7 @@ export function CaseStudyPage() {
           variants={item}
           className="-mt-space-14 scroll-mt-space-16 flex flex-col gap-space-8"
         >
-          <div className="flex flex-col gap-space-5">
+          <div className="flex flex-col gap-space-4">
             <h2 className="text-h2">О проекте</h2>
             <p className="text-body-18">
               Когда я присоединилась к проекту, приложение существовало в формате MVP, но проседала
@@ -538,7 +538,7 @@ export function CaseStudyPage() {
           </div>
 
           <div className="flex flex-col items-center gap-space-6">
-            <div className="flex w-full flex-col gap-space-4">
+            <div className="flex w-full flex-col gap-space-3">
               <h3 className="text-h3">Проблема</h3>
               <p className="text-body-18">
                 На обсуждении с командой выяснилась системная проблема — пользователь не понимал
@@ -586,7 +586,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-4">
+          <div className="flex flex-col gap-space-3">
             <h3 className="text-h3">Задача</h3>
             <p className="text-body-18">
               Основная задача проекта состояла в том, чтобы внедрить в продукт систему коммуникации
@@ -620,7 +620,7 @@ export function CaseStudyPage() {
           id="discovery"
           data-section-anchor="discovery"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-5"
+          className="scroll-mt-space-16 flex flex-col gap-space-4"
         >
           <h2 className="text-h2">Дискавери</h2>
 
@@ -635,7 +635,7 @@ export function CaseStudyPage() {
               </ul>
             </div>
 
-            <div className="flex flex-col gap-space-4">
+            <div className="flex flex-col gap-space-3">
               <h3 className="text-h3">Анализ текущей версии</h3>
               <p className="text-body-18">
                 <span className="text-body-18-semibold">Цель этапа —</span> понять, где именно пользователи теряются, совершают ошибки или тратят
@@ -761,7 +761,7 @@ export function CaseStudyPage() {
               где важна немедленная доступность связи и интернета.
             </p>
 
-            <div id="hypotheses" className="flex scroll-mt-space-16 flex-col gap-space-4">
+            <div id="hypotheses" className="flex scroll-mt-space-16 flex-col gap-space-3">
               <h3 className="text-h3">Анализ конкурентов</h3>
               <p className="text-body-18">
                 В ходе discovery я также изучила аналогичные продукты, в которых есть звонки.
@@ -821,7 +821,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="flex w-full max-w-[800px] flex-col gap-space-6">
-              <div className="flex flex-col gap-space-4">
+              <div className="flex flex-col gap-space-3">
                 <h3 className="text-h3">Гипотезы</h3>
                 <p className="text-body-18">
                   На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками продукта.
@@ -881,7 +881,7 @@ export function CaseStudyPage() {
           id="design"
           data-section-anchor="design"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-5"
+          className="scroll-mt-space-16 flex flex-col gap-space-4"
         >
           <h2 className="text-h2">Проектирование</h2>
           <div className="flex flex-col gap-space-6">
@@ -956,7 +956,7 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
-          <div className="flex flex-col gap-space-5">
+          <div className="flex flex-col gap-space-4">
             <h2 className="text-h2">Решение</h2>
             <p className="text-body-18">
               Первые тесты показали: даже там, где логика казалась очевидной, пользователи
@@ -1105,7 +1105,7 @@ export function CaseStudyPage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-5"
+          className="scroll-mt-space-16 flex flex-col gap-space-4"
         >
           <h2 className="text-h2">Результаты</h2>
           <div className="flex flex-col gap-space-5">
