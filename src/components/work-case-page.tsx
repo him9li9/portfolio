@@ -371,7 +371,7 @@ export function WorkCasePage() {
           variants={item}
           className="-mt-space-14 scroll-mt-space-16 flex flex-col gap-space-6"
         >
-          <div className="flex flex-col gap-space-4">
+          <div className="flex flex-col gap-space-3">
             <h2 className="text-h2">О проекте</h2>
             <p className="text-body-18">
               Один из продуктов KOMPaaS — конструктор сценариев звонков из элементов: голосового
@@ -381,7 +381,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-3">
+          <div className="flex flex-col gap-space-2">
             <h3 className="text-h3">Проблема</h3>
             <p className="text-body-18">
               Любые изменения в сценариях требовали участия разработки и занимали часы или дни. Из-за
@@ -391,7 +391,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-3">
+          <div className="flex flex-col gap-space-2">
             <h3 className="text-h3">Задача</h3>
             <p className="text-body-18">
               Нужно было устранить зависимость клиентов от разработки и превратить сценарии звонков
@@ -403,7 +403,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-3">
+          <div className="flex flex-col gap-space-2">
             <h3 className="text-h3">Этапы работы</h3>
             <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
@@ -426,7 +426,7 @@ export function WorkCasePage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
-          <div className="flex flex-col gap-space-4">
+          <div className="flex flex-col gap-space-3">
             <h2 className="text-h2">Дискавери</h2>
             <div className="text-body-18">
               <p>В рамках discovery я изучила, как пользователи работают со сценариями в текущей версии продукта:</p>
@@ -439,7 +439,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-3">
+          <div className="flex flex-col gap-space-2">
             <h3 className="text-h3">Анализ текущей версии</h3>
             <p className="text-body-18">
               Прежде чем предлагать изменения, я собрала обратную связь от поддержки, о том как
@@ -560,7 +560,7 @@ export function WorkCasePage() {
             правки повлияют на реальные звонки.
           </p>
 
-          <div className="flex flex-col gap-space-3">
+          <div className="flex flex-col gap-space-2">
             <h3 className="text-h3">Анализ конкурентов</h3>
             <p className="text-body-18">
               Чтобы понять, как упростить работу с конструктором, я изучила прямых конкурентов и
@@ -602,7 +602,7 @@ export function WorkCasePage() {
           </p>
 
           <div className="flex w-full max-w-[800px] flex-col gap-space-4">
-            <div className="flex flex-col gap-space-3">
+            <div className="flex flex-col gap-space-2">
               <h3 className="text-h3">Гипотезы</h3>
               <p className="text-body-18">
                 На основе анализа я выделила направления, которые могли повлиять на ключевые метрики:
@@ -658,7 +658,7 @@ export function WorkCasePage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
-          <div className="flex flex-col gap-space-4">
+          <div className="flex flex-col gap-space-3">
             <h2 className="text-h2">Проектирование</h2>
             <p className="text-body-18">
               Проектирование строилось вокруг трёх ключевых принципов:
@@ -733,7 +733,7 @@ export function WorkCasePage() {
               опубликован и какие изменения уже влияют на реальные звонки.
             </p>
 
-            <div className="flex flex-col gap-space-1">
+            <div className="flex flex-col gap-space-2">
               <h3 className="text-h3">Было</h3>
               <p className="text-body-18">
                 Создаёт сценарий →{" "}
@@ -747,7 +747,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-space-1">
+            <div className="flex flex-col gap-space-2">
               <h3 className="text-h3">Стало</h3>
               <p className="text-body-18">
                 Создаёт сценарий → Добавляет элемент на схему → Настраивает → Тестирует
@@ -771,7 +771,7 @@ export function WorkCasePage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
-          <div className="flex flex-col gap-space-4">
+          <div className="flex flex-col gap-space-3">
             <h2 className="text-h2">Решение</h2>
             <p className="text-body-18">
               Работая над редактором я проверяла, насколько менеджеры понимают структуру сценария,
@@ -1038,7 +1038,7 @@ export function WorkCasePage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-4"
+          className="scroll-mt-space-16 flex flex-col gap-space-3"
         >
           <h2 className="text-h2">Результаты</h2>
           <div className="flex flex-col gap-space-5">
