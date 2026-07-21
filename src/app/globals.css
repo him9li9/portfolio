@@ -197,6 +197,10 @@ a {
     @apply flex flex-col gap-space-2;
   }
 
+  [data-section-anchor] :is(p, li) {
+    text-wrap: pretty;
+  }
+
   .link-underline {
     background-image: linear-gradient(currentColor, currentColor);
     background-position: left bottom;
