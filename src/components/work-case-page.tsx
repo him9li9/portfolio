@@ -602,13 +602,14 @@ export function WorkCasePage() {
           </p>
 
           <div className="case-media-stack w-full max-w-[800px]">
-            <div className="case-h3-stack">
-              <h3 className="text-h3">Гипотезы</h3>
-              <p className="text-body-18">
-                На основе анализа я выделила направления, которые могли повлиять на ключевые метрики:
-              </p>
-            </div>
-            <div className="flex flex-col gap-space-4 text-body-18">
+            <div className="case-text-stack">
+              <div className="case-h3-stack">
+                <h3 className="text-h3">Гипотезы</h3>
+                <p className="text-body-18">
+                  На основе анализа я выделила направления, которые могли повлиять на ключевые метрики:
+                </p>
+              </div>
+              <div className="flex flex-col gap-space-6 text-body-18">
               <div className="flex flex-col gap-space-1">
                 <p className="text-body-18-semibold">1. Организация сценариев</p>
                 <p>
@@ -643,6 +644,7 @@ export function WorkCasePage() {
                   Если пользователь будет понимать, что изменения можно проверить до публикации,
                   снизится зависимость от разработки и вырастет self-service rate.
                 </p>
+              </div>
               </div>
             </div>
             <p className="text-body-18">
