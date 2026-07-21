@@ -468,7 +468,7 @@ export function CaseStudyPage() {
           id="overview"
           data-section-anchor="overview"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-8 sm:gap-space-8"
+          className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
           <div className="flex flex-col gap-space-5 text-primary">
             <div className="flex flex-col gap-space-1">
@@ -537,7 +537,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-media-stack items-center">
+          <div className="case-text-stack items-center">
             <div className="case-h3-stack w-full">
               <h3 className="text-h3">Проблема</h3>
               <p className="text-body-18">
@@ -554,7 +554,7 @@ export function CaseStudyPage() {
                   {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
                 </li>
               </ul>
-              <div className="case-figure-stack items-center">
+              <div className="case-figure-stack my-space-2 items-center">
                 <div className="w-[323px] max-w-full">
                   <Image
                     alt=""

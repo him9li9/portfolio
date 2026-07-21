@@ -322,7 +322,7 @@ export function WorkCasePage() {
           id="overview"
           data-section-anchor="overview"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-8"
+          className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
           <div className="flex flex-col gap-space-5 text-primary">
             <div className="flex flex-col gap-space-1">

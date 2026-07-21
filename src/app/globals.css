@@ -185,7 +185,7 @@ a {
     @apply flex flex-col gap-space-4;
   }
 
-  :is(.case-section-stack, .case-content-stack) > .case-figure-stack {
+  :is(.case-section-stack, .case-content-stack) > :not(p, .case-h2-stack, .case-h3-stack, .case-point-stack, .case-text-stack, .case-text-list-stack) {
     margin-block: -8px;
   }
 
@@ -201,7 +201,7 @@ a {
     @apply flex flex-col gap-space-2;
   }
 
-  [data-section-anchor] :is(p, li) {
+  [data-section-anchor] :is(p, li):not(.whitespace-nowrap) {
     text-wrap: pretty;
   }
 
