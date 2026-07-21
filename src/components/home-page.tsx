@@ -28,6 +28,7 @@ export function HomePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
   const softphonePreviewRef = useRef<HTMLDivElement | null>(null);
+  const softphoneCenterPhoneRef = useRef<HTMLImageElement | null>(null);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -84,13 +85,29 @@ export function HomePage() {
         return;
       }
       const element = softphonePreviewRef.current;
-      element.scrollLeft = (element.scrollWidth - element.clientWidth) / 2;
+      const centerPhone = softphoneCenterPhoneRef.current;
+      if (!centerPhone) {
+        return;
+      }
+      const elementRect = element.getBoundingClientRect();
+      const phoneRect = centerPhone.getBoundingClientRect();
+      element.scrollLeft += phoneRect.left + phoneRect.width / 2 - elementRect.left - element.clientWidth / 2;
     };
     const raf = requestAnimationFrame(centerSoftphonePreview);
+    const observer = new ResizeObserver(centerSoftphonePreview);
+    if (softphonePreviewRef.current) {
+      observer.observe(softphonePreviewRef.current);
+    }
+    if (softphoneCenterPhoneRef.current) {
+      observer.observe(softphoneCenterPhoneRef.current);
+    }
     window.addEventListener("resize", centerSoftphonePreview);
+    window.addEventListener("pageshow", centerSoftphonePreview);
     return () => {
       cancelAnimationFrame(raf);
+      observer.disconnect();
       window.removeEventListener("resize", centerSoftphonePreview);
+      window.removeEventListener("pageshow", centerSoftphonePreview);
     };
   }, []);
 
@@ -195,6 +212,7 @@ export function HomePage() {
                       quality={100}
                     />
                     <Image
+                      ref={softphoneCenterPhoneRef}
                       alt="Экран тарифа MCN Softphone"
                       src={assets.phone2}
                       width={732}
