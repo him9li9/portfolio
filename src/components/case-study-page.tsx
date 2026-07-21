@@ -1014,7 +1014,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[950px] -translate-x-1/2 flex-col items-center justify-center gap-space-4">
+          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[950px] -translate-x-1/2 flex-col items-center justify-center gap-space-1">
             <div
               className="flex w-full items-center justify-center px-space-4 sm:px-0"
               style={{ height: 600 }}
