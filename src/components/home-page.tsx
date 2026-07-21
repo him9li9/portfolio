@@ -181,9 +181,9 @@ export function HomePage() {
               >
                 <div
                   ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary py-space-6 pl-space-4 pr-0 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-4 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
+                  className="relative left-1/2 w-screen -translate-x-1/2 transform-gpu overflow-x-auto bg-secondary py-space-6 pl-space-4 pr-0 transition-transform duration-200 ease-out group-hover:scale-[1.02] sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-4 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
                 >
-                  <div className="flex w-max transform-gpu items-center justify-center gap-space-6 transition-transform duration-200 ease-out group-hover:scale-[1.02] sm:w-auto sm:gap-space-4">
+                  <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
                     <Image
                       alt="Экран регистрации MCN Softphone"
                       src={assets.phone1}
@@ -263,14 +263,14 @@ export function HomePage() {
                 aria-label="Открыть кейс KOMPaaS"
                 className="group block w-full"
               >
-                <div className="relative w-full overflow-hidden rounded-[8px] sm:left-1/2 sm:w-[900px] sm:-translate-x-1/2">
+                <div className="relative w-full transform-gpu overflow-hidden rounded-[8px] transition-transform duration-200 ease-out group-hover:scale-[1.02] sm:left-1/2 sm:w-[900px] sm:-translate-x-1/2">
                   <Image
                     alt="KOMPaaS canvas preview"
                     src={assets.vpbxCanvas}
                     width={2400}
                     height={1500}
                     sizes="(max-width: 640px) calc(100vw - 32px), 900px"
-                    className="h-auto w-full transform-gpu transition-transform duration-200 ease-out group-hover:scale-[1.02]"
+                    className="h-auto w-full"
                   quality={100}
                   />
                 </div>
