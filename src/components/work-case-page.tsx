@@ -442,8 +442,8 @@ export function WorkCasePage() {
           <div className="case-h3-stack">
             <h3 className="text-h3">Анализ текущей версии</h3>
             <p className="text-body-18">
-              Прежде чем предлагать изменения, я собрала обратную связь от поддержки, о том как
-              пользователи работают со сценариями сейчас и выделила несколько проблемных зон:
+              Прежде чем предлагать изменения, я собрала обратную связь от поддержки, о&nbsp;том как
+              пользователи работают со&nbsp;сценариями сейчас и выделила несколько проблемных зон:
             </p>
           </div>
 
@@ -474,12 +474,12 @@ export function WorkCasePage() {
               </button>
             </div>
             <p className="w-full text-center text-caption-14 text-secondary">
-              Текущий редактор: 1. сценарии&nbsp; 2. настройка&nbsp; 3. элементы&nbsp; 4. канвас
+              Текущий редактор: 1.&nbsp;сценарии&nbsp; 2.&nbsp;настройка&nbsp; 3.&nbsp;элементы&nbsp; 4.&nbsp;канвас
             </p>
           </div>
 
           <div className="case-h3-stack">
-            <p className="text-body-18-semibold">1. Сценариями неудобно управлять</p>
+            <p className="text-body-18-semibold">1.&nbsp;Сценариями неудобно управлять</p>
             <p className="text-body-18">
               Список сценариев в сайдбаре ограничен по высоте, отсутствовал поиск и группировка.
             </p>
@@ -490,7 +490,7 @@ export function WorkCasePage() {
           </div>
 
           <div className="case-h3-stack">
-            <p className="text-body-18-semibold">2. Настройка разделена между экранами</p>
+            <p className="text-body-18-semibold">2.&nbsp;Настройка разделена между экранами</p>
             <p className="text-body-18">
               Создание элемента, его настройка и добавление на canvas происходили в разных местах.
             </p>
@@ -532,7 +532,7 @@ export function WorkCasePage() {
           </div>
 
           <div className="case-h3-stack">
-            <p className="text-body-18-semibold">3. Сложности с библиотекой элементов</p>
+            <p className="text-body-18-semibold">3.&nbsp;Сложности с библиотекой элементов</p>
             <p className="text-body-18">
               Элементы не были сгруппированы по сценариям использования, а названия не всегда
               отражали их поведение.
@@ -544,7 +544,7 @@ export function WorkCasePage() {
           </div>
 
           <div className="case-h3-stack">
-            <p className="text-body-18-semibold">4. Сценарии не масштабируются</p>
+            <p className="text-body-18-semibold">4.&nbsp;Сценарии не масштабируются</p>
             <p className="text-body-18">
               По мере роста схемы связи пересекались, ветки накладывались друг на друга, а основной
               поток было сложно отличить от второстепенных.
@@ -611,35 +611,35 @@ export function WorkCasePage() {
               </div>
               <div className="flex flex-col gap-space-6 text-body-18">
               <div className="flex flex-col gap-space-1">
-                <p className="text-body-18-semibold">1. Организация сценариев</p>
+                <p className="text-body-18-semibold">1.&nbsp;Организация сценариев</p>
                 <p>
                   Если сценарии станут более структурированными, пользователям будет проще находить
                   нужный сценарий и быстрее вносить изменения.
                 </p>
               </div>
               <div className="flex flex-col gap-space-1">
-                <p className="text-body-18-semibold">2. Единый контекст</p>
+                <p className="text-body-18-semibold">2.&nbsp;Единый контекст</p>
                 <p>
                   Если работа со сценарием будет происходить в одном контексте, снизится количество
                   ошибок и нагрузка на поддержку, так как изменения станут более предсказуемыми.
                 </p>
               </div>
               <div className="flex flex-col gap-space-1">
-                <p className="text-body-18-semibold">3. Понятные сущности</p>
+                <p className="text-body-18-semibold">3.&nbsp;Понятные сущности</p>
                 <p>
                   Если элементы будут названы и сгруппированы по задачам пользователя, снизится
                   порог входа и сократится time-to-change.
                 </p>
               </div>
               <div className="flex flex-col gap-space-1">
-                <p className="text-body-18-semibold">4. Читаемость</p>
+                <p className="text-body-18-semibold">4.&nbsp;Читаемость</p>
                 <p>
                   Если структура сценария останется понятной даже при росте, пользователям будет
                   проще воспринимать сценарий как единую систему и быстрее его редактировать.
                 </p>
               </div>
               <div className="flex flex-col gap-space-1">
-                <p className="text-body-18-semibold">5. Безопасные изменения</p>
+                <p className="text-body-18-semibold">5.&nbsp;Безопасные изменения</p>
                 <p>
                   Если пользователь будет понимать, что изменения можно проверить до публикации,
                   снизится зависимость от разработки и вырастет self-service rate.
@@ -810,13 +810,13 @@ export function WorkCasePage() {
               </button>
             </div>
             <p className="text-center text-caption-14 text-secondary">
-              Сценарии, canvas, элементы и публикация — в едином рабочем пространстве
+              Сценарии, canvas, элементы и публикация — в&nbsp;едином рабочем пространстве
             </p>
           </div>
 
           <div className="case-content-stack">
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">1. Организовать сценарии</p>
+              <p className="text-body-18-semibold">1.&nbsp;Организовать сценарии</p>
               <p>
                 Я сохранила привычную модель списка и улучшила навигацию по сценариям: добавила
                 группировку по проектам, поиск, статусы и быстрые действия.
@@ -855,7 +855,7 @@ export function WorkCasePage() {
 
           <div className="case-content-stack">
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">2. Сделать элементы понятнее</p>
+              <p className="text-body-18-semibold">2.&nbsp;Сделать элементы понятнее</p>
               <p>
                 Во время тестов пользователи часто выбирали элементы по названию и не всегда
                 понимали разницу между ними. Чтобы это исправить, я провела карточную сортировку,
@@ -896,7 +896,7 @@ export function WorkCasePage() {
 
           <div className="case-content-stack">
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">3. Вернуть пользователю контекст</p>
+              <p className="text-body-18-semibold">3.&nbsp;Вернуть пользователю контекст</p>
               <p>
                 Перенесла создание и настройку блоков прямо в canvas, чтобы пользователь мог
                 добавлять элементы на схему, редактировать их и сразу увидеть как изменения влияют
@@ -947,7 +947,7 @@ export function WorkCasePage() {
 
           <div className="case-content-stack">
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">4. Сделать большие сценарии читаемыми</p>
+              <p className="text-body-18-semibold">4.&nbsp;Сделать большие сценарии читаемыми</p>
               <p>
                 Чтобы большие флоу было проще читать, я упростила вторичные ветки, добавила
                 подсветку связей между блоками, minimap и панель для навигации по схеме.
@@ -987,7 +987,7 @@ export function WorkCasePage() {
 
           <div className="case-content-stack">
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">5. Сделать публикацию предсказуемой</p>
+              <p className="text-body-18-semibold">5.&nbsp;Сделать публикацию предсказуемой</p>
               <p>
                 Ранее менеджеры не всегда понимали, какие изменения уже влияют на реальные звонки, а
                 какие ещё находятся в работе. Поэтому я добавила статусы сценария (draft / published)

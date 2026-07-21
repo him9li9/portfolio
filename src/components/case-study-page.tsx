@@ -645,7 +645,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">1. Сценарий активации разорван между вебом и приложением</p>
+              <p className="text-body-18-semibold">1.&nbsp;Сценарий активации разорван между вебом и приложением</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>регистрация вынесена в веб-кабинет и требует ручной верификации менеджером</li>
                 <li>после отправки заявки нет объяснения со статусом и следующими действиями</li>
@@ -657,7 +657,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
+              <div className="flex w-full flex-col items-center gap-space-2 bg-secondary px-space-4 py-space-6 sm:gap-0 sm:rounded-[12px] sm:p-space-6">
                 <button
                   type="button"
                   aria-label="Open discovery scheme"
@@ -692,7 +692,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">2. Стоимость и списания не прозрачны в момент звонка</p>
+              <p className="text-body-18-semibold">2.&nbsp;Стоимость и списания не прозрачны в момент звонка</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>информацию о стоимости звонков в роуминге нужно было искать на сайте</li>
                 <li>после завершения звонка списания выглядят неожиданными</li>
@@ -703,7 +703,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 overflow-hidden bg-secondary p-space-4 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
+            <div className="-mx-space-4 overflow-hidden bg-secondary px-space-4 py-space-6 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
               <div className="mx-auto w-full max-w-[427px]">
                 <Image
                   alt=""
@@ -719,7 +719,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">3. Некачественная обратная связь</p>
+              <p className="text-body-18-semibold">3.&nbsp;Некачественная обратная связь</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>в приложении нет понятной точки входа в поддержку</li>
                 <li>пользователи ищут ответы в разных каналах и повторяют вопросы</li>
@@ -730,7 +730,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 overflow-hidden bg-secondary p-space-4 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
+            <div className="-mx-space-4 overflow-hidden bg-secondary px-space-4 py-space-6 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
               <div className="mx-auto flex w-full max-w-[427px] flex-col gap-space-4">
                 <Image
                   alt=""
@@ -829,7 +829,7 @@ export function CaseStudyPage() {
               </div>
               <div className="flex flex-col gap-space-3 sm:flex-row sm:flex-wrap">
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">1. Ясность на старте</p>
+                  <p className="text-body-18-semibold">1.&nbsp;Ясность на старте</p>
                   <p className="text-caption-14 text-primary">
                     Если пользователь понимает, на каком этапе онбординга находится и когда сможет
                     начать звонить, ему проще дойти до первого звонка.
@@ -839,7 +839,7 @@ export function CaseStudyPage() {
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">2. Прозрачность стоимости</p>
+                  <p className="text-body-18-semibold">2.&nbsp;Прозрачность стоимости</p>
                   <p className="text-caption-14 text-primary">
                     Если пользователь видит стоимость звонка и состояние баланса до начала вызова,
                     условия тарификации станут более прозрачными.
@@ -849,7 +849,7 @@ export function CaseStudyPage() {
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">3. Доступность ответов</p>
+                  <p className="text-body-18-semibold">3.&nbsp;Доступность ответов</p>
                   <p className="text-caption-14 text-primary">
                     Если ответы на частые вопросы доступны внутри приложения, он реже будет
                     прерывать сценарий и обращаться в поддержку.
@@ -859,7 +859,7 @@ export function CaseStudyPage() {
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">4. Очевидность следующего шага</p>
+                  <p className="text-body-18-semibold">4.&nbsp;Очевидность следующего шага</p>
                   <p className="text-caption-14 text-primary">
                     Если после ошибки или незавершённого действия пользователь понимает, что делать
                     дальше, ему проще вернуться к действию.
@@ -899,7 +899,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
+              <div className="flex w-full flex-col items-center gap-space-2 bg-secondary px-space-4 py-space-6 sm:gap-0 sm:rounded-[12px] sm:p-space-6">
                 <button
                   type="button"
                   aria-label="Open userflow"
@@ -967,7 +967,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">1. Экран успеха после регистрации</p>
+              <p className="text-body-18-semibold">1.&nbsp;Экран успеха после регистрации</p>
               <p>
                 Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
                 что люди зависали на 2-3 минуты — галочка привлекала внимание, а кнопка терялась.
@@ -1000,7 +1000,7 @@ export function CaseStudyPage() {
           </div>
 
           <div className="case-point-stack text-body-18">
-            <p className="text-body-18-semibold">2. Узнать стоимость звонка</p>
+            <p className="text-body-18-semibold">2.&nbsp;Узнать стоимость звонка</p>
             <p>
               В первой версии цену можно было увидеть, только начав набирать номер. Некоторым пользователям
               было неудобно вводить знакомый номер каждый раз, чтобы оценить стоимость.
@@ -1039,7 +1039,7 @@ export function CaseStudyPage() {
           </div>
 
           <div className="case-point-stack text-body-18">
-            <p className="text-body-18-semibold">3. Помощь и подсказки</p>
+            <p className="text-body-18-semibold">3.&nbsp;Помощь и подсказки</p>
             <p>
               Ранее был экран ошибки, где просто выводилась причина: «Регистрация не пройдена»,
               «Недостаточно средств» и другие, но пользователи всё равно не понимали, что делать
