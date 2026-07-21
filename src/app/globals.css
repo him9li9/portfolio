@@ -162,7 +162,7 @@ a {
   }
 
   .case-section-stack {
-    @apply flex flex-col gap-space-8;
+    @apply flex flex-col gap-space-6;
   }
 
   .case-h2-stack {
@@ -174,7 +174,7 @@ a {
   }
 
   .case-content-stack {
-    @apply flex flex-col gap-space-8;
+    @apply flex flex-col gap-space-6;
   }
 
   .case-media-stack {
@@ -183,10 +183,6 @@ a {
 
   .case-figure-stack {
     @apply flex flex-col gap-space-4;
-  }
-
-  :is(.case-section-stack, .case-content-stack) > :not(p, .case-h2-stack, .case-h3-stack, .case-point-stack, .case-text-stack, .case-text-list-stack) {
-    margin-block: -8px;
   }
 
   .case-text-list-stack {

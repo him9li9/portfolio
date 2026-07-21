@@ -292,7 +292,7 @@ export function HomePage() {
                   <div className="h-px w-full bg-border-elevated" />
                   <p className="w-full max-w-[500px] text-body-18 text-primary">
                     B2B-платформа для автоматизации контакт-центров. Снизила зависимость клиентов
-                    от разработки в управлении сценариями звонков.
+                    от&nbsp;разработки в&nbsp;управлении сценариями звонков.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-1">
                     <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
