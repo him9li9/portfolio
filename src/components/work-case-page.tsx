@@ -717,7 +717,7 @@ export function WorkCasePage() {
                 </div>
               </div>
               <p className="w-full text-[14px] leading-[160%] text-primary">
-                Понимать, какие изменения уже влияют на реальные звонки.
+                Понимать, какие изменения уже влияют на звонки.
               </p>
               <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
                 <div>
@@ -751,8 +751,7 @@ export function WorkCasePage() {
 
             <div className="case-h3-stack">
               <h3 className="text-h3">Стало</h3>
-              <div className="flex items-center gap-space-5">
-                <span className="h-14 w-2 shrink-0 rounded-full bg-elevated-hover" />
+              <div>
                 <p className="text-body-18">
                   Создаёт сценарий → Добавляет и настраивает элементы на схеме → Публикует изменения
                 </p>
