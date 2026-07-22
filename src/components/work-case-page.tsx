@@ -816,6 +816,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
+          <div className="flex flex-col gap-space-4">
           <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">1.&nbsp;Организовать сценарии</p>
@@ -1035,6 +1036,7 @@ export function WorkCasePage() {
               редактирования и публикации с клиентскими кейсами я подготовила финальные макеты и
               спецификации для передачи в разработку.
             </p>
+          </div>
           </div>
         </motion.section>
 

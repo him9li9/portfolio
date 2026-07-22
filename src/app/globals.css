@@ -181,10 +181,6 @@ a {
     gap: 16px;
   }
 
-  .case-numbered-media-point + .case-numbered-media-point {
-    margin-top: -8px;
-  }
-
   .case-numbered-point-media {
     margin-top: -8px;
   }
@@ -238,7 +234,7 @@ a {
     @apply flex flex-col gap-space-2;
   }
 
-  [data-section-anchor] :is(p, li):not(.whitespace-nowrap) {
+  [data-section-anchor] :is(p, li):not(.whitespace-nowrap, .text-body-18-semibold) {
     text-wrap: pretty;
   }
 
