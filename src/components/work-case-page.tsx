@@ -816,7 +816,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-content-stack">
+          <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">1.&nbsp;Организовать сценарии</p>
               <p>
@@ -855,7 +855,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="case-content-stack">
+          <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">2.&nbsp;Сделать элементы понятнее</p>
               <p>
@@ -896,7 +896,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="case-content-stack">
+          <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">3.&nbsp;Вернуть пользователю контекст</p>
               <p>
@@ -947,7 +947,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="case-content-stack">
+          <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">4.&nbsp;Сделать большие сценарии читаемыми</p>
               <p>
@@ -987,7 +987,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="case-content-stack">
+          <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">5.&nbsp;Сделать публикацию предсказуемой</p>
               <p>

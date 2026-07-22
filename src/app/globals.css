@@ -177,6 +177,22 @@ a {
     @apply flex flex-col gap-space-6;
   }
 
+  .case-numbered-media-point {
+    gap: 16px;
+  }
+
+  .case-numbered-media-point + .case-numbered-media-point {
+    margin-top: -8px;
+  }
+
+  .case-numbered-point-media {
+    margin-top: -8px;
+  }
+
+  .case-numbered-point-media + :is(.case-point-stack, .case-text-stack) {
+    margin-top: -8px;
+  }
+
   .case-media-stack {
     @apply flex flex-col gap-space-6;
   }
