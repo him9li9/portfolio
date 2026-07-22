@@ -485,7 +485,7 @@ export function CaseStudyPage() {
           </div>
           <div
             ref={heroPhonesRef}
-            className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto pb-space-4 sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible sm:pb-0"
+            className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible"
           >
             <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
               <Image
@@ -772,7 +772,7 @@ export function CaseStudyPage() {
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[800px] sm:pl-0">
               <div className="case-figure-stack w-full items-center">
-                <div className="w-full overflow-x-auto pb-space-2 sm:overflow-visible sm:pb-0">
+                <div className="w-full overflow-x-auto sm:overflow-visible">
                   <div className="w-[800px] max-w-none sm:mx-auto sm:w-full">
                     <Image
                       alt=""
@@ -800,7 +800,7 @@ export function CaseStudyPage() {
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[950px] sm:pl-0">
               <div className="case-figure-stack w-full items-center">
-                <div className="w-full overflow-x-auto pb-space-2 sm:overflow-visible sm:pb-0">
+                <div className="w-full overflow-x-auto sm:overflow-visible">
                   <div className="w-[950px] max-w-none sm:mx-auto sm:w-full">
                     <Image
                       alt=""
@@ -983,7 +983,7 @@ export function CaseStudyPage() {
           </div>
 
             <div className="relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
-            <div className="w-full overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
+            <div className="w-full overflow-x-auto sm:overflow-visible">
               <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
                 <Image
                   alt=""
@@ -1060,7 +1060,7 @@ export function CaseStudyPage() {
 
           <div className="relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div className="w-full">
-              <div className="overflow-x-auto pb-space-4 sm:overflow-visible sm:pb-0">
+              <div className="overflow-x-auto sm:overflow-visible">
                 <div className="w-[1000px] max-w-none sm:hidden">
                   <Image
                     alt=""
