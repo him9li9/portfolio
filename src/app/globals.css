@@ -178,27 +178,11 @@ a {
   }
 
   .case-numbered-media-point {
-    gap: 0;
-  }
-
-  .case-numbered-media-point > * + * {
-    margin-top: 24px;
-  }
-
-  .case-numbered-media-point > .case-figure-stack + p {
-    margin-top: 16px;
+    gap: 24px;
   }
 
   .case-numbered-points {
-    @apply flex flex-col;
-  }
-
-  .case-numbered-media-point + .case-numbered-media-point {
-    margin-top: 24px;
-  }
-
-  .case-numbered-media-point-captioned + .case-numbered-media-point {
-    margin-top: 16px;
+    @apply flex flex-col gap-space-6;
   }
 
   .case-numbered-point-media-captioned + :is(.case-point-stack, .case-text-stack) {
