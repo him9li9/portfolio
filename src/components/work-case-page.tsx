@@ -712,19 +712,19 @@ export function WorkCasePage() {
                   3
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-0">
-                  <p className="text-body-18-semibold text-primary">Validate</p>
-                  <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Проверить</p>
+                  <p className="text-body-18-semibold text-primary">Publish</p>
+                  <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Опубликовать</p>
                 </div>
               </div>
               <p className="w-full text-[14px] leading-[160%] text-primary">
-                Убедиться, что изменения работают без ошибок.
+                Понимать, какие изменения уже влияют на реальные звонки.
               </p>
               <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
                 <div>
                   <p>• Статусы для сценариев</p>
                   <p>(черновик / опубликовано)</p>
                 </div>
-                <p>• Тестирование до публикации</p>
+                <p>• Публикация изменений</p>
               </div>
             </div>
           </div>
