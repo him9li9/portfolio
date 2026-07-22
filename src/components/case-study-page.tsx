@@ -1086,7 +1086,7 @@ export function CaseStudyPage() {
                   />
                 </div>
               </div>
-              <p className="mt-space-4 w-full text-center text-caption-14 leading-[160%] text-secondary sm:mx-auto sm:max-w-[1000px]">
+              <p className="mt-space-3 w-full text-center text-caption-14 leading-[160%] text-secondary sm:mx-auto sm:max-w-[1000px]">
                 Возвращаем на сценарий, но оставляем возможность написать в поддержку
               </p>
             </div>
