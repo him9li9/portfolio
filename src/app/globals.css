@@ -182,7 +182,7 @@ a {
   }
 
   .case-figure-stack {
-    @apply flex flex-col gap-space-4;
+    @apply flex flex-col gap-space-3;
   }
 
   .case-text-list-stack {
