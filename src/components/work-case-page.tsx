@@ -816,7 +816,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-4">
+          <div className="case-numbered-points">
           <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">1.&nbsp;Организовать сценарии</p>
@@ -897,7 +897,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="case-content-stack case-numbered-media-point">
+          <div className="case-content-stack case-numbered-media-point case-numbered-media-point-captioned">
             <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">3.&nbsp;Вернуть пользователю контекст</p>
               <p>
@@ -988,7 +988,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="case-content-stack case-numbered-media-point">
+          <div className="case-content-stack case-numbered-media-point case-numbered-media-point-captioned">
             <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">5.&nbsp;Сделать публикацию предсказуемой</p>
               <p>

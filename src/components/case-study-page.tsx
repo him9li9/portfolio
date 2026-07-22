@@ -1014,7 +1014,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-numbered-point-media relative left-1/2 flex w-[calc(100vw-32px)] max-w-[950px] -translate-x-1/2 flex-col items-center justify-center gap-space-1">
+          <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 flex w-[calc(100vw-32px)] max-w-[950px] -translate-x-1/2 flex-col items-center justify-center gap-space-1">
             <div
               className="flex w-full items-center justify-center px-space-4 sm:px-0"
               style={{ height: 600 }}
@@ -1058,7 +1058,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-numbered-point-media relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+          <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div className="w-full">
               <div className="case-horizontal-scroll overflow-x-auto sm:overflow-visible">
                 <div className="w-[1000px] max-w-none sm:hidden">

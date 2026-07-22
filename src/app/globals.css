@@ -178,10 +178,30 @@ a {
   }
 
   .case-numbered-media-point {
-    gap: 24px;
+    gap: 0;
   }
 
-  .case-numbered-point-media + :is(.case-point-stack, .case-text-stack) {
+  .case-numbered-media-point > * + * {
+    margin-top: 24px;
+  }
+
+  .case-numbered-media-point > .case-figure-stack + p {
+    margin-top: 16px;
+  }
+
+  .case-numbered-points {
+    @apply flex flex-col;
+  }
+
+  .case-numbered-media-point + .case-numbered-media-point {
+    margin-top: 24px;
+  }
+
+  .case-numbered-media-point-captioned + .case-numbered-media-point {
+    margin-top: 16px;
+  }
+
+  .case-numbered-point-media-captioned + :is(.case-point-stack, .case-text-stack) {
     margin-top: -8px;
   }
 
