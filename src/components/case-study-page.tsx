@@ -1037,7 +1037,7 @@ export function CaseStudyPage() {
               </div>
             </div>
             <p className="w-full text-center text-caption-14 text-secondary">
-              В&nbsp;новом флоу звонка стоимость за минуту видна сразу
+              Стоимость за минуту звонка видна сразу
             </p>
           </div>
 
