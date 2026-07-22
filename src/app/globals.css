@@ -178,11 +178,7 @@ a {
   }
 
   .case-numbered-media-point {
-    gap: 16px;
-  }
-
-  .case-numbered-point-media {
-    margin-top: -8px;
+    gap: 24px;
   }
 
   .case-numbered-point-media + :is(.case-point-stack, .case-text-stack) {
