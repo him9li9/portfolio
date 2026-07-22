@@ -201,6 +201,12 @@ a {
     text-wrap: pretty;
   }
 
+  @media (max-width: 639px) {
+    [data-section-anchor] p.text-center.text-caption-14 {
+      padding-right: 16px;
+    }
+  }
+
   .link-underline {
     background-image: linear-gradient(currentColor, currentColor);
     background-position: left bottom;
