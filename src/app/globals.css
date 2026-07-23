@@ -162,7 +162,7 @@ a {
   }
 
   .case-section-stack {
-    @apply flex flex-col gap-space-8;
+    @apply flex flex-col gap-space-6;
   }
 
   .case-h2-stack {
@@ -173,8 +173,12 @@ a {
     @apply flex flex-col gap-space-3;
   }
 
+  :is(.case-section-stack, .case-content-stack) > * + .case-h3-stack {
+    margin-top: 8px;
+  }
+
   .case-content-stack {
-    @apply flex flex-col gap-space-8;
+    @apply flex flex-col gap-space-6;
   }
 
   .case-numbered-media-point {
