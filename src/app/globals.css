@@ -185,10 +185,6 @@ a {
     @apply flex flex-col gap-space-6;
   }
 
-  .case-numbered-point-media-captioned + :is(.case-point-stack, .case-text-stack) {
-    margin-top: -8px;
-  }
-
   .case-media-stack {
     @apply flex flex-col gap-space-6;
   }

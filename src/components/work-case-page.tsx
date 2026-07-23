@@ -897,7 +897,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-4">
+          <div className="flex flex-col gap-space-6">
           <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">3.&nbsp;Вернуть пользователю контекст</p>
@@ -1004,7 +1004,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-space-4">
+            <div className="flex flex-col gap-space-6">
             <div className="case-figure-stack relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
               <button
                 type="button"
