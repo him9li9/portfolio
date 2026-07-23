@@ -478,7 +478,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-h3-stack">
+          <div className="case-point-stack">
             <p className="text-body-18-semibold">1.&nbsp;Сценариями неудобно управлять</p>
             <p className="text-body-18">
               Список сценариев в сайдбаре ограничен по высоте, отсутствовал поиск и группировка.
@@ -489,7 +489,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-h3-stack">
+          <div className="case-point-stack">
             <p className="text-body-18-semibold">2.&nbsp;Настройка разделена между экранами</p>
             <p className="text-body-18">
               Создание элемента, его настройка и добавление на canvas происходили в разных местах.
@@ -531,7 +531,7 @@ export function WorkCasePage() {
             </button>
           </div>
 
-          <div className="case-h3-stack">
+          <div className="case-point-stack">
             <p className="text-body-18-semibold">3.&nbsp;Сложности с библиотекой элементов</p>
             <p className="text-body-18">
               Элементы не были сгруппированы по сценариям использования, а названия не всегда
@@ -543,7 +543,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-h3-stack">
+          <div className="case-point-stack">
             <p className="text-body-18-semibold">4.&nbsp;Сценарии не масштабируются</p>
             <p className="text-body-18">
               По мере роста схемы связи пересекались, ветки накладывались друг на друга, а основной
@@ -610,35 +610,35 @@ export function WorkCasePage() {
                 </p>
               </div>
               <div className="flex flex-col gap-space-6 text-body-18">
-              <div className="flex flex-col gap-space-1">
+              <div className="flex flex-col gap-space-2">
                 <p className="text-body-18-semibold">1.&nbsp;Организация сценариев</p>
                 <p>
                   Если сценарии станут более структурированными, пользователям будет проще находить
                   нужный сценарий и быстрее вносить изменения.
                 </p>
               </div>
-              <div className="flex flex-col gap-space-1">
+              <div className="flex flex-col gap-space-2">
                 <p className="text-body-18-semibold">2.&nbsp;Единый контекст</p>
                 <p>
                   Если работа со сценарием будет происходить в одном контексте, снизится количество
                   ошибок и нагрузка на поддержку, так как изменения станут более предсказуемыми.
                 </p>
               </div>
-              <div className="flex flex-col gap-space-1">
+              <div className="flex flex-col gap-space-2">
                 <p className="text-body-18-semibold">3.&nbsp;Понятные сущности</p>
                 <p>
                   Если элементы будут названы и сгруппированы по задачам пользователя, снизится
                   порог входа и сократится time-to-change.
                 </p>
               </div>
-              <div className="flex flex-col gap-space-1">
+              <div className="flex flex-col gap-space-2">
                 <p className="text-body-18-semibold">4.&nbsp;Читаемость</p>
                 <p>
                   Если структура сценария останется понятной даже при росте, пользователям будет
                   проще воспринимать сценарий как единую систему и быстрее его редактировать.
                 </p>
               </div>
-              <div className="flex flex-col gap-space-1">
+              <div className="flex flex-col gap-space-2">
                 <p className="text-body-18-semibold">5.&nbsp;Безопасные изменения</p>
                 <p>
                   Если пользователь будет понимать, что изменения можно проверить до публикации,
