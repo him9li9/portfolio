@@ -5,14 +5,15 @@
 :root {
   --color-bg-primary: #171717;
   --color-bg-primary-rgb: 23 23 23;
-  --color-bg-secondary: #1c1c1c;
-  --color-bg-elevated: #232323;
+  --color-bg-secondary: #232323;
+  --color-bg-chips: #2d2d2d;
+  --color-bg-elevated: #2d2d2d;
   --color-bg-elevated-hover: #333333;
   --color-bg-elevated-accent: #ff8566;
   --color-border-elevated: #282828;
   --color-text-primary: #ffffff;
   --color-text-secondary-background: #afafaf;
-  --color-text-secondary-elevated: #e4e4e4;
+  --color-text-secondary-elevated: #d2d2d2;
 }
 
 * {
@@ -54,6 +55,10 @@ a {
 
   .bg-secondary {
     background-color: var(--color-bg-secondary);
+  }
+
+  .bg-chips {
+    background-color: var(--color-bg-chips);
   }
 
   .bg-elevated {
@@ -107,6 +112,12 @@ a {
     line-height: 32px;
   }
 
+  .text-h4 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+  }
+
   .text-body-18 {
     font-size: 18px;
     font-weight: 400;
@@ -148,6 +159,85 @@ a {
     font-size: 14px;
     font-weight: 600;
     line-height: 160%;
+  }
+
+  .case-section-stack {
+    @apply flex flex-col gap-space-6;
+  }
+
+  .case-h2-stack {
+    @apply flex flex-col gap-space-4;
+  }
+
+  .case-h3-stack {
+    @apply flex flex-col gap-space-3;
+  }
+
+  .case-content-stack {
+    @apply flex flex-col gap-space-6;
+  }
+
+  .case-numbered-media-point {
+    gap: 24px;
+  }
+
+  .case-numbered-points {
+    @apply flex flex-col gap-space-6;
+  }
+
+  .case-media-stack {
+    @apply flex flex-col gap-space-6;
+  }
+
+  .case-figure-stack {
+    @apply flex flex-col gap-space-3;
+  }
+
+  .case-horizontal-scroll {
+    padding-bottom: 6px;
+    scrollbar-color: #828282 transparent;
+    scrollbar-width: thin;
+  }
+
+  .case-horizontal-scroll::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .case-horizontal-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .case-horizontal-scroll::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: #828282;
+  }
+
+  @media (min-width: 640px) {
+    .case-horizontal-scroll {
+      padding-bottom: 0;
+    }
+  }
+
+  .case-text-list-stack {
+    @apply flex flex-col gap-space-2;
+  }
+
+  .case-text-stack {
+    @apply flex flex-col gap-space-4;
+  }
+
+  .case-point-stack {
+    @apply flex flex-col gap-space-2;
+  }
+
+  [data-section-anchor] :is(p, li):not(.whitespace-nowrap, .text-body-18-semibold) {
+    text-wrap: pretty;
+  }
+
+  @media (max-width: 639px) {
+    [data-section-anchor] p.text-center.text-caption-14 {
+      padding-right: 16px;
+    }
   }
 
   .link-underline {

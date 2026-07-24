@@ -3,27 +3,27 @@
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const assets = {
-  heart: "/figma/heart.svg",
-  phone1: "/figma/Main/phone%201.png?v=20260621b",
-  phone2: "/figma/Main/phone%202.png?v=20260621b",
-  phone3: "/figma/Main/phone%203.png?v=20260621b",
-  arrowForward: "/figma/Main/arrow_forward.svg",
-  chartSmall: "/figma/case-chart-small.png?v=20260621b",
-  chartBig: "/figma/case-chart-big.png?v=20260621b",
-  discoveryActivation: "/figma/case-discovery-activation.png?v=20260621b",
-  discoveryCost: "/figma/case-discovery-cost.png?v=20260621b",
-  discoveryFeedback1: "/figma/case-discovery-feedback-1.png?v=20260621b",
-  discoveryFeedback2: "/figma/case-discovery-feedback-2.png?v=20260621b",
-  competitorWhatsapp: "/figma/case-competitor-whatsapp.png?v=20260621b",
-  competitorOpenphone: "/figma/case-competitor-openphone.png?v=20260621b",
-  userflow: "/figma/case-userflow.png?v=20260621b",
-  solutionSuccess: "/figma/case-solution-success.png?v=20260621b",
-  callFlowVideo: "/figma/call-flow-site.mp4",
-  callFlowPoster: "/figma/call-flow-poster.png",
-  solutionError: "/figma/case-solution-error.png?v=20260621b"
+  heart: "/figma/Icons/heart.svg",
+  phone1: "/figma/Case_1/Section_1/softphone-success.png",
+  phone2: "/figma/Case_1/Section_1/softphone-home.png",
+  phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
+  arrowForward: "/figma/Icons/arrow_forward.svg",
+  chartSmall: "/figma/Case_1/Section_1/case-chart-small.png",
+  discoveryActivation: "/figma/Case_1/Section_2/case-discovery-activation.png",
+  discoveryCost: "/figma/Case_1/Section_2/case-discovery-cost.png",
+  discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1.png",
+  discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2.png",
+  competitorWhatsapp: "/figma/Case_1/Section_2/case-competitor-whatsapp.png",
+  competitorOpenphone: "/figma/Case_1/Section_2/case-competitor-openphone.png",
+  userflow: "/figma/Case_1/Section_3/case-userflow.png",
+  solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
+  callFlowVideo: "/figma/Case_1/Section_4/call-flow-site.mp4",
+  callFlowPoster: "/figma/Case_1/Section_4/call-flow-poster.png",
+  solutionError: "/figma/Case_1/Section_4/case-solution-error.png",
+  solutionErrorMobile: "/figma/Case_1/Section_4/case-solution-error.png"
 };
 
 const workStages = [
@@ -34,9 +34,58 @@ const workStages = [
   { label: "Developer handoff", href: "#results" }
 ];
 
+const lightboxItems = {
+  discovery: {
+    src: assets.discoveryActivation,
+    imageWidth: 2256,
+    imageHeight: 2541,
+    baseWidth: 800,
+    baseHeight: 901,
+    mobileScale: 1.15,
+    desktopScale: 1.1,
+    mobileStart: "left"
+  },
+  userflow: {
+    src: assets.userflow,
+    imageWidth: 4096,
+    imageHeight: 1690,
+    baseWidth: 1000,
+    baseHeight: 413,
+    mobileScale: 1.6,
+    desktopScale: 1.5,
+    mobileStart: "left"
+  }
+} as const;
+
+function ZoomIcon({ floating = true }: { floating?: boolean }) {
+  return (
+    <span className={`${floating ? "pointer-events-none absolute bottom-space-3 right-space-3" : ""} flex h-10 w-10 items-center justify-center rounded-full bg-elevated-hover text-primary`}>
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+        className="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      >
+        <circle cx="11" cy="11" r="7" />
+        <path d="m16.5 16.5 4 4" />
+      </svg>
+    </span>
+  );
+}
+
+function ZoomImageShade() {
+  return (
+    <span className="pointer-events-none absolute inset-0 bg-primary/0 transition-colors duration-200 group-hover:bg-primary/20" />
+  );
+}
+
 export function CaseStudyPage() {
   const [hideTopbar, setHideTopbar] = useState(false);
-  const [isUserflowOpen, setIsUserflowOpen] = useState(false);
+  const [openLightbox, setOpenLightbox] = useState<keyof typeof lightboxItems | null>(null);
   const [canHover, setCanHover] = useState(false);
   const [lightboxScale, setLightboxScale] = useState(1.3);
   const [isDraggingUserflow, setIsDraggingUserflow] = useState(false);
@@ -44,7 +93,9 @@ export function CaseStudyPage() {
   const [activeSection, setActiveSection] = useState("overview");
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
+  const heroPhonesRef = useRef<HTMLDivElement | null>(null);
   const bodyScrollYRef = useRef(0);
+  const activeLightbox = openLightbox ? lightboxItems[openLightbox] : null;
   const userflowDragRef = useRef({
     isDown: false,
     moved: false,
@@ -53,7 +104,6 @@ export function CaseStudyPage() {
     startOffsetX: 0,
     startOffsetY: 0,
   });
-  const userflowBase = { width: 1000, height: 413 };
 
   const container = {
     hidden: { opacity: 0 },
@@ -71,14 +121,43 @@ export function CaseStudyPage() {
     }
   };
 
+  const clampUserflowOffset = useCallback((x: number, y: number, scale: number) => {
+    if (!userflowViewportRef.current || !activeLightbox) {
+      return { x: 0, y: 0 };
+    }
+    const rect = userflowViewportRef.current.getBoundingClientRect();
+    const edgePadding = rect.width < 640 ? 16 : 32;
+    const scaledWidth = activeLightbox.baseWidth * scale;
+    const scaledHeight = activeLightbox.baseHeight * scale;
+    const maxX = Math.max(0, (scaledWidth - (rect.width - edgePadding * 2)) / 2);
+    const maxY = Math.max(0, (scaledHeight - (rect.height - edgePadding * 2)) / 2);
+    return {
+      x: Math.max(-maxX, Math.min(maxX, x)),
+      y: Math.max(-maxY, Math.min(maxY, y)),
+    };
+  }, [activeLightbox]);
+
   useEffect(() => {
     let lastY = window.scrollY;
+    let ticking = false;
     const onScroll = () => {
-      const currentY = window.scrollY;
-      const isDown = currentY > lastY;
-      const pastThreshold = currentY > 80;
-      setHideTopbar(isDown && pastThreshold);
-      lastY = currentY;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+        const delta = currentY - lastY;
+
+        if (currentY <= 80) {
+          setHideTopbar(false);
+        } else if (delta > 6) {
+          setHideTopbar(true);
+        } else if (delta < -6) {
+          setHideTopbar(false);
+        }
+
+        lastY = currentY;
+        ticking = false;
+      });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -93,12 +172,28 @@ export function CaseStudyPage() {
   }, []);
 
   useEffect(() => {
-    if (!isUserflowOpen) {
+    const centerHeroPhones = () => {
+      if (!heroPhonesRef.current || !window.matchMedia("(max-width: 639px)").matches) {
+        return;
+      }
+      const element = heroPhonesRef.current;
+      element.scrollLeft = (element.scrollWidth - element.clientWidth) / 2;
+    };
+    const raf = requestAnimationFrame(centerHeroPhones);
+    window.addEventListener("resize", centerHeroPhones);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("resize", centerHeroPhones);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!openLightbox) {
       return;
     }
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setIsUserflowOpen(false);
+        setOpenLightbox(null);
       }
     };
     document.addEventListener("keydown", onKeyDown);
@@ -125,7 +220,7 @@ export function CaseStudyPage() {
       document.body.style.width = previousWidth;
       window.scrollTo({ top: bodyScrollYRef.current, left: 0, behavior: "instant" });
     };
-  }, [isUserflowOpen]);
+  }, [openLightbox]);
 
   useEffect(() => {
     if (typeof window === "undefined") {
@@ -138,9 +233,9 @@ export function CaseStudyPage() {
   }, []);
 
   useEffect(() => {
-    if (isUserflowOpen) {
+    if (activeLightbox) {
       const isMobile = window.matchMedia("(max-width: 640px)").matches;
-      const initialScale = isMobile ? 1.6 : 1.5;
+      const initialScale = isMobile ? activeLightbox.mobileScale : activeLightbox.desktopScale;
       setLightboxScale(initialScale);
       setUserflowOffset({ x: 0, y: 0 });
       requestAnimationFrame(() => {
@@ -148,16 +243,16 @@ export function CaseStudyPage() {
           return;
         }
         const rect = userflowViewportRef.current.getBoundingClientRect();
-        const scaledWidth = userflowBase.width * initialScale;
+        const scaledWidth = activeLightbox.baseWidth * initialScale;
         const maxX = Math.max(0, (scaledWidth - rect.width) / 2);
-        const initialX = isMobile ? -maxX : 0;
+        const initialX = isMobile && activeLightbox.mobileStart === "left" ? maxX : 0;
         setUserflowOffset(clampUserflowOffset(initialX, 0, initialScale));
       });
     }
-  }, [isUserflowOpen]);
+  }, [activeLightbox, clampUserflowOffset]);
 
   useEffect(() => {
-    if (!isUserflowOpen) {
+    if (!activeLightbox) {
       return;
     }
     const updateCanDrag = () => {
@@ -165,14 +260,14 @@ export function CaseStudyPage() {
         return;
       }
       const rect = userflowViewportRef.current.getBoundingClientRect();
-      const scaledWidth = userflowBase.width * lightboxScale;
-      const scaledHeight = userflowBase.height * lightboxScale;
+      const scaledWidth = activeLightbox.baseWidth * lightboxScale;
+      const scaledHeight = activeLightbox.baseHeight * lightboxScale;
       setCanDragUserflow(scaledWidth > rect.width || scaledHeight > rect.height);
     };
     updateCanDrag();
     window.addEventListener("resize", updateCanDrag);
     return () => window.removeEventListener("resize", updateCanDrag);
-  }, [isUserflowOpen, lightboxScale]);
+  }, [activeLightbox, lightboxScale]);
 
   useEffect(() => {
     const sections = Array.from(
@@ -215,28 +310,12 @@ export function CaseStudyPage() {
     };
   }, []);
 
-  const clampUserflowOffset = (x: number, y: number, scale: number) => {
-    if (!userflowViewportRef.current) {
-      return { x: 0, y: 0 };
-    }
-    const rect = userflowViewportRef.current.getBoundingClientRect();
-    const edgePadding = rect.width < 640 ? 16 : 32;
-    const scaledWidth = userflowBase.width * scale;
-    const scaledHeight = userflowBase.height * scale;
-    const maxX = Math.max(0, (scaledWidth - (rect.width - edgePadding * 2)) / 2);
-    const maxY = Math.max(0, (scaledHeight - (rect.height - edgePadding * 2)) / 2);
-    return {
-      x: Math.max(-maxX, Math.min(maxX, x)),
-      y: Math.max(-maxY, Math.min(maxY, y)),
-    };
-  };
-
   useEffect(() => {
-    if (!isUserflowOpen) {
+    if (!activeLightbox) {
       return;
     }
     setUserflowOffset((prev) => clampUserflowOffset(prev.x, prev.y, lightboxScale));
-  }, [isUserflowOpen, lightboxScale]);
+  }, [activeLightbox, lightboxScale, clampUserflowOffset]);
 
   const startUserflowDrag = (clientX: number, clientY: number) => {
     if (!canDragUserflow) {
@@ -336,25 +415,32 @@ export function CaseStudyPage() {
 
 
   return (
-    <main className="bg-primary text-primary">
+    <main className="overflow-x-hidden bg-primary text-primary">
       <motion.header
         initial={{ opacity: 0, y: -12 }}
         animate={hideTopbar ? { opacity: 0, y: -12 } : { opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 220, damping: 22, mass: 0.7 }}
-        className="sticky top-0 z-10 h-[74px] w-full bg-primary/60 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
+        className="fixed top-0 z-10 h-[74px] w-full bg-primary/60 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
         <div className="flex h-full w-full items-center justify-between px-space-4 py-space-3 sm:px-space-8">
-          <Link href="/" className="font-oldenburg flex items-center gap-space-1 text-body-18">
-            <span>nastya</span>
-            <span>with</span>
-            <img alt="" src={assets.heart} className="h-6 w-6" />
-          </Link>
+          <motion.div
+            whileHover={canHover ? { scale: 1.05 } : undefined}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+          >
+            <Link href="/" className="font-oldenburg flex items-center gap-space-1 text-body-18">
+              <span>nastya</span>
+              <span>with</span>
+              <img alt="" src={assets.heart} className="h-6 w-6" />
+            </Link>
+          </motion.div>
           <div className="flex items-center gap-space-2">
             <motion.a
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
-              href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
+              href="https://drive.google.com/file/d/1srTs3sn5jrgr6PlKthMkucNrslEvm0Tp/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               CV
             </motion.a>
@@ -363,6 +449,8 @@ export function CaseStudyPage() {
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://t.me/him9li9"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Telegram
             </motion.a>
@@ -374,15 +462,15 @@ export function CaseStudyPage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-y-[120px] px-space-4 pb-space-16 pt-space-16 sm:mx-auto sm:max-w-[800px] sm:px-0 sm:pt-space-16 sm:pb-space-16"
+        className="flex w-full flex-col gap-y-[140px] px-space-4 pb-[40px] pt-[140px] sm:mx-auto sm:max-w-[800px] sm:px-0"
       >
         <motion.section
           id="overview"
           data-section-anchor="overview"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-8 sm:gap-space-8"
+          className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
-          <div className="flex flex-col gap-space-4 text-primary">
+          <div className="flex flex-col gap-space-5 text-primary">
             <div className="flex flex-col gap-space-1">
               <h1 className="text-h1">MCN Softphone</h1>
               <p className="text-body-16 text-secondary">
@@ -395,37 +483,42 @@ export function CaseStudyPage() {
               SIM card or roaming setup.
             </p>
           </div>
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center gap-space-4 rounded-[12px] bg-secondary px-space-4 py-space-8 sm:gap-space-6 sm:px-space-12">
+          <div
+            ref={heroPhonesRef}
+            className="case-horizontal-scroll relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible"
+          >
+            <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
               <Image
                 alt="MCN Softphone registration screen"
                 src={assets.phone1}
                 width={900}
                 height={1840}
-                sizes="(max-width: 640px) 27vw, 236px"
-                className="h-auto w-[27%] max-w-[236px] sm:w-[236px]"
+                sizes="(max-width: 640px) 210px, 240px"
+                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
                 priority
-              quality={100}
+                quality={100}
               />
               <Image
                 alt="MCN Softphone plan screen"
                 src={assets.phone2}
                 width={900}
                 height={1840}
-                sizes="(max-width: 640px) 34vw, 280px"
-                className="h-auto w-[34%] max-w-[280px] sm:w-[280px]"
+                sizes="(max-width: 640px) 294px, 280px"
+                className="h-[600px] w-auto shrink-0 sm:h-auto sm:w-[280px]"
                 priority
-              quality={100}
+                quality={100}
               />
               <Image
                 alt="MCN Softphone call screen"
                 src={assets.phone3}
                 width={900}
                 height={1840}
-                sizes="(max-width: 640px) 27vw, 236px"
-                className="h-auto w-[27%] max-w-[236px] sm:w-[236px]"
+                sizes="(max-width: 640px) 210px, 240px"
+                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
                 priority
-              quality={100}
+                quality={100}
               />
+            </div>
           </div>
         </motion.section>
 
@@ -433,19 +526,18 @@ export function CaseStudyPage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-8"
+          className="-mt-space-14 scroll-mt-space-16 case-section-stack"
         >
-          <div className="flex flex-col">
+          <div className="case-h2-stack">
             <h2 className="text-h2">About the project</h2>
-            <p className="mt-space-4 text-body-18">
+            <p className="text-body-18">
               When I joined the project, the app existed as an MVP, but its key metric—the number
               of calls—was underperforming. The team and I needed to understand why and fix it.
             </p>
-            <div className="mt-space-8 h-px w-full bg-border-elevated" />
           </div>
 
-          <div className="flex flex-col items-center gap-space-6">
-            <div className="flex w-full flex-col gap-space-4">
+          <div className="case-text-stack items-center">
+            <div className="case-h3-stack w-full">
               <h3 className="text-h3">Problem</h3>
               <p className="text-body-18">
                 Team discussions revealed a systemic problem: at critical moments, users did not
@@ -460,7 +552,7 @@ export function CaseStudyPage() {
                   {` — only one-third of users made it to a call because most did not understand when their number had been activated.`}
                 </li>
               </ul>
-              <div className="flex flex-col items-center gap-space-3">
+              <div className="case-figure-stack my-space-2 items-center">
                 <div className="w-[323px] max-w-full">
                   <Image
                     alt=""
@@ -473,7 +565,7 @@ export function CaseStudyPage() {
                     quality={100}
                   />
                 </div>
-                <p className="text-center text-caption-14 text-secondary-elevated">
+                <p className="text-center text-caption-14 text-secondary">
                   First-call CR, 2023
                 </p>
               </div>
@@ -492,7 +584,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-4">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Objective</h3>
             <p className="text-body-18">
               The project&apos;s main objective was to introduce a communication system with clear
@@ -505,12 +597,12 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="flex flex-col gap-space-3">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Project stages</h3>
             <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
                 <div key={stage.label} className="flex items-center gap-space-1">
-                  <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                  <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-primary">
                     {stage.label}
                   </span>
                   {index < workStages.length - 1 ? (
@@ -526,12 +618,12 @@ export function CaseStudyPage() {
           id="discovery"
           data-section-anchor="discovery"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-4"
+          className="scroll-mt-space-16 case-h2-stack"
         >
           <h2 className="text-h2">Discovery</h2>
 
-          <div className="flex flex-col gap-space-8">
-            <div className="text-body-18">
+          <div className="case-content-stack">
+            <div className="case-text-list-stack text-body-18">
               <p>During discovery, I drew on:</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>an analysis of existing user flows and screen logic</li>
@@ -541,9 +633,7 @@ export function CaseStudyPage() {
               </ul>
             </div>
 
-            <div className="h-px w-full bg-border-elevated" />
-
-            <div className="flex flex-col gap-space-4">
+            <div className="case-h3-stack">
               <h3 className="text-h3">Current version analysis</h3>
               <p className="text-body-18">
                 <span className="text-body-18-semibold">The goal of this stage was to</span> understand exactly where users became confused, made mistakes, or spent
@@ -552,56 +642,73 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-space-2 text-body-18">
-              <p className="text-body-18-semibold">1. The activation flow was split between the web and the app</p>
+            <div className="case-point-stack text-body-18">
+              <p className="text-body-18-semibold">1.&nbsp;The activation flow was split between the web and the app</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>registration took place in the web account and required manual verification by a manager</li>
                 <li>after submitting a request, users received no explanation of their status or next steps</li>
               </ul>
               <p>
-                Users postponed purchasing a number and making their first call <span className="text-body-18-semibold">→</span>{" "}
-                <span className="text-body-18-semibold">drop-off during registration</span>
+                Users postponed purchasing a number and making their first call <span className="italic">→</span>{" "}
+                <span className="italic">drop-off during registration</span>
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-6 rounded-[12px] bg-secondary pb-space-6 pt-space-8">
-              <div className="w-full max-w-[800px] px-space-4 sm:px-0">
-                <Image
-                  alt=""
-                  src={assets.discoveryActivation}
-                  width={3512}
-                  height={3324}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 800px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
+            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+              <div className="flex w-full flex-col items-center gap-space-2 bg-secondary px-space-4 py-space-6 sm:gap-0 sm:rounded-[12px] sm:p-space-6">
+                <button
+                  type="button"
+                  aria-label="Open discovery scheme"
+                  onClick={() => setOpenLightbox("discovery")}
+                  className="group relative block w-full max-w-[800px] cursor-zoom-in overflow-hidden"
+                >
+                  <Image
+                    alt=""
+                    src={assets.discoveryActivation}
+                    width={2256}
+                    height={2541}
+                    sizes="(max-width: 640px) calc(100vw - 48px), 800px"
+                    className="h-auto w-full object-contain"
+                    loading="lazy"
+                    quality={100}
+                  />
+                </button>
+                <div className="grid w-full grid-cols-[1fr_40px] items-end gap-0">
+                  <p className="text-center text-caption-14 text-secondary">
+                    Analysis of the app MVP&apos;s core flows
+                  </p>
+                  <button
+                    type="button"
+                    aria-label="Open discovery scheme"
+                    onClick={() => setOpenLightbox("discovery")}
+                    className="group cursor-zoom-in"
+                  >
+                    <ZoomIcon floating={false} />
+                  </button>
+                </div>
               </div>
-              <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
-                Existing user flow analysis (registration · number purchase · call)
-              </p>
             </div>
 
-            <div className="flex flex-col gap-space-2 text-body-18">
-              <p className="text-body-18-semibold">2. Costs and charges were unclear at the time of the call</p>
+            <div className="case-point-stack text-body-18">
+              <p className="text-body-18-semibold">2.&nbsp;Costs and charges were unclear at the time of the call</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>users had to search the website for roaming call rates</li>
                 <li>charges after a call appeared unexpected</li>
               </ul>
               <p>
-                Users did not understand how much they were paying or what for <span className="text-body-18-semibold">→</span>{" "}
-                <span className="text-body-18-semibold">more support requests</span>
+                Users did not understand how much they were paying or what for <span className="italic">→</span>{" "}
+                <span className="italic">more support requests</span>
               </p>
             </div>
 
-            <div className="-mx-space-4 overflow-hidden rounded-[12px] bg-secondary py-space-8 sm:mx-0">
-              <div className="mx-auto w-full max-w-[427px] px-space-4 sm:px-0">
+            <div className="-mx-space-4 overflow-hidden bg-secondary px-space-4 py-space-6 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
+              <div className="mx-auto w-full max-w-[427px]">
                 <Image
                   alt=""
                   src={assets.discoveryCost}
                   width={1070}
                   height={1002}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 427px"
+                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
@@ -609,26 +716,26 @@ export function CaseStudyPage() {
               </div>
             </div>
 
-            <div className="flex flex-col gap-space-2 text-body-18">
-              <p className="text-body-18-semibold">3. Poor feedback</p>
+            <div className="case-point-stack text-body-18">
+              <p className="text-body-18-semibold">3.&nbsp;Poor feedback</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>the app lacked a clear entry point to support</li>
                 <li>users searched for answers across different channels and repeated their questions</li>
               </ul>
               <p>
-                Users did not know where to find help <span className="text-body-18-semibold">→</span>{" "}
-                <span className="text-body-18-semibold">repeat requests across different channels</span>
+                Users did not know where to find help <span className="italic">→</span>{" "}
+                <span className="italic">repeat requests across different channels</span>
               </p>
             </div>
 
-            <div className="-mx-space-4 overflow-hidden rounded-[12px] bg-secondary py-space-8 sm:mx-0">
-              <div className="mx-auto flex w-full max-w-[427px] flex-col gap-space-4 px-space-4 sm:px-0">
+            <div className="-mx-space-4 overflow-hidden bg-secondary px-space-4 py-space-6 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
+              <div className="mx-auto flex w-full max-w-[427px] flex-col gap-space-4">
                 <Image
                   alt=""
                   src={assets.discoveryFeedback1}
                   width={1044}
                   height={332}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 427px"
+                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
@@ -638,7 +745,7 @@ export function CaseStudyPage() {
                   src={assets.discoveryFeedback2}
                   width={2116}
                   height={512}
-                  sizes="(max-width: 640px) calc(100vw - 32px), 427px"
+                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                 quality={100}
@@ -652,7 +759,7 @@ export function CaseStudyPage() {
               when immediate access to calls and the internet matters.
             </p>
 
-            <div id="hypotheses" className="flex scroll-mt-space-16 flex-col gap-space-4">
+            <div id="hypotheses" className="case-h3-stack scroll-mt-space-16">
               <h3 className="text-h3">Competitor analysis</h3>
               <p className="text-body-18">
                 During discovery, I also studied similar products with calling features.
@@ -661,22 +768,26 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-3 rounded-[12px] bg-secondary py-space-8">
-              <div className="w-full max-w-[800px] px-space-4 sm:px-0">
-                <Image
-                  alt=""
-                  src={assets.competitorWhatsapp}
-                  width={3104}
-                  height={1550}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 800px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
-              </div>
-              <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
-                WhatsApp (registration · contact selection · call)
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[800px] sm:pl-0">
+              <div className="case-figure-stack w-full items-center gap-[6px] sm:gap-space-3">
+                <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
+                  <div className="w-[800px] max-w-none sm:mx-auto sm:w-full">
+                    <Image
+                      alt=""
+                      src={assets.competitorWhatsapp}
+                      width={2208}
+                      height={1103}
+                      sizes="(max-width: 640px) 800px, 752px"
+                      className="h-auto w-full object-contain"
+                      loading="lazy"
+                      quality={100}
+                    />
+                  </div>
+                </div>
+                <p className="text-center text-caption-14 text-secondary">
+                  WhatsApp (registration · contact selection · call)
               </p>
+              </div>
             </div>
 
             <p className="text-body-18">
@@ -685,69 +796,73 @@ export function CaseStudyPage() {
               clear, continuous feedback on their progress and status throughout this flow.
             </p>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-3 rounded-[12px] bg-secondary py-space-8">
-              <div className="w-full max-w-[1000px] px-space-4 sm:px-0">
-                <Image
-                  alt=""
-                  src={assets.competitorOpenphone}
-                  width={3901}
-                  height={1552}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
-              </div>
-              <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
-                OpenPhone (number selection · registration · number purchase · call)
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[950px] sm:pl-0">
+              <div className="case-figure-stack w-full items-center gap-[6px] sm:gap-space-3">
+                <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
+                  <div className="w-[950px] max-w-none sm:mx-auto sm:w-full">
+                    <Image
+                      alt=""
+                      src={assets.competitorOpenphone}
+                      width={3901}
+                      height={1552}
+                      sizes="(max-width: 640px) 950px, 952px"
+                      className="h-auto w-full object-contain"
+                      loading="lazy"
+                      quality={100}
+                    />
+                  </div>
+                </div>
+                <p className="text-center text-caption-14 text-secondary">
+                  OpenPhone (number selection · registration · number purchase · call)
               </p>
+              </div>
             </div>
 
-            <div className="flex w-full max-w-[800px] flex-col gap-space-6">
-              <div className="flex flex-col gap-space-4">
+            <div className="case-media-stack w-full max-w-[800px]">
+              <div className="case-h3-stack">
                 <h3 className="text-h3">Hypotheses</h3>
                 <p className="text-body-18">
                   Based on the analysis, I formulated hypotheses tied to the product&apos;s key metrics.
                 </p>
               </div>
-              <div className="flex flex-col gap-space-5 sm:flex-row sm:flex-wrap">
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">1. Clarity from the outset</p>
-                  <p className="text-body-16 text-secondary-elevated">
+              <div className="flex flex-col gap-space-3 sm:flex-row sm:flex-wrap">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
+                  <p className="text-body-18-semibold">1.&nbsp;Clarity from the outset</p>
+                  <p className="text-caption-14 text-primary">
                     If users understand where they are in onboarding and when they will be able
                     to start calling, they are more likely to complete their first call.
                   </p>
-                  <p className="text-body-16">
+                  <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Metric: </span>first-call CR
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">2. Cost transparency</p>
-                  <p className="text-body-16 text-secondary-elevated">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
+                  <p className="text-body-18-semibold">2.&nbsp;Cost transparency</p>
+                  <p className="text-caption-14 text-primary">
                     If users see the call cost and their balance before dialing,
                     pricing will become more transparent.
                   </p>
-                  <p className="text-body-16">
+                  <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Metric: </span>retention, support requests
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">3. Accessible answers</p>
-                  <p className="text-body-16 text-secondary-elevated">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
+                  <p className="text-body-18-semibold">3.&nbsp;Accessible answers</p>
+                  <p className="text-caption-14 text-primary">
                     If answers to common questions are available in the app, users will be less
                     likely to interrupt the flow and contact support.
                   </p>
-                  <p className="text-body-16">
+                  <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Metric: </span>support requests
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">4. A clear next step</p>
-                  <p className="text-body-16 text-secondary-elevated">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
+                  <p className="text-body-18-semibold">4.&nbsp;A clear next step</p>
+                  <p className="text-caption-14 text-primary">
                     If users understand what to do after an error or incomplete action,
                     it is easier for them to return to the flow.
                   </p>
-                  <p className="text-body-16">
+                  <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Metric: </span>retention, support requests
                   </p>
                 </div>
@@ -764,11 +879,11 @@ export function CaseStudyPage() {
           id="design"
           data-section-anchor="design"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-4"
+          className="scroll-mt-space-16 case-h2-stack"
         >
           <h2 className="text-h2">Design process</h2>
-          <div className="flex flex-col gap-space-8">
-            <div className="flex flex-col gap-space-4">
+          <div className="case-content-stack">
+            <div className="case-text-stack">
               <p className="text-body-18">
                 <span className="text-body-18-semibold">The goal of this stage was to</span> define how the system would communicate with users so
                 they would not become confused if something went wrong. The main decisions concerned
@@ -781,29 +896,41 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-6 rounded-[12px] bg-secondary pb-space-6 pt-space-8">
-              <div className="w-full max-w-[1000px] px-space-4 sm:px-0">
+            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
                 <button
                   type="button"
                   aria-label="Open userflow"
-                  onClick={() => setIsUserflowOpen(true)}
-                  className="w-full cursor-zoom-in"
+                  onClick={() => setOpenLightbox("userflow")}
+                  className="group relative block w-full cursor-zoom-in overflow-hidden"
                 >
                   <Image
                     alt=""
                     src={assets.userflow}
                     width={4096}
                     height={1690}
-                    sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
+                    sizes="(max-width: 640px) calc(100vw - 80px), 952px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                   quality={100}
                   />
+                  <ZoomImageShade />
+
                 </button>
+                <div className="grid w-full grid-cols-[1fr_40px] items-end gap-0">
+                  <p className="text-center text-caption-14 text-secondary">
+                    New first-call user flow
+                  </p>
+                  <button
+                    type="button"
+                    aria-label="Open userflow scheme"
+                    onClick={() => setOpenLightbox("userflow")}
+                    className="group cursor-zoom-in"
+                  >
+                    <ZoomIcon floating={false} />
+                  </button>
+                </div>
               </div>
-              <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
-                New first-call user flow (registration · number purchase · call)
-              </p>
             </div>
 
             <ul className="list-disc space-y-space-2 pl-space-6 text-body-18">
@@ -825,48 +952,52 @@ export function CaseStudyPage() {
           id="solution"
           data-section-anchor="solution"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-6"
+          className="scroll-mt-space-16 case-section-stack"
         >
-          <div className="flex flex-col">
-            <h2 className="text-h2">Solution</h2>
-            <p className="mt-space-4 text-body-18">
-              Initial tests showed that users made mistakes even where the logic seemed obvious.
+          <div className="case-content-stack">
+            <div className="case-h2-stack">
+              <h2 className="text-h2">Solution</h2>
+              <p className="text-body-18">
+                Initial tests showed that users made mistakes even where the logic seemed obvious.
               I therefore gathered feedback, reworked several flows, and tested them again:
             </p>
-          </div>
+            </div>
 
-          <div className="mt-space-2 flex flex-col gap-space-2 text-body-18">
-            <p className="text-body-18-semibold">1. Success screen after registration</p>
-            <p>
-              Initially, this was a separate screen with a checkmark and a “Continue” button, but testing
+            <div className="case-point-stack text-body-18">
+              <p className="text-body-18-semibold">1.&nbsp;Success screen after registration</p>
+              <p>
+                Initially, this was a separate screen with a checkmark and a “Continue” button, but testing
               showed that people paused for two to three minutes: the checkmark drew attention while the button was overlooked.
             </p>
-            <p>
-              <span>→</span>{" "}
-              <span className="italic">
-                I combined the success screen with checkout so that after registering through Gosuslugi,
+              <p>
+                <span>→</span>{" "}
+                <span className="italic">
+                  I combined the success screen with checkout so that after registering through Gosuslugi,
                 users immediately saw their number and plan terms, without unnecessary steps or pauses.
               </span>
-            </p>
-          </div>
-
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-secondary py-space-8">
-            <div className="w-full max-w-[845px] px-space-4 sm:px-0">
-              <Image
-                alt=""
-                src={assets.solutionSuccess}
-                width={3148}
-                height={1999}
-                sizes="(max-width: 640px) calc(100vw - 64px), 845px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-              quality={100}
-              />
+              </p>
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-2 text-body-18">
-            <p className="text-body-18-semibold">2. Checking the cost of a call</p>
+            <div className="case-numbered-point-media relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+            <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
+              <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
+                <Image
+                  alt=""
+                  src={assets.solutionSuccess}
+                  width={2535}
+                  height={1620}
+                  sizes="(max-width: 640px) 850px, 850px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  quality={100}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="case-point-stack text-body-18">
+            <p className="text-body-18-semibold">2.&nbsp;Checking the cost of a call</p>
             <p>
               In the first version, users could see the price only after they started entering a number.
               Some found it inconvenient to enter a familiar number every time they wanted an estimate.
@@ -880,14 +1011,14 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center">
+          <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 flex w-[calc(100vw-32px)] max-w-[950px] -translate-x-1/2 flex-col items-center justify-center gap-space-1">
             <div
               className="flex w-full items-center justify-center px-space-4 sm:px-0"
               style={{ height: 600 }}
             >
               <div
                 className="relative h-full max-w-full"
-                style={{ width: "min(299px, calc(100vw - 64px))" }}
+                style={{ width: "min(339px, calc(100vw - 64px))" }}
               >
                 <video
                   className="h-full w-full object-contain"
@@ -902,10 +1033,13 @@ export function CaseStudyPage() {
                 />
               </div>
             </div>
+            <p className="w-full text-center text-caption-14 text-secondary">
+              The per-minute call rate is visible immediately
+            </p>
           </div>
 
-          <div className="flex flex-col gap-space-2 text-body-18">
-            <p className="text-body-18-semibold">3. Help and guidance</p>
+          <div className="case-point-stack text-body-18">
+            <p className="text-body-18-semibold">3.&nbsp;Help and guidance</p>
             <p>
               Previously, the error screen simply displayed a reason such as “Registration incomplete”
               or “Insufficient funds.” Users still did not know what to do next and contacted support.
@@ -920,22 +1054,41 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center rounded-[12px] bg-secondary py-space-8">
-            <div className="w-full max-w-[1000px] px-space-4 sm:px-0">
-              <Image
-                alt=""
-                src={assets.solutionError}
-                width={3780}
-                height={2020}
-                sizes="(max-width: 640px) calc(100vw - 64px), 1000px"
-                className="h-auto w-full object-contain"
-                loading="lazy"
-              quality={100}
-              />
+          <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+            <div className="w-full">
+              <div className="case-horizontal-scroll overflow-x-auto sm:overflow-visible">
+                <div className="w-[1000px] max-w-none sm:hidden">
+                  <Image
+                    alt=""
+                    src={assets.solutionErrorMobile}
+                    width={1052}
+                    height={532}
+                    sizes="1000px"
+                    className="h-auto w-full object-contain"
+                    loading="lazy"
+                    quality={100}
+                  />
+                </div>
+                <div className="hidden sm:mx-auto sm:block sm:w-full sm:max-w-[1000px]">
+                  <Image
+                    alt=""
+                    src={assets.solutionError}
+                    width={1052}
+                    height={532}
+                    sizes="1000px"
+                    className="h-auto w-full object-contain"
+                    loading="lazy"
+                    quality={100}
+                  />
+                </div>
+              </div>
+              <p className="mt-[6px] w-full text-center text-caption-14 leading-[160%] text-secondary sm:mx-auto sm:mt-space-3 sm:max-w-[1000px]">
+                Return users to the flow while keeping support within reach
+              </p>
             </div>
           </div>
 
-          <div className="flex flex-col gap-space-8 text-body-18">
+          <div className="case-text-stack text-body-18">
             <p>
               Each iteration resolved a specific point of uncertainty: users could see when their
               number was active, how much a call would cost, and what to do after an error. This
@@ -953,64 +1106,64 @@ export function CaseStudyPage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-4"
+          className="scroll-mt-space-16 case-h2-stack"
         >
           <h2 className="text-h2">Results</h2>
-          <div className="flex flex-col gap-space-5">
+          <div className="case-content-stack">
             <p className="text-body-18">
               The key changes addressed the main problems identified at the outset: the path to the
               first call became shorter, users better understood their status and the cost of actions,
               and some questions no longer reached support. With the same traffic, the number of calls rose
-              from <span className="text-body-18-semibold">13K</span> to{" "}
+              from <span className="text-body-18-semibold">13k</span> to{" "}
               <span className="text-body-18-semibold">17k.</span>
             </p>
 
             <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <div className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-center text-h2">8</span>
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
+                <div className="flex h-10 items-start gap-0 whitespace-nowrap text-primary">
+                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-10">8</span>
                   <span className="inline-flex h-10 items-center">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="inline-flex h-10 items-center text-h2">3</span>
+                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-10">3</span>
                 </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   steps to a call
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <p className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">+</span>
-                  <span className="inline-flex h-10 items-center text-h2">23</span>
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
+                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
+                  <span className="text-[18px] leading-[160%]">+</span>
+                  <span className="text-[32px] leading-10">23</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
                 </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   first-call conversion
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <div className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-center text-h2">15</span>
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
+                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
+                  <span className="text-[32px] leading-10">15</span>
                   <span className="inline-flex h-10 items-center">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="inline-flex h-10 items-center text-h2">22</span>
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
-                </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
+                  <span className="text-[32px] leading-10">22</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
+                </p>
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   week-four retention
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
-                <div className="flex h-10 items-start gap-space-1 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-center text-h2">40</span>
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
+                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
+                  <span className="text-[32px] leading-10">40</span>
                   <span className="inline-flex h-10 items-center">
                     <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
                   </span>
-                  <span className="inline-flex h-10 items-center text-h2">18</span>
-                  <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
-                </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
+                  <span className="text-[32px] leading-10">18</span>
+                  <span className="text-[18px] leading-[160%]">%</span>
+                </p>
+                <p className="whitespace-nowrap text-caption-14 text-secondary">
                   support requests
                 </p>
               </div>
@@ -1026,7 +1179,7 @@ export function CaseStudyPage() {
         <motion.nav
           variants={item}
           aria-label="Page navigation"
-          className="flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
+          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-18 sm:mt-0"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
@@ -1056,7 +1209,7 @@ export function CaseStudyPage() {
             className="group pointer-events-auto flex items-center justify-end gap-space-3 text-right"
             onClick={(event) => handleSectionNavClick(event, item.id)}
           >
-            <span className="pointer-events-none max-w-[160px] rounded-full bg-elevated-hover px-space-3 py-space-1 text-caption-14 text-secondary-elevated opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <span className="pointer-events-none max-w-[160px] rounded-full bg-elevated-hover px-space-3 py-space-1 text-caption-14 text-secondary opacity-0 transition-opacity duration-200 group-hover:opacity-100">
               {item.label}
             </span>
             <span
@@ -1068,10 +1221,10 @@ export function CaseStudyPage() {
         ))}
       </nav>
 
-      {isUserflowOpen ? (
+      {activeLightbox ? (
         <div
           className="fixed inset-0 z-20 flex items-center justify-center px-space-6"
-          onClick={() => setIsUserflowOpen(false)}
+          onClick={() => setOpenLightbox(null)}
           role="presentation"
           onTouchMove={(event) => event.preventDefault()}
         >
@@ -1081,24 +1234,27 @@ export function CaseStudyPage() {
               <button
                 type="button"
                 aria-label="Close"
-                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6 sm:cursor-default"
+                className="relative flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
                 onMouseDown={(event) => event.stopPropagation()}
                 onTouchStart={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
-                  setIsUserflowOpen(false);
+                  setOpenLightbox(null);
                 }}
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary-elevated">
-                  <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-                    <path
-                      d="M4 4l8 8M12 4l-8 8"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-5 w-5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
               </button>
             </div>
             <div
@@ -1119,22 +1275,22 @@ export function CaseStudyPage() {
               <div className="absolute left-1/2 top-1/2">
                 <div
                   style={{
-                    width: `${userflowBase.width}px`,
-                    height: `${userflowBase.height}px`,
+                    width: `${activeLightbox.baseWidth}px`,
+                    height: `${activeLightbox.baseHeight}px`,
                     transform: `translate(-50%, -50%) translate(${userflowOffset.x}px, ${userflowOffset.y}px) scale(${lightboxScale})`,
                     transformOrigin: "center",
                   }}
                 >
                   <Image
                     alt=""
-                    src={assets.userflow}
-                    width={userflowBase.width}
-                    height={userflowBase.height}
-                    sizes="(max-width: 640px) 96vw, 80vw"
+                    src={activeLightbox.src}
+                    width={activeLightbox.imageWidth}
+                    height={activeLightbox.imageHeight}
+                    sizes="(max-width: 640px) 1600px, 1500px"
                     className="pointer-events-none h-full w-full select-none object-contain"
                     draggable={false}
                     priority
-                  quality={100}
+                    quality={100}
                   />
                 </div>
               </div>
@@ -1143,24 +1299,23 @@ export function CaseStudyPage() {
               <button
                 type="button"
                 aria-label="Zoom out"
-                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
+                className="relative flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
                 onMouseDown={(event) => event.stopPropagation()}
                 onTouchStart={(event) => event.stopPropagation()}
                 onClick={(event) => {
                   event.stopPropagation();
-                  setLightboxScale((value) => Math.max(1, Math.round((value - 0.5) * 10) / 10));
+                  const minScale = window.matchMedia("(max-width: 639px)").matches ? 0.3 : 1;
+                  setLightboxScale((value) => Math.max(minScale, Math.round((value - 0.5) * 10) / 10));
                 }}
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary-elevated">
-                  <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-                    <path d="M3 6h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                </span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                  <path d="M6 12h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+                </svg>
               </button>
               <button
                 type="button"
                 aria-label="Zoom in"
-                className="relative flex h-12 w-12 items-center justify-center sm:h-6 sm:w-6"
+                className="relative flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
                 onMouseDown={(event) => event.stopPropagation()}
                 onTouchStart={(event) => event.stopPropagation()}
                 onClick={(event) => {
@@ -1168,11 +1323,9 @@ export function CaseStudyPage() {
                   setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
                 }}
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-[6px] bg-elevated text-secondary-elevated">
-                  <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-                    <path d="M6 3v6M3 6h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                </span>
+                <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">
+                  <path d="M12 6v12M6 12h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
+                </svg>
               </button>
             </div>
           </div>

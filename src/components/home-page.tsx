@@ -3,21 +3,32 @@
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const assets = {
   avatar: "/figma/avatar.png",
-  heart: "/figma/heart.svg",
-  phone1: "/figma/Main/phone%201.png",
-  phone2: "/figma/Main/phone%202.png",
-  phone3: "/figma/Main/phone%203.png",
-  vpbxCanvas: "/figma/Case_2/vpbx-canvas.png",
-  arrowForward: "/figma/Main/arrow_forward.svg"
+  heart: "/figma/Icons/heart.svg",
+  phone1: "/figma/Case_1/Section_1/softphone-success.png",
+  phone2: "/figma/Case_1/Section_1/softphone-home.png",
+  phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
+  vpbxCanvas: "/figma/Case_2/Section_1/vpbx-canvas.png",
+  arrowForward: "/figma/Icons/arrow_forward.svg"
 };
+
+const footerLinks = [
+  { label: "Telegram", href: "https://t.me/him9li9" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/nastya-ermoshina-781714274" },
+  {
+    label: "CV",
+    href: "https://drive.google.com/file/d/1srTs3sn5jrgr6PlKthMkucNrslEvm0Tp/view?usp=sharing"
+  }
+];
 
 export function HomePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
+  const softphonePreviewRef = useRef<HTMLDivElement | null>(null);
+  const softphoneCenterPhoneRef = useRef<HTMLImageElement | null>(null);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -36,12 +47,25 @@ export function HomePage() {
 
   useEffect(() => {
     let lastY = window.scrollY;
+    let ticking = false;
     const onScroll = () => {
-      const currentY = window.scrollY;
-      const isDown = currentY > lastY;
-      const pastThreshold = currentY > 80;
-      setHideTopbar(isDown && pastThreshold);
-      lastY = currentY;
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+        const delta = currentY - lastY;
+
+        if (currentY <= 80) {
+          setHideTopbar(false);
+        } else if (delta > 6) {
+          setHideTopbar(true);
+        } else if (delta < -6) {
+          setHideTopbar(false);
+        }
+
+        lastY = currentY;
+        ticking = false;
+      });
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -55,13 +79,45 @@ export function HomePage() {
     return () => mql.removeEventListener("change", update);
   }, []);
 
+  useEffect(() => {
+    const centerSoftphonePreview = () => {
+      if (!softphonePreviewRef.current || !window.matchMedia("(max-width: 639px)").matches) {
+        return;
+      }
+      const element = softphonePreviewRef.current;
+      const centerPhone = softphoneCenterPhoneRef.current;
+      if (!centerPhone) {
+        return;
+      }
+      const elementRect = element.getBoundingClientRect();
+      const phoneRect = centerPhone.getBoundingClientRect();
+      element.scrollLeft += phoneRect.left + phoneRect.width / 2 - elementRect.left - element.clientWidth / 2;
+    };
+    const raf = requestAnimationFrame(centerSoftphonePreview);
+    const observer = new ResizeObserver(centerSoftphonePreview);
+    if (softphonePreviewRef.current) {
+      observer.observe(softphonePreviewRef.current);
+    }
+    if (softphoneCenterPhoneRef.current) {
+      observer.observe(softphoneCenterPhoneRef.current);
+    }
+    window.addEventListener("resize", centerSoftphonePreview);
+    window.addEventListener("pageshow", centerSoftphonePreview);
+    return () => {
+      cancelAnimationFrame(raf);
+      observer.disconnect();
+      window.removeEventListener("resize", centerSoftphonePreview);
+      window.removeEventListener("pageshow", centerSoftphonePreview);
+    };
+  }, []);
+
   return (
-    <main className="bg-primary text-primary">
+    <main className="overflow-x-hidden bg-primary text-primary">
       <motion.header
         initial={{ opacity: 0, y: -12 }}
         animate={hideTopbar ? { opacity: 0, y: -12 } : { opacity: 1, y: 0 }}
         transition={{ type: "spring", stiffness: 220, damping: 22, mass: 0.7 }}
-        className="sticky top-0 z-10 h-[74px] w-full bg-primary/60 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
+        className="fixed top-0 z-10 h-[74px] w-full bg-primary/60 backdrop-blur-[4px] [backdrop-filter:blur(4px)] [-webkit-backdrop-filter:blur(4px)]"
       >
         <div className="flex h-full w-full items-center justify-between px-space-4 py-space-3 sm:px-space-8">
           <div className="font-oldenburg flex items-center gap-space-1 text-body-18">
@@ -74,7 +130,9 @@ export function HomePage() {
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
-              href="https://drive.google.com/file/d/18tN5uIByWigg_ULyk6VbnGD9G_4Ftf31/view?usp=sharing"
+              href="https://drive.google.com/file/d/1srTs3sn5jrgr6PlKthMkucNrslEvm0Tp/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               CV
             </motion.a>
@@ -83,6 +141,8 @@ export function HomePage() {
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
               href="https://t.me/him9li9"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Telegram
             </motion.a>
@@ -94,9 +154,9 @@ export function HomePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto flex w-full max-w-[800px] flex-col gap-[120px] px-space-4 pb-space-16 pt-space-16 sm:px-space-8 sm:pb-space-16 lg:px-0"
+        className="mx-auto flex w-full max-w-[900px] flex-col gap-[140px] px-space-4 pb-0 pt-[140px] sm:px-space-8 lg:px-0"
       >
-        <motion.section variants={item} className="mx-auto flex w-full max-w-[800px] flex-col items-start gap-space-4 sm:items-center">
+        <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-3 sm:items-center">
           <div className="flex flex-col items-start justify-center gap-space-8 sm:items-center">
             <div className="relative h-[100px] w-[120px] overflow-hidden rounded-[100px]">
               <Image
@@ -122,12 +182,12 @@ export function HomePage() {
           </p>
         </motion.section>
 
-        <motion.section variants={item} className="flex flex-col items-start gap-space-6 sm:items-center">
-          <h2 className="text-left text-h3 sm:text-center">
+        <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-6 sm:items-center">
+          <h3 className="w-full text-left text-h4 sm:text-center">
             Selected projects
-          </h2>
+          </h3>
 
-          <div className="flex w-full flex-col items-start gap-[120px] sm:items-center">
+          <div className="flex w-full flex-col items-start gap-[140px] sm:items-center">
             <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
               <Link
                 href="/app"
@@ -135,70 +195,70 @@ export function HomePage() {
                 aria-label="Open the MCN Softphone case study"
                 className="group block w-full"
               >
-                <div className="mx-auto flex w-full max-w-[800px] items-center justify-center gap-space-4 rounded-[12px] bg-secondary px-space-4 py-space-8 sm:gap-space-6 sm:px-space-10 sm:py-space-10">
-                  <div className="relative h-auto w-[27%] max-w-[205px]">
+                <div
+                  ref={softphonePreviewRef}
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary px-space-4 py-space-6 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-4 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
+                >
+                  <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
                     <Image
                       alt="MCN Softphone registration screen"
                       src={assets.phone1}
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 27vw, 205px"
-                      className="h-auto w-full"
-                    quality={100}
+                      sizes="(max-width: 640px) 190px, 240px"
+                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
+                      quality={100}
                     />
-                  </div>
-                  <div className="relative h-auto w-[34%] max-w-[256px]">
                     <Image
+                      ref={softphoneCenterPhoneRef}
                       alt="MCN Softphone plan screen"
                       src={assets.phone2}
                       width={732}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 28vw, 244px"
-                      className="h-auto w-full"
-                    quality={100}
+                      sizes="(max-width: 640px) 263px, 280px"
+                      className="h-[540px] w-auto shrink-0 sm:h-auto sm:w-[280px]"
+                      quality={100}
                     />
-                  </div>
-                  <div className="relative h-auto w-[27%] max-w-[205px]">
                     <Image
                       alt="MCN Softphone call screen"
                       src={assets.phone3}
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 27vw, 205px"
-                      className="h-auto w-full"
-                    quality={100}
+                      sizes="(max-width: 640px) 190px, 240px"
+                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
+                      quality={100}
                     />
                   </div>
                 </div>
               </Link>
 
-              <div className="flex w-full max-w-[800px] flex-col items-start gap-space-2">
+              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[900px]">
                 <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
                   <h3 className="text-h2">MCN Softphone</h3>
                   <Link
                     href="/app"
                     prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary  sm:flex"
+                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
                   >
                     <span>View case study</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="flex flex-col items-start gap-space-3">
-                  <div className="h-px w-full bg-border-elevated sm:w-[800px]" />
-                  <p className="max-w-[490px] text-body-18 text-primary">
+                <div className="flex w-full flex-col items-start gap-space-2">
+                  <div className="h-px w-full bg-border-elevated" />
+                  <p className="w-full max-w-[500px] text-body-18 text-primary">
                     A mobile app for making calls abroad. I streamlined the path to the first call and
                     made call costs clear before dialing.
                   </p>
-                  <div className="flex flex-wrap items-start gap-space-2">
-                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                  <div className="flex flex-wrap items-start gap-space-1">
+                    <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       8 → 3 steps to a call
                     </span>
-                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      +23% first-call CR
+                    <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                      +23% first-call conversion
                     </span>
                   </div>
                   <Link
@@ -220,42 +280,42 @@ export function HomePage() {
                 aria-label="Open the KOMPaaS case study"
                 className="group block w-full"
               >
-                <div className="relative w-full overflow-hidden rounded-[8px]">
+                <div className="relative w-full overflow-hidden rounded-[8px] sm:left-1/2 sm:w-[900px] sm:-translate-x-1/2">
                   <Image
                     alt="KOMPaaS canvas preview"
                     src={assets.vpbxCanvas}
                     width={2400}
                     height={1500}
-                    sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                    sizes="(max-width: 640px) calc(100vw - 32px), 900px"
                     className="h-auto w-full"
                   quality={100}
                   />
                 </div>
               </Link>
 
-              <div className="flex w-full max-w-[800px] flex-col items-start gap-space-2">
+              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[900px]">
                 <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
                   <h3 className="text-h2">KOMPaaS</h3>
                   <Link
                     href="/work"
                     prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary  sm:flex"
+                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
                   >
                     <span>View case study</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="flex flex-col items-start gap-space-3">
-                  <div className="h-px w-full bg-border-elevated sm:w-[800px]" />
-                  <p className="max-w-[490px] text-body-18 text-primary">
-                    A B2B platform for contact center automation. I reduced clients&apos; reliance on
-                    developers when managing call flows.
+                <div className="flex w-full flex-col items-start gap-space-2">
+                  <div className="h-px w-full bg-border-elevated" />
+                  <p className="w-full max-w-[500px] text-body-18 text-primary">
+                    A B2B platform for contact center automation. I reduced clients&apos; reliance
+                    on&nbsp;developers when managing call flows.
                   </p>
-                  <div className="flex flex-wrap items-start gap-space-2">
-                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                  <div className="flex flex-wrap items-start gap-space-1">
+                    <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       +28% self-service rate
                     </span>
-                    <span className="rounded-full bg-elevated px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                    <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       -21% errors after publishing
                     </span>
                   </div>
@@ -273,6 +333,30 @@ export function HomePage() {
           </div>
         </motion.section>
       </motion.div>
+      <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-space-6 sm:px-0 sm:pb-[40px]">
+        <div className="flex flex-col gap-space-3">
+          <h3 className="text-h4">Contact me</h3>
+        </div>
+        <div className="h-px w-full bg-border-elevated" />
+        <div className="flex w-full flex-col gap-space-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:justify-between min-[900px]:gap-space-2">
+          <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-16 text-primary">
+            {footerLinks.map((link, index) => (
+              <div key={link.label} className="flex items-center gap-space-2">
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link-underline"
+                >
+                  {link.label}
+                </a>
+                {index < footerLinks.length - 1 ? <span className="text-secondary">·</span> : null}
+              </div>
+            ))}
+          </nav>
+          <p className="text-body-16 text-secondary min-[900px]:ml-auto">Nastya Ermoshina © 2026</p>
+        </div>
+      </footer>
     </main>
   );
 }
