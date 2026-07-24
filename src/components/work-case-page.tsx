@@ -416,8 +416,7 @@ export function WorkCasePage() {
               <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:h-[240px] sm:w-[261px]">
                 <p className="text-body-16-semibold">1. Flow organization</p>
                 <p className="text-body-16 text-secondary-elevated">
-                  Search, grouping, and statuses should help users find the right flows faster
-                  and switch between them.
+                  Search, grouping, and statuses should help users find and switch between flows faster.
                 </p>
                 <p className="text-body-16">
                   <span className="text-caption-14-semibold">Metric: </span>time-to-change
@@ -426,8 +425,7 @@ export function WorkCasePage() {
               <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[262px]">
                 <p className="text-body-16-semibold">2. Unified context</p>
                 <p className="text-body-16 text-secondary-elevated">
-                  If the diagram and settings share one workspace, users will lose less context
-                  and make fewer mistakes when changing flows.
+                  Keeping the diagram and settings in one workspace should preserve context and reduce errors.
                 </p>
                 <p className="text-body-16">
                   <span className="text-caption-14-semibold">Metric: </span>errors after publishing
@@ -436,8 +434,7 @@ export function WorkCasePage() {
               <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[261px]">
                 <p className="text-body-16-semibold">3. Clear entities</p>
                 <p className="text-body-16 text-secondary-elevated">
-                  Describing elements by their behavior should help users understand which block
-                  they need and how it will affect the flow.
+                  Behavior-based descriptions should clarify which block to use and how it affects the flow.
                 </p>
                 <p className="text-body-16">
                   <span className="text-caption-14-semibold">Metric: </span>time-to-change, support requests
@@ -446,8 +443,7 @@ export function WorkCasePage() {
               <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[395px]">
                 <p className="text-body-16-semibold">4. Readability</p>
                 <p className="text-body-16 text-secondary-elevated">
-                  Visual hierarchy, zooming, and a minimap should help users understand a flow&apos;s
-                  structure even as the diagram grows.
+                  Visual hierarchy, zoom, and a minimap should keep growing flows easy to read.
                 </p>
                 <p className="text-body-16">
                   <span className="text-caption-14-semibold">Metric: </span>time-to-change
@@ -456,8 +452,7 @@ export function WorkCasePage() {
               <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[395px]">
                 <p className="text-body-16-semibold">5. Safe changes</p>
                 <p className="text-body-16 text-secondary-elevated">
-                  Statuses, validation, and publishing should reduce the fear of breaking a live
-                  flow and enable more frequent changes without developer involvement.
+                  Statuses, validation, and publishing should make live flows safer to change without developers.
                 </p>
                 <p className="text-body-16">
                   <span className="text-caption-14-semibold">Metric: </span>self-service rate, number of errors
