@@ -31,7 +31,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="en">
       <body className={`${inter.variable} ${oldenburg.variable} font-[var(--font-inter)] antialiased`}>
         {children}
       </body>

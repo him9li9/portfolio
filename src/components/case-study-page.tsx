@@ -27,11 +27,11 @@ const assets = {
 };
 
 const workStages = [
-  { label: "Дискавери", href: "#discovery" },
-  { label: "Гипотезы", href: "#hypotheses" },
-  { label: "Проектирование", href: "#design" },
-  { label: "Тестирование", href: "#solution" },
-  { label: "Передача в разработку", href: "#results" }
+  { label: "Discovery", href: "#discovery" },
+  { label: "Hypotheses", href: "#hypotheses" },
+  { label: "Design", href: "#design" },
+  { label: "Testing", href: "#solution" },
+  { label: "Developer handoff", href: "#results" }
 ];
 
 export function CaseStudyPage() {
@@ -386,18 +386,18 @@ export function CaseStudyPage() {
             <div className="flex flex-col gap-space-1">
               <h1 className="text-h1">MCN Softphone</h1>
               <p className="text-body-16 text-secondary">
-                Продуктовый дизайнер · 2024 — н.в.
+                Product Designer · 2024 — Present
               </p>
             </div>
             <p className="text-body-18">
-              Мобильное приложение для звонков через интернет и управления личным кабинетом.
-              Аудитория — путешественники, которым нужна доступная связь за границей без сложной
-              настройки SIM и роуминга.
+              A mobile app for making internet calls and managing a personal account.
+              Its audience is travelers who need affordable connectivity abroad without complex
+              SIM card or roaming setup.
             </p>
           </div>
           <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 items-center justify-center gap-space-4 rounded-[12px] bg-secondary px-space-4 py-space-8 sm:gap-space-6 sm:px-space-12">
               <Image
-                alt="Экран регистрации MCN Softphone"
+                alt="MCN Softphone registration screen"
                 src={assets.phone1}
                 width={900}
                 height={1840}
@@ -407,7 +407,7 @@ export function CaseStudyPage() {
               quality={100}
               />
               <Image
-                alt="Экран тарифа MCN Softphone"
+                alt="MCN Softphone plan screen"
                 src={assets.phone2}
                 width={900}
                 height={1840}
@@ -417,7 +417,7 @@ export function CaseStudyPage() {
               quality={100}
               />
               <Image
-                alt="Экран звонка MCN Softphone"
+                alt="MCN Softphone call screen"
                 src={assets.phone3}
                 width={900}
                 height={1840}
@@ -436,30 +436,28 @@ export function CaseStudyPage() {
           className="scroll-mt-space-16 flex flex-col gap-space-8"
         >
           <div className="flex flex-col">
-            <h2 className="text-h2">О проекте</h2>
+            <h2 className="text-h2">About the project</h2>
             <p className="mt-space-4 text-body-18">
-              Когда я присоединилась к проекту, приложение существовало в формате MVP, но проседала
-              основная метрика — количество звонков. Вместе с командой мне предстояло разобраться,
-              почему так происходит, и исправить это.
+              When I joined the project, the app existed as an MVP, but its key metric—the number
+              of calls—was underperforming. The team and I needed to understand why and fix it.
             </p>
             <div className="mt-space-8 h-px w-full bg-border-elevated" />
           </div>
 
           <div className="flex flex-col items-center gap-space-6">
             <div className="flex w-full flex-col gap-space-4">
-              <h3 className="text-h3">Проблема</h3>
+              <h3 className="text-h3">Problem</h3>
               <p className="text-body-18">
-                На обсуждении с командой выяснилась системная проблема — пользователь не понимал
-                статус в процессе подключения, стоимость звонка и следующий шаг в критические
-                моменты. Потеря коммуникации между системой и пользователем напрямую повлияла на
-                метрики.
+                Team discussions revealed a systemic problem: at critical moments, users did not
+                understand their activation status, the cost of a call, or what to do next. This
+                breakdown in communication between the system and the user directly affected the metrics.
               </p>
             </div>
             <div className="flex w-full flex-col gap-space-4">
               <ul className="list-disc pl-space-6 text-body-18">
                 <li>
-                  <span className="text-body-18-semibold">Низкая конверсия в первый звонок</span>
-                  {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
+                  <span className="text-body-18-semibold">Low conversion to the first call</span>
+                  {` — only one-third of users made it to a call because most did not understand when their number had been activated.`}
                 </li>
               </ul>
               <div className="flex flex-col items-center gap-space-3">
@@ -476,39 +474,39 @@ export function CaseStudyPage() {
                   />
                 </div>
                 <p className="text-center text-caption-14 text-secondary-elevated">
-                  CR в 1-й звонок, 2023 г.
+                  First-call CR, 2023
                 </p>
               </div>
               <ul className="list-disc pl-space-6 text-body-18">
                 <li>
-                  <span className="text-body-18-semibold">Низкий Retention</span>
-                  {` — люди скачивали приложение, пробовали разобраться, но из 2.1К новых пользователей возвращалась лишь половина. Retention падает до 15% к 4-й неделе.`}
+                  <span className="text-body-18-semibold">Low retention</span>
+                  {` — people downloaded the app and tried to figure it out, but only half of the 2.1K new users returned. Retention fell to 15% by week four.`}
                 </li>
               </ul>
               <ul className="list-disc pl-space-6 text-body-18">
                 <li>
-                  <span className="text-body-18-semibold">Растущие затраты на поддержку</span>
-                  {` — 40% обращений в поддержку касались статуса аккаунта и списаний — вопросов, которые можно было закрыть сразу в приложении.`}
+                  <span className="text-body-18-semibold">Rising support costs</span>
+                  {` — 40% of support requests concerned account status and charges—questions the app itself could have answered immediately.`}
                 </li>
               </ul>
             </div>
           </div>
 
           <div className="flex flex-col gap-space-4">
-            <h3 className="text-h3">Задача</h3>
+            <h3 className="text-h3">Objective</h3>
             <p className="text-body-18">
-              Основная задача проекта состояла в том, чтобы внедрить в продукт систему коммуникации
-              с чёткими шагами, подсказками и полной прозрачностью расходов. Это позволит вернуть
-              пользователю ощущение контроля и уверенности, сократив отток и нагрузку на поддержку.
+              The project&apos;s main objective was to introduce a communication system with clear
+              steps, guidance, and complete cost transparency. This would restore users&apos; sense
+              of control and confidence while reducing churn and the support workload.
             </p>
             <p className="text-body-18">
-              <span className="text-body-18-semibold">Метрики успеха</span>
-              {` — рост количества звонков из приложения, снижение повторных обращений в поддержку.`}
+              <span className="text-body-18-semibold">Success metrics</span>
+              {` — an increase in calls made from the app and fewer repeat support requests.`}
             </p>
           </div>
 
           <div className="flex flex-col gap-space-3">
-            <h3 className="text-h3">Этапы работы</h3>
+            <h3 className="text-h3">Project stages</h3>
             <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
                 <div key={stage.label} className="flex items-center gap-space-1">
@@ -530,39 +528,39 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-4"
         >
-          <h2 className="text-h2">Дискавери</h2>
+          <h2 className="text-h2">Discovery</h2>
 
           <div className="flex flex-col gap-space-8">
             <div className="text-body-18">
-              <p>В рамках discovery я опиралась на:</p>
+              <p>During discovery, I drew on:</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>анализ текущих пользовательских сценариев и логики экранов</li>
-                <li>обращения пользователей в поддержку (частые вопросы и типовые ошибки)</li>
-                <li>обзор аналогичных softphone- и коммуникационных решений</li>
-                <li>обсуждения с командой поддержки и разработки</li>
+                <li>an analysis of existing user flows and screen logic</li>
+                <li>user support requests (frequent questions and common errors)</li>
+                <li>a review of similar softphone and communications solutions</li>
+                <li>discussions with the support and development teams</li>
               </ul>
             </div>
 
             <div className="h-px w-full bg-border-elevated" />
 
             <div className="flex flex-col gap-space-4">
-              <h3 className="text-h3">Анализ текущей версии</h3>
+              <h3 className="text-h3">Current version analysis</h3>
               <p className="text-body-18">
-                <span className="text-body-18-semibold">Цель этапа —</span> понять, где именно пользователи теряются, совершают ошибки или тратят
-                лишнее время, и какие из этих проблем особенно критичны для MVP перед релизом. Поэтому
-                я начала с анализа текущего пользовательского пути и точек неопределённости:
+                <span className="text-body-18-semibold">The goal of this stage was to</span> understand exactly where users became confused, made mistakes, or spent
+                unnecessary time, and which issues were especially critical for the MVP before release. I
+                therefore began by analyzing the existing user journey and points of uncertainty:
               </p>
             </div>
 
             <div className="flex flex-col gap-space-2 text-body-18">
-              <p className="text-body-18-semibold">1. Сценарий активации разорван между вебом и приложением</p>
+              <p className="text-body-18-semibold">1. The activation flow was split between the web and the app</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>регистрация вынесена в веб-кабинет и требует ручной верификации менеджером</li>
-                <li>после отправки заявки нет объяснения со статусом и следующими действиями</li>
+                <li>registration took place in the web account and required manual verification by a manager</li>
+                <li>after submitting a request, users received no explanation of their status or next steps</li>
               </ul>
               <p>
-                Пользователи откладывают покупку номера и первый звонок <span className="text-body-18-semibold">→</span>{" "}
-                <span className="text-body-18-semibold">отток на этапе регистрации</span>
+                Users postponed purchasing a number and making their first call <span className="text-body-18-semibold">→</span>{" "}
+                <span className="text-body-18-semibold">drop-off during registration</span>
               </p>
             </div>
 
@@ -580,19 +578,19 @@ export function CaseStudyPage() {
                 />
               </div>
               <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
-                Анализ текущего userflow (регистрация · покупка номера · звонок)
+                Existing user flow analysis (registration · number purchase · call)
               </p>
             </div>
 
             <div className="flex flex-col gap-space-2 text-body-18">
-              <p className="text-body-18-semibold">2. Стоимость и списания не прозрачны в момент звонка</p>
+              <p className="text-body-18-semibold">2. Costs and charges were unclear at the time of the call</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>информацию о стоимости звонков в роуминге нужно было искать на сайте</li>
-                <li>после завершения звонка списания выглядят неожиданными</li>
+                <li>users had to search the website for roaming call rates</li>
+                <li>charges after a call appeared unexpected</li>
               </ul>
               <p>
-                Пользователи не понимают, сколько и за что они платят <span className="text-body-18-semibold">→</span>{" "}
-                <span className="text-body-18-semibold">рост обращений в поддержку</span>
+                Users did not understand how much they were paying or what for <span className="text-body-18-semibold">→</span>{" "}
+                <span className="text-body-18-semibold">more support requests</span>
               </p>
             </div>
 
@@ -612,14 +610,14 @@ export function CaseStudyPage() {
             </div>
 
             <div className="flex flex-col gap-space-2 text-body-18">
-              <p className="text-body-18-semibold">3. Некачественная обратная связь</p>
+              <p className="text-body-18-semibold">3. Poor feedback</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>в приложении нет понятной точки входа в поддержку</li>
-                <li>пользователи ищут ответы в разных каналах и повторяют вопросы</li>
+                <li>the app lacked a clear entry point to support</li>
+                <li>users searched for answers across different channels and repeated their questions</li>
               </ul>
               <p>
-                Пользователи не знают, где искать помощь <span className="text-body-18-semibold">→</span>{" "}
-                <span className="text-body-18-semibold">повторные обращения в разных каналах</span>
+                Users did not know where to find help <span className="text-body-18-semibold">→</span>{" "}
+                <span className="text-body-18-semibold">repeat requests across different channels</span>
               </p>
             </div>
 
@@ -649,17 +647,17 @@ export function CaseStudyPage() {
             </div>
 
             <p className="text-body-18">
-              Анализ обращений в поддержку показал, что основная причина проблем пользователей —
-              <span className="text-body-18-semibold">непонимание текущего состояния аккаунта и баланса</span>. Это особенно критично в путешествиях,
-              где важна немедленная доступность связи и интернета.
+              An analysis of support requests showed that the main source of user problems was{" "}
+              <span className="text-body-18-semibold">a lack of clarity about their account and balance status</span>. This is especially critical while traveling,
+              when immediate access to calls and the internet matters.
             </p>
 
             <div id="hypotheses" className="flex scroll-mt-space-16 flex-col gap-space-4">
-              <h3 className="text-h3">Анализ конкурентов</h3>
+              <h3 className="text-h3">Competitor analysis</h3>
               <p className="text-body-18">
-                В ходе discovery я также изучила аналогичные продукты, в которых есть звонки.
-                Например, после опыта работы с мессенджерами у пользователей формируется ожидание
-                мгновенной готовности к коммуникации (и звонкам в том числе) сразу после регистрации.
+                During discovery, I also studied similar products with calling features.
+                Experience with messaging apps has conditioned users to expect immediate access
+                to communication, including calls, as soon as they register.
               </p>
             </div>
 
@@ -677,14 +675,14 @@ export function CaseStudyPage() {
                 />
               </div>
               <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
-                WhatsApp  (регистрация · выбор контакта · звонок)
+                WhatsApp (registration · contact selection · call)
               </p>
             </div>
 
             <p className="text-body-18">
-              В softphone-приложениях, где есть обязательные шаги (выбор номера, верификация,
-              тарификация), путь к первому звонку объективно сложнее. Поэтому в таком сценарии
-              пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
+              In softphone apps with required steps such as choosing a number, verification, and
+              billing, the path to the first call is inherently more complex. Users therefore need
+              clear, continuous feedback on their progress and status throughout this flow.
             </p>
 
             <div className="relative left-1/2 flex w-[calc(100vw-32px)] max-w-[1100px] -translate-x-1/2 flex-col items-center justify-center gap-space-3 rounded-[12px] bg-secondary py-space-8">
@@ -701,62 +699,62 @@ export function CaseStudyPage() {
                 />
               </div>
               <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
-                Open Phone  (выбор номера · регистрация · покупка номера · звонок)
+                OpenPhone (number selection · registration · number purchase · call)
               </p>
             </div>
 
             <div className="flex w-full max-w-[800px] flex-col gap-space-6">
               <div className="flex flex-col gap-space-4">
-                <h3 className="text-h3">Гипотезы</h3>
+                <h3 className="text-h3">Hypotheses</h3>
                 <p className="text-body-18">
-                  На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками продукта.
+                  Based on the analysis, I formulated hypotheses tied to the product&apos;s key metrics.
                 </p>
               </div>
               <div className="flex flex-col gap-space-5 sm:flex-row sm:flex-wrap">
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">1. Ясность на старте</p>
+                  <p className="text-body-18-semibold">1. Clarity from the outset</p>
                   <p className="text-body-16 text-secondary-elevated">
-                    Если пользователь понимает, на каком этапе онбординга находится и когда сможет
-                    начать звонить, ему проще дойти до первого звонка.
+                    If users understand where they are in onboarding and when they will be able
+                    to start calling, they are more likely to complete their first call.
                   </p>
                   <p className="text-body-16">
-                    <span className="text-caption-14-semibold">Метрика: </span>CR в первый звонок
+                    <span className="text-caption-14-semibold">Metric: </span>first-call CR
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">2. Прозрачность стоимости</p>
+                  <p className="text-body-18-semibold">2. Cost transparency</p>
                   <p className="text-body-16 text-secondary-elevated">
-                    Если пользователь видит стоимость звонка и состояние баланса до начала вызова,
-                    условия тарификации станут более прозрачными.
+                    If users see the call cost and their balance before dialing,
+                    pricing will become more transparent.
                   </p>
                   <p className="text-body-16">
-                    <span className="text-caption-14-semibold">Метрика: </span>retention, обращения в поддержку
+                    <span className="text-caption-14-semibold">Metric: </span>retention, support requests
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">3. Доступность ответов</p>
+                  <p className="text-body-18-semibold">3. Accessible answers</p>
                   <p className="text-body-16 text-secondary-elevated">
-                    Если ответы на частые вопросы доступны внутри приложения, он реже будет
-                    прерывать сценарий и обращаться в поддержку.
+                    If answers to common questions are available in the app, users will be less
+                    likely to interrupt the flow and contact support.
                   </p>
                   <p className="text-body-16">
-                    <span className="text-caption-14-semibold">Метрика: </span>обращения в поддержку
+                    <span className="text-caption-14-semibold">Metric: </span>support requests
                   </p>
                 </div>
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-elevated px-space-6 pb-space-6 pt-space-5 sm:w-[390px]">
-                  <p className="text-body-18-semibold">4. Очевидность следующего шага</p>
+                  <p className="text-body-18-semibold">4. A clear next step</p>
                   <p className="text-body-16 text-secondary-elevated">
-                    Если после ошибки или незавершённого действия пользователь понимает, что делать
-                    дальше, ему проще вернуться к действию.
+                    If users understand what to do after an error or incomplete action,
+                    it is easier for them to return to the flow.
                   </p>
                   <p className="text-body-16">
-                    <span className="text-caption-14-semibold">Метрика: </span>retention, обращения в поддержку
+                    <span className="text-caption-14-semibold">Metric: </span>retention, support requests
                   </p>
                 </div>
               </div>
               <p className="text-body-18">
-                Гипотезы помогли определить основные направления работы, но в процессе проверки на
-                реальных сценариях они могли уточняться и корректироваться.
+                The hypotheses helped define the main areas of work, but they could be refined and
+                adjusted as we tested them against real-world scenarios.
               </p>
             </div>
           </div>
@@ -768,18 +766,18 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-4"
         >
-          <h2 className="text-h2">Проектирование</h2>
+          <h2 className="text-h2">Design</h2>
           <div className="flex flex-col gap-space-8">
             <div className="flex flex-col gap-space-4">
               <p className="text-body-18">
-                <span className="text-body-18-semibold">Цель этапа —</span> определить, как система будет вести себя в диалоге с пользователем, чтобы
-                он не терялся в случае если что-то пойдёт не так. Основные решения касались логики
-                сценариев, проработки состояний и корнер-кейсов.
+                <span className="text-body-18-semibold">The goal of this stage was to</span> define how the system would communicate with users so
+                they would not become confused if something went wrong. The main decisions concerned
+                flow logic, states, and edge cases.
               </p>
               <p className="text-body-18">
-                Когда я проектировала новый путь, главным было убрать неопределённость. Пользователь не
-                должен гадать: «А номер уже мой? А сколько это стоит? А что делать, если что-то пошло не
-                так?». Вот что получилось:
+                My main priority when designing the new journey was to eliminate uncertainty. Users
+                should not have to wonder: “Is the number mine yet? How much will this cost? What do I
+                do if something goes wrong?” Here is the result:
               </p>
             </div>
 
@@ -804,20 +802,20 @@ export function CaseStudyPage() {
                 </button>
               </div>
               <p className="px-space-4 text-center text-caption-14 text-secondary-elevated sm:px-0">
-                Новый userflow 1-го звонка (регистрация · покупка номера · звонок)
+                New first-call user flow (registration · number purchase · call)
               </p>
             </div>
 
             <ul className="list-disc space-y-space-2 pl-space-6 text-body-18">
-              <li>путь до первого звонка сократился с 8 до 3 шагов</li>
+              <li>the path to the first call was reduced from eight steps to three</li>
               <li>
-                стали показывать стоимость звонка ещё до вызова, а после ключевых шагов — success screen,
-                чтобы убрать тревогу и неопределённость
+                call costs were shown before dialing, while success screens after key steps
+                reduced anxiety and uncertainty
               </li>
-              <li>ошибки не оставляют в тупике, а предлагают решение и возвращают на сценарий</li>
+              <li>errors no longer led to dead ends; they offered a solution and returned users to the flow</li>
               <li>
-                поддержка всегда доступна, но не как основной, а как дополнительный шаг в решении
-                проблемы
+                support remained readily available as an additional, rather than primary, step
+                in resolving a problem
               </li>
             </ul>
           </div>
@@ -830,25 +828,24 @@ export function CaseStudyPage() {
           className="scroll-mt-space-16 flex flex-col gap-space-6"
         >
           <div className="flex flex-col">
-            <h2 className="text-h2">Решение</h2>
+            <h2 className="text-h2">Solution</h2>
             <p className="mt-space-4 text-body-18">
-              Первые тесты показали: даже там, где логика казалась очевидной, пользователи
-              ошибались. Поэтому я собрала обратную связь, переработала несколько сценариев и
-              перепроверила их:
+              Initial tests showed that users made mistakes even where the logic seemed obvious.
+              I therefore gathered feedback, reworked several flows, and tested them again:
             </p>
           </div>
 
           <div className="mt-space-2 flex flex-col gap-space-2 text-body-18">
-            <p className="text-body-18-semibold">1. Экран успеха после регистрации</p>
+            <p className="text-body-18-semibold">1. Success screen after registration</p>
             <p>
-              Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
-              что люди зависали на 2-3 минуты — галочка привлекала внимание, а кнопка терялась.
+              Initially, this was a separate screen with a checkmark and a “Continue” button, but testing
+              showed that people paused for two to three minutes: the checkmark drew attention while the button was overlooked.
             </p>
             <p>
               <span>→</span>{" "}
               <span className="italic">
-                Объединила экран успеха с оформлением заказа, чтобы после регистрации через Госуслуги
-                пользователь сразу видел свой номер и условия тарифа — без лишних шагов и пауз.
+                I combined the success screen with checkout so that after registering through Gosuslugi,
+                users immediately saw their number and plan terms, without unnecessary steps or pauses.
               </span>
             </p>
           </div>
@@ -869,16 +866,16 @@ export function CaseStudyPage() {
           </div>
 
           <div className="flex flex-col gap-space-2 text-body-18">
-            <p className="text-body-18-semibold">2. Узнать стоимость звонка</p>
+            <p className="text-body-18-semibold">2. Checking the cost of a call</p>
             <p>
-              В первой версии цену можно было увидеть, только начав набирать номер. Некоторым пользователям
-              было неудобно вводить знакомый номер каждый раз, чтобы оценить стоимость.
+              In the first version, users could see the price only after they started entering a number.
+              Some found it inconvenient to enter a familiar number every time they wanted an estimate.
             </p>
             <p>
               <span>→</span>{" "}
               <span className="italic">
-                Добавила кнопку «Выбрать контакт» прямо на экран набора. При выборе контакта цена
-                сразу отображается — как и при ручном вводе.
+                I added a “Choose contact” button directly to the dialer. Selecting a contact now
+                displays the price immediately, just as manual entry does.
               </span>
             </p>
           </div>
@@ -908,18 +905,17 @@ export function CaseStudyPage() {
           </div>
 
           <div className="flex flex-col gap-space-2 text-body-18">
-            <p className="text-body-18-semibold">3. Помощь и подсказки</p>
+            <p className="text-body-18-semibold">3. Help and guidance</p>
             <p>
-              Ранее был экран ошибки, где просто выводилась причина: «Регистрация не пройдена»,
-              «Недостаточно средств» и другие, но пользователи всё равно не понимали, что делать
-              дальше и писали в поддержку.
+              Previously, the error screen simply displayed a reason such as “Registration incomplete”
+              or “Insufficient funds.” Users still did not know what to do next and contacted support.
             </p>
             <p>
               <span>→</span>{" "}
               <span className="italic">
-                Добавила контекстные кнопки для возвращения в сценарий — «Вернуться в Госуслуги»,
-                «Пополнить баланс» и «Написать в поддержку», чтобы пользователь мог быстро перейти к
-                нужному действию или написать в поддержку.
+                I added contextual buttons to return users to the flow—“Return to Gosuslugi,”
+                “Top up balance,” and “Contact support”—so they could quickly take the
+                appropriate action or reach support.
               </span>
             </p>
           </div>
@@ -941,14 +937,14 @@ export function CaseStudyPage() {
 
           <div className="flex flex-col gap-space-8 text-body-18">
             <p>
-              Каждая итерация закрывала конкретную точку неопределённости: пользователь видел, когда
-              номер активен, сколько стоит звонок и что делать при ошибке. За счёт этого путь стал
-              короче, а обращений в поддержку стало меньше.
+              Each iteration resolved a specific point of uncertainty: users could see when their
+              number was active, how much a call would cost, and what to do after an error. This
+              shortened the journey and reduced support requests.
             </p>
             <p>
-              Дальнейшее развитие софтфона продолжилось через обратную связь от пользователей:
-              добавление избранных контактов, повтор звонка из истории и push-уведомления о низком
-              балансе. Всё это ушло в бэклог и дальше — в ближайшие обновления.
+              Further softphone development continued in response to user feedback, including
+              favorite contacts, redialing from call history, and low-balance push notifications.
+              These improvements entered the backlog and were planned for upcoming releases.
             </p>
           </div>
         </motion.section>
@@ -959,13 +955,13 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-4"
         >
-          <h2 className="text-h2">Результаты</h2>
+          <h2 className="text-h2">Results</h2>
           <div className="flex flex-col gap-space-5">
             <p className="text-body-18">
-              Ключевые изменения закрыли основные проблемы, выявленные на старте: путь до первого
-              звонка стал короче, пользователи лучше понимали статус и стоимость действий, а часть
-              вопросов больше не уходила в поддержку. При том же трафике количество звонков выросло
-              с <span className="text-body-18-semibold">13k</span> до{" "}
+              The key changes addressed the main problems identified at the outset: the path to the
+              first call became shorter, users better understood their status and the cost of actions,
+              and some questions no longer reached support. With the same traffic, the number of calls rose
+              from <span className="text-body-18-semibold">13K</span> to{" "}
               <span className="text-body-18-semibold">17k.</span>
             </p>
 
@@ -979,7 +975,7 @@ export function CaseStudyPage() {
                   <span className="inline-flex h-10 items-center text-h2">3</span>
                 </div>
                 <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
-                  шага до звонка
+                  steps to a call
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
@@ -989,7 +985,7 @@ export function CaseStudyPage() {
                   <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
                 </p>
                 <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
-                  конверсия в 1-й звонок
+                  first-call conversion
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
@@ -1002,7 +998,7 @@ export function CaseStudyPage() {
                   <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
                 </div>
                 <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
-                  retention на 4-й неделе
+                  week-four retention
                 </p>
               </div>
               <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-elevated px-space-3 py-space-3 lg:w-[184px]">
@@ -1015,31 +1011,31 @@ export function CaseStudyPage() {
                   <span className="inline-flex h-10 items-end pb-space-1 text-body-18-semibold">%</span>
                 </div>
                 <p className="whitespace-nowrap text-caption-14 text-secondary-elevated">
-                  обращений в саппорт
+                  support requests
                 </p>
               </div>
             </div>
 
             <p className="text-body-18">
-              Для себя я вынесла, что в мобильных продуктах доверие строится через понятную
-              коммуникацию в критические моменты: статус, стоимость, ошибки и следующий шаг.
+              My key takeaway was that trust in mobile products is built through clear communication
+              at critical moments: status, cost, errors, and the next step.
             </p>
           </div>
         </motion.section>
 
         <motion.nav
           variants={item}
-          aria-label="Навигация между страницами"
+          aria-label="Page navigation"
           className="flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
-              ← На главную
+              ← Home
             </span>
           </Link>
           <Link href="/work" className="group shrink-0">
             <span className="link-underline">
-              Кейс KOMPaaS →
+              KOMPaaS case study →
             </span>
           </Link>
         </motion.nav>
@@ -1047,12 +1043,12 @@ export function CaseStudyPage() {
 
       <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-space-3 lg:flex">
         {[
-          { id: "overview", label: "Введение" },
-          { id: "about", label: "О проекте" },
-          { id: "discovery", label: "Дискавери" },
-          { id: "design", label: "Проектирование" },
-          { id: "solution", label: "Решение" },
-          { id: "results", label: "Результаты" },
+          { id: "overview", label: "Introduction" },
+          { id: "about", label: "About the project" },
+          { id: "discovery", label: "Discovery" },
+          { id: "design", label: "Design" },
+          { id: "solution", label: "Solution" },
+          { id: "results", label: "Results" },
         ].map((item) => (
           <a
             key={item.id}
