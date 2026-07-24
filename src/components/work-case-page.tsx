@@ -701,7 +701,7 @@ export function WorkCasePage() {
                 Make changes without unnecessary navigation or loss of context.
               </p>
               <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
-                <p>• Element creation and setup</p>
+                <p>• Elements creation and setup</p>
                 <p>• Inline editing</p>
               </div>
             </div>
