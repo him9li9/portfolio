@@ -682,7 +682,7 @@ export function WorkCasePage() {
                 Quickly grasp the flow&apos;s structure and understand how it works.
               </p>
               <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
-                <p>• Element grouping</p>
+                <p>• Elements grouping</p>
                 <p>• Clear names</p>
               </div>
             </div>
