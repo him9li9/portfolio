@@ -21,7 +21,7 @@ const assets = {
   publish: "/figma/Case_2/public.png"
 };
 
-const workStages = ["Discovery", "Hypotheses", "Design", "Testing", "Developer handoff"];
+const workStages = ["Discovery", "Hypotheses", "Design approach", "Testing", "Developer handoff"];
 
 export function WorkCasePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
@@ -478,7 +478,7 @@ export function WorkCasePage() {
           className="scroll-mt-space-16 flex flex-col gap-space-8"
         >
           <div className="flex flex-col gap-space-4">
-            <h2 className="text-h2">Design</h2>
+            <h2 className="text-h2">Design approach</h2>
             <p className="text-body-18">
               The design was built around three key principles:
             </p>
@@ -895,7 +895,7 @@ export function WorkCasePage() {
           { id: "overview", label: "Introduction" },
           { id: "about", label: "About the project" },
           { id: "discovery", label: "Discovery" },
-          { id: "design", label: "Design" },
+          { id: "design", label: "Design approach" },
           { id: "solution", label: "Solution" },
           { id: "results", label: "Results" },
         ].map((item) => (

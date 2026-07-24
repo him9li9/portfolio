@@ -29,7 +29,7 @@ const assets = {
 const workStages = [
   { label: "Discovery", href: "#discovery" },
   { label: "Hypotheses", href: "#hypotheses" },
-  { label: "Design", href: "#design" },
+  { label: "Design process", href: "#design" },
   { label: "Testing", href: "#solution" },
   { label: "Developer handoff", href: "#results" }
 ];
@@ -766,7 +766,7 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-4"
         >
-          <h2 className="text-h2">Design</h2>
+          <h2 className="text-h2">Design process</h2>
           <div className="flex flex-col gap-space-8">
             <div className="flex flex-col gap-space-4">
               <p className="text-body-18">
@@ -1046,7 +1046,7 @@ export function CaseStudyPage() {
           { id: "overview", label: "Introduction" },
           { id: "about", label: "About the project" },
           { id: "discovery", label: "Discovery" },
-          { id: "design", label: "Design" },
+          { id: "design", label: "Design process" },
           { id: "solution", label: "Solution" },
           { id: "results", label: "Results" },
         ].map((item) => (
