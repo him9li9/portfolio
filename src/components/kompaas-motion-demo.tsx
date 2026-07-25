@@ -37,46 +37,46 @@ type PointerPosition = {
 };
 
 const statusText: Record<DemoStatus, string> = {
-  saved: "Сохранено",
-  draft: "Черновик",
-  published: "Опубликован"
+  saved: "Saved",
+  draft: "Draft",
+  published: "Published"
 };
 
 const scenarioItems = [
-  { label: "Все сценарии", icon: "groups" as IconName },
-  { label: "Продажи b2c", icon: "folder" as IconName },
-  { label: "Звонки с лидами", child: true, active: true },
-  { label: "Акционные предложения", child: true },
-  { label: "Продажи b2b", icon: "folder" as IconName },
-  { label: "Шаблоны", icon: "folder" as IconName },
-  { label: "Корзина", icon: "delete" as IconName }
+  { label: "All flows", icon: "groups" as IconName },
+  { label: "B2C sales", icon: "folder" as IconName },
+  { label: "Lead calls", child: true, active: true },
+  { label: "Promotional offers", child: true },
+  { label: "B2B sales", icon: "folder" as IconName },
+  { label: "Templates", icon: "folder" as IconName },
+  { label: "Trash", icon: "delete" as IconName }
 ];
 
 const libraryItems = [
   {
-    title: "Очередь",
-    description: "Распределение звонков в очереди",
+    title: "Queue",
+    description: "Distribute calls in a queue",
     icon: "operator" as IconName
   },
   {
-    title: "Приветствие",
-    description: "Сообщение при входящем звонке",
+    title: "Greeting",
+    description: "Message for an incoming call",
     icon: "keyboardVoice" as IconName
   },
   {
-    title: "Синтез речи",
-    description: "Озвучивание текста",
+    title: "Text to speech",
+    description: "Convert text to speech",
     icon: "graphicEq" as IconName
   },
   {
-    title: "Вопрос-ответ",
-    description: "Ответы на вопросы абонента",
+    title: "Question and answer",
+    description: "Answer caller questions",
     icon: "help" as IconName,
     draggable: true
   },
   {
-    title: "Голосовое меню",
-    description: "Навигация через цифры или голос",
+    title: "Voice menu",
+    description: "Navigate by keypad or voice",
     icon: "question" as IconName
   }
 ];
@@ -191,16 +191,16 @@ export function KompaasMotionDemo() {
             />
             <ScenarioNode
               className="left-[420px] top-[118px]"
-              title="Голосовая почта"
-              subtitle="Голосовая почта (5)"
+              title="Voicemail"
+              subtitle="Voicemail (5)"
               icon="voicemail"
               color="#2a7ba7"
               bg="#e1effa"
             />
             <ScenarioNode
               className="left-[420px] top-[199px]"
-              title="Внутренний абонент"
-              subtitle="Иван Иванов (102)"
+              title="Internal extension"
+              subtitle="Ivan Ivanov (102)"
               icon="operator"
               color="#2a7ba7"
               bg="#e1effa"
@@ -208,8 +208,8 @@ export function KompaasMotionDemo() {
             <EndNode />
             <ScenarioNode
               className="left-[420px] top-[454px]"
-              title="Интеграционное событие"
-              subtitle="ВАТС: Завершение звонка"
+              title="Integration event"
+              subtitle="PBX: Call ended"
               icon="integration"
               color="#41a75c"
               bg="#def4e5"
@@ -229,8 +229,8 @@ export function KompaasMotionDemo() {
                     transition={{ duration: 0.42, ease: smoothEase }}
                   >
                     <ScenarioNode
-                      title="Вопрос-ответ"
-                      subtitle="Ответы на вопросы абонента"
+                      title="Question and answer"
+                      subtitle="Answer caller questions"
                       icon="help"
                       color="#f0831f"
                       bg="#f5e5d6"
@@ -244,11 +244,11 @@ export function KompaasMotionDemo() {
                     transition={{ delay: 0.14, duration: 0.36, ease: smoothEase }}
                   >
                     <div className="mb-3 flex items-center justify-between">
-                      <p className="text-[13px] font-semibold leading-[1.2]">Настройка блока</p>
+                      <p className="text-[13px] font-semibold leading-[1.2]">Block settings</p>
                       <Icon name="more" size={16} className="text-[#828282]" />
                     </div>
-                    <InlineField label="Распознавание" value="Голос + цифры" />
-                    <InlineField label="Ветка" value="После интеграции" active />
+                    <InlineField label="Recognition" value="Voice + keypad" />
+                    <InlineField label="Branch" value="After integration" active />
                   </motion.div>
                 </>
               )}
@@ -262,7 +262,7 @@ export function KompaasMotionDemo() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
                 >
-                  Отпустите блок на canvas
+                  Drop the block onto the canvas
                 </motion.div>
               )}
             </AnimatePresence>
@@ -283,8 +283,8 @@ export function KompaasMotionDemo() {
             transition={{ duration: 0.16 }}
           >
             <LibraryRow
-              title="Вопрос-ответ"
-              description="Ответы на вопросы абонента"
+              title="Question and answer"
+              description="Answer caller questions"
               icon="help"
               dragging
             />
@@ -299,8 +299,8 @@ function ProductHeader() {
   return (
     <header className="flex h-8 items-center justify-between bg-[#3f3f3f] px-3 text-[12px] text-white">
       <div className="flex h-full items-center gap-4">
-        <span className="font-semibold">Телефония</span>
-        <span className="text-white/80">Л/C N°116181</span>
+        <span className="font-semibold">Telephony</span>
+        <span className="text-white/80">Account No. 116181</span>
         <span className="rounded-[3px] bg-[#36b56f] px-2 py-[2px] font-medium">-200.00</span>
         <span className="text-white/75">(40,000.00)</span>
         <Icon name="shoppingCart" size={18} className="text-white" />
@@ -309,7 +309,7 @@ function ProductHeader() {
       <div className="flex h-full items-center gap-4 text-white/90">
         <span>12:00 (UTC+3)</span>
         <span className="rounded-full bg-white px-3 py-[2px] text-[11px] font-semibold text-[#1d7b37]">
-          Онлайн
+          Online
         </span>
         <Icon name="notifications" size={18} className="text-white" />
         <span className="text-[18px] font-semibold leading-none">?</span>
@@ -320,14 +320,14 @@ function ProductHeader() {
 
 function ProductNav() {
   const items = [
-    "Сценарии звонков",
-    "Телефонная система",
-    "ВАТС",
-    "SIP-транки",
-    "SIP-аккаунты",
-    "Оборудование",
-    "Аналитика",
-    "Звонки"
+    "Call flows",
+    "Phone system",
+    "PBX",
+    "SIP trunks",
+    "SIP accounts",
+    "Equipment",
+    "Analytics",
+    "Calls"
   ];
 
   return (
@@ -336,7 +336,7 @@ function ProductNav() {
         <span
           key={item}
           className={
-            item === "Сценарии звонков"
+            item === "Call flows"
               ? "flex h-full items-center border-b-2 border-[#2a7ba7] text-[#2a7ba7]"
               : "text-black"
           }
@@ -353,7 +353,7 @@ function LeftSidebar() {
     <aside className="flex flex-col justify-between border-r border-[#f0f0f0] bg-white py-2">
       <div>
         <div className="flex h-8 items-center gap-2 px-3">
-          <h1 className="flex-1 text-[18px] font-semibold leading-[1.1]">Сценарии</h1>
+          <h1 className="flex-1 text-[18px] font-semibold leading-[1.1]">Flows</h1>
           <button className="grid size-[22px] place-items-center rounded-full text-[#2a7ba7]">
             <Icon name="add" size={16} />
           </button>
@@ -399,11 +399,11 @@ function RightSidebar({ onDragStart }: { onDragStart: (event: React.PointerEvent
     <aside className="border-l border-[#f0f0f0] bg-white px-3 py-3">
       <div className="mb-3 flex h-8 items-center gap-2 rounded-[4px] bg-[#f6f6f6] px-2 text-[12px] text-[#a6a6a6]">
         <Icon name="search" size={16} />
-        <span>Поиск по элементам</span>
+        <span>Search elements</span>
       </div>
 
-      <LibrarySection title="Абоненты" color="#2a7ba7" collapsed />
-      <LibrarySection title="Голосовые интерфейсы" color="#f0831f">
+      <LibrarySection title="Subscribers" color="#2a7ba7" collapsed />
+      <LibrarySection title="Voice interfaces" color="#f0831f">
         {libraryItems.map((item) => (
           <button
             key={item.title}
@@ -417,8 +417,8 @@ function RightSidebar({ onDragStart }: { onDragStart: (event: React.PointerEvent
           </button>
         ))}
       </LibrarySection>
-      <LibrarySection title="Управление звонком" color="#ffc008" collapsed />
-      <LibrarySection title="Интеграции" color="#36b56f" collapsed />
+      <LibrarySection title="Call control" color="#ffc008" collapsed />
+      <LibrarySection title="Integrations" color="#36b56f" collapsed />
     </aside>
   );
 }
@@ -446,7 +446,7 @@ function CanvasTopbar({
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-1">
           <span className="size-[7px] rounded-full bg-[#36b56f]" />
-          <p className="text-[16px] font-semibold leading-none">Звонки с лидами</p>
+          <p className="text-[16px] font-semibold leading-none">Lead calls</p>
           <Icon name="more" size={16} className="text-black" />
         </div>
         <p className="text-[12px] leading-none">+7 (912) 345-67-89⌄</p>
@@ -458,7 +458,7 @@ function CanvasTopbar({
         </motion.span>
         <Icon name="clock" size={20} className="text-[#2a7ba7]" />
         <button className="h-8 rounded-[8px] bg-[#f1f9fe] px-3 text-[12px] font-semibold text-[#2a7ba7]">
-          Тестировать
+          Test
         </button>
         <motion.button
           type="button"
@@ -471,7 +471,7 @@ function CanvasTopbar({
               : "bg-[#dfe7eb] text-[#8da3ae]"
           }`}
         >
-          {isPublishing ? "Публикуется" : "Опубликовать"}
+          {isPublishing ? "Publishing" : "Publish"}
         </motion.button>
       </div>
     </div>
@@ -523,7 +523,7 @@ function StartNode() {
       <span className="grid size-9 place-items-center rounded-full bg-[#fff5ce] text-[#ffc008]">
         <Icon name="play" size={24} />
       </span>
-      <span className="text-[14px] font-semibold">Начало</span>
+      <span className="text-[14px] font-semibold">Start</span>
       <span className="ml-auto size-3 rounded-full bg-[#d8d8d8]" />
     </div>
   );
@@ -557,15 +557,15 @@ function QuestionNode({
         <IconBox icon="help" color="#f0831f" bg="#f5e5d6" size={48} iconSize={28} />
         <div className="min-w-0 flex-1">
           <div className="flex items-center justify-between">
-            <p className="truncate text-[16px] font-semibold leading-[1.2]">Вопрос-ответ</p>
+            <p className="truncate text-[16px] font-semibold leading-[1.2]">Question and answer</p>
             <Icon name="more" size={16} />
           </div>
-          <p className="truncate text-[14px] leading-[1.4]">Вопрос-ответ (2)</p>
+          <p className="truncate text-[14px] leading-[1.4]">Question and answer (2)</p>
         </div>
       </div>
 
       <div className="flex flex-col gap-2">
-        {["Да", "Нет", "Не распознано", "Прерывание"].map((label, index) => (
+        {["Yes", "No", "Not recognized", "Interrupted"].map((label, index) => (
           <div key={label} className="relative flex items-center">
             <div
               className={`h-8 flex-1 rounded-[8px] px-3 py-[7px] text-[14px] leading-none transition ${
@@ -646,7 +646,7 @@ function EndNode() {
   return (
     <div className="absolute left-[562px] top-[311px] z-10 flex h-[72px] w-[145px] items-center gap-2 rounded-full bg-white px-3 shadow-[0_2px_12px_rgba(130,130,130,0.08)]">
       <IconBox icon="callEnd" color="#d5a100" bg="#fff5ce" size={48} iconSize={27} rounded />
-      <span className="flex-1 text-[14px] font-semibold">Конец</span>
+      <span className="flex-1 text-[14px] font-semibold">End</span>
       <Icon name="more" size={16} />
     </div>
   );
@@ -655,7 +655,7 @@ function EndNode() {
 function Note() {
   return (
     <div className="absolute left-[55px] top-[500px] z-10 h-[142px] w-[214px] rounded-[8px] bg-[#ffe7ad] p-3 text-[12px] leading-[1.35] shadow-[0_2px_5px_rgba(130,130,130,0.07)]">
-      <p>Используются переменные:</p>
+      <p>Variables used:</p>
       <p>stt_answer=13</p>
       <p>nnp_ndc_type_id=134</p>
       <span className="absolute bottom-2 right-2 size-2 rounded-[2px] bg-[#f2cf82]" />

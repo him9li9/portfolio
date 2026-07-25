@@ -19,7 +19,7 @@ const assets = {
   publishMotion: "/figma/Case_2/Section_4/publish_motion.mp4"
 };
 
-const workStages = ["Дискавери", "Гипотезы", "Проектирование", "Тестирование", "Передача в разработку"];
+const workStages = ["Discovery", "Hypotheses", "Design approach", "Testing", "Developer handoff"];
 
 const zoomImages = {
   hero: {
@@ -31,7 +31,7 @@ const zoomImages = {
     hasPanel: false
   },
   oldCanvas: {
-    alt: "Текущая версия редактора сценариев",
+    alt: "Current version of the flow editor",
     src: assets.oldCanvas,
     mediaType: "image",
     width: 2100,
@@ -39,7 +39,7 @@ const zoomImages = {
     hasPanel: false
   },
   addFlow: {
-    alt: "Флоу работы с элементами",
+    alt: "Element workflow",
     src: assets.addFlow,
     mediaType: "image",
     width: 2700,
@@ -47,7 +47,7 @@ const zoomImages = {
     hasPanel: true
   },
   table: {
-    alt: "Таблица анализа конкурентов",
+    alt: "Competitor analysis table",
     src: assets.table,
     mediaType: "image",
     width: 2400,
@@ -55,7 +55,7 @@ const zoomImages = {
     hasPanel: false
   },
   leftSidebar: {
-    alt: "Навигация по сценариям и быстрые действия",
+    alt: "Flow navigation and quick actions",
     src: assets.leftSidebar,
     mediaType: "image",
     width: 2400,
@@ -63,7 +63,7 @@ const zoomImages = {
     hasPanel: false
   },
   rightSidebar: {
-    alt: "Библиотека элементов и настройки правой панели",
+    alt: "Element library and right-panel settings",
     src: assets.rightSidebar,
     mediaType: "image",
     width: 2400,
@@ -71,13 +71,13 @@ const zoomImages = {
     hasPanel: false
   },
   canvasMotion: {
-    alt: "Пользователь добавляет и настраивает блок, оставаясь в контексте",
+    alt: "A user adds and configures a block while staying in context",
     src: assets.canvasMotion,
     mediaType: "video",
     hasPanel: false
   },
   minimap: {
-    alt: "Minimap и навигация по большой схеме",
+    alt: "Minimap and navigation through a large diagram",
     src: assets.minimap,
     mediaType: "image",
     width: 2400,
@@ -85,7 +85,7 @@ const zoomImages = {
     hasPanel: false
   },
   publishMotion: {
-    alt: "После публикации изменений статус обновляется, а кнопка становится неактивной",
+    alt: "After publishing, the status updates and the button becomes inactive",
     src: assets.publishMotion,
     mediaType: "video",
     hasPanel: false
@@ -328,13 +328,13 @@ export function WorkCasePage() {
             <div className="flex flex-col gap-space-1">
               <h1 className="text-h1">KOMPaaS</h1>
               <p className="text-body-16 text-secondary">
-                Продуктовый дизайнер · 2023 — 2024
+                Product Designer · 2023 — 2024
               </p>
             </div>
             <p className="text-body-18">
-              B2B-платформа для автоматизации контакт-центров. Используется в банках, клиниках,
-              образовательных продуктах и ритейле — везде, где важна скорость обработки обращений и
-              уровень клиентского сервиса.
+              A B2B platform for contact center automation. It is used by banks, clinics,
+              educational products, and retailers—anywhere response speed and the quality of
+              customer service are critical.
             </p>
           </div>
 
@@ -343,7 +343,7 @@ export function WorkCasePage() {
               type="button"
               className="group relative block w-full cursor-zoom-in"
               onClick={() => setOpenImage("hero")}
-              aria-label="Увеличить схему KOMPaaS canvas"
+              aria-label="Enlarge the KOMPaaS canvas diagram"
             >
               <Image
                 alt="KOMPaaS canvas"
@@ -372,39 +372,40 @@ export function WorkCasePage() {
           className="-mt-space-14 scroll-mt-space-16 case-section-stack"
         >
           <div className="case-h2-stack">
-            <h2 className="text-h2">О проекте</h2>
+            <h2 className="text-h2">About the project</h2>
             <p className="text-body-18">
-              Один из продуктов KOMPaaS — конструктор сценариев звонков из элементов: голосового
-              меню, опросов и оценки качества. В старой версии менеджеры не понимали связи между
-              блоками и боялись вносить изменения без разработки. Я спроектировала редактор, где
-              сценарий можно собрать, изменить и подготовить к публикации в одном рабочем контексте.
+              One of KOMPaaS&apos;s products is a block-based call flow builder for voice menus,
+              surveys, and quality assessment. In the old version, managers did not understand the
+              connections between blocks and were afraid to make changes without developers. I
+              designed an editor where a flow can be built, changed, and prepared for publishing
+              within a single workspace.
             </p>
           </div>
 
           <div className="case-h3-stack">
-            <h3 className="text-h3">Проблема</h3>
+            <h3 className="text-h3">Problem</h3>
             <p className="text-body-18">
-              Любые изменения в сценариях требовали участия разработки и занимали часы или дни. Из-за
-              этого сценарии не успевали адаптироваться под изменения процессов, росли операционные
-              затраты и риск ошибок в продакшене. Для клиентов с SLA это было особенно критично:
-              задержки и ошибки могли напрямую влиять на качество обслуживания.
+              Any change to a flow required developer involvement and took hours or days. As a
+              result, flows could not keep pace with process changes, while operating costs and
+              the risk of production errors increased. This was especially critical for clients
+              with SLAs, where delays and errors could directly affect service quality.
             </p>
           </div>
 
           <div className="case-h3-stack">
-            <h3 className="text-h3">Задача</h3>
+            <h3 className="text-h3">Objective</h3>
             <p className="text-body-18">
-              Нужно было устранить зависимость клиентов от разработки и превратить сценарии звонков
-              из технической задачи в понятный бизнес-инструмент.
+              The goal was to remove clients&apos; dependence on developers and turn call flow
+              management from a technical task into an accessible business tool.
             </p>
             <p className="text-body-18">
-              <span className="text-body-18-semibold">Метрики успеха</span>
-              {` — рост доли self-service сценариев, снижение нагрузки на разработку и поддержку, сокращение time-to-change при минимальном количестве ошибок.`}
+              <span className="text-body-18-semibold">Success metrics</span>
+              {` — a higher share of self-service flows, reduced development and support workloads, and a shorter time-to-change with minimal errors.`}
             </p>
           </div>
 
           <div className="case-h3-stack">
-            <h3 className="text-h3">Этапы работы</h3>
+            <h3 className="text-h3">Project stages</h3>
             <div className="flex flex-wrap items-center gap-space-1">
               {workStages.map((stage, index) => (
                 <div key={stage} className="flex items-center gap-space-1">
@@ -427,23 +428,23 @@ export function WorkCasePage() {
           className="scroll-mt-space-16 case-section-stack"
         >
           <div className="case-h2-stack">
-            <h2 className="text-h2">Дискавери</h2>
+            <h2 className="text-h2">Discovery</h2>
             <div className="case-text-list-stack text-body-18">
-              <p>В рамках discovery я изучила, как пользователи работают со сценариями в текущей версии продукта:</p>
+              <p>During discovery, I studied how users worked with flows in the current product:</p>
               <ul className="list-disc space-y-0 pl-space-6">
-                <li>проанализировала реальные сценарии и логику экранов</li>
-                <li>разобрала обращения в поддержку (ошибки и частые вопросы)</li>
-                <li>сравнила подходы в workflow-конструкторах</li>
-                <li>обсудила проблемы с поддержкой и разработкой</li>
+                <li>analyzed real-world flows and screen logic</li>
+                <li>reviewed support requests, errors, and common questions</li>
+                <li>compared approaches used by workflow builders</li>
+                <li>discussed the problems with support and development</li>
               </ul>
             </div>
           </div>
 
           <div className="case-h3-stack">
-            <h3 className="text-h3">Анализ текущей версии</h3>
+            <h3 className="text-h3">Current version analysis</h3>
             <p className="text-body-18">
-              Прежде чем предлагать изменения, я собрала обратную связь от поддержки, о&nbsp;том как
-              пользователи работают со&nbsp;сценариями сейчас и выделила несколько проблемных зон:
+              Before proposing changes, I gathered support-team feedback on how users worked
+              with&nbsp;flows and identified several problem areas:
             </p>
           </div>
 
@@ -453,10 +454,10 @@ export function WorkCasePage() {
                 type="button"
                 className="group relative block w-full cursor-zoom-in"
                 onClick={() => setOpenImage("oldCanvas")}
-                aria-label="Увеличить текущую версию редактора сценариев"
+                aria-label="Enlarge the current version of the flow editor"
               >
                 <Image
-                  alt="Текущая версия редактора сценариев"
+                  alt="Current version of the flow editor"
                   src={assets.oldCanvas}
                   width={800}
                   height={453}
@@ -474,29 +475,29 @@ export function WorkCasePage() {
               </button>
             </div>
             <p className="w-full text-center text-caption-14 text-secondary">
-              Текущий редактор: 1.&nbsp;сценарии&nbsp; 2.&nbsp;настройка&nbsp; 3.&nbsp;элементы&nbsp; 4.&nbsp;канвас
+              Current editor: 1.&nbsp;flows&nbsp; 2.&nbsp;settings&nbsp; 3.&nbsp;elements&nbsp; 4.&nbsp;canvas
             </p>
           </div>
 
           <div className="case-point-stack">
-            <p className="text-body-18-semibold">1.&nbsp;Сценариями неудобно управлять</p>
+            <p className="text-body-18-semibold">1.&nbsp;Flow management was cumbersome</p>
             <p className="text-body-18">
-              Список сценариев в сайдбаре ограничен по высоте, отсутствовал поиск и группировка.
+              The flow list in the sidebar had limited height and lacked search and grouping.
             </p>
             <p className="text-body-18-italic">
-              → Приходилось долго искать нужный сценарий, при этом было непонятно, какие можно
-              безопасно редактировать, а какие уже используются.
+              → Users spent too long finding the right flow and could not tell which ones were
+              safe to edit and which were already in use.
             </p>
           </div>
 
           <div className="case-point-stack">
-            <p className="text-body-18-semibold">2.&nbsp;Настройка разделена между экранами</p>
+            <p className="text-body-18-semibold">2.&nbsp;Configuration was split across screens</p>
             <p className="text-body-18">
-              Создание элемента, его настройка и добавление на canvas происходили в разных местах.
+              Creating, configuring, and adding an element to the canvas happened in different places.
             </p>
             <p className="text-body-18-italic">
-              → Из-за этого терялся контекст и не всегда было понятно, как отдельный блок влияет на
-              сценарий целиком.
+              → This caused users to lose context and made it unclear how an individual block
+              affected the flow as a whole.
             </p>
           </div>
 
@@ -506,10 +507,10 @@ export function WorkCasePage() {
                 type="button"
                 className="group relative block w-full cursor-zoom-in"
                 onClick={() => setOpenImage("addFlow")}
-                aria-label="Увеличить флоу работы с элементами"
+                aria-label="Enlarge the element workflow"
               >
                 <Image
-                  alt="Флоу работы с элементами"
+                  alt="Element workflow"
                   src={assets.addFlow}
                   width={2700}
                   height={1749}
@@ -525,47 +526,46 @@ export function WorkCasePage() {
               type="button"
               className="group absolute bottom-space-6 right-space-6 cursor-zoom-in"
               onClick={() => setOpenImage("addFlow")}
-              aria-label="Увеличить флоу работы с элементами"
+              aria-label="Enlarge the element workflow"
             >
               <ZoomIcon floating={false} />
             </button>
           </div>
 
           <div className="case-point-stack">
-            <p className="text-body-18-semibold">3.&nbsp;Сложности с библиотекой элементов</p>
+            <p className="text-body-18-semibold">3.&nbsp;Problems with the element library</p>
             <p className="text-body-18">
-              Элементы не были сгруппированы по сценариям использования, а названия не всегда
-              отражали их поведение.
+              Elements were not grouped by use case, and their names did not always reflect their behavior.
             </p>
             <p className="text-body-18-italic">
-              → Пользователи выбирали элементы методом проб и ошибок, часто добавляя лишние, которые
-              потом не использовались и перегружали схему.
+              → Users selected elements through trial and error, often adding unnecessary ones
+              that went unused and cluttered the diagram.
             </p>
           </div>
 
           <div className="case-point-stack">
-            <p className="text-body-18-semibold">4.&nbsp;Сценарии не масштабируются</p>
+            <p className="text-body-18-semibold">4.&nbsp;Flows did not scale</p>
             <p className="text-body-18">
-              По мере роста схемы связи пересекались, ветки накладывались друг на друга, а основной
-              поток было сложно отличить от второстепенных.
+              As diagrams grew, connections crossed, branches overlapped, and the main flow became
+              difficult to distinguish from secondary ones.
             </p>
             <p className="text-body-18-italic">
-              → Трудно быстро понять логику или внести изменения без риска сломать структуру.
+              → It was difficult to grasp the logic quickly or make changes without risking the structure.
             </p>
           </div>
 
           <p className="text-body-18">
-            В итоге пользователи не воспринимали сценарий как единую систему и избегали
-            самостоятельных изменений: без тестирования и явной публикации было непонятно, когда
-            правки повлияют на реальные звонки.
+            As a result, users did not perceive the flow as a unified system and avoided making
+            changes independently: without testing and explicit publishing, it was unclear when
+            edits would affect real calls.
           </p>
 
           <div className="case-h3-stack">
-            <h3 className="text-h3">Анализ конкурентов</h3>
+            <h3 className="text-h3">Competitor analysis</h3>
             <p className="text-body-18">
-              Чтобы понять, как упростить работу с конструктором, я изучила прямых конкурентов и
-              решения из смежных областей. Сравнивала подходы к визуализации сценариев,
-              редактированию, работе со сложной логикой и публикацией сценариев.
+              To understand how to simplify the builder, I studied direct competitors and adjacent
+              solutions. I compared approaches to flow visualization, editing, complex logic,
+              and publishing.
             </p>
           </div>
 
@@ -574,10 +574,10 @@ export function WorkCasePage() {
               type="button"
               className="group relative block w-full cursor-zoom-in sm:cursor-default"
               onClick={() => handleZoomOpen("table", false)}
-              aria-label="Увеличить таблицу анализа конкурентов"
+              aria-label="Enlarge the competitor analysis table"
             >
               <Image
-                alt="Таблица анализа конкурентов"
+                alt="Competitor analysis table"
                 src={assets.table}
                 width={800}
                 height={457}
@@ -596,60 +596,60 @@ export function WorkCasePage() {
           </div>
 
           <p className="text-body-18">
-            Вывод: workflow-builder инструменты уходят от отдельных настроек к управлению процессом
-            как единой системой, поскольку пользователю важно понимать состояние сценария и
-            контролировать изменения до того, как они попадут в работу.
+            Conclusion: workflow builders are moving away from separate settings toward managing
+            the process as a unified system, because users need to understand a flow&apos;s status
+            and control changes before they go live.
           </p>
 
           <div className="case-media-stack w-full max-w-[800px]">
             <div className="case-text-stack">
               <div className="case-h3-stack">
-                <h3 className="text-h3">Гипотезы</h3>
+                <h3 className="text-h3">Hypotheses</h3>
                 <p className="text-body-18">
-                  На основе анализа я выделила направления, которые могли повлиять на ключевые метрики:
+                  Based on the analysis, I identified areas that could affect the key metrics:
                 </p>
               </div>
               <div className="flex flex-col gap-space-6 text-body-18">
               <div className="flex flex-col gap-space-2">
-                <p className="text-body-18-semibold">1.&nbsp;Организация сценариев</p>
+                <p className="text-body-18-semibold">1.&nbsp;Flow organization</p>
                 <p>
-                  Если сценарии станут более структурированными, пользователям будет проще находить
-                  нужный сценарий и быстрее вносить изменения.
+                  If flows become more structured, users will find the right one more easily
+                  and make changes faster.
                 </p>
               </div>
               <div className="flex flex-col gap-space-2">
-                <p className="text-body-18-semibold">2.&nbsp;Единый контекст</p>
+                <p className="text-body-18-semibold">2.&nbsp;Unified context</p>
                 <p>
-                  Если работа со сценарием будет происходить в одном контексте, снизится количество
-                  ошибок и нагрузка на поддержку, так как изменения станут более предсказуемыми.
+                  If flow management happens in one context, errors and the support workload will
+                  decrease because changes will become more predictable.
                 </p>
               </div>
               <div className="flex flex-col gap-space-2">
-                <p className="text-body-18-semibold">3.&nbsp;Понятные сущности</p>
+                <p className="text-body-18-semibold">3.&nbsp;Clear entities</p>
                 <p>
-                  Если элементы будут названы и сгруппированы по задачам пользователя, снизится
-                  порог входа и сократится time-to-change.
+                  If elements are named and grouped by user task, the learning curve and
+                  time-to-change will decrease.
                 </p>
               </div>
               <div className="flex flex-col gap-space-2">
-                <p className="text-body-18-semibold">4.&nbsp;Читаемость</p>
+                <p className="text-body-18-semibold">4.&nbsp;Readability</p>
                 <p>
-                  Если структура сценария останется понятной даже при росте, пользователям будет
-                  проще воспринимать сценарий как единую систему и быстрее его редактировать.
+                  If a flow remains clear as it grows, users will find it easier to perceive it
+                  as a unified system and edit it faster.
                 </p>
               </div>
               <div className="flex flex-col gap-space-2">
-                <p className="text-body-18-semibold">5.&nbsp;Безопасные изменения</p>
+                <p className="text-body-18-semibold">5.&nbsp;Safe changes</p>
                 <p>
-                  Если пользователь будет понимать, что изменения можно проверить до публикации,
-                  снизится зависимость от разработки и вырастет self-service rate.
+                  If users understand that changes can be checked before publishing, dependence
+                  on developers will decrease and the self-service rate will grow.
                 </p>
               </div>
               </div>
             </div>
             <p className="text-body-18">
-              Гипотезы помогли определить основные направления работы, но в процессе проверки на
-              реальных сценариях они могли уточняться и корректироваться.
+              The hypotheses helped define the main areas of work, but they could be refined and
+              adjusted as we tested them against real-world scenarios.
             </p>
           </div>
         </motion.section>
@@ -661,9 +661,9 @@ export function WorkCasePage() {
           className="scroll-mt-space-16 case-section-stack"
         >
           <div className="case-h2-stack">
-            <h2 className="text-h2">Проектирование</h2>
+            <h2 className="text-h2">Design approach</h2>
             <p className="text-body-18">
-              Проектирование строилось вокруг трёх ключевых принципов:
+              The design was built around three key principles:
             </p>
           </div>
 
@@ -675,15 +675,15 @@ export function WorkCasePage() {
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-0">
                   <p className="text-body-18-semibold text-primary">Understand</p>
-                  <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Понять сценарий</p>
+                  <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Understand the flow</p>
                 </div>
               </div>
               <p className="w-full text-[14px] leading-[160%] text-primary">
-                Быстро считать структуру сценария и понять, как он работает.
+                Quickly grasp the flow&apos;s structure and understand how it works.
               </p>
               <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
-                <p>• Группировка элементов</p>
-                <p>• Понятные названия</p>
+                <p>• Elements grouping</p>
+                <p>• Clear names</p>
               </div>
             </div>
 
@@ -694,15 +694,15 @@ export function WorkCasePage() {
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-0">
                   <p className="text-body-18-semibold text-primary">Edit</p>
-                  <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Внести изменения</p>
+                  <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Make changes</p>
                 </div>
               </div>
               <p className="w-full text-[14px] leading-[160%] text-primary">
-                Внести изменения без лишних переходов и потери контекста.
+                Make changes without unnecessary navigation or loss of context.
               </p>
               <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
-                <p>• Создание и настройка элементов на схеме</p>
-                <p>• Inline-редактирование</p>
+                <p>• Elements creation and setup</p>
+                <p>• Inline editing</p>
               </div>
             </div>
 
@@ -713,58 +713,57 @@ export function WorkCasePage() {
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-0">
                   <p className="text-body-18-semibold text-primary">Publish</p>
-                  <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Опубликовать</p>
+                  <p className="text-[14px] font-normal leading-[17px] text-[#828282]">Publish</p>
                 </div>
               </div>
               <p className="w-full text-[14px] leading-[160%] text-primary">
-                Понимать, какие изменения уже влияют на звонки.
+                Understand which changes are already affecting calls.
               </p>
               <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
                 <div>
-                  <p>• Статусы для сценариев</p>
-                  <p>(черновик / опубликовано)</p>
+                  <p>• Flow statuses</p>
+                  <p>(draft / published)</p>
                 </div>
-                <p>• Публикация изменений</p>
+                <p>• Publishing changes</p>
               </div>
             </div>
           </div>
 
           <div className="case-content-stack">
             <p className="text-body-18">
-              В итоговом решении нужно было учесть, что пользователям важно понимать, когда сценарий
-              опубликован и какие изменения уже влияют на реальные звонки.
+              The final solution needed to make it clear when a flow was published and which
+              changes were already affecting real calls.
             </p>
 
             <div className="case-h3-stack">
-              <h3 className="text-h3">Было</h3>
+              <h3 className="text-h3">Before</h3>
               <p className="text-body-18">
-                Создаёт сценарий →{" "}
-                <span className="line-through">Переходит в раздел «Настройки»</span> →{" "}
-                <span className="line-through">Создаёт элемент</span> → Настраивает →{" "}
-                <span className="line-through">Возвращается на сценарий</span> → Добавляет
-                элемент на схему
+                Creates a flow →{" "}
+                <span className="line-through">Opens Settings</span> →{" "}
+                <span className="line-through">Creates an element</span> → Configures it →{" "}
+                <span className="line-through">Returns to the flow</span> → Adds the
+                element to the diagram
               </p>
               <p className="text-body-18-italic">
-                Действия разорваны между экранами, а изменения сразу влияют на рабочий сценарий.
+                Actions are split across screens, and changes immediately affect the live flow.
               </p>
             </div>
 
             <div className="case-h3-stack">
-              <h3 className="text-h3">Стало</h3>
+              <h3 className="text-h3">After</h3>
               <div>
                 <p className="text-body-18">
-                  Создаёт сценарий → Добавляет и настраивает элементы на схеме → Публикует изменения
+                  Creates a flow → Adds and configures elements on the diagram → Publishes changes
                 </p>
               </div>
               <p className="text-body-18-italic">
-                Работа происходит в едином контексте, а публикация становится отдельным и более
-                осознанным действием.
+                Work happens in one context, while publishing becomes a separate, deliberate action.
               </p>
             </div>
 
             <p className="text-body-18">
-              <span className="text-body-18-semibold">Пользователь больше не теряет контекст</span>
-              {` — создание, настройка и публикация сценария происходят на одном экране. Это позволило системно закрыть как проблемы восприятия, так и страх ошибок, чтобы менеджер мог работать самостоятельно.`}
+              <span className="text-body-18-semibold">Users no longer lose context</span>
+              {` — creating, configuring, and publishing a flow all happen on one screen. This systematically addressed both comprehension issues and the fear of errors, enabling managers to work independently.`}
             </p>
           </div>
         </motion.section>
@@ -776,12 +775,12 @@ export function WorkCasePage() {
           className="scroll-mt-space-16 case-section-stack"
         >
           <div className="case-h2-stack">
-            <h2 className="text-h2">Решение</h2>
+            <h2 className="text-h2">Solution</h2>
             <p className="text-body-18">
-              Работая над редактором я проверяла, насколько менеджеры понимают структуру сценария,
-              могут вносить изменения самостоятельно и не боятся публиковать обновления. После каждой
-              итерации я обсуждала спорные места с командой, чтобы решение оставалось понятным и
-              реализуемым.
+              While working on the editor, I tested how well managers understood the flow structure,
+              whether they could make changes independently, and whether they felt confident
+              publishing updates. After each iteration, I discussed ambiguous areas with the team
+              to keep the solution clear and feasible.
             </p>
           </div>
 
@@ -791,7 +790,7 @@ export function WorkCasePage() {
                 type="button"
                 className="group relative block w-full cursor-zoom-in"
                 onClick={() => setOpenImage("hero")}
-                aria-label="Увеличить схему единого рабочего пространства"
+                aria-label="Enlarge the unified workspace diagram"
               >
                 <Image
                   alt="KOMPaaS solution overview"
@@ -812,20 +811,20 @@ export function WorkCasePage() {
               </button>
             </div>
             <p className="text-center text-caption-14 text-secondary">
-              Сценарии, canvas, элементы и публикация — в&nbsp;едином рабочем пространстве
+              Flows, canvas, elements, and publishing in&nbsp;one workspace
             </p>
           </div>
 
           <div className="case-numbered-points">
           <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">1.&nbsp;Организовать сценарии</p>
+              <p className="text-body-18-semibold">1.&nbsp;Organize flows</p>
               <p>
-                Я сохранила привычную модель списка и улучшила навигацию по сценариям: добавила
-                группировку по проектам, поиск, статусы и быстрые действия.
+                I retained the familiar list model and improved flow navigation by adding
+                project grouping, search, statuses, and quick actions.
               </p>
               <p className="italic">
-                → Пользователь быстрее находит нужный сценарий и понимает его текущее состояние.
+                → Users find the right flow faster and understand its current status.
               </p>
             </div>
 
@@ -834,10 +833,10 @@ export function WorkCasePage() {
                 type="button"
                 className="group relative block w-full cursor-zoom-in sm:cursor-default"
                 onClick={() => handleZoomOpen("leftSidebar", false)}
-                aria-label="Увеличить навигацию по сценариям и быстрые действия"
+                aria-label="Enlarge flow navigation and quick actions"
               >
                 <Image
-                  alt="Навигация по сценариям и быстрые действия"
+                  alt="Flow navigation and quick actions"
                   src={assets.leftSidebar}
                   width={800}
                   height={400}
@@ -858,15 +857,14 @@ export function WorkCasePage() {
 
           <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">2.&nbsp;Сделать элементы понятнее</p>
+              <p className="text-body-18-semibold">2.&nbsp;Make elements clearer</p>
               <p>
-                Во время тестов пользователи часто выбирали элементы по названию и не всегда
-                понимали разницу между ними. Чтобы это исправить, я провела карточную сортировку,
-                сгруппировала элементы по сценариям использования и добавила описания, объясняющие
-                поведение блока.
+                During testing, users often selected elements by name and did not always understand
+                the difference between them. To address this, I conducted a card sort, grouped
+                elements by use case, and added descriptions explaining each block&apos;s behavior.
               </p>
               <p className="italic">
-                → Пользователям стало проще выбрать нужный элемент и добавить его на схему.
+                → Users found it easier to select the right element and add it to the diagram.
               </p>
             </div>
 
@@ -875,10 +873,10 @@ export function WorkCasePage() {
                 type="button"
                 className="group relative block w-full cursor-zoom-in sm:cursor-default"
                 onClick={() => handleZoomOpen("rightSidebar", false)}
-                aria-label="Увеличить библиотеку элементов и настройки правой панели"
+                aria-label="Enlarge the element library and right-panel settings"
               >
                 <Image
-                  alt="Библиотека элементов и настройки правой панели"
+                  alt="Element library and right-panel settings"
                   src={assets.rightSidebar}
                   width={800}
                   height={600}
@@ -900,20 +898,19 @@ export function WorkCasePage() {
           <div className="flex flex-col gap-space-6">
           <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">3.&nbsp;Вернуть пользователю контекст</p>
+              <p className="text-body-18-semibold">3.&nbsp;Restore user context</p>
               <p>
-                Перенесла создание и настройку блоков прямо в canvas, чтобы пользователь мог
-                добавлять элементы на схему, редактировать их и сразу увидеть как изменения влияют
-                на сценарий.
+                I moved block creation and configuration directly onto the canvas so users could
+                add elements to the diagram, edit them, and immediately see how changes affected
+                the flow.
               </p>
               <p>
-                Для сложных настроек оставили модальные окна, это стало компромиссом между скоростью
-                редактирования и более точной настройкой элементов, когда это действительно
-                необходимо.
+                We retained modal windows for complex settings, balancing editing speed with more
+                precise element configuration when it was genuinely needed.
               </p>
               <p className="italic">
-                → Сократилось количество переходов между экранами, а работа с элементами стала
-                единым процессом.
+                → This reduced navigation between screens and turned element management into a
+                unified process.
               </p>
             </div>
 
@@ -923,7 +920,7 @@ export function WorkCasePage() {
                   type="button"
                   className="group relative block w-full cursor-zoom-in sm:cursor-default"
                   onClick={() => handleZoomOpen("canvasMotion", false)}
-                  aria-label="Увеличить анимацию добавления и настройки блока"
+                  aria-label="Enlarge the block addition and configuration animation"
                 >
                   <video
                     src={assets.canvasMotion}
@@ -933,7 +930,7 @@ export function WorkCasePage() {
                     loop
                     playsInline
                     preload="metadata"
-                    aria-label="Пользователь добавляет и настраивает блок, оставаясь в контексте"
+                    aria-label="A user adds and configures a block while staying in context"
                   />
                   <span className="sm:hidden">
                     <ZoomImageShade />
@@ -944,21 +941,21 @@ export function WorkCasePage() {
                 </button>
               </div>
               <p className="text-center text-caption-14 text-secondary">
-                Пользователь добавляет и настраивает блок, оставаясь в контексте.
+                A user adds and configures a block while staying in context.
               </p>
             </div>
           </div>
 
           <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">4.&nbsp;Сделать большие сценарии читаемыми</p>
+              <p className="text-body-18-semibold">4.&nbsp;Make large flows readable</p>
               <p>
-                Чтобы большие флоу было проще читать, я упростила вторичные ветки, добавила
-                подсветку связей между блоками, minimap и панель для навигации по схеме.
+                To make large flows easier to read, I simplified secondary branches and added
+                connection highlighting, a minimap, and a diagram navigation panel.
               </p>
               <p className="italic">
-                → Пользователю стало проще ориентироваться в структуре сценария, отличать основной
-                флоу от второстепенных веток и понимать, какие участки затронет изменение.
+                → Users could navigate the flow structure more easily, distinguish the main flow
+                from secondary branches, and understand which areas a change would affect.
               </p>
             </div>
 
@@ -967,10 +964,10 @@ export function WorkCasePage() {
                 type="button"
                 className="group relative block w-full cursor-zoom-in sm:cursor-default"
                 onClick={() => handleZoomOpen("minimap", false)}
-                aria-label="Увеличить minimap и навигацию по большой схеме"
+                aria-label="Enlarge the minimap and large-diagram navigation"
               >
                 <Image
-                  alt="Minimap и навигация по большой схеме"
+                  alt="Minimap and navigation through a large diagram"
                   src={assets.minimap}
                   width={800}
                   height={513}
@@ -992,15 +989,15 @@ export function WorkCasePage() {
 
           <div className="case-content-stack case-numbered-media-point">
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">5.&nbsp;Сделать публикацию предсказуемой</p>
+              <p className="text-body-18-semibold">5.&nbsp;Make publishing predictable</p>
               <p>
-                Ранее менеджеры не всегда понимали, какие изменения уже влияют на реальные звонки, а
-                какие ещё находятся в работе. Поэтому я добавила статусы сценария (draft / published)
-                и вынесла публикацию как отдельное действие.
+                Previously, managers did not always understand which changes were already affecting
+                real calls and which were still in progress. I therefore added flow statuses
+                (draft / published) and made publishing a separate action.
               </p>
               <p className="italic">
-                → Пользователь видит, находится сценарий в черновике или уже опубликован, и понимает,
-                когда изменения попадут в работу.
+                → Users can see whether a flow is a draft or already published and understand when
+                changes will go live.
               </p>
             </div>
 
@@ -1010,7 +1007,7 @@ export function WorkCasePage() {
                 type="button"
                 className="group relative block w-full cursor-zoom-in sm:cursor-default"
                 onClick={() => handleZoomOpen("publishMotion", false)}
-                aria-label="Увеличить анимацию публикации сценария"
+                aria-label="Enlarge the flow publishing animation"
               >
                 <video
                   src={assets.publishMotion}
@@ -1020,7 +1017,7 @@ export function WorkCasePage() {
                   loop
                   playsInline
                   preload="metadata"
-                  aria-label="После публикации изменений статус обновляется, а кнопка становится неактивной"
+                  aria-label="After publishing, the status updates and the button becomes inactive"
                 />
                 <span className="sm:hidden">
                   <ZoomImageShade />
@@ -1030,14 +1027,14 @@ export function WorkCasePage() {
                 </span>
               </button>
               <p className="text-center text-caption-14 text-secondary">
-                После публикации изменений статус обновляется, а кнопка становится неактивной.
+                After publishing, the status updates and the button becomes inactive.
               </p>
             </div>
 
             <p className="text-body-18">
-              Полноценное тестирование и историю версий вынесли в следующий этап. После проверки
-              редактирования и публикации с клиентскими кейсами я подготовила финальные макеты и
-              спецификации для передачи в разработку.
+              Full testing and version history were moved to the next stage. After validating
+              editing and publishing with client cases, I prepared the final designs and
+              specifications for developer handoff.
             </p>
             </div>
           </div>
@@ -1050,13 +1047,13 @@ export function WorkCasePage() {
           variants={item}
           className="scroll-mt-space-16 case-h2-stack"
         >
-          <h2 className="text-h2">Результаты</h2>
+          <h2 className="text-h2">Results</h2>
           <div className="case-content-stack">
             <p className="text-body-18">
-              Редактор сделал работу со сценариями более самостоятельной и предсказуемой: менеджеры
-              быстрее находили нужные сценарии, вносили изменения без разработки и лучше понимали,
-              когда правки попадут в работу. Эффект оценивали по клиентским сценариям, обращениям в
-              поддержку и времени выполнения типовых изменений.
+              The editor made flow management more independent and predictable: managers found the
+              right flows faster, made changes without developers, and better understood when edits
+              would go live. We assessed the impact through client scenarios, support requests,
+              and the time required for typical changes.
             </p>
 
             <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,1fr)]">
@@ -1079,7 +1076,7 @@ export function WorkCasePage() {
                   <span className="text-[32px] font-semibold leading-10">19</span>
                 </div>
                 <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  минут, time-to-change
+                  minutes, time-to-change
                 </p>
               </div>
               <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
@@ -1089,7 +1086,7 @@ export function WorkCasePage() {
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  ошибок в сценариях
+                  errors in flows
                 </p>
               </div>
               <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
@@ -1099,31 +1096,31 @@ export function WorkCasePage() {
                   <span className="text-[18px] leading-[160%]">%</span>
                 </p>
                 <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  обращений в поддержку
+                  support requests
                 </p>
               </div>
             </div>
 
             <p className="text-body-18">
-              По итогам проекта я поняла, что сложные сценарии становятся управляемыми, когда
-              пользователь остаётся в контексте и понимает, как его действия влияют на рабочий флоу.
+              This project showed me that complex flows become manageable when users remain in
+              context and understand how their actions affect the live flow.
             </p>
           </div>
         </motion.section>
 
         <motion.nav
           variants={item}
-          aria-label="Навигация между страницами"
+          aria-label="Page navigation"
           className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-18 sm:mt-0"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
-              ← На главную
+              ← Home
             </span>
           </Link>
           <Link href="/app" className="group shrink-0">
             <span className="link-underline">
-              Кейс MCN Softphone →
+              MCN Softphone case study →
             </span>
           </Link>
         </motion.nav>
@@ -1131,12 +1128,12 @@ export function WorkCasePage() {
 
       <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-space-3 lg:flex">
         {[
-          { id: "overview", label: "Введение" },
-          { id: "about", label: "О проекте" },
-          { id: "discovery", label: "Дискавери" },
-          { id: "design", label: "Проектирование" },
-          { id: "solution", label: "Решение" },
-          { id: "results", label: "Результаты" },
+          { id: "overview", label: "Introduction" },
+          { id: "about", label: "About the project" },
+          { id: "discovery", label: "Discovery" },
+          { id: "design", label: "Design approach" },
+          { id: "solution", label: "Solution" },
+          { id: "results", label: "Results" },
         ].map((item) => (
           <a
             key={item.id}
@@ -1166,7 +1163,7 @@ export function WorkCasePage() {
         >
           <button
             type="button"
-            aria-label="Закрыть"
+            aria-label="Close"
             className="absolute right-space-4 top-space-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
             onClick={(event) => {
               event.stopPropagation();
@@ -1223,7 +1220,7 @@ export function WorkCasePage() {
           <div className="absolute bottom-space-4 right-space-4 z-10 flex gap-space-2 sm:hidden">
             <button
               type="button"
-              aria-label="Уменьшить"
+              aria-label="Zoom out"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
               onClick={(event) => {
                 event.stopPropagation();
@@ -1236,7 +1233,7 @@ export function WorkCasePage() {
             </button>
             <button
               type="button"
-              aria-label="Увеличить"
+              aria-label="Zoom in"
               className="flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
               onClick={(event) => {
                 event.stopPropagation();

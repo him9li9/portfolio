@@ -171,21 +171,20 @@ export function HomePage() {
               />
             </div>
             <h1 className="text-left text-h2 sm:text-center">
-              Привет, я Настя Ермошина
+              Hi, I&apos;m Nastya Ermoshina
             </h1>
           </div>
           <p className="w-full text-left text-body-18 text-primary sm:w-[482px] sm:text-center">
-            Продуктовый дизайнер с 4+ лет опыта в телекоме,<span className="sm:hidden"> </span><br className="hidden sm:block" />
-            <span className="sm:whitespace-nowrap">B2B-сервисах и стартапах. Умею разбираться в сложной</span><span className="sm:hidden"> </span><br className="hidden sm:block" />
-            доменной логике и превращать её в понятные,<span className="sm:hidden"> </span><br className="hidden sm:block" />
-            работающие решения
-            вместе с командой.
+            Product designer with 4+ years of experience in telecom,<span className="sm:hidden"> </span><br className="hidden sm:block" />
+            <span className="sm:whitespace-nowrap">B2B services, and startups. I navigate complex domain</span><span className="sm:hidden"> </span><br className="hidden sm:block" />
+            logic and turn it into clear, effective solutions<span className="sm:hidden"> </span><br className="hidden sm:block" />
+            together with the team.
           </p>
         </motion.section>
 
         <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-6 sm:items-center">
           <h3 className="w-full text-left text-h4 sm:text-center">
-            Избранные проекты
+            Selected projects
           </h3>
 
           <div className="flex w-full flex-col items-start gap-[140px] sm:items-center">
@@ -193,7 +192,7 @@ export function HomePage() {
               <Link
                 href="/app"
                 prefetch={false}
-                aria-label="Открыть кейс MCN Softphone"
+                aria-label="Open the MCN Softphone case study"
                 className="group block w-full"
               >
                 <div
@@ -202,7 +201,7 @@ export function HomePage() {
                 >
                   <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
                     <Image
-                      alt="Экран регистрации MCN Softphone"
+                      alt="MCN Softphone registration screen"
                       src={assets.phone1}
                       width={735}
                       height={1500}
@@ -213,7 +212,7 @@ export function HomePage() {
                     />
                     <Image
                       ref={softphoneCenterPhoneRef}
-                      alt="Экран тарифа MCN Softphone"
+                      alt="MCN Softphone plan screen"
                       src={assets.phone2}
                       width={732}
                       height={1500}
@@ -223,7 +222,7 @@ export function HomePage() {
                       quality={100}
                     />
                     <Image
-                      alt="Экран звонка MCN Softphone"
+                      alt="MCN Softphone call screen"
                       src={assets.phone3}
                       width={735}
                       height={1500}
@@ -244,22 +243,22 @@ export function HomePage() {
                     prefetch={false}
                     className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
                   >
-                    <span>Смотреть кейс</span>
+                    <span>View case study</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
                 <div className="flex w-full flex-col items-start gap-space-2">
                   <div className="h-px w-full bg-border-elevated" />
                   <p className="w-full max-w-[500px] text-body-18 text-primary">
-                    Мобильное приложение для звонков за границей. Упростила путь до первого звонка и
-                    сделала стоимость связи прозрачнее до начала вызова.
+                    A mobile app for making calls abroad. I streamlined the path to the first call and
+                    made call costs clear before dialing.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-1">
                     <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      8 → 3 шага до звонка
+                      8 → 3 steps to a call
                     </span>
                     <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      +23% конверсия в 1-й звонок
+                      +23% first-call conversion
                     </span>
                   </div>
                   <Link
@@ -267,7 +266,7 @@ export function HomePage() {
                     prefetch={false}
                     className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
                   >
-                    <span>Смотреть кейс</span>
+                    <span>View case study</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
@@ -278,7 +277,7 @@ export function HomePage() {
               <Link
                 href="/work"
                 prefetch={false}
-                aria-label="Открыть кейс KOMPaaS"
+                aria-label="Open the KOMPaaS case study"
                 className="group block w-full"
               >
                 <div className="relative w-full overflow-hidden rounded-[8px] sm:left-1/2 sm:w-[900px] sm:-translate-x-1/2">
@@ -302,22 +301,22 @@ export function HomePage() {
                     prefetch={false}
                     className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
                   >
-                    <span>Смотреть кейс</span>
+                    <span>View case study</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
                 <div className="flex w-full flex-col items-start gap-space-2">
                   <div className="h-px w-full bg-border-elevated" />
                   <p className="w-full max-w-[500px] text-body-18 text-primary">
-                    B2B-платформа для автоматизации контакт-центров. Снизила зависимость клиентов
-                    от&nbsp;разработки в&nbsp;управлении сценариями звонков.
+                    A B2B platform for contact center automation. I reduced clients&apos; reliance
+                    on&nbsp;developers when managing call flows.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-1">
                     <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       +28% self-service rate
                     </span>
                     <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      -21% ошибок после публикации
+                      -21% errors after publishing
                     </span>
                   </div>
                   <Link
@@ -325,7 +324,7 @@ export function HomePage() {
                     prefetch={false}
                     className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
                   >
-                    <span>Смотреть кейс</span>
+                    <span>View case study</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
@@ -336,7 +335,7 @@ export function HomePage() {
       </motion.div>
       <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-space-6 sm:px-0 sm:pb-[40px]">
         <div className="flex flex-col gap-space-3">
-          <h3 className="text-h4">Связаться со мной</h3>
+          <h3 className="text-h4">Contact me</h3>
         </div>
         <div className="h-px w-full bg-border-elevated" />
         <div className="flex w-full flex-col gap-space-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:justify-between min-[900px]:gap-space-2">
