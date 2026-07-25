@@ -26,14 +26,6 @@ const assets = {
   solutionErrorMobile: "/figma/Case_1/Section_4/case-solution-error.png"
 };
 
-const workStages = [
-  { label: "Дискавери", href: "#discovery" },
-  { label: "Гипотезы", href: "#hypotheses" },
-  { label: "Проектирование", href: "#design" },
-  { label: "Тестирование", href: "#solution" },
-  { label: "Передача в разработку", href: "#results" }
-];
-
 const lightboxItems = {
   discovery: {
     src: assets.discoveryActivation,
@@ -531,87 +523,40 @@ export function CaseStudyPage() {
           <div className="case-h2-stack">
             <h2 className="text-h2">О проекте</h2>
             <p className="text-body-18">
-              Когда я присоединилась к проекту, приложение существовало в формате MVP, но проседала
-              основная метрика — количество звонков. Вместе с командой мне предстояло разобраться,
-              почему так происходит, и исправить это.
+              Я присоединилась к проекту на стадии MVP за несколько месяцев до планируемого релиза. В
+              команде я отвечала за пользовательский путь от регистрации до первого звонка, подключение
+              номера, тарификацию и поддержку.
             </p>
           </div>
 
-          <div className="case-text-stack items-center">
-            <div className="case-h3-stack w-full">
-              <h3 className="text-h3">Проблема</h3>
-              <p className="text-body-18">
-                На обсуждении с командой выяснилась системная проблема — пользователь не понимал
-                статус в процессе подключения, стоимость звонка и следующий шаг в критические
-                моменты. Потеря коммуникации между системой и пользователем напрямую повлияла на
-                метрики.
+          <div className="case-h3-stack">
+            <h3 className="text-h3">Проблема</h3>
+            <div className="case-text-stack text-body-18">
+              <p>
+                До запуска приложения ключевой путь пользователя был разорван между мобильной и веб-
+                версиями. Для регистрации и подключения номера приходилось переходить в личный кабинет,
+                ждать ручной проверки и самостоятельно выяснять, когда можно совершить звонок.
               </p>
-            </div>
-            <div className="flex w-full flex-col gap-space-4">
-              <ul className="list-disc pl-space-6 text-body-18">
-                <li>
-                  <span className="text-body-18-semibold">Низкая конверсия в первый звонок</span>
-                  {` — только 1/3 пользователей доходит до звонка, потому что большинство не понимает, когда номер уже активен.`}
-                </li>
-              </ul>
-              <div className="case-figure-stack my-space-2 items-center">
-                <div className="w-[323px] max-w-full">
-                  <Image
-                    alt=""
-                    src={assets.chartSmall}
-                    width={726}
-                    height={144}
-                    sizes="(max-width: 640px) calc(100vw - 64px), 323px"
-                    className="h-auto w-full object-contain"
-                    loading="lazy"
-                    quality={100}
-                  />
-                </div>
-                <p className="text-center text-caption-14 text-secondary">
-                  CR в 1-й звонок, 2023 г.
-                </p>
-              </div>
-              <ul className="list-disc pl-space-6 text-body-18">
-                <li>
-                  <span className="text-body-18-semibold">Низкий Retention</span>
-                  {` — люди скачивали приложение, пробовали разобраться, но из 2.1К новых пользователей возвращалась лишь половина. Retention падает до 15% к 4-й неделе.`}
-                </li>
-              </ul>
-              <ul className="list-disc pl-space-6 text-body-18">
-                <li>
-                  <span className="text-body-18-semibold">Растущие затраты на поддержку</span>
-                  {` — 40% обращений в поддержку касались статуса аккаунта и списаний — вопросов, которые можно было закрыть сразу в приложении.`}
-                </li>
-              </ul>
+              <p>
+                Пользователь не видел стоимость звонка заранее, не всегда понимал причину ошибки и не мог
+                быстро найти помощь внутри приложения. Из-за этого путь до первого звонка был длинным и
+                непрозрачным.
+              </p>
             </div>
           </div>
 
           <div className="case-h3-stack">
             <h3 className="text-h3">Задача</h3>
-            <p className="text-body-18">
-              Основная задача проекта состояла в том, чтобы внедрить в продукт систему коммуникации
-              с чёткими шагами, подсказками и полной прозрачностью расходов. Это позволит вернуть
-              пользователю ощущение контроля и уверенности, сократив отток и нагрузку на поддержку.
-            </p>
-            <p className="text-body-18">
-              <span className="text-body-18-semibold">Метрики успеха</span>
-              {` — рост количества звонков из приложения, снижение повторных обращений в поддержку.`}
-            </p>
-          </div>
-
-          <div className="case-h3-stack">
-            <h3 className="text-h3">Этапы работы</h3>
-            <div className="flex flex-wrap items-center gap-space-1">
-              {workStages.map((stage, index) => (
-                <div key={stage.label} className="flex items-center gap-space-1">
-                  <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-primary">
-                    {stage.label}
-                  </span>
-                  {index < workStages.length - 1 ? (
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4 brightness-0 invert-[51%]" />
-                  ) : null}
-                </div>
-              ))}
+            <div className="case-text-stack text-body-18">
+              <p>
+                Сделать путь до первого звонка понятным и предсказуемым, чтобы больше пользователей
+                самостоятельно завершали подключение и начинали пользоваться приложением.
+              </p>
+              <p>
+                <span className="text-body-18-semibold">Метрики:</span>{" "}
+                конверсия из регистрации в первый звонок и количество обращений по вопросам подключения,
+                баланса и списаний.
+              </p>
             </div>
           </div>
         </motion.section>
