@@ -539,8 +539,7 @@ export function CaseStudyPage() {
               </p>
               <p>
                 Users could not see the call cost in advance, did not always understand what caused an
-                error, and could not quickly find help within the app. As a result, the journey to the
-                first call was long and unclear.
+                error, and could not quickly find help within the app.
               </p>
             </div>
           </div>
