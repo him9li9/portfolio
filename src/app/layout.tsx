@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import localFont from "next/font/local";
 import "./globals.css";
 import type { ReactNode } from "react";
@@ -74,6 +75,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${interDisplay.variable} ${oldenburg.variable} font-[var(--font-inter)] antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );
