@@ -26,14 +26,6 @@ const assets = {
   solutionErrorMobile: "/figma/Case_1/Section_4/case-solution-error.png"
 };
 
-const workStages = [
-  { label: "Discovery", href: "#discovery" },
-  { label: "Hypotheses", href: "#hypotheses" },
-  { label: "Design process", href: "#design" },
-  { label: "Testing", href: "#solution" },
-  { label: "Developer handoff", href: "#results" }
-];
-
 const lightboxItems = {
   discovery: {
     src: assets.discoveryActivation,
@@ -531,85 +523,40 @@ export function CaseStudyPage() {
           <div className="case-h2-stack">
             <h2 className="text-h2">About the project</h2>
             <p className="text-body-18">
-              When I joined the project, the app existed as an MVP, but its key metric—the number
-              of calls—was underperforming. The team and I needed to understand why and fix it.
+              I joined the project at the MVP stage, a few months before the planned release. Within the
+              team, I was responsible for the user journey from registration to the first call, including
+              number activation, billing, and support.
             </p>
           </div>
 
-          <div className="case-text-stack items-center">
-            <div className="case-h3-stack w-full">
-              <h3 className="text-h3">Problem</h3>
-              <p className="text-body-18">
-                Team discussions revealed a systemic problem: at critical moments, users did not
-                understand their activation status, the cost of a call, or what to do next. This
-                breakdown in communication between the system and the user directly affected the metrics.
+          <div className="case-h3-stack">
+            <h3 className="text-h3">Problem</h3>
+            <div className="case-text-stack text-body-18">
+              <p>
+                Before the app launched, the core user journey was split between the mobile and web
+                experiences. To register and activate a number, users had to switch to the web account,
+                wait for manual verification, and figure out for themselves when they could make a call.
               </p>
-            </div>
-            <div className="flex w-full flex-col gap-space-4">
-              <ul className="list-disc pl-space-6 text-body-18">
-                <li>
-                  <span className="text-body-18-semibold">Low conversion to the first call</span>
-                  {` — only one-third of users made it to a call because most did not understand when their number had been activated.`}
-                </li>
-              </ul>
-              <div className="case-figure-stack my-space-2 items-center">
-                <div className="w-[323px] max-w-full">
-                  <Image
-                    alt=""
-                    src={assets.chartSmall}
-                    width={726}
-                    height={144}
-                    sizes="(max-width: 640px) calc(100vw - 64px), 323px"
-                    className="h-auto w-full object-contain"
-                    loading="lazy"
-                    quality={100}
-                  />
-                </div>
-                <p className="text-center text-caption-14 text-secondary">
-                  First-call CR, 2023
-                </p>
-              </div>
-              <ul className="list-disc pl-space-6 text-body-18">
-                <li>
-                  <span className="text-body-18-semibold">Low retention</span>
-                  {` — people downloaded the app and tried to figure it out, but only half of the 2.1K new users returned. Retention fell to 15% by week four.`}
-                </li>
-              </ul>
-              <ul className="list-disc pl-space-6 text-body-18">
-                <li>
-                  <span className="text-body-18-semibold">Rising support costs</span>
-                  {` — 40% of support requests concerned account status and charges—questions the app itself could have answered immediately.`}
-                </li>
-              </ul>
+              <p>
+                Users could not see the call cost in advance, did not always understand what caused an
+                error, and could not quickly find help within the app. As a result, the journey to the
+                first call was long and unclear.
+              </p>
             </div>
           </div>
 
           <div className="case-h3-stack">
             <h3 className="text-h3">Objective</h3>
-            <p className="text-body-18">
-              The project&apos;s main objective was to introduce a communication system with clear
-              steps, guidance, and complete cost transparency. This would restore users&apos; sense
-              of control and confidence while reducing churn and the support workload.
-            </p>
-            <p className="text-body-18">
-              <span className="text-body-18-semibold">Success metrics</span>
-              {` — an increase in calls made from the app and fewer repeat support requests.`}
-            </p>
-          </div>
-
-          <div className="case-h3-stack">
-            <h3 className="text-h3">Project stages</h3>
-            <div className="flex flex-wrap items-center gap-space-1">
-              {workStages.map((stage, index) => (
-                <div key={stage.label} className="flex items-center gap-space-1">
-                  <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-primary">
-                    {stage.label}
-                  </span>
-                  {index < workStages.length - 1 ? (
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4 brightness-0 invert-[51%]" />
-                  ) : null}
-                </div>
-              ))}
+            <div className="case-text-stack text-body-18">
+              <p>
+                Make the journey to the first call clear and predictable, so more users could complete
+                activation independently and start using the app.
+              </p>
+              <p>
+                <span className="text-body-18-semibold">Metrics:</span>{" "}
+                registration-to-first-call conversion and the number of support requests about activation,
+                balance, and charges.
+              </p>
             </div>
           </div>
         </motion.section>
