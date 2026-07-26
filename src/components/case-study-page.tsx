@@ -456,6 +456,7 @@ export function CaseStudyPage() {
         animate="show"
         className="flex w-full flex-col gap-y-[140px] px-space-4 pb-[40px] pt-[140px] sm:mx-auto sm:max-w-[800px] sm:px-0"
       >
+        <div className="flex flex-col gap-space-8">
         <motion.section
           id="overview"
           data-section-anchor="overview"
@@ -523,7 +524,7 @@ export function CaseStudyPage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="-mt-[116px] scroll-mt-space-16 case-section-stack"
+          className="scroll-mt-space-16 case-section-stack"
         >
           <div className="case-h3-stack">
             <h3 className="text-h3">Problem</h3>
@@ -555,6 +556,7 @@ export function CaseStudyPage() {
             </div>
           </div>
         </motion.section>
+        </div>
 
         <motion.section
           id="discovery"
