@@ -47,26 +47,6 @@ const lightboxItems = {
   }
 } as const;
 
-function ZoomIcon({ floating = true }: { floating?: boolean }) {
-  return (
-    <span className={`${floating ? "pointer-events-none absolute bottom-space-3 right-space-3" : ""} flex h-10 w-10 items-center justify-center rounded-full bg-elevated-hover text-primary`}>
-      <svg
-        aria-hidden="true"
-        viewBox="0 0 24 24"
-        className="h-5 w-5"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-      >
-        <circle cx="11" cy="11" r="7" />
-        <path d="m16.5 16.5 4 4" />
-      </svg>
-    </span>
-  );
-}
-
 function ZoomImageShade() {
   return (
     <span className="pointer-events-none absolute inset-0 bg-primary/0 transition-colors duration-200 group-hover:bg-primary/20" />
@@ -618,7 +598,6 @@ export function CaseStudyPage() {
                     unoptimized
                   />
                   <ZoomImageShade />
-                  <ZoomIcon />
                 </button>
                 <p className="text-center text-caption-14 text-secondary">
                   В MVP путь к первому звонку был разорван между несколькими разделами
