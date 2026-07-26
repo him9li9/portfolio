@@ -474,6 +474,11 @@ export function CaseStudyPage() {
               Its audience is travelers who need affordable connectivity abroad without complex
               SIM card or roaming setup.
             </p>
+            <p className="text-body-18">
+              I joined the project at the MVP stage, a few months before the planned release. Within the
+              team, I was responsible for the user journey from registration to the first call, including
+              number activation, billing, and support.
+            </p>
           </div>
           <div
             ref={heroPhonesRef}
@@ -520,15 +525,6 @@ export function CaseStudyPage() {
           variants={item}
           className="-mt-space-14 scroll-mt-space-16 case-section-stack"
         >
-          <div className="case-h2-stack">
-            <h2 className="text-h2">About the project</h2>
-            <p className="text-body-18">
-              I joined the project at the MVP stage, a few months before the planned release. Within the
-              team, I was responsible for the user journey from registration to the first call, including
-              number activation, billing, and support.
-            </p>
-          </div>
-
           <div className="case-h3-stack">
             <h3 className="text-h3">Problem</h3>
             <div className="case-text-stack text-body-18">
@@ -1143,7 +1139,7 @@ export function CaseStudyPage() {
       <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-space-3 lg:flex">
         {[
           { id: "overview", label: "Introduction" },
-          { id: "about", label: "About the project" },
+          { id: "about", label: "Problem and objective" },
           { id: "discovery", label: "Discovery" },
           { id: "design", label: "Design process" },
           { id: "solution", label: "Solution" },
