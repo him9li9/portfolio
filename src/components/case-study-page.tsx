@@ -474,6 +474,11 @@ export function CaseStudyPage() {
               Аудитория — путешественники, которым нужна доступная связь за границей без сложной
               настройки SIM и роуминга.
             </p>
+            <p className="text-body-18">
+              Я присоединилась к проекту на стадии MVP за несколько месяцев до планируемого релиза. В
+              команде я отвечала за пользовательский путь от регистрации до первого звонка, подключение
+              номера, тарификацию и поддержку.
+            </p>
           </div>
           <div
             ref={heroPhonesRef}
@@ -520,15 +525,6 @@ export function CaseStudyPage() {
           variants={item}
           className="-mt-space-14 scroll-mt-space-16 case-section-stack"
         >
-          <div className="case-h2-stack">
-            <h2 className="text-h2">О проекте</h2>
-            <p className="text-body-18">
-              Я присоединилась к проекту на стадии MVP за несколько месяцев до планируемого релиза. В
-              команде я отвечала за пользовательский путь от регистрации до первого звонка, подключение
-              номера, тарификацию и поддержку.
-            </p>
-          </div>
-
           <div className="case-h3-stack">
             <h3 className="text-h3">Проблема</h3>
             <div className="case-text-stack text-body-18">
@@ -1145,7 +1141,7 @@ export function CaseStudyPage() {
       <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-space-3 lg:flex">
         {[
           { id: "overview", label: "Введение" },
-          { id: "about", label: "О проекте" },
+          { id: "about", label: "Проблема и задача" },
           { id: "discovery", label: "Дискавери" },
           { id: "design", label: "Проектирование" },
           { id: "solution", label: "Решение" },
