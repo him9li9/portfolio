@@ -12,7 +12,7 @@ const assets = {
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   arrowForward: "/figma/Icons/arrow_forward.svg",
   chartSmall: "/figma/Case_1/Section_1/case-chart-small.png",
-  caseDiscovery: "/figma/Case_1/Section_2/case-discovery-full.png",
+  caseDiscovery: "/figma/Case_1/Section_2/case-discovery.png",
   discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1-figma.png",
   discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2-figma.png",
   benchmark: "/figma/Case_1/Section_2/case-benchmark-figma.png",
@@ -27,10 +27,10 @@ const assets = {
 const lightboxItems = {
   discovery: {
     src: assets.caseDiscovery,
-    imageWidth: 2400,
-    imageHeight: 1260,
-    baseWidth: 800,
-    baseHeight: 420,
+    imageWidth: 2550,
+    imageHeight: 1206,
+    baseWidth: 850,
+    baseHeight: 402,
     mobileScale: 1.6,
     desktopScale: 1.5,
     mobileStart: "left"
@@ -566,71 +566,75 @@ export function CaseStudyPage() {
 
           <div className="case-content-stack">
             <p className="text-body-18">
-              I studied the user journey, support requests, and existing softphone solutions, and
-              discussed problematic flows with the support and development teams.
+              I started by studying the journey from registration to the first call: the current
+              screens, user requests, competitor solutions, and technical constraints discussed
+              with support and development. The goal was to understand what prevented users from
+              activating a number and starting to use the app on their own.
             </p>
 
             <div className="case-h3-stack">
               <h3 className="text-h3">Key flow problems</h3>
               <p className="text-body-18">
-                I first identified the critical barriers that had the greatest impact on user
-                activation before the MVP release.
+                During the audit of the current MVP, I identified three main barriers on the way to
+                the first call:
               </p>
-            </div>
-
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:pl-0">
-              <div className="w-full rounded-[12px] bg-secondary p-space-8">
-                <div
-                  className="relative mx-auto w-full max-w-[850px]"
-                  style={{ aspectRatio: "2400 / 1260" }}
-                >
-                  <Image
-                    alt="Key problems in the current MCN Softphone flow"
-                    src={assets.caseDiscovery}
-                    fill
-                    sizes="(max-width: 640px) calc(100vw - 80px), 850px"
-                    className="object-contain"
-                    loading="lazy"
-                    quality={100}
-                    unoptimized
-                  />
-                </div>
-              </div>
             </div>
 
             <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">1.&nbsp;The activation flow is fragmented</p>
-              <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>Registration and number activation take place in the web account.</li>
-                <li>After submitting the request, users cannot see their current status or next step.</li>
-              </ul>
               <p>
-                <span className="text-body-18-semibold">Outcome:</span> the first call is delayed,
-                and some users do not complete activation.
+                Registration and number activation take place in the web account, but after
+                submitting the request users cannot see the status or next step in the app.
+              </p>
+              <p className="italic">
+                → The first call is delayed, and some users do not complete activation.
               </p>
             </div>
 
             <div className="case-point-stack text-body-18">
               <p className="text-body-18-semibold">2.&nbsp;Pricing and charges are unclear</p>
-              <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>Call pricing is available only on the website.</li>
-                <li>After a call, there is no clear breakdown of the charge.</li>
-              </ul>
-              <p>
-                <span className="text-body-18-semibold">Outcome:</span> users do not understand the
-                charges and contact support.
+              <p>Users cannot see the price before a call or a clear breakdown after it ends.</p>
+              <p className="italic">
+                → Users do not understand the charges and contact support.
               </p>
             </div>
 
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center px-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:px-0">
+              <div className="case-figure-stack w-full items-center rounded-[12px] bg-secondary px-space-4 pb-space-6 pt-space-8 sm:px-space-8">
+                <button
+                  type="button"
+                  className="group relative w-full max-w-[850px] cursor-zoom-in overflow-hidden"
+                  style={{ aspectRatio: "2550 / 1206" }}
+                  onClick={() => setOpenLightbox("discovery")}
+                  aria-label="Open the user journey at full size"
+                >
+                  <Image
+                    alt="The MVP user journey to the first call"
+                    src={assets.caseDiscovery}
+                    fill
+                    sizes="(max-width: 640px) calc(100vw - 64px), 850px"
+                    className="object-contain"
+                    loading="lazy"
+                    quality={100}
+                    unoptimized
+                  />
+                  <ZoomImageShade />
+                  <ZoomIcon />
+                </button>
+                <p className="text-center text-caption-14 text-secondary">
+                  In the MVP, the journey to the first call was fragmented across several sections
+                </p>
+              </div>
+            </div>
+
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">3.&nbsp;Help is difficult to find</p>
-              <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>There is no visible entry point to support in the app.</li>
-                <li>Users search for answers across different channels.</li>
-              </ul>
+              <p className="text-body-18-semibold">3.&nbsp;Help is difficult to get</p>
               <p>
-                <span className="text-body-18-semibold">Outcome:</span> resolving a problem takes
-                longer, and support requests are duplicated.
+                Users cannot find answers about setup and call availability in the app and have to
+                look for help through other communication channels.
+              </p>
+              <p className="italic">
+                → Even common questions require contacting support.
               </p>
             </div>
 
@@ -660,20 +664,22 @@ export function CaseStudyPage() {
             </div>
 
             <p className="text-body-18">
-              Support request analysis showed that the main source of user problems was{" "}
+              Support request analysis also showed that users{" "}
               <span className="text-body-18-semibold">
-                uncertainty about the current account status and balance.
+                did not understand the current state of their account
               </span>{" "}
-              This is especially critical while traveling, when immediate access to calls and the
-              internet matters.
+              — whether the number was active, whether calls were available, or why the balance had
+              changed. This uncertainty is especially critical while traveling, when calls and
+              internet access are often needed immediately.
             </p>
 
             <div id="hypotheses" className="case-h3-stack scroll-mt-space-16">
               <h3 className="text-h3">Competitor analysis</h3>
               <p className="text-body-18">
-                With most competitors, users get a clear flow immediately after registration: the
-                number is activated automatically, pricing is shown before the call, and the next
-                step is obvious.
+                In Beside and OpenPhone, I compared registration, the transition to dialing, and
+                feedback after key actions. In both apps, the journey to a call was contained in
+                one sequential flow, and users could see the system state and the next available
+                step at every stage.
               </p>
             </div>
 
@@ -702,54 +708,49 @@ export function CaseStudyPage() {
               </div>
             </div>
 
+            <div className="text-body-18">
+              <p>I took three principles from the analysis:</p>
+              <ul className="list-disc pl-space-6">
+                <li>confirm the completion of each key action</li>
+                <li>show activation status and when calling becomes available</li>
+                <li>
+                  explain not only the cause of an error, but also how to return to the flow
+                </li>
+              </ul>
+            </div>
+
             <div className="case-media-stack w-full max-w-[800px]">
               <div className="case-h3-stack">
                 <h3 className="text-h3">Hypotheses</h3>
                 <p className="text-body-18">
-                  Based on the research, I identified four hypotheses that could affect the key
+                  Based on the research, I identified three hypotheses that could affect the key
                   product metrics. They formed the basis for the next design stage.
                 </p>
               </div>
-              <div className="flex flex-col gap-space-3 sm:flex-row sm:flex-wrap">
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[394px]">
-                  <p className="text-body-18-semibold">1.&nbsp;A clear start</p>
-                  <p className="text-caption-14 text-primary">
-                    If users understand their onboarding stage and when they can start calling,
-                    they are more likely to complete their first call.
+              <div className="flex flex-col gap-space-4">
+                <div className="case-point-stack text-body-18">
+                  <p className="text-body-18-semibold">1.&nbsp;Guided activation</p>
+                  <p>
+                    If number activation is moved into the app and the status and next step are
+                    shown, more users will complete setup and make their first call.
                   </p>
-                  <p className="text-caption-14 text-primary">
-                    <span className="text-caption-14-semibold">Metric: </span>first-call CR
-                  </p>
+                  <p><span className="text-body-18-semibold">Metric:</span> registration-to-first-call CR.</p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[394px]">
+                <div className="case-point-stack text-body-18">
                   <p className="text-body-18-semibold">2.&nbsp;Transparent pricing</p>
-                  <p className="text-caption-14 text-primary">
-                    If users see the call cost and account balance before dialing, pricing becomes
-                    easier to understand.
+                  <p>
+                    If the price is shown before a call and the charge is explained afterward,
+                    users will find it easier to control their spending.
                   </p>
-                  <p className="text-caption-14 text-primary">
-                    <span className="text-caption-14-semibold">Metric: </span>billing-related support requests
-                  </p>
+                  <p><span className="text-body-18-semibold">Metric:</span> pricing and billing support requests.</p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[394px]">
-                  <p className="text-body-18-semibold">3.&nbsp;Quick help</p>
-                  <p className="text-caption-14 text-primary">
-                    If answers to common questions are available in the app, users contact support
-                    less often.
+                <div className="case-point-stack text-body-18">
+                  <p className="text-body-18-semibold">3.&nbsp;Contextual help</p>
+                  <p>
+                    If an error is explained and a way to continue is offered immediately, fewer
+                    users will abandon activation or contact support.
                   </p>
-                  <p className="text-caption-14 text-primary">
-                    <span className="text-caption-14-semibold">Metric: </span>support requests
-                  </p>
-                </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[394px]">
-                  <p className="text-body-18-semibold">4.&nbsp;Sequential steps</p>
-                  <p className="text-caption-14 text-primary">
-                    If users immediately understand what to do after an error, it is easier for
-                    them to return to the flow.
-                  </p>
-                  <p className="text-caption-14 text-primary">
-                    <span className="text-caption-14-semibold">Metric: </span>flow completion / first-call CR
-                  </p>
+                  <p><span className="text-body-18-semibold">Metric:</span> first-call CR and support requests.</p>
                 </div>
               </div>
             </div>
