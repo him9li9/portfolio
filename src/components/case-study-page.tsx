@@ -592,6 +592,7 @@ export function CaseStudyPage() {
                     className="object-contain"
                     loading="lazy"
                     quality={100}
+                    unoptimized
                   />
                 </div>
               </div>
@@ -691,6 +692,7 @@ export function CaseStudyPage() {
                       className="object-contain"
                       loading="lazy"
                       quality={100}
+                      unoptimized
                     />
                   </div>
                 </div>
