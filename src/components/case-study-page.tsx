@@ -461,7 +461,7 @@ export function CaseStudyPage() {
           id="overview"
           data-section-anchor="overview"
           variants={item}
-          className="scroll-mt-space-16 flex flex-col gap-space-6"
+          className="scroll-mt-space-16 flex flex-col gap-space-8"
         >
           <div className="flex flex-col gap-space-5 text-primary">
             <div className="flex flex-col gap-space-1">
@@ -1143,7 +1143,6 @@ export function CaseStudyPage() {
       <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-space-3 lg:flex">
         {[
           { id: "overview", label: "О проекте" },
-          { id: "about", label: "Проблема и задача" },
           { id: "discovery", label: "Дискавери" },
           { id: "design", label: "Проектирование" },
           { id: "solution", label: "Решение" },
