@@ -12,12 +12,7 @@ const assets = {
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   arrowForward: "/figma/Icons/arrow_forward.svg",
   chartSmall: "/figma/Case_1/Section_1/case-chart-small.png",
-  discoveryActivation: "/figma/Case_1/Section_2/case-discovery-activation.png",
-  discoveryCost: "/figma/Case_1/Section_2/case-discovery-cost.png",
-  discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1.png",
-  discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2.png",
-  competitorWhatsapp: "/figma/Case_1/Section_2/case-competitor-whatsapp.png",
-  competitorOpenphone: "/figma/Case_1/Section_2/case-competitor-openphone.png",
+  caseDiscovery: "/figma/Case_1/Section_2/case-discovery.png",
   userflow: "/figma/Case_1/Section_3/case-userflow.png",
   solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow-site.mp4",
@@ -28,13 +23,13 @@ const assets = {
 
 const lightboxItems = {
   discovery: {
-    src: assets.discoveryActivation,
-    imageWidth: 2256,
-    imageHeight: 2541,
-    baseWidth: 800,
-    baseHeight: 901,
-    mobileScale: 1.15,
-    desktopScale: 1.1,
+    src: assets.caseDiscovery,
+    imageWidth: 2048,
+    imageHeight: 1075,
+    baseWidth: 1000,
+    baseHeight: 525,
+    mobileScale: 1.6,
+    desktopScale: 1.5,
     mobileStart: "left"
   },
   userflow: {
@@ -571,7 +566,7 @@ export function CaseStudyPage() {
               <p>During discovery, I drew on:</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>an analysis of existing user flows and screen logic</li>
-                <li>user support requests (frequent questions and common errors)</li>
+                <li>user support requests: frequent questions and common errors</li>
                 <li>a review of similar softphone and communications solutions</li>
                 <li>discussions with the support and development teams</li>
               </ul>
@@ -580,201 +575,68 @@ export function CaseStudyPage() {
             <div className="case-h3-stack">
               <h3 className="text-h3">Current version analysis</h3>
               <p className="text-body-18">
-                <span className="text-body-18-semibold">The goal of this stage was to</span> understand exactly where users became confused, made mistakes, or spent
-                unnecessary time, and which issues were especially critical for the MVP before release. I
-                therefore began by analyzing the existing user journey and points of uncertainty:
+                I analyzed the journey from registration to the first call to identify where users
+                became confused, made mistakes, or sought help.
               </p>
             </div>
 
-            <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">1.&nbsp;The activation flow was split between the web and the app</p>
-              <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>registration took place in the web account and required manual verification by a manager</li>
-                <li>after submitting a request, users received no explanation of their status or next steps</li>
-              </ul>
-              <p>
-                Users postponed purchasing a number and making their first call <span className="italic">→</span>{" "}
-                <span className="italic">drop-off during registration</span>
-              </p>
-            </div>
-
-            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-space-2 bg-secondary px-space-4 py-space-6 sm:gap-0 sm:rounded-[12px] sm:p-space-6">
+            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+              <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
                 <button
                   type="button"
-                  aria-label="Open discovery scheme"
+                  aria-label="Open current version analysis"
                   onClick={() => setOpenLightbox("discovery")}
-                  className="group relative block w-full max-w-[800px] cursor-zoom-in overflow-hidden"
+                  className="group relative block w-[1000px] max-w-none cursor-zoom-in sm:mx-auto sm:w-full"
                 >
                   <Image
-                    alt=""
-                    src={assets.discoveryActivation}
-                    width={2256}
-                    height={2541}
-                    sizes="(max-width: 640px) calc(100vw - 48px), 800px"
+                    alt="Analysis of the app MVP's core flows"
+                    src={assets.caseDiscovery}
+                    width={2048}
+                    height={1075}
+                    sizes="(max-width: 640px) 1000px, 1000px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                     quality={100}
                   />
+                  <ZoomImageShade />
+                  <ZoomIcon />
                 </button>
-                <div className="grid w-full grid-cols-[1fr_40px] items-end gap-0">
-                  <p className="text-center text-caption-14 text-secondary">
-                    Analysis of the app MVP&apos;s core flows
-                  </p>
-                  <button
-                    type="button"
-                    aria-label="Open discovery scheme"
-                    onClick={() => setOpenLightbox("discovery")}
-                    className="group cursor-zoom-in"
-                  >
-                    <ZoomIcon floating={false} />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">2.&nbsp;Costs and charges were unclear at the time of the call</p>
-              <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>users had to search the website for roaming call rates</li>
-                <li>charges after a call appeared unexpected</li>
-              </ul>
-              <p>
-                Users did not understand how much they were paying or what for <span className="italic">→</span>{" "}
-                <span className="italic">more support requests</span>
-              </p>
-            </div>
-
-            <div className="-mx-space-4 overflow-hidden bg-secondary px-space-4 py-space-6 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
-              <div className="mx-auto w-full max-w-[427px]">
-                <Image
-                  alt=""
-                  src={assets.discoveryCost}
-                  width={1070}
-                  height={1002}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
-              </div>
-            </div>
-
-            <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">3.&nbsp;Poor feedback</p>
-              <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>the app lacked a clear entry point to support</li>
-                <li>users searched for answers across different channels and repeated their questions</li>
-              </ul>
-              <p>
-                Users did not know where to find help <span className="italic">→</span>{" "}
-                <span className="italic">repeat requests across different channels</span>
-              </p>
-            </div>
-
-            <div className="-mx-space-4 overflow-hidden bg-secondary px-space-4 py-space-6 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
-              <div className="mx-auto flex w-full max-w-[427px] flex-col gap-space-4">
-                <Image
-                  alt=""
-                  src={assets.discoveryFeedback1}
-                  width={1044}
-                  height={332}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
-                <Image
-                  alt=""
-                  src={assets.discoveryFeedback2}
-                  width={2116}
-                  height={512}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
               </div>
             </div>
 
             <p className="text-body-18">
-              An analysis of support requests showed that the main source of user problems was{" "}
-              <span className="text-body-18-semibold">a lack of clarity about their account and balance status</span>. This is especially critical while traveling,
-              when immediate access to calls and the internet matters.
+              Users did not understand their account status, the cost of actions, or the next step.
+              As a result, they postponed their first call or contacted support.
             </p>
 
             <div id="hypotheses" className="case-h3-stack scroll-mt-space-16">
               <h3 className="text-h3">Competitor analysis</h3>
               <p className="text-body-18">
-                During discovery, I also studied similar products with calling features.
-                Experience with messaging apps has conditioned users to expect immediate access
-                to communication, including calls, as soon as they register.
+                To understand how to shorten the path to the first call, I studied WhatsApp and
+                OpenPhone. I compared registration, number selection, access to contacts, and how
+                pricing was displayed.
               </p>
-            </div>
-
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[800px] sm:pl-0">
-              <div className="case-figure-stack w-full items-center gap-[6px] sm:gap-space-3">
-                <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
-                  <div className="w-[800px] max-w-none sm:mx-auto sm:w-full">
-                    <Image
-                      alt=""
-                      src={assets.competitorWhatsapp}
-                      width={2208}
-                      height={1103}
-                      sizes="(max-width: 640px) 800px, 752px"
-                      className="h-auto w-full object-contain"
-                      loading="lazy"
-                      quality={100}
-                    />
-                  </div>
-                </div>
-                <p className="text-center text-caption-14 text-secondary">
-                  WhatsApp (registration · contact selection · call)
-              </p>
-              </div>
             </div>
 
             <p className="text-body-18">
-              In softphone apps with required steps such as choosing a number, verification, and
-              billing, the path to the first call is inherently more complex. Users therefore need
-              clear, continuous feedback on their progress and status throughout this flow.
+              In flows that require registration, number selection, and billing, users especially
+              need continuous feedback: which stage they are at, what has already been completed,
+              and what they need to do next.
             </p>
-
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[950px] sm:pl-0">
-              <div className="case-figure-stack w-full items-center gap-[6px] sm:gap-space-3">
-                <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
-                  <div className="w-[950px] max-w-none sm:mx-auto sm:w-full">
-                    <Image
-                      alt=""
-                      src={assets.competitorOpenphone}
-                      width={3901}
-                      height={1552}
-                      sizes="(max-width: 640px) 950px, 952px"
-                      className="h-auto w-full object-contain"
-                      loading="lazy"
-                      quality={100}
-                    />
-                  </div>
-                </div>
-                <p className="text-center text-caption-14 text-secondary">
-                  OpenPhone (number selection · registration · number purchase · call)
-              </p>
-              </div>
-            </div>
 
             <div className="case-media-stack w-full max-w-[800px]">
               <div className="case-h3-stack">
                 <h3 className="text-h3">Hypotheses</h3>
                 <p className="text-body-18">
-                  Based on the analysis, I formulated hypotheses tied to the product&apos;s key metrics.
+                  Based on the analysis, I formulated four hypotheses tied to the product&apos;s key metrics.
                 </p>
               </div>
               <div className="flex flex-col gap-space-3 sm:flex-row sm:flex-wrap">
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">1.&nbsp;Clarity from the outset</p>
                   <p className="text-caption-14 text-primary">
-                    If users understand where they are in onboarding and when they will be able
-                    to start calling, they are more likely to complete their first call.
+                    If users understand their onboarding stage and when they can start calling,
+                    they are more likely to complete their first call.
                   </p>
                   <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Metric: </span>first-call CR
@@ -783,8 +645,7 @@ export function CaseStudyPage() {
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">2.&nbsp;Cost transparency</p>
                   <p className="text-caption-14 text-primary">
-                    If users see the call cost and their balance before dialing,
-                    pricing will become more transparent.
+                    If the call cost and balance are visible before dialing, pricing becomes easier to understand.
                   </p>
                   <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Metric: </span>retention, support requests
@@ -793,8 +654,8 @@ export function CaseStudyPage() {
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">3.&nbsp;Accessible answers</p>
                   <p className="text-caption-14 text-primary">
-                    If answers to common questions are available in the app, users will be less
-                    likely to interrupt the flow and contact support.
+                    If answers to common questions are available in the app, users are less likely
+                    to interrupt the flow and contact support.
                   </p>
                   <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Metric: </span>support requests
@@ -803,18 +664,13 @@ export function CaseStudyPage() {
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">4.&nbsp;A clear next step</p>
                   <p className="text-caption-14 text-primary">
-                    If users understand what to do after an error or incomplete action,
-                    it is easier for them to return to the flow.
+                    If users understand what to do after an error, it is easier for them to return to the flow.
                   </p>
                   <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Metric: </span>retention, support requests
                   </p>
                 </div>
               </div>
-              <p className="text-body-18">
-                The hypotheses helped define the main areas of work, but they could be refined and
-                adjusted as we tested them against real-world scenarios.
-              </p>
             </div>
           </div>
         </motion.section>
