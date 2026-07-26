@@ -25,16 +25,6 @@ const assets = {
 };
 
 const lightboxItems = {
-  discovery: {
-    src: assets.caseDiscovery,
-    imageWidth: 2550,
-    imageHeight: 1206,
-    baseWidth: 850,
-    baseHeight: 402,
-    mobileScale: 1.6,
-    desktopScale: 1.5,
-    mobileStart: "left"
-  },
   userflow: {
     src: assets.userflow,
     imageWidth: 4096,
@@ -580,12 +570,9 @@ export function CaseStudyPage() {
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center px-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:px-0">
               <div className="case-figure-stack w-full items-center rounded-[12px] bg-secondary px-space-4 pb-space-6 pt-space-8 sm:px-space-8">
-                <button
-                  type="button"
-                  className="group relative w-full max-w-[850px] cursor-zoom-in overflow-hidden"
+                <div
+                  className="relative w-full max-w-[850px] overflow-hidden"
                   style={{ aspectRatio: "2550 / 1206" }}
-                  onClick={() => setOpenLightbox("discovery")}
-                  aria-label="Открыть путь пользователя в полном размере"
                 >
                   <Image
                     alt="Путь пользователя к первому звонку в MVP"
@@ -597,8 +584,7 @@ export function CaseStudyPage() {
                     quality={100}
                     unoptimized
                   />
-                  <ZoomImageShade />
-                </button>
+                </div>
                 <p className="text-center text-caption-14 text-secondary">
                   В MVP путь к первому звонку был разорван между несколькими разделами
                 </p>
