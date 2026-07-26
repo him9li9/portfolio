@@ -12,10 +12,10 @@ const assets = {
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   arrowForward: "/figma/Icons/arrow_forward.svg",
   chartSmall: "/figma/Case_1/Section_1/case-chart-small.png",
-  caseDiscovery: "/figma/Case_1/Section_2/case-discovery-figma.png",
+  caseDiscovery: "/figma/Case_1/Section_2/case-discovery-full.png",
   discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1-figma.png",
   discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2-figma.png",
-  benchmark: "/figma/Case_1/Section_2/benchmark.png",
+  benchmark: "/figma/Case_1/Section_2/case-benchmark-figma.png",
   userflow: "/figma/Case_1/Section_3/case-userflow.png",
   solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow-site.mp4",
@@ -27,8 +27,8 @@ const assets = {
 const lightboxItems = {
   discovery: {
     src: assets.caseDiscovery,
-    imageWidth: 3000,
-    imageHeight: 1576,
+    imageWidth: 2400,
+    imageHeight: 1260,
     baseWidth: 800,
     baseHeight: 420,
     mobileScale: 1.6,
@@ -578,20 +578,24 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div
-              className="relative w-full max-w-[800px]"
-              style={{ aspectRatio: "3000 / 1576" }}
-            >
-              <Image
-                alt="Основные проблемы сценария в текущей версии MCN Softphone"
-                src={assets.caseDiscovery}
-                fill
-                sizes="(max-width: 640px) calc(100vw - 32px), 800px"
-                className="object-cover"
-                loading="lazy"
-                quality={100}
-                unoptimized
-              />
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:pl-0">
+              <div className="w-full rounded-[12px] bg-secondary p-space-8">
+                <div
+                  className="relative w-full"
+                  style={{ aspectRatio: "2400 / 1260" }}
+                >
+                  <Image
+                    alt="Основные проблемы сценария в текущей версии MCN Softphone"
+                    src={assets.caseDiscovery}
+                    fill
+                    sizes="(max-width: 640px) calc(100vw - 80px), 936px"
+                    className="object-contain"
+                    loading="lazy"
+                    quality={100}
+                    unoptimized
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="case-point-stack text-body-18">
@@ -673,17 +677,17 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:pl-0">
-              <div className="case-figure-stack w-full items-center gap-[6px] rounded-[12px] bg-secondary p-space-6 sm:gap-space-4">
+              <div className="case-figure-stack w-full items-center gap-[6px] rounded-[12px] bg-secondary px-space-8 pb-space-6 pt-space-8 sm:gap-space-4">
                 <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
                   <div
-                    className="relative w-[952px] max-w-none sm:mx-auto sm:w-full"
+                    className="relative w-[936px] max-w-none sm:mx-auto sm:w-full"
                     style={{ aspectRatio: "952 / 268" }}
                   >
                     <Image
                       alt="Последовательный путь до первого звонка в приложениях конкурентов"
                       src={assets.benchmark}
                       fill
-                      sizes="(max-width: 640px) 952px, 952px"
+                      sizes="(max-width: 640px) 936px, 936px"
                       className="object-cover"
                       loading="lazy"
                       quality={100}
