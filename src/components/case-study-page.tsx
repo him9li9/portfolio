@@ -523,7 +523,7 @@ export function CaseStudyPage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="-mt-space-14 scroll-mt-space-16 case-section-stack"
+          className="-mt-[116px] scroll-mt-space-16 case-section-stack"
         >
           <div className="case-h3-stack">
             <h3 className="text-h3">Problem</h3>
@@ -1138,7 +1138,7 @@ export function CaseStudyPage() {
 
       <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-space-3 lg:flex">
         {[
-          { id: "overview", label: "Introduction" },
+          { id: "overview", label: "About the project" },
           { id: "about", label: "Problem and objective" },
           { id: "discovery", label: "Discovery" },
           { id: "design", label: "Design process" },
