@@ -12,10 +12,10 @@ const assets = {
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   arrowForward: "/figma/Icons/arrow_forward.svg",
   chartSmall: "/figma/Case_1/Section_1/case-chart-small.png",
-  caseDiscovery: "/figma/Case_1/Section_2/case-discovery.png",
-  discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1.png",
-  discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2.png",
-  competitorOpenphone: "/figma/Case_1/Section_2/case-competitor-openphone.png",
+  caseDiscovery: "/figma/Case_1/Section_2/case-discovery-figma.png",
+  discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1-figma.png",
+  discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2-figma.png",
+  benchmark: "/figma/Case_1/Section_2/benchmark.png",
   userflow: "/figma/Case_1/Section_3/case-userflow.png",
   solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow-site.mp4",
@@ -27,10 +27,10 @@ const assets = {
 const lightboxItems = {
   discovery: {
     src: assets.caseDiscovery,
-    imageWidth: 2048,
-    imageHeight: 1075,
-    baseWidth: 1000,
-    baseHeight: 525,
+    imageWidth: 3000,
+    imageHeight: 1576,
+    baseWidth: 800,
+    baseHeight: 420,
     mobileScale: 1.6,
     desktopScale: 1.5,
     mobileStart: "left"
@@ -580,16 +580,17 @@ export function CaseStudyPage() {
 
             <div
               className="relative w-full max-w-[800px]"
-              style={{ aspectRatio: "2048 / 1075" }}
+              style={{ aspectRatio: "3000 / 1576" }}
             >
               <Image
                 alt="Основные проблемы сценария в текущей версии MCN Softphone"
                 src={assets.caseDiscovery}
                 fill
                 sizes="(max-width: 640px) calc(100vw - 32px), 800px"
-                className="object-contain"
+                className="object-cover"
                 loading="lazy"
                 quality={100}
+                unoptimized
               />
             </div>
 
@@ -665,41 +666,36 @@ export function CaseStudyPage() {
             <div id="hypotheses" className="case-h3-stack scroll-mt-space-16">
               <h3 className="text-h3">Анализ конкурентов</h3>
               <p className="text-body-18">
-                У большинства конкурентов пользователь получает понятный сценарий сразу после
-                регистрации: номер активируется автоматически, стоимость отображается до звонка,
-                а следующий шаг очевиден.
+                Конкуренты выстраивают последовательный путь до первого звонка: пользователь получает
+                обратную связь на каждом этапе, понимает следующий шаг и быстро переходит к
+                использованию продукта.
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[950px] sm:pl-0">
-              <div className="case-figure-stack w-full items-center gap-[6px] sm:gap-space-3">
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:pl-0">
+              <div className="case-figure-stack w-full items-center gap-[6px] rounded-[12px] bg-secondary p-space-6 sm:gap-space-4">
                 <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
                   <div
-                    className="relative w-[950px] max-w-none sm:mx-auto sm:w-full"
-                    style={{ aspectRatio: "3901 / 1552" }}
+                    className="relative w-[952px] max-w-none sm:mx-auto sm:w-full"
+                    style={{ aspectRatio: "952 / 268" }}
                   >
                     <Image
-                      alt="Путь пользователя от регистрации до звонка в OpenPhone"
-                      src={assets.competitorOpenphone}
+                      alt="Последовательный путь до первого звонка в приложениях конкурентов"
+                      src={assets.benchmark}
                       fill
-                      sizes="(max-width: 640px) 950px, 950px"
-                      className="object-contain"
+                      sizes="(max-width: 640px) 952px, 952px"
+                      className="object-cover"
                       loading="lazy"
                       quality={100}
+                      unoptimized
                     />
                   </div>
                 </div>
                 <p className="text-center text-caption-14 text-secondary">
-                  OpenPhone (выбор номера · регистрация · покупка номера · звонок)
+                  Последовательный путь до первого звонка в приложениях конкурентов
                 </p>
               </div>
             </div>
-
-            <p className="text-body-18">
-              В сценариях с обязательной регистрацией, выбором номера и тарификацией пользователю
-              особенно важна постоянная обратная связь: на каком этапе он находится, что уже
-              выполнено и что делать дальше.
-            </p>
 
             <div className="case-media-stack w-full max-w-[800px]">
               <div className="case-h3-stack">
@@ -710,7 +706,7 @@ export function CaseStudyPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-space-3 sm:flex-row sm:flex-wrap">
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[394px]">
                   <p className="text-body-18-semibold">1.&nbsp;Понятный старт</p>
                   <p className="text-caption-14 text-primary">
                     Если пользователь понимает, на каком этапе онбординга находится и когда сможет
@@ -720,7 +716,7 @@ export function CaseStudyPage() {
                     <span className="text-caption-14-semibold">Метрика: </span>CR в 1-й звонок
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[394px]">
                   <p className="text-body-18-semibold">2.&nbsp;Прозрачная тарификация</p>
                   <p className="text-caption-14 text-primary">
                     Если пользователь видит стоимость звонка и состояние баланса до начала вызова,
@@ -730,7 +726,7 @@ export function CaseStudyPage() {
                     <span className="text-caption-14-semibold">Метрика: </span>обращения по вопросам списаний
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[394px]">
                   <p className="text-body-18-semibold">3.&nbsp;Быстрая помощь</p>
                   <p className="text-caption-14 text-primary">
                     Если ответы на частые вопросы доступны внутри приложения, пользователь реже
@@ -740,7 +736,7 @@ export function CaseStudyPage() {
                     <span className="text-caption-14-semibold">Метрика: </span>обращения в поддержку
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[394px]">
                   <p className="text-body-18-semibold">4.&nbsp;Последовательные шаги</p>
                   <p className="text-caption-14 text-primary">
                     Если после ошибки пользователь сразу понимает, что делать дальше, ему проще
