@@ -12,10 +12,10 @@ const assets = {
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   arrowForward: "/figma/Icons/arrow_forward.svg",
   chartSmall: "/figma/Case_1/Section_1/case-chart-small.png",
-  caseDiscovery: "/figma/Case_1/Section_2/case-discovery.png",
+  caseDiscovery: "/figma/Case_1/Section_2/case-discovery-full.png",
   discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1.png",
   discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2.png",
-  competitorOpenphone: "/figma/Case_1/Section_2/case-competitor-openphone.png",
+  competitorOpenphone: "/figma/Case_1/Section_2/case-competitor-openphone-full.png",
   userflow: "/figma/Case_1/Section_3/case-userflow.png",
   solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow-site.mp4",
@@ -27,10 +27,10 @@ const assets = {
 const lightboxItems = {
   discovery: {
     src: assets.caseDiscovery,
-    imageWidth: 2048,
-    imageHeight: 1075,
-    baseWidth: 1000,
-    baseHeight: 525,
+    imageWidth: 2400,
+    imageHeight: 1260,
+    baseWidth: 1200,
+    baseHeight: 630,
     mobileScale: 1.6,
     desktopScale: 1.5,
     mobileStart: "left"
@@ -578,19 +578,23 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div
-              className="relative w-full max-w-[800px]"
-              style={{ aspectRatio: "2048 / 1075" }}
-            >
-              <Image
-                alt="Key problems in the current MCN Softphone flow"
-                src={assets.caseDiscovery}
-                fill
-                sizes="(max-width: 640px) calc(100vw - 32px), 800px"
-                className="object-contain"
-                loading="lazy"
-                quality={100}
-              />
+            <div className="relative left-1/2 w-screen -translate-x-1/2 sm:w-[calc(100vw-32px)] sm:max-w-[1200px]">
+              <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
+                <div
+                  className="relative w-[1000px] max-w-none sm:w-full"
+                  style={{ aspectRatio: "2400 / 1260" }}
+                >
+                  <Image
+                    alt="Key problems in the current MCN Softphone flow"
+                    src={assets.caseDiscovery}
+                    fill
+                    sizes="(max-width: 640px) 1000px, 1200px"
+                    className="object-contain"
+                    loading="lazy"
+                    quality={100}
+                  />
+                </div>
+              </div>
             </div>
 
             <div className="case-point-stack text-body-18">
