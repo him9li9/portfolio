@@ -12,12 +12,7 @@ const assets = {
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   arrowForward: "/figma/Icons/arrow_forward.svg",
   chartSmall: "/figma/Case_1/Section_1/case-chart-small.png",
-  discoveryActivation: "/figma/Case_1/Section_2/case-discovery-activation.png",
-  discoveryCost: "/figma/Case_1/Section_2/case-discovery-cost.png",
-  discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1.png",
-  discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2.png",
-  competitorWhatsapp: "/figma/Case_1/Section_2/case-competitor-whatsapp.png",
-  competitorOpenphone: "/figma/Case_1/Section_2/case-competitor-openphone.png",
+  caseDiscovery: "/figma/Case_1/Section_2/case-discovery.png",
   userflow: "/figma/Case_1/Section_3/case-userflow.png",
   solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow-site.mp4",
@@ -28,13 +23,13 @@ const assets = {
 
 const lightboxItems = {
   discovery: {
-    src: assets.discoveryActivation,
-    imageWidth: 2256,
-    imageHeight: 2541,
-    baseWidth: 800,
-    baseHeight: 901,
-    mobileScale: 1.15,
-    desktopScale: 1.1,
+    src: assets.caseDiscovery,
+    imageWidth: 2048,
+    imageHeight: 1075,
+    baseWidth: 1000,
+    baseHeight: 525,
+    mobileScale: 1.6,
+    desktopScale: 1.5,
     mobileStart: "left"
   },
   userflow: {
@@ -571,210 +566,76 @@ export function CaseStudyPage() {
               <p>В рамках discovery я опиралась на:</p>
               <ul className="list-disc space-y-space-2 pl-space-6">
                 <li>анализ текущих пользовательских сценариев и логики экранов</li>
-                <li>обращения пользователей в поддержку (частые вопросы и типовые ошибки)</li>
+                <li>обращения пользователей в поддержку: частые вопросы и типовые ошибки</li>
                 <li>обзор аналогичных softphone- и коммуникационных решений</li>
-                <li>обсуждения с командой поддержки и разработки</li>
+                <li>обсуждения с командами поддержки и разработки</li>
               </ul>
             </div>
 
             <div className="case-h3-stack">
               <h3 className="text-h3">Анализ текущей версии</h3>
               <p className="text-body-18">
-                <span className="text-body-18-semibold">Цель этапа —</span> понять, где именно пользователи теряются, совершают ошибки или тратят
-                лишнее время, и какие из этих проблем особенно критичны для MVP перед релизом. Поэтому
-                я начала с анализа текущего пользовательского пути и точек неопределённости:
+                Я проанализировала путь от регистрации до первого звонка, чтобы понять, где
+                пользователи теряются, совершают ошибки или обращаются за помощью.
               </p>
             </div>
 
-            <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">1.&nbsp;Сценарий активации разорван между вебом и приложением</p>
-              <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>регистрация вынесена в веб-кабинет и требует ручной верификации менеджером</li>
-                <li>после отправки заявки нет объяснения со статусом и следующими действиями</li>
-              </ul>
-              <p>
-                Пользователи откладывают покупку номера и первый звонок <span className="italic">→</span>{" "}
-                <span className="italic">отток на этапе регистрации</span>
-              </p>
-            </div>
-
-            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-space-2 bg-secondary px-space-4 py-space-6 sm:gap-0 sm:rounded-[12px] sm:p-space-6">
+            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+              <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
                 <button
                   type="button"
-                  aria-label="Open discovery scheme"
+                  aria-label="Открыть анализ текущей версии"
                   onClick={() => setOpenLightbox("discovery")}
-                  className="group relative block w-full max-w-[800px] cursor-zoom-in overflow-hidden"
+                  className="group relative block w-[1000px] max-w-none cursor-zoom-in sm:mx-auto sm:w-full"
                 >
                   <Image
-                    alt=""
-                    src={assets.discoveryActivation}
-                    width={2256}
-                    height={2541}
-                    sizes="(max-width: 640px) calc(100vw - 48px), 800px"
+                    alt="Анализ основных сценариев в MVP приложения"
+                    src={assets.caseDiscovery}
+                    width={2048}
+                    height={1075}
+                    sizes="(max-width: 640px) 1000px, 1000px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
                     quality={100}
                   />
+                  <ZoomImageShade />
+                  <ZoomIcon />
                 </button>
-                <div className="grid w-full grid-cols-[1fr_40px] items-end gap-0">
-                  <p className="text-center text-caption-14 text-secondary">
-                    Анализ основных сценариев в MVP приложения
-                  </p>
-                  <button
-                    type="button"
-                    aria-label="Open discovery scheme"
-                    onClick={() => setOpenLightbox("discovery")}
-                    className="group cursor-zoom-in"
-                  >
-                    <ZoomIcon floating={false} />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">2.&nbsp;Стоимость и списания не прозрачны в момент звонка</p>
-              <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>информацию о стоимости звонков в роуминге нужно было искать на сайте</li>
-                <li>после завершения звонка списания выглядят неожиданными</li>
-              </ul>
-              <p>
-                Пользователи не понимают, сколько и за что они платят <span className="italic">→</span>{" "}
-                <span className="italic">рост обращений в поддержку</span>
-              </p>
-            </div>
-
-            <div className="-mx-space-4 overflow-hidden bg-secondary px-space-4 py-space-6 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
-              <div className="mx-auto w-full max-w-[427px]">
-                <Image
-                  alt=""
-                  src={assets.discoveryCost}
-                  width={1070}
-                  height={1002}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
-              </div>
-            </div>
-
-            <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">3.&nbsp;Некачественная обратная связь</p>
-              <ul className="list-disc space-y-space-2 pl-space-6">
-                <li>в приложении нет понятной точки входа в поддержку</li>
-                <li>пользователи ищут ответы в разных каналах и повторяют вопросы</li>
-              </ul>
-              <p>
-                Пользователи не знают, где искать помощь <span className="italic">→</span>{" "}
-                <span className="italic">повторные обращения в разных каналах</span>
-              </p>
-            </div>
-
-            <div className="-mx-space-4 overflow-hidden bg-secondary px-space-4 py-space-6 sm:mx-0 sm:rounded-[12px] sm:p-space-6">
-              <div className="mx-auto flex w-full max-w-[427px] flex-col gap-space-4">
-                <Image
-                  alt=""
-                  src={assets.discoveryFeedback1}
-                  width={1044}
-                  height={332}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
-                <Image
-                  alt=""
-                  src={assets.discoveryFeedback2}
-                  width={2116}
-                  height={512}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                quality={100}
-                />
               </div>
             </div>
 
             <p className="text-body-18">
-              Анализ обращений в поддержку показал, что основная причина проблем пользователей —
-              <span className="text-body-18-semibold">непонимание текущего состояния аккаунта и баланса</span>. Это особенно критично в путешествиях,
-              где важна немедленная доступность связи и интернета.
+              Пользователи не понимали текущее состояние аккаунта, стоимость действий и следующий
+              шаг. Из-за этого они откладывали первый звонок или обращались в поддержку.
             </p>
 
             <div id="hypotheses" className="case-h3-stack scroll-mt-space-16">
               <h3 className="text-h3">Анализ конкурентов</h3>
               <p className="text-body-18">
-                В ходе discovery я также изучила аналогичные продукты, в которых есть звонки.
-                Например, после опыта работы с мессенджерами у пользователей формируется ожидание
-                мгновенной готовности к коммуникации (и звонкам в том числе) сразу после регистрации.
+                Чтобы понять, как сократить путь к первому звонку, я изучила WhatsApp и OpenPhone.
+                Сравнивала регистрацию, выбор номера, доступ к контактам и отображение стоимости.
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[800px] sm:pl-0">
-              <div className="case-figure-stack w-full items-center gap-[6px] sm:gap-space-3">
-                <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
-                  <div className="w-[800px] max-w-none sm:mx-auto sm:w-full">
-                    <Image
-                      alt=""
-                      src={assets.competitorWhatsapp}
-                      width={2208}
-                      height={1103}
-                      sizes="(max-width: 640px) 800px, 752px"
-                      className="h-auto w-full object-contain"
-                      loading="lazy"
-                      quality={100}
-                    />
-                  </div>
-                </div>
-                <p className="text-center text-caption-14 text-secondary">
-                  WhatsApp  (регистрация · выбор контакта · звонок)
-                </p>
-              </div>
-            </div>
-
             <p className="text-body-18">
-              В softphone-приложениях, где есть обязательные шаги (выбор номера, верификация,
-              тарификация), путь к первому звонку объективно сложнее. Поэтому в таком сценарии
-              пользователю необходима понятная и непрерывная обратная связь о его прогрессе и статусе.
+              В сценариях с обязательной регистрацией, выбором номера и тарификацией пользователю
+              особенно важна постоянная обратная связь: на каком этапе он находится, что уже
+              выполнено и какой следующий шаг нужно сделать.
             </p>
-
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[950px] sm:pl-0">
-              <div className="case-figure-stack w-full items-center gap-[6px] sm:gap-space-3">
-                <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
-                  <div className="w-[950px] max-w-none sm:mx-auto sm:w-full">
-                    <Image
-                      alt=""
-                      src={assets.competitorOpenphone}
-                      width={3901}
-                      height={1552}
-                      sizes="(max-width: 640px) 950px, 952px"
-                      className="h-auto w-full object-contain"
-                      loading="lazy"
-                      quality={100}
-                    />
-                  </div>
-                </div>
-                <p className="text-center text-caption-14 text-secondary">
-                  Open Phone  (выбор номера · регистрация · покупка номера · звонок)
-                </p>
-              </div>
-            </div>
 
             <div className="case-media-stack w-full max-w-[800px]">
               <div className="case-h3-stack">
                 <h3 className="text-h3">Гипотезы</h3>
                 <p className="text-body-18">
-                  На основе анализа я сформулировала гипотезы, связанные с ключевыми метриками продукта.
+                  На основе анализа я сформулировала четыре гипотезы, связанные с ключевыми метриками продукта.
                 </p>
               </div>
               <div className="flex flex-col gap-space-3 sm:flex-row sm:flex-wrap">
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">1.&nbsp;Ясность на старте</p>
                   <p className="text-caption-14 text-primary">
-                    Если пользователь понимает, на каком этапе онбординга находится и когда сможет
-                    начать звонить, ему проще дойти до первого звонка.
+                    Если пользователь понимает этап онбординга и когда сможет начать звонить,
+                    ему проще дойти до первого звонка.
                   </p>
                   <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Метрика: </span>CR в первый звонок
@@ -783,8 +644,7 @@ export function CaseStudyPage() {
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">2.&nbsp;Прозрачность стоимости</p>
                   <p className="text-caption-14 text-primary">
-                    Если пользователь видит стоимость звонка и состояние баланса до начала вызова,
-                    условия тарификации станут более прозрачными.
+                    Если стоимость звонка и баланс видны до вызова, условия тарификации становятся понятнее.
                   </p>
                   <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Метрика: </span>retention, обращения в поддержку
@@ -793,8 +653,8 @@ export function CaseStudyPage() {
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">3.&nbsp;Доступность ответов</p>
                   <p className="text-caption-14 text-primary">
-                    Если ответы на частые вопросы доступны внутри приложения, он реже будет
-                    прерывать сценарий и обращаться в поддержку.
+                    Если ответы на частые вопросы доступны в приложении, пользователь реже
+                    прерывает сценарий и обращается в поддержку.
                   </p>
                   <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Метрика: </span>обращения в поддержку
@@ -803,18 +663,13 @@ export function CaseStudyPage() {
                 <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
                   <p className="text-body-18-semibold">4.&nbsp;Очевидность следующего шага</p>
                   <p className="text-caption-14 text-primary">
-                    Если после ошибки или незавершённого действия пользователь понимает, что делать
-                    дальше, ему проще вернуться к действию.
+                    Если после ошибки пользователь понимает, что делать дальше, ему проще вернуться к действию.
                   </p>
                   <p className="text-caption-14 text-primary">
                     <span className="text-caption-14-semibold">Метрика: </span>retention, обращения в поддержку
                   </p>
                 </div>
               </div>
-              <p className="text-body-18">
-                Гипотезы помогли определить основные направления работы, но в процессе проверки на
-                реальных сценариях они могли уточняться и корректироваться.
-              </p>
             </div>
           </div>
         </motion.section>
