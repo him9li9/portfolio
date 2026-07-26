@@ -578,14 +578,16 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="w-full max-w-[800px]">
+            <div
+              className="relative w-full max-w-[800px]"
+              style={{ aspectRatio: "2048 / 1075" }}
+            >
               <Image
                 alt="Основные проблемы сценария в текущей версии MCN Softphone"
                 src={assets.caseDiscovery}
-                width={2048}
-                height={1075}
+                fill
                 sizes="(max-width: 640px) calc(100vw - 32px), 800px"
-                className="h-auto w-full object-contain"
+                className="object-contain"
                 loading="lazy"
                 quality={100}
               />
@@ -672,14 +674,16 @@ export function CaseStudyPage() {
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[950px] sm:pl-0">
               <div className="case-figure-stack w-full items-center gap-[6px] sm:gap-space-3">
                 <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
-                  <div className="w-[950px] max-w-none sm:mx-auto sm:w-full">
+                  <div
+                    className="relative w-[950px] max-w-none sm:mx-auto sm:w-full"
+                    style={{ aspectRatio: "3901 / 1552" }}
+                  >
                     <Image
                       alt="Путь пользователя от регистрации до звонка в OpenPhone"
                       src={assets.competitorOpenphone}
-                      width={3901}
-                      height={1552}
+                      fill
                       sizes="(max-width: 640px) 950px, 950px"
-                      className="h-auto w-full object-contain"
+                      className="object-contain"
                       loading="lazy"
                       quality={100}
                     />
