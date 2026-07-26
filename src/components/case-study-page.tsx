@@ -12,10 +12,10 @@ const assets = {
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   arrowForward: "/figma/Icons/arrow_forward.svg",
   chartSmall: "/figma/Case_1/Section_1/case-chart-small.png",
-  caseDiscovery: "/figma/Case_1/Section_2/case-discovery-full.png",
-  discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1.png",
-  discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2.png",
-  competitorOpenphone: "/figma/Case_1/Section_2/case-competitor-openphone-full.png",
+  caseDiscovery: "/figma/Case_1/Section_2/case-discovery-figma.png",
+  discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1-figma.png",
+  discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2-figma.png",
+  benchmark: "/figma/Case_1/Section_2/case-benchmark-figma.png",
   userflow: "/figma/Case_1/Section_3/case-userflow.png",
   solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow-site.mp4",
@@ -27,10 +27,10 @@ const assets = {
 const lightboxItems = {
   discovery: {
     src: assets.caseDiscovery,
-    imageWidth: 2400,
-    imageHeight: 1260,
-    baseWidth: 1200,
-    baseHeight: 630,
+    imageWidth: 3000,
+    imageHeight: 1576,
+    baseWidth: 800,
+    baseHeight: 420,
     mobileScale: 1.6,
     desktopScale: 1.5,
     mobileStart: "left"
@@ -578,24 +578,20 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 w-screen -translate-x-1/2 sm:w-[calc(100vw-32px)] sm:max-w-[1200px]">
-              <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
-                <div
-                  className="relative w-[1000px] max-w-none sm:w-full"
-                  style={{ aspectRatio: "2400 / 1260" }}
-                >
-                  <Image
-                    alt="Key problems in the current MCN Softphone flow"
-                    src={assets.caseDiscovery}
-                    fill
-                    sizes="(max-width: 640px) 1000px, 1200px"
-                    className="object-contain"
-                    loading="lazy"
-                    quality={100}
-                    unoptimized
-                  />
-                </div>
-              </div>
+            <div
+              className="relative w-full max-w-[800px]"
+              style={{ aspectRatio: "3000 / 1576" }}
+            >
+              <Image
+                alt="Key problems in the current MCN Softphone flow"
+                src={assets.caseDiscovery}
+                fill
+                sizes="(max-width: 640px) calc(100vw - 32px), 800px"
+                className="object-cover"
+                loading="lazy"
+                quality={100}
+                unoptimized
+              />
             </div>
 
             <div className="case-point-stack text-body-18">
@@ -677,19 +673,19 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[950px] sm:pl-0">
-              <div className="case-figure-stack w-full items-center gap-[6px] sm:gap-space-3">
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:pl-0">
+              <div className="case-figure-stack w-full items-center gap-[6px] rounded-[12px] bg-secondary p-space-6 sm:gap-space-4">
                 <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
                   <div
-                    className="relative w-[950px] max-w-none sm:mx-auto sm:w-full"
-                    style={{ aspectRatio: "3901 / 1552" }}
+                    className="relative w-[952px] max-w-none sm:mx-auto sm:w-full"
+                    style={{ aspectRatio: "4096 / 1150" }}
                   >
                     <Image
-                      alt="OpenPhone journey from registration to the first call"
-                      src={assets.competitorOpenphone}
+                      alt="Competitor journeys from registration to the first call"
+                      src={assets.benchmark}
                       fill
-                      sizes="(max-width: 640px) 950px, 950px"
-                      className="object-contain"
+                      sizes="(max-width: 640px) 952px, 952px"
+                      className="object-cover"
                       loading="lazy"
                       quality={100}
                       unoptimized
@@ -697,16 +693,10 @@ export function CaseStudyPage() {
                   </div>
                 </div>
                 <p className="text-center text-caption-14 text-secondary">
-                  OpenPhone (number selection · registration · number purchase · call)
+                  Sequential path to the first call in competitor apps
                 </p>
               </div>
             </div>
-
-            <p className="text-body-18">
-              In flows that require registration, number selection, and billing, users especially
-              need continuous feedback: which stage they are at, what has already been completed,
-              and what to do next.
-            </p>
 
             <div className="case-media-stack w-full max-w-[800px]">
               <div className="case-h3-stack">
@@ -717,7 +707,7 @@ export function CaseStudyPage() {
                 </p>
               </div>
               <div className="flex flex-col gap-space-3 sm:flex-row sm:flex-wrap">
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[394px]">
                   <p className="text-body-18-semibold">1.&nbsp;A clear start</p>
                   <p className="text-caption-14 text-primary">
                     If users understand their onboarding stage and when they can start calling,
@@ -727,7 +717,7 @@ export function CaseStudyPage() {
                     <span className="text-caption-14-semibold">Metric: </span>first-call CR
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[394px]">
                   <p className="text-body-18-semibold">2.&nbsp;Transparent pricing</p>
                   <p className="text-caption-14 text-primary">
                     If users see the call cost and account balance before dialing, pricing becomes
@@ -737,7 +727,7 @@ export function CaseStudyPage() {
                     <span className="text-caption-14-semibold">Metric: </span>billing-related support requests
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[394px]">
                   <p className="text-body-18-semibold">3.&nbsp;Quick help</p>
                   <p className="text-caption-14 text-primary">
                     If answers to common questions are available in the app, users contact support
@@ -747,7 +737,7 @@ export function CaseStudyPage() {
                     <span className="text-caption-14-semibold">Metric: </span>support requests
                   </p>
                 </div>
-                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[390px]">
+                <div className="flex w-full flex-col gap-space-2 rounded-[20px] bg-secondary px-space-6 py-space-5 sm:w-[394px]">
                   <p className="text-body-18-semibold">4.&nbsp;Sequential steps</p>
                   <p className="text-caption-14 text-primary">
                     If users immediately understand what to do after an error, it is easier for
