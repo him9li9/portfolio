@@ -581,14 +581,14 @@ export function CaseStudyPage() {
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:pl-0">
               <div className="w-full rounded-[12px] bg-secondary p-space-8">
                 <div
-                  className="relative w-full"
+                  className="relative mx-auto w-full max-w-[850px]"
                   style={{ aspectRatio: "2400 / 1260" }}
                 >
                   <Image
                     alt="Key problems in the current MCN Softphone flow"
                     src={assets.caseDiscovery}
                     fill
-                    sizes="(max-width: 640px) calc(100vw - 80px), 936px"
+                    sizes="(max-width: 640px) calc(100vw - 80px), 850px"
                     className="object-contain"
                     loading="lazy"
                     quality={100}
