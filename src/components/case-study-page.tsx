@@ -507,6 +507,7 @@ export function CaseStudyPage() {
                 quality={100}
               />
             </div>
+            <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
           </div>
         </motion.section>
 
@@ -608,6 +609,7 @@ export function CaseStudyPage() {
                       unoptimized
                     />
                   </div>
+                  <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
                 </div>
                 <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
                   Ключевые экраны текущей версии MCN Softphone
@@ -688,6 +690,7 @@ export function CaseStudyPage() {
                       unoptimized
                     />
                   </div>
+                  <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
                 </div>
                 <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
                   Последовательный путь до первого звонка в приложениях конкурентов
@@ -863,6 +866,7 @@ export function CaseStudyPage() {
                   quality={100}
                 />
               </div>
+              <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
             </div>
           </div>
 
@@ -952,6 +956,7 @@ export function CaseStudyPage() {
                     quality={100}
                   />
                 </div>
+                <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
               </div>
               <p className="mt-[6px] w-full text-center text-caption-14 leading-[160%] text-secondary sm:mx-auto sm:mt-space-3 sm:max-w-[1000px]">
                 Возвращаем на сценарий, но оставляем возможность написать в поддержку

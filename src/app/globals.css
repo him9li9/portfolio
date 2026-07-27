@@ -199,13 +199,10 @@ a {
   }
 
   .case-horizontal-scroll {
+    display: flex;
     padding-bottom: 6px;
     scrollbar-color: #828282 transparent;
     scrollbar-width: thin;
-  }
-
-  .case-horizontal-scroll > * {
-    margin-right: 16px;
   }
 
   .case-horizontal-scroll::-webkit-scrollbar {
@@ -226,9 +223,6 @@ a {
       padding-bottom: 0;
     }
 
-    .case-horizontal-scroll > * {
-      margin-right: 0;
-    }
   }
 
   .case-text-list-stack {
