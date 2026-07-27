@@ -26,6 +26,7 @@ const config: Config = {
       colors: {
         "bg-primary": "var(--color-bg-primary)",
         "bg-secondary": "var(--color-bg-secondary)",
+        "bg-card": "var(--color-bg-card)",
         "bg-chips": "var(--color-bg-chips)",
         "bg-elevated": "var(--color-bg-elevated)",
         "bg-elevated-hover": "var(--color-bg-elevated-hover)",

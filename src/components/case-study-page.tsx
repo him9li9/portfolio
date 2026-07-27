@@ -663,10 +663,10 @@ export function CaseStudyPage() {
             <div id="hypotheses" className="case-h3-stack scroll-mt-space-16">
               <h3 className="text-h3">Competitor analysis</h3>
               <p className="text-body-18">
-                In Beside and OpenPhone, I compared registration, the transition to dialing, and
-                feedback after key actions. In both apps, the journey to a call was contained in
-                one sequential flow, and users could see the system state and the next available
-                step at every stage.
+                I compared registration, the transition to dialing, and feedback after key actions
+                across competitor products. The journey to a call was contained in one sequential
+                flow, and users could see the system state and the next available step at every
+                stage.
               </p>
             </div>
 
@@ -988,7 +988,7 @@ export function CaseStudyPage() {
             </p>
 
             <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3 lg:w-[184px]">
                 <div className="flex h-10 items-start gap-0 whitespace-nowrap text-primary">
                   <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-10">8</span>
                   <span className="inline-flex h-10 items-center">
@@ -1000,7 +1000,7 @@ export function CaseStudyPage() {
                   steps to a call
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">+</span>
                   <span className="text-[32px] leading-10">23</span>
@@ -1010,7 +1010,7 @@ export function CaseStudyPage() {
                   first-call conversion
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[32px] leading-10">15</span>
                   <span className="inline-flex h-10 items-center">
@@ -1023,7 +1023,7 @@ export function CaseStudyPage() {
                   week-four retention
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3 lg:w-[184px]">
+              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3 lg:w-[184px]">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[32px] leading-10">40</span>
                   <span className="inline-flex h-10 items-center">

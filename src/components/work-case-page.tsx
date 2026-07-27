@@ -668,7 +668,7 @@ export function WorkCasePage() {
           </div>
 
           <div className="flex flex-col gap-space-3 md:grid md:grid-cols-3">
-            <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-secondary p-space-6 md:min-w-0">
+            <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-card p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h4 text-primary">
                   1
@@ -687,7 +687,7 @@ export function WorkCasePage() {
               </div>
             </div>
 
-            <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-secondary p-space-6 md:min-w-0">
+            <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-card p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h4 text-primary">
                   2
@@ -706,7 +706,7 @@ export function WorkCasePage() {
               </div>
             </div>
 
-            <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-secondary p-space-6 md:min-w-0">
+            <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-card p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h4 text-primary">
                   3
@@ -1057,7 +1057,7 @@ export function WorkCasePage() {
             </p>
 
             <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,1fr)]">
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
+              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">+</span>
                   <span className="text-[32px] leading-10">28</span>
@@ -1067,7 +1067,7 @@ export function WorkCasePage() {
                   self-service rate
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
+              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3">
                 <div className="flex items-center gap-0 whitespace-nowrap text-primary">
                   <span className="text-[32px] font-semibold leading-10">33</span>
                   <span className="inline-flex">
@@ -1079,7 +1079,7 @@ export function WorkCasePage() {
                   minutes, time-to-change
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
+              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">-</span>
                   <span className="text-[32px] leading-10">21</span>
@@ -1089,7 +1089,7 @@ export function WorkCasePage() {
                   errors in flows
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-secondary px-space-3 py-space-3">
+              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3">
                 <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
                   <span className="text-[18px] leading-[160%]">-</span>
                   <span className="text-[32px] leading-10">16</span>
