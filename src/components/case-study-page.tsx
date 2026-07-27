@@ -610,7 +610,7 @@ export function CaseStudyPage() {
                   </div>
                 </div>
                 <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
-                  Ключевые экраны текущей версии MSN Softphone
+                  Ключевые экраны текущей версии MCN Softphone
                 </p>
               </div>
             </div>
