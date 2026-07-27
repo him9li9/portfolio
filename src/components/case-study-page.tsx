@@ -590,9 +590,9 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:pl-0">
-              <div className="case-figure-stack w-full items-center gap-[6px] sm:rounded-[12px] sm:bg-secondary sm:px-space-8 sm:pb-space-6 sm:pt-space-8">
-                <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
+              <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-space-8 sm:rounded-[12px] sm:px-space-8">
+                <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
                   <div
                     className="relative w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]"
                     style={{ aspectRatio: "2550 / 1206" }}
@@ -609,8 +609,8 @@ export function CaseStudyPage() {
                     />
                   </div>
                 </div>
-                <p className="text-center text-caption-14 text-secondary">
-                  В MVP путь к первому звонку был разорван между несколькими разделами
+                <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
+                  Ключевые экраны текущей версии MSN Softphone
                 </p>
               </div>
             </div>
@@ -670,18 +670,18 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:pl-0">
-              <div className="case-figure-stack w-full items-center gap-[6px] sm:gap-space-4 sm:rounded-[12px] sm:bg-secondary sm:px-space-8 sm:pb-space-6 sm:pt-space-8">
-                <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
+              <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-space-8 sm:gap-space-4 sm:rounded-[12px] sm:px-space-8">
+                <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
                   <div
-                    className="relative w-[936px] max-w-none sm:mx-auto sm:w-full"
+                    className="relative w-[1700px] max-w-none sm:mx-auto sm:w-full"
                     style={{ aspectRatio: "952 / 268" }}
                   >
                     <Image
                       alt="Последовательный путь до первого звонка в приложениях конкурентов"
                       src={assets.benchmark}
                       fill
-                      sizes="(max-width: 640px) 936px, 936px"
+                      sizes="(max-width: 640px) 1700px, 936px"
                       className="object-cover"
                       loading="lazy"
                       quality={100}
@@ -689,7 +689,7 @@ export function CaseStudyPage() {
                     />
                   </div>
                 </div>
-                <p className="text-center text-caption-14 text-secondary">
+                <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
                   Последовательный путь до первого звонка в приложениях конкурентов
                 </p>
               </div>
