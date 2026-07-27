@@ -591,22 +591,24 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center px-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:px-0">
-              <div className="case-figure-stack w-full items-center rounded-[12px] bg-secondary px-space-4 pb-space-6 pt-space-8 sm:px-space-8">
-                <div
-                  className="relative w-full max-w-[850px] overflow-hidden"
-                  style={{ aspectRatio: "2550 / 1206" }}
-                >
-                  <Image
-                    alt="The MVP user journey to the first call"
-                    src={assets.caseDiscovery}
-                    fill
-                    sizes="(max-width: 640px) calc(100vw - 64px), 850px"
-                    className="object-contain"
-                    loading="lazy"
-                    quality={100}
-                    unoptimized
-                  />
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:pl-0">
+              <div className="case-figure-stack w-full items-center gap-[6px] sm:rounded-[12px] sm:bg-secondary sm:px-space-8 sm:pb-space-6 sm:pt-space-8">
+                <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
+                  <div
+                    className="relative w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]"
+                    style={{ aspectRatio: "2550 / 1206" }}
+                  >
+                    <Image
+                      alt="The MVP user journey to the first call"
+                      src={assets.caseDiscovery}
+                      fill
+                      sizes="(max-width: 640px) 850px, 850px"
+                      className="object-contain"
+                      loading="lazy"
+                      quality={100}
+                      unoptimized
+                    />
+                  </div>
                 </div>
                 <p className="text-center text-caption-14 text-secondary">
                   In the MVP, the journey to the first call was fragmented across several sections
@@ -671,7 +673,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:max-w-[1000px] sm:pl-0">
-              <div className="case-figure-stack w-full items-center gap-[6px] rounded-[12px] bg-secondary px-space-8 pb-space-6 pt-space-8 sm:gap-space-4">
+              <div className="case-figure-stack w-full items-center gap-[6px] sm:gap-space-4 sm:rounded-[12px] sm:bg-secondary sm:px-space-8 sm:pb-space-6 sm:pt-space-8">
                 <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
                   <div
                     className="relative w-[936px] max-w-none sm:mx-auto sm:w-full"
