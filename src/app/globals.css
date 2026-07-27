@@ -205,6 +205,10 @@ a {
     scrollbar-width: thin;
   }
 
+  .case-horizontal-scroll > * {
+    flex-shrink: 0;
+  }
+
   .case-horizontal-scroll::-webkit-scrollbar {
     height: 4px;
   }
