@@ -76,25 +76,7 @@ export function CaseStudyPage() {
   const [userflowOffset, setUserflowOffset] = useState({ x: 0, y: 0 });
   const userflowViewportRef = useRef<HTMLDivElement | null>(null);
   const heroPhonesRef = useRef<HTMLDivElement | null>(null);
-  const solutionPhonesRef = useRef<HTMLDivElement | null>(null);
   const bodyScrollYRef = useRef(0);
-  const setSolutionPhonesElement = useCallback((element: HTMLDivElement | null) => {
-    solutionPhonesRef.current = element;
-    if (!element || !window.matchMedia("(max-width: 639px)").matches) {
-      return;
-    }
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        const imageContainer = element.firstElementChild as HTMLElement | null;
-        if (imageContainer) {
-          element.scrollLeft = Math.max(
-            0,
-            (imageContainer.offsetWidth - element.clientWidth) / 2
-          );
-        }
-      });
-    });
-  }, []);
   const activeLightbox = openLightbox ? lightboxItems[openLightbox] : null;
   const userflowDragRef = useRef({
     isDown: false,
@@ -172,15 +154,6 @@ export function CaseStudyPage() {
   }, []);
 
   useEffect(() => {
-    const centerSolutionPhones = () => {
-      const element = solutionPhonesRef.current;
-      const imageContainer = element?.firstElementChild as HTMLElement | null;
-      if (!element || !imageContainer || !window.matchMedia("(max-width: 639px)").matches) {
-        return;
-      }
-      element.scrollLeft = Math.max(0, (imageContainer.offsetWidth - element.clientWidth) / 2);
-    };
-
     const centerPhoneGalleries = () => {
       if (!window.matchMedia("(max-width: 639px)").matches) {
         return;
@@ -189,7 +162,6 @@ export function CaseStudyPage() {
       if (heroElement) {
         heroElement.scrollLeft = (heroElement.scrollWidth - heroElement.clientWidth) / 2;
       }
-      centerSolutionPhones();
     };
     const raf = requestAnimationFrame(centerPhoneGalleries);
     window.addEventListener("resize", centerPhoneGalleries);
@@ -884,11 +856,7 @@ export function CaseStudyPage() {
           </div>
 
             <div className="case-numbered-point-media relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
-            <div
-              ref={setSolutionPhonesElement}
-              data-solution-gallery
-              className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible"
-            >
+            <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
               <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
                 <Image
                   alt=""
