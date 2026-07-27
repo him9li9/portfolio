@@ -200,6 +200,7 @@ a {
 
   .case-horizontal-scroll {
     padding-bottom: 6px;
+    padding-right: 16px;
     scrollbar-color: #828282 transparent;
     scrollbar-width: thin;
   }
@@ -220,6 +221,7 @@ a {
   @media (min-width: 640px) {
     .case-horizontal-scroll {
       padding-bottom: 0;
+      padding-right: 0;
     }
   }
 
