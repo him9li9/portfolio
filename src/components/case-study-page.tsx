@@ -78,6 +78,23 @@ export function CaseStudyPage() {
   const heroPhonesRef = useRef<HTMLDivElement | null>(null);
   const solutionPhonesRef = useRef<HTMLDivElement | null>(null);
   const bodyScrollYRef = useRef(0);
+  const setSolutionPhonesElement = useCallback((element: HTMLDivElement | null) => {
+    solutionPhonesRef.current = element;
+    if (!element || !window.matchMedia("(max-width: 639px)").matches) {
+      return;
+    }
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const imageContainer = element.firstElementChild as HTMLElement | null;
+        if (imageContainer) {
+          element.scrollLeft = Math.max(
+            0,
+            (imageContainer.offsetWidth - element.clientWidth) / 2
+          );
+        }
+      });
+    });
+  }, []);
   const activeLightbox = openLightbox ? lightboxItems[openLightbox] : null;
   const userflowDragRef = useRef({
     isDown: false,
@@ -653,23 +670,6 @@ export function CaseStudyPage() {
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
-                  onLoad={() => {
-                    const element = solutionPhonesRef.current;
-                    const imageContainer = element?.firstElementChild as HTMLElement | null;
-                    if (
-                      !element ||
-                      !imageContainer ||
-                      !window.matchMedia("(max-width: 639px)").matches
-                    ) {
-                      return;
-                    }
-                    requestAnimationFrame(() => {
-                      element.scrollLeft = Math.max(
-                        0,
-                        (imageContainer.offsetWidth - element.clientWidth) / 2
-                      );
-                    });
-                  }}
                 />
                 <Image
                   alt="User request about an account charge"
@@ -885,7 +885,8 @@ export function CaseStudyPage() {
 
             <div className="case-numbered-point-media relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div
-              ref={solutionPhonesRef}
+              ref={setSolutionPhonesElement}
+              data-solution-gallery
               className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible"
             >
               <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
