@@ -505,6 +505,7 @@ export function CaseStudyPage() {
             ref={heroPhonesRef}
             className="case-horizontal-scroll relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible"
           >
+            <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
             <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
               <Image
                 alt="Экран регистрации MCN Softphone"
