@@ -473,7 +473,7 @@ export function CaseStudyPage() {
           </div>
           <div
             ref={heroPhonesRef}
-            className="case-horizontal-scroll relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto px-space-4 sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible sm:px-0"
+            className="case-horizontal-scroll relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto pr-space-4 sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible sm:pr-0"
           >
             <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
               <Image
@@ -592,7 +592,7 @@ export function CaseStudyPage() {
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
               <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-space-8 sm:rounded-[12px] sm:px-space-8">
-                <div className="case-horizontal-scroll w-full overflow-x-auto px-space-4 sm:overflow-visible sm:px-0">
+                <div className="case-horizontal-scroll w-full overflow-x-auto pr-space-4 sm:overflow-visible sm:pr-0">
                   <div
                     className="relative w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]"
                     style={{ aspectRatio: "2550 / 1206" }}
@@ -672,7 +672,7 @@ export function CaseStudyPage() {
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
               <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-space-8 sm:gap-space-4 sm:rounded-[12px] sm:px-space-8">
-                <div className="case-horizontal-scroll w-full overflow-x-auto px-space-4 sm:overflow-visible sm:px-0">
+                <div className="case-horizontal-scroll w-full overflow-x-auto pr-space-4 sm:overflow-visible sm:pr-0">
                   <div
                     className="relative w-[1700px] max-w-none sm:mx-auto sm:w-full"
                     style={{ aspectRatio: "952 / 268" }}
@@ -850,7 +850,7 @@ export function CaseStudyPage() {
           </div>
 
             <div className="case-numbered-point-media relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
-            <div className="case-horizontal-scroll w-full overflow-x-auto px-space-4 sm:overflow-visible sm:px-0">
+            <div className="case-horizontal-scroll w-full overflow-x-auto pr-space-4 sm:overflow-visible sm:pr-0">
               <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
                 <Image
                   alt=""
@@ -927,7 +927,7 @@ export function CaseStudyPage() {
 
           <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
             <div className="w-full">
-              <div className="case-horizontal-scroll overflow-x-auto px-space-4 sm:overflow-visible sm:px-0">
+              <div className="case-horizontal-scroll overflow-x-auto pr-space-4 sm:overflow-visible sm:pr-0">
                 <div className="w-[1000px] max-w-none sm:hidden">
                   <Image
                     alt=""
