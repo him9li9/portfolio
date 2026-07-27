@@ -155,15 +155,24 @@ export function CaseStudyPage() {
   }, []);
 
   useEffect(() => {
+    const centerSolutionPhones = () => {
+      const element = solutionPhonesRef.current;
+      const imageContainer = element?.firstElementChild as HTMLElement | null;
+      if (!element || !imageContainer || !window.matchMedia("(max-width: 639px)").matches) {
+        return;
+      }
+      element.scrollLeft = Math.max(0, (imageContainer.offsetWidth - element.clientWidth) / 2);
+    };
+
     const centerPhoneGalleries = () => {
       if (!window.matchMedia("(max-width: 639px)").matches) {
         return;
       }
-      [heroPhonesRef.current, solutionPhonesRef.current].forEach((element) => {
-        if (element) {
-          element.scrollLeft = (element.scrollWidth - element.clientWidth) / 2;
-        }
-      });
+      const heroElement = heroPhonesRef.current;
+      if (heroElement) {
+        heroElement.scrollLeft = (heroElement.scrollWidth - heroElement.clientWidth) / 2;
+      }
+      centerSolutionPhones();
     };
     const raf = requestAnimationFrame(centerPhoneGalleries);
     window.addEventListener("resize", centerPhoneGalleries);
@@ -643,6 +652,23 @@ export function CaseStudyPage() {
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
+                  onLoad={() => {
+                    const element = solutionPhonesRef.current;
+                    const imageContainer = element?.firstElementChild as HTMLElement | null;
+                    if (
+                      !element ||
+                      !imageContainer ||
+                      !window.matchMedia("(max-width: 639px)").matches
+                    ) {
+                      return;
+                    }
+                    requestAnimationFrame(() => {
+                      element.scrollLeft = Math.max(
+                        0,
+                        (imageContainer.offsetWidth - element.clientWidth) / 2
+                      );
+                    });
+                  }}
                 />
                 <Image
                   alt="Обращение пользователя о списании средств"
