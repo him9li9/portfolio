@@ -473,7 +473,7 @@ export function CaseStudyPage() {
           </div>
           <div
             ref={heroPhonesRef}
-            className="case-horizontal-scroll relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible"
+            className="case-horizontal-scroll relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto px-space-4 sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible sm:px-0"
           >
             <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
               <Image
@@ -849,8 +849,8 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-            <div className="case-numbered-point-media relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
-            <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
+            <div className="case-numbered-point-media relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
+            <div className="case-horizontal-scroll w-full overflow-x-auto px-space-4 sm:overflow-visible sm:px-0">
               <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
                 <Image
                   alt=""
@@ -925,9 +925,9 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+          <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center sm:w-[calc(100vw-32px)]">
             <div className="w-full">
-              <div className="case-horizontal-scroll overflow-x-auto sm:overflow-visible">
+              <div className="case-horizontal-scroll overflow-x-auto px-space-4 sm:overflow-visible sm:px-0">
                 <div className="w-[1000px] max-w-none sm:hidden">
                   <Image
                     alt=""
