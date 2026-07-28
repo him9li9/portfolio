@@ -19,8 +19,6 @@ const assets = {
   publishMotion: "/figma/Case_2/Section_4/publish_motion.mp4"
 };
 
-const workStages = ["Discovery", "Hypotheses", "Design approach", "Testing", "Developer handoff"];
-
 const zoomImages = {
   hero: {
     alt: "KOMPaaS canvas",
@@ -336,6 +334,13 @@ export function WorkCasePage() {
               educational products, and retailers—anywhere response speed and the quality of
               customer service are critical.
             </p>
+            <p className="text-body-18">
+              One of KOMPaaS&apos;s products is a block-based call flow builder for voice menus,
+              surveys, and quality assessment. In the old version, managers did not understand the
+              connections between blocks and were afraid to make changes without developers. I
+              designed an editor where a flow can be built, changed, and prepared for publishing
+              within a single workspace.
+            </p>
           </div>
 
           <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
@@ -366,22 +371,9 @@ export function WorkCasePage() {
         </motion.section>
 
         <motion.section
-          id="about"
-          data-section-anchor="about"
           variants={item}
           className="-mt-space-14 scroll-mt-space-16 case-section-stack"
         >
-          <div className="case-h2-stack">
-            <h2 className="text-h2">About the project</h2>
-            <p className="text-body-18">
-              One of KOMPaaS&apos;s products is a block-based call flow builder for voice menus,
-              surveys, and quality assessment. In the old version, managers did not understand the
-              connections between blocks and were afraid to make changes without developers. I
-              designed an editor where a flow can be built, changed, and prepared for publishing
-              within a single workspace.
-            </p>
-          </div>
-
           <div className="case-h3-stack">
             <h3 className="text-h3">Problem</h3>
             <p className="text-body-18">
@@ -402,22 +394,6 @@ export function WorkCasePage() {
               <span className="text-body-18-semibold">Success metrics</span>
               {` — a higher share of self-service flows, reduced development and support workloads, and a shorter time-to-change with minimal errors.`}
             </p>
-          </div>
-
-          <div className="case-h3-stack">
-            <h3 className="text-h3">Project stages</h3>
-            <div className="flex flex-wrap items-center gap-space-1">
-              {workStages.map((stage, index) => (
-                <div key={stage} className="flex items-center gap-space-1">
-                  <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-primary">
-                    {stage}
-                  </span>
-                  {index < workStages.length - 1 ? (
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4 brightness-0 invert-[51%]" />
-                  ) : null}
-                </div>
-              ))}
-            </div>
           </div>
         </motion.section>
 
@@ -1128,8 +1104,7 @@ export function WorkCasePage() {
 
       <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-space-3 lg:flex">
         {[
-          { id: "overview", label: "Introduction" },
-          { id: "about", label: "About the project" },
+          { id: "overview", label: "About the project" },
           { id: "discovery", label: "Discovery" },
           { id: "design", label: "Design approach" },
           { id: "solution", label: "Solution" },
