@@ -483,7 +483,7 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 flex flex-col gap-space-8"
         >
-          <div className="flex flex-col gap-space-5 text-primary">
+          <div className="flex flex-col gap-space-4 text-primary">
             <div className="flex flex-col gap-space-1">
               <h1 className="text-h1">MCN Softphone</h1>
               <p className="text-body-16 text-secondary">
