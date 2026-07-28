@@ -19,8 +19,6 @@ const assets = {
   publishMotion: "/figma/Case_2/Section_4/publish_motion.mp4"
 };
 
-const workStages = ["Дискавери", "Гипотезы", "Проектирование", "Тестирование", "Передача в разработку"];
-
 const zoomImages = {
   hero: {
     alt: "KOMPaaS canvas",
@@ -336,6 +334,12 @@ export function WorkCasePage() {
               образовательных продуктах и ритейле — везде, где важна скорость обработки обращений и
               уровень клиентского сервиса.
             </p>
+            <p className="text-body-18">
+              Один из продуктов KOMPaaS — конструктор сценариев звонков из элементов: голосового
+              меню, опросов и оценки качества. В старой версии менеджеры не понимали связи между
+              блоками и боялись вносить изменения без разработки. Я спроектировала редактор, где
+              сценарий можно собрать, изменить и подготовить к публикации в одном рабочем контексте.
+            </p>
           </div>
 
           <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
@@ -366,21 +370,9 @@ export function WorkCasePage() {
         </motion.section>
 
         <motion.section
-          id="about"
-          data-section-anchor="about"
           variants={item}
           className="-mt-space-14 scroll-mt-space-16 case-section-stack"
         >
-          <div className="case-h2-stack">
-            <h2 className="text-h2">О проекте</h2>
-            <p className="text-body-18">
-              Один из продуктов KOMPaaS — конструктор сценариев звонков из элементов: голосового
-              меню, опросов и оценки качества. В старой версии менеджеры не понимали связи между
-              блоками и боялись вносить изменения без разработки. Я спроектировала редактор, где
-              сценарий можно собрать, изменить и подготовить к публикации в одном рабочем контексте.
-            </p>
-          </div>
-
           <div className="case-h3-stack">
             <h3 className="text-h3">Проблема</h3>
             <p className="text-body-18">
@@ -401,22 +393,6 @@ export function WorkCasePage() {
               <span className="text-body-18-semibold">Метрики успеха</span>
               {` — рост доли self-service сценариев, снижение нагрузки на разработку и поддержку, сокращение time-to-change при минимальном количестве ошибок.`}
             </p>
-          </div>
-
-          <div className="case-h3-stack">
-            <h3 className="text-h3">Этапы работы</h3>
-            <div className="flex flex-wrap items-center gap-space-1">
-              {workStages.map((stage, index) => (
-                <div key={stage} className="flex items-center gap-space-1">
-                  <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-primary">
-                    {stage}
-                  </span>
-                  {index < workStages.length - 1 ? (
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4 brightness-0 invert-[51%]" />
-                  ) : null}
-                </div>
-              ))}
-            </div>
           </div>
         </motion.section>
 
@@ -1131,8 +1107,7 @@ export function WorkCasePage() {
 
       <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-space-3 lg:flex">
         {[
-          { id: "overview", label: "Введение" },
-          { id: "about", label: "О проекте" },
+          { id: "overview", label: "О проекте" },
           { id: "discovery", label: "Дискавери" },
           { id: "design", label: "Проектирование" },
           { id: "solution", label: "Решение" },
