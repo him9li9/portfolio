@@ -495,11 +495,6 @@ export function CaseStudyPage() {
               Its audience is travelers who need affordable connectivity abroad without complex
               SIM card or roaming setup.
             </p>
-            <p className="text-body-18">
-              I joined the project at the MVP stage, a few months before the planned release. Within the
-              team, I was responsible for the user journey from registration to the first call, including
-              number activation, billing, and support.
-            </p>
           </div>
           <div
             ref={heroPhonesRef}
@@ -548,16 +543,27 @@ export function CaseStudyPage() {
           className="scroll-mt-space-16 case-section-stack"
         >
           <div className="case-h3-stack">
+            <h3 className="text-h3">My role</h3>
+            <p className="text-body-18">
+              I joined the project at the MVP stage, a few months before the planned release. On the
+              team, I was responsible for the user journey from registration to the first call, number
+              activation, pricing, and support.
+            </p>
+          </div>
+
+          <div className="case-h3-stack">
             <h3 className="text-h3">Problem</h3>
             <div className="case-text-stack text-body-18">
               <p>
-                Before the app launched, the core user journey was split between the mobile and web
-                experiences. To register and activate a number, users had to switch to the web account,
-                wait for manual verification, and figure out for themselves when they could make a call.
+                In the first version of the product, the key user journey was fragmented between the
+                mobile and web experiences. To register and activate a number, users had to switch to
+                the personal account, wait for manual verification, and figure out on their own when
+                they could make a call.
               </p>
               <p>
-                Users could not see the call cost in advance, did not always understand what caused an
-                error, and could not quickly find help within the app.
+                Even after activation, the journey remained opaque: users could not see call pricing
+                in advance, did not always understand the reason for an error, and could not quickly
+                find help within the app.
               </p>
             </div>
           </div>

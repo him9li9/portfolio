@@ -334,13 +334,6 @@ export function WorkCasePage() {
               educational products, and retailers—anywhere response speed and the quality of
               customer service are critical.
             </p>
-            <p className="text-body-18">
-              One of KOMPaaS&apos;s products is a block-based call flow builder for voice menus,
-              surveys, and quality assessment. In the old version, managers did not understand the
-              connections between blocks and were afraid to make changes without developers. I
-              designed an editor where a flow can be built, changed, and prepared for publishing
-              within a single workspace.
-            </p>
           </div>
 
           <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
@@ -375,6 +368,15 @@ export function WorkCasePage() {
           className="-mt-space-14 scroll-mt-space-16 case-section-stack"
         >
           <div className="case-h3-stack">
+            <h3 className="text-h3">My role</h3>
+            <p className="text-body-18">
+              I worked on one of the platform&apos;s products—a call flow builder. I was responsible
+              for researching the current process and designing the editor: navigation, creating and
+              configuring elements, working with complex flows, and publishing changes.
+            </p>
+          </div>
+
+          <div className="case-h3-stack">
             <h3 className="text-h3">Problem</h3>
             <p className="text-body-18">
               Any change to a flow required developer involvement and took hours or days. As a
@@ -387,8 +389,8 @@ export function WorkCasePage() {
           <div className="case-h3-stack">
             <h3 className="text-h3">Objective</h3>
             <p className="text-body-18">
-              The goal was to remove clients&apos; dependence on developers and turn call flow
-              management from a technical task into an accessible business tool.
+              The goal was to reduce clients&apos; dependence on developers and create a clear editor
+              where managers could independently find, edit, and publish call flows.
             </p>
             <p className="text-body-18">
               <span className="text-body-18-semibold">Success metrics</span>
