@@ -176,7 +176,7 @@ export function HomePage() {
           </div>
           <p className="w-full text-left text-body-18 text-primary sm:w-[482px] sm:text-center">
             Продуктовый дизайнер с 4+ лет опыта в телекоме,<span className="sm:hidden"> </span><br className="hidden sm:block" />
-            <span className="sm:whitespace-nowrap">B2B-сервисах и стартапах. Умею разбираться в сложной</span><span className="sm:hidden"> </span><br className="hidden sm:block" />
+            <span className="sm:whitespace-nowrap">B2B-сервисах. Умею разбираться в сложной</span><span className="sm:hidden"> </span><br className="hidden sm:block" />
             доменной логике и превращать её в понятные,<span className="sm:hidden"> </span><br className="hidden sm:block" />
             работающие решения
             вместе с командой.
