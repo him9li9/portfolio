@@ -392,10 +392,6 @@ export function WorkCasePage() {
               Нужно было снизить зависимость клиентов от разработки и сделать понятный редактор, в
               котором менеджеры смогут самостоятельно находить, изменять и публиковать сценарии.
             </p>
-            <p className="text-body-18">
-              <span className="text-body-18-semibold">Метрики успеха</span>
-              {` — рост доли self-service сценариев, снижение нагрузки на разработку и поддержку, сокращение time-to-change при минимальном количестве ошибок.`}
-            </p>
           </div>
         </motion.section>
 
@@ -407,22 +403,19 @@ export function WorkCasePage() {
         >
           <div className="case-h2-stack">
             <h2 className="text-h2">Дискавери</h2>
-            <div className="case-text-list-stack text-body-18">
-              <p>В рамках discovery я изучила, как пользователи работают со сценариями в текущей версии продукта:</p>
-              <ul className="list-disc space-y-0 pl-space-6">
-                <li>проанализировала реальные сценарии и логику экранов</li>
-                <li>разобрала обращения в поддержку (ошибки и частые вопросы)</li>
-                <li>сравнила подходы в workflow-конструкторах</li>
-                <li>обсудила проблемы с поддержкой и разработкой</li>
-              </ul>
-            </div>
+            <p className="text-body-18">
+              Чтобы разобраться, как менеджеры работают со сценариями в текущей версии, я изучила
+              реальные сценарии и обращения в поддержку, сравнила workflow-конструкторы и обсудила
+              ограничения с поддержкой и разработкой. Цель — определить, что мешает менеджерам
+              самостоятельно находить, изменять и публиковать сценарии.
+            </p>
           </div>
 
           <div className="case-h3-stack mt-space-10">
             <h3 className="text-h3">Анализ текущей версии</h3>
             <p className="text-body-18">
-              Прежде чем предлагать изменения, я собрала обратную связь от поддержки, о&nbsp;том как
-              пользователи работают со&nbsp;сценариями сейчас и выделила несколько проблемных зон:
+              В текущем процессе выделила несколько проблемных зон, которые усложняли
+              самостоятельную работу менеджеров со сценариями:
             </p>
           </div>
 
@@ -575,9 +568,9 @@ export function WorkCasePage() {
           </div>
 
           <p className="text-body-18">
-            Вывод: workflow-builder инструменты уходят от отдельных настроек к управлению процессом
-            как единой системой, поскольку пользователю важно понимать состояние сценария и
-            контролировать изменения до того, как они попадут в работу.
+            <span className="text-body-18-semibold">Вывод:</span> workflow-builder инструменты уходят от
+            отдельных настроек к управлению процессом как единой системой, поскольку пользователю важно
+            понимать состояние сценария и контролировать изменения до того, как они попадут в работу.
           </p>
 
           <div className="case-media-stack w-full max-w-[800px]">
@@ -1031,61 +1024,34 @@ export function WorkCasePage() {
         >
           <h2 className="text-h2">Результаты</h2>
           <div className="case-content-stack">
-            <p className="text-body-18">
-              Редактор сделал работу со сценариями более самостоятельной и предсказуемой: менеджеры
-              быстрее находили нужные сценарии, вносили изменения без разработки и лучше понимали,
-              когда правки попадут в работу. Эффект оценивали по клиентским сценариям, обращениям в
-              поддержку и времени выполнения типовых изменений.
-            </p>
-
-            <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,1fr)]">
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3">
-                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
-                  <span className="text-[18px] leading-[160%]">+</span>
-                  <span className="text-[32px] leading-10">28</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
-                </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  self-service rate
+            <div className="flex flex-col gap-space-4 text-body-18">
+              <div className="case-point-stack">
+                <p className="text-body-18-semibold">2 → 1 workspace</p>
+                <p>
+                  Объединила поиск сценария, редактирование схемы, настройку элементов и публикацию.
+                  Менеджеру больше не нужно переключаться между экранами при работе со сценарием.
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3">
-                <div className="flex items-center gap-0 whitespace-nowrap text-primary">
-                  <span className="text-[32px] font-semibold leading-10">33</span>
-                  <span className="inline-flex">
-                    <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
-                  </span>
-                  <span className="text-[32px] font-semibold leading-10">19</span>
-                </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  минут, time-to-change
+              <div className="case-point-stack">
+                <p className="text-body-18-semibold">Self-service</p>
+                <p>
+                  Часть типовых изменений перешла от разработчиков к менеджерам — от добавления
+                  элементов на схему до публикации новой версии.
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3">
-                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
-                  <span className="text-[18px] leading-[160%]">-</span>
-                  <span className="text-[32px] leading-10">21</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
-                </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  ошибок в сценариях
-                </p>
-              </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3">
-                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
-                  <span className="text-[18px] leading-[160%]">-</span>
-                  <span className="text-[32px] leading-10">16</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
-                </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  обращений в поддержку
+              <div className="case-point-stack">
+                <p className="text-body-18-semibold">Меньше ошибок</p>
+                <p>
+                  Разделение черновика и опубликованной версии снизило риск случайных изменений в
+                  работающих сценариях и на 21% уменьшило количество ошибок на продакшене.
                 </p>
               </div>
             </div>
 
             <p className="text-body-18">
-              По итогам проекта я поняла, что сложные сценарии становятся управляемыми, когда
-              пользователь остаётся в контексте и понимает, как его действия влияют на рабочий флоу.
+              В итоге работа со сценариями стала более самостоятельной: менеджеры смогли вносить
+              изменения без участия разработки, а сам процесс, включая публикацию, стал более
+              последовательным и контролируемым.
             </p>
           </div>
         </motion.section>
