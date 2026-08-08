@@ -1027,61 +1027,34 @@ export function WorkCasePage() {
         >
           <h2 className="text-h2">Results</h2>
           <div className="case-content-stack">
-            <p className="text-body-18">
-              The editor made flow management more independent and predictable: managers found the
-              right flows faster, made changes without developers, and better understood when edits
-              would go live. We assessed the impact through client scenarios, support requests,
-              and the time required for typical changes.
-            </p>
-
-            <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,1fr)]">
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3">
-                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
-                  <span className="text-[18px] leading-[160%]">+</span>
-                  <span className="text-[32px] leading-10">28</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
-                </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  self-service rate
+            <div className="flex flex-col gap-space-6 text-body-18">
+              <div className="case-point-stack gap-space-6">
+                <p className="text-body-18-semibold">2 → 1 workspace</p>
+                <p>
+                  Combined flow search, canvas editing, element setup, and publishing in one workspace.
+                  Managers no longer need to switch between screens.
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3">
-                <div className="flex items-center gap-0 whitespace-nowrap text-primary">
-                  <span className="text-[32px] font-semibold leading-10">33</span>
-                  <span className="inline-flex">
-                    <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
-                  </span>
-                  <span className="text-[32px] font-semibold leading-10">19</span>
-                </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  minutes, time-to-change
+              <div className="case-point-stack gap-space-6">
+                <p className="text-body-18-semibold">Self-service</p>
+                <p>
+                  Made typical changes available without developer involvement — managers can
+                  independently edit flow elements and publish a new version.
                 </p>
               </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3">
-                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
-                  <span className="text-[18px] leading-[160%]">-</span>
-                  <span className="text-[32px] leading-10">21</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
-                </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  errors in flows
-                </p>
-              </div>
-              <div className="flex min-h-[94px] w-full flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3">
-                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
-                  <span className="text-[18px] leading-[160%]">-</span>
-                  <span className="text-[32px] leading-10">16</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
-                </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  support requests
+              <div className="case-point-stack gap-space-6">
+                <p className="text-body-18-semibold">−21% errors</p>
+                <p>
+                  Reduced errors and accidental production changes by separating draft and published
+                  versions.
                 </p>
               </div>
             </div>
 
             <p className="text-body-18">
-              This project showed me that complex flows become manageable when users remain in
-              context and understand how their actions affect the live flow.
+              After launch, we continued developing the editor based on client cases: adding new
+              elements, improving work with large flows, and testing. As a result, managers got a tool
+              for independent flow work — from creation to publishing.
             </p>
           </div>
         </motion.section>
