@@ -1016,7 +1016,7 @@ export function CaseStudyPage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="-mt-[88px] flex w-full items-start justify-between border-t border-border-elevated pt-space-2 text-body-18 sm:mt-0"
+          className="-mt-[124px] flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
