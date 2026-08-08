@@ -336,7 +336,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 mb-space-2 mt-space-2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
+          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
             <button
               type="button"
               className="group relative block w-full cursor-zoom-in"
@@ -367,7 +367,7 @@ export function WorkCasePage() {
           variants={item}
           className="-mt-space-14 scroll-mt-space-16 case-section-stack"
         >
-          <div className="case-h3-stack mt-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Моя роль</h3>
             <p className="text-body-18">
               Я работала над одним из продуктов платформы — конструктором сценариев звонков. Отвечала
@@ -376,7 +376,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-h3-stack mt-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Проблема</h3>
             <p className="text-body-18">
               Любые изменения в сценариях требовали участия разработки и занимали часы или дни. Из-за
@@ -386,7 +386,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-h3-stack mt-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Задача</h3>
             <p className="text-body-18">
               Нужно было снизить зависимость клиентов от разработки и сделать понятный редактор, в
@@ -411,7 +411,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-h3-stack mt-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Анализ текущей версии</h3>
             <p className="text-body-18">
               В текущем процессе выделила несколько проблемных зон, которые усложняли
@@ -419,7 +419,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-figure-stack relative left-1/2 mb-space-2 mt-space-2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
+          <div className="case-figure-stack relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -472,7 +472,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 mb-space-2 mt-space-2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center bg-secondary px-space-4 py-space-8 sm:w-[calc(100vw-32px)] sm:rounded-[12px] sm:px-space-6">
+          <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center bg-secondary px-space-4 py-space-8 sm:w-[calc(100vw-32px)] sm:rounded-[12px] sm:px-space-6">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -532,7 +532,7 @@ export function WorkCasePage() {
             правки повлияют на реальные звонки.
           </p>
 
-          <div className="case-h3-stack mt-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Анализ конкурентов</h3>
             <p className="text-body-18">
               Чтобы понять, как упростить работу с конструктором, я изучила прямых конкурентов и
@@ -541,7 +541,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 mb-space-2 mt-space-2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
+          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
             <button
               type="button"
               className="group relative block w-full cursor-zoom-in sm:cursor-default"
@@ -575,7 +575,7 @@ export function WorkCasePage() {
 
           <div className="case-media-stack w-full max-w-[800px]">
             <div className="case-text-stack">
-              <div className="case-h3-stack mt-space-2">
+              <div className="case-h3-stack">
                 <h3 className="text-h3">Гипотезы</h3>
                 <p className="text-body-18">
                   На основе анализа я выделила направления, которые могли повлиять на ключевые метрики:
@@ -707,7 +707,7 @@ export function WorkCasePage() {
               опубликован и какие изменения уже влияют на реальные звонки.
             </p>
 
-            <div className="case-h3-stack mt-space-2">
+            <div className="case-h3-stack">
               <h3 className="text-h3">Было</h3>
               <p className="text-body-18">
                 Создаёт сценарий →{" "}
@@ -721,7 +721,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="case-h3-stack mt-space-2">
+            <div className="case-h3-stack">
               <h3 className="text-h3">Стало</h3>
               <div>
                 <p className="text-body-18">
@@ -757,7 +757,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-figure-stack relative left-1/2 mb-space-2 mt-space-2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
+          <div className="case-figure-stack relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -801,7 +801,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 mb-space-2 mt-space-2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
+            <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in sm:cursor-default"
@@ -842,7 +842,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 mb-space-2 mt-space-2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
+            <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in sm:cursor-default"
@@ -889,7 +889,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="case-figure-stack relative left-1/2 mb-space-2 mt-space-2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
+            <div className="case-figure-stack relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
               <div className="mx-auto w-full max-w-[800px]">
                 <button
                   type="button"
@@ -934,7 +934,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 mb-space-2 mt-space-2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
+            <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in sm:cursor-default"
@@ -977,7 +977,7 @@ export function WorkCasePage() {
             </div>
 
             <div className="flex flex-col gap-space-6">
-            <div className="case-figure-stack relative left-1/2 mb-space-2 mt-space-2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
+            <div className="case-figure-stack relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
               <button
                 type="button"
                 className="group relative block w-full cursor-zoom-in sm:cursor-default"
@@ -1020,7 +1020,7 @@ export function WorkCasePage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-space-16 case-h2-stack"
+          className="scroll-mt-space-16 case-h2-stack gap-space-6"
         >
           <h2 className="text-h2">Результаты</h2>
           <div className="case-content-stack">
@@ -1059,7 +1059,7 @@ export function WorkCasePage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="-mt-[124px] flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
+          className="-mt-[116px] flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">

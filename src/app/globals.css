@@ -167,7 +167,7 @@ a {
   }
 
   .case-section-stack {
-    @apply flex flex-col gap-space-6;
+    @apply flex flex-col gap-space-8;
   }
 
   .case-h2-stack {
@@ -179,19 +179,19 @@ a {
   }
 
   .case-content-stack {
-    @apply flex flex-col gap-space-6;
+    @apply flex flex-col gap-space-8;
   }
 
   .case-numbered-media-point {
-    gap: 24px;
+    gap: 32px;
   }
 
   .case-numbered-points {
-    @apply flex flex-col gap-space-6;
+    @apply flex flex-col gap-space-8;
   }
 
   .case-media-stack {
-    @apply flex flex-col gap-space-6;
+    @apply flex flex-col gap-space-8;
   }
 
   .case-figure-stack {

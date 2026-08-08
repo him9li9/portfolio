@@ -470,7 +470,7 @@ export function CaseStudyPage() {
           </div>
           <div
             ref={heroPhonesRef}
-            className="case-horizontal-scroll relative left-1/2 mb-space-2 mt-space-2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible"
+            className="case-horizontal-scroll relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible"
           >
             <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
             <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
@@ -515,7 +515,7 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 case-section-stack"
         >
-          <div className="case-h3-stack mt-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Моя роль</h3>
             <p className="text-body-18">
               Я присоединилась к проекту на стадии MVP за несколько месяцев до планируемого релиза. В
@@ -524,7 +524,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-h3-stack mt-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Проблема</h3>
             <div className="case-text-stack text-body-18">
               <p>
@@ -540,7 +540,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="case-h3-stack mt-space-2">
+          <div className="case-h3-stack">
             <h3 className="text-h3">Задача</h3>
             <div className="case-text-stack text-body-18">
               <p>
@@ -568,7 +568,7 @@ export function CaseStudyPage() {
               номер и начать пользоваться приложением.
             </p>
 
-            <div className="case-h3-stack mt-space-2">
+            <div className="case-h3-stack">
               <h3 className="text-h3">Анализ текущей версии</h3>
               <p className="text-body-18">
                 Во время аудита текущего MVP я выявила 3 основных барьера на пути к первому звонку:
@@ -594,7 +594,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 mb-space-2 mt-space-2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
               <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary py-space-8 sm:rounded-[12px] sm:px-space-8">
                 <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
                   <div
@@ -631,7 +631,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 mb-space-2 mt-space-2 bg-[#1c1c1c] px-space-4 py-space-8 sm:mx-0 sm:rounded-[12px]">
+            <div className="-mx-space-4 bg-[#1c1c1c] px-space-4 py-space-8 sm:mx-0 sm:rounded-[12px]">
               <div className="mx-auto flex w-full max-w-[427px] flex-col gap-space-4">
                 <Image
                   alt="Обращение пользователя о статусе аккаунта"
@@ -665,7 +665,7 @@ export function CaseStudyPage() {
               неопределённость особенно критична, поскольку связь и интернет часто нужны сразу.
             </p>
 
-            <div id="hypotheses" className="case-h3-stack mt-space-2 scroll-mt-space-16">
+            <div id="hypotheses" className="case-h3-stack scroll-mt-space-16">
               <h3 className="text-h3">Анализ конкурентов</h3>
               <p className="text-body-18">
                 Также я изучила, пользовательский путь в похожих приложениях от регистрации до первого
@@ -673,7 +673,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 mb-space-2 mt-space-2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
+            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
               <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary py-space-8 sm:gap-space-4 sm:rounded-[12px] sm:px-space-8">
                 <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
                   <div
@@ -714,7 +714,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="case-media-stack w-full max-w-[800px]">
-              <div className="case-h3-stack mt-space-2">
+              <div className="case-h3-stack">
                 <h3 className="text-h3">Гипотезы</h3>
                 <p className="text-body-18">
                   По результатам исследования сформулировала несколько гипотез и выделила главные:
@@ -769,7 +769,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 mb-space-2 mt-space-2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
               <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
                 <button
                   type="button"
@@ -853,7 +853,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-            <div className="case-numbered-point-media relative left-1/2 mb-space-2 mt-space-2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+            <div className="case-numbered-point-media relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
               <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
                 <Image
@@ -886,7 +886,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 mb-space-2 mt-space-2 flex w-[calc(100vw-32px)] max-w-[950px] -translate-x-1/2 flex-col items-center justify-center gap-space-1">
+          <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 flex w-[calc(100vw-32px)] max-w-[950px] -translate-x-1/2 flex-col items-center justify-center gap-space-1">
             <div
               className="flex w-full items-center justify-center px-space-4 sm:px-0"
               style={{ height: 600 }}
@@ -930,7 +930,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 mb-space-2 mt-space-2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+          <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div className="w-full">
               <div className="case-horizontal-scroll overflow-x-auto sm:overflow-visible">
                 <div className="w-[1000px] max-w-none sm:hidden">
@@ -978,7 +978,7 @@ export function CaseStudyPage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-space-16 case-h2-stack"
+          className="scroll-mt-space-16 case-h2-stack gap-space-6"
         >
           <h2 className="text-h2">Результаты</h2>
           <div className="case-content-stack">
@@ -1016,7 +1016,7 @@ export function CaseStudyPage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="-mt-[124px] flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
+          className="-mt-[116px] flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
