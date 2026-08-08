@@ -251,15 +251,14 @@ export function HomePage() {
                 <div className="flex w-full flex-col items-start gap-space-2">
                   <div className="h-px w-full bg-border-elevated" />
                   <p className="w-full max-w-[500px] text-body-18 text-primary">
-                    Мобильное приложение для звонков за границей. Упростила путь до первого звонка и
-                    сделала стоимость связи прозрачнее до начала вызова.
+                    Упростила регистрацию, сократив путь до первого звонка, и сделала стоимость связи прозрачнее.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-1">
                     <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      8 → 3 шага до звонка
+                      B2C
                     </span>
                     <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      +23% конверсия в 1-й звонок
+                      Mobile app
                     </span>
                   </div>
                   <Link
@@ -309,15 +308,14 @@ export function HomePage() {
                 <div className="flex w-full flex-col items-start gap-space-2">
                   <div className="h-px w-full bg-border-elevated" />
                   <p className="w-full max-w-[500px] text-body-18 text-primary">
-                    B2B-платформа для автоматизации контакт-центров. Снизила зависимость клиентов
-                    от&nbsp;разработки в&nbsp;управлении сценариями звонков.
+                    Спроектировала единый workspace для самостоятельной работы менеджеров со сценариями звонков.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-1">
                     <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      +28% self-service rate
+                      B2B
                     </span>
                     <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      -21% ошибок после публикации
+                      Self-service
                     </span>
                   </div>
                   <Link
