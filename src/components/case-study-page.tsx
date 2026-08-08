@@ -515,7 +515,7 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 case-section-stack"
         >
-          <div className="case-h3-stack">
+          <div className="case-h3-stack mt-space-4">
             <h3 className="text-h3">Моя роль</h3>
             <p className="text-body-18">
               Я присоединилась к проекту на стадии MVP за несколько месяцев до планируемого релиза. В
@@ -524,7 +524,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-h3-stack">
+          <div className="case-h3-stack mt-space-4">
             <h3 className="text-h3">Проблема</h3>
             <div className="case-text-stack text-body-18">
               <p>
@@ -540,7 +540,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="case-h3-stack">
+          <div className="case-h3-stack mt-space-4">
             <h3 className="text-h3">Задача</h3>
             <div className="case-text-stack text-body-18">
               <p>
@@ -568,8 +568,8 @@ export function CaseStudyPage() {
               номер и начать пользоваться приложением.
             </p>
 
-            <div className="case-h3-stack">
-              <h3 className="text-h3">Основные проблемы сценария</h3>
+            <div className="case-h3-stack mt-space-4">
+              <h3 className="text-h3">Анализ текущей версии</h3>
               <p className="text-body-18">
                 Во время аудита текущего MVP я выявила 3 основных барьера на пути к первому звонку:
               </p>
@@ -665,16 +665,11 @@ export function CaseStudyPage() {
               неопределённость особенно критична, поскольку связь и интернет часто нужны сразу.
             </p>
 
-            <div id="hypotheses" className="case-h3-stack scroll-mt-space-16">
+            <div id="hypotheses" className="case-h3-stack mt-space-4 scroll-mt-space-16">
               <h3 className="text-h3">Анализ конкурентов</h3>
               <p className="text-body-18">
-                Я изучила, онбординг новых пользователей в похожих приложениях от регистрации до первого
+                Также я изучила, пользовательский путь в похожих приложениях от регистрации до первого
                 звонка. Сравнила подключение номера, переход к звонку и обратную связь между этапами.
-              </p>
-              <p className="text-body-18">
-                В отличие от текущего сценария MCN, у конкурентов ключевой путь не требовал перехода в
-                веб-кабинет: пользователь оставался в приложении, видел состояние подключения и понимал,
-                когда может совершить звонок.
               </p>
             </div>
 
@@ -704,6 +699,12 @@ export function CaseStudyPage() {
               </div>
             </div>
 
+            <p className="text-body-18">
+              В отличие от текущего сценария MCN, у конкурентов ключевой путь не требовал перехода в
+              веб-кабинет: пользователь оставался в приложении, видел состояние подключения и понимал,
+              когда может совершить звонок.
+            </p>
+
             <div className="text-body-18">
               <p>
                 Взяла в работу: сохранять сценарий внутри приложения, показывать статус подключения и
@@ -712,7 +713,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="case-media-stack w-full max-w-[800px]">
-              <div className="case-h3-stack">
+              <div className="case-h3-stack mt-space-4">
                 <h3 className="text-h3">Гипотезы</h3>
                 <p className="text-body-18">
                   По результатам исследования сформулировала несколько гипотез и выделила главные:
@@ -1003,6 +1004,11 @@ export function CaseStudyPage() {
                 </p>
               </div>
             </div>
+            <p className="text-body-18">
+              После релиза развитие софтфона продолжилось через обратную связь от пользователей:
+              добавление избранных контактов, повтор звонка из истории и push-уведомления о низком
+              балансе. Всё это ушло в бэклог и дальше — в ближайшие обновления.
+            </p>
           </div>
         </motion.section>
 

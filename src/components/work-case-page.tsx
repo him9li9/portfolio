@@ -367,7 +367,7 @@ export function WorkCasePage() {
           variants={item}
           className="-mt-space-14 scroll-mt-space-16 case-section-stack"
         >
-          <div className="case-h3-stack">
+          <div className="case-h3-stack mt-space-4">
             <h3 className="text-h3">Моя роль</h3>
             <p className="text-body-18">
               Я работала над одним из продуктов платформы — конструктором сценариев звонков. Отвечала
@@ -376,7 +376,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-h3-stack">
+          <div className="case-h3-stack mt-space-4">
             <h3 className="text-h3">Проблема</h3>
             <p className="text-body-18">
               Любые изменения в сценариях требовали участия разработки и занимали часы или дни. Из-за
@@ -386,7 +386,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-h3-stack">
+          <div className="case-h3-stack mt-space-4">
             <h3 className="text-h3">Задача</h3>
             <p className="text-body-18">
               Нужно было снизить зависимость клиентов от разработки и сделать понятный редактор, в
@@ -418,7 +418,7 @@ export function WorkCasePage() {
             </div>
           </div>
 
-          <div className="case-h3-stack">
+          <div className="case-h3-stack mt-space-4">
             <h3 className="text-h3">Анализ текущей версии</h3>
             <p className="text-body-18">
               Прежде чем предлагать изменения, я собрала обратную связь от поддержки, о&nbsp;том как
@@ -539,7 +539,7 @@ export function WorkCasePage() {
             правки повлияют на реальные звонки.
           </p>
 
-          <div className="case-h3-stack">
+          <div className="case-h3-stack mt-space-4">
             <h3 className="text-h3">Анализ конкурентов</h3>
             <p className="text-body-18">
               Чтобы понять, как упростить работу с конструктором, я изучила прямых конкурентов и
@@ -582,7 +582,7 @@ export function WorkCasePage() {
 
           <div className="case-media-stack w-full max-w-[800px]">
             <div className="case-text-stack">
-              <div className="case-h3-stack">
+              <div className="case-h3-stack mt-space-4">
                 <h3 className="text-h3">Гипотезы</h3>
                 <p className="text-body-18">
                   На основе анализа я выделила направления, которые могли повлиять на ключевые метрики:
@@ -714,7 +714,7 @@ export function WorkCasePage() {
               опубликован и какие изменения уже влияют на реальные звонки.
             </p>
 
-            <div className="case-h3-stack">
+            <div className="case-h3-stack mt-space-4">
               <h3 className="text-h3">Было</h3>
               <p className="text-body-18">
                 Создаёт сценарий →{" "}
@@ -728,7 +728,7 @@ export function WorkCasePage() {
               </p>
             </div>
 
-            <div className="case-h3-stack">
+            <div className="case-h3-stack mt-space-4">
               <h3 className="text-h3">Стало</h3>
               <div>
                 <p className="text-body-18">
