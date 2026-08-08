@@ -249,7 +249,7 @@ export function HomePage() {
                   <p className="w-full max-w-[500px] text-body-18 text-primary">
                     Упростила регистрацию, сократила путь до первого звонка и сделала стоимость связи прозрачнее.
                   </p>
-                  <div className="flex flex-wrap items-start gap-space-1">
+                  <div className="flex flex-wrap items-start gap-space-2">
                     <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       B2C
                     </span>
@@ -306,7 +306,7 @@ export function HomePage() {
                   <p className="w-full max-w-[500px] text-body-18 text-primary">
                     Спроектировала единый workspace для самостоятельной работы менеджеров со сценариями звонков.
                   </p>
-                  <div className="flex flex-wrap items-start gap-space-1">
+                  <div className="flex flex-wrap items-start gap-space-2">
                     <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
                       B2B
                     </span>
