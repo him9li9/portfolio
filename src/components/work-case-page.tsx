@@ -642,7 +642,7 @@ export function WorkCasePage() {
           <div className="flex flex-col gap-space-3 md:grid md:grid-cols-3">
             <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-card p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h4 text-primary">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h4 text-primary">
                   1
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-0">
@@ -661,7 +661,7 @@ export function WorkCasePage() {
 
             <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-card p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h4 text-primary">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h4 text-primary">
                   2
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-0">
@@ -680,7 +680,7 @@ export function WorkCasePage() {
 
             <div className="flex flex-col items-start gap-space-4 rounded-[20px] bg-card p-space-6 md:min-w-0">
               <div className="flex h-[38px] w-full items-center gap-space-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h4 text-primary">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-elevated-accent text-h4 text-primary">
                   3
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col gap-0">
