@@ -336,7 +336,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
+          <div className="case-visual-spacing relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
             <button
               type="button"
               className="group relative block w-full cursor-zoom-in"
@@ -419,7 +419,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-figure-stack relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
+          <div className="case-figure-stack case-visual-spacing relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -472,7 +472,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center bg-secondary px-space-4 py-space-8 sm:w-[calc(100vw-32px)] sm:rounded-[12px] sm:px-space-6">
+          <div className="case-visual-spacing relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center bg-secondary px-space-4 py-space-8 sm:w-[calc(100vw-32px)] sm:rounded-[12px] sm:px-space-6">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"
@@ -541,7 +541,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
+          <div className="case-visual-spacing relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2">
             <button
               type="button"
               className="group relative block w-full cursor-zoom-in sm:cursor-default"
@@ -757,7 +757,7 @@ export function WorkCasePage() {
             </p>
           </div>
 
-          <div className="case-figure-stack relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
+          <div className="case-figure-stack case-visual-spacing relative left-1/2 w-[calc(100vw-32px)] max-w-[800px] -translate-x-1/2 items-center">
             <div className="mx-auto w-full max-w-[800px]">
               <button
                 type="button"

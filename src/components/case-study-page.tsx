@@ -470,7 +470,7 @@ export function CaseStudyPage() {
           </div>
           <div
             ref={heroPhonesRef}
-            className="case-horizontal-scroll relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible"
+            className="case-horizontal-scroll case-visual-spacing relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible"
           >
             <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
             <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
@@ -594,7 +594,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
+            <div className="case-visual-spacing relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
               <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary py-space-8 sm:rounded-[12px] sm:px-space-8">
                 <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
                   <div
@@ -631,7 +631,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 bg-[#1c1c1c] px-space-4 py-space-8 sm:mx-0 sm:rounded-[12px]">
+            <div className="case-visual-spacing -mx-space-4 bg-[#1c1c1c] px-space-4 py-space-8 sm:mx-0 sm:rounded-[12px]">
               <div className="mx-auto flex w-full max-w-[427px] flex-col gap-space-4">
                 <Image
                   alt="Обращение пользователя о статусе аккаунта"
@@ -673,7 +673,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
+            <div className="case-visual-spacing relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
               <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary py-space-8 sm:gap-space-4 sm:rounded-[12px] sm:px-space-8">
                 <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
                   <div
@@ -769,7 +769,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+            <div className="case-visual-spacing relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
               <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
                 <button
                   type="button"
@@ -853,7 +853,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-            <div className="case-numbered-point-media relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+            <div className="case-numbered-point-media case-visual-spacing relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
               <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
                 <Image
@@ -886,7 +886,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 flex w-[calc(100vw-32px)] max-w-[950px] -translate-x-1/2 flex-col items-center justify-center gap-space-1">
+          <div className="case-numbered-point-media case-numbered-point-media-captioned case-visual-spacing relative left-1/2 flex w-[calc(100vw-32px)] max-w-[950px] -translate-x-1/2 flex-col items-center justify-center gap-space-1">
             <div
               className="flex w-full items-center justify-center px-space-4 sm:px-0"
               style={{ height: 600 }}
@@ -930,7 +930,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-numbered-point-media case-numbered-point-media-captioned relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+          <div className="case-numbered-point-media case-numbered-point-media-captioned case-visual-spacing relative left-1/2 flex w-screen max-w-[1100px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div className="w-full">
               <div className="case-horizontal-scroll overflow-x-auto sm:overflow-visible">
                 <div className="w-[1000px] max-w-none sm:hidden">

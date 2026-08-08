@@ -167,7 +167,7 @@ a {
   }
 
   .case-section-stack {
-    @apply flex flex-col gap-space-8;
+    @apply flex flex-col gap-space-6;
   }
 
   .case-h2-stack {
@@ -179,7 +179,7 @@ a {
   }
 
   .case-content-stack {
-    @apply flex flex-col gap-space-8;
+    @apply flex flex-col gap-space-6;
   }
 
   .case-numbered-media-point {
@@ -187,11 +187,15 @@ a {
   }
 
   .case-numbered-points {
-    @apply flex flex-col gap-space-8;
+    @apply flex flex-col gap-space-6;
   }
 
   .case-media-stack {
-    @apply flex flex-col gap-space-8;
+    @apply flex flex-col gap-space-6;
+  }
+
+  .case-visual-spacing {
+    @apply my-space-2;
   }
 
   .case-figure-stack {
