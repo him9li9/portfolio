@@ -515,7 +515,7 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 case-section-stack"
         >
-          <div className="case-h3-stack mt-space-4">
+          <div className="case-h3-stack mt-space-10">
             <h3 className="text-h3">Моя роль</h3>
             <p className="text-body-18">
               Я присоединилась к проекту на стадии MVP за несколько месяцев до планируемого релиза. В
@@ -524,7 +524,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-h3-stack mt-space-4">
+          <div className="case-h3-stack mt-space-10">
             <h3 className="text-h3">Проблема</h3>
             <div className="case-text-stack text-body-18">
               <p>
@@ -540,7 +540,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="case-h3-stack mt-space-4">
+          <div className="case-h3-stack mt-space-10">
             <h3 className="text-h3">Задача</h3>
             <div className="case-text-stack text-body-18">
               <p>
@@ -568,7 +568,7 @@ export function CaseStudyPage() {
               номер и начать пользоваться приложением.
             </p>
 
-            <div className="case-h3-stack mt-space-4">
+            <div className="case-h3-stack mt-space-10">
               <h3 className="text-h3">Анализ текущей версии</h3>
               <p className="text-body-18">
                 Во время аудита текущего MVP я выявила 3 основных барьера на пути к первому звонку:
@@ -594,7 +594,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
+            <div className="relative left-1/2 mb-space-10 mt-space-10 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
               <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-space-10 sm:rounded-[12px] sm:px-space-8">
                 <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
                   <div
@@ -631,7 +631,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="-mx-space-4 bg-[#1c1c1c] px-space-4 py-space-8 sm:mx-0 sm:rounded-[12px]">
+            <div className="-mx-space-4 mb-space-10 mt-space-10 bg-[#1c1c1c] px-space-4 py-space-8 sm:mx-0 sm:rounded-[12px]">
               <div className="mx-auto flex w-full max-w-[427px] flex-col gap-space-4">
                 <Image
                   alt="Обращение пользователя о статусе аккаунта"
@@ -665,7 +665,7 @@ export function CaseStudyPage() {
               неопределённость особенно критична, поскольку связь и интернет часто нужны сразу.
             </p>
 
-            <div id="hypotheses" className="case-h3-stack mt-space-4 scroll-mt-space-16">
+            <div id="hypotheses" className="case-h3-stack mt-space-10 scroll-mt-space-16">
               <h3 className="text-h3">Анализ конкурентов</h3>
               <p className="text-body-18">
                 Также я изучила, пользовательский путь в похожих приложениях от регистрации до первого
@@ -673,7 +673,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
+            <div className="relative left-1/2 mb-space-10 mt-space-10 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
               <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-space-10 sm:gap-space-4 sm:rounded-[12px] sm:px-space-8">
                 <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
                   <div
@@ -713,7 +713,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="case-media-stack w-full max-w-[800px]">
-              <div className="case-h3-stack mt-space-4">
+              <div className="case-h3-stack mt-space-10">
                 <h3 className="text-h3">Гипотезы</h3>
                 <p className="text-body-18">
                   По результатам исследования сформулировала несколько гипотез и выделила главные:
@@ -768,7 +768,7 @@ export function CaseStudyPage() {
               </p>
             </div>
 
-            <div className="relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
+            <div className="relative left-1/2 mb-space-10 mt-space-10 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
               <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
                 <button
                   type="button"
