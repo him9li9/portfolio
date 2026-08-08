@@ -365,7 +365,7 @@ export function WorkCasePage() {
 
         <motion.section
           variants={item}
-          className="-mt-space-14 scroll-mt-space-16 case-section-stack"
+          className="-mt-[108px] scroll-mt-space-16 case-section-stack"
         >
           <div className="case-h3-stack case-h3-offset">
             <h3 className="text-h3">Моя роль</h3>
