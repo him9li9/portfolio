@@ -515,7 +515,7 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 case-section-stack"
         >
-          <div className="case-h3-stack mt-space-10">
+          <div className="case-h3-stack mt-space-4">
             <h3 className="text-h3">Моя роль</h3>
             <p className="text-body-18">
               Я присоединилась к проекту на стадии MVP за несколько месяцев до планируемого релиза. В
@@ -524,7 +524,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-h3-stack mt-space-10">
+          <div className="case-h3-stack mt-space-4">
             <h3 className="text-h3">Проблема</h3>
             <div className="case-text-stack text-body-18">
               <p>
@@ -540,7 +540,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="case-h3-stack mt-space-10">
+          <div className="case-h3-stack mt-space-4">
             <h3 className="text-h3">Задача</h3>
             <div className="case-text-stack text-body-18">
               <p>
@@ -568,7 +568,7 @@ export function CaseStudyPage() {
               номер и начать пользоваться приложением.
             </p>
 
-            <div className="case-h3-stack mt-space-10">
+            <div className="case-h3-stack mt-space-4">
               <h3 className="text-h3">Анализ текущей версии</h3>
               <p className="text-body-18">
                 Во время аудита текущего MVP я выявила 3 основных барьера на пути к первому звонку:
@@ -665,7 +665,7 @@ export function CaseStudyPage() {
               неопределённость особенно критична, поскольку связь и интернет часто нужны сразу.
             </p>
 
-            <div id="hypotheses" className="case-h3-stack mt-space-10 scroll-mt-space-16">
+            <div id="hypotheses" className="case-h3-stack mt-space-4 scroll-mt-space-16">
               <h3 className="text-h3">Анализ конкурентов</h3>
               <p className="text-body-18">
                 Также я изучила, пользовательский путь в похожих приложениях от регистрации до первого
@@ -714,7 +714,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="case-media-stack w-full max-w-[800px]">
-              <div className="case-h3-stack mt-space-10">
+              <div className="case-h3-stack mt-space-4">
                 <h3 className="text-h3">Гипотезы</h3>
                 <p className="text-body-18">
                   По результатам исследования сформулировала несколько гипотез и выделила главные:
