@@ -1024,22 +1024,22 @@ export function WorkCasePage() {
         >
           <h2 className="text-h2">Результаты</h2>
           <div className="case-content-stack">
-            <div className="flex flex-col gap-space-4 text-body-18">
-              <div className="case-point-stack">
+            <div className="flex flex-col gap-space-6 text-body-18">
+              <div className="case-point-stack gap-space-6">
                 <p className="text-body-18-semibold">2 → 1 workspace</p>
                 <p>
                   Объединила поиск сценария, редактирование схемы, настройку элементов и публикацию.
                   Менеджеру больше не нужно переключаться между экранами при работе со сценарием.
                 </p>
               </div>
-              <div className="case-point-stack">
+              <div className="case-point-stack gap-space-6">
                 <p className="text-body-18-semibold">Self-service</p>
                 <p>
                   Часть типовых изменений перешла от разработчиков к менеджерам — от добавления
                   элементов на схему до публикации новой версии.
                 </p>
               </div>
-              <div className="case-point-stack">
+              <div className="case-point-stack gap-space-6">
                 <p className="text-body-18-semibold">Меньше ошибок</p>
                 <p>
                   Разделение черновика и опубликованной версии снизило риск случайных изменений в

@@ -982,22 +982,22 @@ export function CaseStudyPage() {
         >
           <h2 className="text-h2">Результаты</h2>
           <div className="case-content-stack">
-            <div className="flex flex-col gap-space-4 text-body-18">
-              <div className="case-point-stack">
+            <div className="flex flex-col gap-space-6 text-body-18">
+              <div className="case-point-stack gap-space-6">
                 <p className="text-body-18-semibold">8 → 3 шага</p>
                 <p>
                   Сократила путь пользователя от регистрации до первого звонка, объединив ключевые
                   действия внутри приложения.
                 </p>
               </div>
-              <div className="case-point-stack">
+              <div className="case-point-stack gap-space-6">
                 <p className="text-body-18-semibold">в 2x меньше обращений</p>
                 <p>
                   Помогла уменьшить количество вопросов в поддержку по подключению, стоимости звонков и
                   списаниям.
                 </p>
               </div>
-              <div className="case-point-stack">
+              <div className="case-point-stack gap-space-6">
                 <p className="text-body-18-semibold">15+ ключевых сценариев</p>
                 <p>
                   Спроектировала основные сценарии приложения — от регистрации и первого звонка до
