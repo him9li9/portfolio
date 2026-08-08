@@ -600,17 +600,17 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
-              <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-space-8 sm:rounded-[12px] sm:px-space-8">
+              <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-space-10 sm:rounded-[12px] sm:px-space-8">
                 <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
                   <div
-                    className="relative w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]"
+                    className="relative w-[900px] max-w-none sm:mx-auto sm:w-full sm:max-w-[900px]"
                     style={{ aspectRatio: "2550 / 1206" }}
                   >
                     <Image
                       alt="Путь пользователя к первому звонку в MVP"
                       src={assets.caseDiscovery}
                       fill
-                      sizes="(max-width: 640px) 850px, 850px"
+                      sizes="(max-width: 640px) 900px, 900px"
                       className="object-contain"
                       loading="lazy"
                       quality={100}
@@ -681,18 +681,18 @@ export function CaseStudyPage() {
             </div>
 
             <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
-              <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-space-8 sm:gap-space-4 sm:rounded-[12px] sm:px-space-8">
+              <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-space-10 sm:gap-space-4 sm:rounded-[12px] sm:px-space-8">
                 <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
                   <div
-                    className="relative w-[1700px] max-w-none sm:mx-auto sm:w-full"
-                    style={{ aspectRatio: "952 / 268" }}
+                    className="relative w-[900px] max-w-none sm:mx-auto sm:w-full sm:max-w-[900px]"
+                    style={{ aspectRatio: "2700 / 990" }}
                   >
                     <Image
                       alt="Последовательный путь до первого звонка в приложениях конкурентов"
                       src={assets.benchmark}
                       fill
-                      sizes="(max-width: 640px) 1700px, 936px"
-                      className="object-cover"
+                      sizes="(max-width: 640px) 900px, 900px"
+                      className="object-contain"
                       loading="lazy"
                       quality={100}
                       unoptimized
