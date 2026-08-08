@@ -178,6 +178,14 @@ a {
     @apply flex flex-col gap-space-3;
   }
 
+  .case-h3-offset {
+    margin-top: 8px;
+  }
+
+  .case-results-stack {
+    gap: 24px;
+  }
+
   .case-content-stack {
     @apply flex flex-col gap-space-6;
   }

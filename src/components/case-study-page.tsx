@@ -515,7 +515,7 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 case-section-stack"
         >
-          <div className="case-h3-stack">
+          <div className="case-h3-stack case-h3-offset">
             <h3 className="text-h3">Моя роль</h3>
             <p className="text-body-18">
               Я присоединилась к проекту на стадии MVP за несколько месяцев до планируемого релиза. В
@@ -524,7 +524,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-h3-stack">
+          <div className="case-h3-stack case-h3-offset">
             <h3 className="text-h3">Проблема</h3>
             <div className="case-text-stack text-body-18">
               <p>
@@ -540,7 +540,7 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="case-h3-stack">
+          <div className="case-h3-stack case-h3-offset">
             <h3 className="text-h3">Задача</h3>
             <div className="case-text-stack text-body-18">
               <p>
@@ -568,7 +568,7 @@ export function CaseStudyPage() {
               номер и начать пользоваться приложением.
             </p>
 
-            <div className="case-h3-stack">
+            <div className="case-h3-stack case-h3-offset">
               <h3 className="text-h3">Анализ текущей версии</h3>
               <p className="text-body-18">
                 Во время аудита текущего MVP я выявила 3 основных барьера на пути к первому звонку:
@@ -665,7 +665,7 @@ export function CaseStudyPage() {
               неопределённость особенно критична, поскольку связь и интернет часто нужны сразу.
             </p>
 
-            <div id="hypotheses" className="case-h3-stack scroll-mt-space-16">
+            <div id="hypotheses" className="case-h3-stack case-h3-offset scroll-mt-space-16">
               <h3 className="text-h3">Анализ конкурентов</h3>
               <p className="text-body-18">
                 Также я изучила, пользовательский путь в похожих приложениях от регистрации до первого
@@ -714,7 +714,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="case-media-stack w-full max-w-[800px]">
-              <div className="case-h3-stack">
+              <div className="case-h3-stack case-h3-offset">
                 <h3 className="text-h3">Гипотезы</h3>
                 <p className="text-body-18">
                   По результатам исследования сформулировала несколько гипотез и выделила главные:
@@ -978,7 +978,7 @@ export function CaseStudyPage() {
           id="results"
           data-section-anchor="results"
           variants={item}
-          className="scroll-mt-space-16 case-h2-stack gap-space-6"
+          className="scroll-mt-space-16 case-h2-stack case-results-stack"
         >
           <h2 className="text-h2">Результаты</h2>
           <div className="case-content-stack">
@@ -1016,7 +1016,7 @@ export function CaseStudyPage() {
         <motion.nav
           variants={item}
           aria-label="Навигация между страницами"
-          className="-mt-[116px] flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
+          className="-mt-[108px] flex w-full items-start justify-between border-t border-border-elevated pt-space-4 text-body-18"
         >
           <Link href="/" className="group shrink-0">
             <span className="link-underline">
