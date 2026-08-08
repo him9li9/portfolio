@@ -175,11 +175,7 @@ export function HomePage() {
             </h1>
           </div>
           <p className="w-full text-left text-body-18 text-primary sm:w-[482px] sm:text-center">
-            Продуктовый дизайнер с 4+ лет опыта в телекоме,<span className="sm:hidden"> </span><br className="hidden sm:block" />
-            <span className="sm:whitespace-nowrap">B2B-сервисах. Умею разбираться в сложной</span><span className="sm:hidden"> </span><br className="hidden sm:block" />
-            доменной логике и превращать её в понятные,<span className="sm:hidden"> </span><br className="hidden sm:block" />
-            работающие решения
-            вместе с командой.
+            Продуктовый дизайнер с 4+ годами опыта в мобильных и B2B-продуктах. Разбираюсь в сложных сценариях и довожу решения до релиза. Использую AI для быстрых экспериментов, прототипирования и работы с кодом.
           </p>
         </motion.section>
 
@@ -251,7 +247,7 @@ export function HomePage() {
                 <div className="flex w-full flex-col items-start gap-space-2">
                   <div className="h-px w-full bg-border-elevated" />
                   <p className="w-full max-w-[500px] text-body-18 text-primary">
-                    Упростила регистрацию, сократив путь до первого звонка, и сделала стоимость связи прозрачнее.
+                    Упростила регистрацию, сократила путь до первого звонка и сделала стоимость связи прозрачнее.
                   </p>
                   <div className="flex flex-wrap items-start gap-space-1">
                     <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
