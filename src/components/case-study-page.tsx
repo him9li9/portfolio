@@ -544,13 +544,8 @@ export function CaseStudyPage() {
             <h3 className="text-h3">Задача</h3>
             <div className="case-text-stack text-body-18">
               <p>
-                Сделать путь до первого звонка понятным и предсказуемым, чтобы больше пользователей
-                самостоятельно завершали подключение и начинали пользоваться приложением.
-              </p>
-              <p>
-                <span className="text-body-18-semibold">Метрики:</span>{" "}
-                конверсия из регистрации в первый звонок и количество обращений по вопросам подключения,
-                баланса и списаний.
+                Сделать путь до первого звонка понятным и предсказуемым, чтобы пользователи могли
+                самостоятельно завершить подключение и начать пользоваться приложением.
               </p>
             </div>
           </div>
@@ -673,10 +668,13 @@ export function CaseStudyPage() {
             <div id="hypotheses" className="case-h3-stack scroll-mt-space-16">
               <h3 className="text-h3">Анализ конкурентов</h3>
               <p className="text-body-18">
-                Среди конкурентов я сравнила регистрацию, переход к набору номера и обратную связь
-                после ключевых действий. Путь к звонку был собран внутри одного последовательного
-                сценария, пользователь на каждом этапе видел состояние системы и следующий доступный
-                шаг.
+                Я изучила, онбординг новых пользователей в похожих приложениях от регистрации до первого
+                звонка. Сравнила подключение номера, переход к звонку и обратную связь между этапами.
+              </p>
+              <p className="text-body-18">
+                В отличие от текущего сценария MCN, у конкурентов ключевой путь не требовал перехода в
+                веб-кабинет: пользователь оставался в приложении, видел состояние подключения и понимал,
+                когда может совершить звонок.
               </p>
             </div>
 
@@ -707,22 +705,17 @@ export function CaseStudyPage() {
             </div>
 
             <div className="text-body-18">
-              <p>Для работы я взяла из анализа 3 принципа:</p>
-              <ul className="list-disc pl-space-6">
-                <li>подтверждать завершение ключевого действия</li>
-                <li>показывать статус подключения и момент, когда звонки становятся доступны</li>
-                <li>
-                  не только объяснять причину ошибки, но и предлагать варианты возвращения на сценарий
-                </li>
-              </ul>
+              <p>
+                Взяла в работу: сохранять сценарий внутри приложения, показывать статус подключения и
+                явно вести пользователя к следующему действию.
+              </p>
             </div>
 
             <div className="case-media-stack w-full max-w-[800px]">
               <div className="case-h3-stack">
                 <h3 className="text-h3">Гипотезы</h3>
                 <p className="text-body-18">
-                  На основе исследования выделила 3 гипотезы, которые могли повлиять на ключевые
-                  продуктовые метрики. Они легли в основу дальнейшего проектирования.
+                  По результатам исследования сформулировала несколько гипотез и выделила главные:
                 </p>
               </div>
               <div className="flex flex-col gap-space-4">
@@ -730,25 +723,23 @@ export function CaseStudyPage() {
                   <p className="text-body-18-semibold">1.&nbsp;Управляемая активация</p>
                   <p>
                     Если перенести подключение номера в приложение и показывать статус и следующий
-                    шаг, больше пользователей завершат настройку и совершат первый звонок.
+                    шаг, пользователю будет проще самостоятельно завершить настройку и совершить первый
+                    звонок.
                   </p>
-                  <p><span className="text-body-18-semibold">Метрика:</span> CR из регистрации в 1-й звонок.</p>
                 </div>
                 <div className="case-point-stack text-body-18">
                   <p className="text-body-18-semibold">2.&nbsp;Прозрачная тарификация</p>
                   <p>
-                    Если показать стоимость до звонка и объяснить списание после него, пользователям
-                    будет проще контролировать расходы.
+                    Если показывать стоимость до звонка и объяснять списание после него, пользователю
+                    будет проще понимать и контролировать расходы.
                   </p>
-                  <p><span className="text-body-18-semibold">Метрика:</span> обращения по вопросам стоимости и списаний.</p>
                 </div>
                 <div className="case-point-stack text-body-18">
                   <p className="text-body-18-semibold">3.&nbsp;Помощь в контексте</p>
                   <p>
-                    Если объяснять ошибку и сразу предлагать способ продолжить сценарий, меньше
-                    пользователей прервут подключение или обратятся в поддержку.
+                    Если объяснять ошибку и сразу предлагать способ продолжить сценарий, пользователь
+                    сможет решить проблему без выхода из текущего процесса.
                   </p>
-                  <p><span className="text-body-18-semibold">Метрика:</span> CR в 1-й звонок, обращения в поддержку.</p>
                 </div>
               </div>
             </div>
@@ -978,11 +969,6 @@ export function CaseStudyPage() {
               номер активен, сколько стоит звонок и что делать при ошибке. За счёт этого путь стал
               короче, а обращений в поддержку стало меньше.
             </p>
-            <p>
-              Дальнейшее развитие софтфона продолжилось через обратную связь от пользователей:
-              добавление избранных контактов, повтор звонка из истории и push-уведомления о низком
-              балансе. Всё это ушло в бэклог и дальше — в ближайшие обновления.
-            </p>
           </div>
         </motion.section>
 
@@ -994,69 +980,29 @@ export function CaseStudyPage() {
         >
           <h2 className="text-h2">Результаты</h2>
           <div className="case-content-stack">
-            <p className="text-body-18">
-              Ключевые изменения закрыли основные проблемы, выявленные на старте: путь до первого
-              звонка стал короче, пользователи лучше понимали статус и стоимость действий, а часть
-              вопросов больше не уходила в поддержку. При том же трафике количество звонков выросло
-              с <span className="text-body-18-semibold">13k</span> до{" "}
-              <span className="text-body-18-semibold">17k.</span>
-            </p>
-
-            <div className="grid grid-cols-1 gap-space-3 min-[440px]:grid-cols-2 lg:grid-cols-[repeat(4,184px)]">
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3 lg:w-[184px]">
-                <div className="flex h-10 items-start gap-0 whitespace-nowrap text-primary">
-                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-10">8</span>
-                  <span className="inline-flex h-10 items-center">
-                    <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
-                  </span>
-                  <span className="inline-flex h-10 items-center text-[32px] font-semibold leading-10">3</span>
-                </div>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  шага до звонка
+            <div className="flex flex-col gap-space-4 text-body-18">
+              <div className="case-point-stack">
+                <p className="text-body-18-semibold">8 → 3 шага</p>
+                <p>
+                  Сократила путь пользователя от регистрации до первого звонка, объединив ключевые
+                  действия внутри приложения.
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3 lg:w-[184px]">
-                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
-                  <span className="text-[18px] leading-[160%]">+</span>
-                  <span className="text-[32px] leading-10">23</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
-                </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  конверсия в 1-й звонок
+              <div className="case-point-stack">
+                <p className="text-body-18-semibold">в 2x меньше обращений</p>
+                <p>
+                  Помогла уменьшить количество вопросов в поддержку по подключению, стоимости звонков и
+                  списаниям.
                 </p>
               </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3 lg:w-[184px]">
-                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
-                  <span className="text-[32px] leading-10">15</span>
-                  <span className="inline-flex h-10 items-center">
-                    <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
-                  </span>
-                  <span className="text-[32px] leading-10">22</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
-                </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  retention на 4-й неделе
-                </p>
-              </div>
-              <div className="flex min-h-[94px] flex-col items-start gap-space-2 rounded-[12px] bg-card px-space-3 py-space-3 lg:w-[184px]">
-                <p className="whitespace-nowrap text-[0px] font-semibold leading-none text-primary">
-                  <span className="text-[32px] leading-10">40</span>
-                  <span className="inline-flex h-10 items-center">
-                    <Image alt="" src={assets.arrowForward} width={20} height={20} className="h-5 w-5" />
-                  </span>
-                  <span className="text-[32px] leading-10">18</span>
-                  <span className="text-[18px] leading-[160%]">%</span>
-                </p>
-                <p className="whitespace-nowrap text-caption-14 text-secondary">
-                  вопросов в поддержку
+              <div className="case-point-stack">
+                <p className="text-body-18-semibold">15+ ключевых сценариев</p>
+                <p>
+                  Спроектировала основные сценарии приложения — от регистрации и первого звонка до
+                  оплаты, роуминга, eSIM и AI-поддержки.
                 </p>
               </div>
             </div>
-
-            <p className="text-body-18">
-              Для себя я вынесла, что в мобильных продуктах доверие строится через понятную
-              коммуникацию в критические моменты: статус, стоимость, ошибки и следующий шаг.
-            </p>
           </div>
         </motion.section>
 
