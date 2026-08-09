@@ -1031,30 +1031,28 @@ export function WorkCasePage() {
               <div className="case-point-stack gap-space-6">
                 <p className="text-body-18-semibold">2 → 1 workspace</p>
                 <p>
-                  Combined flow search, canvas editing, element setup, and publishing in one workspace.
-                  Managers no longer need to switch between screens.
+                  Combined flow search, element creation and setup, and publishing in one workspace,
+                  eliminating the need to switch between screens.
                 </p>
               </div>
               <div className="case-point-stack gap-space-6">
                 <p className="text-body-18-semibold">Self-service</p>
                 <p>
-                  Made typical changes available without developer involvement — managers can
-                  independently edit flow elements and publish a new version.
+                  Made changes possible without developer involvement — managers can independently
+                  work with a flow from creation to publishing.
                 </p>
               </div>
               <div className="case-point-stack gap-space-6">
-                <p className="text-body-18-semibold">−21% errors</p>
+                <p className="text-body-18-semibold">Fewer errors</p>
                 <p>
-                  Reduced errors and accidental production changes by separating draft and published
-                  versions.
+                  Reduced production errors by 21% by separating draft and published versions.
                 </p>
               </div>
             </div>
 
             <p className="text-body-18">
-              After launch, we continued developing the editor based on client cases: adding new
-              elements, improving work with large flows, and testing. As a result, managers got a tool
-              for independent flow work — from creation to publishing.
+              After launch, I continued developing the editor through client cases: expanding the
+              element library and improving flow scaling and versioning.
             </p>
           </div>
         </motion.section>
