@@ -853,15 +853,15 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-            <div className="case-numbered-point-media case-visual-spacing relative left-1/2 flex w-screen max-w-[850px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+            <div className="case-numbered-point-media case-visual-spacing relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
-              <div className="w-[850px] max-w-none sm:mx-auto sm:w-full sm:max-w-[850px]">
+              <div className="w-[800px] max-w-none sm:mx-auto sm:w-full sm:max-w-[800px]">
                 <Image
                   alt=""
                   src={assets.solutionSuccess}
-                  width={2535}
-                  height={1620}
-                  sizes="(max-width: 640px) 850px, 850px"
+                  width={2400}
+                  height={1584}
+                  sizes="800px"
                   className="h-auto w-full object-contain"
                   loading="lazy"
                   quality={100}
