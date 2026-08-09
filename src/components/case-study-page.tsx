@@ -937,8 +937,8 @@ export function CaseStudyPage() {
                   <Image
                     alt=""
                     src={assets.solutionErrorMobile}
-                    width={1052}
-                    height={532}
+                    width={2850}
+                    height={1440}
                     sizes="1000px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
@@ -949,8 +949,8 @@ export function CaseStudyPage() {
                   <Image
                     alt=""
                     src={assets.solutionError}
-                    width={1052}
-                    height={532}
+                    width={2850}
+                    height={1440}
                     sizes="1000px"
                     className="h-auto w-full object-contain"
                     loading="lazy"
