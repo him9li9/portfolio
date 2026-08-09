@@ -1045,14 +1045,14 @@ export function WorkCasePage() {
               <div className="case-point-stack gap-space-6">
                 <p className="text-body-18-semibold">Fewer errors</p>
                 <p>
-                  Reduced production errors 2.5× by separating draft and published versions.
+                  Over the first 3 months after the changes, production errors decreased 2.5×.
                 </p>
               </div>
             </div>
 
             <p className="text-body-18">
-              After launch, I continued developing the editor through client cases: expanding the
-              element library and improving flow scaling and versioning.
+              After launch, I continued developing the editor with real client scenarios in mind:
+              expanded the element library and improved scaling and versioning.
             </p>
           </div>
         </motion.section>
