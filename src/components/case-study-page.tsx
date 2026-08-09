@@ -11,7 +11,6 @@ const assets = {
   phone2: "/figma/Case_1/Section_1/softphone-home.png",
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   arrowForward: "/figma/Icons/arrow_forward.svg",
-  chartSmall: "/figma/Case_1/Section_1/case-chart-small.png",
   caseDiscovery: "/figma/Case_1/Section_2/case-discovery.png",
   discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1-figma.png",
   discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2-figma.png",
