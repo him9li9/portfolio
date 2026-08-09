@@ -593,7 +593,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="case-visual-spacing relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
-              <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary py-space-8 sm:rounded-[12px] sm:px-space-8">
+              <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-[40px] sm:rounded-[12px] sm:px-space-8">
                 <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
                   <div
                     className="relative w-[900px] max-w-none sm:mx-auto sm:w-full sm:max-w-[900px]"
@@ -672,7 +672,7 @@ export function CaseStudyPage() {
             </div>
 
             <div className="case-visual-spacing relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
-              <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary py-space-8 sm:gap-space-4 sm:rounded-[12px] sm:px-space-8">
+              <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-[40px] sm:gap-space-4 sm:rounded-[12px] sm:px-space-8">
                 <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
                   <div
                     className="relative w-[900px] max-w-none sm:mx-auto sm:w-full sm:max-w-[900px]"
