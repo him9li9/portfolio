@@ -18,8 +18,7 @@ const assets = {
   benchmark: "/figma/Case_1/Section_2/case-benchmark-figma.png",
   userflow: "/figma/Case_1/Section_3/case-userflow.png",
   solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
-  callFlowVideo: "/figma/Case_1/Section_4/call-flow-site.mp4",
-  callFlowPoster: "/figma/Case_1/Section_4/call-flow-poster.png",
+  callFlowVideo: "/figma/Case_1/Section_4/call-flow.mp4",
   solutionError: "/figma/Case_1/Section_4/case-solution-error.png",
   solutionErrorMobile: "/figma/Case_1/Section_4/case-solution-error.png"
 };
@@ -899,7 +898,6 @@ export function CaseStudyPage() {
                   className="h-full w-full object-contain"
                   style={{ height: "100%", maxHeight: "100%" }}
                   src={assets.callFlowVideo}
-                  poster={assets.callFlowPoster}
                   autoPlay
                   muted
                   loop
