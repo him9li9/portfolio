@@ -689,7 +689,7 @@ export function WorkCasePage() {
                 </div>
               </div>
               <p className="w-full text-[14px] leading-[160%] text-primary">
-                Понимать, какие изменения уже влияют на звонки.
+                Понять, какие изменения уже влияют на звонки.
               </p>
               <div className="flex w-full flex-col gap-space-1 text-[14px] leading-[160%] text-primary">
                 <div>
