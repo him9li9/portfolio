@@ -1045,7 +1045,7 @@ export function WorkCasePage() {
               <div className="case-point-stack gap-space-6">
                 <p className="text-body-18-semibold">Fewer errors</p>
                 <p>
-                  Reduced production errors by 21% by separating draft and published versions.
+                  Reduced production errors 2.5× by separating draft and published versions.
                 </p>
               </div>
             </div>
