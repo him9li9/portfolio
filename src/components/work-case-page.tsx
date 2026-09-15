@@ -554,12 +554,12 @@ export function WorkCasePage() {
                 width={800}
                 height={457}
                 sizes="(max-width: 932px) calc(100vw - 32px), 800px"
-                className="h-auto w-full object-contain"
+                className="h-auto w-full rounded-[8px] object-contain"
                 loading="lazy"
                 quality={100}
               />
               <span className="sm:hidden">
-                <ZoomImageShade rounded={false} />
+                <ZoomImageShade />
               </span>
               <span className="sm:hidden">
                 <ZoomIcon />
@@ -568,62 +568,9 @@ export function WorkCasePage() {
           </div>
 
           <p className="text-body-18">
-            <span className="text-body-18-semibold">Вывод:</span> workflow-builder инструменты уходят от
-            отдельных настроек к управлению процессом как единой системой, поскольку пользователю важно
-            понимать состояние сценария и контролировать изменения до того, как они попадут в работу.
+            Гипотезы помогли определить основные направления работы, но в процессе проверки на
+            реальных сценариях они могли уточняться и корректироваться.
           </p>
-
-          <div className="case-media-stack w-full max-w-[800px]">
-            <div className="case-text-stack">
-              <div className="case-h3-stack case-h3-offset">
-                <h3 className="text-h3">Гипотезы</h3>
-                <p className="text-body-18">
-                  На основе анализа я выделила направления, которые могли повлиять на ключевые метрики:
-                </p>
-              </div>
-              <div className="flex flex-col gap-space-6 text-body-18">
-              <div className="flex flex-col gap-space-2">
-                <p className="text-body-18-semibold">1.&nbsp;Организация сценариев</p>
-                <p>
-                  Если сценарии станут более структурированными, пользователям будет проще находить
-                  нужный сценарий и быстрее вносить изменения.
-                </p>
-              </div>
-              <div className="flex flex-col gap-space-2">
-                <p className="text-body-18-semibold">2.&nbsp;Единый контекст</p>
-                <p>
-                  Если работа со сценарием будет происходить в одном контексте, снизится количество
-                  ошибок и нагрузка на поддержку, так как изменения станут более предсказуемыми.
-                </p>
-              </div>
-              <div className="flex flex-col gap-space-2">
-                <p className="text-body-18-semibold">3.&nbsp;Понятные сущности</p>
-                <p>
-                  Если элементы будут названы и сгруппированы по задачам пользователя, снизится
-                  порог входа и сократится time-to-change.
-                </p>
-              </div>
-              <div className="flex flex-col gap-space-2">
-                <p className="text-body-18-semibold">4.&nbsp;Читаемость</p>
-                <p>
-                  Если структура сценария останется понятной даже при росте, пользователям будет
-                  проще воспринимать сценарий как единую систему и быстрее его редактировать.
-                </p>
-              </div>
-              <div className="flex flex-col gap-space-2">
-                <p className="text-body-18-semibold">5.&nbsp;Безопасные изменения</p>
-                <p>
-                  Если пользователь будет понимать, что изменения можно проверить до публикации,
-                  снизится зависимость от разработки и вырастет self-service rate.
-                </p>
-              </div>
-              </div>
-            </div>
-            <p className="text-body-18">
-              Гипотезы помогли определить основные направления работы, но в процессе проверки на
-              реальных сценариях они могли уточняться и корректироваться.
-            </p>
-          </div>
         </motion.section>
 
         <motion.section
@@ -748,7 +695,7 @@ export function WorkCasePage() {
           className="scroll-mt-space-16 case-section-stack"
         >
           <div className="case-h2-stack">
-            <h2 className="text-h2">Решение</h2>
+            <h2 className="text-h2">Решение и тесты</h2>
             <p className="text-body-18">
               Работая над редактором я проверяла, насколько менеджеры понимают структуру сценария,
               могут вносить изменения самостоятельно и не боятся публиковать обновления. После каждой
@@ -1078,7 +1025,7 @@ export function WorkCasePage() {
           { id: "overview", label: "О проекте" },
           { id: "discovery", label: "Дискавери" },
           { id: "design", label: "Проектирование" },
-          { id: "solution", label: "Решение" },
+          { id: "solution", label: "Решение и тесты" },
           { id: "results", label: "Результаты" },
         ].map((item) => (
           <a
@@ -1126,27 +1073,22 @@ export function WorkCasePage() {
               strokeLinejoin="round"
               strokeWidth="2"
             >
-              <path d="M18 6 6 18" />
-              <path d="m6 6 12 12" />
+              <path d="M6 6l12 12M18 6L6 18" />
             </svg>
           </button>
           <div
-            className={`relative flex max-h-full w-full max-w-[1100px] items-start justify-start overflow-auto rounded-[12px] sm:items-center sm:justify-center ${
-              activeZoomImage.hasPanel ? "bg-secondary p-space-4 sm:p-space-6" : ""
-            }`}
+            className="flex h-[90vh] w-[96vw] items-center justify-center overflow-auto"
             onClick={(event) => event.stopPropagation()}
           >
             {activeZoomImage.mediaType === "video" ? (
               <video
                 src={activeZoomImage.src}
-                className="relative h-[var(--zoom-image-height)] w-auto max-w-none object-contain sm:h-auto sm:max-h-[calc(100vh-64px)] sm:w-full"
-                style={{
-                  "--zoom-image-height": `calc(${zoomScale * 100}vh - ${96 * zoomScale}px)`
-                } as React.CSSProperties}
+                className="max-h-[90vh] max-w-[96vw] object-contain"
                 autoPlay
                 muted
                 loop
                 playsInline
+                controls
               />
             ) : (
               <Image
@@ -1154,42 +1096,10 @@ export function WorkCasePage() {
                 src={activeZoomImage.src}
                 width={activeZoomImage.width}
                 height={activeZoomImage.height}
-                sizes="100vw"
-                className="relative h-[var(--zoom-image-height)] w-auto max-w-none object-contain sm:h-auto sm:max-h-[calc(100vh-64px)] sm:w-full"
-                style={{
-                  "--zoom-image-height": `calc(${zoomScale * 100}vh - ${96 * zoomScale}px)`
-                } as React.CSSProperties}
+                className="max-h-[90vh] max-w-[96vw] object-contain"
                 quality={100}
               />
             )}
-          </div>
-          <div className="absolute bottom-space-4 right-space-4 z-10 flex gap-space-2 sm:hidden">
-            <button
-              type="button"
-              aria-label="Уменьшить"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
-              onClick={(event) => {
-                event.stopPropagation();
-                setZoomScale((value) => Math.max(0.3, Math.round((value - 0.25) * 100) / 100));
-              }}
-            >
-              <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">
-                <path d="M6 12h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
-              </svg>
-            </button>
-            <button
-              type="button"
-              aria-label="Увеличить"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
-              onClick={(event) => {
-                event.stopPropagation();
-                setZoomScale((value) => Math.min(2, Math.round((value + 0.25) * 100) / 100));
-              }}
-            >
-              <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">
-                <path d="M12 6v12M6 12h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
-              </svg>
-            </button>
           </div>
         </div>
       ) : null}
