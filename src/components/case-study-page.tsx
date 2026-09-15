@@ -827,7 +827,7 @@ export function CaseStudyPage() {
         >
           <div className="case-content-stack">
             <div className="case-h2-stack">
-              <h2 className="text-h2">Решение</h2>
+              <h2 className="text-h2">Решение и тесты</h2>
               <p className="text-body-18">
                 Первые тесты показали: даже там, где логика казалась очевидной, пользователи
                 ошибались. Поэтому я собрала обратную связь, переработала несколько сценариев и
@@ -1033,7 +1033,7 @@ export function CaseStudyPage() {
           { id: "overview", label: "О проекте" },
           { id: "discovery", label: "Дискавери" },
           { id: "design", label: "Проектирование" },
-          { id: "solution", label: "Решение" },
+          { id: "solution", label: "Решение и тесты" },
           { id: "results", label: "Результаты" },
         ].map((item) => (
           <a
@@ -1085,17 +1085,13 @@ export function CaseStudyPage() {
                   strokeLinejoin="round"
                   strokeWidth="2"
                 >
-                  <path d="M18 6 6 18" />
-                  <path d="m6 6 12 12" />
+                  <path d="M6 6l12 12M18 6L6 18" />
                 </svg>
               </button>
             </div>
             <div
               ref={userflowViewportRef}
-              className={`relative h-full w-full overflow-hidden ${
-                canDragUserflow ? (isDraggingUserflow ? "cursor-grabbing" : "cursor-grab") : "cursor-default"
-              }`}
-              style={{ touchAction: "none" }}
+              className={`h-full w-full overflow-hidden ${canDragUserflow ? (isDraggingUserflow ? "cursor-grabbing" : "cursor-grab") : "cursor-default"}`}
               onMouseDown={handleUserflowMouseDown}
               onMouseMove={handleUserflowMouseMove}
               onMouseUp={handleUserflowMouseUp}
@@ -1105,61 +1101,24 @@ export function CaseStudyPage() {
               onTouchEnd={handleUserflowTouchEnd}
               onClick={(event) => event.stopPropagation()}
             >
-              <div className="absolute left-1/2 top-1/2">
-                <div
-                  style={{
-                    width: `${activeLightbox.baseWidth}px`,
-                    height: `${activeLightbox.baseHeight}px`,
-                    transform: `translate(-50%, -50%) translate(${userflowOffset.x}px, ${userflowOffset.y}px) scale(${lightboxScale})`,
-                    transformOrigin: "center",
-                  }}
-                >
-                  <Image
-                    alt=""
-                    src={activeLightbox.src}
-                    width={activeLightbox.imageWidth}
-                    height={activeLightbox.imageHeight}
-                    sizes="(max-width: 640px) 1600px, 1500px"
-                    className="pointer-events-none h-full w-full select-none object-contain"
-                    draggable={false}
-                    priority
-                    quality={100}
-                  />
-                </div>
+              <div
+                className="absolute left-1/2 top-1/2 origin-center"
+                style={{
+                  transform: `translate(-50%, -50%) translate(${userflowOffset.x}px, ${userflowOffset.y}px) scale(${lightboxScale})`,
+                  width: activeLightbox.baseWidth,
+                  height: activeLightbox.baseHeight,
+                }}
+              >
+                <Image
+                  src={activeLightbox.src}
+                  alt=""
+                  width={activeLightbox.imageWidth}
+                  height={activeLightbox.imageHeight}
+                  className="h-full w-full select-none object-contain"
+                  draggable={false}
+                  quality={100}
+                />
               </div>
-            </div>
-            <div className="absolute bottom-3 right-3 z-10 flex gap-space-2 sm:bottom-6 sm:right-6">
-              <button
-                type="button"
-                aria-label="Zoom out"
-                className="relative flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
-                onMouseDown={(event) => event.stopPropagation()}
-                onTouchStart={(event) => event.stopPropagation()}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  const minScale = window.matchMedia("(max-width: 639px)").matches ? 0.3 : 1;
-                  setLightboxScale((value) => Math.max(minScale, Math.round((value - 0.5) * 10) / 10));
-                }}
-              >
-                <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">
-                  <path d="M6 12h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                aria-label="Zoom in"
-                className="relative flex h-10 w-10 items-center justify-center rounded-full bg-elevated text-primary transition-colors duration-200 hover:bg-elevated-hover"
-                onMouseDown={(event) => event.stopPropagation()}
-                onTouchStart={(event) => event.stopPropagation()}
-                onClick={(event) => {
-                  event.stopPropagation();
-                  setLightboxScale((value) => Math.min(3, Math.round((value + 0.5) * 10) / 10));
-                }}
-              >
-                <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5" fill="none">
-                  <path d="M12 6v12M6 12h12" stroke="currentColor" strokeLinecap="round" strokeWidth="2" />
-                </svg>
-              </button>
             </div>
           </div>
         </div>
