@@ -12,7 +12,16 @@ const assets = {
   phone2: "/figma/Case_1/Section_1/softphone-home.png",
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   vpbxCanvas: "/figma/Case_2/Section_1/vpbx-canvas.png",
+  appState: "/figma/Case_3/Section_1/app-state.png",
+  appGoals: "/figma/Case_3/Section_1/app-goals.png",
   arrowForward: "/figma/Icons/arrow_forward.svg"
+};
+
+const thirdProject: { title: string; description: string; tags: string[]; href?: string } = {
+  title: "Camomile",
+  description: "Разработала приложение для отслеживания баланса сфер жизни, личных целей и сохранения моментов.",
+  tags: ["Telegram Mini App", "AI-first project"],
+  href: "https://t.me/cam0mile_bot"
 };
 
 const footerLinks = [
@@ -322,6 +331,77 @@ export function HomePage() {
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
+                </div>
+              </div>
+            </article>
+            <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
+              <a
+                href={thirdProject.href}
+                target={thirdProject.href ? "_blank" : undefined}
+                rel={thirdProject.href ? "noopener noreferrer" : undefined}
+                aria-label={thirdProject.href ? `Перейти в приложение ${thirdProject.title}` : undefined}
+                className="block w-full"
+              >
+                <div className="relative left-1/2 flex w-screen -translate-x-1/2 items-center justify-center gap-space-4 bg-secondary px-space-4 py-space-6 sm:w-[900px] sm:gap-space-6 sm:rounded-[12px] sm:px-space-10 sm:py-space-8">
+                  <Image
+                    alt="Экран состояния по сферам жизни"
+                    src={assets.appState}
+                    width={900}
+                    height={1840}
+                    sizes="(max-width: 639px) calc((100vw - 48px) / 2), 280px"
+                    className="h-auto w-[calc((100%-16px)/2)] max-w-[280px] shrink-0 sm:w-[280px]"
+                    quality={100}
+                  />
+                  <Image
+                    alt="Экран целей на месяц"
+                    src={assets.appGoals}
+                    width={900}
+                    height={1840}
+                    sizes="(max-width: 639px) calc((100vw - 48px) / 2), 280px"
+                    className="h-auto w-[calc((100%-16px)/2)] max-w-[280px] shrink-0 sm:w-[280px]"
+                    quality={100}
+                  />
+                </div>
+              </a>
+
+              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[900px]">
+                <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
+                  <h3 className="text-h2">{thirdProject.title}</h3>
+                  <a
+                    href={thirdProject.href}
+                    target={thirdProject.href ? "_blank" : undefined}
+                    rel={thirdProject.href ? "noopener noreferrer" : undefined}
+                    aria-disabled={!thirdProject.href || undefined}
+                    className={`hidden shrink-0 items-center gap-space-1 text-body-16 sm:flex ${thirdProject.href ? "link-underline text-primary" : "text-secondary"}`}
+                  >
+                    <span>Перейти в приложение</span>
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                  </a>
+                </div>
+                <div className="flex w-full flex-col items-start gap-space-2">
+                  <div className="h-px w-full bg-border-elevated" />
+                  <p className="w-full max-w-[500px] text-body-18 text-primary">
+                    {thirdProject.description}
+                  </p>
+                  {thirdProject.tags.length > 0 && (
+                    <div className="flex flex-wrap items-start gap-space-2">
+                      {thirdProject.tags.map((tag) => (
+                        <span key={tag} className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <a
+                    href={thirdProject.href}
+                    target={thirdProject.href ? "_blank" : undefined}
+                    rel={thirdProject.href ? "noopener noreferrer" : undefined}
+                    aria-disabled={!thirdProject.href || undefined}
+                    className={`mt-space-1 flex items-center gap-space-1 text-body-16 sm:hidden ${thirdProject.href ? "text-primary" : "text-secondary"}`}
+                  >
+                    <span>Перейти в приложение</span>
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                  </a>
                 </div>
               </div>
             </article>
