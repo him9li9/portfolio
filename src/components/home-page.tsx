@@ -189,7 +189,7 @@ export function HomePage() {
         </motion.section>
 
         <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-6 sm:items-center">
-          <h3 className="w-full text-left text-h4 sm:text-center">
+          <h3 className="w-full text-left text-h3 sm:text-center">
             Мои проекты
           </h3>
 
