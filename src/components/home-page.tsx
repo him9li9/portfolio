@@ -12,8 +12,8 @@ const assets = {
   phone2: "/figma/Case_1/Section_1/softphone-home.png",
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   vpbxCanvas: "/figma/Case_2/Section_1/vpbx-canvas.png",
-  appState: "/figma/Case_3/Section_1/app-state.png",
-  appGoals: "/figma/Case_3/Section_1/app-goals.png",
+  appState: "/figma/Case_3/Section_1/app-state-v2.png",
+  appGoals: "/figma/Case_3/Section_1/app-goals-v2.png",
   arrowForward: "/figma/Icons/arrow_forward.svg"
 };
 
