@@ -19,7 +19,7 @@ const assets = {
 
 const thirdProject: { title: string; description: string; tags: string[]; href?: string } = {
   title: "Camomile",
-  description: "Разработала приложение для отслеживания баланса сфер жизни, личных целей и сохранения моментов.",
+  description: "Разработала приложение для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов.",
   tags: ["Telegram Mini App", "AI-first project"],
   href: "https://t.me/cam0mile_bot"
 };
