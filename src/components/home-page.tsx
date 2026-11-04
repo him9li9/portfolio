@@ -8,29 +8,26 @@ import { useEffect, useRef, useState } from "react";
 const assets = {
   avatar: "/figma/avatar.png",
   heart: "/figma/Icons/heart.svg",
-  phone1: "/figma/Case_1/Section_1/softphone-success.png",
-  phone2: "/figma/Case_1/Section_1/softphone-home.png",
-  phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
+  phone1: "/figma/Case_1/Section_1/softphone-home.png",
+  phone2: "/figma/Case_1/Section_1/softphone-success.png",
   vpbxCanvas: "/figma/Case_2/Section_1/vpbx-canvas.png",
   appState: "/figma/Case_3/Section_1/app-state-v2.png",
   appGoals: "/figma/Case_3/Section_1/app-goals-v2.png",
   arrowForward: "/figma/Icons/arrow_forward.svg"
 };
 
-const thirdProject: { title: string; description: string; tags: string[]; href?: string } = {
+const thirdProject = {
   title: "Camomile",
-  description: "Разработала приложение для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов.",
-  tags: ["Telegram Mini App", "AI-first project"],
+  description: "Разработала в Codex приложение для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов.",
   href: "https://t.me/cam0mile_bot"
 };
 
 const footerLinks = [
-  { label: "Telegram", href: "https://t.me/him9li9" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/nastya-ermoshina-781714274" },
   {
     label: "CV",
     href: "https://drive.google.com/file/d/1jXFLR65AUPIRSsSU4JpdDGOdRiS_aMF4/view?usp=sharing"
-  }
+  },
+  { label: "Telegram", href: "https://t.me/him9li9" }
 ];
 
 export function HomePage() {
@@ -163,9 +160,9 @@ export function HomePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto flex w-full max-w-[900px] flex-col gap-[140px] px-space-4 pb-0 pt-[140px] sm:px-space-8 lg:px-0"
+        className="mx-auto flex w-full max-w-[900px] flex-col gap-[100px] px-space-4 pt-[140px] sm:px-space-8 lg:px-0"
       >
-        <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-3 sm:items-center">
+        <motion.section variants={item} className="mx-auto flex w-full flex-col items-start gap-space-3 sm:items-center">
           <div className="flex flex-col items-start justify-center gap-space-8 sm:items-center">
             <div className="relative h-[100px] w-[120px] overflow-hidden rounded-[100px]">
               <Image
@@ -176,257 +173,191 @@ export function HomePage() {
                 priority
                 sizes="120px"
                 className="h-full w-full object-cover"
-              quality={100}
+                quality={100}
               />
             </div>
-            <h1 className="text-left text-h2 sm:text-center">
+            <h1 className="text-left text-[28px] font-semibold leading-normal sm:text-center">
               Привет, я Настя Ермошина
             </h1>
           </div>
-          <p className="w-full text-left text-body-18 text-primary sm:w-[482px] sm:text-center">
+          <p className="w-full text-left text-body-16 text-primary sm:w-[480px] sm:text-center">
             Продуктовый дизайнер с 4+ годами опыта в мобильных и B2B-продуктах. Разбираюсь в сложных сценариях и довожу решения до релиза. Использую AI для быстрых экспериментов, прототипирования и работы с кодом.
           </p>
+          <nav aria-label="Ссылки" className="flex items-center gap-space-4 text-body-16 text-primary">
+            {footerLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="link-underline inline-flex items-center gap-space-1"
+              >
+                <span>{link.label}</span>
+                <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+              </a>
+            ))}
+          </nav>
         </motion.section>
 
-        <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-6 sm:items-center">
-          <h3 className="w-full text-left text-h3 sm:text-center">
-            Мои проекты
-          </h3>
-
-          <div className="flex w-full flex-col items-start gap-[140px] sm:items-center">
+        <motion.section variants={item} className="mx-auto flex w-full flex-col items-start gap-space-6 sm:items-center">
+          <h2 className="w-full text-left text-h4 sm:text-center">Рабочие проекты</h2>
+          <div className="flex w-full flex-col items-start gap-[100px] sm:items-center">
             <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
-              <Link
-                href="/app"
-                prefetch={false}
-                aria-label="Открыть кейс MCN Softphone"
-                className="group block w-full"
-              >
+              <Link href="/app" prefetch={false} aria-label="Открыть кейс MCN Softphone" className="group block w-full">
                 <div
                   ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary px-space-4 py-space-6 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-4 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-[#1c1c1c] px-space-4 py-space-6 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-8 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
                 >
-                  <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
+                  <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-8">
                     <Image
-                      alt="Экран регистрации MCN Softphone"
+                      alt="Главный экран MCN Softphone"
                       src={assets.phone1}
-                      width={735}
+                      width={732}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 190px, 240px"
-                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
+                      sizes="(max-width: 639px) 176px, 280px"
+                      className="h-[360px] w-auto shrink-0 sm:h-[572px]"
                       quality={100}
                     />
                     <Image
                       ref={softphoneCenterPhoneRef}
-                      alt="Экран тарифа MCN Softphone"
+                      alt="Подтверждение регистрации MCN Softphone"
                       src={assets.phone2}
-                      width={732}
-                      height={1500}
-                      priority
-                      sizes="(max-width: 640px) 263px, 280px"
-                      className="h-[540px] w-auto shrink-0 sm:h-auto sm:w-[280px]"
-                      quality={100}
-                    />
-                    <Image
-                      alt="Экран звонка MCN Softphone"
-                      src={assets.phone3}
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 640px) 190px, 240px"
-                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
+                      sizes="(max-width: 639px) 176px, 280px"
+                      className="h-[360px] w-auto shrink-0 sm:h-[572px]"
                       quality={100}
                     />
                   </div>
                 </div>
               </Link>
-
-              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[900px]">
-                <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
-                  <h3 className="text-h2">MCN Softphone</h3>
-                  <Link
-                    href="/app"
-                    prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
-                  >
+              <div className="flex w-full flex-col items-start gap-space-1">
+                <div className="flex w-full flex-col gap-space-2 sm:flex-row sm:items-start sm:justify-between">
+                  <h3 className="text-[28px] font-semibold leading-normal">MCN Softphone</h3>
+                  <Link href="/app" prefetch={false} className="link-underline hidden shrink-0 items-center gap-space-1 text-body-16 sm:flex">
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="flex w-full flex-col items-start gap-space-2">
-                  <div className="h-px w-full bg-border-elevated" />
-                  <p className="w-full max-w-[500px] text-body-18 text-primary">
-                    Упростила регистрацию, сократила путь до первого звонка и сделала стоимость связи прозрачнее.
-                  </p>
-                  <div className="flex flex-wrap items-start gap-space-2">
-                    <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      B2C
-                    </span>
-                    <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      Mobile app
-                    </span>
+                <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
+                  <p>Переработала регистрацию и активацию номера в приложении интернет-телефонии, сократив путь до первого звонка с 8 до 3 шагов и количество обращений по подключению и тарификации в 2 раза.</p>
+                  <div className="flex flex-col text-[#a0a0a0]">
+                    <p>Продуктовый дизайнер · 2024 — н.в.</p>
+                    <p>B2C · Mobile app</p>
                   </div>
-                  <Link
-                    href="/app"
-                    prefetch={false}
-                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
-                  >
-                    <span>Смотреть кейс</span>
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-                  </Link>
                 </div>
+                <Link href="/app" prefetch={false} className="mt-space-2 inline-flex items-center gap-space-1 text-body-16 sm:hidden">
+                  <span>Смотреть кейс</span>
+                  <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                </Link>
               </div>
             </article>
 
             <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
-              <Link
-                href="/work"
-                prefetch={false}
-                aria-label="Открыть кейс KOMPaaS"
-                className="group block w-full"
-              >
+              <Link href="/work" prefetch={false} aria-label="Открыть кейс KOMPaaS" className="group block w-full">
                 <div className="relative w-full overflow-hidden rounded-[8px] sm:left-1/2 sm:w-[900px] sm:-translate-x-1/2">
                   <Image
-                    alt="KOMPaaS canvas preview"
+                    alt="Конструктор сценариев звонков KOMPaaS"
                     src={assets.vpbxCanvas}
                     width={2400}
                     height={1500}
-                    sizes="(max-width: 640px) calc(100vw - 32px), 900px"
+                    sizes="(max-width: 639px) calc(100vw - 32px), 900px"
                     className="h-auto w-full"
-                  quality={100}
+                    quality={100}
                   />
                 </div>
               </Link>
-
-              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[900px]">
-                <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
-                  <h3 className="text-h2">KOMPaaS</h3>
-                  <Link
-                    href="/work"
-                    prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
-                  >
+              <div className="flex w-full flex-col items-start gap-space-1">
+                <div className="flex w-full flex-col gap-space-2 sm:flex-row sm:items-start sm:justify-between">
+                  <h3 className="text-[28px] font-semibold leading-normal">KOMPaaS</h3>
+                  <Link href="/work" prefetch={false} className="link-underline hidden shrink-0 items-center gap-space-1 text-body-16 sm:flex">
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="flex w-full flex-col items-start gap-space-2">
-                  <div className="h-px w-full bg-border-elevated" />
-                  <p className="w-full max-w-[500px] text-body-18 text-primary">
-                    Спроектировала единый workspace для самостоятельной работы менеджеров со сценариями звонков.
-                  </p>
-                  <div className="flex flex-wrap items-start gap-space-2">
-                    <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      B2B
-                    </span>
-                    <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      Self-service
-                    </span>
+                <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
+                  <p>Спроектировала редактор для самостоятельной работы менеджеров со сценариями звонков, снизив количество ошибок на продакшене в 2,5 раза за первые три месяца после изменений.</p>
+                  <div className="flex flex-col text-[#a0a0a0]">
+                    <p>Продуктовый дизайнер · 2023 — 2025</p>
+                    <p>B2B · Self-service</p>
                   </div>
-                  <Link
-                    href="/work"
-                    prefetch={false}
-                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
-                  >
-                    <span>Смотреть кейс</span>
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-                  </Link>
                 </div>
-              </div>
-            </article>
-            <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
-              <a
-                href={thirdProject.href}
-                target={thirdProject.href ? "_blank" : undefined}
-                rel={thirdProject.href ? "noopener noreferrer" : undefined}
-                aria-label={thirdProject.href ? `Перейти в приложение ${thirdProject.title}` : undefined}
-                className="block w-full"
-              >
-                <div className="relative left-1/2 flex w-screen -translate-x-1/2 items-center justify-center gap-space-4 bg-secondary px-space-4 py-space-6 sm:w-[900px] sm:gap-space-6 sm:rounded-[12px] sm:px-space-10 sm:py-space-8">
-                  <Image
-                    alt="Экран состояния по сферам жизни"
-                    src={assets.appState}
-                    width={900}
-                    height={1840}
-                    sizes="(max-width: 639px) calc((100vw - 48px) / 2), 280px"
-                    className="h-auto w-[calc((100%-16px)/2)] max-w-[280px] shrink-0 sm:w-[280px]"
-                    quality={100}
-                  />
-                  <Image
-                    alt="Экран целей на месяц"
-                    src={assets.appGoals}
-                    width={900}
-                    height={1840}
-                    sizes="(max-width: 639px) calc((100vw - 48px) / 2), 280px"
-                    className="h-auto w-[calc((100%-16px)/2)] max-w-[280px] shrink-0 sm:w-[280px]"
-                    quality={100}
-                  />
-                </div>
-              </a>
-
-              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[900px]">
-                <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
-                  <h3 className="text-h2">{thirdProject.title}</h3>
-                  <a
-                    href={thirdProject.href}
-                    target={thirdProject.href ? "_blank" : undefined}
-                    rel={thirdProject.href ? "noopener noreferrer" : undefined}
-                    aria-disabled={!thirdProject.href || undefined}
-                    className={`hidden shrink-0 items-center gap-space-1 text-body-16 sm:flex ${thirdProject.href ? "link-underline text-primary" : "text-secondary"}`}
-                  >
-                    <span>Перейти в приложение</span>
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-                  </a>
-                </div>
-                <div className="flex w-full flex-col items-start gap-space-2">
-                  <div className="h-px w-full bg-border-elevated" />
-                  <p className="w-full max-w-[500px] text-body-18 text-primary">
-                    {thirdProject.description}
-                  </p>
-                  {thirdProject.tags.length > 0 && (
-                    <div className="flex flex-wrap items-start gap-space-2">
-                      {thirdProject.tags.map((tag) => (
-                        <span key={tag} className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  <a
-                    href={thirdProject.href}
-                    target={thirdProject.href ? "_blank" : undefined}
-                    rel={thirdProject.href ? "noopener noreferrer" : undefined}
-                    aria-disabled={!thirdProject.href || undefined}
-                    className={`mt-space-1 flex items-center gap-space-1 text-body-16 sm:hidden ${thirdProject.href ? "text-primary" : "text-secondary"}`}
-                  >
-                    <span>Перейти в приложение</span>
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-                  </a>
-                </div>
+                <Link href="/work" prefetch={false} className="mt-space-2 inline-flex items-center gap-space-1 text-body-16 sm:hidden">
+                  <span>Смотреть кейс</span>
+                  <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                </Link>
               </div>
             </article>
           </div>
         </motion.section>
+
+        <motion.section variants={item} className="mx-auto flex w-full flex-col items-start gap-space-6 sm:items-center">
+          <h2 className="w-full text-left text-h4 sm:text-center">Личные проекты</h2>
+          <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
+            <a
+              href={thirdProject.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Перейти в Camomile"
+              className="group block w-full"
+            >
+              <div className="relative left-1/2 flex w-screen -translate-x-1/2 items-center justify-center gap-space-4 bg-[#1c1c1c] px-space-4 py-space-6 sm:w-[900px] sm:gap-space-8 sm:rounded-[12px] sm:px-space-10 sm:py-space-8">
+                <Image
+                  alt="Экран оценки сфер жизни Camomile"
+                  src={assets.appState}
+                  width={900}
+                  height={1840}
+                  sizes="(max-width: 639px) calc((100vw - 48px) / 2), 280px"
+                  className="h-auto w-[calc((100%-16px)/2)] max-w-[280px] shrink-0 sm:w-[280px]"
+                  quality={100}
+                />
+                <Image
+                  alt="Экран целей Camomile"
+                  src={assets.appGoals}
+                  width={900}
+                  height={1840}
+                  sizes="(max-width: 639px) calc((100vw - 48px) / 2), 280px"
+                  className="h-auto w-[calc((100%-16px)/2)] max-w-[280px] shrink-0 sm:w-[280px]"
+                  quality={100}
+                />
+              </div>
+            </a>
+            <div className="flex w-full flex-col items-start gap-space-1">
+              <div className="flex w-full flex-col gap-space-2 sm:flex-row sm:items-start sm:justify-between">
+                <h3 className="text-[28px] font-semibold leading-normal">{thirdProject.title}</h3>
+                <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" className="link-underline hidden shrink-0 items-center gap-space-1 text-body-16 sm:flex">
+                  <span>Перейти в приложение</span>
+                  <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                </a>
+              </div>
+              <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
+                <p>{thirdProject.description}</p>
+                <div className="flex flex-col text-[#a0a0a0]">
+                  <p>Продуктовый дизайнер · 2026</p>
+                  <p>AI-first · Telegram mini app</p>
+                </div>
+              </div>
+              <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" className="mt-space-2 inline-flex items-center gap-space-1 text-body-16 sm:hidden">
+                <span>Перейти в приложение</span>
+                <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+              </a>
+            </div>
+          </article>
+        </motion.section>
       </motion.div>
-      <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-space-6 sm:px-0 sm:pb-[40px]">
-        <div className="flex flex-col gap-space-3">
-          <h3 className="text-h4">Связаться со мной</h3>
-        </div>
+
+      <footer className="mx-auto mt-[100px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-[70px] sm:px-space-8 lg:px-0">
+        <h2 className="text-h4">Связаться со мной</h2>
         <div className="h-px w-full bg-border-elevated" />
         <div className="flex w-full flex-col gap-space-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:justify-between min-[900px]:gap-space-2">
-          <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-16 text-primary">
-            {footerLinks.map((link, index) => (
-              <div key={link.label} className="flex items-center gap-space-2">
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-underline"
-                >
-                  {link.label}
-                </a>
-                {index < footerLinks.length - 1 ? <span className="text-secondary">·</span> : null}
-              </div>
+          <nav aria-label="Контакты" className="flex flex-wrap items-center gap-space-4 text-body-16 text-primary">
+            {footerLinks.map((link) => (
+              <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" className="link-underline inline-flex items-center gap-space-1">
+                <span>{link.label}</span>
+                <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+              </a>
             ))}
           </nav>
           <p className="text-body-16 text-secondary min-[900px]:ml-auto">Nastya Ermoshina © 2026</p>
