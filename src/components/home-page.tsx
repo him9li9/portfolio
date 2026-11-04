@@ -180,8 +180,11 @@ export function HomePage() {
               Привет, я Настя Ермошина
             </h1>
           </div>
-          <p className="w-full text-left text-body-16 text-primary sm:w-[480px] sm:text-center">
-            Продуктовый дизайнер с 4+ годами опыта в мобильных и B2B-продуктах. Разбираюсь в сложных сценариях и довожу решения до релиза. Использую AI для быстрых экспериментов, прототипирования и работы с кодом.
+          <p className="w-full text-left text-body-16 text-primary sm:w-[480px] sm:text-center sm:whitespace-nowrap">
+            Продуктовый дизайнер с 4+ годами опыта в мобильных<br className="hidden sm:block" />{" "}
+            и B2B-продуктах. Разбираюсь в сложных сценариях и довожу<br className="hidden sm:block" />{" "}
+            решения до релиза. Использую AI для быстрых экспериментов,<br className="hidden sm:block" />{" "}
+            прототипирования и работы с кодом.
           </p>
           <nav aria-label="Ссылки" className="flex items-center gap-space-4 text-body-16 text-primary">
             {footerLinks.map((link) => (
@@ -242,7 +245,11 @@ export function HomePage() {
                   </Link>
                 </div>
                 <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
-                  <p>Переработала регистрацию и активацию номера в приложении интернет-телефонии, сократив путь до первого звонка с 8 до 3 шагов и количество обращений по подключению и тарификации в 2 раза.</p>
+                  <p className="sm:whitespace-nowrap">
+                    Переработала регистрацию и активацию номера в приложении<br className="hidden sm:block" />{" "}
+                    интернет-телефонии, сократив путь до первого звонка с 8 до 3 шагов<br className="hidden sm:block" />{" "}
+                    и количество обращений по подключению и тарификации в 2 раза.
+                  </p>
                   <div className="flex flex-col text-[#a0a0a0]">
                     <p>Продуктовый дизайнер · 2024 — н.в.</p>
                     <p>B2C · Mobile app</p>
@@ -278,7 +285,11 @@ export function HomePage() {
                   </Link>
                 </div>
                 <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
-                  <p>Спроектировала редактор для самостоятельной работы менеджеров со сценариями звонков, снизив количество ошибок на продакшене в 2,5 раза за первые три месяца после изменений.</p>
+                  <p className="sm:whitespace-nowrap">
+                    Спроектировала редактор для самостоятельной работы менеджеров<br className="hidden sm:block" />{" "}
+                    со сценариями звонков, снизив количество ошибок на продакшене<br className="hidden sm:block" />{" "}
+                    в 2,5 раза за первые 3 месяца после изменений.
+                  </p>
                   <div className="flex flex-col text-[#a0a0a0]">
                     <p>Продуктовый дизайнер · 2023 — 2025</p>
                     <p>B2B · Self-service</p>
@@ -333,7 +344,10 @@ export function HomePage() {
                 </a>
               </div>
               <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
-                <p>{thirdProject.description}</p>
+                <p className="sm:whitespace-nowrap">
+                  Разработала в Codex приложение для отслеживания баланса сфер<br className="hidden sm:block" />{" "}
+                  жизни, личных целей и сохранения важных моментов.
+                </p>
                 <div className="flex flex-col text-[#a0a0a0]">
                   <p>Продуктовый дизайнер · 2026</p>
                   <p>AI-first · Telegram mini app</p>
