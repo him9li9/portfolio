@@ -209,7 +209,7 @@ export function HomePage() {
               <Link href="/app" prefetch={false} aria-label="Открыть кейс MCN Softphone" className="group block w-full">
                 <div
                   ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-[#1c1c1c] px-space-4 py-space-6 sm:flex sm:w-full sm:items-center sm:justify-center sm:gap-space-8 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-[#1c1c1c] px-space-4 py-space-6 sm:flex sm:h-[550px] sm:w-full sm:items-center sm:justify-center sm:gap-space-8 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
                 >
                   <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-8">
                     <Image
@@ -218,8 +218,8 @@ export function HomePage() {
                       width={732}
                       height={1500}
                       priority
-                      sizes="(max-width: 639px) 176px, 280px"
-                      className="h-[360px] w-auto shrink-0 sm:h-[572px]"
+                      sizes="(max-width: 639px) 176px, 238px"
+                      className="h-[360px] w-auto shrink-0 sm:h-[486px]"
                       quality={100}
                     />
                     <Image
@@ -229,8 +229,8 @@ export function HomePage() {
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 639px) 176px, 280px"
-                      className="h-[360px] w-auto shrink-0 sm:h-[572px]"
+                      sizes="(max-width: 639px) 176px, 238px"
+                      className="h-[360px] w-auto shrink-0 sm:h-[486px]"
                       quality={100}
                     />
                   </div>
@@ -314,14 +314,14 @@ export function HomePage() {
               aria-label="Перейти в Camomile"
               className="group block w-full"
             >
-              <div className="relative left-1/2 flex w-screen -translate-x-1/2 items-center justify-center gap-space-4 bg-[#1c1c1c] px-space-4 py-space-6 sm:w-full sm:gap-space-8 sm:rounded-[12px] sm:px-space-10 sm:py-space-8">
+              <div className="relative left-1/2 flex w-screen -translate-x-1/2 items-center justify-center gap-space-4 bg-[#1c1c1c] px-space-4 py-space-6 sm:h-[550px] sm:w-full sm:gap-space-8 sm:rounded-[12px] sm:px-space-10 sm:py-space-8">
                 <Image
                   alt="Экран оценки сфер жизни Camomile"
                   src={assets.appState}
                   width={900}
                   height={1840}
-                  sizes="(max-width: 639px) calc((100vw - 48px) / 2), 280px"
-                  className="h-auto w-[calc((100%-16px)/2)] max-w-[280px] shrink-0 sm:w-[280px]"
+                  sizes="(max-width: 639px) calc((100vw - 48px) / 2), 238px"
+                  className="h-auto w-[calc((100%-16px)/2)] max-w-[280px] shrink-0 sm:h-[486px] sm:w-auto"
                   quality={100}
                 />
                 <Image
@@ -329,8 +329,8 @@ export function HomePage() {
                   src={assets.appGoals}
                   width={900}
                   height={1840}
-                  sizes="(max-width: 639px) calc((100vw - 48px) / 2), 280px"
-                  className="h-auto w-[calc((100%-16px)/2)] max-w-[280px] shrink-0 sm:w-[280px]"
+                  sizes="(max-width: 639px) calc((100vw - 48px) / 2), 238px"
+                  className="h-auto w-[calc((100%-16px)/2)] max-w-[280px] shrink-0 sm:h-[486px] sm:w-auto"
                   quality={100}
                 />
               </div>
