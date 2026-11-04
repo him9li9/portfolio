@@ -160,7 +160,7 @@ export function HomePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto flex w-full max-w-[900px] flex-col gap-[100px] px-space-4 pt-[140px] sm:px-space-8 lg:px-0"
+        className="mx-auto flex w-full max-w-[800px] flex-col gap-[100px] px-space-4 pt-[140px] sm:px-0"
       >
         <motion.section variants={item} className="mx-auto flex w-full flex-col items-start gap-space-3 sm:items-center">
           <div className="flex flex-col items-start justify-center gap-space-8 sm:items-center">
@@ -209,7 +209,7 @@ export function HomePage() {
               <Link href="/app" prefetch={false} aria-label="Открыть кейс MCN Softphone" className="group block w-full">
                 <div
                   ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-[#1c1c1c] px-space-4 py-space-6 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-8 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
+                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-[#1c1c1c] px-space-4 py-space-6 sm:flex sm:w-full sm:items-center sm:justify-center sm:gap-space-8 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
                 >
                   <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-8">
                     <Image
@@ -264,13 +264,13 @@ export function HomePage() {
 
             <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
               <Link href="/work" prefetch={false} aria-label="Открыть кейс KOMPaaS" className="group block w-full">
-                <div className="relative w-full overflow-hidden rounded-[8px] sm:left-1/2 sm:w-[900px] sm:-translate-x-1/2">
+                <div className="relative w-full overflow-hidden rounded-[8px] sm:left-1/2 sm:w-full sm:-translate-x-1/2">
                   <Image
                     alt="Конструктор сценариев звонков KOMPaaS"
                     src={assets.vpbxCanvas}
                     width={2400}
                     height={1500}
-                    sizes="(max-width: 639px) calc(100vw - 32px), 900px"
+                    sizes="(max-width: 639px) calc(100vw - 32px), 800px"
                     className="h-auto w-full"
                     quality={100}
                   />
@@ -314,7 +314,7 @@ export function HomePage() {
               aria-label="Перейти в Camomile"
               className="group block w-full"
             >
-              <div className="relative left-1/2 flex w-screen -translate-x-1/2 items-center justify-center gap-space-4 bg-[#1c1c1c] px-space-4 py-space-6 sm:w-[900px] sm:gap-space-8 sm:rounded-[12px] sm:px-space-10 sm:py-space-8">
+              <div className="relative left-1/2 flex w-screen -translate-x-1/2 items-center justify-center gap-space-4 bg-[#1c1c1c] px-space-4 py-space-6 sm:w-full sm:gap-space-8 sm:rounded-[12px] sm:px-space-10 sm:py-space-8">
                 <Image
                   alt="Экран оценки сфер жизни Camomile"
                   src={assets.appState}
@@ -362,7 +362,7 @@ export function HomePage() {
         </motion.section>
       </motion.div>
 
-      <footer className="mx-auto mt-[100px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-[70px] sm:px-space-8 lg:px-0">
+      <footer className="mx-auto mt-[100px] flex w-full max-w-[800px] flex-col gap-space-2 px-space-4 pb-[70px] sm:px-0">
         <h2 className="text-h4">Связаться со мной</h2>
         <div className="h-px w-full bg-border-elevated" />
         <div className="flex w-full flex-col gap-space-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:justify-between min-[900px]:gap-space-2">
