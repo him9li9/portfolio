@@ -339,7 +339,7 @@ export function HomePage() {
                 <p className="sm:hidden">Разработала в Codex приложение для баланса сфер жизни, целей и важных моментов.</p>
                 <p className="hidden sm:block">Разработала в Codex приложение для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов.</p>
                 <div className="text-[#a0a0a0]">
-                  <p className="text-caption-14 sm:hidden">Telegram mini app · 2026</p>
+                  <p className="text-caption-14 sm:hidden">AI-first · Telegram mini app · 2026</p>
                   <div className="hidden sm:block">
                     <p>Продуктовый дизайнер · 2026</p>
                     <p>AI-first · Telegram mini app</p>
