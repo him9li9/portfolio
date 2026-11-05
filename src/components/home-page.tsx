@@ -237,28 +237,24 @@ export function HomePage() {
                 </div>
               </Link>
               <div className="flex w-full flex-col items-start gap-space-1">
-                <div className="flex w-full flex-col gap-space-2 sm:flex-row sm:items-start sm:justify-between">
-                  <h3 className="text-[28px] font-semibold leading-normal">MCN Softphone</h3>
-                  <Link href="/app" prefetch={false} className="link-underline hidden shrink-0 items-center gap-space-1 text-body-16 sm:flex">
-                    <span>Смотреть кейс</span>
+                <div className="flex w-full items-center gap-space-3">
+                  <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">MCN Softphone</h3>
+                  <Link href="/app" prefetch={false} className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
+                    <span className="hidden sm:inline">Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
                 <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
-                  <p className="sm:whitespace-nowrap">
-                    Переработала регистрацию и активацию номера в приложении<br className="hidden sm:block" />{" "}
-                    интернет-телефонии, сократив путь до первого звонка с 8 до 3 шагов<br className="hidden sm:block" />{" "}
-                    и количество обращений по подключению и тарификации в 2 раза.
-                  </p>
-                  <div className="flex flex-col text-[#a0a0a0]">
-                    <p>Продуктовый дизайнер · 2024 — н.в.</p>
-                    <p>B2C · Mobile app</p>
+                  <p className="sm:hidden">Сократила путь до первого звонка с 8 до 3 шагов и количество обращений по подключению и тарификации в 2 раза.</p>
+                  <p className="hidden sm:block">Переработала регистрацию и активацию номера в приложении интернет-телефонии, сократив путь до первого звонка с 8 до 3 шагов и количество обращений по подключению и тарификации в 2 раза.</p>
+                  <div className="text-[#a0a0a0]">
+                    <p className="text-caption-14 sm:hidden">B2C · Mobile app · 2024 — н.в.</p>
+                    <div className="hidden sm:block">
+                      <p>Продуктовый дизайнер · 2024 — н.в.</p>
+                      <p>B2C · Mobile app</p>
+                    </div>
                   </div>
                 </div>
-                <Link href="/app" prefetch={false} className="mt-space-2 inline-flex items-center gap-space-1 text-body-16 sm:hidden">
-                  <span>Смотреть кейс</span>
-                  <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-                </Link>
               </div>
             </article>
 
@@ -277,28 +273,24 @@ export function HomePage() {
                 </div>
               </Link>
               <div className="flex w-full flex-col items-start gap-space-1">
-                <div className="flex w-full flex-col gap-space-2 sm:flex-row sm:items-start sm:justify-between">
-                  <h3 className="text-[28px] font-semibold leading-normal">KOMPaaS</h3>
-                  <Link href="/work" prefetch={false} className="link-underline hidden shrink-0 items-center gap-space-1 text-body-16 sm:flex">
-                    <span>Смотреть кейс</span>
+                <div className="flex w-full items-center gap-space-3">
+                  <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">KOMPaaS</h3>
+                  <Link href="/work" prefetch={false} className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
+                    <span className="hidden sm:inline">Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
                 <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
-                  <p className="sm:whitespace-nowrap">
-                    Спроектировала редактор для самостоятельной работы менеджеров<br className="hidden sm:block" />{" "}
-                    со сценариями звонков, снизив количество ошибок на продакшене<br className="hidden sm:block" />{" "}
-                    в 2,5 раза за первые 3 месяца после изменений.
-                  </p>
-                  <div className="flex flex-col text-[#a0a0a0]">
-                    <p>Продуктовый дизайнер · 2023 — 2025</p>
-                    <p>B2B · Self-service</p>
+                  <p className="sm:hidden">Спроектировала редактор сценариев звонков, снизив количество ошибок в 2,5 раза.</p>
+                  <p className="hidden sm:block">Спроектировала редактор для самостоятельной работы менеджеров со сценариями звонков, снизив количество ошибок на продакшене в 2,5 раза за первые 3 месяца после изменений.</p>
+                  <div className="text-[#a0a0a0]">
+                    <p className="text-caption-14 sm:hidden">B2B · Self-service · 2023 — 2025</p>
+                    <div className="hidden sm:block">
+                      <p>Продуктовый дизайнер · 2023 — 2025</p>
+                      <p>B2B · Self-service</p>
+                    </div>
                   </div>
                 </div>
-                <Link href="/work" prefetch={false} className="mt-space-2 inline-flex items-center gap-space-1 text-body-16 sm:hidden">
-                  <span>Смотреть кейс</span>
-                  <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-                </Link>
               </div>
             </article>
           </div>
@@ -336,27 +328,24 @@ export function HomePage() {
               </div>
             </a>
             <div className="flex w-full flex-col items-start gap-space-1">
-              <div className="flex w-full flex-col gap-space-2 sm:flex-row sm:items-start sm:justify-between">
-                <h3 className="text-[28px] font-semibold leading-normal">{thirdProject.title}</h3>
-                <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" className="link-underline hidden shrink-0 items-center gap-space-1 text-body-16 sm:flex">
-                  <span>Перейти в приложение</span>
+              <div className="flex w-full items-center gap-space-3">
+                <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">{thirdProject.title}</h3>
+                <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
+                  <span className="hidden sm:inline">Перейти в приложение</span>
                   <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                 </a>
               </div>
               <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
-                <p className="sm:whitespace-nowrap">
-                  Разработала в Codex приложение для отслеживания баланса сфер<br className="hidden sm:block" />{" "}
-                  жизни, личных целей и сохранения важных моментов.
-                </p>
-                <div className="flex flex-col text-[#a0a0a0]">
-                  <p>Продуктовый дизайнер · 2026</p>
-                  <p>AI-first · Telegram mini app</p>
+                <p className="sm:hidden">Разработала в Codex приложение для баланса сфер жизни, целей и важных моментов.</p>
+                <p className="hidden sm:block">Разработала в Codex приложение для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов.</p>
+                <div className="text-[#a0a0a0]">
+                  <p className="text-caption-14 sm:hidden">Telegram mini app · 2026</p>
+                  <div className="hidden sm:block">
+                    <p>Продуктовый дизайнер · 2026</p>
+                    <p>AI-first · Telegram mini app</p>
+                  </div>
                 </div>
               </div>
-              <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" className="mt-space-2 inline-flex items-center gap-space-1 text-body-16 sm:hidden">
-                <span>Перейти в приложение</span>
-                <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-              </a>
             </div>
           </article>
         </motion.section>
