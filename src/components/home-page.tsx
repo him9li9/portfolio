@@ -3,7 +3,7 @@
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const assets = {
   avatar: "/figma/avatar.png",
@@ -33,8 +33,6 @@ const footerLinks = [
 export function HomePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
-  const softphonePreviewRef = useRef<HTMLDivElement | null>(null);
-  const softphoneCenterPhoneRef = useRef<HTMLImageElement | null>(null);
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -83,38 +81,6 @@ export function HomePage() {
     update();
     mql.addEventListener("change", update);
     return () => mql.removeEventListener("change", update);
-  }, []);
-
-  useEffect(() => {
-    const centerSoftphonePreview = () => {
-      if (!softphonePreviewRef.current || !window.matchMedia("(max-width: 639px)").matches) {
-        return;
-      }
-      const element = softphonePreviewRef.current;
-      const centerPhone = softphoneCenterPhoneRef.current;
-      if (!centerPhone) {
-        return;
-      }
-      const elementRect = element.getBoundingClientRect();
-      const phoneRect = centerPhone.getBoundingClientRect();
-      element.scrollLeft += phoneRect.left + phoneRect.width / 2 - elementRect.left - element.clientWidth / 2;
-    };
-    const raf = requestAnimationFrame(centerSoftphonePreview);
-    const observer = new ResizeObserver(centerSoftphonePreview);
-    if (softphonePreviewRef.current) {
-      observer.observe(softphonePreviewRef.current);
-    }
-    if (softphoneCenterPhoneRef.current) {
-      observer.observe(softphoneCenterPhoneRef.current);
-    }
-    window.addEventListener("resize", centerSoftphonePreview);
-    window.addEventListener("pageshow", centerSoftphonePreview);
-    return () => {
-      cancelAnimationFrame(raf);
-      observer.disconnect();
-      window.removeEventListener("resize", centerSoftphonePreview);
-      window.removeEventListener("pageshow", centerSoftphonePreview);
-    };
   }, []);
 
   return (
@@ -207,30 +173,26 @@ export function HomePage() {
           <div className="flex w-full flex-col items-start gap-[100px] sm:items-center">
             <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
               <Link href="/app" prefetch={false} aria-label="Открыть кейс MCN Softphone" className="group block w-full">
-                <div
-                  ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-[#1c1c1c] px-space-4 py-space-6 sm:flex sm:w-full sm:items-center sm:justify-center sm:gap-space-8 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
-                >
-                  <div className="flex w-max items-center justify-center gap-space-4 sm:w-auto sm:gap-space-8">
+                <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#1c1c1c] px-space-4 py-space-6 sm:flex sm:w-full sm:items-center sm:justify-center sm:gap-space-8 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8">
+                  <div className="flex w-full items-center justify-center gap-space-4 sm:w-auto sm:gap-space-8">
                     <Image
                       alt="Главный экран MCN Softphone"
                       src={assets.phone1}
                       width={732}
                       height={1500}
                       priority
-                      sizes="(max-width: 639px) 176px, 280px"
-                      className="h-[360px] w-auto shrink-0 sm:h-[572px]"
+                      sizes="(max-width: 639px) calc((100vw - 48px) / 2), 280px"
+                      className="h-auto min-w-0 flex-1 sm:h-[572px] sm:w-auto sm:flex-none"
                       quality={100}
                     />
                     <Image
-                      ref={softphoneCenterPhoneRef}
                       alt="Подтверждение регистрации MCN Softphone"
                       src={assets.phone2}
                       width={735}
                       height={1500}
                       priority
-                      sizes="(max-width: 639px) 176px, 280px"
-                      className="h-[360px] w-auto shrink-0 sm:h-[572px]"
+                      sizes="(max-width: 639px) calc((100vw - 48px) / 2), 280px"
+                      className="h-auto min-w-0 flex-1 sm:h-[572px] sm:w-auto sm:flex-none"
                       quality={100}
                     />
                   </div>
@@ -328,10 +290,10 @@ export function HomePage() {
               </div>
             </a>
             <div className="flex w-full flex-col items-start gap-space-1">
-              <div className="flex w-full items-center gap-space-3">
+              <div className="flex w-full flex-col items-start gap-space-1 sm:flex-row sm:items-center sm:gap-space-3">
                 <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">{thirdProject.title}</h3>
                 <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" aria-label="Перейти в Camomile" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
-                  <span className="hidden sm:inline">Перейти в приложение</span>
+                  <span>Перейти в приложение</span>
                   <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                 </a>
               </div>
