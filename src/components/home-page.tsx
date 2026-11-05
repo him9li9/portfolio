@@ -239,7 +239,7 @@ export function HomePage() {
               <div className="flex w-full flex-col items-start gap-space-1">
                 <div className="flex w-full items-center gap-space-3">
                   <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">MCN Softphone</h3>
-                  <Link href="/app" prefetch={false} className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
+                  <Link href="/app" prefetch={false} aria-label="Смотреть кейс MCN Softphone" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
                     <span className="hidden sm:inline">Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
@@ -275,7 +275,7 @@ export function HomePage() {
               <div className="flex w-full flex-col items-start gap-space-1">
                 <div className="flex w-full items-center gap-space-3">
                   <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">KOMPaaS</h3>
-                  <Link href="/work" prefetch={false} className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
+                  <Link href="/work" prefetch={false} aria-label="Смотреть кейс KOMPaaS" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
                     <span className="hidden sm:inline">Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
@@ -330,7 +330,7 @@ export function HomePage() {
             <div className="flex w-full flex-col items-start gap-space-1">
               <div className="flex w-full items-center gap-space-3">
                 <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">{thirdProject.title}</h3>
-                <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
+                <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" aria-label="Перейти в Camomile" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
                   <span className="hidden sm:inline">Перейти в приложение</span>
                   <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                 </a>
