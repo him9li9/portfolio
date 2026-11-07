@@ -172,6 +172,7 @@ export function HomePage() {
           <h2 className="w-full text-left text-h4 sm:text-center">Рабочие проекты</h2>
           <div className="flex w-full flex-col items-start gap-[100px] sm:items-center">
             <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
+              <div className="flex w-full flex-col gap-space-2">
               <Link href="/app" prefetch={false} aria-label="Открыть кейс MCN Softphone" className="group block w-full">
                 <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#1c1c1c] px-space-4 py-space-6 sm:flex sm:w-full sm:items-center sm:justify-center sm:gap-space-8 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8">
                   <div className="flex w-full items-center justify-center gap-space-4 sm:w-auto sm:gap-space-8">
@@ -198,14 +199,15 @@ export function HomePage() {
                   </div>
                 </div>
               </Link>
-              <div className="flex w-full flex-col items-start gap-space-1">
-                <div className="flex w-full flex-col items-start gap-space-1 sm:flex-row sm:items-center sm:gap-space-3">
-                  <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">MCN Softphone</h3>
+                <div className="flex w-full justify-end">
                   <Link href="/app" prefetch={false} aria-label="Смотреть кейс MCN Softphone" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
+              </div>
+              <div className="flex w-full flex-col items-start gap-space-1">
+                <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">MCN Softphone</h3>
                 <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
                   <p className="sm:hidden">Сократила путь до первого звонка с 8 до 3 шагов и количество обращений по подключению и тарификации в 2 раза.</p>
                   <p className="hidden sm:block">Переработала регистрацию и активацию номера в приложении интернет-телефонии, сократив путь до первого звонка с 8 до 3 шагов и количество обращений по подключению и тарификации в 2 раза.</p>
@@ -221,6 +223,7 @@ export function HomePage() {
             </article>
 
             <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
+              <div className="flex w-full flex-col gap-space-2">
               <Link href="/work" prefetch={false} aria-label="Открыть кейс KOMPaaS" className="group block w-full">
                 <div className="relative w-full overflow-hidden rounded-[8px] sm:left-1/2 sm:w-full sm:-translate-x-1/2">
                   <Image
@@ -234,14 +237,15 @@ export function HomePage() {
                   />
                 </div>
               </Link>
-              <div className="flex w-full flex-col items-start gap-space-1">
-                <div className="flex w-full flex-col items-start gap-space-1 sm:flex-row sm:items-center sm:gap-space-3">
-                  <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">KOMPaaS</h3>
+                <div className="flex w-full justify-end">
                   <Link href="/work" prefetch={false} aria-label="Смотреть кейс KOMPaaS" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
+              </div>
+              <div className="flex w-full flex-col items-start gap-space-1">
+                <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">KOMPaaS</h3>
                 <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
                   <p className="sm:hidden">Спроектировала редактор сценариев звонков, снизив количество ошибок в 2,5 раза.</p>
                   <p className="hidden sm:block">Спроектировала редактор для самостоятельной работы менеджеров со сценариями звонков, снизив количество ошибок на продакшене в 2,5 раза за первые 3 месяца после изменений.</p>
@@ -261,6 +265,7 @@ export function HomePage() {
         <motion.section variants={item} className="mx-auto flex w-full flex-col items-start gap-space-6 sm:items-center">
           <h2 className="w-full text-left text-h4 sm:text-center">Личные проекты</h2>
           <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
+              <div className="flex w-full flex-col gap-space-2">
             <a
               href={thirdProject.href}
               target="_blank"
@@ -289,14 +294,15 @@ export function HomePage() {
                 />
               </div>
             </a>
-            <div className="flex w-full flex-col items-start gap-space-1">
-              <div className="flex w-full flex-col items-start gap-space-1 sm:flex-row sm:items-center sm:gap-space-3">
-                <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">{thirdProject.title}</h3>
-                <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" aria-label="Перейти в Camomile" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
+                <div className="flex w-full justify-end">
+                  <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" aria-label="Перейти в Camomile" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
                   <span>Перейти в приложение</span>
                   <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                 </a>
+                </div>
               </div>
+            <div className="flex w-full flex-col items-start gap-space-1">
+              <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">{thirdProject.title}</h3>
               <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
                 <p className="sm:hidden">Разработала в Codex приложение для баланса сфер жизни, целей и важных моментов.</p>
                 <p className="hidden sm:block">Разработала в Codex приложение для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов.</p>
