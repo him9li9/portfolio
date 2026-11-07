@@ -198,15 +198,17 @@ export function HomePage() {
                   </div>
                 </div>
               </Link>
-              <div className="flex w-full flex-col items-start gap-space-1">
-                <div className="flex w-full flex-wrap items-start justify-between gap-space-2">
+              <div className="flex w-full flex-col items-start gap-space-2">
+                <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
                   <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">MCN Softphone</h3>
-                  <Link href="/app" prefetch={false} aria-label="Смотреть кейс MCN Softphone" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
+                  <Link href="/app" prefetch={false} aria-label="Смотреть кейс MCN Softphone" className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex">
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
+                <div className="flex w-full flex-col items-start gap-space-2">
+                  <div className="h-px w-full bg-border-elevated" />
+                  <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
                   <p className="sm:hidden">Сократила путь до первого звонка с 8 до 3 шагов и количество обращений по подключению и тарификации в 2 раза.</p>
                   <p className="hidden sm:block">Переработала регистрацию и активацию номера в приложении интернет-телефонии, сократив путь до первого звонка с 8 до 3 шагов и количество обращений по подключению и тарификации в 2 раза.</p>
                   <div className="text-[#a0a0a0]">
@@ -216,6 +218,11 @@ export function HomePage() {
                       <p>B2C · Mobile app</p>
                     </div>
                   </div>
+                </div>
+                  <Link href="/app" prefetch={false} aria-label="Смотреть кейс MCN Softphone" className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden">
+                    <span>Смотреть кейс</span>
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             </article>
@@ -234,15 +241,17 @@ export function HomePage() {
                   />
                 </div>
               </Link>
-              <div className="flex w-full flex-col items-start gap-space-1">
-                <div className="flex w-full flex-wrap items-start justify-between gap-space-2">
+              <div className="flex w-full flex-col items-start gap-space-2">
+                <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
                   <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">KOMPaaS</h3>
-                  <Link href="/work" prefetch={false} aria-label="Смотреть кейс KOMPaaS" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
+                  <Link href="/work" prefetch={false} aria-label="Смотреть кейс KOMPaaS" className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex">
                     <span>Смотреть кейс</span>
                     <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                   </Link>
                 </div>
-                <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
+                <div className="flex w-full flex-col items-start gap-space-2">
+                  <div className="h-px w-full bg-border-elevated" />
+                  <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
                   <p className="sm:hidden">Спроектировала редактор сценариев звонков, снизив количество ошибок в 2,5 раза.</p>
                   <p className="hidden sm:block">Спроектировала редактор для самостоятельной работы менеджеров со сценариями звонков, снизив количество ошибок на продакшене в 2,5 раза за первые 3 месяца после изменений.</p>
                   <div className="text-[#a0a0a0]">
@@ -252,6 +261,11 @@ export function HomePage() {
                       <p>B2B · Self-service</p>
                     </div>
                   </div>
+                </div>
+                  <Link href="/work" prefetch={false} aria-label="Смотреть кейс KOMPaaS" className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden">
+                    <span>Смотреть кейс</span>
+                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                  </Link>
                 </div>
               </div>
             </article>
@@ -289,15 +303,17 @@ export function HomePage() {
                 />
               </div>
             </a>
-              <div className="flex w-full flex-col items-start gap-space-1">
-                <div className="flex w-full flex-wrap items-start justify-between gap-space-2">
+              <div className="flex w-full flex-col items-start gap-space-2">
+                <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
                   <h3 className="text-[24px] font-semibold leading-normal sm:text-[28px]">{thirdProject.title}</h3>
-                  <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" aria-label="Перейти в Camomile" className="link-underline inline-flex shrink-0 items-center gap-space-1 text-body-16">
+                  <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" aria-label="Перейти в Camomile" className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex">
                   <span>Перейти в приложение</span>
                   <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
                 </a>
                 </div>
-              <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
+              <div className="flex w-full flex-col items-start gap-space-2">
+                  <div className="h-px w-full bg-border-elevated" />
+                  <div className="flex w-full max-w-[520px] flex-col gap-space-3 text-body-16">
                 <p className="sm:hidden">Разработала в Codex приложение для баланса сфер жизни, целей и важных моментов.</p>
                 <p className="hidden sm:block">Разработала в Codex приложение для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов.</p>
                 <div className="text-[#a0a0a0]">
@@ -308,6 +324,11 @@ export function HomePage() {
                   </div>
                 </div>
               </div>
+                  <a href={thirdProject.href} target="_blank" rel="noopener noreferrer" aria-label="Перейти в Camomile" className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden">
+                  <span>Перейти в приложение</span>
+                  <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
+                </a>
+                </div>
             </div>
           </article>
         </motion.section>
