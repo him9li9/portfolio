@@ -89,9 +89,9 @@ function Figure({ src, alt, width, height, caption, priority = false }: FigurePr
   );
 }
 
-function WideFigure(props: FigureProps) {
+function WideFigure({ panel = false, ...props }: FigureProps & { panel?: boolean }) {
   return (
-    <div className="relative left-1/2 w-[calc(100vw-32px)] max-w-[1040px] -translate-x-1/2 rounded-[12px] bg-secondary px-space-4 py-space-8 sm:px-space-8 sm:py-space-10">
+    <div className={`relative left-1/2 w-[calc(100vw-32px)] max-w-[1040px] -translate-x-1/2 ${panel ? "rounded-[12px] bg-secondary px-space-4 py-space-8 sm:px-space-8 sm:py-space-10" : ""}`}>
       <Figure {...props} />
     </div>
   );
@@ -116,7 +116,7 @@ export default function SoftphonePreviewPage() {
         </div>
       </header>
 
-      <article className="mx-auto flex w-full max-w-[900px] flex-col gap-[104px] px-space-4 pb-space-16 pt-space-16 sm:px-space-8 sm:pt-[88px] lg:px-0">
+      <article className="mx-auto flex w-full max-w-[900px] flex-col gap-[120px] px-space-4 pb-space-16 pt-space-12 sm:px-space-8 sm:pt-[88px] lg:px-0">
         <section id="overview" className="flex flex-col gap-space-8 scroll-mt-[96px]">
           <div className="flex max-w-[740px] flex-col gap-space-4">
             <div className="flex flex-col gap-space-1">
@@ -129,23 +129,16 @@ export default function SoftphonePreviewPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-space-6 border-y border-border-elevated py-space-6 sm:gap-space-8">
-            <div className="flex flex-col gap-space-2">
-              <p className="text-[36px] font-semibold leading-[1.2] sm:text-[40px]">8 → 3</p>
-              <p className="max-w-[230px] text-body-16 text-secondary">шага от регистрации до первого звонка</p>
-            </div>
-            <div className="flex flex-col gap-space-2">
-              <p className="text-[36px] font-semibold leading-[1.2] sm:text-[40px]">в 2×</p>
-              <p className="max-w-[230px] text-body-16 text-secondary">меньше обращений в поддержку</p>
-            </div>
-          </div>
-
           <div className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:w-full sm:overflow-visible">
             <div className="mx-auto flex w-max items-center justify-center gap-space-4 px-space-4 sm:w-full sm:px-0">
               <Image alt="Экран после регистрации" src={assets.success} width={900} height={1840} priority sizes="(max-width: 640px) 210px, 240px" className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[240px]" />
               <Image alt="Главный экран с тарифом" src={assets.home} width={900} height={1840} priority sizes="(max-width: 640px) 294px, 280px" className="h-[600px] w-auto shrink-0 sm:h-auto sm:w-[280px]" />
               <Image alt="Экран звонка" src={assets.dialpad} width={900} height={1840} priority sizes="(max-width: 640px) 210px, 240px" className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[240px]" />
             </div>
+          </div>
+          <div className="flex flex-wrap items-baseline gap-x-space-10 gap-y-space-3">
+            <p className="text-body-18"><strong className="font-semibold">8 → 3 шага</strong><span className="text-secondary"> до первого звонка</span></p>
+            <p className="text-body-18"><strong className="font-semibold">в 2× меньше</strong><span className="text-secondary"> обращений в поддержку</span></p>
           </div>
           <p className="max-w-[680px] text-body-18">
             Я присоединилась к проекту на стадии MVP за несколько месяцев до планируемого релиза.
@@ -161,38 +154,30 @@ export default function SoftphonePreviewPage() {
             </p>
           </div>
 
-          <div className="flex flex-col">
-            <div className="grid gap-space-3 border-t border-border-elevated py-space-6 sm:grid-cols-[250px_1fr] sm:gap-space-8">
-              <h3 className="text-h3">Сценарий активации разорван</h3>
-              <div className="flex max-w-[520px] flex-col gap-space-3 text-body-18">
-                <p>Регистрация и подключение номера проходят в веб-кабинете, но после отправки заявки пользователь не видит статус и следующий шаг в приложении.</p>
-                <p className="text-secondary">Первый звонок откладывается, часть пользователей не завершает подключение.</p>
-              </div>
-            </div>
-            <div className="grid gap-space-3 border-t border-border-elevated py-space-6 sm:grid-cols-[250px_1fr] sm:gap-space-8">
-              <h3 className="text-h3">Стоимость и списания непрозрачны</h3>
-              <div className="flex max-w-[520px] flex-col gap-space-3 text-body-18">
-                <p>До звонка нельзя узнать стоимость, а после завершения нет понятной детализации.</p>
-                <p className="text-secondary">Пользователи не понимают причину списаний и обращаются в поддержку.</p>
-              </div>
-            </div>
-            <div className="grid gap-space-3 border-y border-border-elevated py-space-6 sm:grid-cols-[250px_1fr] sm:gap-space-8">
-              <h3 className="text-h3">Помощь трудно получить</h3>
-              <div className="flex max-w-[520px] flex-col gap-space-3 text-body-18">
-                <p>Пользователи не находят ответы по настройке и доступности звонков внутри приложения и вынуждены обращаться за помощью в другие каналы связи.</p>
-                <p className="text-secondary">Даже типовые вопросы требуют обращения в поддержку.</p>
-              </div>
-            </div>
-          </div>
-
           <WideFigure
             src={assets.discovery}
             alt="Ключевые экраны текущей версии MCN Softphone"
             width={2550}
             height={1206}
             caption="Ключевые экраны текущей версии MCN Softphone"
+            panel
           />
-          <div className="grid gap-space-4 sm:grid-cols-2 sm:gap-space-6">
+          <div className="grid gap-space-8 pt-space-2 md:grid-cols-3 md:gap-space-6">
+            <div className="flex flex-col gap-space-3">
+              <h3 className="text-[20px] font-semibold leading-[1.35]">Сценарий активации разорван</h3>
+              <p className="text-body-16 text-secondary">Регистрация и подключение номера проходят в веб-кабинете, а в приложении нет статуса заявки и следующего шага.</p>
+            </div>
+            <div className="flex flex-col gap-space-3">
+              <h3 className="text-[20px] font-semibold leading-[1.35]">Стоимость и списания непрозрачны</h3>
+              <p className="text-body-16 text-secondary">До звонка нельзя узнать стоимость, а после завершения нет понятной детализации.</p>
+            </div>
+            <div className="flex flex-col gap-space-3">
+              <h3 className="text-[20px] font-semibold leading-[1.35]">Помощь трудно получить</h3>
+              <p className="text-body-16 text-secondary">Пользователям приходится искать ответы по настройке и звонкам в других каналах связи.</p>
+            </div>
+          </div>
+
+          <div className="mx-auto flex w-full max-w-[600px] flex-col gap-space-6 py-space-2">
             <Figure src={assets.feedback1} alt="Обращение пользователя о статусе аккаунта" width={1044} height={332} />
             <Figure src={assets.feedback2} alt="Обращение пользователя о списании средств" width={2116} height={512} />
           </div>
@@ -217,6 +202,7 @@ export default function SoftphonePreviewPage() {
             width={2700}
             height={990}
             caption="Последовательный путь до первого звонка в приложениях конкурентов"
+            panel
           />
           <p className="max-w-[680px] text-body-18">
             Главное решение — сохранять сценарий внутри приложения, показывать статус подключения
@@ -228,6 +214,7 @@ export default function SoftphonePreviewPage() {
             width={4096}
             height={1690}
             caption="Новый userflow 1-го звонка · нажми, чтобы увеличить"
+            panel
           />
           <p className="max-w-[680px] text-body-18">
             Продумала состояния и корнер-кейсы, чтобы пользователь всегда понимал,
@@ -235,7 +222,7 @@ export default function SoftphonePreviewPage() {
           </p>
         </section>
 
-        <section id="solution" className="flex flex-col gap-[88px] scroll-mt-[96px]">
+        <section id="solution" className="flex flex-col gap-[104px] scroll-mt-[96px]">
           <div className="max-w-[720px] space-y-space-4">
             <SectionHeading>Решение и тесты</SectionHeading>
             <p className="text-body-18">
@@ -272,7 +259,7 @@ export default function SoftphonePreviewPage() {
               <figcaption className="text-center text-caption-14 text-secondary">Стоимость за минуту звонка видна сразу</figcaption>
             </figure>
           </div>
-          <div className="flex flex-col gap-space-6">
+          <div className="flex flex-col gap-space-8">
             <div className="max-w-[720px] space-y-space-3">
               <h3 className="text-h3">Помощь и подсказки</h3>
               <p className="text-body-18">
