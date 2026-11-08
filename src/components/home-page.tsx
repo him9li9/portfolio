@@ -45,7 +45,7 @@ function ProjectDetails({ title, href, meta, description, external = false }: Pr
           aria-label={external ? "Открыть приложение Camomile" : "Открыть кейс " + title}
           className="group inline-flex max-w-full items-center gap-[2px] focus-visible:outline-offset-4"
         >
-          <h3 className="text-[28px] font-semibold leading-[40px]">
+          <h3 className="text-[28px] font-medium leading-[40px]">
             <span className="link-underline">{title}</span>
           </h3>
           <Image src={assets.arrowOutward} alt="" width={24} height={24} className="h-6 w-6 shrink-0" />
@@ -186,7 +186,7 @@ export function HomePage() {
                 quality={100}
               />
             </div>
-            <h1 className="text-[28px] font-semibold leading-[40px]">
+            <h1 className="text-[28px] font-medium leading-[40px]">
               Привет, я Настя Ермошина
             </h1>
           </div>
@@ -202,7 +202,7 @@ export function HomePage() {
         </motion.section>
 
         <motion.section variants={item} className="flex w-full flex-col items-center gap-space-6">
-          <h2 className="text-center text-[20px] font-semibold leading-[28px]">Рабочие проекты</h2>
+          <h2 className="text-center text-[20px] font-medium leading-[28px]">Рабочие проекты</h2>
           <article className="flex w-full flex-col gap-space-6">
             <Link
               href="/app"
@@ -270,7 +270,7 @@ export function HomePage() {
         </motion.section>
 
         <motion.section variants={item} className="flex w-full flex-col items-center gap-space-6">
-          <h2 className="text-center text-[20px] font-semibold leading-[28px]">Пет-проекты</h2>
+          <h2 className="text-center text-[20px] font-medium leading-[28px]">Пет-проекты</h2>
           <article className="flex w-full flex-col gap-space-6">
             <a
               href={camomileUrl}
@@ -312,7 +312,7 @@ export function HomePage() {
       </motion.div>
 
       <footer className="mx-auto mt-[140px] flex w-full max-w-[800px] flex-col gap-space-2 px-space-4 pb-[70px] sm:px-space-8 lg:px-0">
-        <h2 className="text-[20px] font-semibold leading-[28px]">Связаться со мной</h2>
+        <h2 className="text-[20px] font-medium leading-[28px]">Связаться со мной</h2>
         <div className="h-px w-full bg-border-elevated" />
         <div className="flex w-full flex-col gap-space-4 sm:flex-row sm:items-start sm:justify-between">
           <nav aria-label="Контакты" className="flex flex-wrap items-center gap-space-4">
