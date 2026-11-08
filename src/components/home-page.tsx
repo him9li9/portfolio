@@ -198,11 +198,11 @@ export function HomePage() {
               Настя Ермошина
             </h1>
           </div>
-          <p className="w-full max-w-[480px] text-[16px] leading-[1.4]">
-            <span className="sm:block">Продуктовый дизайнер с 4+ годами опыта в мобильных</span>{" "}
-            <span className="sm:block">и B2B-продуктах. Разбираюсь в сложных сценариях и довожу</span>{" "}
-            <span className="sm:block">решения до релиза. Использую AI для быстрых экспериментов,</span>{" "}
-            <span className="sm:block">прототипирования и работы с кодом.</span>
+          <p className="w-full max-w-[480px] text-[16px] leading-[1.4] md:w-max md:max-w-none">
+            <span className="md:block md:whitespace-nowrap">Продуктовый дизайнер с 4+ годами опыта в мобильных</span>{" "}
+            <span className="md:block md:whitespace-nowrap">и B2B-продуктах. Разбираюсь в сложных сценариях и довожу</span>{" "}
+            <span className="md:block md:whitespace-nowrap">решения до релиза. Использую AI для быстрых экспериментов,</span>{" "}
+            <span className="md:block md:whitespace-nowrap">прототипирования и работы с кодом.</span>
           </p>
           <div className="flex flex-wrap items-center justify-center gap-space-4">
             <InlineLink href={cvUrl}>CV</InlineLink>
