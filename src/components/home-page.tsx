@@ -10,7 +10,7 @@ const assets = {
   heart: "/figma/Icons/heart.svg",
   arrowOutward: "/figma/Icons/arrow_outward.svg",
   softphoneHome: "/figma/Case_1/Section_1/softphone-home.png",
-  softphoneSuccess: "/figma/Case_1/Section_1/softphone-success.png",
+  callFlowVideo: "/figma/Case_1/Section_4/call-flow.mp4",
   vpbxCanvas: "/figma/Case_2/Section_1/vpbx-canvas.png",
   appState: "/figma/Case_3/Section_1/app-state-v2.png",
   appGoals: "/figma/Case_3/Section_1/app-goals-v2.png"
@@ -230,15 +230,15 @@ export function HomePage() {
                   priority
                   quality={100}
                 />
-                <Image
-                  alt="Экран завершения регистрации MCN Softphone"
-                  src={assets.softphoneSuccess}
-                  width={900}
-                  height={1840}
-                  sizes="(max-width: 639px) calc((100vw - 64px) / 2), 238px"
-                  className="h-auto w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 sm:w-[238px]"
-                  priority
-                  quality={100}
+                <video
+                  src={assets.callFlowVideo}
+                  aria-label="Анимация звонка и отображения стоимости в MCN Softphone"
+                  className="aspect-[900/1840] w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 object-contain sm:w-[238px]"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
                 />
               </div>
             </Link>
