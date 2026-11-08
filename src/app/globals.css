@@ -275,4 +275,15 @@ a {
   .link-underline:hover {
     background-size: 100% 1px;
   }
+
+  /* Align the underline with the visible right edge of the arrow glyph. */
+  .group:hover .link-underline-arrow-24,
+  .link-underline-arrow-24:hover {
+    background-size: calc(100% - 6px) 1px;
+  }
+
+  .group:hover .link-underline-arrow-16,
+  .link-underline-arrow-16:hover {
+    background-size: calc(100% - 4px) 1px;
+  }
 }
