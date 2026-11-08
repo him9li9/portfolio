@@ -83,55 +83,62 @@ function InlineLink({ href, children }: { href: string; children: string }) {
 function KompaasPreview() {
   const previewRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [stage, setStage] = useState<"still" | "zoom" | "video">("still");
+  const [stage, setStage] = useState<"still" | "zoom" | "video" | "reveal" | "return">("still");
+  const [isVisible, setIsVisible] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     const preview = previewRef.current;
     if (!preview) return;
-
-    let startTimer: number | undefined;
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return;
-        observer.disconnect();
-
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-        startTimer = window.setTimeout(() => setStage("zoom"), 450);
-      },
+      ([entry]) => setIsVisible(entry.isIntersecting),
       { threshold: 0.4 }
     );
-
     observer.observe(preview);
-    return () => {
-      observer.disconnect();
-      if (startTimer !== undefined) window.clearTimeout(startTimer);
-    };
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
-    if (stage !== "video") return;
+    if (stage !== "still" || !isVisible || !videoReady) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setTimeout(() => setStage("zoom"), 1100);
+    return () => window.clearTimeout(timer);
+  }, [stage, isVisible, videoReady]);
+
+  useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    video.currentTime = 0;
-    void video.play().catch(() => {});
-  }, [stage]);
+
+    if (stage === "video" && isVisible) {
+      video.currentTime = 0;
+      void video.play().catch(() => setStage("reveal"));
+    } else {
+      video.pause();
+    }
+  }, [stage, isVisible]);
 
   return (
     <div ref={previewRef} className="relative aspect-[8/5] w-full overflow-hidden rounded-[8px] bg-[#f4f4f4]">
-      <video
-        ref={videoRef}
-        src={assets.kompaasCanvasVideo}
-        aria-label="Добавление и настройка блока в редакторе сценариев KOMPaaS"
-        className="absolute inset-0 h-full w-full object-cover"
-        muted
-        loop
-        playsInline
-        preload="auto"
-      />
+      <div className="absolute inset-0 flex items-center justify-center bg-[#f4f4f4] px-[6%] py-[7%]">
+        <video
+          ref={videoRef}
+          src={assets.kompaasCanvasVideo}
+          aria-label="Добавление и настройка блока в редакторе сценариев KOMPaaS"
+          className="block h-full w-full object-contain"
+          muted
+          playsInline
+          preload="auto"
+          onLoadedData={() => setVideoReady(true)}
+          onEnded={() => setStage("reveal")}
+        />
+      </div>
       <motion.div
         className="absolute inset-0"
         initial={false}
-        animate={{ scale: stage === "still" ? 1 : 1.7, opacity: stage === "video" ? 0 : 1 }}
+        animate={{
+          scale: stage === "still" || stage === "return" ? 1 : 1.7,
+          opacity: stage === "video" ? 0 : 1
+        }}
         transition={{
           scale: { duration: 1.3, ease: cubicBezier(0.16, 1, 0.3, 1) },
           opacity: { duration: 0.38, ease: "easeInOut" }
@@ -139,6 +146,8 @@ function KompaasPreview() {
         style={{ transformOrigin: "55% 52%" }}
         onAnimationComplete={() => {
           if (stage === "zoom") setStage("video");
+          if (stage === "reveal") setStage("return");
+          if (stage === "return") setStage("still");
         }}
       >
         <Image
@@ -157,6 +166,9 @@ function KompaasPreview() {
 export function HomePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
+  const [softphoneImageReady, setSoftphoneImageReady] = useState(false);
+  const [softphoneVideoReady, setSoftphoneVideoReady] = useState(false);
+
 
   const container = {
     hidden: { opacity: 0 },
@@ -295,30 +307,34 @@ export function HomePage() {
               className="block w-full"
             >
               <div className="flex w-full items-center justify-center gap-space-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] px-space-4 py-space-6 sm:h-[550px] sm:gap-space-8 sm:px-space-10 sm:py-space-8">
-                <Image
-                  alt="Экран тарифа и расходов MCN Softphone"
-                  src={assets.softphoneHome}
-                  width={900}
-                  height={1840}
-                  sizes="(max-width: 639px) calc((100vw - 64px) / 2), 238px"
-                  className="h-auto w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 sm:w-[238px]"
-                  priority
-                  quality={100}
-                />
-                <video
-                  src={assets.callFlowVideo}
-                  aria-label="Анимация звонка и отображения стоимости в MCN Softphone"
-                  className="aspect-[900/1840] w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 object-contain sm:w-[238px]"
-                  style={{
-                    clipPath: "inset(2% 4% 1.4% 4% round 17% 17% 25% 25% / 7% 7% 7% 7%)",
-                    transform: "scale(1.03)"
-                  }}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                />
+                <div className={`flex items-center justify-center gap-space-4 sm:gap-space-8 ${softphoneImageReady && softphoneVideoReady ? "opacity-100" : "opacity-0"}`}>
+                  <Image
+                    alt="Экран тарифа и расходов MCN Softphone"
+                    src={assets.softphoneHome}
+                    width={900}
+                    height={1840}
+                    sizes="(max-width: 639px) calc((100vw - 64px) / 2), 238px"
+                    className="h-auto w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 sm:w-[238px]"
+                    priority
+                    quality={100}
+                    onLoad={() => setSoftphoneImageReady(true)}
+                  />
+                  <video
+                    src={assets.callFlowVideo}
+                    aria-label="Анимация звонка и отображения стоимости в MCN Softphone"
+                    className="aspect-[900/1840] w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 object-contain sm:w-[238px]"
+                    style={{
+                      clipPath: "inset(2% 4% 1.4% 4% round 17% 17% 25% 25% / 7% 7% 7% 7%)",
+                      transform: "scale(1.03)"
+                    }}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    onLoadedData={() => setSoftphoneVideoReady(true)}
+                  />
+                </div>
               </div>
             </Link>
             <ProjectDetails
