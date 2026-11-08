@@ -11,7 +11,7 @@ const assets = {
   arrowOutward: "/figma/Icons/arrow_outward.svg",
   softphoneHome: "/figma/Case_1/Section_1/softphone-home.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow.mp4",
-  vpbxCanvas: "/figma/Case_2/Section_1/vpbx-canvas.png",
+  kompaasPreviewVideo: "/figma/Case_2/Section_1/kompaas-voice-bot-preview.mp4",
   appState: "/figma/Case_3/Section_1/app-state-v2.png",
   appGoals: "/figma/Case_3/Section_1/app-goals-v2.png"
 };
@@ -270,14 +270,15 @@ export function HomePage() {
               aria-label="Открыть кейс KOMPaaS"
               className="block w-full"
             >
-              <Image
-                alt="Редактор сценариев KOMPaaS"
-                src={assets.vpbxCanvas}
-                width={2400}
-                height={1500}
-                sizes="(max-width: 831px) calc(100vw - 32px), 800px"
-                className="h-auto w-full rounded-[8px] object-contain"
-                quality={100}
+              <video
+                src={assets.kompaasPreviewVideo}
+                aria-label="Анимация сценария голосового бота в KOMPaaS"
+                className="aspect-[8/5] h-auto w-full rounded-[8px] object-contain"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
               />
             </Link>
             <ProjectDetails
