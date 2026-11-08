@@ -36,21 +36,28 @@ type ProjectDetailsProps = {
 function ProjectDetails({ title, href, meta, description, external = false }: ProjectDetailsProps) {
   return (
     <div className="grid w-full gap-space-3 sm:grid-cols-2 sm:gap-0">
-      <div className="min-w-0">
+      <div className="flex min-w-0 flex-col items-start gap-[4px]">
         <Link
           href={href}
           prefetch={false}
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
           aria-label={external ? "Открыть приложение Camomile" : "Открыть кейс " + title}
-          className="group inline-flex max-w-full items-center gap-[2px] focus-visible:outline-offset-4"
+          className="group link-underline inline-flex max-w-full items-end gap-[2px] focus-visible:outline-offset-4"
         >
           <h3 className="text-[28px] font-medium leading-[40px]">
-            <span className="link-underline">{title}</span>
+            {title}
           </h3>
-          <Image src={assets.arrowOutward} alt="" width={24} height={24} className="h-6 w-6 shrink-0" />
+          <Image src={assets.arrowOutward} alt="" width={24} height={24} className="mb-[5px] h-6 w-6 shrink-0" />
         </Link>
-        <p className="text-[16px] leading-[1.4] text-[#a0a0a0]">{meta}</p>
+        <p className="text-[16px] leading-[1.4] text-[#a0a0a0]">
+          {meta.split(" · ").map((part, index) => (
+            <span key={index}>
+              {index > 0 ? <>{" "}<span className="text-[#d2d2d2]">·</span>{" "}</> : null}
+              {part}
+            </span>
+          ))}
+        </p>
       </div>
       <p className="text-[16px] leading-[1.4] text-primary">{description}</p>
     </div>
@@ -63,10 +70,10 @@ function InlineLink({ href, children }: { href: string; children: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group inline-flex items-center gap-[2px] text-[16px] leading-[1.4]"
+      className="group link-underline inline-flex items-end gap-[2px] text-[16px] leading-[1.4]"
     >
-      <span className="link-underline">{children}</span>
-      <Image src={assets.arrowOutward} alt="" width={16} height={16} className="h-4 w-4 shrink-0" />
+      {children}
+      <Image src={assets.arrowOutward} alt="" width={16} height={16} className="mb-[1px] h-4 w-4 shrink-0" />
     </a>
   );
 }
@@ -186,8 +193,8 @@ export function HomePage() {
                 quality={100}
               />
             </div>
-            <h1 className="text-[28px] font-medium leading-[40px]">
-              Привет, я Настя Ермошина
+            <h1 className="text-[40px] font-medium leading-[48px]">
+              Настя Ермошина
             </h1>
           </div>
           <p className="w-full max-w-[480px] text-[16px] leading-[1.4]">
