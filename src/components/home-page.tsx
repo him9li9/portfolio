@@ -210,7 +210,7 @@ export function HomePage() {
         </motion.section>
 
         <motion.section variants={item} className="flex w-full flex-col items-center gap-space-6">
-          <h2 className="text-center text-[20px] font-medium leading-[28px]">Рабочие проекты</h2>
+          <h2 className="text-center text-[20px] font-medium leading-[28px]">Мои проекты</h2>
           <article className="flex w-full flex-col gap-space-6">
             <Link
               href="/app"
