@@ -30,10 +30,11 @@ type ProjectDetailsProps = {
   href: string;
   meta: string;
   description: string;
+  note?: string;
   external?: boolean;
 };
 
-function ProjectDetails({ title, href, meta, description, external = false }: ProjectDetailsProps) {
+function ProjectDetails({ title, href, meta, description, note, external = false }: ProjectDetailsProps) {
   return (
     <div className="grid w-full gap-space-3 sm:grid-cols-2 sm:gap-0">
       <div className="flex min-w-0 flex-col items-start gap-[4px]">
@@ -59,7 +60,7 @@ function ProjectDetails({ title, href, meta, description, external = false }: Pr
           ))}
         </p>
       </div>
-      <p className="text-[16px] leading-[1.4] text-primary">{description}</p>
+      <p className="text-[16px] leading-[1.4] text-primary">{description}{note ? <> <span className="text-[#a0a0a0]">{note}</span></> : null}</p>
     </div>
   );
 }
@@ -277,7 +278,6 @@ export function HomePage() {
         </motion.section>
 
         <motion.section variants={item} className="flex w-full flex-col items-center gap-space-6">
-          <h2 className="text-center text-[20px] font-medium leading-[28px]">Пет-проекты</h2>
           <article className="flex w-full flex-col gap-space-6">
             <a
               href={camomileUrl}
@@ -311,8 +311,9 @@ export function HomePage() {
               title="Camomile"
               href={camomileUrl}
               external
-              meta="B2C · AI-first · 2026"
+              meta="Pet-project · AI-first · 2026"
               description="Сделала Telegram mini app для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов."
+              note="[Кейс пока в разработке]"
             />
           </article>
         </motion.section>
