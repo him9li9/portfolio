@@ -43,7 +43,7 @@ function ProjectDetails({ title, href, meta, description, external = false }: Pr
           target={external ? "_blank" : undefined}
           rel={external ? "noopener noreferrer" : undefined}
           aria-label={external ? "Открыть приложение Camomile" : "Открыть кейс " + title}
-          className="group link-underline inline-flex max-w-full items-end gap-[2px] focus-visible:outline-offset-4"
+          className="group link-underline link-underline-arrow-24 inline-flex max-w-full items-end gap-[2px] focus-visible:outline-offset-4"
         >
           <h3 className="text-[28px] font-medium leading-[40px]">
             {title}
@@ -70,7 +70,7 @@ function InlineLink({ href, children }: { href: string; children: string }) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group link-underline inline-flex items-end gap-[2px] text-[16px] leading-[1.4]"
+      className="group link-underline link-underline-arrow-16 inline-flex items-end gap-[2px] text-[16px] leading-[1.4]"
     >
       {children}
       <Image src={assets.arrowOutward} alt="" width={16} height={16} className="mb-[1px] h-4 w-4 shrink-0" />
@@ -198,9 +198,9 @@ export function HomePage() {
             </h1>
           </div>
           <p className="w-full max-w-[480px] text-[16px] leading-[1.4]">
-            Продуктовый дизайнер с 4+ годами опыта в мобильных и B2B-продуктах.
-            Разбираюсь в сложных сценариях и довожу решения до релиза. Использую AI для быстрых
-            экспериментов, прототипирования и работы с кодом.
+            Продуктовый дизайнер с 4+ годами опыта в мобильных
+            <br className="hidden sm:block" />
+            {" и B2B-продуктах. Разбираюсь в сложных сценариях и довожу решения до релиза. Использую AI для быстрых экспериментов, прототипирования и работы с кодом."}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-space-4">
             <InlineLink href={cvUrl}>CV</InlineLink>
@@ -244,7 +244,7 @@ export function HomePage() {
               title="MCN Softphone"
               href="/app"
               meta="B2C · Mobile app · 2024 — н.в."
-              description="Переработала регистрацию и активацию номера в приложении интернет-телефонии, сократив путь до первого звонка с 8 до 3 шагов и количество обращений в 2 раза"
+              description="Переработала регистрацию и активацию номера в приложении интернет-телефонии, сократив путь до первого звонка с 8 до 3 шагов и количество обращений в 2 раза."
             />
           </article>
         </motion.section>
@@ -270,8 +270,8 @@ export function HomePage() {
             <ProjectDetails
               title="KOMPaaS"
               href="/work"
-              meta="B2B · Web · 2023 — 2025"
-              description="Спроектировала редактор для самостоятельной работы менеджеров со сценариями звонков, снизив количество ошибок на продакшене в 2,5 раза за первые 3 месяца после изменений"
+              meta="B2B · Web service · 2023 — 2025"
+              description="Спроектировала редактор для самостоятельной работы менеджеров со сценариями звонков, снизив количество ошибок на продакшене в 2,5 раза за первые 3 месяца после изменений."
             />
           </article>
         </motion.section>
@@ -312,7 +312,7 @@ export function HomePage() {
               href={camomileUrl}
               external
               meta="B2C · AI-first · 2026"
-              description="Сделала Telegram mini app для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов"
+              description="Сделала Telegram mini app для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов."
             />
           </article>
         </motion.section>
