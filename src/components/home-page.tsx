@@ -3,41 +3,78 @@
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const assets = {
   avatar: "/figma/avatar.png",
   heart: "/figma/Icons/heart.svg",
-  phone1: "/figma/Case_1/Section_1/softphone-success.png",
-  phone2: "/figma/Case_1/Section_1/softphone-home.png",
-  phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
+  arrowOutward: "/figma/Icons/arrow_outward.svg",
+  softphoneHome: "/figma/Case_1/Section_1/softphone-home.png",
+  softphoneSuccess: "/figma/Case_1/Section_1/softphone-success.png",
   vpbxCanvas: "/figma/Case_2/Section_1/vpbx-canvas.png",
   appState: "/figma/Case_3/Section_1/app-state-v2.png",
-  appGoals: "/figma/Case_3/Section_1/app-goals-v2.png",
-  arrowForward: "/figma/Icons/arrow_forward.svg"
+  appGoals: "/figma/Case_3/Section_1/app-goals-v2.png"
 };
 
-const thirdProject: { title: string; description: string; tags: string[]; href?: string } = {
-  title: "Camomile",
-  description: "Разработала приложение для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов.",
-  tags: ["Telegram Mini App", "AI-first project"],
-  href: "https://t.me/cam0mile_bot"
-};
+const cvUrl = "https://drive.google.com/file/d/1jXFLR65AUPIRSsSU4JpdDGOdRiS_aMF4/view?usp=sharing";
+const telegramUrl = "https://t.me/him9li9";
+const camomileUrl = "https://t.me/cam0mile_bot";
 
-const footerLinks = [
-  { label: "Telegram", href: "https://t.me/him9li9" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/nastya-ermoshina-781714274" },
-  {
-    label: "CV",
-    href: "https://drive.google.com/file/d/1jXFLR65AUPIRSsSU4JpdDGOdRiS_aMF4/view?usp=sharing"
-  }
+const links = [
+  { label: "CV", href: cvUrl },
+  { label: "Telegram", href: telegramUrl }
 ];
+
+type ProjectDetailsProps = {
+  title: string;
+  href: string;
+  meta: string;
+  description: string;
+  external?: boolean;
+};
+
+function ProjectDetails({ title, href, meta, description, external = false }: ProjectDetailsProps) {
+  return (
+    <div className="grid w-full gap-space-3 sm:grid-cols-2 sm:gap-0">
+      <div className="min-w-0">
+        <Link
+          href={href}
+          prefetch={false}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
+          aria-label={external ? "Открыть приложение Camomile" : "Открыть кейс " + title}
+          className="group inline-flex max-w-full items-center gap-[2px] focus-visible:outline-offset-4"
+        >
+          <h3 className="text-[28px] font-semibold leading-[40px]">
+            <span className="link-underline">{title}</span>
+          </h3>
+          <Image src={assets.arrowOutward} alt="" width={24} height={24} className="h-6 w-6 shrink-0" />
+        </Link>
+        <p className="text-[16px] leading-[1.4] text-[#a0a0a0]">{meta}</p>
+      </div>
+      <p className="text-[16px] leading-[1.4] text-primary">{description}</p>
+    </div>
+  );
+}
+
+function InlineLink({ href, children }: { href: string; children: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group inline-flex items-center gap-[2px] text-[16px] leading-[1.4]"
+    >
+      <span className="link-underline">{children}</span>
+      <Image src={assets.arrowOutward} alt="" width={16} height={16} className="h-4 w-4 shrink-0" />
+    </a>
+  );
+}
 
 export function HomePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
-  const softphonePreviewRef = useRef<HTMLDivElement | null>(null);
-  const softphoneCenterPhoneRef = useRef<HTMLImageElement | null>(null);
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -45,6 +82,7 @@ export function HomePage() {
       transition: { staggerChildren: 0.35 }
     }
   };
+
   const item = {
     hidden: { opacity: 0, y: 18 },
     show: {
@@ -63,7 +101,6 @@ export function HomePage() {
       requestAnimationFrame(() => {
         const currentY = window.scrollY;
         const delta = currentY - lastY;
-
         if (currentY <= 80) {
           setHideTopbar(false);
         } else if (delta > 6) {
@@ -71,7 +108,6 @@ export function HomePage() {
         } else if (delta < -6) {
           setHideTopbar(false);
         }
-
         lastY = currentY;
         ticking = false;
       });
@@ -86,38 +122,6 @@ export function HomePage() {
     update();
     mql.addEventListener("change", update);
     return () => mql.removeEventListener("change", update);
-  }, []);
-
-  useEffect(() => {
-    const centerSoftphonePreview = () => {
-      if (!softphonePreviewRef.current || !window.matchMedia("(max-width: 639px)").matches) {
-        return;
-      }
-      const element = softphonePreviewRef.current;
-      const centerPhone = softphoneCenterPhoneRef.current;
-      if (!centerPhone) {
-        return;
-      }
-      const elementRect = element.getBoundingClientRect();
-      const phoneRect = centerPhone.getBoundingClientRect();
-      element.scrollLeft += phoneRect.left + phoneRect.width / 2 - elementRect.left - element.clientWidth / 2;
-    };
-    const raf = requestAnimationFrame(centerSoftphonePreview);
-    const observer = new ResizeObserver(centerSoftphonePreview);
-    if (softphonePreviewRef.current) {
-      observer.observe(softphonePreviewRef.current);
-    }
-    if (softphoneCenterPhoneRef.current) {
-      observer.observe(softphoneCenterPhoneRef.current);
-    }
-    window.addEventListener("resize", centerSoftphonePreview);
-    window.addEventListener("pageshow", centerSoftphonePreview);
-    return () => {
-      cancelAnimationFrame(raf);
-      observer.disconnect();
-      window.removeEventListener("resize", centerSoftphonePreview);
-      window.removeEventListener("pageshow", centerSoftphonePreview);
-    };
   }, []);
 
   return (
@@ -139,7 +143,7 @@ export function HomePage() {
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
-              href="https://drive.google.com/file/d/1jXFLR65AUPIRSsSU4JpdDGOdRiS_aMF4/view?usp=sharing"
+              href={cvUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -149,7 +153,7 @@ export function HomePage() {
               whileHover={canHover ? { backgroundColor: "var(--color-bg-elevated-hover)", scale: 1.05 } : undefined}
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="inline-flex items-center justify-center rounded-full bg-elevated px-space-4 py-space-2 text-body-16 text-primary"
-              href="https://t.me/him9li9"
+              href={telegramUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -163,273 +167,160 @@ export function HomePage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="mx-auto flex w-full max-w-[900px] flex-col gap-[140px] px-space-4 pb-0 pt-[140px] sm:px-space-8 lg:px-0"
+        className="mx-auto flex w-full max-w-[800px] flex-col gap-[140px] px-space-4 pt-[140px] sm:px-space-8 lg:px-0"
       >
-        <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-3 sm:items-center">
-          <div className="flex flex-col items-start justify-center gap-space-8 sm:items-center">
+        <motion.section
+          variants={item}
+          className="mx-auto flex w-full flex-col items-center gap-space-3 text-center"
+        >
+          <div className="flex flex-col items-center gap-space-8">
             <div className="relative h-[100px] w-[120px] overflow-hidden rounded-[100px]">
               <Image
                 alt=""
                 src={assets.avatar}
                 width={120}
                 height={100}
-                priority
                 sizes="120px"
+                priority
                 className="h-full w-full object-cover"
-              quality={100}
+                quality={100}
               />
             </div>
-            <h1 className="text-left text-h2 sm:text-center">
+            <h1 className="text-[28px] font-semibold leading-[40px]">
               Привет, я Настя Ермошина
             </h1>
           </div>
-          <p className="w-full text-left text-body-18 text-primary sm:w-[482px] sm:text-center">
-            Продуктовый дизайнер с 4+ годами опыта в мобильных и B2B-продуктах. Разбираюсь в сложных сценариях и довожу решения до релиза. Использую AI для быстрых экспериментов, прототипирования и работы с кодом.
+          <p className="w-full max-w-[480px] text-[16px] leading-[1.4]">
+            Продуктовый дизайнер с 4+ годами опыта в мобильных и B2B-продуктах.
+            Разбираюсь в сложных сценариях и довожу решения до релиза. Использую AI для быстрых
+            экспериментов, прототипирования и работы с кодом.
           </p>
-        </motion.section>
-
-        <motion.section variants={item} className="mx-auto flex w-full max-w-[900px] flex-col items-start gap-space-6 sm:items-center">
-          <h3 className="w-full text-left text-h3 sm:text-center">
-            Мои проекты
-          </h3>
-
-          <div className="flex w-full flex-col items-start gap-[140px] sm:items-center">
-            <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
-              <Link
-                href="/app"
-                prefetch={false}
-                aria-label="Открыть кейс MCN Softphone"
-                className="group block w-full"
-              >
-                <div
-                  ref={softphonePreviewRef}
-                  className="relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto bg-secondary px-space-4 py-space-6 sm:flex sm:w-[900px] sm:items-center sm:justify-center sm:gap-space-4 sm:overflow-visible sm:rounded-[12px] sm:px-space-10 sm:py-space-8"
-                >
-                  <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
-                    <Image
-                      alt="Экран регистрации MCN Softphone"
-                      src={assets.phone1}
-                      width={735}
-                      height={1500}
-                      priority
-                      sizes="(max-width: 640px) 190px, 240px"
-                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
-                      quality={100}
-                    />
-                    <Image
-                      ref={softphoneCenterPhoneRef}
-                      alt="Экран тарифа MCN Softphone"
-                      src={assets.phone2}
-                      width={732}
-                      height={1500}
-                      priority
-                      sizes="(max-width: 640px) 263px, 280px"
-                      className="h-[540px] w-auto shrink-0 sm:h-auto sm:w-[280px]"
-                      quality={100}
-                    />
-                    <Image
-                      alt="Экран звонка MCN Softphone"
-                      src={assets.phone3}
-                      width={735}
-                      height={1500}
-                      priority
-                      sizes="(max-width: 640px) 190px, 240px"
-                      className="h-[388px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
-                      quality={100}
-                    />
-                  </div>
-                </div>
-              </Link>
-
-              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[900px]">
-                <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
-                  <h3 className="text-h2">MCN Softphone</h3>
-                  <Link
-                    href="/app"
-                    prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
-                  >
-                    <span>Смотреть кейс</span>
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-                  </Link>
-                </div>
-                <div className="flex w-full flex-col items-start gap-space-2">
-                  <div className="h-px w-full bg-border-elevated" />
-                  <p className="w-full max-w-[500px] text-body-18 text-primary">
-                    Упростила регистрацию, сократила путь до первого звонка и сделала стоимость связи прозрачнее.
-                  </p>
-                  <div className="flex flex-wrap items-start gap-space-2">
-                    <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      B2C
-                    </span>
-                    <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      Mobile app
-                    </span>
-                  </div>
-                  <Link
-                    href="/app"
-                    prefetch={false}
-                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
-                  >
-                    <span>Смотреть кейс</span>
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </article>
-
-            <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
-              <Link
-                href="/work"
-                prefetch={false}
-                aria-label="Открыть кейс KOMPaaS"
-                className="group block w-full"
-              >
-                <div className="relative w-full overflow-hidden rounded-[8px] sm:left-1/2 sm:w-[900px] sm:-translate-x-1/2">
-                  <Image
-                    alt="KOMPaaS canvas preview"
-                    src={assets.vpbxCanvas}
-                    width={2400}
-                    height={1500}
-                    sizes="(max-width: 640px) calc(100vw - 32px), 900px"
-                    className="h-auto w-full"
-                  quality={100}
-                  />
-                </div>
-              </Link>
-
-              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[900px]">
-                <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
-                  <h3 className="text-h2">KOMPaaS</h3>
-                  <Link
-                    href="/work"
-                    prefetch={false}
-                    className="hidden shrink-0 items-center gap-space-1 link-underline text-body-16 text-primary sm:flex"
-                  >
-                    <span>Смотреть кейс</span>
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-                  </Link>
-                </div>
-                <div className="flex w-full flex-col items-start gap-space-2">
-                  <div className="h-px w-full bg-border-elevated" />
-                  <p className="w-full max-w-[500px] text-body-18 text-primary">
-                    Спроектировала единый workspace для самостоятельной работы менеджеров со сценариями звонков.
-                  </p>
-                  <div className="flex flex-wrap items-start gap-space-2">
-                    <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      B2B
-                    </span>
-                    <span className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                      Self-service
-                    </span>
-                  </div>
-                  <Link
-                    href="/work"
-                    prefetch={false}
-                    className="mt-space-1 flex items-center gap-space-1 text-body-16 text-primary sm:hidden"
-                  >
-                    <span>Смотреть кейс</span>
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </article>
-            <article className="flex w-full flex-col items-start gap-space-6 sm:items-center">
-              <a
-                href={thirdProject.href}
-                target={thirdProject.href ? "_blank" : undefined}
-                rel={thirdProject.href ? "noopener noreferrer" : undefined}
-                aria-label={thirdProject.href ? `Перейти в приложение ${thirdProject.title}` : undefined}
-                className="block w-full"
-              >
-                <div className="relative left-1/2 flex w-screen -translate-x-1/2 items-center justify-center gap-space-4 bg-secondary px-space-4 py-space-6 sm:w-[900px] sm:gap-space-6 sm:rounded-[12px] sm:px-space-10 sm:py-space-8">
-                  <Image
-                    alt="Экран состояния по сферам жизни"
-                    src={assets.appState}
-                    width={900}
-                    height={1840}
-                    sizes="(max-width: 639px) calc((100vw - 48px) / 2), 280px"
-                    className="h-auto w-[calc((100%-16px)/2)] max-w-[280px] shrink-0 sm:w-[280px]"
-                    quality={100}
-                  />
-                  <Image
-                    alt="Экран целей на месяц"
-                    src={assets.appGoals}
-                    width={900}
-                    height={1840}
-                    sizes="(max-width: 639px) calc((100vw - 48px) / 2), 280px"
-                    className="h-auto w-[calc((100%-16px)/2)] max-w-[280px] shrink-0 sm:w-[280px]"
-                    quality={100}
-                  />
-                </div>
-              </a>
-
-              <div className="flex w-full flex-col items-start gap-space-2 sm:w-[900px]">
-                <div className="flex w-full flex-col gap-space-2 text-primary sm:flex-row sm:items-end sm:justify-between sm:gap-space-4">
-                  <h3 className="text-h2">{thirdProject.title}</h3>
-                  <a
-                    href={thirdProject.href}
-                    target={thirdProject.href ? "_blank" : undefined}
-                    rel={thirdProject.href ? "noopener noreferrer" : undefined}
-                    aria-disabled={!thirdProject.href || undefined}
-                    className={`hidden shrink-0 items-center gap-space-1 text-body-16 sm:flex ${thirdProject.href ? "link-underline text-primary" : "text-secondary"}`}
-                  >
-                    <span>Перейти в приложение</span>
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-                  </a>
-                </div>
-                <div className="flex w-full flex-col items-start gap-space-2">
-                  <div className="h-px w-full bg-border-elevated" />
-                  <p className="w-full max-w-[500px] text-body-18 text-primary">
-                    {thirdProject.description}
-                  </p>
-                  {thirdProject.tags.length > 0 && (
-                    <div className="flex flex-wrap items-start gap-space-2">
-                      {thirdProject.tags.map((tag) => (
-                        <span key={tag} className="rounded-full bg-chips px-space-3 py-space-1 text-body-16 text-secondary-elevated">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-                  <a
-                    href={thirdProject.href}
-                    target={thirdProject.href ? "_blank" : undefined}
-                    rel={thirdProject.href ? "noopener noreferrer" : undefined}
-                    aria-disabled={!thirdProject.href || undefined}
-                    className={`mt-space-1 flex items-center gap-space-1 text-body-16 sm:hidden ${thirdProject.href ? "text-primary" : "text-secondary"}`}
-                  >
-                    <span>Перейти в приложение</span>
-                    <Image alt="" src={assets.arrowForward} width={16} height={16} className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            </article>
+          <div className="flex flex-wrap items-center justify-center gap-space-4">
+            <InlineLink href={cvUrl}>CV</InlineLink>
+            <InlineLink href={telegramUrl}>Telegram</InlineLink>
           </div>
         </motion.section>
-      </motion.div>
-      <footer className="mx-auto mt-[140px] flex w-full max-w-[900px] flex-col gap-space-2 px-space-4 pb-space-6 sm:px-0 sm:pb-[40px]">
-        <div className="flex flex-col gap-space-3">
-          <h3 className="text-h4">Связаться со мной</h3>
-        </div>
-        <div className="h-px w-full bg-border-elevated" />
-        <div className="flex w-full flex-col gap-space-6 min-[900px]:flex-row min-[900px]:items-center min-[900px]:justify-between min-[900px]:gap-space-2">
-          <nav aria-label="Footer links" className="flex flex-wrap items-center gap-space-2 text-body-16 text-primary">
-            {footerLinks.map((link, index) => (
-              <div key={link.label} className="flex items-center gap-space-2">
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="link-underline"
-                >
-                  {link.label}
-                </a>
-                {index < footerLinks.length - 1 ? <span className="text-secondary">·</span> : null}
+
+        <motion.section variants={item} className="flex w-full flex-col items-center gap-space-6">
+          <h2 className="text-center text-[20px] font-semibold leading-[28px]">Рабочие проекты</h2>
+          <article className="flex w-full flex-col gap-space-6">
+            <Link
+              href="/app"
+              prefetch={false}
+              aria-label="Открыть кейс MCN Softphone"
+              className="block w-full"
+            >
+              <div className="flex w-full items-center justify-center gap-space-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] px-space-4 py-space-6 sm:h-[550px] sm:gap-space-8 sm:px-space-10 sm:py-space-8">
+                <Image
+                  alt="Экран тарифа и расходов MCN Softphone"
+                  src={assets.softphoneHome}
+                  width={900}
+                  height={1840}
+                  sizes="(max-width: 639px) calc((100vw - 64px) / 2), 238px"
+                  className="h-auto w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 sm:w-[238px]"
+                  priority
+                  quality={100}
+                />
+                <Image
+                  alt="Экран завершения регистрации MCN Softphone"
+                  src={assets.softphoneSuccess}
+                  width={900}
+                  height={1840}
+                  sizes="(max-width: 639px) calc((100vw - 64px) / 2), 238px"
+                  className="h-auto w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 sm:w-[238px]"
+                  priority
+                  quality={100}
+                />
               </div>
+            </Link>
+            <ProjectDetails
+              title="MCN Softphone"
+              href="/app"
+              meta="B2C · Mobile app · 2024 — н.в."
+              description="Переработала регистрацию и активацию номера в приложении интернет-телефонии, сократив путь до первого звонка с 8 до 3 шагов и количество обращений в 2 раза"
+            />
+          </article>
+        </motion.section>
+
+        <motion.section variants={item} className="flex w-full flex-col gap-space-6">
+          <article className="flex w-full flex-col gap-space-6">
+            <Link
+              href="/work"
+              prefetch={false}
+              aria-label="Открыть кейс KOMPaaS"
+              className="block w-full"
+            >
+              <Image
+                alt="Редактор сценариев KOMPaaS"
+                src={assets.vpbxCanvas}
+                width={2400}
+                height={1500}
+                sizes="(max-width: 831px) calc(100vw - 32px), 800px"
+                className="h-auto w-full rounded-[8px] object-contain"
+                quality={100}
+              />
+            </Link>
+            <ProjectDetails
+              title="KOMPaaS"
+              href="/work"
+              meta="B2B · Web · 2023 — 2025"
+              description="Спроектировала редактор для самостоятельной работы менеджеров со сценариями звонков, снизив количество ошибок на продакшене в 2,5 раза за первые 3 месяца после изменений"
+            />
+          </article>
+        </motion.section>
+
+        <motion.section variants={item} className="flex w-full flex-col items-center gap-space-6">
+          <h2 className="text-center text-[20px] font-semibold leading-[28px]">Пет-проекты</h2>
+          <article className="flex w-full flex-col gap-space-6">
+            <a
+              href={camomileUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Открыть приложение Camomile"
+              className="block w-full"
+            >
+              <div className="flex w-full items-center justify-center gap-space-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] px-space-4 py-space-6 sm:h-[550px] sm:gap-space-8 sm:px-space-10 sm:py-space-8">
+                <Image
+                  alt="Экран баланса сфер жизни Camomile"
+                  src={assets.appState}
+                  width={900}
+                  height={1840}
+                  sizes="(max-width: 639px) calc((100vw - 64px) / 2), 238px"
+                  className="h-auto w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 sm:w-[238px]"
+                  quality={100}
+                />
+                <Image
+                  alt="Экран целей Camomile"
+                  src={assets.appGoals}
+                  width={900}
+                  height={1840}
+                  sizes="(max-width: 639px) calc((100vw - 64px) / 2), 238px"
+                  className="h-auto w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 sm:w-[238px]"
+                  quality={100}
+                />
+              </div>
+            </a>
+            <ProjectDetails
+              title="Camomile"
+              href={camomileUrl}
+              external
+              meta="B2C · AI-first · 2026"
+              description="Сделала Telegram mini app для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов"
+            />
+          </article>
+        </motion.section>
+      </motion.div>
+
+      <footer className="mx-auto mt-[140px] flex w-full max-w-[800px] flex-col gap-space-2 px-space-4 pb-[70px] sm:px-space-8 lg:px-0">
+        <h2 className="text-[20px] font-semibold leading-[28px]">Связаться со мной</h2>
+        <div className="h-px w-full bg-border-elevated" />
+        <div className="flex w-full flex-col gap-space-4 sm:flex-row sm:items-start sm:justify-between">
+          <nav aria-label="Контакты" className="flex flex-wrap items-center gap-space-4">
+            {links.map((link) => (
+              <InlineLink href={link.href} key={link.label}>{link.label}</InlineLink>
             ))}
           </nav>
-          <p className="text-body-16 text-secondary min-[900px]:ml-auto">Nastya Ermoshina © 2026</p>
+          <p className="text-[16px] leading-[1.4] text-[#a0a0a0]">Nastya Ermoshina © 2026</p>
         </div>
       </footer>
     </main>
