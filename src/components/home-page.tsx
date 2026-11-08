@@ -83,7 +83,7 @@ function InlineLink({ href, children }: { href: string; children: string }) {
 function KompaasPreview() {
   const previewRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [stage, setStage] = useState<"still" | "zoom" | "video" | "reveal" | "return">("still");
+  const [stage, setStage] = useState<"still" | "enter" | "play" | "exit">("still");
   const [isVisible, setIsVisible] = useState(false);
   const [videoReady, setVideoReady] = useState(false);
 
@@ -101,53 +101,54 @@ function KompaasPreview() {
   useEffect(() => {
     if (stage !== "still" || !isVisible || !videoReady) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const timer = window.setTimeout(() => setStage("zoom"), 1100);
+    const timer = window.setTimeout(() => {
+      if (videoRef.current) videoRef.current.currentTime = 0;
+      setStage("enter");
+    }, 1000);
     return () => window.clearTimeout(timer);
   }, [stage, isVisible, videoReady]);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-
-    if (stage === "video" && isVisible) {
-      video.currentTime = 0;
-      void video.play().catch(() => setStage("reveal"));
+    if (stage === "play" && isVisible) {
+      void video.play().catch(() => setStage("exit"));
     } else {
       video.pause();
     }
   }, [stage, isVisible]);
 
   return (
-    <div ref={previewRef} className="relative aspect-[8/5] w-full overflow-hidden rounded-[8px] bg-[#f4f4f4]">
-      <div className="absolute inset-0 flex items-center justify-center bg-[#f4f4f4] px-[6%] py-[7%]">
-        <video
-          ref={videoRef}
-          src={assets.kompaasCanvasVideo}
-          aria-label="Добавление и настройка блока в редакторе сценариев KOMPaaS"
-          className="block h-full w-full object-contain"
-          muted
-          playsInline
-          preload="auto"
-          onLoadedData={() => setVideoReady(true)}
-          onEnded={() => setStage("reveal")}
-        />
-      </div>
+    <div
+      ref={previewRef}
+      className="relative aspect-[8/5] w-full overflow-hidden rounded-[8px] bg-[#f5f5f5]"
+    >
+      <video
+        ref={videoRef}
+        src={assets.kompaasCanvasVideo}
+        aria-label="Добавление и настройка блока в редакторе сценариев KOMPaaS"
+        className="absolute inset-0 h-full w-full object-contain"
+        muted
+        playsInline
+        preload="auto"
+        onLoadedData={() => setVideoReady(true)}
+        onEnded={() => setStage("exit")}
+      />
       <motion.div
         className="absolute inset-0"
         initial={false}
         animate={{
-          scale: stage === "still" || stage === "return" ? 1 : 1.7,
-          opacity: stage === "video" ? 0 : 1
+          scale: stage === "still" || stage === "exit" ? 1 : 1.4,
+          opacity: stage === "enter" || stage === "play" ? 0 : 1
         }}
         transition={{
-          scale: { duration: 1.3, ease: cubicBezier(0.16, 1, 0.3, 1) },
-          opacity: { duration: 0.38, ease: "easeInOut" }
+          scale: { duration: 1.2, ease: cubicBezier(0.16, 1, 0.3, 1) },
+          opacity: { duration: 1.05, ease: "easeInOut" }
         }}
         style={{ transformOrigin: "55% 52%" }}
         onAnimationComplete={() => {
-          if (stage === "zoom") setStage("video");
-          if (stage === "reveal") setStage("return");
-          if (stage === "return") setStage("still");
+          if (stage === "enter") setStage("play");
+          if (stage === "exit") setStage("still");
         }}
       >
         <Image
