@@ -3,7 +3,7 @@
 import { cubicBezier, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const assets = {
   avatar: "/figma/avatar.png",
@@ -12,6 +12,7 @@ const assets = {
   softphoneHome: "/figma/Case_1/Section_1/softphone-home.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow.mp4",
   vpbxCanvas: "/figma/Case_2/Section_1/vpbx-canvas.png",
+  kompaasCanvasVideo: "/figma/Case_2/Section_4/canvas.mp4",
   appState: "/figma/Case_3/Section_1/app-state-v2.png",
   appGoals: "/figma/Case_3/Section_1/app-goals-v2.png"
 };
@@ -76,6 +77,80 @@ function InlineLink({ href, children }: { href: string; children: string }) {
       {children}
       <Image src={assets.arrowOutward} alt="" width={16} height={16} className="mb-[1px] h-4 w-4 shrink-0" />
     </a>
+  );
+}
+
+function KompaasPreview() {
+  const previewRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [stage, setStage] = useState<"still" | "zoom" | "video">("still");
+
+  useEffect(() => {
+    const preview = previewRef.current;
+    if (!preview) return;
+
+    let startTimer: number | undefined;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        startTimer = window.setTimeout(() => setStage("zoom"), 450);
+      },
+      { threshold: 0.4 }
+    );
+
+    observer.observe(preview);
+    return () => {
+      observer.disconnect();
+      if (startTimer !== undefined) window.clearTimeout(startTimer);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (stage !== "video") return;
+    const video = videoRef.current;
+    if (!video) return;
+    video.currentTime = 0;
+    void video.play().catch(() => {});
+  }, [stage]);
+
+  return (
+    <div ref={previewRef} className="relative aspect-[8/5] w-full overflow-hidden rounded-[8px] bg-[#f4f4f4]">
+      <video
+        ref={videoRef}
+        src={assets.kompaasCanvasVideo}
+        aria-label="Добавление и настройка блока в редакторе сценариев KOMPaaS"
+        className="absolute inset-0 h-full w-full object-cover"
+        muted
+        loop
+        playsInline
+        preload="auto"
+      />
+      <motion.div
+        className="absolute inset-0"
+        initial={false}
+        animate={{ scale: stage === "still" ? 1 : 1.7, opacity: stage === "video" ? 0 : 1 }}
+        transition={{
+          scale: { duration: 1.3, ease: cubicBezier(0.16, 1, 0.3, 1) },
+          opacity: { duration: 0.38, ease: "easeInOut" }
+        }}
+        style={{ transformOrigin: "55% 52%" }}
+        onAnimationComplete={() => {
+          if (stage === "zoom") setStage("video");
+        }}
+      >
+        <Image
+          alt="Редактор сценариев KOMPaaS"
+          src={assets.vpbxCanvas}
+          fill
+          sizes="(max-width: 831px) calc(100vw - 32px), 800px"
+          className="object-cover"
+          quality={100}
+        />
+      </motion.div>
+    </div>
   );
 }
 
@@ -263,15 +338,7 @@ export function HomePage() {
               aria-label="Открыть кейс KOMPaaS"
               className="block w-full"
             >
-              <Image
-                alt="Редактор сценариев KOMPaaS"
-                src={assets.vpbxCanvas}
-                width={2400}
-                height={1500}
-                sizes="(max-width: 831px) calc(100vw - 32px), 800px"
-                className="h-auto w-full rounded-[8px] object-contain"
-                quality={100}
-              />
+              <KompaasPreview />
             </Link>
             <ProjectDetails
               title="KOMPaaS"
