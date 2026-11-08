@@ -210,7 +210,7 @@ export function HomePage() {
           </div>
         </motion.section>
 
-        <motion.section variants={item} className="flex w-full flex-col items-center gap-space-6">
+        <motion.section variants={{ hidden: { opacity: 1, y: 0 }, show: { opacity: 1, y: 0 } }} className="flex w-full flex-col items-center gap-space-6">
           <h2 className="text-center text-[20px] font-medium leading-[28px]">Мои проекты</h2>
           <article className="flex w-full flex-col gap-space-6">
             <Link
@@ -234,6 +234,10 @@ export function HomePage() {
                   src={assets.callFlowVideo}
                   aria-label="Анимация звонка и отображения стоимости в MCN Softphone"
                   className="aspect-[900/1840] w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 object-contain sm:w-[238px]"
+                  style={{
+                    clipPath: "inset(2% 4% 1.4% 4% round 17% 17% 25% 25% / 7% 7% 7% 7%)",
+                    transform: "scale(1.03)"
+                  }}
                   autoPlay
                   muted
                   loop
