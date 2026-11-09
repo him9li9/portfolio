@@ -1,0 +1,31 @@
+name: Assemble temporary KOMPaaS preview video
+on:
+  push:
+    branches:
+      - portfolio-home-figma-preview-20261108
+    paths:
+      - ".video-transfer/kompaas/**"
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: portfolio-home-figma-preview-20261108
+          persist-credentials: true
+      - name: Assemble exact uploaded MP4 and remove transfer files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(find .video-transfer/kompaas -maxdepth 1 -name 'part*.bin' -type f | wc -l)" -eq 14
+          cat .video-transfer/kompaas/part*.bin > public/figma/Case_2/Section_1/kompaas-voice-bot-preview.mp4
+          echo "ff330608799329be749518b9804f522d9cd8e9ece3c452d18dead4b8632191dc  public/figma/Case_2/Section_1/kompaas-voice-bot-preview.mp4" | sha256sum -c -
+          rm -rf .video-transfer
+          rm -f .github/workflows/assemble-kompaas-preview.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Replace KOMPaaS preview with supplied video (4)"
+          git push origin HEAD:refs/heads/portfolio-home-figma-preview-20261108
