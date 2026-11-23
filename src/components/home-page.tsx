@@ -195,7 +195,7 @@ export function HomePage() {
               Настя Ермошина
             </h1>
           </div>
-          <p className="w-full max-w-[552px] text-pretty text-[16px] leading-[1.4]">
+          <p className="w-full max-w-[552px] text-pretty text-[18px] leading-[26px]">
             Продуктовый дизайнер с 4+ годами опыта в{" "}
             <span className="sm:whitespace-nowrap">мобильных приложениях и B2B-сервисах.</span>{" "}
             Проектирую сложные сценарии и веду задачи от исследования до релиза. Использую AI,
