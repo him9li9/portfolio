@@ -510,13 +510,13 @@ export function CaseStudyPage() {
           className="scroll-mt-space-16 case-h2-stack"
         >
           <h2 className="text-h2">Путь до первого звонка</h2>
-          <p className="text-body-18">Разобрала путь в MVP и обращения в поддержку, а ограничения обсудила с разработчиками.</p>
+          <p className="text-[16px] leading-[26px]">Разобрала путь в MVP и обращения в поддержку, а ограничения обсудила с разработчиками.</p>
           <div className="grid gap-space-6 sm:grid-cols-2">
-            <div className="case-text-stack text-body-18">
+            <div className="case-text-stack text-[16px] leading-[26px]">
               <h3 className="text-body-18-semibold">Было</h3>
               <p>Регистрация и подключение номера уводили из приложения в веб-кабинет. После заявки нужно было дождаться ручной проверки и самому выяснить, когда можно позвонить.</p>
             </div>
-            <div className="case-text-stack text-body-18">
+            <div className="case-text-stack text-[16px] leading-[26px]">
               <h3 className="text-body-18-semibold">Стало</h3>
               <p>Подключение и первый звонок стали одним сценарием. После регистрации приложение показывает номер и тариф, а перед вызовом — цену минуты.</p>
             </div>
@@ -532,7 +532,7 @@ export function CaseStudyPage() {
         >
           <div className="case-content-stack">
             <h2 className="text-h2">Что изменилось после тестов</h2>
-            <div className="case-point-stack text-body-18">
+            <div className="case-point-stack text-[16px] leading-[26px]">
               <h3 className="text-h3">Активация: галочка отвлекала от следующего шага</h3>
               <p>
                 В первом прототипе после регистрации появлялись галочка и кнопка «Продолжить».
@@ -566,7 +566,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-point-stack text-body-18">
+          <div className="case-point-stack text-[16px] leading-[26px]">
             <h3 className="text-h3">Цена звонка до вызова</h3>
             <p>
               Чтобы проверить цену, приходилось набирать номер. Я добавила «Выбрать контакт» на экран
@@ -601,7 +601,7 @@ export function CaseStudyPage() {
             </p>
           </div>
 
-          <div className="case-point-stack text-body-18">
+          <div className="case-point-stack text-[16px] leading-[26px]">
             <h3 className="text-h3">Помощь в момент ошибки</h3>
             <p>
               Вместо сообщения, которое только называло причину ошибки, добавила действия по ситуации:
@@ -678,11 +678,11 @@ export function CaseStudyPage() {
           className="scroll-mt-space-16 case-h2-stack case-results-stack"
         >
           <h2 className="text-h2">Результаты</h2>
-          <div className="case-content-stack text-body-18">
+          <div className="case-content-stack text-[16px] leading-[26px]">
             <ul className="case-point-stack">
-              <li><strong className="text-body-18-semibold">8 → 3 шага</strong> от регистрации до первого звонка.</li>
-              <li><strong className="text-body-18-semibold">Вдвое меньше обращений</strong> по подключению, стоимости звонков и списаниям.</li>
-              <li><strong className="text-body-18-semibold">15+ сценариев</strong> спроектировала: от регистрации и оплаты до роуминга, eSIM и AI-поддержки.</li>
+              <li><strong className="font-semibold">8 → 3 шага</strong> от регистрации до первого звонка.</li>
+              <li><strong className="font-semibold">Вдвое меньше обращений</strong> по подключению, стоимости звонков и списаниям.</li>
+              <li><strong className="font-semibold">15+ сценариев</strong> спроектировала: от регистрации и оплаты до роуминга, eSIM и AI-поддержки.</li>
             </ul>
             <p>
               После релиза в бэклог по обратной связи попали избранные контакты, повтор звонка из истории
