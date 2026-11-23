@@ -30,26 +30,14 @@ type ProjectDetailsProps = {
   href: string;
   meta: string;
   description: string;
-  actionLabel?: string;
+  externalActionLabel?: string;
 };
 
-function ProjectDetails({ title, href, meta, description, actionLabel }: ProjectDetailsProps) {
+function ProjectDetails({ title, href, meta, description, externalActionLabel }: ProjectDetailsProps) {
   return (
     <div className="grid w-full gap-space-3 sm:grid-cols-2 sm:gap-0">
       <div className="flex min-w-0 flex-col items-start gap-[4px]">
-        {actionLabel ? (
-          <h3 className="text-[28px] font-medium leading-[40px]">{title}</h3>
-        ) : (
-          <Link
-            href={href}
-            prefetch={false}
-            aria-label={"Открыть кейс " + title}
-            className="group link-underline link-underline-arrow-24 inline-flex max-w-full items-end gap-[2px] focus-visible:outline-offset-4"
-          >
-            <h3 className="text-[28px] font-medium leading-[40px]">{title}</h3>
-            <Image src={assets.arrowOutward} alt="" width={24} height={24} className="mb-[5px] h-6 w-6 shrink-0" />
-          </Link>
-        )}
+        <h3 className="text-[28px] font-medium leading-[40px]">{title}</h3>
         <p className="text-[16px] leading-[1.4] text-[#a0a0a0]">
           {meta.split(" · ").map((part, index) => (
             <span key={index}>
@@ -59,29 +47,30 @@ function ProjectDetails({ title, href, meta, description, actionLabel }: Project
           ))}
         </p>
       </div>
-      {actionLabel ? (
-        <div className="flex flex-col items-start gap-[4px]">
-          <p className="text-[16px] leading-[1.4] text-primary">{description}</p>
-          <InlineLink href={href}>{actionLabel}</InlineLink>
-        </div>
-      ) : (
+      <div className="flex flex-col items-start gap-[4px]">
         <p className="text-[16px] leading-[1.4] text-primary">{description}</p>
-      )}
+        {externalActionLabel ? (
+          <InlineLink href={href}>{externalActionLabel}</InlineLink>
+        ) : (
+          <InlineLink href={href} internal ariaLabel={`Смотреть кейс ${title}`}>Смотреть кейс</InlineLink>
+        )}
+      </div>
     </div>
   );
 }
 
-function InlineLink({ href, children }: { href: string; children: string }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group link-underline link-underline-arrow-16 inline-flex items-end gap-[2px] text-[16px] leading-[1.4]"
-    >
+function InlineLink({ href, children, internal = false, ariaLabel }: { href: string; children: string; internal?: boolean; ariaLabel?: string }) {
+  const className = "group link-underline link-underline-arrow-16 inline-flex items-end gap-[2px] text-[16px] leading-[1.4]";
+  const contents = (
+    <>
       {children}
       <Image src={assets.arrowOutward} alt="" width={16} height={16} className="mb-[1px] h-4 w-4 shrink-0" />
-    </a>
+    </>
+  );
+  return internal ? (
+    <Link href={href} prefetch={false} aria-label={ariaLabel} className={className}>{contents}</Link>
+  ) : (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>{contents}</a>
   );
 }
 
@@ -329,7 +318,7 @@ export function HomePage() {
               href={camomileUrl}
               meta="Личный проект · Telegram Mini App · 2026"
               description="Спроектировала и собрала мини-приложение для коротких чек-инов по сферам жизни."
-              actionLabel="Открыть в Telegram"
+              externalActionLabel="Открыть в Telegram"
             />
           </article>
         </motion.section>
