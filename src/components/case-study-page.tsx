@@ -11,10 +11,6 @@ const assets = {
   phone2: "/figma/Case_1/Section_1/softphone-home.png",
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   arrowForward: "/figma/Icons/arrow_forward.svg",
-  caseDiscovery: "/figma/Case_1/Section_2/case-discovery.png",
-  discoveryFeedback1: "/figma/Case_1/Section_2/case-discovery-feedback-1-figma.png",
-  discoveryFeedback2: "/figma/Case_1/Section_2/case-discovery-feedback-2-figma.png",
-  benchmark: "/figma/Case_1/Section_2/case-benchmark-figma.png",
   userflow: "/figma/Case_1/Section_3/case-userflow.png",
   solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow.mp4",
@@ -35,10 +31,10 @@ const lightboxItems = {
   }
 } as const;
 
-function ZoomIcon({ floating = true }: { floating?: boolean }) {
+function ZoomIcon() {
   return (
     <span
-      className={`${floating ? "pointer-events-none absolute bottom-space-3 right-space-3" : ""} flex h-10 w-10 items-center justify-center rounded-full bg-elevated-hover text-primary`}
+      className="pointer-events-none absolute bottom-space-3 right-space-3 flex h-10 w-10 items-center justify-center rounded-full bg-elevated-hover text-primary"
     >
       <svg
         aria-hidden="true"
@@ -460,10 +456,10 @@ export function CaseStudyPage() {
                 Продуктовый дизайнер · 2024 — н.в.
               </p>
             </div>
+            <p className="text-h3">8 → 3 шага до первого звонка</p>
             <p className="text-body-18">
-              Мобильное приложение для звонков через интернет и управления личным кабинетом.
-              Аудитория — путешественники, которым нужна доступная связь за границей без сложной
-              настройки SIM и роуминга.
+              MCN Softphone помогает путешественникам звонить через интернет. Я подключилась на стадии MVP
+              и отвечала за путь от регистрации до первого звонка: подключение номера, тарифы и поддержку.
             </p>
           </div>
           <div
@@ -511,313 +507,22 @@ export function CaseStudyPage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="scroll-mt-space-16 case-section-stack"
+          className="scroll-mt-space-16 case-h2-stack"
         >
-          <div className="case-h3-stack case-h3-offset">
-            <h3 className="text-h3">Моя роль</h3>
-            <p className="text-body-18">
-              Я присоединилась к проекту на стадии MVP за несколько месяцев до планируемого релиза. В
-              команде отвечала за пользовательский путь от регистрации до первого звонка, подключение
-              номера, тарификацию и поддержку.
-            </p>
-          </div>
-
-          <div className="case-h3-stack case-h3-offset">
-            <h3 className="text-h3">Проблема</h3>
+          <h2 className="text-h2">Путь до первого звонка</h2>
+          <p className="text-body-18">Разобрала путь в MVP и обращения в поддержку, а ограничения обсудила с разработчиками.</p>
+          <div className="grid gap-space-6 sm:grid-cols-2">
             <div className="case-text-stack text-body-18">
-              <p>
-                В первой версии продукта ключевой путь пользователя был разорван между мобильной и веб-
-                версиями. Для регистрации и подключения номера приходилось переходить в личный кабинет,
-                ждать ручной проверки и самостоятельно выяснять, когда можно совершить звонок.
-              </p>
-              <p>
-                Даже после подключения путь оставался непрозрачным: пользователь не видел стоимость
-                звонка заранее, не всегда понимал причину ошибки и не мог быстро найти помощь внутри
-                приложения.
-              </p>
+              <h3 className="text-body-18-semibold">Было</h3>
+              <p>Регистрация и подключение номера уводили из приложения в веб-кабинет. После заявки нужно было дождаться ручной проверки и самому выяснить, когда можно позвонить.</p>
             </div>
-          </div>
-
-          <div className="case-h3-stack case-h3-offset">
-            <h3 className="text-h3">Задача</h3>
             <div className="case-text-stack text-body-18">
-              <p>
-                Сделать путь до первого звонка понятным и предсказуемым, чтобы пользователи могли
-                самостоятельно завершить подключение и начать пользоваться приложением.
-              </p>
+              <h3 className="text-body-18-semibold">Стало</h3>
+              <p>Подключение и первый звонок стали одним сценарием. После регистрации приложение показывает номер и тариф, а перед вызовом — цену минуты.</p>
             </div>
           </div>
         </motion.section>
         </div>
-
-        <motion.section
-          id="discovery"
-          data-section-anchor="discovery"
-          variants={item}
-          className="scroll-mt-space-16 case-h2-stack"
-        >
-          <h2 className="text-h2">Дискавери</h2>
-
-          <div className="case-content-stack">
-            <p className="text-body-18">
-              Для начала я изучила путь от регистрации до первого звонка: текущие экраны, обращения
-              пользователей, решения конкурентов и обсудила технические ограничения с поддержкой и
-              разработкой. Цель — определить, что мешает пользователям самостоятельно подключить
-              номер и начать пользоваться приложением.
-            </p>
-
-            <div className="case-h3-stack case-h3-offset">
-              <h3 className="text-h3">Анализ текущей версии</h3>
-              <p className="text-body-18">
-                Во время аудита текущего MVP я выявила 3 основных барьера на пути к первому звонку:
-              </p>
-            </div>
-
-            <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">1.&nbsp;Сценарий активации разорван</p>
-              <p>
-                Регистрация и подключение номера проходят в веб-кабинете, но после отправки заявки
-                пользователь не видит статус и следующий шаг в приложении.
-              </p>
-              <p className="italic">
-                → Первый звонок откладывается, часть пользователей не завершает подключение.
-              </p>
-            </div>
-
-            <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">2.&nbsp;Стоимость и списания непрозрачны</p>
-              <p>До звонка нельзя узнать стоимость, а после завершения нет понятной детализации.</p>
-              <p className="italic">
-                → Пользователи не понимают причину списаний и обращаются в поддержку.
-              </p>
-            </div>
-
-            <div className="case-visual-spacing relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
-              <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-[40px] sm:rounded-[12px] sm:px-space-8">
-                <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
-                  <div
-                    className="relative w-[900px] max-w-none sm:mx-auto sm:w-full sm:max-w-[900px]"
-                    style={{ aspectRatio: "2550 / 1206" }}
-                  >
-                    <Image
-                      alt="Путь пользователя к первому звонку в MVP"
-                      src={assets.caseDiscovery}
-                      fill
-                      sizes="(max-width: 640px) 900px, 900px"
-                      className="object-contain"
-                      loading="lazy"
-                      quality={100}
-                      unoptimized
-                    />
-                  </div>
-                  <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
-                </div>
-                <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
-                  Ключевые экраны текущей версии MCN Softphone
-                </p>
-              </div>
-            </div>
-
-            <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">3.&nbsp;Помощь трудно получить</p>
-              <p>
-                Пользователи не находят ответы по настройке и доступности звонков внутри приложения
-                и вынуждены обращаться за помощью в другие каналы связи.
-              </p>
-              <p className="italic">
-                → Даже типовые вопросы требуют обращения в поддержку.
-              </p>
-            </div>
-
-            <div className="case-visual-spacing -mx-space-4 bg-[#1c1c1c] px-space-4 py-space-8 sm:mx-0 sm:rounded-[12px]">
-              <div className="mx-auto flex w-full max-w-[427px] flex-col gap-space-4">
-                <Image
-                  alt="Обращение пользователя о статусе аккаунта"
-                  src={assets.discoveryFeedback1}
-                  width={1044}
-                  height={332}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                  quality={100}
-                />
-                <Image
-                  alt="Обращение пользователя о списании средств"
-                  src={assets.discoveryFeedback2}
-                  width={2116}
-                  height={512}
-                  sizes="(max-width: 640px) calc(100vw - 64px), 427px"
-                  className="h-auto w-full object-contain"
-                  loading="lazy"
-                  quality={100}
-                />
-              </div>
-            </div>
-
-            <p className="text-body-18">
-              Анализ обращений в поддержку также показал, что пользователи{" "}
-              <span className="text-body-18-semibold">
-                не понимали текущее состояние аккаунта
-              </span>{" "}
-              — подключён ли номер, доступны ли звонки и почему изменился баланс. В путешествиях такая
-              неопределённость особенно критична, поскольку связь и интернет часто нужны сразу.
-            </p>
-
-            <div id="hypotheses" className="case-h3-stack case-h3-offset scroll-mt-space-16">
-              <h3 className="text-h3">Анализ конкурентов</h3>
-              <p className="text-body-18">
-                Также я изучила, пользовательский путь в похожих приложениях от регистрации до первого
-                звонка. Сравнила подключение номера, переход к звонку и обратную связь между этапами.
-              </p>
-            </div>
-
-            <div className="case-visual-spacing relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)] sm:max-w-[1000px]">
-              <div className="case-figure-stack w-full items-center gap-[6px] bg-secondary pb-space-6 pt-[40px] sm:gap-space-4 sm:rounded-[12px] sm:px-space-8">
-                <div className="case-horizontal-scroll w-full overflow-x-auto pl-space-4 sm:overflow-visible sm:pl-0">
-                  <div
-                    className="relative w-[900px] max-w-none sm:mx-auto sm:w-full sm:max-w-[900px]"
-                    style={{ aspectRatio: "2700 / 990" }}
-                  >
-                    <Image
-                      alt="Последовательный путь до первого звонка в приложениях конкурентов"
-                      src={assets.benchmark}
-                      fill
-                      sizes="(max-width: 640px) 900px, 900px"
-                      className="object-contain"
-                      loading="lazy"
-                      quality={100}
-                      unoptimized
-                    />
-                  </div>
-                  <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
-                </div>
-                <p className="px-space-4 text-center text-caption-14 text-secondary sm:px-0">
-                  Последовательный путь до первого звонка в приложениях конкурентов
-                </p>
-              </div>
-            </div>
-
-            <p className="text-body-18">
-              В отличие от текущего сценария MCN, у конкурентов ключевой путь не требовал перехода в
-              веб-кабинет: пользователь оставался в приложении, видел состояние подключения и понимал,
-              когда может совершить звонок.
-            </p>
-
-            <div className="text-body-18">
-              <p>
-                <span className="text-body-18-semibold">Взяла в работу:</span> сохранять сценарий внутри
-                приложения, показывать статус подключения и явно вести пользователя к следующему
-                действию.
-              </p>
-            </div>
-
-            <div className="case-media-stack w-full max-w-[800px]">
-              <div className="case-h3-stack case-h3-offset">
-                <h3 className="text-h3">Гипотезы</h3>
-                <p className="text-body-18">
-                  По результатам исследования сформулировала несколько гипотез и выделила главные:
-                </p>
-              </div>
-              <div className="flex flex-col gap-space-4">
-                <div className="case-point-stack text-body-18">
-                  <p className="text-body-18-semibold">1.&nbsp;Управляемая активация</p>
-                  <p>
-                    Если перенести подключение номера в приложение и показывать статус и следующий
-                    шаг, пользователю будет проще самостоятельно завершить настройку и совершить первый
-                    звонок.
-                  </p>
-                </div>
-                <div className="case-point-stack text-body-18">
-                  <p className="text-body-18-semibold">2.&nbsp;Прозрачная тарификация</p>
-                  <p>
-                    Если показывать стоимость до звонка и объяснять списание после него, пользователю
-                    будет проще понимать и контролировать расходы.
-                  </p>
-                </div>
-                <div className="case-point-stack text-body-18">
-                  <p className="text-body-18-semibold">3.&nbsp;Помощь в контексте</p>
-                  <p>
-                    Если объяснять ошибку и сразу предлагать способ продолжить сценарий, пользователь
-                    сможет решить проблему без выхода из текущего процесса.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.section>
-
-        <motion.section
-          id="design"
-          data-section-anchor="design"
-          variants={item}
-          className="scroll-mt-space-16 case-h2-stack"
-        >
-          <h2 className="text-h2">Проектирование</h2>
-          <div className="case-content-stack">
-            <div className="case-text-stack">
-              <p className="text-body-18">
-                <span className="text-body-18-semibold">Цель этапа —</span> определить, как система будет вести себя в диалоге с пользователем, чтобы
-                он не терялся в случае если что-то пойдёт не так. Основные решения касались логики
-                сценариев, проработки состояний и корнер-кейсов.
-              </p>
-              <p className="text-body-18">
-                Когда я проектировала новый путь, главным было убрать неопределённость. Пользователь не
-                должен гадать: «А номер уже мой? А сколько это стоит? А что делать, если что-то пошло не
-                так?». Вот что получилось:
-              </p>
-            </div>
-
-            <div className="case-visual-spacing relative left-1/2 flex w-screen max-w-[1000px] -translate-x-1/2 flex-col items-center justify-center sm:w-[calc(100vw-32px)]">
-              <div className="flex w-full flex-col items-center gap-0 bg-secondary p-space-4 sm:rounded-[12px] sm:p-space-6">
-                <button
-                  type="button"
-                  aria-label="Open userflow"
-                  onClick={() => setOpenLightbox("userflow")}
-                  className="group relative block w-full cursor-zoom-in overflow-hidden"
-                >
-                  <Image
-                    alt=""
-                    src={assets.userflow}
-                    width={4096}
-                    height={1690}
-                    sizes="(max-width: 640px) calc(100vw - 80px), 952px"
-                    className="h-auto w-full object-contain"
-                    loading="lazy"
-                  quality={100}
-                  />
-                  <ZoomImageShade />
-                  
-                </button>
-                <div className="grid w-full grid-cols-[1fr_40px] items-end gap-0">
-                  <p className="text-center text-caption-14 text-secondary">
-                    Новый userflow 1-го звонка
-                  </p>
-                  <button
-                    type="button"
-                    aria-label="Open userflow scheme"
-                    onClick={() => setOpenLightbox("userflow")}
-                    className="group cursor-zoom-in"
-                  >
-                    <ZoomIcon floating={false} />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <ul className="list-disc space-y-space-2 pl-space-6 text-body-18">
-              <li>путь до первого звонка сократился с 8 до 3 шагов</li>
-              <li>
-                стали показывать стоимость звонка ещё до вызова, а после ключевых шагов — success screen,
-                чтобы убрать тревогу и неопределённость
-              </li>
-              <li>ошибки не оставляют в тупике, а предлагают решение и возвращают на сценарий</li>
-              <li>
-                поддержка всегда доступна, но не как основной, а как дополнительный шаг в решении
-                проблемы
-              </li>
-            </ul>
-          </div>
-        </motion.section>
 
         <motion.section
           id="solution"
@@ -826,36 +531,25 @@ export function CaseStudyPage() {
           className="scroll-mt-space-16 case-section-stack"
         >
           <div className="case-content-stack">
-            <div className="case-h2-stack">
-              <h2 className="text-h2">Решение и тесты</h2>
-              <p className="text-body-18">
-                Первые тесты показали: даже там, где логика казалась очевидной, пользователи
-                ошибались. Поэтому я собрала обратную связь, переработала несколько сценариев и
-                перепроверила их:
-              </p>
-            </div>
-
+            <h2 className="text-h2">Что изменилось после тестов</h2>
             <div className="case-point-stack text-body-18">
-              <p className="text-body-18-semibold">1.&nbsp;Экран успеха после регистрации</p>
+              <h3 className="text-h3">Активация: галочка отвлекала от следующего шага</h3>
               <p>
-                Сначала это был отдельный экран с галочкой и кнопкой «Продолжить», но на тестах я увидела,
-                что люди зависали на 2-3 минуты — галочка привлекала внимание, а кнопка терялась.
+                В первом прототипе после регистрации появлялись галочка и кнопка «Продолжить».
+                На тестах участники задерживались на экране: замечали галочку, но пропускали кнопку.
               </p>
               <p>
-                <span>→</span>{" "}
-                <span className="italic">
-                  Объединила экран успеха с оформлением заказа, чтобы после регистрации через Госуслуги
-                  пользователь сразу видел свой номер и условия тарифа — без лишних шагов и пауз.
-                </span>
+                Я объединила экран успеха с оформлением заказа. Теперь после регистрации через Госуслуги
+                пользователь сразу видит свой номер и условия тарифа.
               </p>
             </div>
           </div>
 
-            <div className="case-numbered-point-media case-visual-spacing relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 items-center justify-center pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
+          <div className="case-numbered-point-media case-visual-spacing relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center gap-space-1 pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
             <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
               <div className="w-[800px] max-w-none sm:mx-auto sm:w-full sm:max-w-[800px]">
                 <Image
-                  alt=""
+                  alt="Вход, экран с присвоенным номером и условиями тарифа, экран звонка"
                   src={assets.solutionSuccess}
                   width={2400}
                   height={1584}
@@ -867,20 +561,16 @@ export function CaseStudyPage() {
               </div>
               <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
             </div>
+            <p className="w-full text-center text-caption-14 text-secondary">
+              Обновлённый сценарий: после регистрации сразу видны номер и тариф
+            </p>
           </div>
 
           <div className="case-point-stack text-body-18">
-            <p className="text-body-18-semibold">2.&nbsp;Узнать стоимость звонка</p>
+            <h3 className="text-h3">Цена звонка до вызова</h3>
             <p>
-              В первой версии цену можно было увидеть, только начав набирать номер. Некоторым пользователям
-              было неудобно вводить знакомый номер каждый раз, чтобы оценить стоимость.
-            </p>
-            <p>
-              <span>→</span>{" "}
-              <span className="italic">
-                Добавила кнопку «Выбрать контакт» прямо на экран набора. При выборе контакта цена
-                сразу отображается — как и при ручном вводе.
-              </span>
+              Чтобы проверить цену, приходилось набирать номер. Я добавила «Выбрать контакт» на экран
+              набора: цена за минуту появляется и при выборе контакта, и при ручном вводе.
             </p>
           </div>
 
@@ -897,6 +587,7 @@ export function CaseStudyPage() {
                   className="h-full w-full object-contain"
                   style={{ height: "100%", maxHeight: "100%" }}
                   src={assets.callFlowVideo}
+                  aria-label="Выбор контакта и просмотр стоимости звонка"
                   autoPlay
                   muted
                   loop
@@ -911,19 +602,10 @@ export function CaseStudyPage() {
           </div>
 
           <div className="case-point-stack text-body-18">
-            <p className="text-body-18-semibold">3.&nbsp;Помощь и подсказки</p>
+            <h3 className="text-h3">Помощь в момент ошибки</h3>
             <p>
-              Ранее был экран ошибки, где просто выводилась причина: «Регистрация не пройдена»,
-              «Недостаточно средств» и другие, но пользователи всё равно не понимали, что делать
-              дальше и писали в поддержку.
-            </p>
-            <p>
-              <span>→</span>{" "}
-              <span className="italic">
-                Добавила контекстные кнопки для возвращения в сценарий — «Вернуться в Госуслуги»,
-                «Пополнить баланс» и «Написать в поддержку», чтобы пользователь мог быстро перейти к
-                нужному действию или написать в поддержку.
-              </span>
+              Вместо сообщения, которое только называло причину ошибки, добавила действия по ситуации:
+              вернуться в Госуслуги, пополнить баланс или написать в поддержку.
             </p>
           </div>
 
@@ -932,7 +614,7 @@ export function CaseStudyPage() {
               <div className="case-horizontal-scroll overflow-x-auto sm:overflow-visible">
                 <div className="w-[1000px] max-w-none sm:hidden">
                   <Image
-                    alt=""
+                    alt="Состояния ошибок с действиями для продолжения сценария"
                     src={assets.solutionErrorMobile}
                     width={2850}
                     height={1440}
@@ -944,7 +626,7 @@ export function CaseStudyPage() {
                 </div>
                 <div className="hidden sm:mx-auto sm:block sm:w-full sm:max-w-[1000px]">
                   <Image
-                    alt=""
+                    alt="Состояния ошибок с действиями для продолжения сценария"
                     src={assets.solutionError}
                     width={2850}
                     height={1440}
@@ -962,13 +644,31 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="case-text-stack text-body-18">
-            <p>
-              Каждая итерация закрывала конкретную точку неопределённости: пользователь видел, когда
-              номер активен, сколько стоит звонок и что делать при ошибке. За счёт этого путь стал
-              короче, а обращений в поддержку стало меньше.
-            </p>
-          </div>
+          <details className="rounded-[12px] border border-border-elevated px-space-4 py-space-3">
+            <summary className="cursor-pointer text-body-16">Посмотреть схему первого звонка</summary>
+            <div className="mt-space-4 flex flex-col items-center gap-space-2 rounded-[12px] bg-secondary p-space-4 sm:p-space-6">
+              <button
+                type="button"
+                aria-label="Увеличить схему первого звонка"
+                onClick={() => setOpenLightbox("userflow")}
+                className="group relative block w-full cursor-zoom-in overflow-hidden"
+              >
+                <Image
+                  alt="Схема нового пути до первого звонка"
+                  src={assets.userflow}
+                  width={4096}
+                  height={1690}
+                  sizes="(max-width: 640px) calc(100vw - 100px), 720px"
+                  className="h-auto w-full object-contain"
+                  loading="lazy"
+                  quality={100}
+                />
+                <ZoomImageShade />
+                <ZoomIcon />
+              </button>
+              <p className="text-center text-caption-14 text-secondary">Новый путь до первого звонка</p>
+            </div>
+          </details>
         </motion.section>
 
         <motion.section
@@ -978,34 +678,15 @@ export function CaseStudyPage() {
           className="scroll-mt-space-16 case-h2-stack case-results-stack"
         >
           <h2 className="text-h2">Результаты</h2>
-          <div className="case-content-stack">
-            <div className="flex flex-col gap-space-6 text-body-18">
-              <div className="case-point-stack gap-space-6">
-                <p className="text-body-18-semibold">8 → 3 шага</p>
-                <p>
-                  Сократила путь пользователя от регистрации до первого звонка, объединив ключевые
-                  действия внутри приложения.
-                </p>
-              </div>
-              <div className="case-point-stack gap-space-6">
-                <p className="text-body-18-semibold">в 2x меньше обращений</p>
-                <p>
-                  Помогла уменьшить количество вопросов в поддержку по подключению, стоимости звонков и
-                  списаниям.
-                </p>
-              </div>
-              <div className="case-point-stack gap-space-6">
-                <p className="text-body-18-semibold">15+ ключевых сценариев</p>
-                <p>
-                  Спроектировала основные сценарии приложения — от регистрации и первого звонка до
-                  оплаты, роуминга, eSIM и AI-поддержки.
-                </p>
-              </div>
-            </div>
-            <p className="text-body-18">
-              После релиза развитие софтфона продолжилось через обратную связь от пользователей:
-              добавление избранных контактов, повтор звонка из истории и push-уведомления о низком
-              балансе. Всё это ушло в бэклог и дальше — в ближайшие обновления.
+          <div className="case-content-stack text-body-18">
+            <ul className="case-point-stack">
+              <li><strong className="text-body-18-semibold">8 → 3 шага</strong> от регистрации до первого звонка.</li>
+              <li><strong className="text-body-18-semibold">Вдвое меньше обращений</strong> по подключению, стоимости звонков и списаниям.</li>
+              <li><strong className="text-body-18-semibold">15+ сценариев</strong> спроектировала: от регистрации и оплаты до роуминга, eSIM и AI-поддержки.</li>
+            </ul>
+            <p>
+              После релиза в бэклог по обратной связи попали избранные контакты, повтор звонка из истории
+              и уведомления о низком балансе.
             </p>
           </div>
         </motion.section>
@@ -1028,12 +709,11 @@ export function CaseStudyPage() {
         </motion.nav>
       </motion.div>
 
-      <nav className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-space-3 lg:flex">
+      <nav aria-label="Разделы кейса" className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-space-3 lg:flex">
         {[
           { id: "overview", label: "О проекте" },
-          { id: "discovery", label: "Дискавери" },
-          { id: "design", label: "Проектирование" },
-          { id: "solution", label: "Решение и тесты" },
+          { id: "about", label: "Путь до звонка" },
+          { id: "solution", label: "Решения и тесты" },
           { id: "results", label: "Результаты" },
         ].map((item) => (
           <a
