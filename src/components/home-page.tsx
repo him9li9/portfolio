@@ -197,9 +197,9 @@ export function HomePage() {
           </div>
           <p className="w-full max-w-[552px] text-pretty text-[16px] leading-[1.4]">
             Продуктовый дизайнер с 4+ годами опыта в{" "}
-            <span className="sm:whitespace-nowrap">мобильных и B2B-продуктах.</span>{" "}
-            Разбираюсь в сложных сценариях и довожу решения до релиза. Использую AI для быстрых
-            экспериментов, прототипирования и работы с кодом.
+            <span className="sm:whitespace-nowrap">мобильных приложениях и B2B-сервисах.</span>{" "}
+            Проектирую сложные сценарии и веду задачи от исследования до релиза. Использую AI,
+            чтобы быстрее проверять идеи и собирать прототипы в коде.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-space-4">
             <InlineLink href={cvUrl}>CV</InlineLink>
