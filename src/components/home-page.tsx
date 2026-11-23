@@ -10,6 +10,7 @@ const assets = {
   heart: "/figma/Icons/heart.svg",
   arrowOutward: "/figma/Icons/arrow_outward.svg",
   softphoneRegistration: "/figma/Case_1/Section_1/softphone-success.png",
+  callFlowPoster: "/figma/Case_1/Section_1/softphone-home.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow.mp4",
   kompaasPreviewVideo: "/figma/Case_2/Section_1/kompaas-voice-bot-preview.mp4",
   appState: "/figma/Case_3/Section_1/app-state-v2.png",
@@ -77,8 +78,6 @@ function InlineLink({ href, children, internal = false, ariaLabel }: { href: str
 export function HomePage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [canHover, setCanHover] = useState(false);
-  const [softphoneImageReady, setSoftphoneImageReady] = useState(false);
-  const [softphoneVideoReady, setSoftphoneVideoReady] = useState(false);
 
 
   const container = {
@@ -216,7 +215,7 @@ export function HomePage() {
               className="block w-full"
             >
               <div className="flex w-full items-center justify-center gap-space-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] px-space-4 py-space-6 sm:h-[550px] sm:gap-space-8 sm:px-space-10 sm:py-space-8">
-                <div className={`flex items-center justify-center gap-space-4 sm:gap-space-8 ${softphoneImageReady && softphoneVideoReady ? "opacity-100" : "opacity-0"}`}>
+                <div className="flex items-center justify-center gap-space-4 sm:gap-space-8">
                   <Image
                     alt="Экран успешной регистрации с присвоенным номером в MCN Softphone"
                     src={assets.softphoneRegistration}
@@ -226,10 +225,10 @@ export function HomePage() {
                     className="h-auto w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 sm:w-[238px]"
                     priority
                     quality={100}
-                    onLoad={() => setSoftphoneImageReady(true)}
                   />
                   <video
                     src={assets.callFlowVideo}
+                    poster={assets.callFlowPoster}
                     aria-label="Анимация звонка и отображения стоимости в MCN Softphone"
                     className="aspect-[900/1840] w-[calc((100vw-64px)/2)] max-w-[238px] shrink-0 object-contain sm:w-[238px]"
                     style={{
@@ -241,7 +240,6 @@ export function HomePage() {
                     loop
                     playsInline
                     preload="auto"
-                    onLoadedData={() => setSoftphoneVideoReady(true)}
                   />
                 </div>
               </div>
