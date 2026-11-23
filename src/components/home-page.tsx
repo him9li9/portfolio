@@ -9,7 +9,7 @@ const assets = {
   avatar: "/figma/avatar.png",
   heart: "/figma/Icons/heart.svg",
   arrowOutward: "/figma/Icons/arrow_outward.svg",
-  softphoneHome: "/figma/Case_1/Section_1/softphone-home.png",
+  softphoneRegistration: "/figma/Case_1/Section_1/softphone-success.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow.mp4",
   kompaasPreviewVideo: "/figma/Case_2/Section_1/kompaas-voice-bot-preview.mp4",
   appState: "/figma/Case_3/Section_1/app-state-v2.png",
@@ -30,27 +30,26 @@ type ProjectDetailsProps = {
   href: string;
   meta: string;
   description: string;
-  note?: string;
-  external?: boolean;
+  actionLabel?: string;
 };
 
-function ProjectDetails({ title, href, meta, description, note, external = false }: ProjectDetailsProps) {
+function ProjectDetails({ title, href, meta, description, actionLabel }: ProjectDetailsProps) {
   return (
     <div className="grid w-full gap-space-3 sm:grid-cols-2 sm:gap-0">
       <div className="flex min-w-0 flex-col items-start gap-[4px]">
-        <Link
-          href={href}
-          prefetch={false}
-          target={external ? "_blank" : undefined}
-          rel={external ? "noopener noreferrer" : undefined}
-          aria-label={external ? "Открыть приложение Camomile" : "Открыть кейс " + title}
-          className="group link-underline link-underline-arrow-24 inline-flex max-w-full items-end gap-[2px] focus-visible:outline-offset-4"
-        >
-          <h3 className="text-[28px] font-medium leading-[40px]">
-            {title}
-          </h3>
-          <Image src={assets.arrowOutward} alt="" width={24} height={24} className="mb-[5px] h-6 w-6 shrink-0" />
-        </Link>
+        {actionLabel ? (
+          <h3 className="text-[28px] font-medium leading-[40px]">{title}</h3>
+        ) : (
+          <Link
+            href={href}
+            prefetch={false}
+            aria-label={"Открыть кейс " + title}
+            className="group link-underline link-underline-arrow-24 inline-flex max-w-full items-end gap-[2px] focus-visible:outline-offset-4"
+          >
+            <h3 className="text-[28px] font-medium leading-[40px]">{title}</h3>
+            <Image src={assets.arrowOutward} alt="" width={24} height={24} className="mb-[5px] h-6 w-6 shrink-0" />
+          </Link>
+        )}
         <p className="text-[16px] leading-[1.4] text-[#a0a0a0]">
           {meta.split(" · ").map((part, index) => (
             <span key={index}>
@@ -60,7 +59,14 @@ function ProjectDetails({ title, href, meta, description, note, external = false
           ))}
         </p>
       </div>
-      <p className="text-[16px] leading-[1.4] text-primary">{description}{note ? <> <span className="text-[#a0a0a0]">{note}</span></> : null}</p>
+      {actionLabel ? (
+        <div className="flex flex-col items-start gap-[4px]">
+          <p className="text-[16px] leading-[1.4] text-primary">{description}</p>
+          <InlineLink href={href}>{actionLabel}</InlineLink>
+        </div>
+      ) : (
+        <p className="text-[16px] leading-[1.4] text-primary">{description}</p>
+      )}
     </div>
   );
 }
@@ -223,8 +229,8 @@ export function HomePage() {
               <div className="flex w-full items-center justify-center gap-space-4 overflow-hidden rounded-[12px] bg-[#1c1c1c] px-space-4 py-space-6 sm:h-[550px] sm:gap-space-8 sm:px-space-10 sm:py-space-8">
                 <div className={`flex items-center justify-center gap-space-4 sm:gap-space-8 ${softphoneImageReady && softphoneVideoReady ? "opacity-100" : "opacity-0"}`}>
                   <Image
-                    alt="Экран тарифа и расходов MCN Softphone"
-                    src={assets.softphoneHome}
+                    alt="Экран успешной регистрации с присвоенным номером в MCN Softphone"
+                    src={assets.softphoneRegistration}
                     width={900}
                     height={1840}
                     sizes="(max-width: 639px) calc((100vw - 64px) / 2), 238px"
@@ -321,10 +327,9 @@ export function HomePage() {
             <ProjectDetails
               title="Camomile"
               href={camomileUrl}
-              external
-              meta="Pet-project · AI-first · 2026"
-              description="Сделала Telegram mini app для отслеживания баланса сфер жизни, личных целей и сохранения важных моментов."
-              note="[Кейс пока в разработке]"
+              meta="Личный проект · Telegram Mini App · 2026"
+              description="Спроектировала и собрала мини-приложение для коротких чек-инов по сферам жизни."
+              actionLabel="Открыть в Telegram"
             />
           </article>
         </motion.section>
