@@ -205,6 +205,10 @@ export function HomePage() {
             Продуктовый дизайнер с 4+ годами опыта в мобильных и B2B-продуктах.
             Проектирую сложные сценарии и использую AI, чтобы быстрее проверять идеи.
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-space-4">
+            <InlineLink href={cvUrl}>CV</InlineLink>
+            <InlineLink href={telegramUrl}>Telegram</InlineLink>
+          </div>
         </motion.section>
 
         <motion.section variants={{ hidden: { opacity: 1, y: 0 }, show: { opacity: 1, y: 0 } }} className="flex w-full flex-col items-center gap-space-6">
