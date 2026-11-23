@@ -205,22 +205,6 @@ export function HomePage() {
             Продуктовый дизайнер с 4+ годами опыта в мобильных и B2B-продуктах.
             Проектирую сложные сценарии и использую AI, чтобы быстрее проверять идеи.
           </p>
-          <nav aria-label="Избранные кейсы" className="flex flex-wrap items-center justify-center gap-x-space-4 gap-y-space-2">
-            {[
-              { title: "MCN Softphone", href: "/app" },
-              { title: "KOMPaaS", href: "/work" }
-            ].map(({ title, href }) => (
-              <Link
-                key={href}
-                href={href}
-                prefetch={false}
-                className="group link-underline link-underline-arrow-16 inline-flex items-end gap-[2px] text-[16px] leading-[1.4]"
-              >
-                {title}
-                <Image src={assets.arrowOutward} alt="" width={16} height={16} className="mb-[1px] h-4 w-4 shrink-0" />
-              </Link>
-            ))}
-          </nav>
         </motion.section>
 
         <motion.section variants={{ hidden: { opacity: 1, y: 0 }, show: { opacity: 1, y: 0 } }} className="flex w-full flex-col items-center gap-space-6">
