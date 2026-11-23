@@ -201,16 +201,26 @@ export function HomePage() {
               Настя Ермошина
             </h1>
           </div>
-          <p className="w-full max-w-[480px] text-[16px] leading-[1.4] md:w-max md:max-w-none">
-            <span className="md:block md:whitespace-nowrap">Продуктовый дизайнер с 4+ годами опыта в мобильных</span>{" "}
-            <span className="md:block md:whitespace-nowrap">и B2B-продуктах. Разбираюсь в сложных сценариях и довожу</span>{" "}
-            <span className="md:block md:whitespace-nowrap">решения до релиза. Использую AI для быстрых экспериментов,</span>{" "}
-            <span className="md:block md:whitespace-nowrap">прототипирования и работы с кодом.</span>
+          <p className="w-full max-w-[480px] text-[16px] leading-[1.4]">
+            Продуктовый дизайнер с 4+ годами опыта в мобильных и B2B-продуктах.
+            Проектирую сложные сценарии и использую AI, чтобы быстрее проверять идеи.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-space-4">
-            <InlineLink href={cvUrl}>CV</InlineLink>
-            <InlineLink href={telegramUrl}>Telegram</InlineLink>
-          </div>
+          <nav aria-label="Избранные кейсы" className="flex flex-wrap items-center justify-center gap-x-space-4 gap-y-space-2">
+            {[
+              { title: "MCN Softphone", href: "/app" },
+              { title: "KOMPaaS", href: "/work" }
+            ].map(({ title, href }) => (
+              <Link
+                key={href}
+                href={href}
+                prefetch={false}
+                className="group link-underline link-underline-arrow-16 inline-flex items-end gap-[2px] text-[16px] leading-[1.4]"
+              >
+                {title}
+                <Image src={assets.arrowOutward} alt="" width={16} height={16} className="mb-[1px] h-4 w-4 shrink-0" />
+              </Link>
+            ))}
+          </nav>
         </motion.section>
 
         <motion.section variants={{ hidden: { opacity: 1, y: 0 }, show: { opacity: 1, y: 0 } }} className="flex w-full flex-col items-center gap-space-6">
@@ -257,7 +267,7 @@ export function HomePage() {
               title="MCN Softphone"
               href="/app"
               meta="B2C · Mobile app · 2024 — н.в."
-              description="Переработала регистрацию и активацию номера в приложении интернет-телефонии, сократив путь до первого звонка с 8 до 3 шагов и количество обращений в 2 раза."
+              description="Сократила путь до первого звонка с 8 до 3 шагов. После переработки регистрации и активации номера обращений стало вдвое меньше."
             />
           </article>
         </motion.section>
@@ -285,7 +295,7 @@ export function HomePage() {
               title="KOMPaaS"
               href="/work"
               meta="B2B · Web service · 2023 — 2025"
-              description="Спроектировала редактор для самостоятельной работы менеджеров со сценариями звонков, снизив количество ошибок на продакшене в 2,5 раза за первые 3 месяца после изменений."
+              description="За первые 3 месяца ошибок на продакшене стало в 2,5 раза меньше. Спроектировала редактор, в котором менеджеры сами настраивают сценарии звонков."
             />
           </article>
         </motion.section>
