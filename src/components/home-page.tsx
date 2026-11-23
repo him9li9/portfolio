@@ -195,9 +195,11 @@ export function HomePage() {
               Настя Ермошина
             </h1>
           </div>
-          <p className="w-full max-w-[480px] text-[16px] leading-[1.4]">
-            Продуктовый дизайнер с 4+ годами опыта в мобильных и B2B-продуктах.
-            Проектирую сложные сценарии и использую AI, чтобы быстрее проверять идеи.
+          <p className="w-full max-w-[552px] text-pretty text-[16px] leading-[1.4]">
+            Продуктовый дизайнер с 4+ годами опыта в{" "}
+            <span className="sm:whitespace-nowrap">мобильных и B2B-продуктах.</span>{" "}
+            Разбираюсь в сложных сценариях и довожу решения до релиза. Использую AI для быстрых
+            экспериментов, прототипирования и работы с кодом.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-space-4">
             <InlineLink href={cvUrl}>CV</InlineLink>
@@ -315,7 +317,7 @@ export function HomePage() {
               title="Camomile"
               href={camomileUrl}
               meta="Личный проект · Telegram Mini App · 2026"
-              description="Спроектировала и собрала мини-приложение для коротких чек-инов по сферам жизни."
+              description="Сделала приложение, в котором можно отслеживать баланс в разных сферах жизни, ставить цели и сохранять важные моменты."
               externalActionLabel="Открыть в Telegram"
             />
           </article>
