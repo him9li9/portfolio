@@ -11,6 +11,7 @@ const assets = {
   phone2: "/figma/Case_1/Section_1/softphone-home.png",
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   arrowForward: "/figma/Icons/arrow_forward.svg",
+  legacyFlow: "/figma/Case_1/Section_2/case-discovery.png",
   userflow: "/figma/Case_1/Section_3/case-userflow.png",
   solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow.mp4",
@@ -533,25 +534,39 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <div className="case-numbered-point-media case-visual-spacing relative left-1/2 flex w-screen max-w-[800px] -translate-x-1/2 flex-col items-center justify-center gap-space-1 pl-space-4 sm:w-[calc(100vw-32px)] sm:pl-0">
-            <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
-              <div className="w-[800px] max-w-none sm:mx-auto sm:w-full sm:max-w-[800px]">
+          <div className="case-visual-spacing grid gap-space-6 sm:grid-cols-[1fr_3fr]">
+            <figure className="flex min-w-0 flex-col gap-space-3">
+              <figcaption className="text-body-18-semibold">До: 8 шагов</figcaption>
+              <p className="text-caption-14 text-secondary">«Купить номер» открывал веб-кабинет. Там нужно было заполнить анкету и дождаться проверки.</p>
+              <div className="w-full max-w-[172px] overflow-hidden rounded-[12px] sm:mt-auto" style={{ aspectRatio: "586 / 1206" }}>
+                <Image
+                  alt="Вход в старом приложении MCN Telecom: под кнопкой входа есть ссылка «Купить номер»"
+                  src={assets.legacyFlow}
+                  width={2550}
+                  height={1206}
+                  sizes="750px"
+                  className="h-auto max-w-none"
+                  style={{ width: "435.15%" }}
+                  loading="lazy"
+                />
+              </div>
+            </figure>
+            <figure className="flex min-w-0 flex-col gap-space-3">
+              <figcaption className="text-body-18-semibold">После: 3 шага</figcaption>
+              <p className="text-caption-14 text-secondary">Подтверждение личности осталось, но без отдельной анкеты. Номер, тариф и переход к оплате видны сразу после регистрации.</p>
+              <div className="case-horizontal-scroll w-full overflow-x-auto sm:mt-auto sm:overflow-visible">
                 <Image
                   alt="Вход, экран с присвоенным номером и условиями тарифа, экран звонка"
                   src={assets.solutionSuccess}
                   width={2400}
                   height={1584}
-                  sizes="800px"
-                  className="h-auto w-full object-contain"
+                  sizes="(max-width: 640px) 510px, 600px"
+                  className="h-auto w-[510px] max-w-none sm:w-full"
                   loading="lazy"
                   quality={100}
                 />
               </div>
-              <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
-            </div>
-            <p className="w-full text-center text-caption-14 text-secondary">
-              Обновлённый сценарий от регистрации до первого звонка
-            </p>
+            </figure>
           </div>
 
           <div className="case-point-stack text-[16px] leading-[26px]">
