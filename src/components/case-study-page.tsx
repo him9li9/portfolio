@@ -507,15 +507,17 @@ export function CaseStudyPage() {
           id="about"
           data-section-anchor="about"
           variants={item}
-          className="scroll-mt-space-16 case-h2-stack"
+          className="scroll-mt-space-16 flex flex-col gap-space-6 text-[16px] leading-[26px]"
         >
-          <h2 className="text-h2">Путь до первого звонка</h2>
-          <div className="case-text-stack text-[16px] leading-[26px]">
-            <h3 className="text-h3">Почему выбрали Госуслуги</h3>
-            <p>Чтобы оформить номер, нужно подтвердить личность. В MVP для этого приходилось уходить из приложения в веб-кабинет, вводить данные документов и ждать проверки менеджером. Мы выбрали Госуслуги, чтобы пользователь мог подтвердить личность без заполнения анкеты и ручной проверки.</p>
+          <div className="case-h3-stack">
+            <h2 className="text-h3">Проблема</h2>
+            <p>В MVP путь до первого звонка был разорван между приложением и веб-кабинетом. После заявки пользователь не видел в приложении, подключён ли номер и можно ли уже звонить.</p>
+          </div>
+          <div className="case-h3-stack">
+            <h2 className="text-h3">Задача</h2>
+            <p>Спроектировать единый путь от регистрации до первого звонка: показать статус подключения и подсказать следующий шаг, чтобы пользователь мог пройти сценарий без помощи поддержки.</p>
           </div>
         </motion.section>
-        </div>
 
         <motion.section
           id="solution"
@@ -523,15 +525,11 @@ export function CaseStudyPage() {
           variants={item}
           className="scroll-mt-space-16 case-section-stack"
         >
-          <div className="case-content-stack">
-            <h2 className="text-h2">Что изменилось после теста</h2>
-            <div className="case-point-stack text-[16px] leading-[26px]">
-              <p>
-                В первом прототипе после регистрации появлялся отдельный экран с галочкой и кнопкой «Продолжить». На тесте пользователи замечали галочку, но пропускали кнопку.
-              </p>
-              <p>
-                Я перенесла подтверждение на экран заказа. На нём сразу видны номер, тариф и следующее действие: «Перейти к оплате».
-              </p>
+          <div className="case-h2-stack">
+            <h2 className="text-h2">Путь до первого звонка</h2>
+            <div className="case-text-stack text-[16px] leading-[26px]">
+              <p>Чтобы оформить номер, нужно подтвердить личность. В MVP для этого приходилось уходить из приложения в веб-кабинет, вводить данные документов и ждать проверки менеджером. Мы выбрали Госуслуги, чтобы пользователь мог подтвердить личность без заполнения анкеты и ручной проверки.</p>
+              <p>В первом прототипе после регистрации появлялся отдельный экран с галочкой и кнопкой «Продолжить». На тесте пользователи замечали галочку, но пропускали кнопку. Я перенесла подтверждение на экран заказа. На нём сразу видны номер, тариф и следующее действие: «Перейти к оплате».</p>
             </div>
           </div>
 
@@ -659,6 +657,7 @@ export function CaseStudyPage() {
             </div>
           </details>
         </motion.section>
+        </div>
 
         <motion.section
           id="results"
@@ -669,6 +668,7 @@ export function CaseStudyPage() {
           <h2 className="text-h2">Результаты</h2>
           <div className="case-content-stack text-[16px] leading-[26px]">
             <ul className="case-point-stack">
+              <li><strong className="font-semibold">С 8 до 3 шагов</strong> сократился путь от регистрации до первого звонка.</li>
               <li><strong className="font-semibold">Вдвое меньше обращений</strong> по подключению, стоимости звонков и списаниям.</li>
               <li><strong className="font-semibold">15+ сценариев</strong> спроектировала: от регистрации и оплаты до роуминга, eSIM и AI-поддержки.</li>
             </ul>
@@ -700,8 +700,8 @@ export function CaseStudyPage() {
       <nav aria-label="Разделы кейса" className="pointer-events-none fixed right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col gap-space-3 lg:flex">
         {[
           { id: "overview", label: "О проекте" },
-          { id: "about", label: "Путь до звонка" },
-          { id: "solution", label: "Решения и тесты" },
+          { id: "about", label: "Проблема и задача" },
+          { id: "solution", label: "Путь до звонка" },
           { id: "results", label: "Результаты" },
         ].map((item) => (
           <a
