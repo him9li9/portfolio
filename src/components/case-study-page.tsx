@@ -515,7 +515,8 @@ export function CaseStudyPage() {
             <h2 className="text-h3">Проблема</h2>
             <p>В MVP кнопка «Купить номер» открывала веб-кабинет. Там пользователь вводил данные документов и ждал проверки менеджером. После возвращения было непонятно, готов ли номер к звонку.</p>
             <figure className="mt-space-2">
-              <div className="grid max-w-[480px] grid-cols-2 gap-space-4 sm:gap-space-6">
+              {/* Match heights without cropping: column widths follow the screenshots’ aspect ratios. */}
+              <div className="grid max-w-[480px] grid-cols-[1fr_0.9492fr] gap-space-4 sm:gap-space-6">
                 <div className="flex min-w-0 flex-col gap-space-2">
                   <Image
                     alt="Старый экран входа со ссылкой «Купить номер»"
