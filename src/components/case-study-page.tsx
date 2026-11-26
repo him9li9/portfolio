@@ -61,6 +61,70 @@ function ZoomImageShade() {
   );
 }
 
+function ComparisonImage({
+  src,
+  alt,
+  width,
+  height,
+  sizes,
+  className = "",
+}: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  sizes: string;
+  className?: string;
+}) {
+  const dialogRef = useRef<HTMLDialogElement>(null);
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => dialogRef.current?.showModal()}
+        aria-label={`Увеличить: ${alt}`}
+        className={`group relative block cursor-zoom-in overflow-hidden rounded-xl text-left focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${className}`}
+      >
+        <Image alt={alt} src={src} width={width} height={height} sizes={sizes} className="h-auto w-full" quality={100} />
+        <ZoomImageShade />
+        <ZoomIcon />
+      </button>
+      <dialog
+        ref={dialogRef}
+        aria-label={alt}
+        className="m-auto max-h-[90dvh] w-[calc(100%-32px)] max-w-[1000px] rounded-xl bg-secondary p-0 text-primary backdrop:bg-black/70"
+        onClick={(event) => {
+          if (event.target === event.currentTarget) event.currentTarget.close();
+        }}
+      >
+        <div className="relative">
+          <form method="dialog" className="sticky top-0 z-10 flex h-0 justify-end">
+            <button
+              type="submit"
+              aria-label="Закрыть"
+              className="mr-3 mt-3 grid size-10 shrink-0 place-items-center rounded-full bg-elevated text-primary hover:bg-elevated-hover"
+            >
+              <span aria-hidden="true" className="text-xl leading-none">×</span>
+            </button>
+          </form>
+          <div className="max-h-[90dvh] overflow-auto overscroll-contain p-space-4">
+            <Image
+              alt={alt}
+              src={src}
+              width={width}
+              height={height}
+              sizes="(max-width: 640px) 640px, 1000px"
+              className={width > height ? "h-auto w-full min-w-[620px]" : "mx-auto h-auto w-full max-w-[430px]"}
+              quality={100}
+            />
+          </div>
+        </div>
+      </dialog>
+    </>
+  );
+}
+
 export function CaseStudyPage() {
   const [hideTopbar, setHideTopbar] = useState(false);
   const [openLightbox, setOpenLightbox] = useState<keyof typeof lightboxItems | null>(null);
@@ -442,7 +506,7 @@ export function CaseStudyPage() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="flex w-full flex-col gap-y-[140px] px-space-4 pb-[40px] pt-[140px] sm:mx-auto sm:max-w-[800px] sm:px-0"
+        className="flex w-full flex-col gap-y-[140px] px-space-4 pb-[40px] pt-[140px] sm:mx-auto sm:max-w-[832px] sm:px-space-4"
       >
         <div className="flex flex-col gap-space-8">
         <motion.section
@@ -466,17 +530,17 @@ export function CaseStudyPage() {
           </div>
           <div
             ref={heroPhonesRef}
-            className="case-horizontal-scroll case-visual-spacing relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-[800px] sm:items-center sm:justify-center sm:overflow-visible"
+            className="case-horizontal-scroll case-visual-spacing relative left-1/2 w-screen -translate-x-1/2 overflow-x-auto sm:flex sm:w-full sm:items-center sm:justify-center sm:overflow-visible"
           >
             <span aria-hidden="true" className="block w-space-4 shrink-0 sm:hidden" />
-            <div className="flex w-max items-center justify-center gap-space-6 sm:w-auto sm:gap-space-4">
+            <div className="flex w-max items-center justify-center gap-space-6 sm:grid sm:w-full sm:grid-cols-[240fr_280fr_240fr] sm:gap-space-4">
               <Image
                 alt="Экран регистрации MCN Softphone"
                 src={assets.phone1}
                 width={900}
                 height={1840}
                 sizes="(max-width: 640px) 210px, 240px"
-                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
+                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-full"
                 priority
                 quality={100}
               />
@@ -486,7 +550,7 @@ export function CaseStudyPage() {
                 width={900}
                 height={1840}
                 sizes="(max-width: 640px) 294px, 280px"
-                className="h-[600px] w-auto shrink-0 sm:h-auto sm:w-[280px]"
+                className="h-[600px] w-auto shrink-0 sm:h-auto sm:w-full"
                 priority
                 quality={100}
               />
@@ -496,7 +560,7 @@ export function CaseStudyPage() {
                 width={900}
                 height={1840}
                 sizes="(max-width: 640px) 210px, 240px"
-                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-[240px]"
+                className="h-[430px] w-auto shrink-0 sm:h-auto sm:w-full"
                 priority
                 quality={100}
               />
@@ -544,22 +608,22 @@ export function CaseStudyPage() {
                 <p className="text-caption-14 text-secondary">Чтобы купить номер, нужно было перейти в браузер и дождаться ручной проверки документов.</p>
               </figcaption>
               <div className="grid max-w-[480px] grid-cols-[1fr_0.9492fr] items-start gap-space-4 sm:gap-space-6">
-                <Image
+                <ComparisonImage
                   alt="Старый экран входа со ссылкой «Купить номер»"
                   src={assets.legacySignIn}
                   width={470}
                   height={966}
                   sizes="(max-width: 520px) 42vw, 236px"
-                  className="h-auto w-full rounded-xl border border-border-elevated"
+                  className="w-full border border-border-elevated"
                 />
                 <div className="flex min-w-0 flex-col gap-space-2">
-                  <Image
+                  <ComparisonImage
                     alt="Архивный макет витрины номеров в мобильном браузере"
                     src={assets.legacyStorefront}
                     width={750}
                     height={1624}
                     sizes="(max-width: 520px) 40vw, 224px"
-                    className="h-auto w-full rounded-xl border border-border-elevated"
+                    className="w-full border border-border-elevated"
                   />
                   <p className="text-caption-14 text-secondary">Архивный макет веб-витрины</p>
                 </div>
@@ -572,14 +636,13 @@ export function CaseStudyPage() {
                 <p className="text-caption-14 text-secondary">Подтверждение через Госуслуги и оплата в приложении.</p>
               </figcaption>
               <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
-                <Image
+                <ComparisonImage
                   alt="Три экрана нового приложения: вход, номер и тариф перед оплатой, набор номера"
                   src={assets.solutionSuccess}
                   width={2400}
                   height={1584}
                   sizes="(max-width: 640px) 510px, 800px"
-                  className="h-auto w-[510px] max-w-none sm:w-full"
-                  quality={100}
+                  className="w-[510px] max-w-none sm:w-full"
                 />
               </div>
             </figure>
@@ -710,10 +773,10 @@ export function CaseStudyPage() {
         >
           <h2 className="text-h2">Результаты</h2>
           <div className="case-content-stack text-[16px] leading-[26px]">
-            <ul className="case-point-stack">
-              <li><strong className="font-semibold">С 8 до 3 шагов</strong> сократился путь от регистрации до первого звонка.</li>
-              <li><strong className="font-semibold">Вдвое меньше обращений</strong> по подключению, стоимости звонков и списаниям.</li>
-              <li><strong className="font-semibold">15+ сценариев</strong> спроектировала: от регистрации и оплаты до роуминга, eSIM и AI-поддержки.</li>
+            <ul className="grid gap-x-space-6 gap-y-space-4 sm:grid-cols-3">
+              <li className="border-t border-border-elevated pt-space-3 text-balance"><strong className="font-semibold">С 8 до 3 шагов</strong> сократился путь от регистрации до первого звонка.</li>
+              <li className="border-t border-border-elevated pt-space-3 text-balance"><strong className="font-semibold">Вдвое меньше обращений</strong> по подключению, стоимости звонков и списаниям.</li>
+              <li className="border-t border-border-elevated pt-space-3 text-balance"><strong className="font-semibold">15+ сценариев</strong> спроектировала: от регистрации и оплаты до роуминга, eSIM и AI-поддержки.</li>
             </ul>
             <p>
               После релиза в бэклог по обратной связи попали избранные контакты, повтор звонка из истории
