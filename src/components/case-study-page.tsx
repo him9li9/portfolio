@@ -514,33 +514,6 @@ export function CaseStudyPage() {
           <div className="case-h3-stack">
             <h2 className="text-h3">Проблема</h2>
             <p>В MVP кнопка «Купить номер» открывала веб-кабинет. Там пользователь вводил данные документов и ждал проверки менеджером. После возвращения было непонятно, готов ли номер к звонку.</p>
-            <figure className="mt-space-2">
-              {/* Match heights without cropping: column widths follow the screenshots’ aspect ratios. */}
-              <div className="grid max-w-[480px] grid-cols-[1fr_0.9492fr] gap-space-4 sm:gap-space-6">
-                <div className="flex min-w-0 flex-col gap-space-2">
-                  <Image
-                    alt="Старый экран входа со ссылкой «Купить номер»"
-                    src={assets.legacySignIn}
-                    width={470}
-                    height={966}
-                    sizes="(max-width: 520px) 42vw, 228px"
-                    className="h-auto w-full rounded-xl border border-border-elevated"
-                  />
-                  <p className="text-caption-14 text-secondary">Экран входа в MVP со ссылкой «Купить номер».</p>
-                </div>
-                <div className="flex min-w-0 flex-col gap-space-2">
-                  <Image
-                    alt="Старая проектировка витрины номеров с фильтрами в мобильном браузере"
-                    src={assets.legacyStorefront}
-                    width={750}
-                    height={1624}
-                    sizes="(max-width: 520px) 42vw, 228px"
-                    className="h-auto w-full rounded-xl border border-border-elevated"
-                  />
-                  <p className="text-caption-14 text-secondary">Старая проектировка веб-витрины. После нажатия «Купить номер» пользователь переходил из приложения в браузер.</p>
-                </div>
-              </div>
-            </figure>
           </div>
           <div className="case-h3-stack">
             <h2 className="text-h3">Задача</h2>
@@ -562,20 +535,55 @@ export function CaseStudyPage() {
             </div>
           </div>
 
-          <figure className="case-visual-spacing flex w-full flex-col gap-space-2">
-            <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
-              <Image
-                alt="Три экрана нового приложения: вход, номер и тариф перед оплатой, набор номера"
-                src={assets.solutionSuccess}
-                width={2400}
-                height={1584}
-                sizes="(max-width: 640px) 510px, 800px"
-                className="h-auto w-[510px] max-w-none sm:w-full"
-                quality={100}
-              />
-            </div>
-            <figcaption className="text-caption-14 text-secondary">Три ключевых экрана нового сценария.</figcaption>
-          </figure>
+          <div className="case-visual-spacing flex flex-col gap-space-6" aria-labelledby="first-call-comparison">
+            <h3 id="first-call-comparison" className="text-h3">С 8 до 3 шагов до первого звонка</h3>
+
+            <figure className="flex flex-col gap-space-3">
+              <figcaption>
+                <p className="text-body-16 font-semibold">До · Фрагмент старого пути</p>
+                <p className="text-caption-14 text-secondary">Чтобы купить номер, нужно было перейти в браузер и дождаться ручной проверки документов.</p>
+              </figcaption>
+              <div className="grid max-w-[480px] grid-cols-[1fr_0.9492fr] items-start gap-space-4 sm:gap-space-6">
+                <Image
+                  alt="Старый экран входа со ссылкой «Купить номер»"
+                  src={assets.legacySignIn}
+                  width={470}
+                  height={966}
+                  sizes="(max-width: 520px) 42vw, 236px"
+                  className="h-auto w-full rounded-xl border border-border-elevated"
+                />
+                <div className="flex min-w-0 flex-col gap-space-2">
+                  <Image
+                    alt="Архивный макет витрины номеров в мобильном браузере"
+                    src={assets.legacyStorefront}
+                    width={750}
+                    height={1624}
+                    sizes="(max-width: 520px) 40vw, 224px"
+                    className="h-auto w-full rounded-xl border border-border-elevated"
+                  />
+                  <p className="text-caption-14 text-secondary">Архивный макет веб-витрины</p>
+                </div>
+              </div>
+            </figure>
+
+            <figure className="flex min-w-0 flex-col gap-space-3 border-t border-border-elevated pt-space-6">
+              <figcaption>
+                <p className="text-body-16 font-semibold">После · Три ключевых экрана</p>
+                <p className="text-caption-14 text-secondary">Подтверждение через Госуслуги и оплата в приложении.</p>
+              </figcaption>
+              <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
+                <Image
+                  alt="Три экрана нового приложения: вход, номер и тариф перед оплатой, набор номера"
+                  src={assets.solutionSuccess}
+                  width={2400}
+                  height={1584}
+                  sizes="(max-width: 640px) 510px, 800px"
+                  className="h-auto w-[510px] max-w-none sm:w-full"
+                  quality={100}
+                />
+              </div>
+            </figure>
+          </div>
 
           <div className="case-point-stack text-[16px] leading-[26px]">
             <h3 className="text-h3">Как упростили проверку цены звонка</h3>
@@ -613,9 +621,21 @@ export function CaseStudyPage() {
 
           <div className="case-point-stack text-[16px] leading-[26px]">
             <h3 className="text-h3">Помощь в момент ошибки</h3>
+            <figure className="my-space-2 flex max-w-[660px] flex-col gap-space-2">
+              <figcaption className="text-caption-14 text-secondary">
+                Из отзыва о старой версии: пользователь вошёл, но не понял, как настроить звонки.
+              </figcaption>
+              <Image
+                alt="Фрагмент отзыва: пользователь спрашивает, где найти инструкцию по настройке звонков на iPhone, и пишет, что видит баланс, но не видит выбора аккаунта."
+                src="/figma/Case_1/Section_2/mvp-feedback-setup-excerpt.png"
+                width={1750}
+                height={308}
+                sizes="(max-width: 700px) calc(100vw - 32px), 660px"
+                className="h-auto w-full rounded-lg"
+              />
+            </figure>
             <p>
-              Вместо сообщения, которое только называло причину ошибки, добавила действия по ситуации:
-              вернуться в Госуслуги, пополнить баланс или написать в поддержку.
+              В новом сценарии экран ошибки подсказывает, что делать дальше: вернуться в Госуслуги, пополнить баланс или написать в поддержку.
             </p>
           </div>
 
