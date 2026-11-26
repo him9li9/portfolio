@@ -12,7 +12,7 @@ const assets = {
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   arrowForward: "/figma/Icons/arrow_forward.svg",
   legacySignIn: "/figma/Case_1/Section_2/mvp-sign-in.jpg",
-  legacyDialpad: "/figma/Case_1/Section_2/mvp-dialpad.jpg",
+  legacyStorefront: "/figma/Case_1/Section_2/mvp-number-storefront.png",
   userflow: "/figma/Case_1/Section_3/case-userflow.png",
   solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow.mp4",
@@ -514,7 +514,7 @@ export function CaseStudyPage() {
           <div className="case-h3-stack">
             <h2 className="text-h3">Проблема</h2>
             <p>В MVP кнопка «Купить номер» открывала веб-кабинет. Там пользователь вводил данные документов и ждал проверки менеджером. После возвращения было непонятно, готов ли номер к звонку.</p>
-            <figure className="mt-space-2 flex flex-col gap-space-3">
+            <figure className="mt-space-2">
               <div className="grid max-w-[480px] grid-cols-2 gap-space-4 sm:gap-space-6">
                 <div className="flex min-w-0 flex-col gap-space-2">
                   <Image
@@ -525,21 +525,20 @@ export function CaseStudyPage() {
                     sizes="(max-width: 520px) 42vw, 228px"
                     className="h-auto w-full rounded-xl border border-border-elevated"
                   />
-                  <p className="text-caption-14 text-secondary">«Купить номер» открывало веб-кабинет.</p>
+                  <p className="text-caption-14 text-secondary">Экран входа в MVP со ссылкой «Купить номер».</p>
                 </div>
                 <div className="flex min-w-0 flex-col gap-space-2">
                   <Image
-                    alt="Старый экран набора с кнопками SIP и MOBILE, без цены минуты"
-                    src={assets.legacyDialpad}
-                    width={470}
-                    height={966}
+                    alt="Старая проектировка витрины номеров с фильтрами в мобильном браузере"
+                    src={assets.legacyStorefront}
+                    width={750}
+                    height={1624}
                     sizes="(max-width: 520px) 42vw, 228px"
                     className="h-auto w-full rounded-xl border border-border-elevated"
                   />
-                  <p className="text-caption-14 text-secondary">На экране набора не было цены минуты.</p>
+                  <p className="text-caption-14 text-secondary">Старая проектировка веб-витрины. После нажатия «Купить номер» пользователь переходил из приложения в браузер.</p>
                 </div>
               </div>
-              <figcaption className="text-caption-14 text-secondary">Два экрана MVP. Веб-анкета на них не показана.</figcaption>
             </figure>
           </div>
           <div className="case-h3-stack">
@@ -817,3 +816,4 @@ export function CaseStudyPage() {
     </main>
   );
 }
+
