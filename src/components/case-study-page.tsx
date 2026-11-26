@@ -11,7 +11,8 @@ const assets = {
   phone2: "/figma/Case_1/Section_1/softphone-home.png",
   phone3: "/figma/Case_1/Section_1/softphone-dialpad.png",
   arrowForward: "/figma/Icons/arrow_forward.svg",
-  legacyFlow: "/figma/Case_1/Section_2/case-discovery.png",
+  legacySignIn: "/figma/Case_1/Section_2/mvp-sign-in.jpg",
+  legacyDialpad: "/figma/Case_1/Section_2/mvp-dialpad.jpg",
   userflow: "/figma/Case_1/Section_3/case-userflow.png",
   solutionSuccess: "/figma/Case_1/Section_4/case-solution-success.png",
   callFlowVideo: "/figma/Case_1/Section_4/call-flow.mp4",
@@ -512,11 +513,38 @@ export function CaseStudyPage() {
         >
           <div className="case-h3-stack">
             <h2 className="text-h3">Проблема</h2>
-            <p>В MVP путь до первого звонка был разорван между приложением и веб-кабинетом. После заявки пользователь не видел в приложении, подключён ли номер и можно ли уже звонить.</p>
+            <p>В MVP кнопка «Купить номер» открывала веб-кабинет. Там пользователь вводил данные документов и ждал проверки менеджером. После возвращения было непонятно, готов ли номер к звонку.</p>
+            <figure className="mt-space-2 flex flex-col gap-space-3">
+              <div className="grid max-w-[480px] grid-cols-2 gap-space-4 sm:gap-space-6">
+                <div className="flex min-w-0 flex-col gap-space-2">
+                  <Image
+                    alt="Старый экран входа со ссылкой «Купить номер»"
+                    src={assets.legacySignIn}
+                    width={470}
+                    height={966}
+                    sizes="(max-width: 520px) 42vw, 228px"
+                    className="h-auto w-full rounded-xl border border-border-elevated"
+                  />
+                  <p className="text-caption-14 text-secondary">«Купить номер» открывало веб-кабинет.</p>
+                </div>
+                <div className="flex min-w-0 flex-col gap-space-2">
+                  <Image
+                    alt="Старый экран набора с кнопками SIP и MOBILE, без цены минуты"
+                    src={assets.legacyDialpad}
+                    width={470}
+                    height={966}
+                    sizes="(max-width: 520px) 42vw, 228px"
+                    className="h-auto w-full rounded-xl border border-border-elevated"
+                  />
+                  <p className="text-caption-14 text-secondary">На экране набора не было цены минуты.</p>
+                </div>
+              </div>
+              <figcaption className="text-caption-14 text-secondary">Два экрана MVP. Веб-анкета на них не показана.</figcaption>
+            </figure>
           </div>
           <div className="case-h3-stack">
             <h2 className="text-h3">Задача</h2>
-            <p>Спроектировать единый путь от регистрации до первого звонка: показать статус подключения и подсказать следующий шаг, чтобы пользователь мог пройти сценарий без помощи поддержки.</p>
+            <p>Сократить путь от регистрации до первого звонка, сохранив обязательное подтверждение личности владельца номера. Показать, что делать дальше, чтобы пройти сценарий без помощи поддержки.</p>
           </div>
         </motion.section>
 
@@ -529,45 +557,25 @@ export function CaseStudyPage() {
           <div className="case-h2-stack">
             <h2 className="text-h2">Путь до первого звонка</h2>
             <div className="case-text-stack text-[16px] leading-[26px]">
-              <p>Чтобы оформить номер, нужно подтвердить личность. В MVP для этого приходилось уходить из приложения в веб-кабинет, вводить данные документов и ждать проверки менеджером. Мы выбрали Госуслуги, чтобы пользователь мог подтвердить личность без заполнения анкеты и ручной проверки.</p>
+              <p>Для подтверждения личности выбрали Госуслуги: пользователю не нужно вводить данные документов вручную и ждать проверки менеджером.</p>
               <p>В первом прототипе после регистрации появлялся отдельный экран с галочкой и кнопкой «Продолжить». На тесте пользователи замечали галочку, но пропускали кнопку. Я перенесла подтверждение на экран заказа. На нём сразу видны номер, тариф и следующее действие: «Перейти к оплате».</p>
             </div>
           </div>
 
-          <div className="case-visual-spacing grid gap-space-6 sm:grid-cols-[1fr_3fr]">
-            <figure className="flex min-w-0 flex-col gap-space-3">
-              <figcaption className="text-body-18-semibold">До: 8 шагов</figcaption>
-              <p className="text-caption-14 text-secondary">«Купить номер» открывал веб-кабинет. Там нужно было заполнить анкету и дождаться проверки.</p>
-              <div className="w-full max-w-[172px] overflow-hidden rounded-[12px] sm:mt-auto" style={{ aspectRatio: "586 / 1206" }}>
-                <Image
-                  alt="Вход в старом приложении MCN Telecom: под кнопкой входа есть ссылка «Купить номер»"
-                  src={assets.legacyFlow}
-                  width={2550}
-                  height={1206}
-                  sizes="750px"
-                  className="h-auto max-w-none"
-                  style={{ width: "435.15%" }}
-                  loading="lazy"
-                />
-              </div>
-            </figure>
-            <figure className="flex min-w-0 flex-col gap-space-3">
-              <figcaption className="text-body-18-semibold">После: 3 шага</figcaption>
-              <p className="text-caption-14 text-secondary">Подтверждение личности осталось, но без отдельной анкеты. Номер, тариф и переход к оплате видны сразу после регистрации.</p>
-              <div className="case-horizontal-scroll w-full overflow-x-auto sm:mt-auto sm:overflow-visible">
-                <Image
-                  alt="Вход, экран с присвоенным номером и условиями тарифа, экран звонка"
-                  src={assets.solutionSuccess}
-                  width={2400}
-                  height={1584}
-                  sizes="(max-width: 640px) 510px, 600px"
-                  className="h-auto w-[510px] max-w-none sm:w-full"
-                  loading="lazy"
-                  quality={100}
-                />
-              </div>
-            </figure>
-          </div>
+          <figure className="case-visual-spacing flex w-full flex-col gap-space-2">
+            <div className="case-horizontal-scroll w-full overflow-x-auto sm:overflow-visible">
+              <Image
+                alt="Три экрана нового приложения: вход, номер и тариф перед оплатой, набор номера"
+                src={assets.solutionSuccess}
+                width={2400}
+                height={1584}
+                sizes="(max-width: 640px) 510px, 800px"
+                className="h-auto w-[510px] max-w-none sm:w-full"
+                quality={100}
+              />
+            </div>
+            <figcaption className="text-caption-14 text-secondary">Три ключевых экрана нового сценария.</figcaption>
+          </figure>
 
           <div className="case-point-stack text-[16px] leading-[26px]">
             <h3 className="text-h3">Как упростили проверку цены звонка</h3>
